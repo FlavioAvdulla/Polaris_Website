@@ -7,3 +7,142 @@
     --radius: 0.5rem
   }
 }
+
+
+@font-face {
+  font-family: 'CamptonBlack';
+  src: url('./assets/fonts/CamptonBlack.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonBlackItalic';
+  src: url('./assets/fonts/CamptonBlackItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonBold';
+  src: url('./assets/fonts/CamptonBold.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonBoldItalic';
+  src: url('./assets/fonts/CamptonBoldItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonBook';
+  src: url('./assets/fonts/CamptonBook.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonBookItalic';
+  src: url('./assets/fonts/CamptonBookItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonExtraBold';
+  src: url('./assets/fonts/CamptonExtraBold.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonExtraBoldItalic';
+  src: url('./assets/fonts/CamptonExtraBoldItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonExtraLight';
+  src: url('./assets/fonts/CamptonExtraLight.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonExtraLightItalic';
+  src: url('./assets/fonts/CamptonExtraLightItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonLight';
+  src: url('./assets/fonts/CamptonLight.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonLightItalic';
+  src: url('./assets/fonts/CamptonLightItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonMedium';
+  src: url('./assets/fonts/CamptonMedium.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonMediumItalic';
+  src: url('./assets/fonts/CamptonMediumItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonSemiBold';
+  src: url('./assets/fonts/CamptonSemiBold.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonSemiBoldItalic';
+  src: url('./assets/fonts/CamptonSemiBoldItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonThin';
+  src: url('./assets/fonts/CamptonThin.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+@font-face {
+  font-family: 'CamptonThinItalic';
+  src: url('./assets/fonts/CamptonThinItalic.otf') format('opentype');
+  /* font-weight: 900;
+    font-style: normal; */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  box-sizing: border-box;
+  --gold-color: rgb(196, 154, 93);
+  --black-color-transparency: rgba(0, 0, 0, 0.849);
+  --light-grey: rgba(247, 247, 247);
+  --grey-color: rgba(117, 117, 117);
+  --dark-grey: rgb(31, 31, 31);
+}
