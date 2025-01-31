@@ -41,5 +41,8 @@ theme: {
     },
   },
 },
-plugins: [require("tailwindcss-animate")],
+plugins: [
+  require("tailwindcss-animate"),
+  require("@tailwindcss/aspect-ratio"),
+],
 }

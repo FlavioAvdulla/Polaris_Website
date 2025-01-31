@@ -13,7 +13,7 @@ import {
 export function SelectCurrency() {
   return (
     <Select>
-      <SelectTrigger className="w-auto gap-5">
+      <SelectTrigger className="w-auto gap-5 border-[1px] border-primary rounded-md">
         <SelectValue placeholder="USD" />
       </SelectTrigger>
       <SelectContent>
