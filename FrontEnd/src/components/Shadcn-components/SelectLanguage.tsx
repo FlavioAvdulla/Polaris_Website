@@ -13,16 +13,16 @@ import {
 export function SelectLanguage() {
   return (
     <Select>
-      <SelectTrigger className="w-auto gap-5 border-[1px] border-primary rounded-md">
-        <SelectValue placeholder="English" />
+      <SelectTrigger className="w-auto gap-2 shadow-none border-[1px] border-gray-300">
+        <SelectValue placeholder=""/><p className="text-[14px]">English</p>
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Languages</SelectLabel>
-          <SelectItem value="english">English</SelectItem>
-          <SelectItem value="hindi">Hindi</SelectItem>
-          <SelectItem value="french">French</SelectItem>
-          <SelectItem value="arabic">Arabic</SelectItem>
+          <SelectLabel><p>Languages</p></SelectLabel>
+          <SelectItem value="english"><p>English</p></SelectItem>
+          <SelectItem value="hindi"><p>Hindi</p></SelectItem>
+          <SelectItem value="french"><p>French</p></SelectItem>
+          <SelectItem value="arabic"><p>Arabic</p></SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

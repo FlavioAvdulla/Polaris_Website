@@ -13,32 +13,32 @@ const Navbar_01 = () => {
     <div className="flex w-[85%] h-auto py-5 mx-auto justify-between">
       <div className="flex gap-7 w-fit">
         <button className="font-camptonLight">
-          <p>Track Order</p>
+          <p className="text-[14px]">Track Order</p>
         </button>
         <button className="font-camptonLight">
-          <p>About Us</p>
+          <p className="text-[14px]">About Us</p>
         </button>
         <button className="font-camptonLight">
-          <p>Contact</p>
+          <p className="text-[14px]">Contact</p>
         </button>
         <button className="font-camptonLight ">
-          <p>FAQ</p>
+          <p className="text-[14px]">FAQ</p>
         </button>
       </div>
       <div className="flex gap-7 items-center">
         <button className="font-camptonLight flex gap-2 items-center">
         <i>
-            <BsPhone className="text-[18px]" />
+            <BsPhone className="text-[15px]" />
           </i>
-          <p>
+          <p className="text-[14px]">
             You can contact us
-            <span className="font-camptonMedium bg-gray-100 rounded-md px-2 py-1 ml-3">
-              24/70 800 300-353
+            <span className="font-camptonMedium bg-gray-100 rounded-md px-2 py-1 ml-3 text-[14px]">
+              +355 67 63 11 918
             </span>
           </p>
         </button>
-        <div className="h-[100%] w-[1px]" />
-        <button className="font-camptonLight">
+        <div className="h-[60%] w-[1px] bg-gray-300" />
+        <button className="font-camptonLight ">
           <SelectLanguage />
         </button>
         <button className="font-camptonLight">
@@ -46,9 +46,9 @@ const Navbar_01 = () => {
         </button>
         <button className="font-camptonLight flex items-center gap-2">
           <i>
-            <BsBrightnessHigh className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[18px] " />
+            <BsBrightnessHigh className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px] " />
           </i>
-          <p>Light Theme</p>
+          <p className="text-[14px]">Light Theme</p>
         </button>
       </div>
     </div>
