@@ -1,6 +1,6 @@
-import * as React from "react"
+import * as React from "react";
 
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -8,26 +8,36 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from "@/components/ui/carousel"
+} from "@/components/ui/carousel";
 
 export function Carousel_01() {
-  const [api, setApi] = React.useState<CarouselApi>()
-  const [current, setCurrent] = React.useState(0)
-  const [count, setCount] = React.useState(0)
-  const [isGrabbing, setIsGrabbing] = React.useState(false)
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+  const [count, setCount] = React.useState(0);
+  const [isGrabbing, setIsGrabbing] = React.useState(false);
 
   React.useEffect(() => {
     if (!api) {
-      return
+      return;
     }
 
-    setCount(api.scrollSnapList().length)
-    setCurrent(api.selectedScrollSnap() + 1)
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
 
     api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1)
-    })
-  }, [api])
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+
+    const interval = setInterval(() => {
+      if (api.selectedScrollSnap() + 1 === count) {
+        api.scrollTo(0);
+      } else {
+        api.scrollNext();
+      }
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, [api, count]);
 
   return (
     <div className="mx-auto w-[70%]">
@@ -59,5 +69,5 @@ export function Carousel_01() {
         Slide {current} of {count}
       </div> */}
     </div>
-  )
+  );
 }

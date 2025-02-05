@@ -27,7 +27,17 @@ export function Carousel_02() {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
-  }, [api]);
+
+    const interval = setInterval(() => {
+      if (api.selectedScrollSnap() + 1 === count) {
+        api.scrollTo(0); // Scroll to the first item
+      } else {
+        api.scrollNext();
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [api, count]);
 
   return (
     <div className="mx-auto w-[400px]">
