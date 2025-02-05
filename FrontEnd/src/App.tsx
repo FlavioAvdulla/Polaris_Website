@@ -7,6 +7,7 @@ import Carousel from "./components/Carousel/Carousel";
 import BenefitsPackage from "./components/BenefitsPackage/BenefitsPackage";
 import ProductSection_01 from "./components/ProductSection/ProductSection_01";
 import ProductSection_02 from "./components/ProductSection/ProductSection_02";
+import ProductSection_03 from "./components/ProductSection/ProductSection_03";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <BenefitsPackage />
         <ProductSection_01 />
         <ProductSection_02 />
+        <ProductSection_03 />
       </Router>
     </div>
   );
