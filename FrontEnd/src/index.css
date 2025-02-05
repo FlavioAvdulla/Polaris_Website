@@ -134,15 +134,3 @@
   /* font-weight: 900;
     font-style: normal; */
 }
-
-* {
-  padding: 0;
-  margin: 0;
-  font-size: 15px;
-  box-sizing: border-box;
-  --gold-color: rgb(196, 154, 93);
-  --black-color-transparency: rgba(0, 0, 0, 0.849);
-  --light-grey: rgba(247, 247, 247);
-  --grey-color: rgba(117, 117, 117);
-  --dark-grey: rgb(31, 31, 31);
-}
