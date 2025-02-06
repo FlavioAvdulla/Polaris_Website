@@ -8,6 +8,9 @@ import BenefitsPackage from "./components/BenefitsPackage/BenefitsPackage";
 import ProductSection_01 from "./components/ProductSection/ProductSection_01";
 import ProductSection_02 from "./components/ProductSection/ProductSection_02";
 import ProductSection_03 from "./components/ProductSection/ProductSection_03";
+import ProductSection_04 from "./components/ProductSection/ProductSection_04";
+import ProductSection_05 from "./components/ProductSection/ProductSection_05";
+import Banner_Section from "./components/ProductSection/Banner_Section";
 
 const App = () => {
   return (
@@ -21,6 +24,9 @@ const App = () => {
         <ProductSection_01 />
         <ProductSection_02 />
         <ProductSection_03 />
+        <ProductSection_04 />
+        <ProductSection_05 />
+        <Banner_Section />
       </Router>
     </div>
   );

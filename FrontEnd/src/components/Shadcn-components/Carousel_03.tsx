@@ -10,7 +10,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-export function Carousel_02() {
+export function Carousel_03() {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
@@ -40,7 +40,7 @@ export function Carousel_02() {
   }, [api, count]);
 
   return (
-    <div className="mx-auto w-[400px]">
+    <div className="mx-auto w-[100%]">
       <Carousel
         setApi={setApi}
         className="w-full"
@@ -52,11 +52,11 @@ export function Carousel_02() {
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
-                  className={`flex aspect-square items-center justify-center p-6 h-[400px] ${
+                  className={`flex aspect-square items-center justify-center p-6 h-[700px] ${
                     isGrabbing ? "cursor-grabbing" : "cursor-grab"
                   }`}
                 >
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                  <span className="text-4xl font-semibold ">{index + 1}</span>
                 </CardContent>
               </Card>
             </CarouselItem>

@@ -50,7 +50,7 @@ export function Carousel_01() {
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>
-              <Card>
+              <Card className="border-none shadow-none">
                 <CardContent
                   className={`flex aspect-square items-center justify-center p-6 h-[400px] ${
                     isGrabbing ? "cursor-grabbing" : "cursor-grab"

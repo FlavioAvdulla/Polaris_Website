@@ -1,6 +1,7 @@
 import React from 'react'
 import { Carousel_01 } from '../Shadcn-components/Carousel_01'
 import { Carousel_02 } from '../Shadcn-components/Carousel_02'
+import { Carousel_03 } from '../Shadcn-components/Carousel_03'
 
 const Carousel = () => {
   return (
