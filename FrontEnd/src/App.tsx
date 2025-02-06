@@ -10,7 +10,9 @@ import ProductSection_02 from "./components/ProductSection/ProductSection_02";
 import ProductSection_03 from "./components/ProductSection/ProductSection_03";
 import ProductSection_04 from "./components/ProductSection/ProductSection_04";
 import ProductSection_05 from "./components/ProductSection/ProductSection_05";
-import Banner_Section from "./components/ProductSection/Banner_Section";
+import BannerSection from "./components/BannerSection/BannerSection";
+import ProductSection_06 from "./components/ProductSection/ProductSection_06";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -26,7 +28,9 @@ const App = () => {
         <ProductSection_03 />
         <ProductSection_04 />
         <ProductSection_05 />
-        <Banner_Section />
+        <BannerSection />
+        <ProductSection_06 />
+        <Footer />
       </Router>
     </div>
   );
