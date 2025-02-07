@@ -9,7 +9,7 @@ const BannerSection = () => {
   return (
     <div className="flex w-[100%] h-auto mx-auto mt-20 mb-20">
       
-      <div className="flex flex-col absolute w-[40%] h-[450px] p-10 justify-center">
+      <div className="flex flex-col absolute w-[40%] h-[450px] py-10 pl-16 justify-center">
         <p className="flex text-white gap-3 items-center">
           Exclusive Offer{" "}
           <span className="rounded-3xl bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
