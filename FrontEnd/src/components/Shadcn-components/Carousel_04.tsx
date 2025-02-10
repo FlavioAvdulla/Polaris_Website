@@ -34,7 +34,7 @@ export function Carousel_04() {
       } else {
         api.scrollNext();
       }
-    }, 4000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [api, count]);

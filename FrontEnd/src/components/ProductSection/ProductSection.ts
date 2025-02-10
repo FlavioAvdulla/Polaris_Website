@@ -11,6 +11,10 @@ import Product_09 from "../../assets/images/Products/Product_09.jpg";
 import Product_10 from "../../assets/images/Products/Product_10.jpg";
 import Product_11 from "../../assets/images/Products/Product_11.jpg";
 
+import Slider_01 from "../../assets/images/Sliders/Slider_01.jpg";
+import Slider_02 from "../../assets/images/Sliders/Slider_02.jpg";
+
+
 export const productSection_01 = [
   {
     _id: "1",
@@ -241,4 +245,28 @@ export const shopByCategories = [
   },
 ];
 
+export const carousel_01 = [
+  {
+    _id: "1",
+    image: Slider_01,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+  },
+  {
+    _id: "2",
+    image: Slider_01,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+  },
+];
 
+export const carousel_02 = [
+  {
+    _id: "1",
+    image: Slider_02,
+  },
+  {
+    _id: "2",
+    image: Slider_02,
+  },
+];

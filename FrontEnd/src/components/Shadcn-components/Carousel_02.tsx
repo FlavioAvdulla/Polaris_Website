@@ -1,17 +1,24 @@
 import * as React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { carousel_02 } from "../../components/ProductSection/ProductSection";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   CarouselNext,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 
+// React Icons
+// import { IoIosArrowForward } from "react-icons/io";
+
 export function Carousel_02() {
   const [api, setApi] = React.useState<CarouselApi>();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [isGrabbing, setIsGrabbing] = React.useState(false);
@@ -30,33 +37,40 @@ export function Carousel_02() {
 
     const interval = setInterval(() => {
       if (api.selectedScrollSnap() + 1 === count) {
-        api.scrollTo(0); // Scroll to the first item
+        api.scrollTo(0);
       } else {
         api.scrollNext();
       }
-    }, 4000);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [api, count]);
 
   return (
-    <div className="mx-auto w-[400px]">
+    <div className="mx-auto w-[50%] ">
       <Carousel
         setApi={setApi}
-        className="w-full"
+        className="w-full flex flex-col"
         onMouseDown={() => setIsGrabbing(true)}
         onMouseUp={() => setIsGrabbing(false)}
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {carousel_02.map((product, index) => (
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
-                  className={`flex aspect-square items-center justify-center p-6 h-[400px] ${
-                    isGrabbing ? "cursor-grabbing" : "cursor-grab"
-                  }`}
+                  className={`flex aspect-square items-center justify-center m-0 p-0 h-[400px]
+                    rounded-xl overflow-hidden bg-slate-300 ${
+                      isGrabbing ? "cursor-grabbing" : "cursor-grab"
+                    }`}
                 >
-                  <span className="text-4xl font-semibold">{index + 1}</span>
+                  <div className="flex items-center justify-center w-[100%] h-[100%]">
+                    <img
+                      className="w-[100%] h-[100%] object-cover"
+                      src={product.image}
+                      alt="image_01"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </CarouselItem>
