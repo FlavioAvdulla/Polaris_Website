@@ -28,16 +28,16 @@ const ProductSection_05 = () => {
   return (
     <div className="flex w-[85%] h-auto mx-auto gap-5 items-center justify-between mb-20">
       <Carousel_03 />
-      <Carousel_04 />
-      <div className="flex flex-col gap-5 w-[100%]">
+      <Carousel_04 /> 
+      <div className="flex flex-col gap-5 w-[100%] h-[700px]">
         {/* ============= Section - right ============= */}
         {productSection_05.map((product, index) => (
           <div
-            className="flex flex-col w-[100%] h-auto justify-between gap-5 cursor-pointer"
+            className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden"
             key={index}
           >
             {/* ============= Section - right - 01 ============= */}
-            <div className="flex w-[100%] h-[25%] bg-gray-100 items-center rounded-lg border-[1px] border-primary">
+            <div className="flex w-[100%] h-[100%] bg-gray-100 items-center rounded-lg border-[1px] border-primary">
               {/* ============= Section - right - 01 - Photo ============= */}
               <div className="w-[40%] h-[100%] rounded-tl-lg rounded-bl-lg">
                 <img

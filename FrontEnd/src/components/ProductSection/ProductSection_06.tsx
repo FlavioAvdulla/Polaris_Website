@@ -25,9 +25,9 @@ const ProductSection_05 = () => {
   };
 
   return (
-    <div className="flex w-[85%] h-auto mx-auto gap-5 items-center mb-20 bg-slate-500">
+    <div className="flex w-[85%] h-auto mx-auto gap-5 items-center mb-20">
       {/* ============= Section - Left ============= */}
-      <div className="grid grid-cols-2 gap-5 w-[100%] h-[700px] bg-slate-200">
+      <div className="grid grid-cols-2 gap-5 w-[100%] h-[700px]">
         {productSection_06.map((product, index) => (
           <div
             className="flex w-[100%] h-auto overflow-hidden bg-gray-100 items-center rounded-lg border-[1px] border-primary"
