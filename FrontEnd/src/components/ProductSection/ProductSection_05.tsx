@@ -5,7 +5,7 @@ import { Carousel_04 } from "../Shadcn-components/Carousel_04";
 // React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
-// Import the product data correctly
+// Import the product data.
 import { productSection_05 } from "../../components/ProductSection/ProductSection";
 
 const ProductSection_05 = () => {

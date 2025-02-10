@@ -23,7 +23,7 @@ const ProductSection_01 = () => {
   return (
     <div
       className="flex w-[85%] h-auto mx-auto gap-5 items-center
-                justify-between mt-20 mb-20"
+                justify-between my-20"
     >
       {productSection_01.map((product, index) => (
         // ============= Product 1 =============

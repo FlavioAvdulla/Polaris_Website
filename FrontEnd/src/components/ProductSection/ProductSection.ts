@@ -45,6 +45,25 @@ export const productSection_01 = [
   },
 ];
 
+export const productSection_03 = [
+  {
+    _id: "1",
+    image: Product_01,
+    title_02: "Weekend Discount",
+    title_01: "OLYMPUS MARK II MIRRORLESS CAMERA",
+    description: "Mirrorless Camera with 4K Video",
+    button: "SHOP NOW",
+  },
+  {
+    _id: "2",
+    image: Product_04,
+    title_02: "Weekend Discount",
+    title_01: "OLYMPUS MARK II MIRRORLESS CAMERA",
+    description: "Mirrorless Camera with 4K Video",
+    button: "SHOP NOW",
+  },
+]
+
 export const productSection_05 = [
   {
     _id: "1",
