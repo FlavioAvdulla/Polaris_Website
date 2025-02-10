@@ -40,7 +40,7 @@ export function Carousel_05() {
   }, [api, count]);
 
   return (
-    <div className="mx-auto w-[100%]">
+    <div className="mx-auto w-[40%]">
       <Carousel
         setApi={setApi}
         className="w-full"
@@ -52,7 +52,7 @@ export function Carousel_05() {
             <CarouselItem key={index}>
               <Card className="border-none shadow-none bg-slate-100">
                 <CardContent
-                  className={`flex aspect-square items-center justify-center p-6 h-[600px] ${
+                  className={`flex aspect-square items-center justify-center p-6 h-[700px] ${
                     isGrabbing ? "cursor-grabbing" : "cursor-grab"
                   }`}
                 >

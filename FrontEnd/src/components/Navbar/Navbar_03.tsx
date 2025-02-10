@@ -6,6 +6,7 @@ import { CiDiscount1 } from "react-icons/ci";
 
 const Navbar_03 = () => {
   return (
+    <div className="bg-white bg-opacity-50 backdrop-blur-[15px] sticky top-0 z-20">
     <div className="flex w-[85%] h-auto mx-auto items-center justify-between py-5">
       <AllCategories />
       <div className="w-[50%]">
@@ -25,6 +26,7 @@ const Navbar_03 = () => {
         </i>
         <p className="font-camptonBook">Best Discounts</p>
       </div>
+    </div>
     </div>
   );
 };

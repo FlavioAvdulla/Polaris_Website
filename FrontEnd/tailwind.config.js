@@ -6,6 +6,10 @@ module.exports = {
 ],
 theme: {
   extend: {
+    boxShadow: {
+      'shadow-light': '0 2px 4px rgba(0, 0, 0, 0.1)',
+      'shadow-dark': '0 6px 8px rgba(0, 0, 0, 0.25)',
+    },
     colors: {
       primary: '#e4232b',
       secondary_01: '#f05253',

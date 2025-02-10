@@ -2,6 +2,7 @@ import React from "react";
 
 // React Icons
 import { PiShoppingCartLight } from "react-icons/pi";
+
 import { dealsOfTheDay } from "../../components/ProductSection/ProductSection";
 
 const ProductSection_02 = () => {
@@ -12,7 +13,7 @@ const ProductSection_02 = () => {
         <h1 className="text-[22px] font-camptonMedium">Deals Of The Day</h1>
         {/* ============= Deals of the day - right ============= */}
         <div className="flex items-center gap-10">
-          <button className="flex bg-gray-200 px-10 py-2 rounded-3xl items-center">
+          <button className="flex border-[1px] border-primary px-10 py-2 rounded-3xl items-center">
             Latest Products
           </button>
           <button>Top Rating</button>
@@ -25,31 +26,35 @@ const ProductSection_02 = () => {
       >
         {/* ============= Product List ============= */}
         {dealsOfTheDay.map((product, index) => (
-          <div className="flex flex-col w-[220px] h-auto group relative" key={index}>
+          <div className="flex flex-col w-[220px] h-auto group relative border-[1px] border-primary
+                          rounded-lg" key={index}>
             {/* ============= Image ============= */}
-            <div className="flex w-[100%] h-[200px] bg-slate-100 rounded-tl-lg rounded-tr-lg">
+            <div className="flex w-[100%] h-[200px] rounded-tl-lg rounded-tr-lg overflow-hidden">
               <img src={product.image} alt={product.title} />
             </div>
             {/* ============= Title ============= */}
-            <div className="flex flex-col w-[100%] h-auto p-4 bg-slate-200 justify-between rounded-br-lg rounded-bl-lg z-10">
+            <div className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg z-10
+            group-hover:shadow-shadow-dark transition-all duration-300">
               <h1 className="mb-4">{product.title}</h1>
               {/* ============= Price ============= */}
               <div className="flex gap-4 items-center">
-                <p className="text-[20px] font-camptonMedium">{product.normalPrice}</p>
+                <p className="text-[20px] font-camptonMedium text-primary">{product.normalPrice}</p>
                 <div className="w-auto relative">
-                  <div className="absolute mt-3.5 h-[1px] w-[59px] bg-red-500"></div>
-                  <p className="text-[17px] text-gray-400 rounded-br-lg rounded-bl-lg">{product.offerPrice}</p>
+                  <div className="absolute mt-[13px] h-[1.5px] w-[100%] bg-primary"/>
+                  <p className="text-[17px] text-gray-700 rounded-br-lg rounded-bl-lg">{product.offerPrice}</p>
                 </div>
               </div>
             </div>
             {/* ============= Add to cart ============= */}
             <button
-              className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center bg-slate-300 rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all duration-300 group-hover:bottom-[-45px]"
+              className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
+                         rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
+                         duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary"
             >
               <i>
-                <PiShoppingCartLight className="text-[18px]" />
+                <PiShoppingCartLight className="text-[18px] text-white" />
               </i>
-              <p>ADD TO CART</p>
+              <p className="text-white">ADD TO CART</p>
             </button>
           </div>
         ))}

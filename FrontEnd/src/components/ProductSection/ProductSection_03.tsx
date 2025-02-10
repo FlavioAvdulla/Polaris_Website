@@ -3,6 +3,7 @@ import React from "react";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+
 const ProductSection_03 = () => {
   return (
     <div className="flex w-[85%] mx-auto mb-20 mt-10 gap-5">
@@ -22,7 +23,7 @@ const ProductSection_03 = () => {
           <div className="w-auto mt-7">
             <button
               className=" flex items-center justify-center gap-3 bg-primary text-white px-4 py-2 rounded-3xl
-                                hover:bg-transparent hover:border hover:border-primary hover:border-[1px] ease-in-out duration-300 hover:text-primary"
+                                hover:bg-transparent  hover:border-primary hover:border-[1px] ease-in-out duration-300 hover:text-primary"
             >
               SHOW NOW
               <i>
@@ -51,7 +52,7 @@ const ProductSection_03 = () => {
           <div className="w-auto mt-7">
             <button
               className=" flex items-center justify-center gap-3 bg-primary text-white px-4 py-2 rounded-3xl
-                                hover:bg-transparent hover:border hover:border-primary hover:border-[1px] ease-in-out duration-300 hover:text-primary"
+                                hover:bg-transparent hover:border-primary hover:border-[1px] ease-in-out duration-300 hover:text-primary"
             >
               SHOW NOW
               <i>
