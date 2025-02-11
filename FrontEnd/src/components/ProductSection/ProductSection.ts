@@ -13,6 +13,10 @@ import Product_11 from "../../assets/images/Products/Product_11.jpg";
 
 import Slider_01 from "../../assets/images/Sliders/Slider_01.jpg";
 import Slider_02 from "../../assets/images/Sliders/Slider_02.jpg";
+import Slider_03 from "../../assets/images/Sliders/Slider_03.jpg";
+import Slider_05 from "../../assets/images/Sliders/Slider_05.jpg";
+import Slider_06 from "../../assets/images/Sliders/Slider_06.jpg";
+import Slider_07 from "../../assets/images/Sliders/Slider_07.jpg";
 
 
 export const productSection_01 = [
@@ -143,7 +147,7 @@ export const productSection_06 = [
   },
   {
     _id: "5",
-    image: Product_06,
+    image: Product_08,
     rating: "4.0",
     title: "Computers & Laptop",
     description: "Mirrorless Camera with 4K Video",
@@ -152,7 +156,7 @@ export const productSection_06 = [
   },
   {
     _id: "6",
-    image: Product_06,
+    image: Product_03,
     rating: "4.0",
     title: "Computers & Laptop",
     description: "Mirrorless Camera with 4K Video",
@@ -161,7 +165,7 @@ export const productSection_06 = [
   },
   {
     _id: "7",
-    image: Product_06,
+    image: Product_05,
     rating: "4.0",
     title: "Computers & Laptop",
     description: "Mirrorless Camera with 4K Video",
@@ -170,7 +174,7 @@ export const productSection_06 = [
   },
   {
     _id: "8",
-    image: Product_06,
+    image: Product_04,
     rating: "4.0",
     title: "Computers & Laptop",
     description: "Mirrorless Camera with 4K Video",
@@ -269,13 +273,13 @@ export const carousel_01 = [
     _id: "1",
     image: Slider_01,
     title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
   },
   {
     _id: "2",
     image: Slider_01,
     title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
   },
 ];
 
@@ -287,5 +291,50 @@ export const carousel_02 = [
   {
     _id: "2",
     image: Slider_02,
+  },
+];
+
+export const carousel_03 = [
+  {
+    _id: "1",
+    image: Slider_03,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+  },
+  {
+    _id: "2",
+    image: Slider_06,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+  },
+];
+
+export const carousel_04 = [
+  {
+    _id: "1",
+    image: Slider_07,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+  },
+  {
+    _id: "2",
+    image: Slider_05,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+  },
+];
+
+export const carousel_05 = [
+  {
+    _id: "1",
+    image: Slider_07,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+  },
+  {
+    _id: "2",
+    image: Slider_05,
+    title: "SUPER FAST PERFORMANCE",
+    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
   },
 ];

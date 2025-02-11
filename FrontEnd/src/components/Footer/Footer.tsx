@@ -27,16 +27,20 @@ const Footer = () => {
           </p>
           <div className="flex gap-4">
             <i>
-              <FaFacebookSquare className="text-[30px] text-white" />
+              <FaFacebookSquare className="text-[30px] text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300" />
             </i>
             <i>
-              <FaSquareXTwitter className="text-[30px] text-white" />
+              <FaSquareXTwitter className="text-[30px] text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300" />
             </i>
             <i>
-              <FaLinkedin className="text-[30px] text-white" />
+              <FaLinkedin className="text-[30px] text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300" />
             </i>
             <i>
-              <FaSquarePinterest className="text-[30px] text-white" />
+              <FaSquarePinterest className="text-[30px] text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300" />
             </i>
           </div>
         </div>

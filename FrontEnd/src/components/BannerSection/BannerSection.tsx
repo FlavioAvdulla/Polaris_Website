@@ -28,7 +28,7 @@ const BannerSection = () => {
         <div className="w-auto mt-7">
           <button
             className=" flex items-center justify-center gap-3 border-[1px] border-white text-white px-4 py-2 rounded-3xl
-                        hover:scale-110 hover:border-[1px] hover:bg-primary ease-in-out duration-300"
+                        hover:scale-110 hover:border-[1px] bg-primary hover:bg-transparent ease-in-out duration-300"
           >
             SHOW NOW
             <i>
