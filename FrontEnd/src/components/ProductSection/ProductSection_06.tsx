@@ -54,13 +54,14 @@ const ProductSection_05 = () => {
                 {product.title}
               </h1>
               <p className="text-gray-500 text-[14px]">{product.description}</p>
+              {/* ============= Price ============= */}
               <div className="flex gap-4 items-center">
                 <p className="text-[20px] font-camptonMedium">
                   {product.offerPrice}
                 </p>
-                <div className="w-auto relative">
-                  <div className="absolute mt-[13px] h-[1.5px] w-[100%] bg-red-500"></div>
-                  <p className="text-[17px] text-gray-700 rounded-br-lg rounded-bl-lg">
+                <div className="flex w-auto relative items-center">
+                  <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
+                  <p className="text-[17px] text-gray-700">
                     {product.normalPrice}
                   </p>
                 </div>

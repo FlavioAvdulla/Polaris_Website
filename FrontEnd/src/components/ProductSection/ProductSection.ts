@@ -190,6 +190,8 @@ export const dealsOfTheDay = [
     title: "Sony A7 III Mirrorless Camera with 4K Video",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
+    rating: "1.0",
+    reviews: "3 Customer Reviews",
   },
   {
     _id: "2",
@@ -197,6 +199,7 @@ export const dealsOfTheDay = [
     title: "Sony A7 III Mirrorless Camera with 4K Video",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
+    rating: "2.0",
   },
   {
     _id: "3",
@@ -204,6 +207,7 @@ export const dealsOfTheDay = [
     title: "Sony A7 III Mirrorless Camera with 4K Video",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
+    rating: "3.0",
   },
   {
     _id: "4",
@@ -211,6 +215,7 @@ export const dealsOfTheDay = [
     title: "Sony A7 III Mirrorless Camera with 4K Video",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
+    rating: "4.0",
   },
   {
     _id: "5",
@@ -218,6 +223,7 @@ export const dealsOfTheDay = [
     title: "Sony A7 III Mirrorless Camera with 4K Video",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
+    rating: "5.0",
   },
   {
     _id: "6",
@@ -225,6 +231,7 @@ export const dealsOfTheDay = [
     title: "Sony A7 III Mirrorless Camera with 4K Video",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
+    rating: "2.0",
   },
 ];
 
