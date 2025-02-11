@@ -22,7 +22,7 @@ export function SearchBarSelect() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel><p className="font-camptonBook">Categories</p></SelectLabel>
+          <SelectLabel><p className="font-camptonBook text-primary">Categories</p></SelectLabel>
           <SelectItem value="fashion"><p className="font-camptonBook">Fashion</p></SelectItem>
           <SelectItem value="accessories"><p className="font-camptonBook">Accessories</p></SelectItem>
           <SelectItem value="electronics"><p className="font-camptonBook">Electronics</p></SelectItem>
