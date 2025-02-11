@@ -19,15 +19,15 @@ export function AllCategories() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Categories</SelectLabel>
-          <SelectItem value="smartphones">Smartphones</SelectItem>
-          <SelectItem value="tablets">Tablets</SelectItem>
-          <SelectItem value="fitnessTrackers">Fitness Trackers</SelectItem>
-          <SelectItem value="headphones">Headphones</SelectItem>
-          <SelectItem value="speakers">Speakers</SelectItem>
-          <SelectItem value="gamingConsoles">Gaming Consoles</SelectItem>
-          <SelectItem value="portableChargers">Portable Chargers</SelectItem>
-          <SelectItem value="bluetoothEarphones">Bluetooth Earphones</SelectItem>
+          <SelectLabel><p className="font-camptonBook text-primary">Categories</p></SelectLabel>
+          <SelectItem value="smartphones"><p className="font-camptonBook">Smartphones</p></SelectItem>
+          <SelectItem value="tablets"><p className="font-camptonBook">Tablets</p></SelectItem>
+          <SelectItem value="fitnessTrackers"><p className="font-camptonBook">Fitness Trackers</p></SelectItem>
+          <SelectItem value="headphones"><p className="font-camptonBook">Headphones</p></SelectItem>
+          <SelectItem value="speakers"><p className="font-camptonBook">Speakers</p></SelectItem>
+          <SelectItem value="gamingConsoles"><p className="font-camptonBook">Gaming Consoles</p></SelectItem>
+          <SelectItem value="portableChargers"><p className="font-camptonBook">Portable Chargers</p></SelectItem>
+          <SelectItem value="bluetoothEarphones"><p className="font-camptonBook">Bluetooth Earphones</p></SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

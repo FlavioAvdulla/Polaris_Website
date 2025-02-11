@@ -13,16 +13,16 @@ const Navbar_01 = () => {
     <div className="flex w-[85%] h-auto py-5 mx-auto justify-between">
       <div className="flex gap-7 w-fit">
         <button className="font-camptonLight">
-          <p className="text-[14px]">Track Order</p>
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">Track Order</p>
         </button>
         <button className="font-camptonLight">
-          <p className="text-[14px]">About Us</p>
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">About Us</p>
         </button>
         <button className="font-camptonLight">
-          <p className="text-[14px]">Contact</p>
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">Contact</p>
         </button>
         <button className="font-camptonLight ">
-          <p className="text-[14px]">FAQ</p>
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">FAQ</p>
         </button>
       </div>
       <div className="flex gap-7 items-center">
@@ -32,7 +32,8 @@ const Navbar_01 = () => {
           </i>
           <p className="text-[14px]">
             You can contact us
-            <span className="font-camptonMedium bg-gray-100 rounded-md px-2 py-1 ml-3 text-[14px]">
+            <span className="font-camptonMedium bg-gray-100 rounded-md
+                              text-primary px-2 py-1 ml-3 text-[14px]">
               +355 67 63 11 918
             </span>
           </p>
@@ -44,11 +45,12 @@ const Navbar_01 = () => {
         <button className="font-camptonLight">
           <SelectCurrency />
         </button>
-        <button className="font-camptonLight flex items-center gap-2">
+        <button className="font-camptonLight group flex items-center gap-2">
           <i>
-            <BsBrightnessHigh className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px] " />
+            <BsBrightnessHigh className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px]
+                                          group-hover:text-primary ease-in-out duration-300" />
           </i>
-          <p className="text-[14px]">Light Theme</p>
+          <p className="text-[14px] group-hover:text-primary ease-in-out duration-300">Light Theme</p>
         </button>
       </div>
     </div>

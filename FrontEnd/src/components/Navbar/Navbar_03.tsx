@@ -11,16 +11,27 @@ const Navbar_03 = () => {
       <AllCategories />
       <div className="w-[50%]">
         {/* ============= Navbar Pages ============= */}
-        <ul className="flex justify-between font-camptonBook">
-          <li>Home</li>
-          <li>Shop</li>
-          <li>Laptops & Computers</li>
-          <li>Blog</li>
-          <li>Pages</li>
+        <ul className="flex justify-between">
+          <li className="cursor-pointer ease-in-out duration-300
+                      hover:text-primary active:text-primary">
+                        <p className="font-camptonBook">Home</p></li>
+          <li className="cursor-pointer ease-in-out duration-300
+                      hover:text-primary active:text-primary">
+                        <p className="font-camptonBook">Shop</p></li>
+          <li className="cursor-pointer ease-in-out duration-300
+                      hover:text-primary active:text-primary">
+                        <p className="font-camptonBook">Laptops & Computers</p></li>
+          <li className="cursor-pointer ease-in-out duration-300
+                      hover:text-primary active:text-primary">
+                        <p className="font-camptonBook">Blog</p></li>
+          <li className="cursor-pointer ease-in-out duration-300
+                      hover:text-primary active:text-primary">
+                        <p className="font-camptonBook">Pages</p></li>
         </ul>
       </div>
       {/* ============= best Discounts ============= */}
-      <div className="flex w-auto h-[100%] items-center gap-2">
+      <div className="flex w-auto h-[100%] items-center gap-2
+                      cursor-pointer ease-in-out duration-300 hover:text-primary">
         <i>
           <CiDiscount1 className="text-[20px]" />
         </i>

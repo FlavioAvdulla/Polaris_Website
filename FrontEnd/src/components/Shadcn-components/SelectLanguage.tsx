@@ -18,7 +18,7 @@ export function SelectLanguage() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel><p>Languages</p></SelectLabel>
+          <SelectLabel><p className="font-camptonBook text-primary">Languages</p></SelectLabel>
           <SelectItem value="english"><p>English</p></SelectItem>
           <SelectItem value="hindi"><p>Hindi</p></SelectItem>
           <SelectItem value="french"><p>French</p></SelectItem>

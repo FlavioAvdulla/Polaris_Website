@@ -18,11 +18,11 @@ export function SelectCurrency() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Currency</SelectLabel>
-          <SelectItem value="usd">USD</SelectItem>
-          <SelectItem value="inr">INR</SelectItem>
-          <SelectItem value="eur">EUR</SelectItem>
-          <SelectItem value="myr">MYR</SelectItem>
+          <SelectLabel><p className="font-camptonBook text-primary">Currency</p></SelectLabel>
+          <SelectItem className="hover:bg-primary" value="usd"><p>USD</p></SelectItem>
+          <SelectItem className="hover:bg-primary" value="inr"><p>INR</p></SelectItem>
+          <SelectItem className="hover:bg-primary" value="eur"><p>EUR</p></SelectItem>
+          <SelectItem className="hover:bg-primary" value="myr"><p>MYR</p></SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>
