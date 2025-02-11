@@ -3,7 +3,6 @@ import React from "react";
 import { IoIosArrowForward } from "react-icons/io";
 // Import the product data and image.
 import { productSection_03 } from "../../components/ProductSection/ProductSection";
-import Product_01 from "../../assets/Product_01.jpg"; // Make sure the path to the image is correct
 
 const ProductSection_03 = () => {
   return (

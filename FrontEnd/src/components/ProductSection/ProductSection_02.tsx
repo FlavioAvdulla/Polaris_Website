@@ -4,8 +4,19 @@ import React from "react";
 import { PiShoppingCartLight } from "react-icons/pi";
 
 import { dealsOfTheDay } from "../../components/ProductSection/ProductSection";
+import { useNavigate } from "react-router-dom";
 
 const ProductSection_02 = () => {
+
+  const navigate = useNavigate();
+
+  const handleImageClick = (id) => {
+    console.log(`Image with id ${id} clicked.`)
+    if (id === "1") {
+      navigate("/Product_01") // Update the path here to match the route in your App.js
+    }
+  }
+
   return (
     <div className="flex flex-col w-[85%] mx-auto">
       {/* ============= Deals of the day - left ============= */}
@@ -27,7 +38,7 @@ const ProductSection_02 = () => {
         {/* ============= Product List ============= */}
         {dealsOfTheDay.map((product, index) => (
           <div className="flex flex-col w-[220px] h-auto group relative border-[1px] border-primary
-                          rounded-lg" key={index}>
+                          rounded-lg" key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
             <div className="flex w-[100%] h-[200px] rounded-tl-lg rounded-tr-lg overflow-hidden">
               <img src={product.image} alt={product.title} />
