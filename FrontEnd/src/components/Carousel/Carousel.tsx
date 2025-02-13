@@ -7,7 +7,7 @@ const Carousel = () => {
     <div className='flex w-[85%] h-auto mx-auto gap-5 items-center justify-between
     
                     xs:flex-col
-                    lg:flex-row'>
+                    xl:flex-row'>
       <Carousel_01 />
       <Carousel_02 />
     </div>

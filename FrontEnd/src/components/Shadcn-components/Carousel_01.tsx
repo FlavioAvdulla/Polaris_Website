@@ -45,11 +45,13 @@ export function Carousel_01() {
   }, [api, count]);
 
   return (
-    <div className="mx-auto
+    <div
+      className="mx-auto
                     
                     sm:w-[100%]
                     md:w-[100%]
-                    xl:w-[100%]">
+                    xl:w-[100%]"
+    >
       <Carousel
         setApi={setApi}
         className="w-full flex flex-col"
@@ -67,29 +69,39 @@ export function Carousel_01() {
                     }`}
                 >
                   <div className="flex items-center w-[100%] h-[100%]">
-                    <div className="flex flex-col absolute h-[450px] justify-center
+                    <div
+                      className="flex flex-col absolute h-[450px] justify-center
                     
-                                    sm:w-[60%] sm:py-0 sm:pl-7
-                                    md:w-[60%] md:py-10 md:pl-10
-                                    lg:w-[90%] lg:pl-5
+                                    xs:w-[100%] xs:py-0 xs:pl-7
+                                    sm:w-[80%]
+                                    md:w-[50%] lg:pl-10
                                     xl:w-[60%] xl:py-10 xl:pl-12">
-                      <p className="flex text-white gap-3 items-center">
-                        Exclusive Offer
-                        <span
-                          className="rounded-3xl bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
-                                            hover:bg-transparent hover:scale-110 ease-in-out duration-300"
-                        >
-                          -20% OFF
-                        </span>
-                      </p>
-                      <h1 className="text-white font-camptonBold leading-tight my-3
+                      {/* ============= Exclusive offer ============= */}                
+                      <div className="gap-3
                       
-                                      sm:text-[40px]
-                                      lg:text-[30px]
-                                      xl:text-[40px]">
+                                      
+                                      xs:flex">
+                        <p className="flex text-white gap-3 items-center">
+                          Exclusive Offer
+                        </p>
+                        <div className="w-fit rounded-3xl bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
+                                            hover:bg-transparent hover:scale-110 ease-in-out duration-300">
+                                              <p>-20% OFF</p>
+                                            </div>
+                      </div>
+                      <h1
+                        className="text-white font-camptonBold leading-tight my-3
+                      
+                                      xs:text-[25px]
+                                      sm:text-[30px]
+                                      md:text-[35px]">
                         {product.title}
                       </h1>
-                      <p className="text-white text-[15px] font-camptonLight">
+                      <p className="text-white font-camptonLight
+                      
+                                      xs:text-[13px] xs:w-[70%]
+                                      sm:text-[15px] sm:w-[90%]
+                                      md:w-[100%]">
                         {product.description}
                       </p>
                       <div className="w-auto mt-7">
