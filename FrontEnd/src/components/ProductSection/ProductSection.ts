@@ -187,10 +187,14 @@ export const dealsOfTheDay = [
   {
     _id: "1",
     image: Product_01,
-    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    title: "LENOVO LLEGION 5",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
-    rating: "1.0",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
     reviews: "3 Customer Reviews",
   },
   {

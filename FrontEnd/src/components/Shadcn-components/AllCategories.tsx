@@ -14,7 +14,10 @@ export function AllCategories() {
   return (
     <Select>
       <SelectTrigger className="w-[200px] h-[45px] gap-3 border-none
-                                rounded-md rounded-bl-none rounded-br-none bg-gray-100 font-camptonBook ">
+                                rounded-md rounded-bl-none rounded-br-none bg-gray-100 font-camptonBook
+                                
+                                sm:w-[150px]
+                                lg:w-[200px]">
         <SelectValue placeholder="All Categories"/>
       </SelectTrigger>
       <SelectContent>

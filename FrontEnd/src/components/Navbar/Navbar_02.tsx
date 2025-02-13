@@ -12,14 +12,27 @@ import { PiShoppingCartLight } from "react-icons/pi";
 
 const Navbar_02 = () => {
   return (
-    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between">
-      <img className="w-[110px]" src={Polaris_Logo} alt="Polaris_Logo" />
-      <div className="w-auto h-full flex">
+    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
+                    
+                    xs:gap-5
+                    lg:gap-0">
+      <img className="w-[110px]
+                      
+                      xs:hidden
+                      sm:w-[80px]
+                      " src={Polaris_Logo} alt="Polaris_Logo" />
+      <div className="w-auto h-full flex
+      
+                      ">
         <SearchBarSelect />
         <input
           className="w-[600px] py-3 px-5 appearance-none border-[1px]
                     border-primary border-r-0 outline-none focus:ring-0
-                    focus:bg-white font-camptonLight bg-white"
+                    focus:bg-white font-camptonLight bg-white
+                    
+                    xs:w-[100%]
+                    lg:w-[300px]
+                    xl:w-[600px]"
           type="search"
           id="search"
           name="search"
@@ -33,13 +46,20 @@ const Navbar_02 = () => {
           <IoIosSearch className="text-[20px]" />
         </i>
       </div>
-      <div className="w-auto h-[100%] flex gap-5">
+      <div className="w-auto h-[100%] flex
+      
+                      xs:gap-3
+                      sm:gap-5">
         {/* ============= User ============= */}
         <div className="flex items-center justify-center gap-3">
           <i>
-            <PiUser className="text-[28px]" />
+            <PiUser className="xs:text-[23px]
+                              md:text-[28px]" />
           </i>
-          <div className="flex flex-col">
+          <div className="flex flex-col
+                          
+                          xs:hidden
+                          lg:flex">
             <p className="font-camptonLight text-[13px]">Sign In</p>
             <p className="font-camptonMedium text-[13px]">Account</p>
           </div>
@@ -47,31 +67,50 @@ const Navbar_02 = () => {
         {/* ============= Heart Icon ============= */}
         <div className="relative flex items-center justify-center">
           <i>
-            <SlHeart className="text-[26px]" />
+            <SlHeart className="xs:text-[23px]
+                              md:text-[28px]" />
           </i>
           <div
-            className="absolute top-0 ml-6 mt-1 flex rounded-full w-[18px] h-[18px]
-                bg-primary items-center justify-center"
-          >
-            <p className="text-white text-[10px]">3</p>
+            className="absolute top-0 ml-6 mt-1 flex rounded-full
+                bg-primary items-center justify-center
+                
+                xs:w-[15px] xs:h-[15px]
+                sm:w-[18px] sm:h-[18px]">
+            <p className="text-white
+            
+                            xs:text-[8px]
+                            sm:text-[10px]">3</p>
           </div>
         </div>
 
         {/* ============= Cart Icon ============= */}
         <div className="relative flex items-center justify-center">
           <i>
-            <PiShoppingCartLight className="text-[28px]" />
+            <PiShoppingCartLight className="xs:text-[23px]
+                                            md:text-[28px]" />
           </i>
           <div
-            className="absolute top-0 ml-6 mt-1 flex rounded-full w-[18px] h-[18px]
-                bg-primary items-center justify-center"
+            className="absolute top-0 ml-6 mt-1 flex rounded-full
+                bg-primary items-center justify-center
+                
+                xs:w-[15px] xs:h-[15px]
+                sm:w-[18px] sm:h-[18px]"
           >
-            <p className="text-white text-[10px]">3</p>
+            <p className="text-white
+                            
+                            xs:text-[8px]
+                            sm:text-[10px]">3</p>
           </div>
         </div>
-        <div className="flex flex-col">
-          <p className="font-camptonLight text-[13px]">Total</p>
-          <p className="font-camptonMedium text-[13px]">$0.00</p>
+        <div className="flex flex-col justify-center">
+          <p className="font-camptonLight
+                        
+                        xs:text-[10px]
+                        sm:text-[13px]">Total</p>
+          <p className="font-camptonMedium
+                        
+                        xs:text-[10px]
+                        sm:text-[13px]">$0.00</p>
         </div>
       </div>
     </div>

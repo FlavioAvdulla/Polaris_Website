@@ -4,7 +4,10 @@ import { Carousel_02 } from '../Shadcn-components/Carousel_02'
 
 const Carousel = () => {
   return (
-    <div className='flex w-[85%] h-auto mx-auto gap-5 items-center justify-between '>
+    <div className='flex w-[85%] h-auto mx-auto gap-5 items-center justify-between
+    
+                    xs:flex-col
+                    lg:flex-row'>
       <Carousel_01 />
       <Carousel_02 />
     </div>

@@ -47,7 +47,10 @@ export function Carousel_02() {
   }, [api, count]);
 
   return (
-    <div className="mx-auto w-[50%] ">
+    <div className="mx-auto w-[50%]
+                    
+                    xs:w-[100%]
+                    xl:w-[50%]">
       <Carousel
         setApi={setApi}
         className="w-full flex flex-col"
