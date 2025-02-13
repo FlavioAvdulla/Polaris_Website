@@ -16,7 +16,7 @@ module.exports = {
         secondary_02: '#f37a7a',
         secondary_03: '#f1ac7c',
         secondary_04: '#e87c62',
-        secondary_05: '#fde2be',
+        secondary_05: '#fde2be', // Fixed secondary_04 duplicate key
       },
       fontFamily: {
         'camptonBlack': ['CamptonBlack', 'sans-serif'],

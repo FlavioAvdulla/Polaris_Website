@@ -1,139 +1,101 @@
-import * as React from "react";
+import React from "react";
 
-import { Card, CardContent } from "@/components/ui/card";
-import { carousel_01 } from "../../components/ProductSection/ProductSection";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel";
+// Shadcn
+import { SelectLanguage } from "../Shadcn-components/SelectLanguage";
+import { SelectCurrency } from "../Shadcn-components/SelectCurrency";
 
 // React Icons
-import { IoIosArrowForward } from "react-icons/io";
+import { BsBrightnessHigh } from "react-icons/bs";
+import { BsPhone } from "react-icons/bs";
 
-export function Carousel_01() {
-  const [api, setApi] = React.useState<CarouselApi>();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [current, setCurrent] = React.useState(0);
-  const [count, setCount] = React.useState(0);
-  const [isGrabbing, setIsGrabbing] = React.useState(false);
-
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-
-    const interval = setInterval(() => {
-      if (api.selectedScrollSnap() + 1 === count) {
-        api.scrollTo(0);
-      } else {
-        api.scrollNext();
-      }
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, [api, count]);
-
+const Navbar_01: React.FC = () => {
   return (
     <div
-      className="mx-auto
-                    
-                    sm:w-[100%]
-                    md:w-[100%]
-                    xl:w-[100%]"
+      className="flex w-[85%] h-auto py-5 mx-auto justify-between flex-wrap
+    
+                    xs:flex-col xs:items-center xs:gap-3
+                    lg:flex-row
+                    xl:flex-row
+                    "
     >
-      <Carousel
-        setApi={setApi}
-        className="w-full flex flex-col"
-        onMouseDown={() => setIsGrabbing(true)}
-        onMouseUp={() => setIsGrabbing(false)}
-      >
-        <CarouselContent>
-          {carousel_01.map((product, index) => (
-            <CarouselItem key={index}>
-              <Card className="border-none shadow-none">
-                <CardContent
-                  className={`flex aspect-square items-center justify-center m-0 p-0 h-[400px]
-                    rounded-xl overflow-hidden bg-slate-300 ${
-                      isGrabbing ? "cursor-grabbing" : "cursor-grab"
-                    }`}
-                >
-                  <div className="flex items-center w-[100%] h-[100%]">
-                    <div
-                      className="flex flex-col absolute h-[450px] justify-center
-                    
-                                    xs:w-[100%] xs:py-0 xs:pl-7
-                                    sm:w-[80%]
-                                    md:w-[50%] lg:pl-10
-                                    xl:w-[60%] xl:py-10 xl:pl-12">
-                      {/* ============= Exclusive offer ============= */}                
-                      <div className="gap-3
-                      
-                                      
-                                      xs:flex">
-                        <p className="flex text-white gap-3 items-center">
-                          Exclusive Offer
-                        </p>
-                        <div className="w-fit rounded-3xl bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
-                                            hover:bg-transparent hover:scale-110 ease-in-out duration-300">
-                                              <p>-20% OFF</p>
-                                            </div>
-                      </div>
-                      <h1
-                        className="text-white font-camptonBold leading-tight my-3
-                      
-                                      xs:text-[25px]
-                                      sm:text-[30px]
-                                      md:text-[35px]">
-                        {product.title}
-                      </h1>
-                      <p className="text-white font-camptonLight
-                      
-                                      xs:text-[13px] xs:w-[70%]
-                                      sm:text-[15px] sm:w-[90%]
-                                      md:w-[100%]">
-                        {product.description}
-                      </p>
-                      <div className="w-auto mt-7">
-                        <button
-                          className=" flex items-center justify-center bg-primary gap-3 border-[1px] border-white text-white px-4 py-2 rounded-3xl
-                                          hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300"
-                        >
-                          SHOW NOW
-                          <i>
-                            <IoIosArrowForward />
-                          </i>
-                        </button>
-                      </div>
-                    </div>
+      <div className="flex gap-7 w-fit flex-wrap">
+        <button className="font-camptonLight">
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+            Track Order
+          </p>
+        </button>
+        <button className="font-camptonLight">
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+            About Us
+          </p>
+        </button>
+        <button className="font-camptonLight">
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+            Contact
+          </p>
+        </button>
+        <button className="font-camptonLight">
+          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+            FAQ
+          </p>
+        </button>
+      </div>
+      <div
+        className="w-[45%] flex items-center justify-between 
 
-                    <img
-                      className="w-[100%] h-[100%] object-cover"
-                      src={product.image}
-                      alt={product.title}
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        {/* <CarouselPrevious /> */}
-        {/* <CarouselNext /> */}
-      </Carousel>
-      {/* <div className="py-2 text-center text-sm text-muted-foreground">
-        Slide {current} of {count}
-      </div> */}
+                   xs:gap-0 xs:w-[100%]
+                   md:w-[60%]
+                   lg:w-[45%]
+                   xl:w-[50%]
+                   ">
+        <button className="font-camptonLight flex gap-2 items-center ">
+          <i className="
+
+                        ">
+            <BsPhone className="text-[15px]"/>
+          </i>
+          <div className="flex items-center
+          
+                          lg:flex-col lg:gap-2
+                          xl:flex-row">
+          <p className="text-[14px]
+
+                        xs:hidden
+                        xl:flex">
+            You can contact us
+          </p>
+            <p
+              className="font-camptonMedium bg-gray-100 rounded-md
+                              text-primary px-2 py-1 
+                              
+                              xs:text-[12px]
+                              md:text-[14px]">
+
+              +355 (0) 67 63 11 918
+            </p>
+            </div>
+        </button>
+        <div className="h-[60%] w-[1px]" />
+        <button className="font-camptonLight">
+          <SelectLanguage />
+        </button>
+        <button className="font-camptonLight">
+          <SelectCurrency />
+        </button>
+      </div>
+      <button className="font-camptonLight group flex items-center gap-2">
+        <i>
+          <BsBrightnessHigh
+            className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px]
+                                          group-hover:text-primary ease-in-out duration-300"
+          />
+        </i>
+        <p className="text-[14px] group-hover:text-primary ease-in-out duration-300">
+          Light Theme
+        </p>
+      </button>
     </div>
   );
-}
+};
+
+export default Navbar_01;
