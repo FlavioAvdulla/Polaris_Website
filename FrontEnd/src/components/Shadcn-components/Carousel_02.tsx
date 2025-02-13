@@ -62,9 +62,13 @@ export function Carousel_02() {
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
-                  className={`flex aspect-square items-center justify-center m-0 p-0 h-[400px]
-                    rounded-xl overflow-hidden bg-slate-300 ${
-                      isGrabbing ? "cursor-grabbing" : "cursor-grab"
+                  className={`flex aspect-square items-center justify-center m-0 p-0
+                    rounded-xl overflow-hidden bg-slate-300
+                    
+                    xs:h-auto
+                    md:h-[400px]
+
+                    ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
                     }`}
                 >
                   <div className="flex items-center justify-center w-[100%] h-[100%]">

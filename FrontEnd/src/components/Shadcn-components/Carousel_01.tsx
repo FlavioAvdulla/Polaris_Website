@@ -48,10 +48,7 @@ export function Carousel_01() {
     <div
       className="mx-auto
                     
-                    sm:w-[100%]
-                    md:w-[100%]
-                    xl:w-[100%]"
-    >
+                    xs:w-[100%]">
       <Carousel
         setApi={setApi}
         className="w-full flex flex-col"
@@ -63,16 +60,20 @@ export function Carousel_01() {
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
-                  className={`flex aspect-square items-center justify-center m-0 p-0 h-[400px]
-                    rounded-xl overflow-hidden bg-slate-300 ${
-                      isGrabbing ? "cursor-grabbing" : "cursor-grab"
+                  className={`flex aspect-square items-center justify-center m-0 p-0 
+                    rounded-xl overflow-hidden
+                    
+                    xs:h-[400px]
+                    md:h-[400px]
+
+                    ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
                     }`}
                 >
                   <div className="flex items-center w-[100%] h-[100%]">
                     <div
-                      className="flex flex-col absolute h-[450px] justify-center
+                      className="flex flex-col absolute h-auto justify-center
                     
-                                    xs:w-[100%] xs:py-0 xs:pl-7
+                                    xs:w-[100%] xs:py-0 xs:pl-7 xs:mb-[150px]
                                     sm:w-[80%]
                                     md:w-[50%] lg:pl-10
                                     xl:w-[60%] xl:py-10 xl:pl-12">
@@ -81,37 +82,51 @@ export function Carousel_01() {
                       
                                       
                                       xs:flex">
-                        <p className="flex text-white gap-3 items-center">
+                        <p className="flex text-white gap-3 items-center
+                                      
+                                      xs:text-[13px]
+                                      md:text-[15px]">
                           Exclusive Offer
                         </p>
-                        <div className="w-fit rounded-3xl bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
-                                            hover:bg-transparent hover:scale-110 ease-in-out duration-300">
-                                              <p>-20% OFF</p>
+                        <div className="w-fit rounded-3xl bg-primary border-[1px] cursor-pointer
+                                      border-white text-white items-center justify-center
+                                        hover:bg-transparent hover:scale-110 ease-in-out duration-300">
+                                              <p className="
+                                              
+                                                            xs:text-[12px] xs:px-4 xs:py-[1px]
+                                                            md:text-[15px] md:px-6 md:py-[3px]">-20% OFF</p>
                                             </div>
                       </div>
                       <h1
                         className="text-white font-camptonBold leading-tight my-3
                       
-                                      xs:text-[25px]
+                                      xs:text-[22px]
                                       sm:text-[30px]
                                       md:text-[35px]">
                         {product.title}
                       </h1>
                       <p className="text-white font-camptonLight
                       
-                                      xs:text-[13px] xs:w-[70%]
-                                      sm:text-[15px] sm:w-[90%]
+                                      xs:text-[10px] xs:w-[70%]
+                                      sm:text-[13px] sm:w-[90%]
                                       md:w-[100%]">
                         {product.description}
                       </p>
                       <div className="w-auto mt-7">
                         <button
-                          className=" flex items-center justify-center bg-primary gap-3 border-[1px] border-white text-white px-4 py-2 rounded-3xl
-                                          hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300"
+                          className=" flex items-center justify-center bg-primary border-[1px] border-white text-white rounded-3xl
+                                          hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                                          
+                                          xs:gap-2 xs:px-3 xs:py-1
+                                          md:gap-3 md:px-4 md:py-2"
                         >
-                          SHOW NOW
+                          <p className="
+                                       xs:text-[10px]
+                                       md:text-[15px]">SHOW NOW</p>
                           <i>
-                            <IoIosArrowForward />
+                            <IoIosArrowForward className="
+                                                          xs:text-[10px]
+                                                          md:text-[15px]"/>
                           </i>
                         </button>
                       </div>

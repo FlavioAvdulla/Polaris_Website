@@ -11,10 +11,10 @@ import { BsPhone } from "react-icons/bs";
 const Navbar_01 = () => {
   return (
     <div
-      className="flex w-[85%] h-auto py-5 mx-auto justify-between
+      className="flex  h-auto py-5 mx-auto justify-between
     
                     xs:flex-col xs:items-center xs:gap-3 xs:w-[100%]
-                    lg:flex-row
+                    lg:flex-row lg:w-[85%]
                     xl:flex-row
                     "
     >
@@ -55,13 +55,15 @@ const Navbar_01 = () => {
       <div
         className="w-[45%] flex items-center justify-between
 
-                   xs:gap-0 xs:w-[75%]
+                   xs:gap-0 xs:w-[85%]
                    sm:w-[80%]
-                   md:w-[60%]
-                   lg:w-[45%]
-                   xl:w-[50%]
+                   md:w-[60%] 
+                   lg:w-[55%]
+                   xl:w-[60%]
                    ">
-        <button className="font-camptonLight flex gap-2 items-center ">
+        <button className="font-camptonLight flex items-center 
+                            
+                            md:gap-2 bg">
           <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-3xl
                           sm:hidden">
             <BsPhone className="text-[15px]"/>
@@ -95,18 +97,22 @@ const Navbar_01 = () => {
         <button className="font-camptonLight">
           <SelectCurrency />
         </button>
-      </div>
       <button className="font-camptonLight group flex items-center gap-2">
         <i>
           <BsBrightnessHigh
             className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px]
-                                          group-hover:text-primary ease-in-out duration-300"
+                       group-hover:text-primary ease-in-out duration-300
+                       
+                       "
           />
         </i>
-        <p className="text-[14px] group-hover:text-primary ease-in-out duration-300">
+        <p className="text-[14px] group-hover:text-primary ease-in-out duration-300
+                      xs:hidden
+                      lg:flex">
           Light Theme
         </p>
       </button>
+      </div>
     </div>
   );
 };
