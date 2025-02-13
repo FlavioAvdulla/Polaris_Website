@@ -10,9 +10,13 @@ const Navbar_03 = () => {
       className="bg-white bg-opacity-50 backdrop-blur-[15px] sticky
                       border-b-[1px] border-b-gray-400 mb-20 top-0 z-20"
     >
-      <div className="flex w-[85%] h-auto mx-auto items-center justify-between py-5">
+      <div className="flex w-[85%] h-auto mx-auto items-center justify-between py-5
+                      sm:gap-5
+                      md:gap-0">
         <AllCategories />
-        <div className="w-[50%]">
+        <div className="
+                        xs:w-auto
+                        lg:w-[50%]">
           {/* ============= Navbar Pages ============= */}
           <ul
             className="flex justify-between
@@ -57,13 +61,18 @@ const Navbar_03 = () => {
           className="flex w-auto h-[100%] items-center gap-2
                       cursor-pointer ease-in-out duration-300 hover:text-primary
                       
-                      xs:hidden
+                      xs:w-auto
                       lg:flex"
         >
-          <i>
-            <CiDiscount1 className="text-[20px]" />
+          <i className="xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-3xl
+                          sm:bg-transparent sm:p-0 sm:text-black sm:rounded">
+            <CiDiscount1 className="sm:text-[20px]" />
           </i>
-          <p className="font-camptonBook">Best Discounts</p>
+          <p className="font-camptonBook
+          
+                        xs:hidden
+                        sm:flex
+                        md:flex md:text-[10px]">Best Discounts</p>
         </div>
       </div>
     </div>

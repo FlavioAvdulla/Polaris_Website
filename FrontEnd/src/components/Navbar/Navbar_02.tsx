@@ -53,7 +53,7 @@ const Navbar_02 = () => {
         {/* ============= User ============= */}
         <div className="flex items-center justify-center gap-3">
           <i>
-            <PiUser className="xs:text-[23px]
+            <PiUser className="xs:text-[17px]
                               md:text-[28px]" />
           </i>
           <div className="flex flex-col
@@ -67,15 +67,16 @@ const Navbar_02 = () => {
         {/* ============= Heart Icon ============= */}
         <div className="relative flex items-center justify-center">
           <i>
-            <SlHeart className="xs:text-[23px]
+            <SlHeart className="xs:text-[17px]
                               md:text-[28px]" />
           </i>
           <div
             className="absolute top-0 ml-6 mt-1 flex rounded-full
                 bg-primary items-center justify-center
                 
-                xs:w-[15px] xs:h-[15px]
-                sm:w-[18px] sm:h-[18px]">
+                xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
+                md:ml-6 md:mt-1">
             <p className="text-white
             
                             xs:text-[8px]
@@ -86,15 +87,16 @@ const Navbar_02 = () => {
         {/* ============= Cart Icon ============= */}
         <div className="relative flex items-center justify-center">
           <i>
-            <PiShoppingCartLight className="xs:text-[23px]
+            <PiShoppingCartLight className="xs:text-[17px]
                                             md:text-[28px]" />
           </i>
           <div
-            className="absolute top-0 ml-6 mt-1 flex rounded-full
+            className="absolute top-0 flex rounded-full
                 bg-primary items-center justify-center
                 
-                xs:w-[15px] xs:h-[15px]
-                sm:w-[18px] sm:h-[18px]"
+                xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
+                md:ml-6 md:mt-1"
           >
             <p className="text-white
                             

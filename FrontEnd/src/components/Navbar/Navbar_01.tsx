@@ -20,22 +20,34 @@ const Navbar_01 = () => {
     >
       <div className="flex gap-7 w-fit">
         <button className="font-camptonLight">
-          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+          <p className="hover:text-primary ease-in-out duration-300
+          
+                        xs:text-[10px]
+                        md:text-[14px]">
             Track Order
           </p>
         </button>
         <button className="font-camptonLight">
-          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+          <p className="hover:text-primary ease-in-out duration-300
+          
+                        xs:text-[10px]
+                        md:text-[14px]">
             About Us
           </p>
         </button>
         <button className="font-camptonLight">
-          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+          <p className="hover:text-primary ease-in-out duration-300
+          
+                        xs:text-[10px]
+                        md:text-[14px]">
             Contact
           </p>
         </button>
         <button className="font-camptonLight">
-          <p className="text-[14px] hover:text-primary ease-in-out duration-300">
+          <p className="hover:text-primary ease-in-out duration-300
+          
+                        xs:text-[10px]
+                        md:text-[14px]">
             FAQ
           </p>
         </button>
@@ -43,15 +55,15 @@ const Navbar_01 = () => {
       <div
         className="w-[45%] flex items-center justify-between 
 
-                   xs:gap-0 xs:w-[100%]
+                   xs:gap-0 xs:w-[85%]
+                   sm:w-[90%]
                    md:w-[60%]
                    lg:w-[45%]
                    xl:w-[50%]
                    ">
         <button className="font-camptonLight flex gap-2 items-center ">
-          <i className="
-                        
-                        ">
+          <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-3xl
+                          sm:hidden">
             <BsPhone className="text-[15px]"/>
           </i>
           <div className="flex items-center
@@ -68,7 +80,8 @@ const Navbar_01 = () => {
               className="font-camptonMedium bg-gray-100 rounded-md
                               text-primary px-2 py-1 
                               
-                              xs:text-[12px]
+                              xs:hidden
+                              sm:flex sm:text-[10px]
                               md:text-[14px]">
 
               +355 (0) 67 63 11 918
