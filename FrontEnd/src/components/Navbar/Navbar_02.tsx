@@ -24,13 +24,18 @@ const Navbar_02 = () => {
       <div className="w-auto h-full flex
       
                       ">
+                        <div className="w-auto h-auto
+                                        xs:hidden
+                                        sm:flex">
         <SearchBarSelect />
+        </div>
         <input
           className="w-[600px] py-3 px-5 appearance-none border-[1px]
                     border-primary border-r-0 outline-none focus:ring-0
                     focus:bg-white font-camptonLight bg-white
                     
-                    xs:w-[100%]
+                    xs:w-[100%] xs:rounded-tl-md xs:rounded-bl-md
+                    sm:rounded-tl-none sm:rounded-bl-none
                     lg:w-[300px]
                     xl:w-[600px]"
           type="search"
@@ -40,9 +45,8 @@ const Navbar_02 = () => {
         ></input>
         <i
           className="bg-white text-primary text-[30px] p-3 border-primary
-                        border-[1px] border-l-0 rounded-tr-md rounded-br-md
-                        items-center justify-center flex"
-        >
+                        border-[1px] border-l-0 items-center justify-center flex
+                        rounded-tr-md rounded-br-md">
           <IoIosSearch className="text-[20px]" />
         </i>
       </div>
@@ -104,7 +108,10 @@ const Navbar_02 = () => {
                             sm:text-[10px]">3</p>
           </div>
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex-col justify-center
+                        
+                        xs:hidden
+                        md:flex">
           <p className="font-camptonLight
                         
                         xs:text-[10px]

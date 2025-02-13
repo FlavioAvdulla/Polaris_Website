@@ -13,7 +13,7 @@ const Navbar_01 = () => {
     <div
       className="flex w-[85%] h-auto py-5 mx-auto justify-between
     
-                    xs:flex-col xs:items-center xs:gap-3
+                    xs:flex-col xs:items-center xs:gap-3 xs:w-[100%]
                     lg:flex-row
                     xl:flex-row
                     "
@@ -22,7 +22,7 @@ const Navbar_01 = () => {
         <button className="font-camptonLight">
           <p className="hover:text-primary ease-in-out duration-300
           
-                        xs:text-[10px]
+                        xs:text-[12px]
                         md:text-[14px]">
             Track Order
           </p>
@@ -30,7 +30,7 @@ const Navbar_01 = () => {
         <button className="font-camptonLight">
           <p className="hover:text-primary ease-in-out duration-300
           
-                        xs:text-[10px]
+                        xs:text-[12px]
                         md:text-[14px]">
             About Us
           </p>
@@ -38,7 +38,7 @@ const Navbar_01 = () => {
         <button className="font-camptonLight">
           <p className="hover:text-primary ease-in-out duration-300
           
-                        xs:text-[10px]
+                        xs:text-[12px]
                         md:text-[14px]">
             Contact
           </p>
@@ -46,17 +46,17 @@ const Navbar_01 = () => {
         <button className="font-camptonLight">
           <p className="hover:text-primary ease-in-out duration-300
           
-                        xs:text-[10px]
+                        xs:text-[12px]
                         md:text-[14px]">
             FAQ
           </p>
         </button>
       </div>
       <div
-        className="w-[45%] flex items-center justify-between 
+        className="w-[45%] flex items-center justify-between
 
-                   xs:gap-0 xs:w-[85%]
-                   sm:w-[90%]
+                   xs:gap-0 xs:w-[75%]
+                   sm:w-[80%]
                    md:w-[60%]
                    lg:w-[45%]
                    xl:w-[50%]
