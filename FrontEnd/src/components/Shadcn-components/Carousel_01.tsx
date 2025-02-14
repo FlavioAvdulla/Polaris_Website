@@ -73,9 +73,10 @@ export function Carousel_01() {
                     <div
                       className="flex flex-col absolute h-auto justify-center
                     
-                                    xs:w-[100%] xs:py-0 xs:pl-7 xs:mb-[150px] sm:mb-0
-                                    sm:w-[80%]
-                                    md:w-[50%] lg:pl-10
+                                    xs:w-[100%] xs:py-0 xs:pl-7 xs:mb-[150px] 
+                                    sm:w-[80%] sm:mb-0
+                                    md:w-[50%]
+                                    lg:pl-10
                                     xl:w-[60%] xl:py-10 xl:pl-12">
                       {/* ============= Exclusive offer ============= */}                
                       <div className="gap-3
@@ -107,7 +108,7 @@ export function Carousel_01() {
                       </h1>
                       <p className="text-white font-camptonLight
                       
-                                      xs:text-[10px] xs:w-[70%]
+                                      xs:text-[10px] xs:w-[60%]
                                       sm:text-[13px] sm:w-[90%]
                                       md:w-[100%]">
                         {product.description}

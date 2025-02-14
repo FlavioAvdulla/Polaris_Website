@@ -11,7 +11,7 @@ import { BsPhone } from "react-icons/bs";
 const Navbar_01 = () => {
   return (
     <div
-      className="flex  h-auto py-5 mx-auto justify-between
+      className="flex h-auto py-5 mx-auto justify-between
     
                     xs:flex-col xs:items-center xs:gap-3 xs:w-[100%]
                     lg:flex-row lg:w-[85%]
@@ -19,7 +19,7 @@ const Navbar_01 = () => {
                     "
     >
       <div className="flex gap-7 w-fit">
-        <button className="font-camptonLight">
+        <button className="font-camptonBook">
           <p className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
@@ -27,7 +27,7 @@ const Navbar_01 = () => {
             Track Order
           </p>
         </button>
-        <button className="font-camptonLight">
+        <button className="font-camptonBook">
           <p className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
@@ -35,7 +35,7 @@ const Navbar_01 = () => {
             About Us
           </p>
         </button>
-        <button className="font-camptonLight">
+        <button className="font-camptonBook">
           <p className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
@@ -43,7 +43,7 @@ const Navbar_01 = () => {
             Contact
           </p>
         </button>
-        <button className="font-camptonLight">
+        <button className="font-camptonBook">
           <p className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]

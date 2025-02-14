@@ -38,7 +38,7 @@ const BenefitsPackage = () => {
                       md:text-[14px] 
                       lg:text-[17px]
                        ">{product.title}</h1>
-        <p className="text-gray-500 font-camptonLight w-[80%]
+        <p className="text-gray-500 font-camptonBook w-[80%]
                         
                         xs:text-[10px]
                         md:text-[12px]
