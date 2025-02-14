@@ -73,7 +73,7 @@ export function Carousel_01() {
                     <div
                       className="flex flex-col absolute h-auto justify-center
                     
-                                    xs:w-[100%] xs:py-0 xs:pl-7 xs:mb-[150px]
+                                    xs:w-[100%] xs:py-0 xs:pl-7 xs:mb-[150px] sm:mb-0
                                     sm:w-[80%]
                                     md:w-[50%] lg:pl-10
                                     xl:w-[60%] xl:py-10 xl:pl-12">

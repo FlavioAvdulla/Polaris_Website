@@ -1,106 +1,51 @@
 import React from "react";
 
-// React Icons
-import { CiMedal } from "react-icons/ci";
-import { CiDeliveryTruck } from "react-icons/ci";
-import { CiWallet } from "react-icons/ci";
-import { PiHandbagSimpleLight } from "react-icons/pi";
+
+
+
+// Import Data
+import { benefits } from "../../components/ProductSection/ProductSection";
 
 const BenefitsPackage = () => {
   return (
-    <div className="flex w-[85%] h-auto mx-auto items-center justify-between my-20">
+    <div className="w-[85%] h-auto mx-auto items-center justify-between my-20
+    
+                    xs:grid xs:grid-cols-2
+                    md:grid-cols-4">
       {/* ============= Benefit 1 ============= */}
-      <div className="flex flex-col items-center text-center">
+      {benefits.map((product, index) => (
+
+      
+      <div className="flex flex-col items-center text-center
+      
+                      xs:mb-5
+                      md:mb-0" key={index}>
         <div className="flex items-center justify-center bg-gray-100
-                        rounded-[15px] mb-6
+                         
                         
-                        md:w-[120px] md:h-[120px]
+                        xs:w-[80px] xs:h-[80px] xs:rounded-[8px] xs:mb-3
+                        md:w-[120px] md:h-[120px] md:rounded-[15px] md:mb-6
                         lg:w-[150px] lg:h-[150px]">
-          <i><CiMedal className="text-gray-500
+          <i><product.image className="text-gray-500
           
+                                    xs:text-[40px]
                                     md:text-[55px]
                                     lg:text-[65px]"/></i>
         </div>
         <h1 className="font-camptonMedium
                       
+                      xs:text-[11px]
                       md:text-[14px] 
                       lg:text-[17px]
-                       ">Online Support 24/7</h1>
+                       ">{product.title}</h1>
         <p className="text-gray-500 font-camptonLight w-[80%]
                         
+                        xs:text-[10px]
                         md:text-[12px]
                         lg:text-[14px]
-                        ">Support online 24 hours a day.</p>
+                        ">{product.description}</p>
       </div>
-      {/* ============= Benefit 1 ============= */}
-      <div className="flex flex-col items-center text-center">
-        <div className="flex items-center justify-center bg-gray-100
-                        rounded-[15px] mb-6
-                        
-                        md:w-[120px] md:h-[120px]
-                        lg:w-[150px] lg:h-[150px]">
-          <i><CiMedal className="text-gray-500
-          
-                                    md:text-[55px]
-                                    lg:text-[65px]"/></i>
-        </div>
-        <h1 className="font-camptonMedium
-                      
-                      md:text-[14px] 
-                      lg:text-[17px]
-                       ">Online Support 24/7</h1>
-        <p className="text-gray-500 font-camptonLight w-[80%]
-                        
-                        md:text-[12px]
-                        lg:text-[14px]
-                        ">Support online 24 hours a day.</p>
-      </div>
-      {/* ============= Benefit 1 ============= */}
-      <div className="flex flex-col items-center text-center">
-        <div className="flex items-center justify-center bg-gray-100
-                        rounded-[15px] mb-6
-                        
-                        md:w-[120px] md:h-[120px]
-                        lg:w-[150px] lg:h-[150px]">
-          <i><CiMedal className="text-gray-500
-          
-                                    md:text-[55px]
-                                    lg:text-[65px]"/></i>
-        </div>
-        <h1 className="font-camptonMedium
-                      
-                      md:text-[14px] 
-                      lg:text-[17px]
-                       ">Online Support 24/7</h1>
-        <p className="text-gray-500 font-camptonLight w-[80%]
-                        
-                        md:text-[12px]
-                        lg:text-[14px]
-                        ">Support online 24 hours a day.</p>
-      </div>
-      {/* ============= Benefit 1 ============= */}
-      <div className="flex flex-col items-center text-center">
-        <div className="flex items-center justify-center bg-gray-100
-                        rounded-[15px] mb-6
-                        
-                        md:w-[120px] md:h-[120px]
-                        lg:w-[150px] lg:h-[150px]">
-          <i><CiMedal className="text-gray-500
-          
-                                    md:text-[55px]
-                                    lg:text-[65px]"/></i>
-        </div>
-        <h1 className="font-camptonMedium
-                      
-                      md:text-[14px] 
-                      lg:text-[17px]
-                       ">Online Support 24/7</h1>
-        <p className="text-gray-500 font-camptonLight w-[80%]
-                        
-                        md:text-[12px]
-                        lg:text-[14px]
-                        ">Support online 24 hours a day.</p>
-      </div>
+     ))}
     </div>
   );
 };

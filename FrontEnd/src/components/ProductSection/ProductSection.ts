@@ -18,6 +18,39 @@ import Slider_05 from "../../assets/images/Sliders/Slider_05.jpg";
 import Slider_06 from "../../assets/images/Sliders/Slider_06.jpg";
 import Slider_07 from "../../assets/images/Sliders/Slider_07.jpg";
 
+// React Icons
+import { CiMedal } from "react-icons/ci";
+import { CiDeliveryTruck } from "react-icons/ci";
+import { CiWallet } from "react-icons/ci";
+import { PiHandbagSimpleLight } from "react-icons/pi";
+
+
+export const benefits = [
+  {
+    _id: "1",
+    image: CiMedal,
+    title: "Online Support 24/7",
+    description: "Support online 24 hours a day.",
+  },
+  {
+    _id: "2",
+    image: CiDeliveryTruck,
+    title: "Online Support 24/7",
+    description: "Support online 24 hours a day.",
+  },
+  {
+    _id: "3",
+    image: CiWallet,
+    title: "Online Support 24/7",
+    description: "Support online 24 hours a day.",
+  },
+  {
+    _id: "4",
+    image: PiHandbagSimpleLight,
+    title: "Online Support 24/7",
+    description: "Support online 24 hours a day.",
+  },
+];
 
 export const productSection_01 = [
   {
