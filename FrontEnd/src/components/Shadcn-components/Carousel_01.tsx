@@ -106,7 +106,7 @@ export function Carousel_01() {
                                       md:text-[35px]">
                         {product.title}
                       </h1>
-                      <p className="text-white font-camptonLight
+                      <p className="text-white font-camptonBook
                       
                                       xs:text-[10px] xs:w-[70%]
                                       sm:text-[13px] sm:w-[90%]

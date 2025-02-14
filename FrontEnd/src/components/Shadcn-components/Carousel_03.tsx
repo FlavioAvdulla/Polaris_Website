@@ -76,7 +76,7 @@ export function Carousel_03() {
                       <h1 className="text-[40px] text-white font-camptonBold leading-tight my-3">
                         {product.title}
                       </h1>
-                      <p className="text-white text-[15px] font-camptonLight">
+                      <p className="text-white text-[15px] font-camptonBook">
                         {product.description}
                       </p>
                       <div className="w-auto mt-7">

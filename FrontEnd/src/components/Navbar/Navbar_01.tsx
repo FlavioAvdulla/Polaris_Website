@@ -61,7 +61,7 @@ const Navbar_01 = () => {
                    lg:w-[55%]
                    xl:w-[60%]
                    ">
-        <button className="font-camptonLight flex items-center 
+        <button className="font-camptonBook flex items-center 
                             
                             md:gap-2 bg">
           <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-3xl
@@ -91,13 +91,13 @@ const Navbar_01 = () => {
             </div>
         </button>
         <div className="h-[60%] w-[1px]" />
-        <button className="font-camptonLight">
+        <button className="font-camptonBook">
           <SelectLanguage />
         </button>
-        <button className="font-camptonLight">
+        <button className="font-camptonBook">
           <SelectCurrency />
         </button>
-      <button className="font-camptonLight group flex items-center gap-2">
+      <button className="font-camptonBook group flex items-center gap-2">
         <i>
           <BsBrightnessHigh
             className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px]

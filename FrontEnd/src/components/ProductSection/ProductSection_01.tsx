@@ -61,7 +61,7 @@ const ProductSection_01 = () => {
             {/* ============= Stars ============= */}
             <div className="flex gap-2">
               {getStars(product.rating)}
-              <p className="font-camptonLight
+              <p className="font-camptonBook
                             md:text-[12px]
                             lg:text-[15px]">
                 ({product.rating})
@@ -94,7 +94,7 @@ const ProductSection_01 = () => {
               </i>
             </div>
             <div className="flex justify-between items-center">
-              <p className="font-camptonLight flex
+              <p className="font-camptonBook flex
               
                             xs:text-[12px]
                             lg:text-[15px]">
@@ -106,7 +106,7 @@ const ProductSection_01 = () => {
                   &nbsp;&nbsp;{product.available}
                 </span>
               </p>
-              <p className="text-[15px] font-camptonLight flex
+              <p className="text-[15px] font-camptonBook flex
               
                             xs:text-[12px]
                             lg:text-[15px]">
@@ -116,7 +116,7 @@ const ProductSection_01 = () => {
                 </span>
               </p>
             </div>
-            <p className="font-camptonLight
+            <p className="font-camptonBook
             
                           xs:text-[8px]
                           lg:text-[15px]">

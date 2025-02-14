@@ -46,7 +46,7 @@ const ProductSection_05 = () => {
               {/* ============= Stars ============= */}
               <div className="flex gap-2 items-center">
                 {getStars(product.rating)}
-                <p className="text-[13px] font-camptonLight">
+                <p className="text-[13px] font-camptonBook">
                   ({product.rating})
                 </p>
               </div>

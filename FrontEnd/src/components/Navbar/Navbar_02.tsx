@@ -33,7 +33,7 @@ const Navbar_02 = () => {
         <input
           className="w-[600px] py-3 px-5 appearance-none border-[1px]
                     border-primary border-r-0 outline-none focus:ring-0
-                    focus:bg-white font-camptonLight bg-white
+                    focus:bg-white font-camptonBook bg-white
                     
                     xs:w-[100%] xs:rounded-tl-md xs:rounded-bl-md
                     sm:rounded-tl-none sm:rounded-bl-none
@@ -65,7 +65,7 @@ const Navbar_02 = () => {
                           
                           xs:hidden
                           lg:flex">
-            <p className="font-camptonLight text-[13px]">Sign In</p>
+            <p className="font-camptonBook text-[13px]">Sign In</p>
             <p className="font-camptonMedium text-[13px]">Account</p>
           </div>
         </div>
@@ -113,7 +113,7 @@ const Navbar_02 = () => {
                         
                         xs:hidden
                         md:flex">
-          <p className="font-camptonLight
+          <p className="font-camptonBook
                         
                         xs:text-[10px]
                         sm:text-[13px]">Total</p>
