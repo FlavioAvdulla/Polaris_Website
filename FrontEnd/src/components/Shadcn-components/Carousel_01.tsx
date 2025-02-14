@@ -101,14 +101,14 @@ export function Carousel_01() {
                       <h1
                         className="text-white font-camptonBold leading-tight my-3
                       
-                                      xs:text-[22px]
+                                      xs:text-[22px] xs:w-[80%]
                                       sm:text-[30px]
                                       md:text-[35px]">
                         {product.title}
                       </h1>
                       <p className="text-white font-camptonLight
                       
-                                      xs:text-[10px] xs:w-[60%]
+                                      xs:text-[10px] xs:w-[70%]
                                       sm:text-[13px] sm:w-[90%]
                                       md:w-[100%]">
                         {product.description}
