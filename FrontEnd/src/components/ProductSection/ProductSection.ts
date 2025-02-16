@@ -220,7 +220,7 @@ export const dealsOfTheDay = [
   {
     _id: "1",
     image: Product_01,
-    title: "LENOVO LLEGION 5",
+    title: "Sony A7 III Mirrorless Camera",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
     detail_01: "Ryzen 7 5800H up to 4.40GHz",
@@ -233,7 +233,7 @@ export const dealsOfTheDay = [
   {
     _id: "2",
     image: Product_02,
-    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    title: "Sony A7 III Mirrorless Camera",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
     rating: "2.0",
@@ -241,7 +241,7 @@ export const dealsOfTheDay = [
   {
     _id: "3",
     image: Product_03,
-    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    title: "Sony A7 III Mirrorless Camera",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
     rating: "3.0",
@@ -249,7 +249,7 @@ export const dealsOfTheDay = [
   {
     _id: "4",
     image: Product_04,
-    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    title: "Sony A7 III Mirrorless Camera",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
     rating: "4.0",
@@ -257,7 +257,7 @@ export const dealsOfTheDay = [
   {
     _id: "5",
     image: Product_05,
-    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    title: "Sony A7 III Mirrorless Camera",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
     rating: "5.0",
@@ -265,7 +265,7 @@ export const dealsOfTheDay = [
   {
     _id: "6",
     image: Product_06,
-    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    title: "Sony A7 III Mirrorless Camera",
     normalPrice: "€159.77",
     offerPrice: "€139.25",
     rating: "2.0",

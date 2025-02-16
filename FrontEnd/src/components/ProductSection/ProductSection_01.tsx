@@ -118,7 +118,7 @@ const ProductSection_01 = () => {
             </div>
             <p className="font-camptonBook
             
-                          xs:text-[8px]
+                          xs:text-[10px]
                           lg:text-[15px]">
               Time remaining until the end of the offer.
             </p>

@@ -21,30 +21,63 @@ const ProductSection_02 = () => {
     <div className="flex flex-col w-[85%] mx-auto">
       {/* ============= Deals of the day - left ============= */}
       <div className="flex justify-between items-center mb-7">
-        <h1 className="text-[22px] font-camptonMedium">Deals Of The Day</h1>
+        <h1 className="font-camptonMedium
+                        
+                        xs:text-[8px]
+                        sm:text-[11px]
+                        md:text-[15px]
+                        lg:text-[22px]">Deals Of The Day</h1>
         {/* ============= Deals of the day - right ============= */}
-        <div className="flex items-center gap-10">
-          <button className="flex border-[1px] border-primary px-10 py-2 rounded-3xl items-center">
-            Latest Products
+        <div className="flex items-center
+        
+                        xs:gap-3
+                        sm:gap-4
+                        md:gap-7
+                        lg:gap-10">
+          <button className="flex border-[1px] border-primary rounded-3xl items-center">
+            <p className="
+            
+                        xs:text-[8px] w-auto xs:px-3 py-1
+                        sm:text-[11px]
+                        md:text-[15px]
+                        lg:text-[22px] md:px-10 md:py-2">Latest Products</p>
           </button>
-          <button>Top Rating</button>
-          <button>Best Selling</button>
+          <button><p className="
+          
+                                xs:text-[8px]
+                                sm:text-[11px]
+                                md:text-[15px]
+                                lg:text-[22px]">Top Rating</p></button>
+          <button><p className="
+                                
+                                xs:text-[8px]
+                                sm:text-[11px]
+                                md:text-[15px]
+                                lg:text-[22px]">Best Selling</p></button>
         </div>
       </div>
       <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
       <div
-        className="flex w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10"
+        className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
+        
+                  xs:grid-cols-1
+                  xs:grid md:grid-cols-3
+                  xl:flex"
       >
         {/* ============= Product List ============= */}
         {dealsOfTheDay.map((product, index) => (
-          <div className="flex flex-col w-[220px] h-auto group relative border-[1px] border-primary
+          <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary
                           rounded-lg" key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
-            <div className="flex w-[100%] h-[200px] rounded-tl-lg rounded-tr-lg overflow-hidden">
-              <img src={product.image} alt={product.title} />
+            <div className="flex w-[100%] h-[200px] rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
+              <img className="
+              
+                              lg:w-[90%]
+                              xl:w-[100%]
+                            bg-slate-500" src={product.image} alt={product.title} />
             </div>
             {/* ============= Title ============= */}
-            <div className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg z-10
+            <div className="flex flex-col w-[100%] h-[140px] p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg z-10
             group-hover:shadow-shadow-dark transition-all duration-300">
               <h1 className="mb-4">{product.title}</h1>
               {/* ============= Price ============= */}
