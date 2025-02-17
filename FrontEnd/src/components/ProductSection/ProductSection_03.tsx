@@ -48,7 +48,6 @@ const ProductSection_03 = () => {
                             duration-300 hover:text-white
                             
                             xs:text-[12px] xs:gap-2 xs:px-3 xs:py-1
-                            
                             xl:px-4 xl:py-2 xl:text-[20px] xl:gap-3">
                 {product.button}
                 <IoIosArrowForward className="font-camptonLight
@@ -68,7 +67,8 @@ const ProductSection_03 = () => {
               className="object-cover
                         
                         xs:h-[300px]
-                        md:w-[100%]"
+                        md:w-[90%] md:h-[90%]
+                        lg:mr-5"
               src={product.image}
               alt={product.title_01}
             />

@@ -60,8 +60,8 @@ const ProductSection_02 = () => {
       <div
         className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
         
-                  xs:grid-cols-1
-                  xs:grid md:grid-cols-3
+                  xs:grid-cols-1 xs:grid xs:gap-y-[60px]
+                  md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
                   xl:flex"
       >
         {/* ============= Product List ============= */}
@@ -69,10 +69,12 @@ const ProductSection_02 = () => {
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary
                           rounded-lg" key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
-            <div className="flex w-[100%] h-[200px] rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
+            <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
               <img className="
               
-                              lg:w-[90%]
+                              
+                              xs:h-auto
+                              lg:w-[100%] w-[100%]
                               xl:w-[100%]
                             bg-slate-500" src={product.image} alt={product.title} />
             </div>

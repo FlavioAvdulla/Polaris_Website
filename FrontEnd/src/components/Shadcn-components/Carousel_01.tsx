@@ -110,6 +110,7 @@ export function Carousel_01() {
                       
                                       xs:text-[10px] xs:w-[70%]
                                       sm:text-[13px] sm:w-[90%]
+                                      lg:text-[15px] lg:w-[90%]
                                       md:w-[100%]">
                         {product.description}
                       </p>

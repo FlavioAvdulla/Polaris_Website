@@ -277,7 +277,7 @@ export const shopByCategories = [
   {
     _id: "1",
     image: Product_01,
-    title: "Computers & Laptop",
+    title: "Computers",
     quantity: "14 Items",
   },
   {
@@ -289,7 +289,7 @@ export const shopByCategories = [
   {
     _id: "3",
     image: Product_07,
-    title: "Game & Accessories",
+    title: "Game Accessories",
     quantity: "41 Items",
   },
   {
@@ -301,7 +301,7 @@ export const shopByCategories = [
   {
     _id: "5",
     image: Product_09,
-    title: "Electronics & Digital",
+    title: "Electronics",
     quantity: "8 Items",
   },
   {
