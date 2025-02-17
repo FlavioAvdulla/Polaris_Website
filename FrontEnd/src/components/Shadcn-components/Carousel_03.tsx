@@ -57,7 +57,11 @@ export function Carousel_03() {
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
-                  className={`flex aspect-square items-center justify-center m-0 p-0 h-[700px]
+                  className={`flex aspect-square items-center justify-center m-0 p-0
+                    
+                              md:h-auto
+                              xl:h-[700px]
+                    
                     rounded-xl overflow-hidden bg-slate-300 ${
                       isGrabbing ? "cursor-grabbing" : "cursor-grab"
                     }`}
@@ -73,7 +77,11 @@ export function Carousel_03() {
                           -20% OFF
                         </span>
                       </p>
-                      <h1 className="text-[40px] text-white font-camptonBold leading-tight my-3">
+                      <h1 className="text-white font-camptonBold leading-tight my-3
+                      
+                                    xs:text-[40px]
+                                    lg:text-[30px]
+                                    xl:text-[40px]">
                         {product.title}
                       </h1>
                       <p className="text-white text-[15px] font-camptonBook">

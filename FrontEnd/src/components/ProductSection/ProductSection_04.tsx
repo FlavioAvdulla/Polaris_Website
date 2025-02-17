@@ -18,11 +18,11 @@ const ProductSection_04 = () => {
 
         <div className="flex items-center
                         
-                        xs:w-[50%]
+                        xs:w-[40%]
                         md:w-fit">
           <p className="text-gray-500
                         
-                        xs:text-[8px] 
+                        xs:text-[8px]
                         sm:text-[11px]
                         md:text-[15px]
                         xl:text-[18px]">

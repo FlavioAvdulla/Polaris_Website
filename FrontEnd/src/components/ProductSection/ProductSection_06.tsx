@@ -15,7 +15,7 @@ const ProductSection_05 = () => {
         stars.push(<FaStar key={i} className="text-[20px] text-[#fcc419]" />);
       } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
         stars.push(
-          <FaStarHalfAlt key={i} className="text-[20px] text-[#fcc419]" />
+          <FaStarHalfAlt key={i} className="text-[#fcc419]"/>
         );
       } else {
         stars.push(<FaStar key={i} className="text-[20px] text-gray-300" />);

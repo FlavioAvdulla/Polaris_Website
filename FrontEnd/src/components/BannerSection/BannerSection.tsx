@@ -37,8 +37,8 @@ const BannerSection = () => {
           </button>
         </div>
       </div>
-      <div className="flex h-[450px]">
-        <img className="relative -z-10 h-[100%]" src={banner_01} alt="banner_01" />
+      <div className="flex w-[100%] h-[450px]">
+        <img className="relative -z-10 w-[100%] object-cover" src={banner_01} alt="banner_01" />
       </div>
     </div>
   );
