@@ -67,6 +67,7 @@ export function Carousel_02() {
                     
                     xs:h-auto
                     md:h-[400px]
+                    2xl:h-[600px]
 
                     ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
                     }`}

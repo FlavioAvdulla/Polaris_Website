@@ -65,6 +65,7 @@ export function Carousel_01() {
                     
                     xs:h-[400px]
                     md:h-[400px]
+                    2xl:h-[600px]
 
                     ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
                     }`}
@@ -86,7 +87,8 @@ export function Carousel_01() {
                         <p className="flex text-white gap-3 items-center
                                       
                                       xs:text-[13px]
-                                      md:text-[15px]">
+                                      md:text-[15px]
+                                      2xl:text-[20px]">
                           Exclusive Offer
                         </p>
                         <div className="w-fit rounded-3xl bg-primary border-[1px] cursor-pointer
@@ -95,7 +97,8 @@ export function Carousel_01() {
                                               <p className="
                                               
                                                             xs:text-[12px] xs:px-4 xs:py-[1px]
-                                                            md:text-[15px] md:px-6 md:py-[3px]">-20% OFF</p>
+                                                            md:text-[15px] md:px-6 md:py-[3px]
+                                                            2xl:text-[20px]">-20% OFF</p>
                                             </div>
                       </div>
                       <h1
@@ -103,15 +106,17 @@ export function Carousel_01() {
                       
                                       xs:text-[22px] xs:w-[80%]
                                       sm:text-[30px]
-                                      md:text-[35px]">
+                                      md:text-[35px]
+                                      2xl:text-[60px]">
                         {product.title}
                       </h1>
                       <p className="text-white font-camptonBook
                       
                                       xs:text-[10px] xs:w-[70%]
                                       sm:text-[13px] sm:w-[90%]
+                                      md:w-[100%]
                                       lg:text-[15px] lg:w-[90%]
-                                      md:w-[100%]">
+                                      2xl:text-[20px]">
                         {product.description}
                       </p>
                       <div className="w-auto mt-7">
@@ -124,11 +129,13 @@ export function Carousel_01() {
                         >
                           <p className="
                                        xs:text-[10px]
-                                       md:text-[15px]">SHOW NOW</p>
+                                       md:text-[15px]
+                                       2xl:text-[20px]">SHOW NOW</p>
                           <i>
                             <IoIosArrowForward className="
                                                           xs:text-[10px]
-                                                          md:text-[15px]"/>
+                                                          md:text-[15px]
+                                                          2xl:text-[20px]"/>
                           </i>
                         </button>
                       </div>

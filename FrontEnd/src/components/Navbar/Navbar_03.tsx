@@ -66,13 +66,16 @@ const Navbar_03 = () => {
         >
           <i className="xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-3xl
                           sm:bg-transparent sm:p-0 sm:text-black sm:rounded">
-            <CiDiscount1 className="sm:text-[20px]" />
+            <CiDiscount1 className="
+            
+                                    sm:text-[20px]" />
           </i>
           <p className="font-camptonBook
           
                         xs:hidden
                         sm:flex
-                        md:flex md:text-[10px]">Best Discounts</p>
+                        md:flex md:text-[10px]
+                        2xl:text-[16px]">Best Discounts</p>
         </div>
       </div>
     </div>

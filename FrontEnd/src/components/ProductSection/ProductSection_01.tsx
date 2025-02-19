@@ -45,7 +45,8 @@ const ProductSection_01 = () => {
                       xs:h-auto xs:mb-5
                       md:w-[100%] md:h-auto
                       lg:h-auto
-                      xl:h-[550px]"
+                      xl:h-[550px]
+                      2xl:h-[700px]"
           key={index}
         >
           {/* ============= Image ============= */}
@@ -77,6 +78,7 @@ const ProductSection_01 = () => {
               <h1 className="font-camptonMedium text-primary
               
                               xs:text-[22px]
+                              2xl:text-[30px]
                               ">
                 {product.normalPrice}
               </h1>
@@ -90,26 +92,30 @@ const ProductSection_01 = () => {
                                                 
                                                 xs:text-[25px] xs:p-1
                                                 md:text-[20px]
-                                                lg:text-[30px] "/>
+                                                lg:text-[30px]
+                                                2xl:text-[40px] "/>
               </i>
             </div>
             <div className="flex justify-between items-center">
               <p className="font-camptonBook flex
               
                             xs:text-[12px]
-                            lg:text-[15px]">
+                            lg:text-[15px]
+                            2xl:text-[20px]">
                 Available:
                 <span className="font-camptonMedium
                 
                                   xs:text-[12px]
-                                  lg:text-[15px]">
+                                  lg:text-[15px]
+                                  2xl:text-[20px]">
                   &nbsp;&nbsp;{product.available}
                 </span>
               </p>
               <p className="text-[15px] font-camptonBook flex
               
                             xs:text-[12px]
-                            lg:text-[15px]">
+                            lg:text-[15px]
+                            2xl:text-[20px]">
                 Sold:
                 <span className="text-red-500 font-camptonMedium">
                   &nbsp;&nbsp;{product.sold}
@@ -119,7 +125,8 @@ const ProductSection_01 = () => {
             <p className="font-camptonBook
             
                           xs:text-[10px]
-                          lg:text-[15px]">
+                          lg:text-[15px]
+                          2xl:text-[16px]">
               Time remaining until the end of the offer.
             </p>
           </div>

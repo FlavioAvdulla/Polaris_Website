@@ -39,14 +39,13 @@ const ProductSection_04 = () => {
         {/* ============= Product List ============= */}
         {shopByCategories.map((product, index) => (
           <div
-            className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg
-                        "
-            key={index}
-          >
+            className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg" key={index}>
             {/* ============= Image ============= */}
             <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-white">
-              <img className="xs:h-auto
-                              lg:w-[90%] w-[100%] 
+              <img className="
+              
+                              xs:h-auto
+                              lg:w-[90%] w-[100%]
                               xl:w-[100%]"
                               src={product.image} alt={product.title} />
             </div>
@@ -55,8 +54,20 @@ const ProductSection_04 = () => {
               className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg z-10 text-center
                   group-hover:shadow-shadow-dark transition-all duration-300 items-center"
             >
-              <h1 className="mb-1 font-camptonMedium">{product.title}</h1>
-              <p className="text-gray-500">{product.quantity}</p>
+              <h1 className="mb-1 font-camptonMedium
+              
+                            xs:text-[23px]
+                            md:text-[17px]
+                            lg:text-[20px]
+                            xl:text-[16px]
+                            2xl:text-[20px]">{product.title}</h1>
+              <p className="text-gray-500
+              
+                            xs:text-[19px]
+                            md:text-[17px]
+                            lg:text-[16px]
+                            xl:text-[14px]
+                            2xl:text-[17px]">{product.quantity}</p>
             </div>
             {/* ============= Add to cart ============= */}
             <button

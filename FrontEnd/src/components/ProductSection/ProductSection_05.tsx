@@ -72,7 +72,8 @@ const ProductSection_05 = () => {
                   className="object-cover rounded-tl-lg rounded-bl-lg
                             
                             md:w-[80%] md:h-[80%]
-                            xl:w-full xl:h-full"
+                            xl:w-full xl:h-full
+                            2xl:w-[75%]"
                 />
               </div>
               {/* ============= Section - right - 01 - Info ============= */}

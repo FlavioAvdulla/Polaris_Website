@@ -4,6 +4,7 @@ import React from "react";
 import { PiShoppingCartLight } from "react-icons/pi";
 
 import { dealsOfTheDay } from "../../components/ProductSection/ProductSection";
+
 import { useNavigate } from "react-router-dom";
 
 const ProductSection_02 = () => {
@@ -13,7 +14,7 @@ const ProductSection_02 = () => {
   const handleImageClick = (id) => {
     console.log(`Image with id ${id} clicked.`)
     if (id === "1") {
-      navigate("/Product_01") // Update the path here to match the route in your App.js
+      navigate("/Product_01")
     }
   }
 
@@ -84,10 +85,20 @@ const ProductSection_02 = () => {
               <h1 className="mb-4">{product.title}</h1>
               {/* ============= Price ============= */}
               <div className="flex gap-4 items-center">
-                <p className="text-[20px] font-camptonMedium text-primary">{product.normalPrice}</p>
+                <p className="font-camptonMedium text-primary
+                
+                              lg:text-[20px]
+                              2xl:text-[25px]">{product.normalPrice}</p>
                 <div className="w-auto relative">
-                  <div className="absolute mt-[13px] h-[1.5px] w-[100%] bg-primary"/>
-                  <p className="text-[17px] text-gray-700 rounded-br-lg rounded-bl-lg">{product.offerPrice}</p>
+                  <div className="absolute h-[1.5px] w-[100%] bg-primary
+                                  
+                                  xs:mt-[12px]
+                                  2xl:mt-[15px]
+                                  "/>
+                  <p className="text-gray-700 rounded-br-lg rounded-bl-lg
+
+                                lg:text-[17px]
+                                2xl:text-[20px]">{product.offerPrice}</p>
                 </div>
               </div>
             </div>

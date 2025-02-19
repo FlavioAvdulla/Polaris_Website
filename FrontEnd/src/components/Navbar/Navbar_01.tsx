@@ -20,98 +20,102 @@ const Navbar_01 = () => {
     >
       <div className="flex gap-7 w-fit">
         <button className="font-camptonBook">
-          <p className="hover:text-primary ease-in-out duration-300
+          <p
+            className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]">
+                        md:text-[14px]"
+          >
             Track Order
           </p>
         </button>
         <button className="font-camptonBook">
-          <p className="hover:text-primary ease-in-out duration-300
+          <p
+            className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]">
+                        md:text-[14px]"
+          >
             About Us
           </p>
         </button>
         <button className="font-camptonBook">
-          <p className="hover:text-primary ease-in-out duration-300
+          <p
+            className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]">
+                        md:text-[14px]"
+          >
             Contact
           </p>
         </button>
         <button className="font-camptonBook">
-          <p className="hover:text-primary ease-in-out duration-300
+          <p
+            className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]">
+                        md:text-[14px]"
+          >
             FAQ
           </p>
         </button>
       </div>
       <div
-        className="w-[45%] flex items-center justify-between
+        className=" flex items-center justify-between
 
                    xs:gap-0 xs:w-[85%]
-                   sm:w-[80%]
+                   sm:w-[85%]
                    md:w-[60%] 
-                   lg:w-[55%]
-                   xl:w-[60%]
-                   ">
-        <button className="font-camptonBook flex items-center 
+                   lg:w-[60%]
+                   2xl:w-[50%]">
+        
+        <div className="flex justify-between w-[100%]">
+        <button
+          className="font-camptonBook flex items-center 
                             
                             md:gap-2 bg">
           <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-3xl
                           sm:hidden">
-            <BsPhone className="text-[15px]"/>
-          </i>
+            <BsPhone className="text-[15px]" /></i>
           <div className="flex items-center
           
                           lg:flex-col lg:gap-2
                           xl:flex-row">
-          <p className="text-[14px]
+            <p className="text-[14px]
 
                         xs:hidden
                         xl:flex">
-            You can contact us
-          </p>
-            <p
-              className="font-camptonMedium bg-gray-100 rounded-md
+              You can contact us
+            </p>
+            <p className="font-camptonMedium bg-gray-100 rounded-md
                               text-primary px-2 py-1 
                               
                               xs:hidden
                               sm:flex sm:text-[10px]
-                              md:text-[14px]">
-
+                              md:text-[14px]"
+            >
               +355 (0) 67 63 11 918
             </p>
-            </div>
+          </div>
         </button>
-        <div className="h-[60%] w-[1px]" />
-        <button className="font-camptonBook">
-          <SelectLanguage />
-        </button>
-        <button className="font-camptonBook">
-          <SelectCurrency />
-        </button>
-      <button className="font-camptonBook group flex items-center gap-2">
-        <i>
-          <BsBrightnessHigh
-            className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px]
-                       group-hover:text-primary ease-in-out duration-300
-                       
-                       "
-          />
-        </i>
-        <p className="text-[14px] group-hover:text-primary ease-in-out duration-300
+        <SelectLanguage />
+        <div className="h-auto w-[1px] bg-gray-300" />
+        <SelectCurrency />
+        <button className="font-camptonBook group flex items-center gap-2">
+          <i>
+            <BsBrightnessHigh
+              className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px]
+                       group-hover:text-primary ease-in-out duration-300"/>
+          </i>
+          <p
+            className="text-[14px] group-hover:text-primary ease-in-out duration-300
                       xs:hidden
-                      lg:flex">
-          Light Theme
-        </p>
-      </button>
+                      lg:flex"
+          >
+            Light Theme
+          </p>
+        </button>
+        </div>
       </div>
     </div>
   );
