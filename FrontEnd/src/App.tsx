@@ -17,7 +17,7 @@ import Product_01 from "./components/ProductSection/DealsOfTheDay_Pages/Product_
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="overflow-hidden">
       <Router>
         <Navbar_01 />
         <Navbar_02 />
