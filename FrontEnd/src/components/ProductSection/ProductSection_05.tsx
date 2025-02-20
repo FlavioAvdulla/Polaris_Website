@@ -52,10 +52,12 @@ const ProductSection_05 = () => {
       <Carousel_03 />
       <Carousel_04 /> 
       </div>
-      <div className="gap-5 w-[100%] flex flex-col
+      <div className="gap-5 flex flex-col
       
-                      lg:grid lg:grid-cols-2 
-                      xl:flex xl:flex-col xl:h-[700px]">
+                      xs:w-[100%]
+                      lg:w-[100%]
+                      lg:grid lg:grid-cols-2
+                      xl:flex xl:flex-col xl:h-[700px] xl:w-[60.66%]">
         {/* ============= Section - right ============= */}
         {productSection_05.map((product, index) => (
           <div
