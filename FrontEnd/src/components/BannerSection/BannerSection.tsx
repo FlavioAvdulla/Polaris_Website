@@ -8,13 +8,13 @@ import { IoIosArrowForward } from "react-icons/io";
 const BannerSection = () => {
   return (
     <div className="flex w-[100%] h-auto mx-auto mt-20 mb-20">
-      <div className="flex flex-col absolute  justify-center
+      <div className="flex flex-col absolute justify-center
       
-                      xs:w-[45%] xs:h-[150px] xs:pl-4 xs:gap-2
-                      sm:w-[40%]
+                      xs:w-[70%] xs:h-[150px] xs:pl-4 xs:gap-2
+                      sm:w-[55%]
                       md:w-[55%] md:h-[300px] md:pl-16
-                      lg:w-[45%] lg:h-[350px] lg:gap-5
-                      xl:w-[35%] xl:h-[450px]
+                      lg:w-[45%] lg:h-[350px] lg:gap-3
+                      xl:w-[35%] xl:h-[450px] xl:gap-5
                       2xl:w-[30%]">
         <p className="flex text-white gap-3 items-center
         
@@ -26,7 +26,7 @@ const BannerSection = () => {
           <span className="rounded-3xl bg-primary border-[1px] cursor-pointer border-white text-white items-center justify-center
                           hover:bg-transparent hover:scale-110 ease-in-out duration-300
                           
-                          xs:px-3 xs:py-[1px]
+                          xs:px-3 xs:py-[1px] xs:text-[8px]
                           md:text-[12px] md:px-6 md:py-[3px]
                           lg:text-[17px] ">
             -20% OFF
@@ -34,7 +34,7 @@ const BannerSection = () => {
         </p>
         <h1 className="text-white font-camptonBold leading-tight
         
-                        xs:text-[12px]
+                        
                         sm:text-[15px]
                         md:text-[35px]
                         lg:text-[40px]
@@ -52,11 +52,12 @@ const BannerSection = () => {
         </p>
         <div className="w-auto">
           <button
-            className="flex items-center justify-center  border-[1px] border-white text-white rounded-3xl
+            className="flex items-center justify-center border-[1px] border-white text-white rounded-3xl
                         hover:scale-110 hover:border-[1px] bg-primary hover:bg-transparent ease-in-out duration-300
                         
-                        xs:text-[6px] xs:px-2 xs:py-1 xs:gap-1
-                        md:text-[12px] md:px-4 md:py-2 md:gap-3
+                        xs:text-[8px] xs:px-2 xs:py-1
+                        sm:mt-1
+                        md:text-[12px] md:px-4 md:py-2 md:gap-3 md:mt-3
                         lg:text-[18px]
                         xl:text-[20px]">
             SHOW NOW
