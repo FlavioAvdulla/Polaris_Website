@@ -12,105 +12,172 @@ import { FaLinkedin } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className="flex flex-col w-[100%] justify-center pt-10 bg-primary">
-      <div className="flex w-[85%] gap-5 justify-between mx-auto mb-8 bg-slate-500
+      <div className="flex w-[85%] gap-5 justify-between mx-auto mb-8
       
-                      xs:grid xs:grid-cols-1 
-                      md:grid md:grid-cols-2 md:h-[350px]
-                      lg:h-[200px]
-                      lg:grid-cols-4 ">
+                      xs:flex-col
+                      md:flex-row
+                      md:h-[150px]
+                      lg:h-[180px]">
         {/* ============= Logo Section ============= */}
-        <div className="flex flex-col w-fit h-auto justify-between
+        <div className="flex flex-col h-auto justify-between
         
-                        xs:gap-5
-                        md:gap-0">
+                        xs:gap-5 xs:w-[100%]
+                        md:gap-0 md:w-[20%]">
           <img
-            className="w-[110px]"
+            className="
+            
+                      xs:w-[80px]
+                      lg:w-[110px]"
             src={Polaris_Logo_White}
             alt="Polaris_Logo_White"
           />
           <p className="text-white font-camptonLight
                         
-                        md:w-[75%]
-                        ">
+                        md:text-[12px] md:leading-tight
+                        lg:text-[16px] lg:leading-normal">
             Lorem ipsum dolor amet, consectetur
-            sell adipis elit phase nibh ellentes
+            sell adipis elit
           </p>
           <div className="flex gap-4">
             <i>
-              <FaFacebookSquare className="text-[30px] text-white cursor-pointer
-                                            hover:scale-110 ease-in-out duration-300" />
+              <FaFacebookSquare className="text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300
+                                            
+                                            xs:text-[25px]
+                                            md:text-[20px]
+                                            lg:text-[30px]" />
             </i>
             <i>
-              <FaSquareXTwitter className="text-[30px] text-white cursor-pointer
-                                            hover:scale-110 ease-in-out duration-300" />
+              <FaSquareXTwitter className="text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300
+                                            
+                                            xs:text-[25px]
+                                            md:text-[20px]
+                                            lg:text-[30px]" />
             </i>
             <i>
-              <FaLinkedin className="text-[30px] text-white cursor-pointer
-                                            hover:scale-110 ease-in-out duration-300" />
+              <FaLinkedin className="text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300
+                                            
+                                            xs:text-[25px]
+                                            md:text-[20px]
+                                            lg:text-[30px]" />
             </i>
             <i>
-              <FaSquarePinterest className="text-[30px] text-white cursor-pointer
-                                            hover:scale-110 ease-in-out duration-300" />
+              <FaSquarePinterest className="text-white cursor-pointer
+                                            hover:scale-110 ease-in-out duration-300
+                                            
+                                            xs:text-[25px]
+                                            md:text-[20px]
+                                            lg:text-[30px]" />
             </i>
           </div>
         </div>
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
-          <h1 className="text-white font-camptonMedium text-[22px]">
+          <h1 className="text-white font-camptonMedium
+          
+                          md:text-[18px]
+                          lg:text-[22px]">
             USEFUL LINKS
           </h1>
           <button>
-            <p className="text-white font-camptonLight">ABOUT US</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">ABOUT US</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">OUR TEAM</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">OUR TEAM</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">RECENT NEWS</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">RECENT NEWS</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">PROJECTS</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">PROJECTS</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">OUR ALL SERVICES</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">OUR ALL SERVICES</p>
           </button>
         </div>
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
-          <h1 className="text-white font-camptonMedium text-[22px]">
+          <h1 className="text-white font-camptonMedium
+          
+                          md:text-[18px]
+                          lg:text-[22px]">
             CATEGORY
           </h1>
           <button>
-            <p className="text-white font-camptonLight">COORDINATOR</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">COORDINATOR</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">ARCHITECT</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">ARCHITECT</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">MANAGER</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">MANAGER</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">PRODUCER</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">PRODUCER</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">DESIGNER</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">DESIGNER</p>
           </button>
         </div>
         {/* ============= Useful Links ============= */}
-        <div className="flex flex-col w-fit justify-between items-start bg-slate-200">
-          <h1 className="text-white font-camptonMedium text-[22px]">CONTACT</h1>
+        <div className="flex flex-col w-fit justify-between items-start">
+          <h1 className="text-white font-camptonMedium
+          
+                          md:text-[18px]
+                          lg:text-[22px]">CONTACT</h1>
           <button>
-            <p className="text-white font-camptonLight">
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">
               +355 (0) 67 63 11 918
             </p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">
               a.flavio4366@gmail.com
             </p>
           </button>
           <button>
-            <p className="text-white font-camptonLight">TIRANA, ALBANIA.</p>
+            <p className="text-white font-camptonLight
+            
+                          md:text-[12px]
+                          lg:text-[16px]">TIRANA, ALBANIA.</p>
           </button>
         </div>
       </div>
