@@ -20,6 +20,7 @@ const Navbar_02 = () => {
                       
                       xs:hidden
                       sm:w-[80px]
+                      xl:w-[100px]
                       md:flex
                       " src={Polaris_Logo} alt="Polaris_Logo" />
       <div className="w-auto h-full flex

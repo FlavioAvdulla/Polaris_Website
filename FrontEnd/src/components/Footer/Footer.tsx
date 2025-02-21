@@ -14,7 +14,10 @@ const Footer = () => {
     <div className="flex flex-col w-[100%] h-[350px] justify-center pt-10 bg-primary">
       <div className="flex w-[80%] h-[80%] justify-between mx-auto mb-10">
         {/* ============= Logo Section ============= */}
-        <div className="flex flex-col w-auto justify-between">
+        <div className="flex flex-col justify-between bg-slate-100
+        
+                        lg:w-[50%]
+                        xl:w-auto">
           <img
             className="w-[110px]"
             src={Polaris_Logo_White}

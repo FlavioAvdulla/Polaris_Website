@@ -45,7 +45,8 @@ export function Carousel_05() {
   }, [api, count]);
 
   return (
-    <div className="mx-auto
+    <div
+      className="mx-auto
     
                     xs:w-[100%]
                     lg:w-[50%]">
@@ -53,8 +54,7 @@ export function Carousel_05() {
         setApi={setApi}
         className="w-full flex flex-col"
         onMouseDown={() => setIsGrabbing(true)}
-        onMouseUp={() => setIsGrabbing(false)}
-      >
+        onMouseUp={() => setIsGrabbing(false)}>
         <CarouselContent>
           {carousel_05.map((product, index) => (
             <CarouselItem key={index}>
@@ -68,31 +68,67 @@ export function Carousel_05() {
 
                     rounded-xl overflow-hidden bg-slate-300 ${
                       isGrabbing ? "cursor-grabbing" : "cursor-grab"
-                    }`}
-                >
+                    }`}>
                   <div className="flex items-center w-[100%] h-[100%]">
-                    <div className="flex flex-col absolute w-[100%] h-auto p-7 bottom-0 justify-center">
-                      <p className="flex text-white gap-3 items-center">
+                    <div className="flex flex-col absolute w-[100%] h-auto bottom-0 justify-center
+                    
+                                    
+                                    xs:p-5
+                                    sm:p-7
+                                    md:p-12 md:mb-5
+                                    lg:p-6 lg:mb-0
+                                    xl:mb-5">
+                      <p
+                        className="flex text-white gap-3 items-center
+                      
+                                    xs:text-[12px]
+                                    md:text-[20px]
+                                    lg:text-[12px]
+                                    xl:text-[15px]">
                         Exclusive Offer
                         <span
-                          className="rounded-3xl bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
-                                            hover:bg-transparent hover:scale-110 ease-in-out duration-300"
-                        >
+                          className="rounded-full bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
+                                      hover:bg-transparent hover:scale-110 ease-in-out duration-300
+                                            
+                                    xs:text-[10px]
+                                    md:text-[20px]
+                                    lg:text-[10px]
+                                    xl:text-[15px]">
                           -20% OFF
                         </span>
                       </p>
-                      <h1 className="text-[40px] text-white font-camptonBold leading-tight my-3">
+                      <h1
+                        className="text-white font-camptonBold leading-tight my-3
+
+                                      xs:text-[20px]
+                                      sm:text-[35px]
+                                      md:text-[60px]
+                                      lg:text-[29px]
+                                      xl:text-[40px]">
                         {product.title}
                       </h1>
-                      <p className="text-white text-[15px] font-camptonLight">
+                      <p
+                        className="text-white font-camptonLigh
+                      
+                                     xs:text-[10px]
+                                     md:text-[25px]
+                                     lg:text-[12px] lg:w-[95%]">
                         {product.description}
                       </p>
                       <div className="w-auto mt-7">
                         <button
-                          className=" flex items-center justify-center gap-3 border-[1px] bg-primary border-white text-white px-4 py-2 rounded-3xl
-                                          hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300"
-                        >
-                          SHOW NOW
+                          className=" flex items-center justify-center gap-3 border-[1px] bg-primary border-white text-white px-4 py-2 rounded-full
+                                      hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                                      
+                                      xs:gap-2 xs:px-3 xs:py-1
+                                      md:gap-3 md:px-4 md:py-2">
+                          <p className="
+                          
+                                      xs:text-[10px]
+                                      md:text-[25px]
+                                      lg:text-[12px]
+                                      2xl:text-[20px]">
+                            SHOW NOW</p>
                           <i>
                             <IoIosArrowForward />
                           </i>

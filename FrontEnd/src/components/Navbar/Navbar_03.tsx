@@ -64,7 +64,7 @@ const Navbar_03 = () => {
                       xs:w-auto
                       lg:flex"
         >
-          <i className="xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-3xl
+          <i className="xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-full
                           sm:bg-transparent sm:p-0 sm:text-black sm:rounded">
             <CiDiscount1 className="
             

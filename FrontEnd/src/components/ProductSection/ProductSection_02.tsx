@@ -35,7 +35,7 @@ const ProductSection_02 = () => {
                         sm:gap-4
                         md:gap-7
                         lg:gap-10">
-          <button className="flex border-[1px] border-primary rounded-3xl items-center">
+          <button className="flex border-[1px] border-primary rounded-full items-center">
             <p className="
             
                         xs:text-[8px] w-auto xs:px-3 py-1

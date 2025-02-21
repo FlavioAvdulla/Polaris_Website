@@ -74,7 +74,7 @@ const Navbar_01 = () => {
           className="font-camptonBook flex items-center 
                             
                             md:gap-2 bg">
-          <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-3xl
+          <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-full
                           sm:hidden">
             <BsPhone className="text-[15px]" /></i>
           <div className="flex items-center
