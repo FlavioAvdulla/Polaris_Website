@@ -69,8 +69,10 @@ const Product01 = () => {
                     xs:flex-col
                     md:flex-row">
       {/* ============= Left - Product - Photos ============= */}
-      <div className="flex flex-col w-[50%] h-[600px] gap-5 mx-auto
-                      xs:w-[70%]">
+      <div className="flex flex-col w-[50%] gap-5 mx-auto
+                      
+                      lg:h-[500px]
+                      xl:h-[600px]">
         {/* ============= Big Photo ============= */}
         <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
                         ">
@@ -132,25 +134,49 @@ const Product01 = () => {
           </div>
         </div>
       </div>
+
       {/* ============= Right - Product - Infos ============= */}
-      <div className="flex flex-col w-[50%] h-[600px] bg-gray-100 rounded-lg gap-5 p-10 mx-auto">
-        <h1 className="font-camptonBold leading-tight text-[35px] text-primary">
+      <div className="flex flex-col w-[50%] bg-gray-100 rounded-lg mx-auto justify-between
+      
+                      md:h-auto md:p-4
+                      lg:h-[500px] lg:p-5
+                      xl:h-[600px] xl:p-10">
+        <h1 className="font-camptonBold leading-tight text-primary
+        
+                        md:text-[28px]
+                        lg:text-[38px]
+                        xl:text-[45px]
+                        ">
           {product.title}
         </h1>
-        <p className="w-[90%] font-camptonLight">
+        <p className="w-[100%] font-camptonBook leading-tight
+        
+                      md:text-[13px]
+                      lg:text-[16px]
+                      xl:text-[18px]">
           Web designing in a powerful way of just not an only professi however,
           in a pass Company We have a to a tendency.
         </p>
         <div className="flex gap-2">{getStars(product.rating)}</div>
-        <p className="font-camptonBook text-[20px]">{product.reviews}</p>
+        <p className="font-camptonBook
+        
+                      md:text-[15px]
+                      lg:text-[18px]
+                      xl:text-[20px]">{product.reviews}</p>
         {/* ============= Price ============= */}
         <div className="flex gap-4 items-center">
-          <p className="text-[30px] font-camptonBold text-primary">
+          <p className="font-camptonBold text-primary
+          
+                        md:text-[30px]
+                        lg:text-[40px]">
             {product.offerPrice}
           </p>
-          <div className="flex w-auto relative items-center mb-1">
+          <div className="flex w-auto relative items-center">
             <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
-            <p className="text-[20px] text-gray-700">{product.normalPrice}</p>
+            <p className="text-gray-700
+            
+                          md:text-[17px]
+                          lg:text-[25px]">{product.normalPrice}</p>
           </div>
         </div>
         <div className="gap-1 flex flex-col">
@@ -158,43 +184,69 @@ const Product01 = () => {
             <i>
               <GoDot className="text-primary text-[12px]" />
             </i>
-            <p className="font-camptonLight">{product.detail_01}</p>
+            <p className="font-camptonBook
+            
+                        md:text-[10px]
+                        lg:text-[13px]
+                        xl:text-[15px]">{product.detail_01}</p>
           </div>
 
           <div className="flex items-center gap-1">
             <i>
               <GoDot className="text-primary text-[12px]" />
             </i>
-            <p className="font-camptonLight">{product.detail_02}</p>
+            <p className="font-camptonBook
+            
+                          md:text-[10px]
+                          lg:text-[13px]
+                          xl:text-[15px]">{product.detail_02}</p>
           </div>
 
           <div className="flex items-center gap-1">
             <i>
               <GoDot className="text-primary text-[12px]" />
             </i>
-            <p className="font-camptonLight">{product.detail_03}</p>
+            <p className="font-camptonBook
+            
+                          md:text-[10px]
+                          lg:text-[13px]
+                          xl:text-[15px]">{product.detail_03}</p>
           </div>
 
           <div className="flex items-center gap-1">
             <i>
               <GoDot className="text-primary text-[12px]" />
             </i>
-            <p className="font-camptonLight">{product.detail_04}</p>
+            <p className="font-camptonBook
+            
+                          md:text-[10px]
+                          lg:text-[13px]
+                          xl:text-[15px]">{product.detail_04}</p>
           </div>
         </div>
         {/* ============= Quantity ============= */}
         <div className="flex w-fit h-auto items-center">
           <div
-            className="flex items-center justify-center p-5 rounded-tl-lg rounded-bl-lg w-[20px] h-[20px] border-[1px] border-primary cursor-pointer"
+            className="flex items-center justify-center rounded-tl-lg rounded-bl-lg
+                        border-[1px] border-primary cursor-pointer
+                        
+                        md:w-[15px] md:h-[14px] md:p-3
+                        lg:w-[20px] lg:h-[20px] lg:p-5"
             onClick={decreaseQuantity}
           >
             <i>
-              <FaCircleMinus className="text-[22px] text-primary cursor-pointer" />
+              <FaCircleMinus className="text-primary cursor-pointer
+              
+                                        md:text-[13px]
+                                        lg:text-[22px]" />
             </i>
           </div>
           <div className="flex items-center text-center justify-center w-[100%] h-[100%]  bg-primary ">
             <input
-              className="w-[40px] h-[40px] text-center text-white font-camptonMedium bg-transparent text-[20px] outline-none"
+              className="text-center text-white font-camptonMedium bg-transparent outline-none
+              
+                        md:w-[25px] md:h-250px] md:text-[10px]
+                        lg:w-[40px] lg:h-[40px] lg:text-[20px]"
               type="text"
               id="quantity"
               name="quantity"
@@ -204,11 +256,18 @@ const Product01 = () => {
             />
           </div>
           <div
-            className="flex items-center justify-center p-5 rounded-tr-lg rounded-br-lg w-[20px] h-[20px] border-[1px] border-primary cursor-pointer"
+            className="flex items-center justify-center rounded-tr-lg rounded-br-lg
+                        border-[1px] border-primary cursor-pointer
+                        
+                        md:w-[15px] md:h-[14px] md:p-3
+                        lg:w-[20px] lg:h-[20px] lg:p-5"
             onClick={increaseQuantity}
           >
             <i>
-              <FaCirclePlus className="text-[22px] text-primary cursor-pointer" />
+              <FaCirclePlus className="text-primary cursor-pointer
+              
+                                        md:text-[13px]
+                                        lg:text-[22px]" />
             </i>
           </div>
         </div>

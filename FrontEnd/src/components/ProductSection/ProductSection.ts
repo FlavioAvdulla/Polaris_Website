@@ -220,9 +220,9 @@ export const dealsOfTheDay = [
   {
     _id: "1",
     image: Product_01,
-    title: "Sony A7 III Mirrorless Camera",
-    normalPrice: "€159",
-    offerPrice: "€139",
+    title: "LENOVO LEGION 5",
+    normalPrice: "€759",
+    offerPrice: "€639",
     detail_01: "Ryzen 7 5800H up to 4.40GHz",
     detail_02: "RTX 3070 8GB GDDR6 Graphics",
     detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
