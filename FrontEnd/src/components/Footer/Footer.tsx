@@ -12,10 +12,11 @@ import { FaLinkedin } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div className="flex flex-col w-[100%] justify-center pt-10 bg-primary">
-      <div className="flex w-[85%] gap-5 justify-between mx-auto mb-8
+      <div className="flex gap-5 justify-between mx-auto mb-8
       
-                      xs:flex-col
-                      md:flex-row
+                      xs:flex-col xs:w-[80%]
+                      sm:w-[73%]
+                      md:flex-row md:w-[85%]
                       md:h-[150px]
                       lg:h-[180px]">
         {/* ============= Logo Section ============= */}
