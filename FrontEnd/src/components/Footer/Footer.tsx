@@ -32,7 +32,7 @@ const Footer = () => {
             src={Polaris_Logo_White}
             alt="Polaris_Logo_White"
           />
-          <p className="text-white font-camptonLight
+          <p className="text-white font-camptonBook
                         
                         md:text-[12px] md:leading-tight
                         lg:text-[16px] lg:leading-normal">
@@ -76,38 +76,38 @@ const Footer = () => {
         </div>
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
-          <h1 className="text-white font-camptonMedium
+          <h1 className="text-white font-camptonBold
           
                           md:text-[18px]
                           lg:text-[22px]">
             USEFUL LINKS
           </h1>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">ABOUT US</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">OUR TEAM</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">RECENT NEWS</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">PROJECTS</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">OUR ALL SERVICES</p>
@@ -115,38 +115,38 @@ const Footer = () => {
         </div>
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
-          <h1 className="text-white font-camptonMedium
+          <h1 className="text-white font-camptonBold
           
                           md:text-[18px]
                           lg:text-[22px]">
             CATEGORY
           </h1>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">COORDINATOR</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">ARCHITECT</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">MANAGER</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">PRODUCER</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">DESIGNER</p>
@@ -154,12 +154,12 @@ const Footer = () => {
         </div>
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
-          <h1 className="text-white font-camptonMedium
+          <h1 className="text-white font-camptonBold
           
                           md:text-[18px]
                           lg:text-[22px]">CONTACT</h1>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">
@@ -167,7 +167,7 @@ const Footer = () => {
             </p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">
@@ -175,7 +175,7 @@ const Footer = () => {
             </p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           md:text-[12px]
                           lg:text-[16px]">TIRANA, ALBANIA.</p>
@@ -189,7 +189,7 @@ const Footer = () => {
       
                       xs:flex-col
                       md:flex-row">
-        <p className="text-white font-camptonLight
+        <p className="text-white font-camptonBook
         
                       xs:text-[10px]
                       sm:text-[12px]
@@ -198,21 +198,21 @@ const Footer = () => {
         </p>
         <div className="flex gap-5">
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           xs:text-[10px]
                           sm:text-[12px]
                           lg:text-[15px]">Terms & Conditions</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           xs:text-[10px]
                           sm:text-[12px]
                           lg:text-[15px]">Privacy Policy</p>
           </button>
           <button>
-            <p className="text-white font-camptonLight
+            <p className="text-white font-camptonBook
             
                           xs:text-[10px]
                           sm:text-[12px]

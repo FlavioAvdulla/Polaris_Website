@@ -39,14 +39,11 @@ const ProductSection_01 = () => {
       {productSection_01.map((product, index) => (
         // ============= Product 1 =============
         <div
-          className=" rounded-lg overflow-hidden
+          className=" rounded-lg overflow-hidden h-auto
                       bg-gray-100 border-[1px] border-primary
                       
-                      xs:h-auto xs:mb-5
-                      md:w-[100%] md:h-auto
-                      lg:h-auto
-                      xl:h-[550px]
-                      2xl:h-[700px]"
+                      xs:mb-5
+                      md:w-[100%]"
           key={index}
         >
           {/* ============= Image ============= */}
@@ -58,7 +55,7 @@ const ProductSection_01 = () => {
             />
           </div>
           {/* ============= Info ============= */}
-          <div className="flex flex-col w-[100%] h-[35%] p-4 justify-between">
+          <div className="flex flex-col w-[100%] h-[35%] gap-2 p-4 justify-between">
             {/* ============= Stars ============= */}
             <div className="flex gap-2">
               {getStars(product.rating)}
@@ -77,8 +74,10 @@ const ProductSection_01 = () => {
             <div className="flex justify-between items-center">
               <h1 className="font-camptonBold text-primary
               
-                              xs:text-[22px]
-                              2xl:text-[30px]
+                              xs:text-[40px]
+                              md:text-[30px]
+                              lg:text-[36px]
+                              xl:text-[40px]
                               ">
                 {product.normalPrice}
               </h1>
@@ -90,10 +89,7 @@ const ProductSection_01 = () => {
                               lg:rounded-md">
                 <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
                                                 
-                                                xs:text-[25px] xs:p-1
-                                                md:text-[20px]
-                                                lg:text-[30px]
-                                                2xl:text-[40px] "/>
+                                                xs:text-[40px] xs:p-1"/>
               </i>
             </div>
             <div className="flex justify-between items-center">
