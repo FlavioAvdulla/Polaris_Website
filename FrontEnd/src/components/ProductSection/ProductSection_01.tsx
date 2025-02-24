@@ -75,7 +75,7 @@ const ProductSection_01 = () => {
                               lg:text-[18px]
                               xl:text-[22px] xl:w-[70%]">{product.title}</h1>
             <div className="flex justify-between items-center">
-              <h1 className="font-camptonMedium text-primary
+              <h1 className="font-camptonBold text-primary
               
                               xs:text-[22px]
                               2xl:text-[30px]

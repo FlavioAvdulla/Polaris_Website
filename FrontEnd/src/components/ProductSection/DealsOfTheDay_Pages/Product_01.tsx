@@ -65,10 +65,12 @@ const Product01 = () => {
 
   return (
     <div className="flex w-[85%] h-auto mx-auto my-20 gap-5
-                    xs:flex-col">
+                    
+                    xs:flex-col
+                    md:flex-row">
       {/* ============= Left - Product - Photos ============= */}
-      <div className="flex flex-col w-[50%] h-[600px] gap-5
-                      xs:w-[100%]">
+      <div className="flex flex-col w-[50%] h-[600px] gap-5 mx-auto
+                      xs:w-[70%]">
         {/* ============= Big Photo ============= */}
         <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
                         ">
@@ -131,7 +133,7 @@ const Product01 = () => {
         </div>
       </div>
       {/* ============= Right - Product - Infos ============= */}
-      <div className="flex flex-col w-[50%] h-[600px] bg-gray-100 rounded-lg gap-5 p-10">
+      <div className="flex flex-col w-[50%] h-[600px] bg-gray-100 rounded-lg gap-5 p-10 mx-auto">
         <h1 className="font-camptonBold leading-tight text-[35px] text-primary">
           {product.title}
         </h1>

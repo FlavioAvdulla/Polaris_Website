@@ -80,24 +80,29 @@ const ProductSection_02 = () => {
                             bg-slate-500" src={product.image} alt={product.title} />
             </div>
             {/* ============= Title ============= */}
-            <div className="flex flex-col w-[100%] h-[140px] p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg z-10
-            group-hover:shadow-shadow-dark transition-all duration-300">
+            <div className="flex flex-col font-camptonMedium w-[100%] h-[140px] p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg z-10
+                            group-hover:shadow-shadow-dark transition-all duration-300 
+            
+                            xs:text-[20px]
+                            md:text-[18px]
+                            lg:text-[20px]
+                            xl:text-[17px]">
               <h1 className="mb-4">{product.title}</h1>
               {/* ============= Price ============= */}
               <div className="flex gap-4 items-center">
-                <p className="font-camptonMedium text-primary
+                <p className="font-camptonBold text-primary
                 
-                              lg:text-[20px]
+                              xs:text-[25px]
                               2xl:text-[25px]">{product.normalPrice}</p>
                 <div className="w-auto relative">
                   <div className="absolute h-[1.5px] w-[100%] bg-primary
                                   
-                                  xs:mt-[12px]
+                                  xs:mt-[15px]
                                   2xl:mt-[15px]
                                   "/>
                   <p className="text-gray-700 rounded-br-lg rounded-bl-lg
 
-                                lg:text-[17px]
+                                xs:text-[20px]
                                 2xl:text-[20px]">{product.offerPrice}</p>
                 </div>
               </div>

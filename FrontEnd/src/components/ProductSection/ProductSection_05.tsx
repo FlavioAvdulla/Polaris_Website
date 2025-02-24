@@ -111,32 +111,27 @@ const ProductSection_05 = () => {
                 <p className="text-gray-500
                               
                               xs:text-[8px]
-                              
                               sm:text-[12px]
                               md:text-[17px]
-                              lg:text-[15px]
-                             ">
+                              lg:text-[15px]">
                   {product.description}
                 </p>
                 <div className="flex gap-4 items-center">
-                  <p className="font-camptonMedium
+                  <p className="font-camptonBold text-primary
                                 
                                 xs:text-[16px]
-                                md:text-[20px]
-                              ">
+                                md:text-[20px]">
                     {product.offerPrice}
                   </p>
                   <div className="w-auto relative items-center">
                     <div className="absolute h-[1px] w-[100%] bg-red-500
                     
                                     xs:mt-[9px]
-                                    md:mt-[13px]
-                                    "></div>
+                                    md:mt-[13px]"></div>
                     <p className="text-gray-700
                     
                                   xs:text-[12px]
-                                  md:text-[17px]
-                                  ">
+                                  md:text-[17px]">
                       {product.normalPrice}
                     </p>
                   </div>

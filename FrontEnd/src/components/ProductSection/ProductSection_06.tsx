@@ -83,11 +83,11 @@ const ProductSection_05 = () => {
                             xl:text-[17px] xl:w-[70%]">{product.description}</p>
               {/* ============= Price ============= */}
               <div className="flex items-center gap-4">
-                <p className="font-camptonMedium text-primary
+                <p className="font-camptonBold text-primary
                               
-                              xs:text-[20px]
+                              xs:text-[23px]
                               lg:text-[15px]
-                              xl:text-[20px]">
+                              xl:text-[23px]">
                   {product.offerPrice}
                 </p>
                 <div className="flex w-auto relative items-center">
