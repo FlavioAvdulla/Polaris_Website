@@ -24,7 +24,7 @@ const ProductSection_02 = () => {
       <div className="flex justify-between items-center mb-7">
         <h1 className="font-camptonMedium
                         
-                        xs:text-[8px]
+                        xs:text-[10px]
                         sm:text-[11px]
                         md:text-[15px]
                         lg:text-[22px]">Deals Of The Day</h1>
@@ -38,7 +38,7 @@ const ProductSection_02 = () => {
           <button className="flex border-[1px] border-primary rounded-full items-center">
             <p className="
             
-                        xs:text-[8px] w-auto xs:px-3 py-1
+                        xs:text-[10px] w-auto xs:px-3 py-1
                         sm:text-[11px]
                         md:text-[15px]
                         lg:text-[22px] md:px-10 md:py-2">Latest Products</p>

@@ -11,18 +11,18 @@ const ProductSection_04 = () => {
       <div className="flex w-[100%] justify-between items-center mb-7">
         <h1 className="font-camptonMedium
                       
-                      xs:text-[8px]
+                      xs:text-[10px]
                       sm:text-[11px]
                       md:text-[15px] 
                       lg:text-[22px]">Shop By Categories</h1>
 
         <div className="flex items-center
                         
-                        xs:w-[40%]
+                        xs:w-[50%]
                         md:w-fit">
           <p className="text-gray-500
                         
-                        xs:text-[8px]
+                        xs:text-[10px]
                         sm:text-[11px]
                         md:text-[15px]
                         xl:text-[18px]">
