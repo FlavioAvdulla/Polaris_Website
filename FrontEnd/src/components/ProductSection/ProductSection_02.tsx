@@ -95,12 +95,8 @@ const ProductSection_02 = () => {
                               xs:text-[25px]
                               2xl:text-[25px]">{product.normalPrice}</p>
                 <div className="flex w-auto relative items-center">
-                  <div className="absolute h-[1.5px] w-[100%] bg-primary
-                                  
-                                  "/>
-                  <p className="text-gray-700 rounded-br-lg rounded-bl-lg
-
-                                xs:text-[20px]
+                  <div className="absolute h-[1px] w-[100%] bg-primary"/>
+                  <p className="text-gray-700 rounded-br-lg rounded-bl-lg text-[20px]
                                 ">{product.offerPrice}</p>
                 </div>
               </div>

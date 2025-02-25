@@ -125,7 +125,7 @@ const ProductSection_05 = () => {
                     {product.offerPrice}
                   </p>
                   <div className="flex w-auto relative items-center">
-                    <div className="absolute h-[1px] w-[100%] bg-red-500"></div>
+                    <div className="absolute h-[1px] w-[100%] bg-primary"/>
                     <p className="text-gray-700
                     
                                   xs:text-[17px]
