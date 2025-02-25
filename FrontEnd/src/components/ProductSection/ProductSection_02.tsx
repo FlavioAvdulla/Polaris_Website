@@ -94,7 +94,7 @@ const ProductSection_02 = () => {
                 
                               xs:text-[25px]
                               2xl:text-[25px]">{product.normalPrice}</p>
-                <div className="w-auto relative">
+                <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1.5px] w-[100%] bg-primary
                                   
                                   xs:mt-[15px]
