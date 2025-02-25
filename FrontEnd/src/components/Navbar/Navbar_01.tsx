@@ -15,49 +15,35 @@ const Navbar_01 = () => {
     
                     xs:flex-col xs:items-center xs:gap-3 xs:w-[100%]
                     lg:flex-row lg:w-[85%]
-                    xl:flex-row
-                    "
-    >
+                    xl:flex-row">
       <div className="flex gap-7 w-fit">
         <button className="font-camptonBook">
           <p
             className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]"
-          >
-            Track Order
-          </p>
+                        md:text-[14px]">Track Order</p>
         </button>
         <button className="font-camptonBook">
           <p
             className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]"
-          >
-            About Us
-          </p>
+                        md:text-[14px]">About Us</p>
         </button>
         <button className="font-camptonBook">
           <p
             className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]"
-          >
-            Contact
-          </p>
+                        md:text-[14px]">Contact</p>
         </button>
         <button className="font-camptonBook">
           <p
             className="hover:text-primary ease-in-out duration-300
           
                         xs:text-[12px]
-                        md:text-[14px]"
-          >
-            FAQ
-          </p>
+                        md:text-[14px]">FAQ</p>
         </button>
       </div>
       <div
@@ -92,10 +78,7 @@ const Navbar_01 = () => {
                               
                               xs:hidden
                               sm:flex sm:text-[10px]
-                              md:text-[14px]"
-            >
-              +355 (0) 67 63 11 918
-            </p>
+                              md:text-[14px]">+355 (0) 67 63 11 918</p>
           </div>
         </button>
         <SelectLanguage />
@@ -110,10 +93,7 @@ const Navbar_01 = () => {
           <p
             className="text-[14px] group-hover:text-primary ease-in-out duration-300
                       xs:hidden
-                      lg:flex"
-          >
-            Light Theme
-          </p>
+                      lg:flex">Light Theme</p>
         </button>
         </div>
       </div>

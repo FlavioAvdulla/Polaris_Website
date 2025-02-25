@@ -15,10 +15,14 @@ import ProductSection_06 from "./components/ProductSection/ProductSection_06";
 import Footer from "./components/Footer/Footer";
 import Product_01 from "./components/ProductSection/DealsOfTheDay_Pages/Product_01";
 
+// Scroll to top
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
+
 const App = () => {
   return (
     <div className="overflow-hidden">
       <Router>
+      <ScrollToTop/>
         <Navbar_01 />
         <Navbar_02 />
         <Navbar_03 />

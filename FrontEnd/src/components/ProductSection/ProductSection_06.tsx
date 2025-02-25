@@ -51,15 +51,13 @@ const ProductSection_05 = () => {
         {productSection_06.map((product, index) => (
           <div
             className="flex w-[100%] h-auto overflow-hidden bg-gray-100 items-center rounded-lg border-[1px] border-primary"
-            key={index}
-          >
+            key={index}>
             {/* ============= Section - right - 01 - Photo ============= */}
             <div className="flex w-[40%] h-[100%] items-center rounded-tl-lg rounded-bl-lg bg-white">
               <img
                 src={product.image}
                 alt={product.title}
-                className="w-full h-auto rounded-tl-lg rounded-bl-lg"
-              />
+                className="w-full h-auto rounded-tl-lg rounded-bl-lg"/>
             </div>
             {/* ============= Section - right - 01 - Info ============= */}
             <div className="flex flex-col w-[60%] h-[100%] p-3 justify-center gap-1">
@@ -69,9 +67,7 @@ const ProductSection_05 = () => {
                 <p className="font-camptonBook mt-[2px]
                 
                               xs:text-[10px]
-                              xl:text-[13px]">
-                  ({product.rating})
-                </p>
+                              xl:text-[13px]">({product.rating})</p>
               </div>
               <h1 className="text-[16px] font-camptonMedium leading-tight">
                 {product.title}
@@ -87,18 +83,14 @@ const ProductSection_05 = () => {
                               
                               xs:text-[23px]
                               lg:text-[15px]
-                              xl:text-[23px]">
-                  {product.offerPrice}
-                </p>
+                              xl:text-[23px]">{product.offerPrice}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
                   <p className="text-gray-700
                   
                                 
                                 lg:text-[12px]
-                                xl:text-[17px]">
-                    {product.normalPrice}
-                  </p>
+                                xl:text-[17px]">{product.normalPrice}</p>
                 </div>
               </div>
             </div>

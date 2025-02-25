@@ -6,6 +6,10 @@ import { GoDot } from "react-icons/go";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+// Scroll to top
+import ScrollToTop from "../../../ScrollToTop/ScrollToTop";
+
+
 // Photos
 import Lenovo_01 from "../../../assets/images/Products/Legion/Legion_01.jpg";
 import Lenovo_02 from "../../../assets/images/Products/Legion/Legion_02.jpg";
@@ -14,7 +18,7 @@ import Lenovo_04 from "../../../assets/images/Products/Legion/Legion_04.jpg";
 
 import { dealsOfTheDay } from "../../../components/ProductSection/ProductSection";
 
-const Product01 = () => {
+const Product_01 = () => {
   const [mainPhoto, setMainPhoto] = useState(Lenovo_01);
   const [quantity, setQuantity] = useState("01");
 
@@ -84,6 +88,7 @@ const Product01 = () => {
                     xs:flex-col xs:gap-2
                     md:flex-row md:gap-3
                     lg:gap-5">
+      <ScrollToTop/>
       {/* ============= Left - Product - Photos ============= */}
       <div className="flex flex-col mx-auto
                       
@@ -347,5 +352,5 @@ const Product01 = () => {
   );
 };
 
-export default Product01;
+export default Product_01;
 

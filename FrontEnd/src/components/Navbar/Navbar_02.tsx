@@ -23,9 +23,7 @@ const Navbar_02 = () => {
                       xl:w-[100px]
                       md:flex
                       " src={Polaris_Logo} alt="Polaris_Logo" />
-      <div className="w-auto h-full flex
-      
-                      ">
+      <div className="w-auto h-full flex">
                         <div className="w-auto h-auto
                                         xs:hidden
                                         sm:flex">
@@ -43,13 +41,12 @@ const Navbar_02 = () => {
           type="search"
           id="search"
           name="search"
-          placeholder="Search for products..."
-        ></input>
+          placeholder="Search for products..."></input>
         <i
           className="bg-white text-primary text-[30px] p-3 border-primary
                         border-[1px] border-l-0 items-center justify-center flex
                         rounded-tr-md rounded-br-md">
-          <IoIosSearch className="text-[20px]" />
+          <IoIosSearch className="text-[20px]"/>
         </i>
       </div>
       <div className="w-auto h-[100%] flex
@@ -74,7 +71,7 @@ const Navbar_02 = () => {
         <div className="relative flex items-center justify-center">
           <i>
             <SlHeart className="xs:text-[17px]
-                              md:text-[28px]" />
+                              md:text-[28px]"/>
           </i>
           <div
             className="absolute top-0 ml-6 mt-1 flex rounded-full
@@ -93,8 +90,10 @@ const Navbar_02 = () => {
         {/* ============= Cart Icon ============= */}
         <div className="relative flex items-center justify-center">
           <i>
-            <PiShoppingCartLight className="xs:text-[17px]
-                                            md:text-[28px]" />
+            <PiShoppingCartLight className="
+                                            
+                                            xs:text-[17px]
+                                            md:text-[28px]"/>
           </i>
           <div
             className="absolute top-0 flex rounded-full
@@ -102,8 +101,7 @@ const Navbar_02 = () => {
                 
                 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                 sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
-                md:ml-6 md:mt-1"
-          >
+                md:ml-6 md:mt-1">
             <p className="text-white
                             
                             xs:text-[8px]

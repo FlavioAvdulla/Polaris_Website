@@ -3,6 +3,7 @@ import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 
+// Data
 import { productSection_01 } from "../../components/ProductSection/ProductSection";
 
 const ProductSection_01 = () => {

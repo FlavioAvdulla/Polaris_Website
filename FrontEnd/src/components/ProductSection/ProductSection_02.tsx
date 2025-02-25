@@ -63,8 +63,7 @@ const ProductSection_02 = () => {
         
                   xs:grid-cols-1 xs:grid xs:gap-y-[60px]
                   md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
-                  xl:flex"
-      >
+                  xl:flex">
         {/* ============= Product List ============= */}
         {dealsOfTheDay.map((product, index) => (
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary
