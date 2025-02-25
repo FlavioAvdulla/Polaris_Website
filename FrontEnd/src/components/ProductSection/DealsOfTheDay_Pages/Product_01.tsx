@@ -23,13 +23,25 @@ const Product01 = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
-        stars.push(<FaStar key={i} className="text-[20px] text-[#fcc419]" />);
+        stars.push(<FaStar key={i} className="text-[#fcc419]
+          
+                                              xs:text-[10px]
+                                              md:text-[17px]
+                                              lg:text-[20px]" />);
       } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
         stars.push(
-          <FaStarHalfAlt key={i} className="text-[20px] text-[#fcc419]" />
+          <FaStarHalfAlt key={i} className="text-[#fcc419]
+          
+                                              xs:text-[10px]
+                                              md:text-[17px]
+                                              lg:text-[20px]" />
         );
       } else {
-        stars.push(<FaStar key={i} className="text-[20px] text-gray-300" />);
+        stars.push(<FaStar key={i} className="text-gray-300
+          
+                                              xs:text-[10px]
+                                              md:text-[17px]
+                                              lg:text-[20px]" />);
       }
     }
     return stars;
@@ -64,14 +76,17 @@ const Product01 = () => {
   const product = dealsOfTheDay.find((item) => item._id === "1");
 
   return (
-    <div className="flex w-[85%] h-auto mx-auto my-20 gap-5
+    <div className="flex w-[85%] h-auto mx-auto my-20
                     
-                    xs:flex-col
-                    md:flex-row">
+                    xs:flex-col xs:gap-2
+                    md:flex-row md:gap-3
+                    lg:gap-5">
       {/* ============= Left - Product - Photos ============= */}
-      <div className="flex flex-col w-[50%] gap-5 mx-auto
+      <div className="flex flex-col mx-auto
                       
-                      lg:h-[500px]
+                      xs:gap-1 xs:w-[100%]
+                      md:gap-3
+                      lg:h-[500px] lg:gap-5 lg:w-[50%]
                       xl:h-[600px]">
         {/* ============= Big Photo ============= */}
         <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
@@ -83,7 +98,11 @@ const Product01 = () => {
           />
         </div>
         {/* ============= Small Photos ============= */}
-        <div className="flex w-[100%] h-[25%] gap-5">
+        <div className="flex w-[100%] h-[25%]
+        
+                        xs:gap-1
+                        md:gap-3
+                        lg:gap-5">
           <div
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
@@ -136,13 +155,15 @@ const Product01 = () => {
       </div>
 
       {/* ============= Right - Product - Infos ============= */}
-      <div className="flex flex-col w-[50%] bg-gray-100 rounded-lg mx-auto justify-between
+      <div className="flex flex-col bg-gray-100 gap-2 rounded-lg mx-auto justify-between
       
-                      md:h-auto md:p-4
+                      xs:p-3 xs:h-auto xs:w-[100%]
+                      md:p-4 lg:w-[50%]
                       lg:h-[500px] lg:p-5
                       xl:h-[600px] xl:p-10">
         <h1 className="font-camptonBold leading-tight text-primary
         
+                        xs:text-[20px]
                         md:text-[28px]
                         lg:text-[38px]
                         xl:text-[45px]
@@ -151,6 +172,7 @@ const Product01 = () => {
         </h1>
         <p className="w-[100%] font-camptonBook leading-tight
         
+                      xs:text-[10px] text-justify
                       md:text-[13px]
                       lg:text-[16px]
                       xl:text-[18px]">
@@ -160,13 +182,18 @@ const Product01 = () => {
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook
         
+                      xs:text-[8px]
                       md:text-[15px]
                       lg:text-[18px]
                       xl:text-[20px]">{product.reviews}</p>
         {/* ============= Price ============= */}
-        <div className="flex gap-4 items-center">
+        <div className="flex items-center
+        
+                        xs:gap-2
+                        md:gap-4">
           <p className="font-camptonBold text-primary
           
+                        xs:text-[22px]
                         md:text-[30px]
                         lg:text-[40px]">
             {product.offerPrice}
@@ -175,51 +202,67 @@ const Product01 = () => {
             <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
             <p className="text-gray-700
             
+                          xs:text-[16px]
                           md:text-[17px]
                           lg:text-[25px]">{product.normalPrice}</p>
           </div>
         </div>
-        <div className="gap-1 flex flex-col">
+        <div className="gap-1 flex flex-col mb-2">
           <div className="flex items-center gap-1">
             <i>
-              <GoDot className="text-primary text-[12px]" />
+              <GoDot className="text-primary
+              
+                               
+                                xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
             
-                        md:text-[10px]
+                        
+                        xs:text-[10px]
                         lg:text-[13px]
                         xl:text-[15px]">{product.detail_01}</p>
           </div>
 
           <div className="flex items-center gap-1">
             <i>
-              <GoDot className="text-primary text-[12px]" />
+              <GoDot className="text-primary
+              
+                                
+                                xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
             
-                          md:text-[10px]
+                          
+                          xs:text-[10px]
                           lg:text-[13px]
                           xl:text-[15px]">{product.detail_02}</p>
           </div>
 
           <div className="flex items-center gap-1">
             <i>
-              <GoDot className="text-primary text-[12px]" />
+              <GoDot className="text-primary
+              
+                                xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
             
-                          md:text-[10px]
+                          
+                          xs:text-[10px]
                           lg:text-[13px]
                           xl:text-[15px]">{product.detail_03}</p>
           </div>
 
           <div className="flex items-center gap-1">
             <i>
-              <GoDot className="text-primary text-[12px]" />
+              <GoDot className="text-primary
+              
+                                
+                                xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
             
-                          md:text-[10px]
+                          
+                          xs:text-[10px]
                           lg:text-[13px]
                           xl:text-[15px]">{product.detail_04}</p>
           </div>
@@ -227,17 +270,19 @@ const Product01 = () => {
         {/* ============= Quantity ============= */}
         <div className="flex w-fit h-auto items-center">
           <div
-            className="flex items-center justify-center rounded-tl-lg rounded-bl-lg
+            className="flex items-center justify-center
                         border-[1px] border-primary cursor-pointer
                         
-                        md:w-[15px] md:h-[14px] md:p-3
-                        lg:w-[20px] lg:h-[20px] lg:p-5"
+                        
+                        xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
+                        lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
             onClick={decreaseQuantity}
           >
             <i>
               <FaCircleMinus className="text-primary cursor-pointer
               
-                                        md:text-[13px]
+                                      
+                                        xs:text-[13px]
                                         lg:text-[22px]" />
             </i>
           </div>
@@ -245,7 +290,8 @@ const Product01 = () => {
             <input
               className="text-center text-white font-camptonMedium bg-transparent outline-none
               
-                        md:w-[25px] md:h-250px] md:text-[10px]
+                       
+                        xs:w-[25px] xs:h-[26px] xs:text-[12px]
                         lg:w-[40px] lg:h-[40px] lg:text-[20px]"
               type="text"
               id="quantity"
@@ -256,17 +302,18 @@ const Product01 = () => {
             />
           </div>
           <div
-            className="flex items-center justify-center rounded-tr-lg rounded-br-lg
+            className="flex items-center justify-center
                         border-[1px] border-primary cursor-pointer
                         
-                        md:w-[15px] md:h-[14px] md:p-3
-                        lg:w-[20px] lg:h-[20px] lg:p-5"
+                        xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
+                        lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
             onClick={increaseQuantity}
           >
             <i>
               <FaCirclePlus className="text-primary cursor-pointer
               
-                                        md:text-[13px]
+                                  
+                                        xs:text-[13px]
                                         lg:text-[22px]" />
             </i>
           </div>
