@@ -87,7 +87,7 @@ export function Carousel_05() {
                                     xl:text-[15px]">
                         Exclusive Offer
                         <span
-                          className="rounded-full bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
+                          className="rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
                                       hover:bg-transparent hover:scale-110 ease-in-out duration-300
                                             
                                     xs:text-[10px]
@@ -117,7 +117,7 @@ export function Carousel_05() {
                       </p>
                       <div className="w-auto mt-7">
                         <button
-                          className=" flex items-center justify-center gap-3 border-[1px] bg-primary border-white text-white px-4 py-2 rounded-full
+                          className=" flex items-center justify-center gap-3 border-[1px] bg-primary border-white text-white px-4 py-2 rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                                       hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
                                       
                                       xs:gap-2 xs:px-3 xs:py-1

@@ -23,7 +23,7 @@ const BannerSection = () => {
                       lg:text-[18px]
                       xl:text-[20px]">
           Exclusive Offer
-          <span className="rounded-full bg-primary border-[1px] cursor-pointer border-white text-white items-center justify-center
+          <span className="rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer border-white text-white items-center justify-center
                           hover:bg-transparent hover:scale-110 ease-in-out duration-300
                           
                           xs:px-3 xs:py-[1px] xs:text-[8px]
@@ -52,7 +52,7 @@ const BannerSection = () => {
         </p>
         <div className="w-auto">
           <button
-            className="flex items-center justify-center border-[1px] border-white text-white rounded-full
+            className="flex items-center justify-center border-[1px] border-white text-white rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                         hover:scale-110 hover:border-[1px] bg-primary hover:bg-transparent ease-in-out duration-300
                         
                         xs:text-[8px] xs:px-2 xs:py-1

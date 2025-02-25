@@ -17,7 +17,7 @@ const ProductSection_05 = () => {
           
                                               xs:text-[10px]
                                               md:text-[18px]
-                                              lg:text-[20px]
+                                              lg:text-[15px]
                                               xl:text-[17px]" />);
       } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
         stars.push(
@@ -25,7 +25,7 @@ const ProductSection_05 = () => {
           
                                             xs:text-[10px]
                                             md:text-[18px]
-                                            lg:text-[20px]
+                                            lg:text-[15px]
                                             xl:text-[17px]" />
         );
       } else {
@@ -33,7 +33,7 @@ const ProductSection_05 = () => {
           
                                               xs:text-[10px]
                                               md:text-[18px]
-                                              lg:text-[20px]
+                                              lg:text-[15px]
                                               xl:text-[17px]" />);
       }
     }
@@ -100,9 +100,9 @@ const ProductSection_05 = () => {
                 </div>
                 <h1 className="font-camptonMedium leading-tight
                 
-                                xs:text-[12px]
-                                sm:text-[17px]
-                                md:text-[25px]
+                                xs:text-[18px]
+                                sm:text-[20px]
+                                md:text-[27px]
                                 lg:text-[22px]
                               
                                 ">
@@ -110,28 +110,27 @@ const ProductSection_05 = () => {
                 </h1>
                 <p className="text-gray-500
                               
-                              xs:text-[8px]
+                              xs:text-[10px]
                               sm:text-[12px]
-                              md:text-[17px]
+                              md:text-[20px]
                               lg:text-[15px]">
                   {product.description}
                 </p>
                 <div className="flex gap-4 items-center">
                   <p className="font-camptonBold text-primary
                                 
-                                xs:text-[16px]
-                                md:text-[20px]">
+                                xs:text-[25px]
+                                md:text-[35px]
+                                lg:text-[25px]">
                     {product.offerPrice}
                   </p>
-                  <div className="w-auto relative items-center">
-                    <div className="absolute h-[1px] w-[100%] bg-red-500
-                    
-                                    xs:mt-[9px]
-                                    md:mt-[13px]"></div>
+                  <div className="flex w-auto relative items-center">
+                    <div className="absolute h-[1px] w-[100%] bg-red-500"></div>
                     <p className="text-gray-700
                     
-                                  xs:text-[12px]
-                                  md:text-[17px]">
+                                  xs:text-[17px]
+                                  md:text-[22px]
+                                  lg:text-[20px]">
                       {product.normalPrice}
                     </p>
                   </div>

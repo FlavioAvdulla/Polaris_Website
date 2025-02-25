@@ -43,7 +43,7 @@ const ProductSection_03 = () => {
             {/* ============= Button ============= */}
             <div className="w-auto mt-7">
               <button
-                className="flex items-center justify-center bg-white border-[1px] text-primary rounded-full
+                className="flex items-center justify-center bg-white border-[1px] text-primary rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                             hover:bg-transparent  hover:border-white hover:border-[1px] hover:scale-105 ease-in-out
                             duration-300 hover:text-white
                             

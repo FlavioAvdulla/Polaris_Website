@@ -57,7 +57,7 @@ export function Carousel_04() {
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
-                  className={`flex items-center m-0 p-0 rounded-xl overflow-hidden
+                  className={`flex items-center m-0 p-0 rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg overflow-hidden
                                                     ${
                                                       isGrabbing
                                                         ? "cursor-grabbing"
@@ -93,7 +93,7 @@ export function Carousel_04() {
                           Exclusive Offer
                         </p>
                         <div
-                          className="w-fit rounded-full bg-primary border-[1px] cursor-pointer
+                          className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
                                     border-white text-white items-center justify-center
                                       hover:bg-transparent hover:scale-110 ease-in-out duration-300">
                           <p
@@ -130,7 +130,7 @@ export function Carousel_04() {
                       </p>
                       <div className="w-auto mt-7">
                         <button
-                          className="flex items-center justify-center bg-primary border-[1px] border-white text-white rounded-full
+                          className="flex items-center justify-center bg-primary border-[1px] border-white text-white rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                                     hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
                                                                           
                                       xs:gap-2 xs:px-3 xs:py-1
