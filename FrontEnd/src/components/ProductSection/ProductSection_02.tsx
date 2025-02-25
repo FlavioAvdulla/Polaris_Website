@@ -16,6 +16,12 @@ const ProductSection_02 = () => {
     if (id === "1") {
       navigate("/Product_01")
     }
+    if (id === "2") {
+      navigate("/Product_02")
+    }
+    if (id === "3") {
+      navigate("/Product_03")
+    }
   }
 
   return (
@@ -66,7 +72,7 @@ const ProductSection_02 = () => {
                   xl:flex">
         {/* ============= Product List ============= */}
         {dealsOfTheDay.map((product, index) => (
-          <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary
+          <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer
                           rounded-lg" key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
             <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
@@ -92,11 +98,11 @@ const ProductSection_02 = () => {
                 <p className="font-camptonBold text-primary
                 
                               xs:text-[25px]
-                              2xl:text-[25px]">{product.normalPrice}</p>
+                              2xl:text-[25px]">{product.offerPrice}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
                   <p className="text-gray-700 rounded-br-lg rounded-bl-lg text-[20px]
-                                ">{product.offerPrice}</p>
+                                ">{product.normalPrice}</p>
                 </div>
               </div>
             </div>

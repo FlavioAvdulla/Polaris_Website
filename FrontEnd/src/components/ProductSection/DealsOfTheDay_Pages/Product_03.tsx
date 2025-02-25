@@ -6,20 +6,16 @@ import { GoDot } from "react-icons/go";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
-// Scroll to top
-import ScrollToTop from "../../../ScrollToTop/ScrollToTop";
-
-
 // Photos
-import Lenovo_01 from "../../../assets/images/Products/Legion/Legion_01.jpg";
-import Lenovo_02 from "../../../assets/images/Products/Legion/Legion_02.jpg";
-import Lenovo_03 from "../../../assets/images/Products/Legion/Legion_03.jpg";
-import Lenovo_04 from "../../../assets/images/Products/Legion/Legion_04.jpg";
+import Ps5_01 from "../../../assets/images/Products/Ps5/Ps5_01.jpg";
+import Ps5_02 from "../../../assets/images/Products/Ps5/Ps5_02.jpg";
+import Ps5_03 from "../../../assets/images/Products/Ps5/Ps5_03.jpg";
+import Ps5_04 from "../../../assets/images/Products/Ps5/Ps5_04.jpg";
 
 import { dealsOfTheDay } from "../../../components/ProductSection/ProductSection";
 
-const Product_01 = () => {
-  const [mainPhoto, setMainPhoto] = useState(Lenovo_01);
+const Product_03 = () => {
+  const [mainPhoto, setMainPhoto] = useState(Ps5_01);
   const [quantity, setQuantity] = useState("01");
 
   const handleClick = (photo) => {
@@ -79,8 +75,8 @@ const Product_01 = () => {
     });
   };
 
-  // Find the product with _id: "1"
-  const product = dealsOfTheDay.find((item) => item._id === "1");
+  // Find the product with _id: "3"
+  const product = dealsOfTheDay.find((item) => item._id === "3");
 
   return (
     <div className="flex w-[85%] h-auto mx-auto my-20
@@ -88,7 +84,6 @@ const Product_01 = () => {
                     xs:flex-col xs:gap-2
                     md:flex-row md:gap-3
                     lg:gap-5">
-      <ScrollToTop/>
       {/* ============= Left - Product - Photos ============= */}
       <div className="flex flex-col mx-auto
                       
@@ -118,9 +113,9 @@ const Product_01 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Lenovo_01}
+              src={Ps5_01}
               alt="Image_02"
-              onClick={() => handleClick(Lenovo_01)}
+              onClick={() => handleClick(Ps5_01)}
             />
           </div>
           <div
@@ -130,9 +125,9 @@ const Product_01 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Lenovo_02}
+              src={Ps5_02}
               alt="Image_03"
-              onClick={() => handleClick(Lenovo_02)}
+              onClick={() => handleClick(Ps5_02)}
             />
           </div>
           <div
@@ -142,9 +137,9 @@ const Product_01 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Lenovo_03}
+              src={Ps5_03}
               alt="Image_04"
-              onClick={() => handleClick(Lenovo_03)}
+              onClick={() => handleClick(Ps5_03)}
             />
           </div>
           <div
@@ -154,9 +149,9 @@ const Product_01 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Lenovo_04}
+              src={Ps5_04}
               alt="Image_01"
-              onClick={() => handleClick(Lenovo_04)}
+              onClick={() => handleClick(Ps5_04)}
             />
           </div>
         </div>
@@ -330,7 +325,7 @@ const Product_01 = () => {
       <button
               className=" flex items-center w-fit justify-center gap-3 border-[1px] bg-primary
                         border-white text-white px-4 py-2 rounded-tr-3xl rounded-br-3xl rounded-tl-lg rounded-bl-lg
-                          hover:scale-110 hover:border-[1px] hover:bg-transparent hover:border-primary hover:text-primary ease-in-out duration-300
+                          hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
                           
                           xs:gap-2 xs:px-4 xs:py-2
                           md:gap-3">
@@ -352,5 +347,4 @@ const Product_01 = () => {
   );
 };
 
-export default Product_01;
-
+export default Product_03;

@@ -13,7 +13,11 @@ import ProductSection_05 from "./components/ProductSection/ProductSection_05";
 import BannerSection from "./components/BannerSection/BannerSection";
 import ProductSection_06 from "./components/ProductSection/ProductSection_06";
 import Footer from "./components/Footer/Footer";
+
+// Product Pages
 import Product_01 from "./components/ProductSection/DealsOfTheDay_Pages/Product_01";
+import Product_02 from "./components/ProductSection/DealsOfTheDay_Pages/Product_02";
+import Product_03 from "./components/ProductSection/DealsOfTheDay_Pages/Product_03";
 
 // Scroll to top
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
@@ -28,6 +32,8 @@ const App = () => {
         <Navbar_03 />
         <Routes>
           <Route path="/Product_01" element={<Product_01 />} />
+          <Route path="/Product_02" element={<Product_02 />} />
+          <Route path="/ProducT_03" element={<Product_03 />} />
           <Route
             path="/"
             element={
