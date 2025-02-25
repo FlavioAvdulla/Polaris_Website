@@ -3,6 +3,9 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
 import { GoDot } from "react-icons/go";
 
+// React Icons
+import { IoIosArrowForward } from "react-icons/io";
+
 // Photos
 import Lenovo_01 from "../../../assets/images/Products/Legion/Legion_01.jpg";
 import Lenovo_02 from "../../../assets/images/Products/Legion/Legion_02.jpg";
@@ -182,7 +185,7 @@ const Product01 = () => {
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook
         
-                      xs:text-[8px]
+                      xs:text-[12px]
                       md:text-[15px]
                       lg:text-[18px]
                       xl:text-[20px]">{product.reviews}</p>
@@ -268,7 +271,7 @@ const Product01 = () => {
           </div>
         </div>
         {/* ============= Quantity ============= */}
-        <div className="flex w-fit h-auto items-center">
+        <div className="flex w-fit h-auto items-center mb-2">
           <div
             className="flex items-center justify-center
                         border-[1px] border-primary cursor-pointer
@@ -318,6 +321,27 @@ const Product01 = () => {
             </i>
           </div>
         </div>
+        {/* ============= Button ============= */}
+      <button
+              className=" flex items-center w-fit justify-center gap-3 border-[1px] bg-primary
+                        border-white text-white px-4 py-2 rounded-tr-3xl rounded-br-3xl rounded-tl-lg rounded-bl-lg
+                          hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                          
+                          xs:gap-2 xs:px-4 xs:py-2
+                          md:gap-3">
+              <p className="
+              
+                          xs:text-[10px]
+                          lg:text-[18px]
+                          2xl:text-[20px]">
+                SHOW NOW</p>
+              <i>
+                <IoIosArrowForward className="
+                                              xs:text-[10px]
+                                              lg:text-[18px]
+                                              2xl:text-[20px]"/>
+              </i>
+        </button>
       </div>
     </div>
   );
