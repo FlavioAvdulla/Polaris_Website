@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Polaris Logo
 import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
@@ -11,18 +12,27 @@ import { SlHeart } from "react-icons/sl";
 import { PiShoppingCartLight } from "react-icons/pi";
 
 const Navbar_02 = () => {
+  
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState("/");
+
+  const handleLogoClick = () => {
+    navigate("/");
+    setActiveSection("Home");
+  };
+
   return (
     <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
                     
                     xs:gap-5
                     lg:gap-0">
-      <img className="w-[110px]
+      <img className="w-[110px] cursor-pointer
                       
                       xs:hidden
                       sm:w-[80px]
                       xl:w-[100px]
                       md:flex
-                      " src={Polaris_Logo} alt="Polaris_Logo" />
+                      " src={Polaris_Logo} alt="Polaris_Logo" onClick={handleLogoClick}/>
       <div className="w-auto h-full flex">
                         <div className="w-auto h-auto
                                         xs:hidden
