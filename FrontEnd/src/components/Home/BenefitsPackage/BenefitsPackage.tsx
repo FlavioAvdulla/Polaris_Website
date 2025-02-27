@@ -4,7 +4,7 @@ import React from "react";
 
 
 // Import Data
-import { benefits } from "../../components/ProductSection/ProductSection";
+import { benefits } from "../ProductSection/ProductSection";
 
 const BenefitsPackage = () => {
   return (

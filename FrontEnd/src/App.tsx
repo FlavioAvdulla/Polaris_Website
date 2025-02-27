@@ -4,27 +4,27 @@ import Navbar_01 from "./components/Navbar/Navbar_01";
 import Navbar_02 from "./components/Navbar/Navbar_02";
 import Navbar_03 from "./components/Navbar/Navbar_03";
 import Carousel from "./components/Carousel/Carousel";
-import BenefitsPackage from "./components/BenefitsPackage/BenefitsPackage";
-import ProductSection_01 from "./components/ProductSection/ProductSection_01";
-import ProductSection_02 from "./components/ProductSection/ProductSection_02";
-import ProductSection_03 from "./components/ProductSection/ProductSection_03";
-import ProductSection_04 from "./components/ProductSection/ProductSection_04";
-import ProductSection_05 from "./components/ProductSection/ProductSection_05";
+import BenefitsPackage from "./components/Home/BenefitsPackage/BenefitsPackage";
+import ProductSection_01 from "./components/Home/ProductSection/ProductSection_01";
+import ProductSection_02 from "./components/Home/ProductSection/ProductSection_02";
+import ProductSection_03 from "./components/Home/ProductSection/ProductSection_03";
+import ProductSection_04 from "./components/Home/ProductSection/ProductSection_04";
+import ProductSection_05 from "./components/Home/ProductSection/ProductSection_05";
 import BannerSection from "./components/BannerSection/BannerSection";
-import ProductSection_06 from "./components/ProductSection/ProductSection_06";
-import Footer from "./components/Footer/Footer";
+import ProductSection_06 from "./components/Home/ProductSection/ProductSection_06";
+import Footer from "./components/Home/Footer/Footer";
 
 // Product Pages
-import Product_01 from "./components/ProductSection/DealsOfTheDay_Pages/Product_01";
-import Product_02 from "./components/ProductSection/DealsOfTheDay_Pages/Product_02";
-import Product_03 from "./components/ProductSection/DealsOfTheDay_Pages/Product_03";
+import Product_01 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Product_01";
+import Product_02 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Product_02";
+import Product_03 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Product_03";
 
 // Scroll to top
 import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 const App = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="">
       <Router>
       <ScrollToTop/>
         <Navbar_01 />

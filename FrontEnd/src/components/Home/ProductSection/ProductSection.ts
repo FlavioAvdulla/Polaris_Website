@@ -1,22 +1,22 @@
 // Photos
-import Product_01 from "../../assets/images/Products/Product_01.jpg";
-import Product_02 from "../../assets/images/Products/Product_02.jpg";
-import Product_03 from "../../assets/images/Products/Product_03.jpg";
-import Product_04 from "../../assets/images/Products/Product_04.jpg";
-import Product_05 from "../../assets/images/Products/Product_05.jpg";
-import Product_06 from "../../assets/images/Products/Product_06.jpg";
-import Product_07 from "../../assets/images/Products/Product_07.jpg";
-import Product_08 from "../../assets/images/Products/Product_08.jpg";
-import Product_09 from "../../assets/images/Products/Product_09.jpg";
-import Product_10 from "../../assets/images/Products/Product_10.jpg";
-import Product_11 from "../../assets/images/Products/Product_11.jpg";
+import Product_01 from "../../../assets/images/Products/Product_01.jpg";
+import Product_02 from "../../../assets/images/Products/Product_02.jpg";
+import Product_03 from "../../../assets/images/Products/Product_03.jpg";
+import Product_04 from "../../../assets/images/Products/Product_04.jpg";
+import Product_05 from "../../../assets/images/Products/Product_05.jpg";
+import Product_06 from "../../../assets/images/Products/Product_06.jpg";
+import Product_07 from "../../../assets/images/Products/Product_07.jpg";
+import Product_08 from "../../../assets/images/Products/Product_08.jpg";
+import Product_09 from "../../../assets/images/Products/Product_09.jpg";
+import Product_10 from "../../../assets/images/Products/Product_10.jpg";
+import Product_11 from "../../../assets/images/Products/Product_11.jpg";
 
-import Slider_01 from "../../assets/images/Sliders/Slider_01.jpg";
-import Slider_02 from "../../assets/images/Sliders/Slider_02.jpg";
-import Slider_03 from "../../assets/images/Sliders/Slider_03.jpg";
-import Slider_05 from "../../assets/images/Sliders/Slider_05.jpg";
-import Slider_06 from "../../assets/images/Sliders/Slider_06.jpg";
-import Slider_07 from "../../assets/images/Sliders/Slider_07.jpg";
+import Slider_01 from "../../../assets/images/Sliders/Slider_01.jpg";
+import Slider_02 from "../../../assets/images/Sliders/Slider_02.jpg";
+import Slider_03 from "../../../assets/images/Sliders/Slider_03.jpg";
+import Slider_05 from "../../../assets/images/Sliders/Slider_05.jpg";
+import Slider_06 from "../../../assets/images/Sliders/Slider_06.jpg";
+import Slider_07 from "../../../assets/images/Sliders/Slider_07.jpg";
 
 // React Icons
 import { CiMedal } from "react-icons/ci";

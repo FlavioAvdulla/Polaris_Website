@@ -1,12 +1,12 @@
 import React from "react";
-import { Carousel_03 } from "../Shadcn-components/Carousel_03";
-import { Carousel_04 } from "../Shadcn-components/Carousel_04";
+import { Carousel_03 } from "../../Shadcn-components/Carousel_03";
+import { Carousel_04 } from "../../Shadcn-components/Carousel_04";
 
 // React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 // Import the product data.
-import { productSection_05 } from "../../components/ProductSection/ProductSection";
+import { productSection_05 } from "./ProductSection";
 
 const ProductSection_05 = () => {
   const getStars = (rating) => {

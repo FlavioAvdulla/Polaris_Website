@@ -3,7 +3,7 @@ import React from "react";
 // React Icons
 import { PiShoppingCartLight } from "react-icons/pi";
 
-import { dealsOfTheDay } from "../../components/ProductSection/ProductSection";
+import { dealsOfTheDay } from "./ProductSection";
 
 import { useNavigate } from "react-router-dom";
 

@@ -2,7 +2,7 @@ import React from "react";
 
 // React Icons
 import { IoIosSearch } from "react-icons/io";
-import { shopByCategories } from "../../components/ProductSection/ProductSection";
+import { shopByCategories } from "./ProductSection";
 
 const ProductSection_04 = () => {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 // Import the product data and image.
-import { productSection_03 } from "../../components/ProductSection/ProductSection";
+import { productSection_03 } from "./ProductSection";
 
 const ProductSection_03 = () => {
   return (

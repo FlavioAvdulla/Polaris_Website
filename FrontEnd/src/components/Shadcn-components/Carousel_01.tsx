@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { carousel_01 } from "../../components/ProductSection/ProductSection";
+import { carousel_01 } from "../Home/ProductSection/ProductSection";
 import {
   Carousel,
   CarouselContent,
