@@ -1,6 +1,6 @@
 import React from "react";
 
-import banner_01 from "../../assets/images/banner_01.jpg";
+import banner_01 from "../../../assets/images/banner_01.jpg";
 
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
