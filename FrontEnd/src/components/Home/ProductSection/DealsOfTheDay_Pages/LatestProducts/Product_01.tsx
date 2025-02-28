@@ -7,16 +7,16 @@ import { GoDot } from "react-icons/go";
 import { IoIosArrowForward } from "react-icons/io";
 
 // Scroll to top
-import ScrollToTop from "../../../../ScrollToTop/ScrollToTop";
+import ScrollToTop from "../../../../../ScrollToTop/ScrollToTop";
 
 
 // Photos
-import Lenovo_01 from "../../../../assets/images/Products/Legion/Legion_01.jpg";
-import Lenovo_02 from "../../../../assets/images/Products/Legion/Legion_02.jpg";
-import Lenovo_03 from "../../../../assets/images/Products/Legion/Legion_03.jpg";
-import Lenovo_04 from "../../../../assets/images/Products/Legion/Legion_04.jpg";
+import Lenovo_01 from "../../../../../assets/images/Products/Legion/Legion_01.jpg";
+import Lenovo_02 from "../../../../../assets/images/Products/Legion/Legion_02.jpg";
+import Lenovo_03 from "../../../../../assets/images/Products/Legion/Legion_03.jpg";
+import Lenovo_04 from "../../../../../assets/images/Products/Legion/Legion_04.jpg";
 
-import { dealsOfTheDay } from "../../../Home/ProductSection/ProductSection";
+import { dealsOfTheDay } from "../../ProductSection";
 
 const Product_01 = () => {
   const [mainPhoto, setMainPhoto] = useState(Lenovo_01);

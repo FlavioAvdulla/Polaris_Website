@@ -7,12 +7,12 @@ import { GoDot } from "react-icons/go";
 import { IoIosArrowForward } from "react-icons/io";
 
 // Photos
-import Ps5_01 from "../../../../assets/images/Products/Ps5/Ps5_01.jpg";
-import Ps5_02 from "../../../../assets/images/Products/Ps5/Ps5_02.jpg";
-import Ps5_03 from "../../../../assets/images/Products/Ps5/Ps5_03.jpg";
-import Ps5_04 from "../../../../assets/images/Products/Ps5/Ps5_04.jpg";
+import Ps5_01 from "../../../../../assets/images/Products/Ps5/Ps5_01.jpg";
+import Ps5_02 from "../../../../../assets/images/Products/Ps5/Ps5_02.jpg";
+import Ps5_03 from "../../../../../assets/images/Products/Ps5/Ps5_03.jpg";
+import Ps5_04 from "../../../../../assets/images/Products/Ps5/Ps5_04.jpg";
 
-import { dealsOfTheDay } from "../../../Home/ProductSection/ProductSection";
+import { dealsOfTheDay } from "../../ProductSection";
 
 const Product_03 = () => {
   const [mainPhoto, setMainPhoto] = useState(Ps5_01);

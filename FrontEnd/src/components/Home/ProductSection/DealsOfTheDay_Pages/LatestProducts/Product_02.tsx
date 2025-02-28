@@ -7,12 +7,12 @@ import { GoDot } from "react-icons/go";
 import { IoIosArrowForward } from "react-icons/io";
 
 // Photos
-import Vr_HeadSet_01 from "../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_01.jpg";
-import Vr_HeadSet_02 from "../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_02.jpg";
-import Vr_HeadSet_03 from "../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_03.jpg";
-import Vr_HeadSet_04 from "../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_04.jpg";
+import Vr_HeadSet_01 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_01.jpg";
+import Vr_HeadSet_02 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_02.jpg";
+import Vr_HeadSet_03 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_03.jpg";
+import Vr_HeadSet_04 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_04.jpg";
 
-import { dealsOfTheDay } from "../../../Home/ProductSection/ProductSection";
+import { dealsOfTheDay } from "../../ProductSection";
 
 const Product_02 = () => {
   const [mainPhoto, setMainPhoto] = useState(Vr_HeadSet_01);

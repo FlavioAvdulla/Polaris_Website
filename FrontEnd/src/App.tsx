@@ -15,24 +15,26 @@ import ProductSection_06 from "./components/Home/ProductSection/ProductSection_0
 import Footer from "./components/Home/Footer/Footer";
 
 // Pages
-import Product_01 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Product_01";
-import Product_02 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Product_02";
-import Product_03 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Product_03";
+import Product_01 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_01";
+import Product_02 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_02";
+import Product_03 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_03";
 import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import Computers from "./components/Pages/Computers/Computers";
 
-// Scroll to top
-import ScrollToTop from "./ScrollToTop/ScrollToTop";
+import Latest_Products from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Latest_Products";
+import Top_Rating from "./components/Home/ProductSection/DealsOfTheDay_Pages/TopRating/Top_Rating";
+import Best_Selling from "./components/Home/ProductSection/DealsOfTheDay_Pages/BestSelling/Best_Selling";
 
 const App = () => {
   return (
     <div>
       <Router>
-      <ScrollToTop/>
+        {/* Navigation Components */}
         <Navbar_01 />
         <Navbar_02 />
         <Navbar_03 />
+        {/* Main Routes */}
         <Routes>
           <Route path="/Product_01" element={<Product_01 />} />
           <Route path="/Product_02" element={<Product_02 />} />
@@ -40,6 +42,7 @@ const App = () => {
           <Route path="/Shop" element={<Shop />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Computers" element={<Computers />} />
+          {/* Main Home Page */}
           <Route
             path="/"
             element={
@@ -47,7 +50,7 @@ const App = () => {
                 <Carousel />
                 <BenefitsPackage />
                 <ProductSection_01 />
-                <ProductSection_02 />
+                <ProductSection_02 /> {/* Includes nested routes */}
                 <ProductSection_03 />
                 <ProductSection_04 />
                 <ProductSection_05 />
@@ -55,9 +58,15 @@ const App = () => {
                 <ProductSection_06 />
               </>
             }
-          />
+          >
+            {/* Nested Routes for ProductSection_02 */}
+            <Route index element={<Latest_Products />} /> {/* Default for / */}
+            <Route path="deals/latest-products" element={<Latest_Products />} />
+            <Route path="deals/top-rating" element={<Top_Rating />} />
+            <Route path="deals/best-selling" element={<Best_Selling />} />
+          </Route>
         </Routes>
-
+        {/* Footer */}
         <Footer />
       </Router>
     </div>
