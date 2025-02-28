@@ -12,7 +12,7 @@ import Vr_HeadSet_02 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_H
 import Vr_HeadSet_03 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_03.jpg";
 import Vr_HeadSet_04 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_04.jpg";
 
-import { dealsOfTheDay } from "../../ProductSection";
+import { latestProducts } from "../../ProductSection";
 
 const Product_02 = () => {
   const [mainPhoto, setMainPhoto] = useState(Vr_HeadSet_01);
@@ -76,7 +76,7 @@ const Product_02 = () => {
   };
 
   // Find the product with _id: "2"
-  const product = dealsOfTheDay.find((item) => item._id === "2");
+  const product = latestProducts.find((item) => item._id === "2");
 
   return (
     <div className="flex w-[85%] h-auto mx-auto my-20

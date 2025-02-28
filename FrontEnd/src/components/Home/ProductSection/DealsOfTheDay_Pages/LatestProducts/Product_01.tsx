@@ -16,7 +16,7 @@ import Lenovo_02 from "../../../../../assets/images/Products/Legion/Legion_02.jp
 import Lenovo_03 from "../../../../../assets/images/Products/Legion/Legion_03.jpg";
 import Lenovo_04 from "../../../../../assets/images/Products/Legion/Legion_04.jpg";
 
-import { dealsOfTheDay } from "../../ProductSection";
+import { latestProducts } from "../../ProductSection";
 
 const Product_01 = () => {
   const [mainPhoto, setMainPhoto] = useState(Lenovo_01);
@@ -80,7 +80,7 @@ const Product_01 = () => {
   };
 
   // Find the product with _id: "1"
-  const product = dealsOfTheDay.find((item) => item._id === "1");
+  const product = latestProducts.find((item) => item._id === "1");
 
   return (
     <div className="flex w-[85%] h-auto mx-auto my-20
