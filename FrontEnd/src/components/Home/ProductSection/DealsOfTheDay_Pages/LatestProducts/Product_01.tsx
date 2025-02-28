@@ -6,8 +6,7 @@ import { GoDot } from "react-icons/go";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
-// Scroll to top
-import ScrollToTop from "../../../../../ScrollToTop/ScrollToTop";
+// Scroll
 
 
 // Photos
@@ -17,6 +16,7 @@ import Lenovo_03 from "../../../../../assets/images/Products/Legion/Legion_03.jp
 import Lenovo_04 from "../../../../../assets/images/Products/Legion/Legion_04.jpg";
 
 import { latestProducts } from "../../ProductSection";
+import ScrollToTop from "@/ScrollToTop/ScrollToTop";
 
 const Product_01 = () => {
   const [mainPhoto, setMainPhoto] = useState(Lenovo_01);

@@ -26,10 +26,14 @@ import Latest_Products from "./components/Home/ProductSection/DealsOfTheDay_Page
 import Top_Rating from "./components/Home/ProductSection/DealsOfTheDay_Pages/TopRating/Top_Rating";
 import Best_Selling from "./components/Home/ProductSection/DealsOfTheDay_Pages/BestSelling/Best_Selling";
 
+// Scroll
+import ScrollManager from "@/ScrollManager/ScrollManager";
+
 const App = () => {
   return (
     <div>
       <Router>
+      <ScrollManager />
         {/* Navigation Components */}
         <Navbar_01 />
         <Navbar_02 />

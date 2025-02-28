@@ -12,12 +12,12 @@ import {
 
 export function SelectLanguage() {
   return (
-    <Select>
+    <Select defaultValue="english">
       <SelectTrigger className="w-auto gap-2 shadow-none border-[1px] border-gray-300">
         <SelectValue placeholder=""/><p className="font-camptonBook
                                                     xs:text-[12px]
                                                     md:text-[14px]
-                                                    ">English</p>
+                                                    "></p>
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

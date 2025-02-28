@@ -14,11 +14,13 @@ const ProductSection_02 = () => {
   return (
     <div className="flex flex-col w-[85%] mx-auto">
       {/* ============= Deals of the day - left ============= */}
-      <div className="flex justify-between items-center mb-7">
+      <div className="flex justify-between items-center mb-7
+      
+                      xs:flex-col xs:gap-5
+                      md:flex-row">
         <h1
           className="font-camptonMedium
-                      xs:text-[10px]
-                      sm:text-[11px]
+                      xs:text-[17px]
                       md:text-[15px]
                       lg:text-[22px]
                       xl:text-[20px]"

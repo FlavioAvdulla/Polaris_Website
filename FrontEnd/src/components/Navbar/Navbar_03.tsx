@@ -95,24 +95,19 @@ const Navbar_03 = () => {
           className="flex w-auto h-[100%] items-center gap-2
                       cursor-pointer ease-in-out duration-300 hover:text-primary
                       xs:w-auto
-                      lg:flex"
-        >
+                      lg:flex">
           <i
-            className="xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-full
-                          sm:bg-transparent sm:p-0 sm:text-black sm:rounded"
-          >
+            className="xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-full">
             <CiDiscount1
               className="
-                          sm:text-[20px]"
-            />
+                          sm:text-[20px]"/>
           </i>
           <p
             className="font-camptonBook
                         xs:hidden
                         sm:flex
-                        md:flex md:text-[10px]
-                        2xl:text-[16px]"
-          >
+                        md:flex md:text-[16px]
+                        2xl:text-[16px]">
             Best Discounts
           </p>
         </div>

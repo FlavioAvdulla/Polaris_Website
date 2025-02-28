@@ -6,6 +6,10 @@ import { GoDot } from "react-icons/go";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+// Scroll
+import ScrollToTop from "@/ScrollToTop/ScrollToTop";
+
+
 // Photos
 import Ps5_01 from "../../../../../assets/images/Products/Ps5/Ps5_01.jpg";
 import Ps5_02 from "../../../../../assets/images/Products/Ps5/Ps5_02.jpg";
@@ -84,6 +88,7 @@ const Product_03 = () => {
                     xs:flex-col xs:gap-2
                     md:flex-row md:gap-3
                     lg:gap-5">
+      <ScrollToTop/>
       {/* ============= Left - Product - Photos ============= */}
       <div className="flex flex-col mx-auto
                       

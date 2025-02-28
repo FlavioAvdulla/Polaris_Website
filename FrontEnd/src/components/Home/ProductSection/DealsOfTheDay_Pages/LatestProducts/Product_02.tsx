@@ -6,6 +6,10 @@ import { GoDot } from "react-icons/go";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+// Scroll
+import ScrollToTop from "@/ScrollToTop/ScrollToTop";
+
+
 // Photos
 import Vr_HeadSet_01 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_01.jpg";
 import Vr_HeadSet_02 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_02.jpg";
@@ -84,6 +88,7 @@ const Product_02 = () => {
                     xs:flex-col xs:gap-2
                     md:flex-row md:gap-3
                     lg:gap-5">
+      <ScrollToTop/>
       {/* ============= Left - Product - Photos ============= */}
       <div className="flex flex-col mx-auto
                       

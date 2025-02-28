@@ -7,6 +7,10 @@ import { latestProducts } from "../../ProductSection";
 
 import { useNavigate } from "react-router-dom";
 
+import ScrollManager from "@/ScrollManager/ScrollManager";
+
+
+
 const Latest_Products = () => {
 
   const navigate = useNavigate();
@@ -26,6 +30,7 @@ const Latest_Products = () => {
 
   return (
     <div className="flex flex-col w-[100%] mx-auto">
+      <ScrollManager/>
       <div
         className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
         
