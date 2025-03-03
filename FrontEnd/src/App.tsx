@@ -21,9 +21,9 @@ import Product_03 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Lat
 import Product_04 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_04";
 import Product_05 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_05";
 import Product_06 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_06";
+import Computers from "./components/Home/ProductSection/shop_By_Categories/Computers/Computers";
 import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
-import Computers from "./components/Pages/Computers/Computers";
 
 import Latest_Products from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Latest_Products";
 import Top_Rating from "./components/Home/ProductSection/DealsOfTheDay_Pages/TopRating/Top_Rating";
@@ -49,9 +49,11 @@ const App = () => {
           <Route path="/Product_04" element={<Product_04 />} />
           <Route path="/Product_05" element={<Product_05 />} />
           <Route path="/Product_06" element={<Product_06 />} />
+          
+          {/* <Route path="/Computers" element={<Computers />} /> */}
           <Route path="/Shop" element={<Shop />} />
           <Route path="/Blog" element={<Blog />} />
-          <Route path="/Computers" element={<Computers />} />
+          <Route path="/Computers" element={<Computers/>}/>
           {/* Main Home Page */}
           <Route
             path="/"

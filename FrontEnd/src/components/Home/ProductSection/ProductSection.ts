@@ -82,6 +82,147 @@ export const productSection_01 = [
   },
 ];
 
+export const computers = [
+  {
+    _id: "1",
+    image: Product_05,
+    rating: "2.0",
+    normalPrice: "€179",
+    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    available: "25",
+    sold: "5",
+  },
+  {
+    _id: "2",
+    image: Product_04,
+    rating: "5.0",
+    normalPrice: "€2799",
+    title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
+    available: "16",
+    sold: "14",
+  },
+  {
+    _id: "3",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "4",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "5",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "6",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+];
+
+export const MobilesAndTablets = [
+  {
+    _id: "1",
+    image: Product_05,
+    rating: "2.0",
+    normalPrice: "€179",
+    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    available: "25",
+    sold: "5",
+  },
+  {
+    _id: "2",
+    image: Product_04,
+    rating: "5.0",
+    normalPrice: "€2799",
+    title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
+    available: "16",
+    sold: "14",
+  },
+  {
+    _id: "3",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "4",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "5",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "6",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "7",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "8",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "9",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+];
+
 export const productSection_03 = [
   {
     _id: "1",
@@ -301,22 +442,22 @@ export const latestProducts = [
     rating: "3.0",
     reviews: "5 Customer Reviews",
   },
-  
 ];
 
 export const bestSelling = [
   {
     _id: "6",
     image: Product_06,
-    title: "Console PlayStation®5 Pro",
+    title: "REDRAGON K535 KEYBOARD",
+    description: "The Redragon K535 Apas Slimline 104 Key RGB Mechanical Gaming Keyboard has everything you need to get an edge in gaming.",
     normalPrice: "€759",
     offerPrice: "€639",
-    detail_01: "Ryzen 7 5800H up to 4.40GHz",
-    detail_02: "RTX 3070 8GB GDDR6 Graphics",
-    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
-    detail_04: "Windows 11 Professional (64bit)",
+    detail_01: "Wired mechanical keyboard",
+    detail_02: "Type C to USB detachable cable",
+    detail_03: "RGB backlighting",
+    detail_04: "Splash resistant design",
     rating: "3.0",
-    reviews: "3 Customer Reviews",
+    reviews: "5 Customer Reviews",
   },
   {
     _id: "1",
@@ -385,6 +526,60 @@ export const bestSelling = [
   },
 ];
 
+export const shopByCategories = [
+  {
+    _id: "1",
+    image: Product_03,
+    title: "Computers",
+    quantity: computers.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
+  },
+  {
+    _id: "2",
+    image: Product_08,
+    title: "Mobiles & Tablets",
+    quantity: MobilesAndTablets.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
+  },
+  {
+    _id: "3",
+    image: Product_07,
+    title: "Game Accessories",
+    quantity: "41 Items",
+  },
+  {
+    _id: "4",
+    image: Product_11,
+    title: "Camera & Photo",
+    quantity: "11 Items",
+  },
+  {
+    _id: "5",
+    image: Product_09,
+    title: "Electronics",
+    quantity: "8 Items",
+  },
+  {
+    _id: "6",
+    image: Product_10,
+    title: "Audio & Headphone",
+    quantity: "13 Items",
+  },
+];
 export const topRating = [
   {
     _id: "4",
@@ -467,44 +662,6 @@ export const topRating = [
 ];
 
 
-export const shopByCategories = [
-  {
-    _id: "1",
-    image: Product_01,
-    title: "Computers",
-    quantity: "14 Items",
-  },
-  {
-    _id: "2",
-    image: Product_08,
-    title: "Mobiles & Tablets",
-    quantity: "20 Items",
-  },
-  {
-    _id: "3",
-    image: Product_07,
-    title: "Game Accessories",
-    quantity: "41 Items",
-  },
-  {
-    _id: "4",
-    image: Product_11,
-    title: "Camera & Photo",
-    quantity: "11 Items",
-  },
-  {
-    _id: "5",
-    image: Product_09,
-    title: "Electronics",
-    quantity: "8 Items",
-  },
-  {
-    _id: "6",
-    image: Product_10,
-    title: "Audio & Headphone",
-    quantity: "13 Items",
-  },
-];
 
 export const carousel_01 = [
   {

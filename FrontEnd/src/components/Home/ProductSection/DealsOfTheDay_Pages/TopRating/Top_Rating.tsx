@@ -23,6 +23,15 @@ const Top_Rating = () => {
     if (id === "3") {
       navigate("/Product_03")
     }
+    if (id === "4") {
+      navigate("/Product_04")
+    }
+    if (id === "5") {
+      navigate("/Product_05")
+    }
+    if (id === "6") {
+      navigate("/Product_06")
+    }
   }
 
   return (

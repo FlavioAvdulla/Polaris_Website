@@ -1,10 +1,24 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 // React Icons
 import { IoIosSearch } from "react-icons/io";
+
+// Data
 import { shopByCategories } from "./ProductSection";
 
 const ProductSection_04 = () => {
+
+  const navigate = useNavigate();
+
+  const handleImageClick = (id) => {
+    console.log(`Image with id ${id} clicked.`)
+    if (id === "1") {
+      navigate("/Computers")
+    }
+  }
+
   return (
     <div className="flex flex-col w-[85%] mx-auto">
       {/* ============= Shop by Categories - Head ============= */}
@@ -39,11 +53,12 @@ const ProductSection_04 = () => {
         {/* ============= Product List ============= */}
         {shopByCategories.map((product, index) => (
           <div
-            className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg" key={index}>
+            className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg cursor-pointer"
+            key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
             <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-white">
               <img className="
-              
+
                               xs:h-auto
                               lg:w-[90%] w-[100%]
                               xl:w-[100%]"
@@ -67,7 +82,7 @@ const ProductSection_04 = () => {
                             md:text-[17px]
                             lg:text-[16px]
                             xl:text-[14px]
-                            2xl:text-[17px]">{product.quantity}</p>
+                            2xl:text-[17px]">{product.quantity} Items</p>
             </div>
             {/* ============= Add to cart ============= */}
             <button

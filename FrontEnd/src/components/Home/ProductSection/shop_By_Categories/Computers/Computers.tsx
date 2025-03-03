@@ -4,9 +4,9 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 
 // Data
-import { productSection_01 } from "./ProductSection";
+import { computers } from "../../ProductSection";
 
-const ProductSection_01 = () => {
+const Computers = () => {
   const getStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -31,13 +31,38 @@ const ProductSection_01 = () => {
   };
 
   return (
+    <div className="w-[85%] flex flex-col mx-auto">
+      {/* ============= Shop by Categories - Head ============= */}
+      <div className="flex w-[100%] justify-between items-center mb-7">
+        <h1 className="font-camptonMedium
+                      
+                      xs:text-[10px]
+                      sm:text-[11px]
+                      md:text-[15px] 
+                      lg:text-[22px]">Computers</h1>
+
+        <div className="flex items-center
+                        
+                        xs:w-[50%]
+                        md:w-fit">
+          <p className="text-gray-500
+                        
+                        xs:text-[10px]
+                        sm:text-[11px]
+                        md:text-[15px]
+                        xl:text-[18px]">
+            No handling fees + free shipping on orders over $35*
+          </p>
+        </div>
+      </div>
+      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+
     <div
-      className="w-[85%] h-auto mx-auto gap-5 items-center
+      className="w-[100%] h-auto mx-auto gap-5 items-center
                 justify-between my-20
                 
-                md:grid md:grid-cols-3"
-    >
-      {productSection_01.map((product, index) => (
+                md:grid md:grid-cols-3">
+      {computers.map((product, index) => (
         // ============= Product 1 =============
         <div
           className=" rounded-lg overflow-hidden h-auto
@@ -45,8 +70,7 @@ const ProductSection_01 = () => {
                       
                       xs:mb-5
                       md:w-[100%]"
-          key={index}
-        >
+          key={index}>
           {/* ============= Image ============= */}
           <div className="flex w-[100%] h-[300px] justify-center items-center bg-white">
             <img
@@ -130,7 +154,8 @@ const ProductSection_01 = () => {
         </div>
       ))}
     </div>
+    </div>
   );
 };
 
-export default ProductSection_01;
+export default Computers;
