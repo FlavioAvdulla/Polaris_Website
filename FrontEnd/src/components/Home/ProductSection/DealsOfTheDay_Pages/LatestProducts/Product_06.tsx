@@ -11,15 +11,15 @@ import ScrollToTop from "@/ScrollToTop/ScrollToTop";
 
 
 // Photos
-import Ps5_01 from "../../../../../assets/images/Products/Ps5/Ps5_01.jpg";
-import Ps5_02 from "../../../../../assets/images/Products/Ps5/Ps5_02.jpg";
-import Ps5_03 from "../../../../../assets/images/Products/Ps5/Ps5_03.jpg";
-import Ps5_04 from "../../../../../assets/images/Products/Ps5/Ps5_04.jpg";
+import Keyboard_01 from "../../../../../assets/images/Products/Keyboard/Keyboard_01.jpg";
+import Keyboard_02 from "../../../../../assets/images/Products/Keyboard/Keyboard_02.jpg";
+import Keyboard_03 from "../../../../../assets/images/Products/Keyboard/Keyboard_03.jpg";
+import Keyboard_04 from "../../../../../assets/images/Products/Keyboard/Keyboard_04.jpg";
 
 import { latestProducts } from "../../ProductSection";
 
-const Product_03 = () => {
-  const [mainPhoto, setMainPhoto] = useState(Ps5_01);
+const Product_06 = () => {
+  const [mainPhoto, setMainPhoto] = useState(Keyboard_01);
   const [quantity, setQuantity] = useState("01");
 
   const handleClick = (photo) => {
@@ -80,7 +80,7 @@ const Product_03 = () => {
   };
 
   // Find the product with _id: "3"
-  const product = latestProducts.find((item) => item._id === "3");
+  const product = latestProducts.find((item) => item._id === "6");
 
   return (
     <div className="flex w-[85%] h-auto mx-auto my-20
@@ -118,9 +118,9 @@ const Product_03 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Ps5_01}
+              src={Keyboard_01}
               alt="Image_02"
-              onClick={() => handleClick(Ps5_01)}
+              onClick={() => handleClick(Keyboard_01)}
             />
           </div>
           <div
@@ -130,9 +130,9 @@ const Product_03 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Ps5_02}
+              src={Keyboard_02}
               alt="Image_03"
-              onClick={() => handleClick(Ps5_02)}
+              onClick={() => handleClick(Keyboard_02)}
             />
           </div>
           <div
@@ -142,9 +142,9 @@ const Product_03 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Ps5_03}
+              src={Keyboard_03}
               alt="Image_04"
-              onClick={() => handleClick(Ps5_03)}
+              onClick={() => handleClick(Keyboard_03)}
             />
           </div>
           <div
@@ -154,9 +154,9 @@ const Product_03 = () => {
           >
             <img
               className="w-[100%] h-[100%] object-cover"
-              src={Ps5_04}
+              src={Keyboard_04}
               alt="Image_01"
-              onClick={() => handleClick(Ps5_04)}
+              onClick={() => handleClick(Keyboard_04)}
             />
           </div>
         </div>
@@ -169,7 +169,7 @@ const Product_03 = () => {
                       md:p-4 lg:w-[50%]
                       lg:h-[500px] lg:p-5
                       xl:h-[600px] xl:p-10">
-        <h1 className="font-camptonBold leading-tight text-primary
+        <h1 className="font-camptonBold leading-tight text-primary w-[80%]
         
                         xs:text-[20px]
                         md:text-[28px]
@@ -350,4 +350,4 @@ const Product_03 = () => {
   );
 };
 
-export default Product_03;
+export default Product_06;

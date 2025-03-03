@@ -182,10 +182,8 @@ const Product_02 = () => {
         
                       xs:text-[10px] text-justify
                       md:text-[13px]
-                      lg:text-[16px]
-                      xl:text-[18px]">
-          Web designing in a powerful way of just not an only professi however,
-          in a pass Company We have a to a tendency.
+                      lg:text-[15px]">
+          {product.description}
         </p>
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook
@@ -330,7 +328,7 @@ const Product_02 = () => {
       <button
               className=" flex items-center w-fit justify-center gap-3 border-[1px] bg-primary
                         border-white text-white px-4 py-2 rounded-tr-3xl rounded-br-3xl rounded-tl-lg rounded-bl-lg
-                          hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                          hover:scale-110 hover:border-[1px] hover:bg-transparent hover:border-primary hover:text-primary ease-in-out duration-300
                           
                           xs:gap-2 xs:px-4 xs:py-2
                           md:gap-3">

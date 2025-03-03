@@ -13,11 +13,11 @@ const ProductSection_03 = () => {
       {productSection_03.map((product, index) => (
         // ============= Product Container =============
         <div
-          className="flex border-[1px] border-primary rounded-lg overflow-hidden bg-white mx-auto gap-5
+          className="flex border-[1px] border-primary rounded-lg overflow-hidden bg-white mx-auto
           
                     xs:flex-col
                     lg:flex-row lg:w-[50%]
-                    xl:w-[50%] xl:h-[400px]"
+                    xl:h-[400px]"
           key={index}
         >
           {/* ============= Product Part Left ============= */}
@@ -26,8 +26,7 @@ const ProductSection_03 = () => {
                         rounded-tl-lg rounded-bl-lg
                         
                         xs:w-[100%]
-                        lg:w-[50%]"
-          >
+                        lg:w-[50%]">
             <p className="text-white font-camptonMedium">
               {product.title_02}
             </p>
@@ -60,15 +59,15 @@ const ProductSection_03 = () => {
           </div>
           {/* ============= Product Part Right ============= */}
           <div className="flex items-center justify-center rounded-tr-lg rounded-br-lg mx-auto
-                          
+
                           xs:w-[100%] xs:h-[100%]
                           lg:w-[50%]">
             <img
               className="object-cover
                         
                         xs:h-[300px]
-                        md:w-[90%] md:h-[90%]
-                        lg:mr-5"
+                        md:w-[100%] md:h-auto
+                        "
               src={product.image}
               alt={product.title_01}
             />

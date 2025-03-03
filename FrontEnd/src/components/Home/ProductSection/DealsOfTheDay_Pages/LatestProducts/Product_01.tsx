@@ -182,10 +182,8 @@ const Product_01 = () => {
         
                       xs:text-[10px] text-justify
                       md:text-[13px]
-                      lg:text-[16px]
-                      xl:text-[18px]">
-          Web designing in a powerful way of just not an only professi however,
-          in a pass Company We have a to a tendency.
+                      lg:text-[15px]">
+          {product.description}
         </p>
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook

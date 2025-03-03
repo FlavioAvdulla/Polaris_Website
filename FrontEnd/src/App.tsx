@@ -18,6 +18,9 @@ import Footer from "./components/Home/Footer/Footer";
 import Product_01 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_01";
 import Product_02 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_02";
 import Product_03 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_03";
+import Product_04 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_04";
+import Product_05 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_05";
+import Product_06 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_06";
 import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import Computers from "./components/Pages/Computers/Computers";
@@ -43,6 +46,9 @@ const App = () => {
           <Route path="/Product_01" element={<Product_01 />} />
           <Route path="/Product_02" element={<Product_02 />} />
           <Route path="/Product_03" element={<Product_03 />} />
+          <Route path="/Product_04" element={<Product_04 />} />
+          <Route path="/Product_05" element={<Product_05 />} />
+          <Route path="/Product_06" element={<Product_06 />} />
           <Route path="/Shop" element={<Shop />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Computers" element={<Computers />} />
