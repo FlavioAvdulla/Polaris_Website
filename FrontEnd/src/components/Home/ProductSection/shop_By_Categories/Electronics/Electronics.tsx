@@ -3,10 +3,12 @@ import React from "react";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 
-// Data
-import { computers } from "../../ProductSection";
+import ScrollToTop from "@/ScrollToTop/ScrollToTop";
 
-const Computers = () => {
+// Data
+import { electronics } from "../../ProductSection";
+
+const Electronics = () => {
   const getStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -39,7 +41,7 @@ const Computers = () => {
                       xs:text-[10px]
                       sm:text-[11px]
                       md:text-[15px] 
-                      lg:text-[22px]">Computers</h1>
+                      lg:text-[22px]">Electronics</h1>
 
         <div className="flex items-center
                         
@@ -62,7 +64,7 @@ const Computers = () => {
                 justify-between my-20
                 
                 md:grid md:grid-cols-3">
-      {computers.map((product, index) => (
+      {electronics.map((product, index) => (
         // ============= Product 1 =============
         <div
           className=" rounded-lg overflow-hidden h-auto
@@ -71,6 +73,7 @@ const Computers = () => {
                       xs:mb-5
                       md:w-[100%] md:mb-0"
           key={index}>
+            <ScrollToTop/>
           {/* ============= Image ============= */}
           <div className="flex w-[100%] h-[300px] justify-center items-center bg-white">
             <img
@@ -158,4 +161,4 @@ const Computers = () => {
   );
 };
 
-export default Computers;
+export default Electronics;

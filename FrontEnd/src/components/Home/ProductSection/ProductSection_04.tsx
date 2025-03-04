@@ -17,6 +17,21 @@ const ProductSection_04 = () => {
     if (id === "1") {
       navigate("/Computers")
     }
+    if (id === "2") {
+      navigate("/MobilesAndTablets")
+    }
+    if (id === "3") {
+      navigate("/GameAccessories")
+    }
+    if (id === "4") {
+      navigate("/CameraAndPhoto")
+    }
+    if (id === "5") {
+      navigate("/Electronics")
+    }
+    if (id === "6") {
+      navigate("/Electronics")
+    }
   }
 
   return (

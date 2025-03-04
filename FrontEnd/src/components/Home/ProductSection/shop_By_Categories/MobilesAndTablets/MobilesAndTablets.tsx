@@ -4,7 +4,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 
 // Data
-import { MobilesAndTablets } from "../../ProductSection";
+import { mobilesAndTablets } from "../../ProductSection";
 
 const MobilesAndTablets = () => {
   const getStars = (rating) => {
@@ -62,14 +62,14 @@ const MobilesAndTablets = () => {
                 justify-between my-20
                 
                 md:grid md:grid-cols-3">
-      {MobilesAndTablets.map((product, index) => (
+      {mobilesAndTablets.map((product, index) => (
         // ============= Product 1 =============
         <div
           className=" rounded-lg overflow-hidden h-auto
                       bg-gray-100 border-[1px] border-primary
                       
                       xs:mb-5
-                      md:w-[100%]"
+                      md:w-[100%] md:mb-0"
           key={index}>
           {/* ============= Image ============= */}
           <div className="flex w-[100%] h-[300px] justify-center items-center bg-white">

@@ -139,7 +139,7 @@ export const computers = [
   },
 ];
 
-export const MobilesAndTablets = [
+export const mobilesAndTablets = [
   {
     _id: "1",
     image: Product_05,
@@ -220,6 +220,210 @@ export const MobilesAndTablets = [
     title: "Console PlayStation®5 Pro Digital 2TB",
     available: "12",
     sold: "2",
+  },
+];
+
+export const gameAccessories = [
+  {
+    _id: "1",
+    image: Product_05,
+    rating: "2.0",
+    normalPrice: "€179",
+    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    available: "25",
+    sold: "5",
+  },
+  {
+    _id: "2",
+    image: Product_04,
+    rating: "5.0",
+    normalPrice: "€2799",
+    title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
+    available: "16",
+    sold: "14",
+  },
+  {
+    _id: "3",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+
+];
+
+export const cameraAndPhoto = [
+  {
+    _id: "1",
+    image: Product_05,
+    rating: "2.0",
+    normalPrice: "€179",
+    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    available: "25",
+    sold: "5",
+  },
+  {
+    _id: "2",
+    image: Product_04,
+    rating: "5.0",
+    normalPrice: "€2799",
+    title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
+    available: "16",
+    sold: "14",
+  },
+  {
+    _id: "3",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+
+];
+
+export const electronics = [
+  {
+    _id: "1",
+    image: Product_05,
+    rating: "2.0",
+    normalPrice: "€179",
+    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    available: "25",
+    sold: "5",
+  },
+  {
+    _id: "2",
+    image: Product_04,
+    rating: "5.0",
+    normalPrice: "€2799",
+    title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
+    available: "16",
+    sold: "14",
+  },
+  {
+    _id: "3",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "4",
+    image: Product_05,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+];
+
+export const audioAndHeadphones = [
+  {
+    _id: "1",
+    image: Product_05,
+    rating: "2.0",
+    normalPrice: "€179",
+    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    available: "25",
+    sold: "5",
+  },
+  {
+    _id: "2",
+    image: Product_04,
+    rating: "5.0",
+    normalPrice: "€2799",
+    title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
+    available: "16",
+    sold: "14",
+  },
+  {
+    _id: "3",
+    image: Product_03,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+  {
+    _id: "4",
+    image: Product_05,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
+];
+
+
+export const shopByCategories = [
+  {
+    _id: "1",
+    image: Product_03,
+    title: "Computers",
+    quantity: computers.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
+  },
+  {
+    _id: "2",
+    image: Product_08,
+    title: "Mobiles & Tablets",
+    quantity: mobilesAndTablets.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
+  },
+  {
+    _id: "3",
+    image: Product_07,
+    title: "Game Accessories",
+    quantity: gameAccessories.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
+  },
+  {
+    _id: "4",
+    image: Product_11,
+    title: "Camera & Photo",
+    quantity: gameAccessories.length,
+  },
+  {
+    _id: "5",
+    image: Product_09,
+    title: "Electronics",
+    quantity: "8 Items",
+  },
+  {
+    _id: "6",
+    image: Product_10,
+    title: "Audio & Headphone",
+    quantity: "13 Items",
   },
 ];
 
@@ -526,60 +730,6 @@ export const bestSelling = [
   },
 ];
 
-export const shopByCategories = [
-  {
-    _id: "1",
-    image: Product_03,
-    title: "Computers",
-    quantity: computers.length,
-    normalPrice: "€959",
-    offerPrice: "€539",
-    detail_01: "Ryzen 7 5800H up to 4.40GHz",
-    detail_02: "RTX 3070 8GB GDDR6 Graphics",
-    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
-    detail_04: "Windows 11 Professional (64bit)",
-    rating: "3.0",
-    reviews: "3 Customer Reviews"
-  },
-  {
-    _id: "2",
-    image: Product_08,
-    title: "Mobiles & Tablets",
-    quantity: MobilesAndTablets.length,
-    normalPrice: "€959",
-    offerPrice: "€539",
-    detail_01: "Ryzen 7 5800H up to 4.40GHz",
-    detail_02: "RTX 3070 8GB GDDR6 Graphics",
-    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
-    detail_04: "Windows 11 Professional (64bit)",
-    rating: "3.0",
-    reviews: "3 Customer Reviews"
-  },
-  {
-    _id: "3",
-    image: Product_07,
-    title: "Game Accessories",
-    quantity: "41 Items",
-  },
-  {
-    _id: "4",
-    image: Product_11,
-    title: "Camera & Photo",
-    quantity: "11 Items",
-  },
-  {
-    _id: "5",
-    image: Product_09,
-    title: "Electronics",
-    quantity: "8 Items",
-  },
-  {
-    _id: "6",
-    image: Product_10,
-    title: "Audio & Headphone",
-    quantity: "13 Items",
-  },
-];
 export const topRating = [
   {
     _id: "4",

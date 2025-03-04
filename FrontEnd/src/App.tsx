@@ -28,9 +28,13 @@ import Blog from "./components/Pages/Blog/Blog";
 import Latest_Products from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Latest_Products";
 import Top_Rating from "./components/Home/ProductSection/DealsOfTheDay_Pages/TopRating/Top_Rating";
 import Best_Selling from "./components/Home/ProductSection/DealsOfTheDay_Pages/BestSelling/Best_Selling";
+import GameAccessories from "./components/Home/ProductSection/shop_By_Categories/GameAccessories/GameAccessories";
+import CameraAndPhoto from "./components/Home/ProductSection/shop_By_Categories/CameraAndPhoto/CameraAndPhoto";
+import Electronics from "./components/Home/ProductSection/shop_By_Categories/Electronics/Electronics";
 
 // Scroll
 import ScrollManager from "@/ScrollManager/ScrollManager";
+import MobilesAndTablets from "./components/Home/ProductSection/shop_By_Categories/MobilesAndTablets/MobilesAndTablets";
 
 const App = () => {
   return (
@@ -49,11 +53,15 @@ const App = () => {
           <Route path="/Product_04" element={<Product_04 />} />
           <Route path="/Product_05" element={<Product_05 />} />
           <Route path="/Product_06" element={<Product_06 />} />
-          
-          {/* <Route path="/Computers" element={<Computers />} /> */}
+
           <Route path="/Shop" element={<Shop />} />
           <Route path="/Blog" element={<Blog />} />
+
           <Route path="/Computers" element={<Computers/>}/>
+          <Route path="/MobilesAndTablets" element={<MobilesAndTablets/>}/>
+          <Route path="/GameAccessories" element={<GameAccessories/>}/>
+          <Route path="/CameraAndPhoto" element={<CameraAndPhoto/>}/>
+          <Route path="/Electronics" element={<Electronics/>}/>
           {/* Main Home Page */}
           <Route
             path="/"
