@@ -65,7 +65,7 @@ export const productSection_01 = [
   {
     _id: "2",
     image: Product_04,
-    rating: "5.0",
+    rating: "4.5",
     normalPrice: "€2799",
     title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
     available: "16",
@@ -475,7 +475,7 @@ export const productSection_03 = [
     title_02: "Weekend Discount",
     title_01: "OLYMPUS MARK II MIRRORLESS CAMERA",
     description: "Mirrorless Camera with 4K Video",
-    button: "SHOP NOW",
+    button: "ADD TO CART",
   },
   {
     _id: "2",
@@ -483,7 +483,7 @@ export const productSection_03 = [
     title_02: "Weekend Discount",
     title_01: "OLYMPUS MARK II MIRRORLESS CAMERA",
     description: "Mirrorless Camera with 4K Video",
-    button: "SHOP NOW",
+    button: "ADD TO CART",
   },
 ]
 
@@ -516,7 +516,7 @@ export const productSection_05 = [
     offerPrice: "€539",
   },
   {
-    _id: "3",
+    _id: "4",
     image: Product_06,
     rating: "4.0",
     title: "Keyboards",

@@ -2,6 +2,8 @@ import React from "react";
 import { Carousel_03 } from "../../Shadcn-components/Carousel_03";
 import { Carousel_04 } from "../../Shadcn-components/Carousel_04";
 
+import { useNavigate } from "react-router-dom";
+
 // React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
@@ -9,6 +11,25 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { productSection_05 } from "./ProductSection";
 
 const ProductSection_05 = () => {
+
+  const navigate = useNavigate();
+  
+    const handleProductClick = (id) => {
+      console.log(`Image with id ${id} clicked.`)
+      if (id === "1") {
+        navigate("/Product_01")
+      }
+      if (id === "2") {
+        navigate("/Product_02")
+      }
+      if (id === "3") {
+        navigate("/Product_04")
+      }
+      if (id === "4") {
+        navigate("/Product_05")
+      }
+    }
+
   const getStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -63,7 +84,7 @@ const ProductSection_05 = () => {
           <div
             className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden"
             key={index}
-          >
+            onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 ============= */}
             <div className="flex w-[100%] h-[100%] bg-gray-100 items-center rounded-lg border-[1px] border-primary">
               {/* ============= Section - right - 01 - Photo ============= */}

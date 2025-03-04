@@ -1,10 +1,26 @@
 import React from "react";
+
+import { useNavigate } from "react-router-dom";
+
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 // Import the product data and image.
 import { productSection_03 } from "./ProductSection";
 
 const ProductSection_03 = () => {
+
+  const navigate = useNavigate();
+  
+    const handleProductClick = (id) => {
+      console.log(`Image with id ${id} clicked.`)
+      if (id === "1") {
+        navigate("/Product_01")
+      }
+      if (id === "2") {
+        navigate("/Product_04")
+      }
+    }
+
   return (
     <div className="flex w-[85%] mx-auto mb-20 mt-10 gap-5
                     
@@ -13,13 +29,13 @@ const ProductSection_03 = () => {
       {productSection_03.map((product, index) => (
         // ============= Product Container =============
         <div
-          className="flex border-[1px] border-primary rounded-lg overflow-hidden bg-white mx-auto
+          className="flex border-[1px] border-primary rounded-lg overflow-hidden bg-white mx-auto cursor-pointer
           
                     xs:flex-col
                     lg:flex-row lg:w-[50%]
                     xl:h-[400px]"
           key={index}
-        >
+          onClick={() => handleProductClick(product._id)}>
           {/* ============= Product Part Left ============= */}
           <div
             className="flex flex-col h-[100%] bg-primary p-5 justify-center
