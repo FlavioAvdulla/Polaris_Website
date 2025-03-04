@@ -72,7 +72,7 @@ export const productSection_01 = [
     sold: "14",
   },
   {
-    _id: "2",
+    _id: "3",
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
@@ -282,7 +282,15 @@ export const cameraAndPhoto = [
     available: "12",
     sold: "2",
   },
-
+  {
+    _id: "4",
+    image: Product_07,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
 ];
 
 export const electronics = [
@@ -361,6 +369,15 @@ export const audioAndHeadphones = [
     available: "12",
     sold: "2",
   },
+  {
+    _id: "5",
+    image: Product_07,
+    rating: "4.0",
+    normalPrice: "€799",
+    title: "Console PlayStation®5 Pro Digital 2TB",
+    available: "12",
+    sold: "2",
+  },
 ];
 
 
@@ -411,19 +428,43 @@ export const shopByCategories = [
     _id: "4",
     image: Product_11,
     title: "Camera & Photo",
-    quantity: gameAccessories.length,
+    quantity: cameraAndPhoto.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
   },
   {
     _id: "5",
     image: Product_09,
     title: "Electronics",
-    quantity: "8 Items",
+    quantity: electronics.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
   },
   {
     _id: "6",
     image: Product_10,
     title: "Audio & Headphone",
-    quantity: "13 Items",
+    quantity: audioAndHeadphones.length,
+    normalPrice: "€959",
+    offerPrice: "€539",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews"
   },
 ];
 

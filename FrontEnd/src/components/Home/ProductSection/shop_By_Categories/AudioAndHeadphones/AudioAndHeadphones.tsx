@@ -41,7 +41,7 @@ const AudioAndHeadphones = () => {
                       xs:text-[10px]
                       sm:text-[11px]
                       md:text-[15px] 
-                      lg:text-[22px]">Electronics</h1>
+                      lg:text-[22px]">Audio & Headphone</h1>
 
         <div className="flex items-center
                         

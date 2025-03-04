@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 // React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
@@ -6,7 +7,24 @@ import { PiShoppingCartLight } from "react-icons/pi";
 // Data
 import { productSection_01 } from "./ProductSection";
 
+
 const ProductSection_01 = () => {
+
+  const navigate = useNavigate();
+
+  const handleProductClick = (id) => {
+    console.log(`Image with id ${id} clicked.`)
+    if (id === "1") {
+      navigate("/Product_05")
+    }
+    if (id === "2") {
+      navigate("/Product_04")
+    }
+    if (id === "3") {
+      navigate("/Product_03")
+    }
+  }
+
   const getStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -35,18 +53,17 @@ const ProductSection_01 = () => {
       className="w-[85%] h-auto mx-auto gap-5 items-center
                 justify-between my-20
                 
-                md:grid md:grid-cols-3"
-    >
+                md:grid md:grid-cols-3">
       {productSection_01.map((product, index) => (
         // ============= Product 1 =============
         <div
           className=" rounded-lg overflow-hidden h-auto
-                      bg-gray-100 border-[1px] border-primary
+                      bg-gray-100 border-[1px] border-primary cursor-pointer
                       
                       xs:mb-5
                       md:w-[100%]"
           key={index}
-        >
+          onClick={() => handleProductClick(product._id)}>
           {/* ============= Image ============= */}
           <div className="flex w-[100%] h-[300px] justify-center items-center bg-white">
             <img

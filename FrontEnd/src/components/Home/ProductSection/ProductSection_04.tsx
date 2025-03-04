@@ -30,7 +30,7 @@ const ProductSection_04 = () => {
       navigate("/Electronics")
     }
     if (id === "6") {
-      navigate("/Electronics")
+      navigate("/AudioAndHeadphones")
     }
   }
 

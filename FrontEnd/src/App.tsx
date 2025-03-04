@@ -21,20 +21,21 @@ import Product_03 from "./components/Home/ProductSection/DealsOfTheDay_Pages/Lat
 import Product_04 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_04";
 import Product_05 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_05";
 import Product_06 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_06";
-import Computers from "./components/Home/ProductSection/shop_By_Categories/Computers/Computers";
 import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 
 import Latest_Products from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Latest_Products";
 import Top_Rating from "./components/Home/ProductSection/DealsOfTheDay_Pages/TopRating/Top_Rating";
 import Best_Selling from "./components/Home/ProductSection/DealsOfTheDay_Pages/BestSelling/Best_Selling";
+import Computers from "./components/Home/ProductSection/shop_By_Categories/Computers/Computers";
+import MobilesAndTablets from "./components/Home/ProductSection/shop_By_Categories/MobilesAndTablets/MobilesAndTablets";
 import GameAccessories from "./components/Home/ProductSection/shop_By_Categories/GameAccessories/GameAccessories";
 import CameraAndPhoto from "./components/Home/ProductSection/shop_By_Categories/CameraAndPhoto/CameraAndPhoto";
 import Electronics from "./components/Home/ProductSection/shop_By_Categories/Electronics/Electronics";
+import AudioAndHeadphones from "./components/Home/ProductSection/shop_By_Categories/AudioAndHeadphones/AudioAndHeadphones";
 
 // Scroll
 import ScrollManager from "@/ScrollManager/ScrollManager";
-import MobilesAndTablets from "./components/Home/ProductSection/shop_By_Categories/MobilesAndTablets/MobilesAndTablets";
 
 const App = () => {
   return (
@@ -62,6 +63,7 @@ const App = () => {
           <Route path="/GameAccessories" element={<GameAccessories/>}/>
           <Route path="/CameraAndPhoto" element={<CameraAndPhoto/>}/>
           <Route path="/Electronics" element={<Electronics/>}/>
+          <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones/>}/>
           {/* Main Home Page */}
           <Route
             path="/"
