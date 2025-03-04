@@ -1,6 +1,8 @@
 import React from "react";
 import { Carousel_05 } from "../../Shadcn-components/Carousel_05";
 
+import { useNavigate } from "react-router-dom";
+
 // React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
@@ -8,6 +10,37 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { productSection_06 } from "./ProductSection";
 
 const ProductSection_05 = () => {
+
+  const navigate = useNavigate();
+
+  const handleProductClick = (id) => {
+    console.log(`Image with ${id} clicked.`)
+    if (id === "1") {
+      navigate("/Product_01")
+    }
+    if (id === "2") {
+      navigate("/Product_02")
+    }
+    if (id === "3") {
+      navigate("/Product_04")
+    }
+    if (id === "4") {
+      navigate("/Product_06")
+    }
+    if (id === "5") {
+      navigate("/Product_08")
+    }
+    if (id === "6") {
+      navigate("/Product_03")
+    }
+    if (id === "7") {
+      navigate("/Product_05")
+    }
+    if (id === "8") {
+      navigate("/Product_04")
+    }
+  }
+
   const getStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -50,8 +83,9 @@ const ProductSection_05 = () => {
                       xl:h-[700px]">
         {productSection_06.map((product, index) => (
           <div
-            className="flex w-[100%] h-auto overflow-hidden bg-gray-100 items-center rounded-lg border-[1px] border-primary"
-            key={index}>
+            className="flex w-[100%] h-auto overflow-hidden bg-gray-100
+                      items-center rounded-lg border-[1px] border-primary cursor-pointer"
+            key={index} onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 - Photo ============= */}
             <div className="flex w-[40%] h-[100%] items-center rounded-tl-lg rounded-bl-lg bg-white">
               <img

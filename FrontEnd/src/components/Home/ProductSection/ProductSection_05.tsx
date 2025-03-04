@@ -82,7 +82,7 @@ const ProductSection_05 = () => {
         {/* ============= Section - right ============= */}
         {productSection_05.map((product, index) => (
           <div
-            className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden"
+            className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden cursor-pointer"
             key={index}
             onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 ============= */}

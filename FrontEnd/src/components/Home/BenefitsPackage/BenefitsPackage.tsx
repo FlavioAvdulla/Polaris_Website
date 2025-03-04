@@ -20,13 +20,13 @@ const BenefitsPackage = () => {
       
                       xs:mb-5
                       md:mb-0" key={index}>
-        <div className="flex items-center justify-center bg-gray-100
+        <div className="flex items-center justify-center border-[1px] border-primary
                          
                         
                         xs:w-[80px] xs:h-[80px] xs:rounded-[8px] xs:mb-3
                         md:w-[120px] md:h-[120px] md:rounded-[15px] md:mb-6
                         lg:w-[150px] lg:h-[150px]">
-          <i><product.image className="text-gray-500
+          <i><product.image className="text-primary
           
                                     xs:text-[40px]
                                     md:text-[55px]
