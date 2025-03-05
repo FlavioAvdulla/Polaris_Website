@@ -48,8 +48,8 @@ const App = () => {
   return (
     <>
 
-      {showRegister && <Register setShowRegister={setShowRegister} setShowSignIn={setShowSignIn}/>}
       {showSignIn && <SignIn setShowSignIn={setShowSignIn} setShowRegister={setShowRegister}/>}
+      {showRegister && <Register setShowRegister={setShowRegister} setShowSignIn={setShowSignIn}/>}
 
     <div>
       <Router>
