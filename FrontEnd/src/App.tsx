@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar_01 from "./components/Navbar/Navbar_01";
 import Navbar_02 from "./components/Navbar/Navbar_02";
@@ -34,17 +34,29 @@ import CameraAndPhoto from "./components/Home/ProductSection/shop_By_Categories/
 import Electronics from "./components/Home/ProductSection/shop_By_Categories/Electronics/Electronics";
 import AudioAndHeadphones from "./components/Home/ProductSection/shop_By_Categories/AudioAndHeadphones/AudioAndHeadphones";
 
+import Register from "./components/Pages/Register/Register";
+import SignIn from "./components/Pages/SignIn/SignIn";
+
 // Scroll
 import ScrollManager from "@/ScrollManager/ScrollManager";
 
 const App = () => {
+
+  const [showRegister, setShowRegister] = useState(false)
+  const [showSignIn, setShowSignIn] = useState(false)
+
   return (
+    <>
+
+      {showRegister && <Register setShowRegister={setShowRegister} setShowSignIn={setShowSignIn}/>}
+      {showSignIn && <SignIn setShowSignIn={setShowSignIn} setShowRegister={setShowRegister}/>}
+
     <div>
       <Router>
       <ScrollManager />
         {/* Navigation Components */}
         <Navbar_01 />
-        <Navbar_02 />
+        <Navbar_02 setShowSignIn={setShowSignIn}/>
         <Navbar_03 />
         {/* Main Routes */}
         <Routes>
@@ -92,6 +104,7 @@ const App = () => {
         <Footer />
       </Router>
     </div>
+  </>
   );
 };
 

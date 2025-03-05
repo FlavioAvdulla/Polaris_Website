@@ -128,7 +128,7 @@ export function Carousel_05() {
                                       md:text-[25px]
                                       lg:text-[12px]
                                       2xl:text-[20px]">
-                            SHOW NOW</p>
+                            ADD TO CART</p>
                           <i>
                             <IoIosArrowForward />
                           </i>

@@ -131,7 +131,7 @@ export function Carousel_01() {
                           <p className="
                                        xs:text-[10px]
                                        md:text-[15px]
-                                       2xl:text-[20px]">SHOW NOW</p>
+                                       2xl:text-[20px]">ADD TO CART</p>
                           <i>
                             <IoIosArrowForward className="
                                                           xs:text-[10px]

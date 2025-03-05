@@ -26,7 +26,7 @@ const Navbar_03 = () => {
   return (
     <div
       className="bg-white bg-opacity-50 backdrop-blur-[15px] sticky
-                  border-b-[1px] border-b-gray-400 mb-20 top-0 z-20"
+                  border-b-[1px] border-b-gray-400 mb-20 top-0 z-5"
     >
       <div
         className="flex w-[85%] h-auto mx-auto items-center justify-between py-5

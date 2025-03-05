@@ -28,7 +28,7 @@ const ProductSection_05 = () => {
       navigate("/Product_06")
     }
     if (id === "5") {
-      navigate("/Product_08")
+      navigate("/Product_04")
     }
     if (id === "6") {
       navigate("/Product_03")
