@@ -12,7 +12,7 @@ const ProductSection_02 = () => {
   }, [activeSection]);
 
   return (
-    <div className="flex flex-col w-[85%] mx-auto">
+    <div className="flex flex-col w-[85%] mx-auto ">
       {/* ============= Deals of the day - left ============= */}
       <div className="flex justify-between items-center mb-7
       
@@ -23,8 +23,7 @@ const ProductSection_02 = () => {
                       xs:text-[17px]
                       md:text-[15px]
                       lg:text-[22px]
-                      xl:text-[20px]"
-        >
+                      xl:text-[20px]">
           Deals Of The Day
         </h1>
         {/* ============= Deals of the day - right ============= */}
@@ -33,8 +32,7 @@ const ProductSection_02 = () => {
                      xs:gap-3
                      sm:gap-4
                      md:gap-7
-                     lg:gap-10"
-        >
+                     lg:gap-10">
           {[
             { label: "Latest Products", path: "/deals/latest-products" },
             { label: "Top Rating", path: "/deals/top-rating" },
@@ -50,16 +48,13 @@ const ProductSection_02 = () => {
               onClick={() => {
                 navigate(path);
                 setActiveSection(label); // Update the active section
-              }}
-            >
-              <p
-                className="
+              }}>
+              <p className="
                           xs:text-[10px] w-auto xs:px-3 py-1
                           sm:text-[11px]
                           md:text-[15px] md:px-5 md:py-2
                           lg:text-[22px]
-                          xl:text-[18px]"
-              >
+                          xl:text-[18px]">
                 {label}
               </p>
             </button>

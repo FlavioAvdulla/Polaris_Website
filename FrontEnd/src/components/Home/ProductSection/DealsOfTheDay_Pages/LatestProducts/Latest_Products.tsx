@@ -61,7 +61,7 @@ const Latest_Products = () => {
                             bg-slate-500" src={product.image} alt={product.title} />
             </div>
             {/* ============= Title ============= */}
-            <div className="flex flex-col font-camptonMedium w-[100%] h-[140px] p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg z-10
+            <div className="flex flex-col font-camptonMedium w-[100%] h-[140px] p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
                             group-hover:shadow-shadow-dark transition-all duration-300 
             
                             xs:text-[20px]
@@ -85,7 +85,7 @@ const Latest_Products = () => {
             {/* ============= Add to cart ============= */}
             <button
               className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
-                         rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
+                         rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all -z-10
                          duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary"
             >
               <i>

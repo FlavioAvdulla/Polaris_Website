@@ -38,7 +38,8 @@ import Register from "./components/Pages/Register/Register";
 import SignIn from "./components/Pages/SignIn/SignIn";
 
 // Scroll
-import ScrollManager from "@/ScrollManager/ScrollManager";
+import ScrollManager from "./ScrollManager/ScrollManager";
+
 
 const App = () => {
 
@@ -53,7 +54,7 @@ const App = () => {
 
     <div>
       <Router>
-      <ScrollManager />
+        <ScrollManager/>
         {/* Navigation Components */}
         <Navbar_01 />
         <Navbar_02 setShowSignIn={setShowSignIn}/>

@@ -18,10 +18,13 @@ const Register = ({setShowSignIn, setShowRegister}) => {
     }
 
   return (
-    <div className="flex fixed items-center z-10 w-[100%] h-[100%]">
+    <div className="flex fixed items-center z-20 w-[100%] h-[100%]">
       <div className="flex mx-auto justify-center items-center z-10">
-        {/* ============= SignIn Modal ============= */}
-        <div className="flex p-5 w-[420px] h-auto rounded-xl bg-white">
+        {/* ============= Register Modal ============= */}
+        <div className="flex p-5 h-auto rounded-xl bg-white
+        
+                        xs:w-[95%]
+                        md:w-[350px]">
           {/* ============= Input Section ============= */}
           <div className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]">
             {/* ============= Sign In Title ============= */}
@@ -31,10 +34,10 @@ const Register = ({setShowSignIn, setShowRegister}) => {
                                             hover:rotate-[180deg]" onClick={handleClose}/></i>
             </div>
             {/* ============= Fullname Input ============= */}
-            <div className="flex flex-col w-[100%] gap-4">
+            <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Fullname</h2>
               <input
-                className="w-[100%] h-[55px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
+                className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="text"
                 name="fullname"
                 placeholder="Enter your Fullname"
@@ -42,10 +45,10 @@ const Register = ({setShowSignIn, setShowRegister}) => {
               />
               </div>
             {/* ============= Email Input ============= */}
-            <div className="flex flex-col w-[100%] gap-4">
+            <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Email Address</h2>
               <input
-                className="w-[100%] h-[55px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
+                className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="email"
                 name="Email"
                 placeholder="Enter your Email"
@@ -53,10 +56,10 @@ const Register = ({setShowSignIn, setShowRegister}) => {
               />
             </div>
             {/* ============= Password Input ============= */}
-            <div className="flex flex-col w-[100%] gap-4">
+            <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Password</h2>
               <input
-                className="w-[100%] h-[55px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
+                className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="password"
                 name="Password"
                 placeholder="Enter your Password"
@@ -65,7 +68,7 @@ const Register = ({setShowSignIn, setShowRegister}) => {
             </div>
             {/* ============= Sign in Button ============= */}
             <button
-              className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[55px] bg-primary rounded-full
+              className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full
                                 hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary">
               Register
             </button>
@@ -77,14 +80,23 @@ const Register = ({setShowSignIn, setShowRegister}) => {
             </div>
             {/* ============= Google Register ============= */}
             <button
-              className="flex items-center gap-5 justify-center border-primary border-[1px] duration-300 text-[17px] w-[100%] h-[55px] bg-transparent rounded-full">
-                <img className="w-[30px] h-auto" src={Google_Logo} alt="Google_Logo" />
-                <p>Register with google</p>
+              className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300 text-[17px] w-[100%] h-[45px] bg-transparent rounded-full">
+                <img className="w-[25px] h-auto" src={Google_Logo} alt="Google_Logo" />
+                <p className="
+                
+                              xs:text-[14px]
+                              md:text-[16px]">Register with google</p>
             </button>
           <div className="flex w-[100%] h-auto justify-center">
-            <p>Already have an account?</p>
-            <button className="outline-none border-none underline-offset-1 underline-colo">
-                <p className="ml-2 text-primary font-camptonLight" onClick={handleSignInOpen}>Sign in</p></button>
+            <p className="
+            
+                          xs:text-[12px]
+                          md:text-[16px]">Already have an account?</p>
+            <button className="outline-none border-none underline-offset-1">
+                <p className="ml-2 text-primary font-camptonLight
+                
+                              xs:text-[12px]
+                              md:text-[16px]" onClick={handleSignInOpen}>Sign in</p></button>
           </div>
           </div>
         </div>

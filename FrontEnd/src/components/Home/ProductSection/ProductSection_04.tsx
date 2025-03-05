@@ -81,7 +81,7 @@ const ProductSection_04 = () => {
             </div>
             {/* ============= Title ============= */}
             <div
-              className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg z-10 text-center
+              className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg text-center
                   group-hover:shadow-shadow-dark transition-all duration-300 items-center"
             >
               <h1 className="mb-1 font-camptonMedium
@@ -101,7 +101,7 @@ const ProductSection_04 = () => {
             </div>
             {/* ============= Add to cart ============= */}
             <button
-              className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
+              className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center -z-10
                                rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
                                duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary"
             >
