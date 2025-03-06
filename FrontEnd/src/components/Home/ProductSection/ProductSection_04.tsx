@@ -63,7 +63,7 @@ const ProductSection_04 = () => {
       <div className="flex w-[100%] h-auto mx-auto items-center justify-between mb-20 mt-10
       
                       xs:grid xs:grid-cols-1 xs:gap-y-[60px]
-                      md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
+                      md:grid-cols-3 md:gap-x-5 md:gap-y-5
                       xl:flex">
         {/* ============= Product List ============= */}
         {shopByCategories.map((product, index) => (
