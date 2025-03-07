@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar_01 from "./components/Navbar/Navbar_01";
 import Navbar_02 from "./components/Navbar/Navbar_02";
 import Navbar_03 from "./components/Navbar/Navbar_03";
+import Faq from "./components/Shadcn-components/Faq";
 import Carousel from "./components/Home/Carousel/Carousel";
 import BenefitsPackage from "./components/Home/BenefitsPackage/BenefitsPackage";
 import ProductSection_01 from "./components/Home/ProductSection/ProductSection_01";
@@ -45,20 +46,21 @@ const App = () => {
 
   const [showRegister, setShowRegister] = useState(false)
   const [showSignIn, setShowSignIn] = useState(false)
+  const [showFaq, setShowFaq] = useState(false)
 
   return (
     <>
-
       {showSignIn && <SignIn setShowSignIn={setShowSignIn} setShowRegister={setShowRegister}/>}
       {showRegister && <Register setShowRegister={setShowRegister} setShowSignIn={setShowSignIn}/>}
-
+      {showFaq && <Faq setShowFaq={setShowFaq}/>}
+      
     <div>
       <Router>
         <ScrollManager/>
         {/* Navigation Components */}
-        <Navbar_01 />
+        <Navbar_01 setShowFaq={setShowFaq} />
         <Navbar_02 setShowSignIn={setShowSignIn}/>
-        <Navbar_03 />
+        <Navbar_03/>
         {/* Main Routes */}
         <Routes>
           <Route path="/Product_01" element={<Product_01 />} />
@@ -66,6 +68,8 @@ const App = () => {
           <Route path="/Product_03" element={<Product_03 />} />
           <Route path="/Product_04" element={<Product_04 />} />
           <Route path="/Product_05" element={<Product_05 />} />
+
+          
           <Route path="/Product_06" element={<Product_06 />} />
 
           <Route path="/Shop" element={<Shop />} />

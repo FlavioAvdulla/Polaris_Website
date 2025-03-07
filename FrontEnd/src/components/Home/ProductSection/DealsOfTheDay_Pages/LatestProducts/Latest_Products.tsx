@@ -44,7 +44,7 @@ const Latest_Products = () => {
         className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
         
                   xs:grid-cols-1 xs:grid xs:gap-y-[60px]
-                  md:grid-cols-3 md:gap-x-5 md:gap-y-5
+                  md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
                   xl:flex">
         {/* ============= Product List ============= */}
         {latestProducts.map((product, index) => (

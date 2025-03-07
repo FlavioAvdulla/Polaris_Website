@@ -12,7 +12,7 @@ const ProductSection_02 = () => {
   }, [activeSection]);
 
   return (
-    <div className="flex flex-col w-[85%] mx-auto ">
+    <div className="flex flex-col w-[85%] mx-auto">
       {/* ============= Deals of the day - left ============= */}
       <div className="flex justify-between items-center mb-7
       
