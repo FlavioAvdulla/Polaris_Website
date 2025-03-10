@@ -1,13 +1,15 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "jsx": "react",
-    // ...
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
-    // ...
-  }
+    "outDir": "./dist/app",
+    "rootDir": "./src/app",
+    "target": "ES6",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/app/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
