@@ -1,6 +1,9 @@
 import { z } from "zod";
 import { Request, Response, NextFunction } from "express";
 import catchErrors from "../utils/catchErrors";
+import { createAccount } from "../services/auth.service";
+import { CREATED } from "../constants/http";
+import { setAuthCookies } from "../utils/cookies";
 
 const registerSchema = z.object({
   email: z.string().email().min(1).max(255),
@@ -23,5 +26,13 @@ export const registerHandler = catchErrors(
     });
     // Handle registration logic here
     res.status(200).json({ message: "User registered successfully" });
+
+    // Call Service
+    const { user, accessToken, refreshToken } = await createAccount(request)
+
+    // return response
+    return setAuthCookies({ res, accessToken, refreshToken })
+    .status(CREATED)
+    .json(user)
   }
 );
