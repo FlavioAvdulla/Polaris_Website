@@ -12,6 +12,7 @@ const defaults: CookieOptions = {
 const getAccessTokenCookieOptions = (): CookieOptions => ({
   ...defaults,
   expires: fifteenMinutesFromNow(),
+  path: "/auth/access"
 });
 
 const getRefreshTokenCookieOptions = (): CookieOptions => ({

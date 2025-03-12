@@ -1,10 +1,10 @@
 import { JWT_REFRESH_SECRET, JWT_SECRET } from "../constants/env";
-import VerificationCodeType from "../constants/verificationCodeTypes";
+import VerificationCodeType from "../constants/verificationCodeType";
 import SessionModel from "../models/session.model";
 import UserModel from "../models/user.model";
 import VerificationCodeModel from "../models/verificationCode.model";
 import { oneYearFromNow } from "../utils/date";
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
 export type createAccountParams = {
   email: string;
@@ -58,6 +58,6 @@ export const createAccount = async (data: createAccountParams) => {
   return {
     user,
     accessToken,
-    refreshToken
-  }
+    refreshToken,
+  };
 };

@@ -20,12 +20,14 @@ const registerSchema = z.object({
 
 export const registerHandler = catchErrors(
   async (req: Request, res: Response) => {
+    // variable request
     const request = registerSchema.parse({
       ...req.body,
       userAgent: req.headers["user-agent"],
     });
+
     // Handle registration logic here
-    res.status(200).json({ message: "User registered successfully" });
+    // res.status(200).json({ message: "User Already Exists" });
 
     // Call Service
     const { user, accessToken, refreshToken } = await createAccount(request)
