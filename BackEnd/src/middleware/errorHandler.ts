@@ -1,11 +1,12 @@
 import { z } from "zod";
-import { ErrorRequestHandler, Response } from "express";
+import { ErrorRequestHandler, Response, Request, NextFunction } from "express";
 import { BAD_REQUEST, INTERNAL_SERVER_ERROR } from "../constants/http";
+import AppError from "../utils/App.Error";
 
 const handleZodError = (res: Response, error: z.ZodError) => {
   const errors = error.issues.map((err) => ({
     path: err.path.join("."),
-    message: err.message, // Fixed this to use err.message
+    message: err.message,
   }));
   return res.status(BAD_REQUEST).json({
     message: error.message,
@@ -13,15 +14,25 @@ const handleZodError = (res: Response, error: z.ZodError) => {
   });
 };
 
-const errorHandler: ErrorRequestHandler = (error, req, res, next) => {
+const handleAppError = (res: Response, error: AppError) => {
+  return res.status(error.statusCode).json({
+    message: error.message,
+    errorCode: error.errorCode,
+  });
+};
+
+const errorHandler: ErrorRequestHandler = (error, req: Request, res: Response, next: NextFunction) => {
   console.log(`PATH: ${req.path}`, error);
 
   if (error instanceof z.ZodError) {
-    handleZodError(res, error); // Removed the return statement
+    handleZodError(res, error);
+  } else if (error instanceof AppError) {
+    handleAppError(res, error);
   } else {
-    res.status(INTERNAL_SERVER_ERROR).send("Internal Server Error.");
+    res.status(INTERNAL_SERVER_ERROR).send("Internal server error");
   }
-  next(); // Ensure the function always returns void
+
+  next();
 };
 
 export default errorHandler;
