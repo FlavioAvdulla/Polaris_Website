@@ -38,8 +38,8 @@ userSchema.methods.comparePassword = async function (this: UserDocument, val: st
 
 userSchema.methods.omitPassword = function (this: UserDocument) {
   const user = this.toObject();
-  delete obj.password;
-  return obj;
+  delete user.password;
+  return user;
 }
 
 const UserModel = mongoose.model<UserDocument>("User", userSchema);
