@@ -1,5 +1,5 @@
 import { JWT_REFRESH_SECRET, JWT_SECRET } from "../constants/env";
-import { CONFLICT } from "../constants/http";
+import { CONFLICT, UNAUTHORIZED } from "../constants/http";
 import VerificationCodeType from "../constants/verificationCodeType";
 import SessionModel from "../models/session.model";
 import UserModel from "../models/user.model";
@@ -61,3 +61,23 @@ export const createAccount = async (data: createAccountParams) => {
     refreshToken,
   };
 };
+
+export type LoginParams = {
+  email: string;
+  password: string;
+  userAgent?: string;
+};
+
+export const loginUser = async ({
+  email, password, userAgent
+}:LoginParams ) => {
+  // Get the user by email
+  const user = await UserModel.findOne{( email )}
+  appAssert(UserModel, UNAUTHORIZED, "Invalid email or password")
+
+  // validate password from the request
+  const isValid =
+  // create a session
+  // sign access token & refresh token
+  // return user & tokens
+}

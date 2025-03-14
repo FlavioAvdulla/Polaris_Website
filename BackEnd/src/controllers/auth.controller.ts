@@ -4,19 +4,7 @@ import catchErrors from "../utils/catchErrors";
 import { createAccount } from "../services/auth.service";
 import { CREATED } from "../constants/http";
 import { setAuthCookies } from "../utils/cookies";
-
-const registerSchema = z.object({
-  email: z.string().email().min(1).max(255),
-  password: z.string().min(6).max(255),
-  confirmPassword: z.string().min(6).max(255),
-  userAgent: z.string().optional(),
-}).refine(
-  (data) => data.password === data.confirmPassword,
-  {
-    message: "Passwords do not match",
-    path: ["confirmPassword"],
-  }
-);
+import { loginSchema, registerSchema } from "./auth.schemas";
 
 export const registerHandler = catchErrors(
   async (req: Request, res: Response) => {
@@ -30,11 +18,20 @@ export const registerHandler = catchErrors(
     // res.status(200).json({ message: "User Already Exists" });
 
     // Call Service
-    const { user, accessToken, refreshToken } = await createAccount(request)
+    const { user, accessToken, refreshToken } = await createAccount(request);
 
     // return response
     return setAuthCookies({ res, accessToken, refreshToken })
-    .status(CREATED)
-    .json(user)
+      .status(CREATED)
+      .json(user);
   }
 );
+
+export const loginHandler = catchErrors(async (req, res) => {
+  const request = loginSchema.parse({
+    ...req.body,
+    userAgent: req.headers["user-agent"],
+  });
+
+  const {} = await loginUser(request);
+});
