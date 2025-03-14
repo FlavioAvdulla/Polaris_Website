@@ -73,11 +73,44 @@ export const loginUser = async ({
 }:LoginParams ) => {
   // Get the user by email
   const user = await UserModel.findOne{( email )}
-  appAssert(UserModel, UNAUTHORIZED, "Invalid email or password")
+  appAssert(user, UNAUTHORIZED, "Invalid email or password")
 
   // validate password from the request
-  const isValid =
+  const isValid = await user.comparePassword(password)
+  appAssert(isValid, UNAUTHORIZED, "Invalid email or password")
+
+  const userId = user._id
   // create a session
+  const session = await SessionModel.create({
+    userId,
+    userAgent,
+  })
+
+  const sessionInfo = {
+    sessionId: session._id,
+  }
+
   // sign access token & refresh token
+  const refreshToken = jwt.sign(
+    sessionInfo,
+    JWT_REFRESH_SECRET,
+    {
+      audience: ["user"],
+      expiresIn: "30d",
+    }
+  );
+  const accessToken = jwt.sign(
+    { ...sessionInfo, userId: user._id},
+    JWT_SECRET,
+    {
+      audience: ["user"],
+      expiresIn: "15m",
+    }
+  );
   // return user & tokens
-}
+  return {
+    user:user.omitPassword(),
+    accessToken,
+    refreshToken,
+  }
+} 

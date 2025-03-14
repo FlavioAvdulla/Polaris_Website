@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { Request, Response, NextFunction } from "express";
 import catchErrors from "../utils/catchErrors";
-import { createAccount } from "../services/auth.service";
+import { createAccount, loginUser } from "../services/auth.service";
 import { CREATED } from "../constants/http";
 import { setAuthCookies } from "../utils/cookies";
 import { loginSchema, registerSchema } from "./auth.schemas";
