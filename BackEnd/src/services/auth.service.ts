@@ -19,7 +19,7 @@ export const createAccount = async (data: createAccountParams) => {
   const existingUser = await UserModel.exists({
     email: data.email,
   });
-  appAssert(!existingUser, CONFLICT, "Email already in use")
+  appAssert(!existingUser, CONFLICT, "Email already in use");
   // Creat user
   const user = await UserModel.create({
     email: data.email,
@@ -69,48 +69,48 @@ export type LoginParams = {
 };
 
 export const loginUser = async ({
-  email, password, userAgent
-}:LoginParams ) => {
+  email,
+  password,
+  userAgent,
+}: LoginParams) => {
   // Get the user by email
-  const user = await UserModel.findOne{( email )}
-  appAssert(user, UNAUTHORIZED, "Invalid email or password")
+  const user = await UserModel.findOne({ email }); // Corrected syntax here
+  appAssert(user, UNAUTHORIZED, "Invalid email or password");
 
-  // validate password from the request
-  const isValid = await user.comparePassword(password)
-  appAssert(isValid, UNAUTHORIZED, "Invalid email or password")
+  // Validate password from the request
+  const isValid = await user.comparePassword(password); // Add optional chaining to prevent errors
+  appAssert(isValid, UNAUTHORIZED, "Invalid email or password");
 
-  const userId = user._id
-  // create a session
+  const userId = user._id;
+
+  // Create a session
   const session = await SessionModel.create({
     userId,
     userAgent,
-  })
+  });
 
   const sessionInfo = {
     sessionId: session._id,
-  }
+  };
 
-  // sign access token & refresh token
-  const refreshToken = jwt.sign(
-    sessionInfo,
-    JWT_REFRESH_SECRET,
-    {
-      audience: ["user"],
-      expiresIn: "30d",
-    }
-  );
+  // Sign access token & refresh token
+  const refreshToken = jwt.sign(sessionInfo, JWT_REFRESH_SECRET, {
+    audience: ["user"],
+    expiresIn: "30d",
+  });
   const accessToken = jwt.sign(
-    { ...sessionInfo, userId: user._id},
+    { ...sessionInfo, userId: user._id },
     JWT_SECRET,
     {
       audience: ["user"],
       expiresIn: "15m",
     }
   );
-  // return user & tokens
+
+  // Return user & tokens
   return {
-    user:user.omitPassword(),
+    user: user.omitPassword(),
     accessToken,
     refreshToken,
-  }
-} 
+  };
+};

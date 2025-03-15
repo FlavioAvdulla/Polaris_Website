@@ -2,7 +2,7 @@ import { z } from "zod";
 import { Request, Response, NextFunction } from "express";
 import catchErrors from "../utils/catchErrors";
 import { createAccount, loginUser } from "../services/auth.service";
-import { CREATED } from "../constants/http";
+import { CREATED, OK } from "../constants/http";
 import { setAuthCookies } from "../utils/cookies";
 import { loginSchema, registerSchema } from "./auth.schemas";
 
@@ -33,5 +33,9 @@ export const loginHandler = catchErrors(async (req, res) => {
     userAgent: req.headers["user-agent"],
   });
 
-  const {} = await loginUser(request);
+  const { accessToken, refreshToken } = await loginUser(request);
+
+  return setAuthCookies({ res, accessToken, refreshToken }).status(OK).json({
+    message: "Login successful",
+  });
 });
