@@ -29,7 +29,7 @@ export const registerHandler = catchErrors(
   }
 );
 
-export const loginHandler = catchErrors(async (req, res) => {
+export const loginHandler = catchErrors(async (req: Request, res: Response) => {
   const request = loginSchema.parse({
     ...req.body,
     userAgent: req.headers["user-agent"],
@@ -42,7 +42,7 @@ export const loginHandler = catchErrors(async (req, res) => {
   });
 });
 
-export const logoutHandler = catchErrors(async (req, res) => {
+export const logoutHandler = catchErrors(async (req: Request, res: Response) => {
   const accessToken = req.cookies.accessToken;
   const { payload } = verifyToken(accessToken);
 
@@ -50,8 +50,7 @@ export const logoutHandler = catchErrors(async (req, res) => {
     await SessionModel.findByIdAndDelete(payload.sessionId);
   }
 
-  return clearAuthCookies(res).
-  status(OK).json({
+  return clearAuthCookies(res).status(OK).json({
     message: "Logout successful.",
   });
 });
