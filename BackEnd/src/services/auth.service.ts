@@ -143,7 +143,14 @@ export const refreshUserAccessToken = async (refreshToken: string) => {
   });
 
   return {
-    sccessToken,
-    refreshToken: newRefreshToken,
+    accessToken,
+    newRefreshToken,
   };
 };
+
+export const verifyEmail = async (code: string) => {
+  // get the verification
+  // get user by id
+  // update user to verify true
+  // delete the verification code
+}
