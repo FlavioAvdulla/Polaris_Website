@@ -1,5 +1,10 @@
 import { JWT_REFRESH_SECRET, JWT_SECRET } from "../constants/env";
-import { CONFLICT, UNAUTHORIZED } from "../constants/http";
+import {
+  CONFLICT,
+  INTERNAL_SERVER_ERROR,
+  NOT_FOUND,
+  UNAUTHORIZED,
+} from "../constants/http";
 import VerificationCodeType from "../constants/verificationCodeType";
 import SessionModel from "../models/session.model";
 import UserModel from "../models/user.model";
@@ -121,7 +126,7 @@ export const refreshUserAccessToken = async (refreshToken: string) => {
     "Session expired"
   );
 
-  // Refresh the ssion if it expires in the next 24 hours.
+  // refresh the session if it expires in the next 24hrs
   const sessionNeedsRefresh = session.expiresAt.getTime() - now <= ONE_DAY_MS;
   if (sessionNeedsRefresh) {
     session.expiresAt = thirtyDaysFromNow();
@@ -150,7 +155,25 @@ export const refreshUserAccessToken = async (refreshToken: string) => {
 
 export const verifyEmail = async (code: string) => {
   // get the verification
-  // get user by id
+  const validCode = await VerificationCodeModel.findOne({
+    _id: code,
+    type: VerificationCodeType.EmailVerification,
+    expiresAt: { $gt: new Date() },
+  });
+  appAssert(validCode, NOT_FOUND, "Invalid or expired verification code.");
   // update user to verify true
+  const updatedUser = await UserModel.findByIdAndUpdate(
+    validCode.userId,
+    {
+      verified: true,
+    },
+    { new: true }
+  );
+  appAssert(updatedUser, INTERNAL_SERVER_ERROR, "Failed to verify email.");
   // delete the verification code
-}
+  await validCode.deleteOne();
+  // return user
+  return {
+    user: updatedUser.omitPassword(),
+  };
+};
