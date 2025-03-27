@@ -40,6 +40,7 @@ import SignIn from "./components/Pages/SignIn/SignIn";
 
 // Scroll
 import ScrollManager from "./ScrollManager/ScrollManager";
+import Cart from "./components/Pages/Cart/Cart";
 
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
   const [showRegister, setShowRegister] = useState(false)
   const [showSignIn, setShowSignIn] = useState(false)
   const [showFaq, setShowFaq] = useState(false)
+  // const [showCart, setShowCart] = useState(false)
 
   return (
     <>
@@ -68,8 +70,6 @@ const App = () => {
           <Route path="/Product_03" element={<Product_03 />} />
           <Route path="/Product_04" element={<Product_04 />} />
           <Route path="/Product_05" element={<Product_05 />} />
-
-          
           <Route path="/Product_06" element={<Product_06 />} />
 
           <Route path="/Shop" element={<Shop />} />
@@ -81,6 +81,7 @@ const App = () => {
           <Route path="/CameraAndPhoto" element={<CameraAndPhoto/>}/>
           <Route path="/Electronics" element={<Electronics/>}/>
           <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones/>}/>
+          <Route path="/Cart" element={<Cart/>}/>
           {/* Main Home Page */}
           <Route
             path="/"

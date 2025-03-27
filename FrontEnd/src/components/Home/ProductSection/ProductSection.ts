@@ -935,3 +935,20 @@ export const carousel_05 = [
     description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
   },
 ];
+
+export const cartList = [
+  {
+    _id:"1",
+    image: Product_01,
+    title: "Product_01",
+    unitPrice: "33.00$",
+    quantity: "5 Items",
+  },
+  {
+    _id:"2",
+    image: Product_02,
+    title: "Product_02",
+    unitPrice: "63.00$",
+    quantity: "3 Items",
+  },
+]

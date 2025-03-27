@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-
-// Google Logo
-import Google_Logo from "../../../assets/images/Polaris_Logo.svg"
-
-// React Icons
+import axios from "axios";
+import Google_Logo from "../../../assets/images/Google_Logo.svg";
 import { IoIosCloseCircle } from "react-icons/io";
-
-// Import Axios
-import axios from 'axios';
 
 interface RegisterProps {
   setShowSignIn: (value: boolean) => void;
@@ -18,6 +12,8 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
   const [fullname, setFullname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSignInOpen = () => {
     setShowRegister(false);
@@ -28,92 +24,104 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
     setShowRegister(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/register', { fullname, email, password })
-      .then(result => console.log(result))
-      .catch(err => console.log(err));
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    try {
+      setIsLoading(true); // Show loading state
+      const response = await axios.post("http://localhost:3001/auth/register", {
+        fullname,
+        email,
+        password,
+      });
+      console.log("Registration successful:", response.data);
+      alert("Registration successful! Please sign in.");
+      setShowRegister(false);
+      setShowSignIn(true);
+    } catch (error: any) {
+      console.error("Error during registration:", error);
+      alert(error.response?.data?.message || "An unexpected error occurred. Please try again.");
+    } finally {
+      setIsLoading(false); // Reset loading state
+    }
   };
 
   return (
     <div className="flex fixed items-center z-20 w-[100%] h-[100%]">
       <div className="flex mx-auto justify-center items-center z-10">
-        {/* ============= Register Modal ============= */}
-        <div className="flex p-5 h-auto rounded-xl bg-white
-                        xs:w-[95%]
-                        md:w-[350px]">
-          {/* ============= Input Section ============= */}
-          <form className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]" onSubmit={handleSubmit}>
-            {/* ============= Sign In Title ============= */}
+        <div className="flex p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]">
+          <form
+            className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]"
+            onSubmit={handleSubmit}
+          >
             <div className="flex w-[100%] h-auto items-center justify-between">
               <h1 className="font-camptonBook text-[25px] ml-5">Register</h1>
-              <i>
-                <IoIosCloseCircle className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]" onClick={handleClose} />
-              </i>
+              <IoIosCloseCircle
+                className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
+                onClick={handleClose}
+              />
             </div>
-            {/* ============= Fullname Input ============= */}
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Fullname</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="text"
-                name="fullname"
                 placeholder="Enter your Fullname"
                 required
                 onChange={(e) => setFullname(e.target.value)}
               />
             </div>
-            {/* ============= Email Input ============= */}
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Email Address</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="email"
-                name="Email"
                 placeholder="Enter your Email"
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            {/* ============= Password Input ============= */}
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Password</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="password"
-                name="Password"
                 placeholder="Enter your Password"
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            {/* ============= Sign in Button ============= */}
-            <button
-              className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary">
-              Register
-            </button>
-            {/* ============= OR ============= */}
-            <div className="flex w-[80%] gap-5 items-center">
-              <div className="h-[0.5px] w-[100%] bg-black" />
-              <p>OR</p>
-              <div className="h-[0.5px] w-[100%] bg-black" />
+            <div className="flex flex-col w-[100%] gap-2">
+              <h2 className="ml-5">Confirm Password</h2>
+              <input
+                className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
+                type="password"
+                placeholder="Confirm your Password"
+                required
+                onChange={(e) => setConfirmPassword(e.target.value)}
+              />
             </div>
-            {/* ============= Google Register ============= */}
             <button
-              className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300 text-[17px] w-[100%] h-[45px] bg-transparent rounded-full">
-                <img className="w-[25px] h-auto" src={Google_Logo} alt="Google_Logo" />
-                <p className="
-                              xs:text-[14px]
-                              md:text-[16px]">Register with Google</p>
+              className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
+              type="submit"
+              disabled={isLoading}
+            >
+              {isLoading ? "Registering..." : "Register"}
             </button>
             <div className="flex w-[100%] h-auto justify-center">
-              <p className="
-                            xs:text-[12px]
-                            md:text-[16px]">Already have an account?</p>
+              <p className="xs:text-[12px] md:text-[16px]">Already have an account?</p>
               <button className="outline-none border-none underline-offset-1">
-                 <p className="ml-2 text-primary font-camptonLight
-                              xs:text-[12px]
-                              md:text-[16px]" onClick={handleSignInOpen}>Sign in</p>
+                <p
+                  className="ml-2 text-primary xs:text-[12px] md:text-[16px]"
+                  onClick={handleSignInOpen}
+                >
+                  Sign in
+                </p>
               </button>
             </div>
           </form>

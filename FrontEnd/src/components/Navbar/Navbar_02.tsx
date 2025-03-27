@@ -31,6 +31,11 @@ const Navbar_02 = ({ setShowSignIn }) => {
     setShowSignIn(true);
   };
 
+  const handleCartOpen = () => {
+    navigate("/Cart")
+    setActiveSection("Cart");
+  }
+
   return (
     <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
                     xs:gap-5
@@ -92,7 +97,7 @@ const Navbar_02 = ({ setShowSignIn }) => {
         {/* ============= Cart Icon ============= */}
         <div className="relative flex items-center justify-center">
           <i>
-            <PiShoppingCartLight className="xs:text-[17px] md:text-[28px]"/>
+            <PiShoppingCartLight className="xs:text-[17px] md:text-[28px] cursor-pointer" onClick={handleCartOpen}/>
           </i>
           <div className="absolute top-0 flex rounded-full
                           bg-primary items-center justify-center
