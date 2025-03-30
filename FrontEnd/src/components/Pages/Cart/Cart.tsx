@@ -7,6 +7,8 @@ import { cartList } from "../../../components/Home/ProductSection/ProductSection
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoCloseCircle } from "react-icons/io5";
+import { HiOutlineRefresh } from "react-icons/hi";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Cart = () => {
   const [quantity, setQuantity] = useState("01");
@@ -46,25 +48,18 @@ const Cart = () => {
                       xs:text-[10px]
                       sm:text-[11px]
                       md:text-[15px] 
-                      lg:text-[22px]"
-        >
-          Add to Cart
-        </h1>
+                      lg:text-[22px]"> Add to Cart</h1>
 
-        <div
-          className="flex items-center
+        <div className="flex items-center
                         
                         xs:w-[50%]
-                        md:w-fit"
-        >
-          <p
-            className="text-gray-500
+                        md:w-fit">
+          <p className="text-gray-500
                         
                         xs:text-[10px]
                         sm:text-[11px]
                         md:text-[15px]
-                        xl:text-[18px]"
-          >
+                        xl:text-[18px]">
             No handling fees + free shipping on orders over $35*
           </p>
         </div>
@@ -99,8 +94,7 @@ const Cart = () => {
                 <img
                   className="w-[80px]"
                   src={product.image}
-                  alt={product.title}
-                />
+                  alt={product.title}/>
                 {product.title}
               </td>
               <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
@@ -109,24 +103,16 @@ const Cart = () => {
               <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
                 {/* ============= Quantity ============= */}
                 <div className="flex h-auto items-center">
-                  <div
-                    className="flex items-center justify-center
+                  <div className="flex items-center justify-center
                                 border-[1px] border-primary cursor-pointer
-                                                
-                                                
+                                                               
                                 xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
                                 lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
-                    onClick={decreaseQuantity}
-                  >
-                    <i>
-                      <FaCircleMinus
-                        className="text-primary cursor-pointer
-                                      
-                                                              
+                    onClick={decreaseQuantity}>
+                    <i><FaCircleMinus className="text-primary cursor-pointer
+                                                               
                                     xs:text-[13px]
-                                    lg:text-[22px]"
-                      />
-                    </i>
+                                    lg:text-[22px]"/></i>
                   </div>
                   {/* ============= Quantity number ============= */}
                   <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary border-[1px] border-primary ">
@@ -141,8 +127,7 @@ const Cart = () => {
                       name="quantity"
                       min="1"
                       value={quantity}
-                      onChange={handleQuantityChange}
-                    />
+                      onChange={handleQuantityChange}/>
                   </div>
                   <div
                     className="flex items-center justify-center
@@ -150,20 +135,16 @@ const Cart = () => {
                                                 
                                 xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
                                 lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
-                    onClick={increaseQuantity}
-                  >
-                    <i>
-                      <FaCirclePlus
-                        className="text-primary cursor-pointer
+                    onClick={increaseQuantity}>
+                    <i><FaCirclePlus className="text-primary cursor-pointer
                                                               
                                     xs:text-[13px]
-                                    lg:text-[22px]"
-                      />
-                    </i>
+                                    lg:text-[22px]"/></i>
                   </div>
                 </div>
               </td>
-              <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
+              <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+                            border-[1px] border-r-0 border-t-0 border-primary">
                 <p>
                   {(
                     parseInt(quantity, 10) *
@@ -194,38 +175,39 @@ const Cart = () => {
               placeholder="Coupon Code"
               required
             />
-            <button className="flex w-[150px] h-[45px] rounded-md rounded-l-none items-center justify-center font-camptonLight bg-primary p-5 outline-none border-none">
+            <button className="flex w-[150px] h-[45px] rounded-md rounded-l-none items-center
+                              justify-center font-camptonLight bg-primary p-5 outline-none border-none">
               <p className="font-camptonLight text-white">Apply</p>
             </button>
           </div>
           {/* ============= Coupon Infos input ============= */}
           <div className="flex flex-col gap-3">
             <input
-              className="w-[100%] h-[45px] rounded-md font-camptonLight bg-gray-100 p-5 outline-none border-none"
+              className="w-[100%] h-[45px] rounded-md font-camptonLight
+                      bg-gray-100 p-5 outline-none border-none"
               type="text"
               placeholder="Country"
               required
             />
             <input
-              className="w-[100%] h-[45px] rounded-md font-camptonLight bg-gray-100 p-5 outline-none border-none"
+              className="w-[100%] h-[45px] rounded-md font-camptonLight
+                      bg-gray-100 p-5 outline-none border-none"
               type="text"
               placeholder="City"
               required
             />
             <input
-              className="w-[100%] h-[45px] rounded-md font-camptonLight bg-gray-100 p-5 outline-none border-none"
+              className="w-[100%] h-[45px] rounded-md font-camptonLight
+                      bg-gray-100 p-5 outline-none border-none"
               type="text"
               placeholder="Postcode / ZIP"
               required
             />
-            <button className="flex w-[150px] h-[45px] rounded-md items-center justify-center font-camptonLight bg-primary p-5 outline-none border-none">
-              <p className="font-camptonLight text-white">Apply</p>
-            </button>
           </div>
         </div>
 
         {/* ============= Section - 02 ============= */}
-        <div className="flex flex-col w-[33.33%] rounded-md border-[1px] border-primary p-5">
+        <div className="flex flex-col w-[33.33%] rounded-md border-[1px] border-primary p-4 justify-center">
           <div className="flex flex-col gap-3">
             <p className="font-camptonSemiBold">Cart Total</p>
 
@@ -233,20 +215,56 @@ const Cart = () => {
               <p className="font-camptonBook">Subtotal</p>
               <p className="font-camptonSemiBold">$33.00</p>
             </div>
+
             <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
-            <p className="font-camptonSemiBold">Cart Total</p>
 
             <div className="flex justify-between">
-              <p className="font-camptonBook">Subtotal</p>
+              <p className="font-camptonBook">Shipping</p>
+              <p className="font-camptonBook">
+                Flat rate: <span className="font-camptonSemiBold">$5.00</span>
+                <p className="font-camptonBook">Free shipping</p>
+                <p className="font-camptonBook">
+                  Shipping to <span className="font-camptonSemiBold">CA.</span>
+                </p>
+              </p>
+            </div>
+
+            <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+
+            <div className="flex justify-between">
+              <p className="font-camptonBook">Total</p>
               <p className="font-camptonSemiBold">$33.00</p>
             </div>
+            <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center font-camptonLight bg-primary p-5 outline-none border-none">
+              <p className="font-camptonLight text-white">
+                Proceed to Checkout
+              </p>
+            </button>
           </div>
-          
         </div>
 
         {/* ============= Section - 03 ============= */}
-        <div className="flex flex-col w-[33.33%] bg-slate-100">dfweg</div>
+        <div className="flex w-[33.33%] gap-3">
+          <button
+            className="flex w-[100%] h-[45px] rounded-md items-center justify-center
+                              font-camptonLight border-[1px] border-primary p-5">
+            <p className="font-camptonLight text-primary">Continue Shopping</p>
+          </button>
+          <button
+            className="flex w-[100%] h-[45px] rounded-md items-center justify-center
+                              font-camptonLight bg-primary p-5 outline-none border-none gap-2">
+            <i className="hover:rotate-[180deg] hover:duration-300 hover:ease-in-out">
+              <HiOutlineRefresh className="text-white" />
+            </i>
+            <p className="font-camptonLight text-white">Update Cart</p>
+          </button>
+        </div>
       </div>
+      <button
+        className="flex w-[150px] h-[45px] rounded-md items-center justify-center
+                            font-camptonLight bg-primary p-5 outline-none border-none mt-3">
+        <p className="font-camptonLight text-white">Update</p>
+      </button>
     </div>
   );
 };
