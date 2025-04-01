@@ -200,9 +200,10 @@ const Cart = () => {
             />
             <button
               className="flex w-[150px] h-[45px] rounded-md rounded-l-none items-center
-                              justify-center font-camptonLight bg-primary p-5 outline-none border-none"
-            >
-              <p className="font-camptonLight text-white">Apply</p>
+                          justify-center text-white font-camptonLight bg-primary p-5 border-[1px] border-primary
+                          
+                          hover:text-primary hover:bg-transparent duration-300">
+              <p className="font-camptonLight">Apply</p>
             </button>
           </div>
           {/* ============= Coupon Infos input ============= */}
@@ -232,7 +233,7 @@ const Cart = () => {
         </div>
 
         {/* ============= Section - 02 ============= */}
-        <div className="flex flex-col w-[33.33%] rounded-md border-[1px] border-primary p-4 justify-center">
+        <div className="flex flex-col w-[33.33%] rounded-md border-[1px] border-primary px-4 justify-center">
           <div className="flex flex-col gap-3">
             <p className="font-camptonSemiBold">Cart Total</p>
 
@@ -260,8 +261,10 @@ const Cart = () => {
               <p className="font-camptonBook">Total</p>
               <p className="font-camptonSemiBold">$33.00</p>
             </div>
-            <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center font-camptonLight bg-primary p-5 outline-none border-none">
-              <p className="font-camptonLight text-white">
+            <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center
+                                font-camptonLight bg-primary border-primary p-5 text-white border-[1px]
+                                hover:bg-transparent hover:text-primary duration-300">
+              <p className="font-camptonLight">
                 Proceed to Checkout
               </p>
             </button>
@@ -276,7 +279,7 @@ const Cart = () => {
           >
             <p className="font-camptonLight text-primary">Continue Shopping</p>
           </button>
-          <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center font-camptonLight bg-primary p-5 outline-none border-none gap-2 group">
+          <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center font-camptonLight bg-primary p-5 gap-2 group">
             <i>
               <HiOutlineRefresh className="text-white group-hover:rotate-[180deg] group-hover:duration-300 group-hover:ease-in-out" />
             </i>
@@ -286,9 +289,10 @@ const Cart = () => {
       </div>
       <button
         className="flex w-[150px] h-[45px] rounded-md items-center justify-center
-                            font-camptonLight bg-primary p-5 outline-none border-none mt-3"
+                  font-camptonLight bg-primary border-primary p-5 mt-3 text-white border-[1px]
+                  hover:bg-transparent hover:text-primary duration-300"
       >
-        <p className="font-camptonLight text-white">Update</p>
+        <p className="font-camptonLight">Update</p>
       </button>
     </div>
   );
