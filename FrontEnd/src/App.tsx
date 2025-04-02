@@ -42,75 +42,74 @@ import SignIn from "./components/Pages/SignIn/SignIn";
 import ScrollManager from "./ScrollManager/ScrollManager";
 import Cart from "./components/Pages/Cart/Cart";
 
-
 const App = () => {
-
-  const [showRegister, setShowRegister] = useState(false)
-  const [showSignIn, setShowSignIn] = useState(false)
-  const [showFaq, setShowFaq] = useState(false)
-  // const [showCart, setShowCart] = useState(false)
+  const [showRegister, setShowRegister] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [showFaq, setShowFaq] = useState(false);
+  const [quantity, setQuantity] = useState(0); // State to store the cart quantity
 
   return (
     <>
-      {showSignIn && <SignIn setShowSignIn={setShowSignIn} setShowRegister={setShowRegister}/>}
-      {showRegister && <Register setShowRegister={setShowRegister} setShowSignIn={setShowSignIn}/>}
-      {showFaq && <Faq setShowFaq={setShowFaq}/>}
-      
-    <div>
-      <Router>
-        <ScrollManager/>
-        {/* Navigation Components */}
-        <Navbar_01 setShowFaq={setShowFaq} />
-        <Navbar_02 setShowSignIn={setShowSignIn}/>
-        <Navbar_03/>
-        {/* Main Routes */}
-        <Routes>
-          <Route path="/Product_01" element={<Product_01 />} />
-          <Route path="/Product_02" element={<Product_02 />} />
-          <Route path="/Product_03" element={<Product_03 />} />
-          <Route path="/Product_04" element={<Product_04 />} />
-          <Route path="/Product_05" element={<Product_05 />} />
-          <Route path="/Product_06" element={<Product_06 />} />
+      {showSignIn && <SignIn setShowSignIn={setShowSignIn} setShowRegister={setShowRegister} />}
+      {showRegister && <Register setShowRegister={setShowRegister} setShowSignIn={setShowSignIn} />}
+      {showFaq && <Faq setShowFaq={setShowFaq} />}
 
-          <Route path="/Shop" element={<Shop />} />
-          <Route path="/Blog" element={<Blog />} />
+      <div>
+        <Router>
+          <ScrollManager />
+          {/* Navigation Components */}
+          <Navbar_01 setShowFaq={setShowFaq} />
+          {/* Pass quantity state to Navbar_02 */}
+          <Navbar_02 quantity={quantity} setShowSignIn={setShowSignIn} />
+          <Navbar_03 />
+          {/* Main Routes */}
+          <Routes>
+            <Route path="/Product_01" element={<Product_01 />} />
+            <Route path="/Product_02" element={<Product_02 />} />
+            <Route path="/Product_03" element={<Product_03 />} />
+            <Route path="/Product_04" element={<Product_04 />} />
+            <Route path="/Product_05" element={<Product_05 />} />
+            <Route path="/Product_06" element={<Product_06 />} />
 
-          <Route path="/Computers" element={<Computers/>}/>
-          <Route path="/MobilesAndTablets" element={<MobilesAndTablets/>}/>
-          <Route path="/GameAccessories" element={<GameAccessories/>}/>
-          <Route path="/CameraAndPhoto" element={<CameraAndPhoto/>}/>
-          <Route path="/Electronics" element={<Electronics/>}/>
-          <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones/>}/>
-          <Route path="/Cart" element={<Cart/>}/>
-          {/* Main Home Page */}
-          <Route
-            path="/"
-            element={
-              <>
-                <Carousel />
-                <BenefitsPackage />
-                <ProductSection_01 />
-                <ProductSection_02 /> {/* Includes nested routes */}
-                <ProductSection_03 />
-                <ProductSection_04 />
-                <ProductSection_05 />
-                <BannerSection />
-                <ProductSection_06 />
-              </>
-            }
-          >
-            {/* Nested Routes for ProductSection_02 */}
-            <Route index element={<Latest_Products />} /> {/* Default for / */}
-            <Route path="deals/latest-products" element={<Latest_Products />} />
-            <Route path="deals/top-rating" element={<Top_Rating />} />
-            <Route path="deals/best-selling" element={<Best_Selling />} />
-          </Route>
-        </Routes>
-        {/* Footer */}
-        <Footer />
-      </Router>
-    </div>
-  </>
+            <Route path="/Shop" element={<Shop />} />
+            <Route path="/Blog" element={<Blog />} />
+
+            <Route path="/Computers" element={<Computers />} />
+            <Route path="/MobilesAndTablets" element={<MobilesAndTablets />} />
+            <Route path="/GameAccessories" element={<GameAccessories />} />
+            <Route path="/CameraAndPhoto" element={<CameraAndPhoto />} />
+            <Route path="/Electronics" element={<Electronics />} />
+            <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones />} />
+            <Route path="/Cart" element={<Cart setQuantity={setQuantity} />} />
+            {/* Main Home Page */}
+            <Route
+              path="/"
+              element={
+                <>
+                  <Carousel />
+                  <BenefitsPackage />
+                  <ProductSection_01 />
+                  <ProductSection_02 />
+                  <ProductSection_03 />
+                  <ProductSection_04 />
+                  <ProductSection_05 />
+                  <BannerSection />
+                  <ProductSection_06 />
+                </>
+              }
+            >
+              {/* Nested Routes for ProductSection_02 */}
+              <Route index element={<Latest_Products />} />
+              <Route path="deals/latest-products" element={<Latest_Products />} />
+              <Route path="deals/top-rating" element={<Top_Rating />} />
+              <Route path="deals/best-selling" element={<Best_Selling />} />
+            </Route>
+          </Routes>
+          {/* Footer */}
+          <Footer />
+        </Router>
+      </div>
+    </>
   );
 };
 
