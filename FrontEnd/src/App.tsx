@@ -41,6 +41,7 @@ import SignIn from "./components/Pages/SignIn/SignIn";
 // Scroll
 import ScrollManager from "./ScrollManager/ScrollManager";
 import Cart from "./components/Pages/Cart/Cart";
+import Favourites from "./components/Pages/Favourites/Favourites";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
@@ -81,6 +82,7 @@ const App = () => {
             <Route path="/Electronics" element={<Electronics />} />
             <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones />} />
             <Route path="/Cart" element={<Cart setQuantity={setQuantity} />} />
+            <Route path="/Favourites" element={<Favourites setQuantity={setQuantity} />} />
             {/* Main Home Page */}
             <Route
               path="/"
