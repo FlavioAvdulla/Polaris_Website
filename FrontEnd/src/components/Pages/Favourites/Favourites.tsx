@@ -15,8 +15,10 @@ const Cart = ({ setFavouriteQuantity }) => {
   const [cartItems, setCartItems] = useState(initialCartList);
 
   const handleQuantityChange = (e) => {
+
     const value = e.target.value.replace(/[^0-9]/g, "");
     const numericValue = parseInt(value, 10);
+
     if (!isNaN(numericValue) && numericValue >= 0 && numericValue <= 99) {
       setLocalQuantity(numericValue);
       setFavouriteQuantity(numericValue); // Update the global quantity
@@ -113,23 +115,19 @@ const Cart = ({ setFavouriteQuantity }) => {
                                                                
                                 xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
                                 lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
-                    onClick={decreaseQuantity}
-                  >
+                    onClick={decreaseQuantity}>
                     <i>
                       <FaCircleMinus
                         className="text-primary cursor-pointer
                                                                
                                     xs:text-[13px]
-                                    lg:text-[22px]"
-                      />
-                    </i>
+                                    lg:text-[22px]" /></i>
                   </div>
                   {/* ============= Quantity number ============= */}
                   <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary border-[1px] border-primary ">
                     <input
                       className="text-center text-white font-camptonMedium bg-transparent outline-none
-                                      
-                                               
+       
                                 xs:w-[25px] xs:h-[26px] xs:text-[12px]
                                 lg:w-[40px] lg:h-[40px] lg:text-[20px]"
                       type="text"

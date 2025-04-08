@@ -96,8 +96,7 @@ const ProductSection_05 = () => {
                             
                             md:w-[80%] md:h-[80%]
                             xl:w-full xl:h-full
-                            2xl:w-[75%]"
-                />
+                            2xl:w-[75%]"/>
               </div>
               {/* ============= Section - right - 01 - Info ============= */}
               <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center
@@ -124,9 +123,7 @@ const ProductSection_05 = () => {
                                 xs:text-[18px]
                                 sm:text-[20px]
                                 md:text-[27px]
-                                lg:text-[22px]
-                              
-                                ">
+                                lg:text-[22px]">
                   {product.title}
                 </h1>
                 <p className="text-gray-500

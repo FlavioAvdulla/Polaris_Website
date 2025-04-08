@@ -78,15 +78,12 @@ const ProductSection_03 = () => {
 
                           xs:w-[100%] xs:h-[100%]
                           lg:w-[50%]">
-            <img
-              className="object-cover
+            <img className="object-cover
                         
-                        xs:h-[300px]
-                        md:w-[100%] md:h-auto
-                        "
+                            xs:h-[300px]
+                            md:w-[100%] md:h-auto"
               src={product.image}
-              alt={product.title_01}
-            />
+              alt={product.title_01}/>
           </div>
         </div>
       ))}

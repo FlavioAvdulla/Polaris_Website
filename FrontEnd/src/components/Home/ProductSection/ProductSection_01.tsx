@@ -78,25 +78,27 @@ const ProductSection_01 = () => {
             <div className="flex gap-2">
               {getStars(product.rating)}
               <p className="font-camptonBook
+              
                             md:text-[12px]
                             lg:text-[15px]">
                 ({product.rating})
               </p>
             </div>
             <h1 className="font-camptonMedium
+
                               xs:w-[80%]
                               sm:w-[60%]
                               md:text-[13px] md:w-[90%]
                               lg:text-[18px]
                               xl:text-[22px] xl:w-[70%]">{product.title}</h1>
+
             <div className="flex justify-between items-center">
               <h1 className="font-camptonBold text-primary
               
                               xs:text-[40px]
                               md:text-[30px]
                               lg:text-[36px]
-                              xl:text-[40px]
-                              ">
+                              xl:text-[40px]">
                 {product.normalPrice}
               </h1>
               <i className="bg-primary border-[1px] border-primary cursor-pointer
@@ -107,8 +109,7 @@ const ProductSection_01 = () => {
                               lg:rounded-md">
                 <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
                                                 
-                                                xs:text-[40px] xs:p-1"/>
-              </i>
+                                                xs:text-[40px] xs:p-1"/></i>
             </div>
             <div className="flex justify-between items-center">
               <p className="font-camptonBook flex

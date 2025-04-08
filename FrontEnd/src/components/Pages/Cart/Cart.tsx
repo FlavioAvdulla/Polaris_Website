@@ -15,8 +15,10 @@ const Cart = ({ setCartQuantity }) => {
   const [cartItems, setCartItems] = useState(initialCartList);
 
   const handleQuantityChange = (e) => {
+    
     const value = e.target.value.replace(/[^0-9]/g, "");
     const numericValue = parseInt(value, 10);
+
     if (!isNaN(numericValue) && numericValue >= 0 && numericValue <= 99) {
       setLocalQuantity(numericValue);
       setCartQuantity(numericValue); // Update the global quantity
@@ -112,23 +114,19 @@ const Cart = ({ setCartQuantity }) => {
                                                                
                                 xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
                                 lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
-                    onClick={decreaseQuantity}
-                  >
+                    onClick={decreaseQuantity}>
                     <i>
                       <FaCircleMinus
                         className="text-primary cursor-pointer
                                                                
                                     xs:text-[13px]
-                                    lg:text-[22px]"
-                      />
-                    </i>
+                                    lg:text-[22px]"/></i>
                   </div>
                   {/* ============= Quantity number ============= */}
                   <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary border-[1px] border-primary ">
                     <input
                       className="text-center text-white font-camptonMedium bg-transparent outline-none
-                                      
-                                               
+                        
                                 xs:w-[25px] xs:h-[26px] xs:text-[12px]
                                 lg:w-[40px] lg:h-[40px] lg:text-[20px]"
                       type="text"
@@ -145,18 +143,15 @@ const Cart = ({ setCartQuantity }) => {
                                 xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
                                 lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
                     onClick={increaseQuantity}>
-                    <i>
-                      <FaCirclePlus
-                        className="text-primary cursor-pointer
+
+                    <i><FaCirclePlus className="text-primary cursor-pointer
                                                               
                                     xs:text-[13px]
-                                    lg:text-[22px]"/>
-                    </i>
+                                    lg:text-[22px]"/></i>
                   </div>
                 </div>
               </td>
-              <td
-                className="flex p-5 items-center w-[100%] gap-5 justify-center
+              <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                             border-[1px] border-r-0 border-t-0 border-primary">
                 <p>
                   {(
@@ -252,8 +247,8 @@ const Cart = ({ setCartQuantity }) => {
             </div>
             <button
               className="flex w-[100%] h-[45px] rounded-md items-center justify-center
-                                font-camptonLight bg-primary border-primary p-5 text-white border-[1px]
-                                hover:bg-transparent hover:text-primary duration-300">
+                          font-camptonLight bg-primary border-primary p-5 text-white border-[1px]
+                          hover:bg-transparent hover:text-primary duration-300">
               <p className="font-camptonLight">Proceed to Checkout</p>
             </button>
           </div>
@@ -263,7 +258,7 @@ const Cart = ({ setCartQuantity }) => {
         <div className="flex w-[33.33%] gap-3">
           <button
             className="flex w-[100%] h-[45px] rounded-md items-center justify-center
-                              font-camptonLight border-[1px] border-primary p-5">
+                        font-camptonLight border-[1px] border-primary p-5">
             <p className="font-camptonLight text-primary">Continue Shopping</p>
           </button>
           <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center font-camptonLight bg-primary p-5 gap-2 group">

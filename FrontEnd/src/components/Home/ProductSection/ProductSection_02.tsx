@@ -20,6 +20,7 @@ const ProductSection_02 = () => {
                       md:flex-row">
         <h1
           className="font-camptonMedium
+
                       xs:text-[17px]
                       md:text-[15px]
                       lg:text-[22px]
@@ -29,6 +30,7 @@ const ProductSection_02 = () => {
         {/* ============= Deals of the day - right ============= */}
         <div
           className="flex items-center
+
                      xs:gap-3
                      sm:gap-4
                      md:gap-7
@@ -40,11 +42,12 @@ const ProductSection_02 = () => {
           ].map(({ label, path }) => (
             <button
               key={label}
-              className={`flex items-center rounded-full ${
-                activeSection === label
+              className={`flex items-center rounded-full
+                
+                ${activeSection === label
                   ? "border-[1px] border-primary bg-primary text-white"
-                  : ""
-              }`}
+                  : ""}`}
+
               onClick={() => {
                 navigate(path);
                 setActiveSection(label); // Update the active section

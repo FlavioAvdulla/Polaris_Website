@@ -49,6 +49,7 @@ const ProductSection_04 = () => {
                         
                         xs:w-[50%]
                         md:w-fit">
+
           <p className="text-gray-500
                         
                         xs:text-[10px]
@@ -73,7 +74,6 @@ const ProductSection_04 = () => {
             {/* ============= Image ============= */}
             <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-white">
               <img className="
-
                               xs:h-auto
                               lg:w-[90%] w-[100%]
                               xl:w-[100%]"
@@ -82,8 +82,7 @@ const ProductSection_04 = () => {
             {/* ============= Title ============= */}
             <div
               className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg text-center
-                  group-hover:shadow-shadow-dark transition-all duration-300 items-center"
-            >
+                  group-hover:shadow-shadow-dark transition-all duration-300 items-center">
               <h1 className="mb-1 font-camptonMedium
               
                             xs:text-[23px]
@@ -102,12 +101,10 @@ const ProductSection_04 = () => {
             {/* ============= Add to cart ============= */}
             <button
               className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center -z-10
-                               rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
-                               duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary"
-            >
-              <i>
-                <IoIosSearch className="text-[18px] text-white" />
-              </i>
+                          rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
+                          duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary">
+                            
+              <i><IoIosSearch className="text-[18px] text-white" /></i>
               <p className="text-white">VIEW MORE</p>
             </button>
           </div>

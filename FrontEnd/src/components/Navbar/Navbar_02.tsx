@@ -53,7 +53,10 @@ const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
                       md:flex"
            src={Polaris_Logo} alt="Polaris_Logo" onClick={handleLogoClick}/>
       <div className="w-auto h-full flex">
-        <div className="w-auto h-auto xs:hidden sm:flex">
+        <div className="w-auto h-auto
+        
+                        xs:hidden
+                        sm:flex">
           <SearchBarSelect />
         </div>
         <input
@@ -69,19 +72,23 @@ const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
           id="search"
           name="search"
           placeholder="Search for products..."></input>
+
         <i className="bg-white text-primary text-[30px] p-3 border-primary
                      border-[1px] border-l-0 items-center justify-center flex
                      rounded-tr-md rounded-br-md">
           <IoIosSearch className="text-[20px]"/>
         </i>
       </div>
-      <div className="w-auto h-[100%] flex xs:gap-3 sm:gap-5">
+      <div className="w-auto h-[100%] flex
+      
+                      xs:gap-3 sm:gap-5">
         {/* ============= User ============= */}
         <div className="flex items-center justify-center gap-3 cursor-pointer"
              onClick={handleSignInClick}>
           <i>
-            <PiUser className="xs:text-[17px] md:text-[28px]" />
-          </i>
+            <PiUser className="xs:text-[17px]
+                              md:text-[28px]" /></i>
+
           <div className="flex flex-col xs:hidden lg:flex">
             <p className="font-camptonBook text-[13px]">Sign In</p>
             <p className="font-camptonMedium text-[13px]">Account</p>
@@ -98,14 +105,20 @@ const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                           md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">{favouriteQuantity}</p>
+            <p className="text-white
+            
+                          xs:text-[8px]
+                          sm:text-[10px]">{favouriteQuantity}</p>
           </div>
         </div>
 
         {/* ============= Cart Icon ============= */}
         <div className="relative flex items-center justify-center">
           <i>
-            <PiShoppingCartLight className="xs:text-[17px] md:text-[28px] cursor-pointer" onClick={handleCartOpen}/>
+            <PiShoppingCartLight className="cursor-pointer
+                                            
+                                            xs:text-[17px]
+                                            md:text-[28px]" onClick={handleCartOpen}/>
           </i>
           <div className="absolute top-0 flex rounded-full
                           bg-primary items-center justify-center
@@ -117,8 +130,15 @@ const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
           </div>
         </div>
         <div className="flex-col justify-center xs:hidden md:flex">
-          <p className="font-camptonBook xs:text-[10px] sm:text-[13px]">Total</p>
-          <p className="font-camptonMedium xs:text-[10px] sm:text-[13px]">$0.00</p>
+          <p className="font-camptonBook
+          
+                        xs:text-[10px]
+                        sm:text-[13px]">Total</p>
+                        
+          <p className="font-camptonMedium
+          
+                        xs:text-[10px]
+                        sm:text-[13px]">$0.00</p>
         </div>
       </div>
     </div>

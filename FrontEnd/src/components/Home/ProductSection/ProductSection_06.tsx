@@ -111,6 +111,7 @@ const ProductSection_05 = () => {
                             xs:text-[12px] xs:w-[70%]
                             lg:w-[80%]
                             xl:text-[17px] xl:w-[70%]">{product.description}</p>
+
               {/* ============= Price ============= */}
               <div className="flex items-center gap-4">
                 <p className="font-camptonBold text-primary
@@ -118,11 +119,11 @@ const ProductSection_05 = () => {
                               xs:text-[23px]
                               lg:text-[15px]
                               xl:text-[23px]">{product.offerPrice}</p>
+
                 <div className="flex w-auto relative items-center">
                   <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
                   <p className="text-gray-700
-                  
-                                
+
                                 lg:text-[12px]
                                 xl:text-[17px]">{product.normalPrice}</p>
                 </div>
