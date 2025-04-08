@@ -5,9 +5,7 @@ import Polaris_Logo_White from "../../../assets/images/Polaris_Logo_White.svg";
 
 // React Icons
 import { FaFacebookSquare } from "react-icons/fa";
-import { FaSquareXTwitter } from "react-icons/fa6";
-import { FaSquarePinterest } from "react-icons/fa6";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaSquareXTwitter, FaSquarePinterest, FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (

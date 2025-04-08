@@ -8,11 +8,10 @@ import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
 // React Icons
 import { SearchBarSelect } from "../Shadcn-components/SearchBarSelect";
 import { IoIosSearch } from "react-icons/io";
-import { PiUser } from "react-icons/pi";
+import { PiUser, PiShoppingCartLight } from "react-icons/pi";
 import { SlHeart } from "react-icons/sl";
-import { PiShoppingCartLight } from "react-icons/pi";
 
-const Navbar_02 = ({ setShowSignIn, quantity }) => {
+const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("/SignIn");
@@ -99,7 +98,7 @@ const Navbar_02 = ({ setShowSignIn, quantity }) => {
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                           md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">{quantity}</p>
+            <p className="text-white xs:text-[8px] sm:text-[10px]">{favouriteQuantity}</p>
           </div>
         </div>
 
@@ -114,7 +113,7 @@ const Navbar_02 = ({ setShowSignIn, quantity }) => {
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                           md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">{quantity}</p>
+            <p className="text-white xs:text-[8px] sm:text-[10px]">{cartQuantity}</p>
           </div>
         </div>
         <div className="flex-col justify-center xs:hidden md:flex">

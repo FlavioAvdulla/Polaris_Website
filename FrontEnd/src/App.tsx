@@ -47,7 +47,8 @@ const App = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showFaq, setShowFaq] = useState(false);
-  const [quantity, setQuantity] = useState(0); // State to store the cart quantity
+  const [cartQuantity, setCartQuantity] = useState(0);
+  const [favouriteQuantity, setFavouriteQuantity] = useState(0);
 
   return (
     <>
@@ -61,7 +62,7 @@ const App = () => {
           {/* Navigation Components */}
           <Navbar_01 setShowFaq={setShowFaq} />
           {/* Pass quantity state to Navbar_02 */}
-          <Navbar_02 quantity={quantity} setShowSignIn={setShowSignIn} />
+          <Navbar_02 cartQuantity={cartQuantity} favouriteQuantity={favouriteQuantity} setShowSignIn={setShowSignIn} />
           <Navbar_03 />
           {/* Main Routes */}
           <Routes>
@@ -81,8 +82,8 @@ const App = () => {
             <Route path="/CameraAndPhoto" element={<CameraAndPhoto />} />
             <Route path="/Electronics" element={<Electronics />} />
             <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones />} />
-            <Route path="/Cart" element={<Cart setQuantity={setQuantity} />} />
-            <Route path="/Favourites" element={<Favourites setQuantity={setQuantity} />} />
+            <Route path="/Cart" element={<Cart setCartQuantity={setCartQuantity} />} />
+            <Route path="/Favourites" element={<Favourites setFavouriteQuantity={setFavouriteQuantity} />} />
             {/* Main Home Page */}
             <Route
               path="/"

@@ -19,9 +19,7 @@ import Slider_06 from "../../../assets/images/Sliders/Slider_06.jpg";
 import Slider_07 from "../../../assets/images/Sliders/Slider_07.jpg";
 
 // React Icons
-import { CiMedal } from "react-icons/ci";
-import { CiDeliveryTruck } from "react-icons/ci";
-import { CiWallet } from "react-icons/ci";
+import { CiMedal, CiDeliveryTruck, CiWallet } from "react-icons/ci";
 import { PiHandbagSimpleLight } from "react-icons/pi";
 
 

@@ -1,40 +1,45 @@
 import React, { useState } from "react";
 
 // Data
-import { cartList } from "../../../components/Home/ProductSection/ProductSection";
+import { cartList as initialCartList } from "../../../components/Home/ProductSection/ProductSection";
 
 // React Icons
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
 // import { IoIosArrowForward } from "react-icons/io";
 import { IoCloseCircle } from "react-icons/io5";
-import { HiOutlineRefresh } from "react-icons/hi";
+// import { HiOutlineRefresh } from "react-icons/hi";
 // import { IoIosArrowRoundForward } from "react-icons/io";
 
-const Cart = ({ setQuantity }) => {
+const Cart = ({ setFavouriteQuantity }) => {
   const [localQuantity, setLocalQuantity] = useState(0);
+  const [cartItems, setCartItems] = useState(initialCartList);
 
   const handleQuantityChange = (e) => {
     const value = e.target.value.replace(/[^0-9]/g, "");
     const numericValue = parseInt(value, 10);
     if (!isNaN(numericValue) && numericValue >= 0 && numericValue <= 99) {
       setLocalQuantity(numericValue);
-      setQuantity(numericValue); // Update the global quantity
+      setFavouriteQuantity(numericValue); // Update the global quantity
     } else {
       setLocalQuantity(0);
-      setQuantity(0); // Reset to 0 if invalid
+      setFavouriteQuantity(0); // Reset to 0 if invalid
     }
   };
 
   const increaseQuantity = () => {
     const newQuantity = Math.min(99, localQuantity + 1);
     setLocalQuantity(newQuantity);
-    setQuantity(newQuantity);
+    setFavouriteQuantity(newQuantity);
   };
 
   const decreaseQuantity = () => {
     const newQuantity = Math.max(0, localQuantity - 1);
     setLocalQuantity(newQuantity);
-    setQuantity(newQuantity);
+    setFavouriteQuantity(newQuantity);
+  };
+
+  const handleRemoveItem = (productId) => {
+    setCartItems(prevItems => prevItems.filter(item => item._id !== productId));
   };
 
   return (
@@ -86,7 +91,7 @@ const Cart = ({ setQuantity }) => {
         </thead>
         {/* ============= Add to Cart - List ============= */}
         <tbody>
-          {cartList.map((product, index) => (
+          {cartItems.map((product, index) => (
             <tr key={index} className="flex w-[100%] justify-between">
               <td className="flex px-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
                 <img
@@ -163,7 +168,8 @@ const Cart = ({ setQuantity }) => {
               </td>
               <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-t-0 border-primary">
                 <i>
-                  <IoCloseCircle className="text-[29px] text-primary cursor-pointer" />
+                  <IoCloseCircle className="text-[29px] text-primary cursor-pointer"
+                  onClick={() => handleRemoveItem(product._id)} />
                 </i>
               </td>
             </tr>
