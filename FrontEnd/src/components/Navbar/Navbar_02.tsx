@@ -99,7 +99,7 @@ const Navbar_02 = ({ setShowSignIn, quantity }) => {
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                           md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">3</p>
+            <p className="text-white xs:text-[8px] sm:text-[10px]">{quantity}</p>
           </div>
         </div>
 
