@@ -940,20 +940,20 @@ export const cartList = [
     image: Product_01,
     title: "Lenovo Legion 5",
     unitPrice: "10.00$",
-    quantity: "1 Items",
+    quantity: "0 Items",
   },
   {
     _id:"2",
     image: Product_02,
     title: "VR HeadSet",
     unitPrice: "10.00$",
-    quantity: "1 Items",
+    quantity: "0 Items",
   },
   {
     _id:"3",
     image: Product_04,
     title: "Geforce Rtx 3090 24GB",
     unitPrice: "1320.50$",
-    quantity: "1 Items",
+    quantity: "0 Items",
   },
 ]
