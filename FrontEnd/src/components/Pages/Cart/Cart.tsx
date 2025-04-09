@@ -50,7 +50,7 @@ const Cart = ({ setCartQuantity }) => {
       return total + (quantity * price);
     }, 0);
   
-    return <div>Subtotal: {subtotal.toFixed(2)}$</div>;
+    return <div>{subtotal.toFixed(2)}$</div>;
   }
 
   return (
@@ -233,7 +233,7 @@ const Cart = ({ setCartQuantity }) => {
 
             <div className="flex justify-between">
               <p className="font-camptonBook">Subtotal</p>
-              <p className="font-camptonSemiBold">$33.00</p>
+              <p className="font-camptonSemiBold"><CartSubtotal cartItems={cartItems} /></p>
             </div>
 
             <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
