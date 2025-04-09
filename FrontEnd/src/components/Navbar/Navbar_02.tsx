@@ -10,11 +10,14 @@ import { SearchBarSelect } from "../Shadcn-components/SearchBarSelect";
 import { IoIosSearch } from "react-icons/io";
 import { PiUser, PiShoppingCartLight } from "react-icons/pi";
 import { SlHeart } from "react-icons/sl";
+import { cartList } from "../Home/ProductSection/ProductSection";
 
 const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("/SignIn");
+
+  const cartTotal = cartList.length * cartQuantity
 
   useEffect(() => {
     setActiveSection(location.pathname);
@@ -126,7 +129,7 @@ const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                           md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">{cartQuantity}</p>
+            <p className="text-white xs:text-[8px] sm:text-[10px]">{cartTotal}</p>
           </div>
         </div>
         <div className="flex-col justify-center xs:hidden md:flex">

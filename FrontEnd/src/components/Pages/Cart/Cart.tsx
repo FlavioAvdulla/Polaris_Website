@@ -43,6 +43,16 @@ const Cart = ({ setCartQuantity }) => {
     setCartItems(prevItems => prevItems.filter(item => item._id !== productId));
   };
 
+  function CartSubtotal({ cartItems }) {
+    const subtotal = cartItems.reduce((total, item) => {
+      const quantity = parseInt(item.quantity.split(' ')[0], 10);
+      const price = parseFloat(item.unitPrice.replace('$', ''));
+      return total + (quantity * price);
+    }, 0);
+  
+    return <div>Subtotal: {subtotal.toFixed(2)}$</div>;
+  }
+
   return (
     <div className="w-[85%] flex flex-col mx-auto my-20">
       {/* ============= Add to Cart - Head ============= */}
@@ -243,7 +253,7 @@ const Cart = ({ setCartQuantity }) => {
 
             <div className="flex justify-between">
               <p className="font-camptonBook">Total</p>
-              <p className="font-camptonSemiBold">$33.00</p>
+              <p className="font-camptonSemiBold"><CartSubtotal cartItems={cartItems} /></p>
             </div>
             <button
               className="flex w-[100%] h-[45px] rounded-md items-center justify-center
