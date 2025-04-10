@@ -13,6 +13,8 @@ import { HiOutlineRefresh } from "react-icons/hi";
 const Cart = ({ setCartQuantity }) => {
   const [localQuantity, setLocalQuantity] = useState(0);
   const [cartItems, setCartItems] = useState(initialCartList);
+  const flatRate = 5.00
+  
 
   const handleQuantityChange = (e) => {
     
@@ -253,7 +255,7 @@ const Cart = ({ setCartQuantity }) => {
 
             <div className="flex justify-between">
               <p className="font-camptonBook">Total</p>
-              <p className="font-camptonSemiBold"><CartSubtotal cartItems={cartItems} /></p>
+              <p className="font-camptonSemiBold">{total}</p>
             </div>
             <button
               className="flex w-[100%] h-[45px] rounded-md items-center justify-center
