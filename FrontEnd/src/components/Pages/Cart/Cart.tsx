@@ -13,7 +13,6 @@ import { HiOutlineRefresh } from "react-icons/hi";
 const Cart = ({ setCartQuantity }) => {
   const [localQuantity, setLocalQuantity] = useState(0);
   const [cartItems, setCartItems] = useState(initialCartList);
-  const flatRate = 5.00
   
 
   const handleQuantityChange = (e) => {
@@ -45,15 +44,27 @@ const Cart = ({ setCartQuantity }) => {
     setCartItems(prevItems => prevItems.filter(item => item._id !== productId));
   };
 
-  function CartSubtotal({ cartItems }) {
+  const flatRate = 5.00;
+
+function CartCalculations({ cartItems }) {
     const subtotal = cartItems.reduce((total, item) => {
       const quantity = parseInt(item.quantity.split(' ')[0], 10);
       const price = parseFloat(item.unitPrice.replace('$', ''));
       return total + (quantity * price);
     }, 0);
+    
+    const total = subtotal + flatRate;
   
-    return <div>{subtotal.toFixed(2)}$</div>;
-  }
+    return {
+
+        subtotalElement: <div>{subtotal.toFixed(2)}$</div>,
+        flatRateElement: <div>{flatRate.toFixed(2)}$</div>,
+        totalElement: <div>{total.toFixed(2)}$</div>
+
+};
+}
+
+const calculations = CartCalculations({cartItems})
 
   return (
     <div className="w-[85%] flex flex-col mx-auto my-20">
@@ -235,27 +246,27 @@ const Cart = ({ setCartQuantity }) => {
 
             <div className="flex justify-between">
               <p className="font-camptonBook">Subtotal</p>
-              <p className="font-camptonSemiBold"><CartSubtotal cartItems={cartItems} /></p>
+              <p className="font-camptonSemiBold">{calculations.subtotalElement}</p>
             </div>
 
             <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
 
             <div className="flex justify-between">
               <p className="font-camptonBook">Shipping</p>
-              <p className="font-camptonBook">
-                Flat rate: <span className="font-camptonSemiBold">$5.00</span>
+              <div className="font-camptonBook">
+                <p className="flex gap-1">Flat rate: <span className="font-camptonSemiBold">{calculations.flatRateElement}</span></p>
                 <p className="font-camptonBook">Free shipping</p>
                 <p className="font-camptonBook">
                   Shipping to <span className="font-camptonSemiBold">CA.</span>
                 </p>
-              </p>
+              </div>
             </div>
 
             <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
 
             <div className="flex justify-between">
               <p className="font-camptonBook">Total</p>
-              <p className="font-camptonSemiBold">{total}</p>
+              <p className="font-camptonSemiBold">{calculations.totalElement}</p>
             </div>
             <button
               className="flex w-[100%] h-[45px] rounded-md items-center justify-center
