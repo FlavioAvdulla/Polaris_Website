@@ -47,21 +47,18 @@ const Cart = ({ setCartQuantity }) => {
   const flatRate = 5.00;
 
 function CartCalculations({ cartItems }) {
-    const subtotal = cartItems.reduce((total, item) => {
-      const quantity = parseInt(item.quantity.split(' ')[0], 10);
-      const price = parseFloat(item.unitPrice.replace('$', ''));
-      return total + (quantity * price);
-    }, 0);
-    
-    const total = subtotal + flatRate;
-  
-    return {
+  const subtotal = cartItems.reduce((total, item) => {
+    const price = parseFloat(item.unitPrice.replace("$", ""));
+    return total + localQuantity * price;
+  }, 0);
 
-        subtotalElement: <div>{subtotal.toFixed(2)}$</div>,
-        flatRateElement: <div>{flatRate.toFixed(2)}$</div>,
-        totalElement: <div>{total.toFixed(2)}$</div>
+  const total = subtotal + flatRate;
 
-};
+  return {
+    subtotalElement: <div>{subtotal.toFixed(2)}$</div>,
+    flatRateElement: <div>{flatRate.toFixed(2)}$</div>,
+    totalElement: <div>{total.toFixed(2)}$</div>,
+  };
 }
 
 const calculations = CartCalculations({cartItems})
@@ -146,7 +143,7 @@ const calculations = CartCalculations({cartItems})
                                     lg:text-[22px]"/></i>
                   </div>
                   {/* ============= Quantity number ============= */}
-                  <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary border-[1px] border-primary ">
+                  <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary border-[1px] border-primary">
                     <input
                       className="text-center text-white font-camptonMedium bg-transparent outline-none
                         
@@ -195,9 +192,15 @@ const calculations = CartCalculations({cartItems})
       </table>
 
       {/* ============= Coupon section ============= */}
-      <div className="w-[100%] h-[300px] flex gap-10 mx-auto mt-20">
+      <div className="flex w-[100%] gap-10 mx-auto mt-20
+      
+                      xs:flex-col xs:h-auto
+                      lg:flex-row lg:h-[300px]">
         {/* ============= Section - 01 ============= */}
-        <div className="flex flex-col w-[33.33%] justify-between">
+        <div className="flex flex-col gap-3 justify-between
+        
+                        xs:w-[100%]
+                        lg:w-[33.33%]">
           {/* ============= Coupon input ============= */}
           <div className="flex w-[100%]">
             <input
@@ -240,7 +243,10 @@ const calculations = CartCalculations({cartItems})
         </div>
 
         {/* ============= Section - 02 ============= */}
-        <div className="flex flex-col w-[33.33%] rounded-md border-[1px] border-primary px-4 justify-center">
+        <div className="flex flex-col rounded-md border-[1px] border-primary px-4 justify-center
+        
+                        xs:w-[100%] xs:h-[303px]
+                        lg:w-[33.33%]">
           <div className="flex flex-col gap-3">
             <p className="font-camptonSemiBold">Cart Total</p>
 
@@ -278,7 +284,10 @@ const calculations = CartCalculations({cartItems})
         </div>
 
         {/* ============= Section - 03 ============= */}
-        <div className="flex w-[33.33%] gap-3">
+        <div className="flex gap-3
+        
+                        xs:w-[100%] xs:flex-col
+                        lg:w-[33.33%] lg:flex-row">
           <button
             className="flex w-[100%] h-[45px] rounded-md items-center justify-center
                         font-camptonLight border-[1px] border-primary p-5">
@@ -293,9 +302,11 @@ const calculations = CartCalculations({cartItems})
         </div>
       </div>
       <button
-        className="flex w-[150px] h-[45px] rounded-md items-center justify-center
+        className="flex h-[45px] rounded-md items-center justify-center
                   font-camptonLight bg-primary border-primary p-5 mt-3 text-white border-[1px]
-                  hover:bg-transparent hover:text-primary duration-300">
+                  hover:bg-transparent hover:text-primary duration-300
+                  
+                  lg:w-[150px]">
         <p className="font-camptonLight">Update</p>
       </button>
     </div>
