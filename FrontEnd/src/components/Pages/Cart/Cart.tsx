@@ -88,11 +88,15 @@ const calculations = CartCalculations({cartItems})
           </p>
         </div>
       </div>
-      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+      <div className="h-[1px] w-full mx-auto" />
       {/* ============= Add to Cart - Table ============= */}
-      <table className="flex flex-col w-[100%]">
+      <div className="flex overflow-scroll scrollbar-hide">
+      <table className="flex flex-col 
+      
+                        xs:min-w-[1000px]
+                        lg:min-w-[100%]">
         <thead>
-          <tr className="flex w-[100%] justify-between bg-slate-200 gap-[1px]">
+          <tr className="flex w-[100%] justify-between gap-[1px]">
             <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
               <p className="text-white">Product</p>
             </th>
@@ -116,7 +120,10 @@ const calculations = CartCalculations({cartItems})
             <tr key={index} className="flex w-[100%] justify-between">
               <td className="flex px-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
                 <img
-                  className="w-[80px]"
+                  className="
+                              xs:w-[50px]
+                              lg:w-[70px]
+                              "
                   src={product.image}
                   alt={product.title}
                 />
@@ -190,7 +197,7 @@ const calculations = CartCalculations({cartItems})
           ))}
         </tbody>
       </table>
-
+      </div>
       {/* ============= Coupon section ============= */}
       <div className="flex w-[100%] gap-10 mx-auto mt-20
       
