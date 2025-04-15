@@ -122,8 +122,7 @@ const calculations = CartCalculations({cartItems})
                 <img
                   className="
                               xs:w-[50px]
-                              lg:w-[70px]
-                              "
+                              lg:w-[70px]"
                   src={product.image}
                   alt={product.title}
                 />
