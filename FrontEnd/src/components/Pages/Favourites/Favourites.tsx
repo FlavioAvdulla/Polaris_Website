@@ -50,17 +50,17 @@ const Cart = ({ setFavouriteQuantity }) => {
             <div className="flex w-[100%] justify-between items-center mb-7">
               <h1
                 className="font-camptonMedium
-                            
+
                             xs:text-[10px]
                             sm:text-[11px]
                             md:text-[15px] 
                             lg:text-[22px]">{" "}Add to Favourites</h1>
               <div className="flex items-center
-                              
+
                               xs:w-[50%]
                               md:w-fit">
                 <p className="text-gray-500
-                              
+
                               xs:text-[10px]
                               sm:text-[11px]
                               md:text-[15px]
@@ -73,7 +73,7 @@ const Cart = ({ setFavouriteQuantity }) => {
             {/* ============= Add to Cart - Table ============= */}
             <div className="flex overflow-scroll scrollbar-hide">
             <table className="flex flex-col 
-            
+
                               xs:min-w-[1000px]
                               lg:min-w-[100%]">
               <thead>
@@ -116,8 +116,7 @@ const Cart = ({ setFavouriteQuantity }) => {
                       {/* ============= Quantity ============= */}
                       <div className="flex h-auto items-center">
                         <div
-                          className="flex items-center justify-center
-                                      border-[1px] border-primary cursor-pointer
+                          className="flex items-center justify-center border-[1px] border-primary cursor-pointer
                                                                      
                                       xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
                                       lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"

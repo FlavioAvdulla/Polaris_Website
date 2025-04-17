@@ -68,8 +68,7 @@ export function Carousel_01() {
                     2xl:h-[600px]
 
                     ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
-                    }`}
-                >
+                    }`}>
                   <div className="flex items-center w-[100%] h-[100%]">
                     <div
                       className="flex flex-col absolute h-auto justify-center

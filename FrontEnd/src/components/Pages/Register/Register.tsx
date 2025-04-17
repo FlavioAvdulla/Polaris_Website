@@ -57,8 +57,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
         <div className="flex p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]">
           <form
             className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]"
-            onSubmit={handleSubmit}
-          >
+            onSubmit={handleSubmit}>
             <div className="flex w-[100%] h-auto items-center justify-between">
               <h1 className="font-camptonBook text-[25px] ml-5">Register</h1>
               <IoIosCloseCircle
@@ -107,10 +106,11 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
               />
             </div>
             <button
-              className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
+              className="flex items-center justify-center border-primary border-[1px] text-white duration-300
+                          text-[17px] w-[100%] h-[45px] bg-primary rounded-full
+                          hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
               type="submit"
-              disabled={isLoading}
-            >
+              disabled={isLoading}>
               {isLoading ? "Registering..." : "Register"}
             </button>
             <div className="flex w-[100%] h-auto justify-center">
