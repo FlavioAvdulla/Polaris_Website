@@ -2,12 +2,20 @@ import React from "react";
 import { SelectLanguage } from "../Shadcn-components/SelectLanguage";
 import { SelectCurrency } from "../Shadcn-components/SelectCurrency";
 import { BsBrightnessHigh, BsPhone } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Navbar_01 = ({ setShowFaq }) => {
+
+  const navigate = useNavigate();
 
   const handleFaqOpen = () => {
     setShowFaq(true);
   }
+
+  const handleContactsOpen = () => {
+    navigate("/Contacts");
+    // setActiveSection("Contacts");
+  };
 
   return (
     <div className="flex h-auto py-5 mx-auto justify-between
@@ -37,7 +45,7 @@ const Navbar_01 = ({ setShowFaq }) => {
           <p className="hover:text-primary ease-in-out duration-300
           
                           xs:text-[12px]
-                          md:text-[14px]">
+                          md:text-[14px]" onClick={handleContactsOpen}>
             Contact
           </p>
         </button>

@@ -42,6 +42,7 @@ import SignIn from "./components/Pages/SignIn/SignIn";
 import ScrollManager from "./ScrollManager/ScrollManager";
 import Cart from "./components/Pages/Cart/Cart";
 import Favourites from "./components/Pages/Favourites/Favourites";
+import Contacts from "./components/Pages/Contacts/Contacts";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
@@ -75,6 +76,7 @@ const App = () => {
 
             <Route path="/Shop" element={<Shop />} />
             <Route path="/Blog" element={<Blog />} />
+            <Route path="/Contacts" element={<Contacts />} />
 
             <Route path="/Computers" element={<Computers />} />
             <Route path="/MobilesAndTablets" element={<MobilesAndTablets />} />
