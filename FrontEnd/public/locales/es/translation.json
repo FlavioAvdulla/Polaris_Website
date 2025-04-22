@@ -1,0 +1,28 @@
+{
+    "navbar_01": {
+      "trackOrder": "Rastrear Pedido",
+      "aboutUs": "Sobre Nosotros",
+      "contact": "Contacto",
+      "faq": "Preguntas Frecuentes",
+      "contactUs": "Puedes contactarnos",
+      "lightTheme": "Tema Claro",
+      "all": "Todo",
+      "signIn": "Iniciar Sesión"
+    },
+    "navbar_02": {
+      "all": "Todo",
+      "signIn": "Iniciar Sesión",
+      "searchPlaceholder": "Buscar productos...",
+      "account": "Cuenta",
+      "total": "Total"
+    },
+    "navbar_03": {
+      "allCategories": "Todas las categorías",
+      "home": "La Casa",
+      "shop": "Comercio",
+      "computers": "Computadoras",
+      "blog": "Blog",
+      "pages": "Páginas",
+      "bestDiscounts": "Los Mejores Descuentos"
+    }
+  }

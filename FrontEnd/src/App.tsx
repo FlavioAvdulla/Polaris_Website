@@ -44,6 +44,8 @@ import Cart from "./components/Pages/Cart/Cart";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import Contacts from "./components/Pages/Contacts/Contacts";
 
+import './i18n';
+
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);

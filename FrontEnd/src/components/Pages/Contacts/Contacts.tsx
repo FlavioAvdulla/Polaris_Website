@@ -63,14 +63,14 @@ const Contacts = () => {
       </div>
       {/* ============= Section - 02 ============= */}
       <div className="flex w-[100%] gap-10 h-auto">
-        <div className="flex flex-col w-[50%] gap-5">
+        <div className="flex flex-col justify-between my-auto w-[50%] gap-10">
           <h2 className="font-camptonMedium text-primary">Contact Us</h2>
           <h1 className="font-camptonBold text-[45px] leading-tight">
             DO YOU HAVE<br/>ANY QUESTION?
           </h1>
-          <p>
+          <p className="font-camptonBook">
             For your car we will do everything advice, repairs and maintenance.
-            We are the some preferred choice by many car owners because
+            We are the some preferred choice by many car owners because.
           </p>
 
           <div>
@@ -82,7 +82,7 @@ const Contacts = () => {
                                               
                                               xs:text-[25px]
                                               md:text-[20px]
-                                              lg:text-[30px]"
+                                              lg:text-[35px]"
                 />
               </i>
               <i>
@@ -92,7 +92,7 @@ const Contacts = () => {
                                               
                                               xs:text-[25px]
                                               md:text-[20px]
-                                              lg:text-[30px]"
+                                              lg:text-[35px]"
                 />
               </i>
               <i>
@@ -102,7 +102,7 @@ const Contacts = () => {
                                               
                                               xs:text-[25px]
                                               md:text-[20px]
-                                              lg:text-[30px]"
+                                              lg:text-[35px]"
                 />
               </i>
               <i>
@@ -112,7 +112,7 @@ const Contacts = () => {
                                               
                                               xs:text-[25px]
                                               md:text-[20px]
-                                              lg:text-[30px]"
+                                              lg:text-[35px]"
                 />
               </i>
             </div>

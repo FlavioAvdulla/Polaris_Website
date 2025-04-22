@@ -4,7 +4,12 @@ import { AllCategories } from "../Shadcn-components/AllCategories";
 // React Icons
 import { CiDiscount1 } from "react-icons/ci";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const Navbar_03 = () => {
+
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("/");
@@ -52,7 +57,7 @@ const Navbar_03 = () => {
               onClick={() => {
                 setActiveSection("Home");
                 handleNavigation("/");
-              }}>Home
+              }}>{t('navbar_03.home')}
             </li>
             {/* ============= Shop Pages ============= */}
             <li
@@ -61,7 +66,7 @@ const Navbar_03 = () => {
               onClick={() => {
                 setActiveSection("Shop");
                 handleNavigation("/Shop");
-              }}>Shop
+              }}>{t('navbar_03.shop')}
             </li>
             
             {/* ============= Computers Page ============= */}
@@ -71,7 +76,7 @@ const Navbar_03 = () => {
               onClick={() => {
                 setActiveSection("Computers");
                 handleNavigation("/Computers");
-              }}>Computers
+              }}>{t('navbar_03.computers')}
             </li>
             {/* ============= blog Pages ============= */}
             <li
@@ -86,7 +91,7 @@ const Navbar_03 = () => {
               className="cursor-pointer ease-in-out duration-300
                       hover:text-primary active:text-primary"
             >
-              <p className="font-camptonBook">Pages</p>
+              <p className="font-camptonBook">{t('navbar_03.pages')}</p>
             </li>
           </ul>
         </div>
@@ -108,7 +113,7 @@ const Navbar_03 = () => {
                         sm:flex
                         md:flex md:text-[16px]
                         2xl:text-[16px]">
-            Best Discounts
+            {t('navbar_03.bestDiscounts')}
           </p>
         </div>
       </div>

@@ -10,7 +10,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 export function SearchBarSelect() {
+
+  const { t } = useTranslation()
+
   return (
     <Select>
       <SelectTrigger
@@ -20,7 +26,7 @@ export function SearchBarSelect() {
                     
                     xs:gap-1"
       >
-        <SelectValue placeholder="All" />
+        <SelectValue placeholder={t('navbar_02.all')} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

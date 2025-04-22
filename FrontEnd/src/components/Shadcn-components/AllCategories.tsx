@@ -10,7 +10,13 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 export function AllCategories() {
+
+  const { t } = useTranslation();
+
   return (
     <Select>
       <SelectTrigger className="w-[200px] h-[45px] gap-3 border-none
@@ -18,7 +24,7 @@ export function AllCategories() {
                                 
                                 sm:w-[150px]
                                 lg:w-[200px]">
-        <SelectValue placeholder="All Categories"/>
+        <SelectValue placeholder={t('navbar_03.allCategories')}/>
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

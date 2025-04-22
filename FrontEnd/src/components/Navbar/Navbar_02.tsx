@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+
+// Translation
+import { useTranslation } from 'react-i18next';
 
 // Polaris Logo
 import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
@@ -13,6 +16,8 @@ import { SlHeart } from "react-icons/sl";
 import { cartList } from "../Home/ProductSection/ProductSection";
 
 const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
+
+  const { t } = useTranslation()
   const location = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("/SignIn");
@@ -89,7 +94,7 @@ const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
           type="search"
           id="search"
           name="search"
-          placeholder="Search for products..."/>
+          placeholder={t('navbar_02.searchPlaceholder')}/>
 
         <i className="bg-white text-primary text-[30px] p-3 border-primary
                      border-[1px] border-l-0 items-center justify-center flex
@@ -108,8 +113,8 @@ const Navbar_02 = ({ setShowSignIn, cartQuantity, favouriteQuantity }) => {
             <PiUser className="xs:text-[17px] md:text-[28px]" />
           </i>
           <div className="flex flex-col xs:hidden lg:flex">
-            <p className="font-camptonBook text-[13px]">Sign In</p>
-            <p className="font-camptonMedium text-[13px]">Account</p>
+            <p className="font-camptonBook text-[13px]">{t('navbar_02.signIn')}</p>
+            <p className="font-camptonMedium text-[13px]">{t('navbar_02.account')}</p>
           </div>
         </div>
 
