@@ -41,7 +41,7 @@ const Contacts = () => {
               </p>
             </div>
           </div>
-          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-slate-100">
+          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100">
             <i>
               <FaSquarePhone className="text-primary text-[30px]" />
             </i>
@@ -50,7 +50,7 @@ const Contacts = () => {
               <p className="font-camptonBook">+355 67 63 11 918</p>
             </div>
           </div>
-          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-slate-100">
+          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100">
             <i>
               <MdMail className="text-primary text-[30px]" />
             </i>
@@ -63,10 +63,10 @@ const Contacts = () => {
       </div>
       {/* ============= Section - 02 ============= */}
       <div className="flex w-[100%] gap-10 h-auto">
-        <div className="flex flex-col w-[30%] gap-5 bg-slate-400">
+        <div className="flex flex-col w-[50%] gap-5">
           <h2 className="font-camptonMedium text-primary">Contact Us</h2>
           <h1 className="font-camptonBold text-[45px] leading-tight">
-            DO YOU HAVE ANY QUESTION?
+            DO YOU HAVE<br/>ANY QUESTION?
           </h1>
           <p>
             For your car we will do everything advice, repairs and maintenance.
@@ -119,18 +119,18 @@ const Contacts = () => {
           </div>
         </div>
 
-        <div className="flex flex-col w-[70%] gap-5 bg-slate-200">
+        <div className="flex flex-col w-[50%] gap-5">
           <div className="grid grid-cols-2 gap-5">
             <input
               className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
               type="email"
-              placeholder="Your Name"
+              placeholder="Full Name"
               required
             />
             <input
               className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
               type="text"
-              placeholder="Your Email"
+              placeholder="Email"
               required
             />
             <input
@@ -142,7 +142,7 @@ const Contacts = () => {
             <input
               className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
               type="email"
-              placeholder="Enter your Email"
+              placeholder="Subject"
               required
             />
           </div>
@@ -153,11 +153,16 @@ const Contacts = () => {
               required
             />
             <textarea
-            className="w-[100%] min-h-[200px] rounded-[30px] font-camptonLight bg-gray-100 p-5 outline-none border-none"
+            className="w-[100%] min-h-[200px] rounded-[23px] font-camptonLight bg-gray-100 p-5 outline-none border-none"
             type="text"
             placeholder="Your Message"
             required
           />
+          <button className="flex w-[100%] h-[45px] rounded-full bg-primary border-[1px] border-primary
+                          text-white items-center justify-center font-camptonBook p-5
+
+                          hover:bg-transparent hover:text-primary duration-300 ease-in-out
+                          ">SUBMIT NOW</button>
         </div>
       </div>
     </div>
