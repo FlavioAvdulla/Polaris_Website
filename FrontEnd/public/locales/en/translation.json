@@ -14,15 +14,25 @@
       "signIn": "Sign In",
       "searchPlaceholder": "Search for products...",
       "account": "Account",
-      "total": "Total"
+      "total": "Total",
+      "languages": "Languages"
     },
     "navbar_03": {
       "allCategories": "All Categories",
+      "categories": "Categories",
       "home": "Home",
       "shop": "Shop",
       "computers": "Computers",
       "blog": "Blog",
       "pages": "Pages",
-      "bestDiscounts": "Best Discounts"
+      "bestDiscounts": "Best Discounts",
+      "smartphones": "Smart Phones",
+      "tablets": "Tablets",
+      "fitnessTrackers": "Fitness Trackers",
+      "headphones": "Headphones",
+      "speakers": "Speakers",
+      "gamingConsoles": "Gaming Consoles",
+      "portableChargers": "Portable Chargers",
+      "bluetoothEarphones": "Bluetooth Earphones"
     }
   }

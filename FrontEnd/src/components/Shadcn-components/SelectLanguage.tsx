@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 
 export function SelectLanguage() {
   const { i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // Function to handle language change
   const handleLanguageChange = (language: string) => {
@@ -41,7 +42,7 @@ export function SelectLanguage() {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>
-            <p className="font-camptonBook text-primary">Languages</p>
+            <p className="font-camptonBook text-primary">{t('navbar_02.languages')}</p>
           </SelectLabel>
           {languages.map((language) => (
             <SelectItem key={language.code} value={language.code}>

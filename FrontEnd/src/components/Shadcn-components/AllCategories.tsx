@@ -28,15 +28,15 @@ export function AllCategories() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel><p className="font-camptonBook text-primary">Categories</p></SelectLabel>
-          <SelectItem value="smartphones"><p className="font-camptonBook">Smartphones</p></SelectItem>
-          <SelectItem value="tablets"><p className="font-camptonBook">Tablets</p></SelectItem>
-          <SelectItem value="fitnessTrackers"><p className="font-camptonBook">Fitness Trackers</p></SelectItem>
-          <SelectItem value="headphones"><p className="font-camptonBook">Headphones</p></SelectItem>
-          <SelectItem value="speakers"><p className="font-camptonBook">Speakers</p></SelectItem>
-          <SelectItem value="gamingConsoles"><p className="font-camptonBook">Gaming Consoles</p></SelectItem>
-          <SelectItem value="portableChargers"><p className="font-camptonBook">Portable Chargers</p></SelectItem>
-          <SelectItem value="bluetoothEarphones"><p className="font-camptonBook">Bluetooth Earphones</p></SelectItem>
+          <SelectLabel><p className="font-camptonBook text-primary">{t('navbar_03.categories')}</p></SelectLabel>
+          <SelectItem value="smartphones"><p className="font-camptonBook">{t('navbar_03.smartphones')}</p></SelectItem>
+          <SelectItem value="tablets"><p className="font-camptonBook">{t('navbar_03.tablets')}</p></SelectItem>
+          <SelectItem value="fitnessTrackers"><p className="font-camptonBook">{t('navbar_03.fitnessTrackers')}</p></SelectItem>
+          <SelectItem value="headphones"><p className="font-camptonBook">{t('navbar_03.headphones')}</p></SelectItem>
+          <SelectItem value="speakers"><p className="font-camptonBook">{t('navbar_03.speakers')}</p></SelectItem>
+          <SelectItem value="gamingConsoles"><p className="font-camptonBook">{t('navbar_03.gamingConsoles')}</p></SelectItem>
+          <SelectItem value="portableChargers"><p className="font-camptonBook">{t('navbar_03.portableChargers')}</p></SelectItem>
+          <SelectItem value="bluetoothEarphones"><p className="font-camptonBook">{t('navbar_03.bluetoothEarphones')}</p></SelectItem>
         </SelectGroup>
       </SelectContent>
     </Select>

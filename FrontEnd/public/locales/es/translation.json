@@ -14,15 +14,25 @@
       "signIn": "Iniciar Sesión",
       "searchPlaceholder": "Buscar productos...",
       "account": "Cuenta",
-      "total": "Total"
+      "total": "Total",
+      "languages": "Idiomas"
     },
     "navbar_03": {
       "allCategories": "Todas las categorías",
+      "categories": "Categorías",
       "home": "La Casa",
       "shop": "Comercio",
       "computers": "Computadoras",
       "blog": "Blog",
       "pages": "Páginas",
-      "bestDiscounts": "Los Mejores Descuentos"
+      "bestDiscounts": "Los Mejores Descuentos",
+      "smartphones": "Teléfonos",
+      "tablets": "Tabletas",
+      "fitnessTrackers": "Aptitud física",
+      "headphones": "Auriculares",
+      "speakers": "Oradoras",
+      "gamingConsoles": "Consolas de juegos",
+      "portableChargers": "Cargadores portátiles",
+      "bluetoothEarphones": "Auriculares Bluetooth"
     }
   }
