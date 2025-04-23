@@ -1,38 +1,52 @@
 {
-    "navbar_01": {
-      "trackOrder": "Track Order",
-      "aboutUs": "About Us",
-      "contact": "Contact",
-      "faq": "FAQ",
-      "contactUs": "You can contact us",
-      "lightTheme": "Light Theme",
-      "all": "All",
-      "signIn": "Sign In"
+  "navbar_01": {
+    "trackOrder": "Track Order",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "contactUs": "You can contact us",
+    "lightTheme": "Light Theme",
+    "all": "All",
+    "signIn": "Sign In"
+  },
+  "navbar_02": {
+    "all": "All",
+    "signIn": "Sign In",
+    "searchPlaceholder": "Search for products...",
+    "account": "Account",
+    "total": "Total",
+    "languages": "Languages"
+  },
+  "navbar_03": {
+    "allCategories": "All Categories",
+    "categories": "Categories",
+    "home": "Home",
+    "shop": "Shop",
+    "computers": "Computers",
+    "blog": "Blog",
+    "pages": "Pages",
+    "bestDiscounts": "Best Discounts",
+    "smartphones": "Smart Phones",
+    "tablets": "Tablets",
+    "fitnessTrackers": "Fitness Trackers",
+    "headphones": "Headphones",
+    "speakers": "Speakers",
+    "gamingConsoles": "Gaming Consoles",
+    "portableChargers": "Portable Chargers",
+    "bluetoothEarphones": "Bluetooth Earphones"
+  },
+  "carousel_01": {
+      "exclusiveOffer": "Exclusive Offer",
+      "-20%off": "-20% OFF",
+      "addToCart": "ADD TO CART",
+      "superFastPerformance": "SUPER FAST PERFORMANCE",
+      "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities..."
     },
-    "navbar_02": {
-      "all": "All",
-      "signIn": "Sign In",
-      "searchPlaceholder": "Search for products...",
-      "account": "Account",
-      "total": "Total",
-      "languages": "Languages"
-    },
-    "navbar_03": {
-      "allCategories": "All Categories",
-      "categories": "Categories",
-      "home": "Home",
-      "shop": "Shop",
-      "computers": "Computers",
-      "blog": "Blog",
-      "pages": "Pages",
-      "bestDiscounts": "Best Discounts",
-      "smartphones": "Smart Phones",
-      "tablets": "Tablets",
-      "fitnessTrackers": "Fitness Trackers",
-      "headphones": "Headphones",
-      "speakers": "Speakers",
-      "gamingConsoles": "Gaming Consoles",
-      "portableChargers": "Portable Chargers",
-      "bluetoothEarphones": "Bluetooth Earphones"
-    }
+  "bannerSection": {
+    "exclusiveOffer": "Exclusive Offer",
+    "-20%off": "-20% OFF",
+    "shopNow": "SHOP NOW",
+    "superFastPerformance": "SUPER FAST PERFORMANCE",
+    "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities..."
   }
+}

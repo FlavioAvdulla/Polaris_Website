@@ -34,5 +34,19 @@
       "gamingConsoles": "Consolas de juegos",
       "portableChargers": "Cargadores portátiles",
       "bluetoothEarphones": "Auriculares Bluetooth"
+    },
+    "carousel_01": {
+      "exclusiveOffer": "Oferta Exclusiva",
+      "-20%off": "-20% DE",
+      "addToCart": "AÑADIR A LA CESTA",
+      "superFastPerformance": "RENDIMIENTO SÚPER RÁPIDO",
+      "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!"
+    },
+    "bannerSection": {
+      "exclusiveOffer": "Oferta Exclusiva",
+      "-20%off": "-20% DE",
+      "shopNow": "COMPRAR AHORA",
+      "superFastPerformance": "RENDIMIENTO SÚPER RÁPIDO",
+      "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!"
     }
   }

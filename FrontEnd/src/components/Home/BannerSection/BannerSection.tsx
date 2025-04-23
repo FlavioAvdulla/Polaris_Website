@@ -5,7 +5,13 @@ import banner_01 from "../../../assets/images/banner_01.jpg";
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const BannerSection = () => {
+
+  const { t } = useTranslation()
+
   return (
     <div className="flex w-[100%] h-auto mx-auto mt-20 mb-20">
       <div className="flex flex-col absolute justify-center
@@ -22,14 +28,14 @@ const BannerSection = () => {
                       md:text-[12px]
                       lg:text-[18px]
                       xl:text-[20px]">
-          Exclusive Offer
+          {t('bannerSection.exclusiveOffer')}
           <span className="rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer border-white text-white items-center justify-center
                           hover:bg-transparent hover:scale-110 ease-in-out duration-300
                           
                           xs:px-3 xs:py-[1px] xs:text-[8px]
                           md:text-[12px] md:px-6 md:py-[3px]
                           lg:text-[17px] ">
-            -20% OFF
+            {t('bannerSection.-20%off')}
           </span>
         </p>
         <h1 className="text-white font-camptonBold leading-tight
@@ -39,7 +45,7 @@ const BannerSection = () => {
                         md:text-[35px]
                         lg:text-[40px]
                         xl:text-[50px]">
-          SUPER FAST PERFORMANCE
+          {t('bannerSection.superFastPerformance')}
         </h1>
         <p className="text-white
                       
@@ -47,8 +53,7 @@ const BannerSection = () => {
                       sm:text-[8px]
                       md:text-[15px]
                       2xl:text-[17px]">
-          We have prepared special discounts for you on electronic products.
-          Don't miss these opportunities...
+          {t('bannerSection.paragraph_01')}
         </p>
         <div className="w-auto">
           <button
@@ -60,7 +65,7 @@ const BannerSection = () => {
                         md:text-[12px] md:px-4 md:py-2 md:gap-3 md:mt-3
                         lg:text-[18px]
                         xl:text-[20px]">
-            SHOW NOW
+            {t('bannerSection.shopNow')}
             <i>
               <IoIosArrowForward />
             </i>
