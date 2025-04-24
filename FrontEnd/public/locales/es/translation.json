@@ -48,5 +48,14 @@
       "shopNow": "COMPRAR AHORA",
       "superFastPerformance": "RENDIMIENTO SÚPER RÁPIDO",
       "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!"
-    }
+    },
+  "benefitsSection": {
+    "onlineSupport": "Soporte en línea 24/7",
+    "onlineSupportDesc": "Soporte en línea las 24 horas del día",
+    "memberDiscount": "Descuento para miembros",
+    "memberDiscountDesc": "Descuento para miembros",
+    "moneyReturn" : "Devolución de dinero",
+    "freeShipping": "Envío rápido y gratuito",
+    "freeShippingDesc": "Envío rápido y gratuito"
+  }
   }

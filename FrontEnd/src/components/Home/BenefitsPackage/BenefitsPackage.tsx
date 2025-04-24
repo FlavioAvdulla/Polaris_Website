@@ -1,12 +1,15 @@
 import React from "react";
 
-
-
-
 // Import Data
 import { benefits } from "../ProductSection/ProductSection";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const BenefitsPackage = () => {
+
+  const { t } = useTranslation();
+
   return (
     <div className="w-[85%] h-auto mx-auto items-center justify-between my-20
     

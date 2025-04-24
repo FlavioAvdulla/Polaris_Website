@@ -48,5 +48,14 @@
     "shopNow": "SHOP NOW",
     "superFastPerformance": "SUPER FAST PERFORMANCE",
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities..."
+  },
+  "benefitsSection": {
+    "onlineSupport": "Online Support 24/7",
+    "onlineSupportDesc": "Support online 24 hours a day",
+    "memberDiscount": "Member Discount",
+    "memberDiscountDesc": "Onevery order over $120.00",
+    "moneyReturn" : "Money Return",
+    "freeShipping": "Fast, Free Shipping",
+    "freeShippingDesc": "Fast, Free Shipping"
   }
 }
