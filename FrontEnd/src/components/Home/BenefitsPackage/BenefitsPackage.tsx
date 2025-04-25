@@ -16,7 +16,7 @@ const BenefitsPackage = () => {
                     xs:grid xs:grid-cols-2
                     md:grid-cols-4">
       {/* ============= Benefit 1 ============= */}
-      {benefits.map((product, index) => (
+      {benefits.map((benefit, index) => (
 
       
       <div className="flex flex-col items-center text-center
@@ -29,7 +29,7 @@ const BenefitsPackage = () => {
                         xs:w-[80px] xs:h-[80px] xs:rounded-[8px] xs:mb-3
                         md:w-[120px] md:h-[120px] md:rounded-[15px] md:mb-6
                         lg:w-[150px] lg:h-[150px]">
-          <i><product.image className="text-primary
+          <i><benefit.image className="text-primary
           
                                     xs:text-[40px]
                                     md:text-[55px]
@@ -40,13 +40,13 @@ const BenefitsPackage = () => {
                       xs:text-[11px]
                       md:text-[14px] 
                       lg:text-[17px]
-                       ">{product.title}</h1>
+                       ">{t(benefit.titleKey)}</h1>
         <p className="text-gray-500 font-camptonBook w-[80%]
                         
                         xs:text-[10px]
                         md:text-[12px]
                         lg:text-[14px]
-                        ">{product.description}</p>
+                        ">{t(benefit.descriptionKey)}</p>
       </div>
      ))}
     </div>

@@ -55,6 +55,7 @@
     "memberDiscount": "Descuento para miembros",
     "memberDiscountDesc": "Descuento para miembros",
     "moneyReturn" : "Devolución de dinero",
+    "moneyReturnDesc" : "Garantía de devolución de menos de 7 días",
     "freeShipping": "Envío rápido y gratuito",
     "freeShippingDesc": "Envío rápido y gratuito"
   }

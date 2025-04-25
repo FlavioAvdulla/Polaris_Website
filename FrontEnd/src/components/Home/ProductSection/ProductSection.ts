@@ -27,26 +27,26 @@ export const benefits = [
   {
     _id: "1",
     image: CiMedal,
-    title: "Online Support 24/7",
-    description: "Support online 24 hours a day.",
+    titleKey: "benefitsSection.onlineSupport",
+    descriptionKey: "benefitsSection.onlineSupportDesc"
   },
   {
     _id: "2",
     image: CiDeliveryTruck,
-    title: "Online Support 24/7",
-    description: "Support online 24 hours a day.",
+    titleKey: "benefitsSection.freeShipping",
+    descriptionKey: "benefitsSection.freeShippingDesc"
   },
   {
     _id: "3",
     image: CiWallet,
-    title: "Online Support 24/7",
-    description: "Support online 24 hours a day.",
+    titleKey: "benefitsSection.moneyReturn",
+    descriptionKey: "benefitsSection.moneyReturnDesc"
   },
   {
     _id: "4",
     image: PiHandbagSimpleLight,
-    title: "Online Support 24/7",
-    description: "Support online 24 hours a day.",
+    titleKey: "benefitsSection.memberDiscount",
+    descriptionKey: "benefitsSection.memberDiscountDesc"
   },
 ];
 
@@ -868,7 +868,7 @@ export const carousel_01 = [
     _id: "1",
     image: Slider_01,
     title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+    descriptionKey: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
   },
   {
     _id: "2",
@@ -909,13 +909,13 @@ export const carousel_04 = [
     _id: "1",
     image: Slider_07,
     title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+    description: "",
   },
   {
     _id: "2",
     image: Slider_05,
     title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+    description: "carousel_01",
   },
 ];
 
