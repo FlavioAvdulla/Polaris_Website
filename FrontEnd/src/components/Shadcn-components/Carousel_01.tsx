@@ -93,7 +93,7 @@ export function Carousel_01() {
                                       xs:text-[13px]
                                       md:text-[15px]
                                       2xl:text-[20px]">
-                          {t('carousel_01.exclusiveOffer')}
+                          {t(product.exclusiveOffer)}
                         </p>
                         <div className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
                                       border-white text-white items-center justify-center
@@ -102,7 +102,7 @@ export function Carousel_01() {
                                               
                                                             xs:text-[12px] xs:px-4 xs:py-[1px]
                                                             md:text-[15px] md:px-6 md:py-[3px]
-                                                            2xl:text-[20px]">{t('carousel_01.-20%off')}</p>
+                                                            2xl:text-[20px]">{t(product.discount)}</p>
                                             </div>
                       </div>
                       <h1
@@ -112,7 +112,7 @@ export function Carousel_01() {
                                       sm:text-[30px]
                                       md:text-[35px]
                                       2xl:text-[60px]">
-                        {t('carousel_01.superFastPerformance')}
+                        {t(product.title)}
                       </h1>
                       <p className="text-white font-camptonBook
                       
@@ -121,7 +121,7 @@ export function Carousel_01() {
                                       md:w-[100%]
                                       lg:text-[15px] lg:w-[90%]
                                       2xl:text-[20px]">
-                        {t('carousel_01.paragraph_01')}
+                        {t(product.paragraph)}
                       </p>
                       <div className="w-auto mt-7">
                         <button
@@ -135,7 +135,7 @@ export function Carousel_01() {
                           <p className="
                                        xs:text-[10px]
                                        md:text-[15px]
-                                       2xl:text-[20px]">{t('carousel_01.addToCart')}</p>
+                                       2xl:text-[20px]">{t(product.addToCart)}</p>
                           <i>
                             <IoIosArrowForward className="
                                                           xs:text-[10px]

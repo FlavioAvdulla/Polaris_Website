@@ -1,62 +1,73 @@
 {
-    "navbar_01": {
-      "trackOrder": "Rastrear Pedido",
-      "aboutUs": "Sobre Nosotros",
-      "contact": "Contacto",
-      "faq": "Preguntas Frecuentes",
-      "contactUs": "Puedes contactarnos",
-      "lightTheme": "Tema Claro",
-      "all": "Todo",
-      "signIn": "Iniciar Sesión"
-    },
-    "navbar_02": {
-      "all": "Todo",
-      "signIn": "Iniciar Sesión",
-      "searchPlaceholder": "Buscar productos...",
-      "account": "Cuenta",
-      "total": "Total",
-      "languages": "Idiomas"
-    },
-    "navbar_03": {
-      "allCategories": "Todas las categorías",
-      "categories": "Categorías",
-      "home": "La Casa",
-      "shop": "Comercio",
-      "computers": "Computadoras",
-      "blog": "Blog",
-      "pages": "Páginas",
-      "bestDiscounts": "Los Mejores Descuentos",
-      "smartphones": "Teléfonos",
-      "tablets": "Tabletas",
-      "fitnessTrackers": "Aptitud física",
-      "headphones": "Auriculares",
-      "speakers": "Oradoras",
-      "gamingConsoles": "Consolas de juegos",
-      "portableChargers": "Cargadores portátiles",
-      "bluetoothEarphones": "Auriculares Bluetooth"
-    },
-    "carousel_01": {
-      "exclusiveOffer": "Oferta Exclusiva",
-      "-20%off": "-20% DE",
-      "addToCart": "AÑADIR A LA CESTA",
-      "superFastPerformance": "RENDIMIENTO SÚPER RÁPIDO",
-      "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!"
-    },
-    "bannerSection": {
-      "exclusiveOffer": "Oferta Exclusiva",
-      "-20%off": "-20% DE",
-      "shopNow": "COMPRAR AHORA",
-      "superFastPerformance": "RENDIMIENTO SÚPER RÁPIDO",
-      "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!"
-    },
+  "navbar_01": {
+    "trackOrder": "Rastrear Pedido",
+    "aboutUs": "Sobre Nosotros",
+    "contact": "Contacto",
+    "faq": "Preguntas Frecuentes",
+    "contactUs": "Puedes contactarnos",
+    "lightTheme": "Tema Claro",
+    "all": "Todo",
+    "signIn": "Iniciar Sesión"
+  },
+  "navbar_02": {
+    "all": "Todo",
+    "signIn": "Iniciar Sesión",
+    "searchPlaceholder": "Buscar productos...",
+    "account": "Cuenta",
+    "total": "Total",
+    "languages": "Idiomas"
+  },
+  "navbar_03": {
+    "allCategories": "Todas las categorías",
+    "categories": "Categorías",
+    "home": "La Casa",
+    "shop": "Comercio",
+    "computers": "Computadoras",
+    "blog": "Blog",
+    "pages": "Páginas",
+    "bestDiscounts": "Los Mejores Descuentos",
+    "smartphones": "Teléfonos",
+    "tablets": "Tabletas",
+    "fitnessTrackers": "Aptitud física",
+    "headphones": "Auriculares",
+    "speakers": "Oradoras",
+    "gamingConsoles": "Consolas de juegos",
+    "portableChargers": "Cargadores portátiles",
+    "bluetoothEarphones": "Auriculares Bluetooth"
+  },
+  "carousel_01": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-20% DE",
+    "discount_02": "-30% DE",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "RENDIMIENTO SÚPER RÁPIDO",
+    "title_02": "RENDIMIENTO SÚPER LENTO",
+    "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
+    "paragraph_02": "¡No te pierdas estas oportunidades! Hemos preparado descuentos especiales para ti en productos electrónicos."
+  },
+  "bannerSection": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "-20%off": "-20% DE",
+    "shopNow": "COMPRAR AHORA",
+    "superFastPerformance": "RENDIMIENTO SÚPER RÁPIDO",
+    "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!"
+  },
   "benefitsSection": {
     "onlineSupport": "Soporte en línea 24/7",
     "onlineSupportDesc": "Soporte en línea las 24 horas del día",
     "memberDiscount": "Descuento para miembros",
     "memberDiscountDesc": "Descuento para miembros",
-    "moneyReturn" : "Devolución de dinero",
-    "moneyReturnDesc" : "Garantía de devolución de menos de 7 días",
+    "moneyReturn": "Devolución de dinero",
+    "moneyReturnDesc": "Garantía de devolución de menos de 7 días",
     "freeShipping": "Envío rápido y gratuito",
     "freeShippingDesc": "Envío rápido y gratuito"
+  },
+  "productSection_01": {
+    "title_01": "AURICULARES SONY WH-1000XM5",
+    "title_02": "GEFORCE RTX 3090 DE 24GB",
+    "title_03": "SONY PLAYSTATION 5 PRO",
+    "available": "Disponible",
+    "sold": "Vendida",
+    "info": "Tiempo restante hasta el final de la oferta."
   }
-  }
+}

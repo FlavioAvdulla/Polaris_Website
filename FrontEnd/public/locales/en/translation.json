@@ -36,29 +36,28 @@
     "bluetoothEarphones": "Bluetooth Earphones"
   },
   "carousel_01": {
-      "exclusiveOffer": "Exclusive Offer",
-      "-20%off": "-20% OFF",
-      "addToCart": "ADD TO CART",
-      "superFastPerformance": "SUPER FAST PERFORMANCE",
-      "paragraph": "We have prepared special discounts for you on electronic products. Don't miss these opportunities..."
-    },
-
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-20% OFF",
+    "discount_02": "-30% OFF",
+    "addToCart": "ADD TO CART",
+    "title_01": "SUPER FAST PERFORMANCE",
+    "title_02": "SUPER SLOW PERFORMANCE",
+    "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+    "paragraph_02": "Don't miss these opportunities... We have prepared special discounts for you on electronic products."
+  },
   "bannerSection": {
     "exclusiveOffer": "Exclusive Offer",
     "-20%off": "-20% OFF",
     "shopNow": "SHOP NOW",
-    "superFastPerformance": "SUPER FAST PERFORMANCE",
+    "title": "SUPER FAST PERFORMANCE",
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities..."
   },
-
-  "benefitsSection": {
-    "onlineSupport": "Online Support 24/7",
-    "onlineSupportDesc": "Support online 24 hours a day",
-    "memberDiscount": "Member Discount",
-    "memberDiscountDesc": "Onevery order over $120.00",
-    "moneyReturn" : "Money Return",
-    "moneyReturnDesc" : "Back guarantee under 7 days",
-    "freeShipping": "Fast, Free Shipping",
-    "freeShippingDesc": "Fast, Free Shipping"
+  "productSection_01": {
+    "title_01": "SONY HEADSET WH-1000XM5",
+    "title_02": "GEFORCE RTX 3090 24GB",
+    "title_03": "SONY PLAYSTATION 5 PRO",
+    "available": "Available",
+    "sold": "Sold",
+    "info": "Time remaining until the end of the offer."
   }
 }

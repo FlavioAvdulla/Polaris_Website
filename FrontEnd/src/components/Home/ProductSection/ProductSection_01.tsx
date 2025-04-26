@@ -7,10 +7,14 @@ import { PiShoppingCartLight } from "react-icons/pi";
 // Data
 import { productSection_01 } from "./ProductSection";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 
 const ProductSection_01 = () => {
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleProductClick = (id) => {
     console.log(`Image with id ${id} clicked.`)
@@ -90,7 +94,7 @@ const ProductSection_01 = () => {
                               sm:w-[60%]
                               md:text-[13px] md:w-[90%]
                               lg:text-[18px]
-                              xl:text-[22px] xl:w-[70%]">{product.title}</h1>
+                              xl:text-[22px] xl:w-[70%]">{t(product.title)}</h1>
 
             <div className="flex justify-between items-center">
               <h1 className="font-camptonBold text-primary
@@ -117,13 +121,13 @@ const ProductSection_01 = () => {
                             xs:text-[12px]
                             lg:text-[15px]
                             2xl:text-[20px]">
-                Available:
+                {t(product.available)}:
                 <span className="font-camptonMedium
                 
                                   xs:text-[12px]
                                   lg:text-[15px]
                                   2xl:text-[20px]">
-                  &nbsp;&nbsp;{product.available}
+                  &nbsp;&nbsp;{product.quantity}
                 </span>
               </p>
               <p className="text-[15px] font-camptonBook flex
@@ -131,9 +135,9 @@ const ProductSection_01 = () => {
                             xs:text-[12px]
                             lg:text-[15px]
                             2xl:text-[20px]">
-                Sold:
+                {t(product.sold)}:
                 <span className="text-red-500 font-camptonMedium">
-                  &nbsp;&nbsp;{product.sold}
+                  &nbsp;&nbsp;{product.quantitySold}
                 </span>
               </p>
             </div>
@@ -142,7 +146,7 @@ const ProductSection_01 = () => {
                           xs:text-[10px]
                           lg:text-[15px]
                           2xl:text-[16px]">
-              Time remaining until the end of the offer.
+              {t(product.info)}
             </p>
           </div>
         </div>
