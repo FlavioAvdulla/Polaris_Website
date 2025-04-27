@@ -69,5 +69,30 @@
     "available": "Disponible",
     "sold": "Vendida",
     "info": "Tiempo restante hasta el final de la oferta."
+  },
+  "productSection_02": {
+    "dealsOfTheDay": "Ofertas del día",
+    "latestProducts": "Últimos productos",
+    "topRating": "Calificación superior",
+    "bestSelling": "Los más vendidos",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "productSection_03": {
+    "title_02": "Descuento de fin de semana",
+    "title_01": "CÁMARA SIN ESPEJO OLYMPUS MARK II",
+    "description": "Cámara sin espejo con vídeo 4K",
+    "button": "AÑADIR A LA CESTA"
+  },
+  "productSection_04": {
+    "shopByCategories": "Comprar por categorías",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*",
+    "title_01": "Computadoras",
+    "title_02": "Móviles y tabletas",
+    "title_03": "Accesorios de juego",
+    "title_04": "Cámara y fotografía",
+    "title_05": "Electrónica",
+    "title_06": "Audio y auriculares",
+    "items": "elementos",
+    "viewMore": "Ver más"
   }
 }

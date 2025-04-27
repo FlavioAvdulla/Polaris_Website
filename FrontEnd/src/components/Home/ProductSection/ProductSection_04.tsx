@@ -1,5 +1,4 @@
 import React from "react";
-
 import { useNavigate } from "react-router-dom";
 
 // React Icons
@@ -8,8 +7,12 @@ import { IoIosSearch } from "react-icons/io";
 // Data
 import { shopByCategories } from "./ProductSection";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const ProductSection_04 = () => {
 
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleImageClick = (id) => {
@@ -43,7 +46,7 @@ const ProductSection_04 = () => {
                       xs:text-[10px]
                       sm:text-[11px]
                       md:text-[15px] 
-                      lg:text-[22px]">Shop By Categories</h1>
+                      lg:text-[22px]">{t("productSection_04.shopByCategories")}</h1>
 
         <div className="flex items-center
                         
@@ -56,7 +59,7 @@ const ProductSection_04 = () => {
                         sm:text-[11px]
                         md:text-[15px]
                         xl:text-[18px]">
-            No handling fees + free shipping on orders over $35*
+            {t("productSection_04.info")}
           </p>
         </div>
       </div>
@@ -89,14 +92,14 @@ const ProductSection_04 = () => {
                             md:text-[17px]
                             lg:text-[20px]
                             xl:text-[16px]
-                            2xl:text-[20px]">{product.title}</h1>
+                            2xl:text-[20px]">{t(product.title)}</h1>
               <p className="text-gray-500
               
                             xs:text-[19px]
                             md:text-[17px]
                             lg:text-[16px]
                             xl:text-[14px]
-                            2xl:text-[17px]">{product.quantity} Items</p>
+                            2xl:text-[17px]">{product.quantity} {t("productSection_04.items")}</p>
             </div>
             {/* ============= Add to cart ============= */}
             <button
@@ -105,7 +108,7 @@ const ProductSection_04 = () => {
                           duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary">
                             
               <i><IoIosSearch className="text-[18px] text-white" /></i>
-              <p className="text-white">VIEW MORE</p>
+              <p className="text-white">{t("productSection_04.viewMore")}</p>
             </button>
           </div>
         ))}

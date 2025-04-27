@@ -1,14 +1,17 @@
 import React from "react";
-
+// Import the product data and image.
+import { productSection_03 } from "./ProductSection";
 import { useNavigate } from "react-router-dom";
 
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
-// Import the product data and image.
-import { productSection_03 } from "./ProductSection";
+
+// Translation
+import { useTranslation } from 'react-i18next';
 
 const ProductSection_03 = () => {
 
+  const { t } = useTranslation();
   const navigate = useNavigate();
   
     const handleProductClick = (id) => {
@@ -44,7 +47,7 @@ const ProductSection_03 = () => {
                         xs:w-[100%]
                         lg:w-[50%]">
             <p className="text-white font-camptonMedium">
-              {product.title_02}
+            {t(product.title_02)}
             </p>
             <h1 className="text-white font-camptonMedium leading-tight my-3
             
@@ -52,9 +55,9 @@ const ProductSection_03 = () => {
                           sm:w-[80%]
                           md:w-[100%]
                           xl:text-[30px]">
-              {product.title_01}
+              {t(product.title_01)}
             </h1>
-            <p className="text-white font-camptonLight leading-tight">{product.description}</p>
+            <p className="text-white font-camptonLight leading-tight">{t(product.description)}</p>
             {/* ============= Button ============= */}
             <div className="w-auto mt-7">
               <button
@@ -64,7 +67,7 @@ const ProductSection_03 = () => {
                             
                             xs:text-[12px] xs:gap-2 xs:px-3 xs:py-1
                             xl:px-4 xl:py-2 xl:text-[20px] xl:gap-3">
-                {product.button}
+                {t(product.button)}
                 <IoIosArrowForward className="font-camptonLight
                 
                                               xs:text-[12px]

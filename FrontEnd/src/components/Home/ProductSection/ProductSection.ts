@@ -87,24 +87,6 @@ export const productSection_01 = [
     sold: "productSection_01.sold",
     info: "productSection_01.info"
   },
-  // {
-  //   _id: "2",
-  //   image: Product_04,
-  //   rating: "4.5",
-  //   normalPrice: "€2799",
-  //   title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
-  //   available: "16",
-  //   sold: "14",
-  // },
-  // {
-  //   _id: "3",
-  //   image: Product_03,
-  //   rating: "4.0",
-  //   normalPrice: "€799",
-  //   title: "Console PlayStation®5 Pro Digital 2TB",
-  //   available: "12",
-  //   sold: "2",
-  // },
 ];
 
 export const computers = [
@@ -410,7 +392,7 @@ export const shopByCategories = [
   {
     _id: "1",
     image: Product_03,
-    title: "Computers",
+    title: "productSection_04.title_01",
     quantity: computers.length,
     normalPrice: "€959",
     offerPrice: "€539",
@@ -424,7 +406,7 @@ export const shopByCategories = [
   {
     _id: "2",
     image: Product_08,
-    title: "Mobiles & Tablets",
+    title: "productSection_04.title_02",
     quantity: mobilesAndTablets.length,
     normalPrice: "€959",
     offerPrice: "€539",
@@ -438,7 +420,7 @@ export const shopByCategories = [
   {
     _id: "3",
     image: Product_07,
-    title: "Game Accessories",
+    title: "productSection_04.title_03",
     quantity: gameAccessories.length,
     normalPrice: "€959",
     offerPrice: "€539",
@@ -452,7 +434,7 @@ export const shopByCategories = [
   {
     _id: "4",
     image: Product_11,
-    title: "Camera & Photo",
+    title: "productSection_04.title_04",
     quantity: cameraAndPhoto.length,
     normalPrice: "€959",
     offerPrice: "€539",
@@ -466,7 +448,7 @@ export const shopByCategories = [
   {
     _id: "5",
     image: Product_09,
-    title: "Electronics",
+    title: "productSection_04.title_05",
     quantity: electronics.length,
     normalPrice: "€959",
     offerPrice: "€539",
@@ -480,7 +462,7 @@ export const shopByCategories = [
   {
     _id: "6",
     image: Product_10,
-    title: "Audio & Headphone",
+    title: "productSection_04.title_06",
     quantity: audioAndHeadphones.length,
     normalPrice: "€959",
     offerPrice: "€539",
@@ -497,19 +479,20 @@ export const productSection_03 = [
   {
     _id: "1",
     image: Product_01,
-    title_02: "Weekend Discount",
-    title_01: "OLYMPUS MARK II MIRRORLESS CAMERA",
-    description: "Mirrorless Camera with 4K Video",
-    button: "ADD TO CART",
+    title_02: "productSection_03.title_02",
+    title_01: "productSection_03.title_01",
+    description: "productSection_03.description",
+    button: "productSection_03.button",
   },
   {
     _id: "2",
     image: Product_04,
-    title_02: "Weekend Discount",
-    title_01: "OLYMPUS MARK II MIRRORLESS CAMERA",
-    description: "Mirrorless Camera with 4K Video",
-    button: "ADD TO CART",
+    title_02: "productSection_03.title_02",
+    title_01: "productSection_03.title_01",
+    description: "productSection_03.description",
+    button: "productSection_03.button",
   },
+
 ]
 
 export const productSection_05 = [

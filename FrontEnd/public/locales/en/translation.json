@@ -59,5 +59,30 @@
     "available": "Available",
     "sold": "Sold",
     "info": "Time remaining until the end of the offer."
+  },
+  "productSection_02": {
+    "dealsOfTheDay": "Deals Of The Day",
+    "latestProducts": "Latest Products",
+    "topRating": "Top Rating",
+    "bestSelling": "Best Selling",
+    "addToCart": "ADD TO CART"
+  },
+  "productSection_03": {
+    "title_02": "Weekend Discount",
+    "title_01": "OLYMPUS MARK II MIRRORLESS CAMERA",
+    "description": "Mirrorless Camera with 4K Video",
+    "button": "ADD TO CART"
+  },
+  "productSection_04": {
+    "shopByCategories": "Shop By Categories",
+    "info": "No handling fees + free shipping on orders over $35*",
+    "title_01": "Computers",
+    "title_02": "Mobiles & Tablets",
+    "title_03": "Game Accessories",
+    "title_04": "Camera & Photo",
+    "title_05": "Electronics",
+    "title_06": "Audio & Headphone",
+    "items": "items",
+    "viewMore": "View More"
   }
 }

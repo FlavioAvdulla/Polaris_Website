@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const ProductSection_02 = () => {
+
+  const { t } = useTranslation();
+
   const [activeSection, setActiveSection] = useState(() => {
     return localStorage.getItem("activeSection") || ""; // Retrieve saved active section or set default
   });
@@ -25,7 +31,7 @@ const ProductSection_02 = () => {
                       md:text-[15px]
                       lg:text-[22px]
                       xl:text-[20px]">
-          Deals Of The Day
+          {t("productSection_02.dealsOfTheDay")}
         </h1>
         {/* ============= Deals of the day - right ============= */}
         <div
@@ -36,9 +42,9 @@ const ProductSection_02 = () => {
                      md:gap-7
                      lg:gap-10">
           {[
-            { label: "Latest Products", path: "/deals/latest-products" },
-            { label: "Top Rating", path: "/deals/top-rating" },
-            { label: "Best Selling", path: "/deals/best-selling" },
+            { label: t("productSection_02.latestProducts"), path: "/deals/latest-products" },
+            { label: t("productSection_02.topRating"), path: "/deals/top-rating" },
+            { label: t("productSection_02.bestSelling"), path: "/deals/best-selling" },
           ].map(({ label, path }) => (
             <button
               key={label}

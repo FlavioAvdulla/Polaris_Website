@@ -1,18 +1,17 @@
 import React from "react";
+import { latestProducts } from "../../ProductSection";
+import { useNavigate } from "react-router-dom";
+import ScrollManager from "@/ScrollManager/ScrollManager";
 
 // React Icons
 import { PiShoppingCartLight } from "react-icons/pi";
 
-import { latestProducts } from "../../ProductSection";
-
-import { useNavigate } from "react-router-dom";
-
-import ScrollManager from "@/ScrollManager/ScrollManager";
-
-
+// Translation
+import { useTranslation } from 'react-i18next';
 
 const Latest_Products = () => {
-
+  
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleImageClick = (id) => {
@@ -91,7 +90,7 @@ const Latest_Products = () => {
               <i>
                 <PiShoppingCartLight className="text-[18px] text-white" />
               </i>
-              <p className="text-white">ADD TO CART</p>
+              <p className="text-white text-[13px] font-camptonBook">{t("productSection_02.addToCart")}</p>
             </button>
           </div>
         ))}
