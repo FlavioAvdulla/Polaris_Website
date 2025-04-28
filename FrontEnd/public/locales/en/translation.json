@@ -94,5 +94,35 @@
     "description_02": "Mirrorless Camera with 4K Video",
     "description_03": "Mirrorless Camera with 4K Video",
     "description_04": "Mirrorless Camera with 4K Video"
+  },
+  "carousel_03": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-20% OFF",
+    "discount_02": "-30% OFF",
+    "addToCart": "ADD TO CART",
+    "title_01": "SUPER FAST PERFORMANCE",
+    "title_02": "SUPER SLOW PERFORMANCE",
+    "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+    "paragraph_02": "Don't miss these opportunities... We have prepared special discounts for you on electronic products."
+  },
+  "carousel_04": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-20% OFF",
+    "discount_02": "-30% OFF",
+    "addToCart": "ADD TO CART",
+    "title_01": "SUPER FAST PERFORMANCE",
+    "title_02": "SUPER SLOW PERFORMANCE",
+    "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+    "paragraph_02": "Don't miss these opportunities... We have prepared special discounts for you on electronic products."
+  },
+  "carousel_05": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-20% OFF",
+    "discount_02": "-30% OFF",
+    "addToCart": "ADD TO CART",
+    "title_01": "SUPER FAST PERFORMANCE",
+    "title_02": "SUPER SLOW PERFORMANCE",
+    "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
+    "paragraph_02": "Don't miss these opportunities... We have prepared special discounts for you on electronic products."
   }
 }

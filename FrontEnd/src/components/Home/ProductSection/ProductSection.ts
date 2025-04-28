@@ -909,14 +909,20 @@ export const carousel_03 = [
   {
     _id: "1",
     image: Slider_03,
-    title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+    discount: "carousel_01.discount_01",
+    title: "carousel_01.title_01",
+    addToCart: "carousel_01.addToCart",
+    paragraph: "carousel_01.paragraph_01",
+    exclusiveOffer: "carousel_01.exclusiveOffer"
   },
   {
     _id: "2",
     image: Slider_06,
-    title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+    discount: "carousel_01.discount_02",
+    title: "carousel_01.title_02",
+    addToCart: "carousel_01.addToCart",
+    paragraph: "carousel_01.paragraph_02",
+    exclusiveOffer: "carousel_01.exclusiveOffer"
   },
 ];
 
@@ -924,14 +930,20 @@ export const carousel_04 = [
   {
     _id: "1",
     image: Slider_07,
-    title: "SUPER FAST PERFORMANCE",
-    description: "",
+    discount: "carousel_01.discount_01",
+    title: "carousel_01.title_01",
+    addToCart: "carousel_01.addToCart",
+    paragraph: "carousel_01.paragraph_01",
+    exclusiveOffer: "carousel_01.exclusiveOffer"
   },
   {
     _id: "2",
     image: Slider_05,
-    title: "SUPER FAST PERFORMANCE",
-    description: "carousel_01",
+    discount: "carousel_01.discount_02",
+    title: "carousel_01.title_02",
+    addToCart: "carousel_01.addToCart",
+    paragraph: "carousel_01.paragraph_02",
+    exclusiveOffer: "carousel_01.exclusiveOffer"
   },
 ];
 
@@ -939,14 +951,20 @@ export const carousel_05 = [
   {
     _id: "1",
     image: Slider_07,
-    title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+    discount: "carousel_01.discount_01",
+    title: "carousel_01.title_01",
+    addToCart: "carousel_01.addToCart",
+    paragraph: "carousel_01.paragraph_01",
+    exclusiveOffer: "carousel_01.exclusiveOffer"
   },
   {
     _id: "2",
     image: Slider_05,
-    title: "SUPER FAST PERFORMANCE",
-    description: "We have prepared special discounts for you on electronic products. Don't miss these opportunities!",
+    discount: "carousel_01.discount_02",
+    title: "carousel_01.title_02",
+    addToCart: "carousel_01.addToCart",
+    paragraph: "carousel_01.paragraph_02",
+    exclusiveOffer: "carousel_01.exclusiveOffer"
   },
 ];
 

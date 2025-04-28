@@ -14,7 +14,12 @@ import {
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 export function Carousel_05() {
+
+  const { t } = useTranslation()
   const [api, setApi] = React.useState<CarouselApi>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [current, setCurrent] = React.useState(0);
@@ -78,34 +83,32 @@ export function Carousel_05() {
                                     md:p-12 md:mb-5
                                     lg:p-6 lg:mb-0
                                     xl:mb-5">
-                      <p
-                        className="flex text-white gap-3 items-center
+                      <p className="flex text-white gap-3 items-center
                       
                                     xs:text-[12px]
                                     md:text-[20px]
                                     lg:text-[12px]
                                     xl:text-[15px]">
-                        Exclusive Offer
+                        {t(product.exclusiveOffer)}
                         <span
                           className="rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer border-white text-white px-6 py-[3px] items-center justify-center
-                                      hover:bg-transparent hover:scale-110 ease-in-out duration-300
+                                    hover:bg-transparent hover:scale-110 ease-in-out duration-300
                                             
                                     xs:text-[10px]
                                     md:text-[20px]
                                     lg:text-[10px]
                                     xl:text-[15px]">
-                          -20% OFF
+                          {t(product.discount)}
                         </span>
                       </p>
-                      <h1
-                        className="text-white font-camptonBold leading-tight my-3
+                      <h1 className="text-white font-camptonBold leading-tight my-3
 
                                       xs:text-[20px]
                                       sm:text-[35px]
                                       md:text-[60px]
                                       lg:text-[29px]
                                       xl:text-[40px]">
-                        {product.title}
+                        {t(product.title)}
                       </h1>
                       <p
                         className="text-white font-camptonLigh
@@ -113,11 +116,12 @@ export function Carousel_05() {
                                      xs:text-[10px]
                                      md:text-[25px]
                                      lg:text-[12px] lg:w-[95%]">
-                        {product.description}
+                        {t(product.paragraph)}
                       </p>
                       <div className="w-auto mt-7">
                         <button
-                          className=" flex items-center justify-center gap-3 border-[1px] bg-primary border-white text-white px-4 py-2 rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
+                          className=" flex items-center justify-center gap-3 border-[1px] bg-primary border-white
+                                    text-white px-4 py-2 rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                                       hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
                                       
                                       xs:gap-2 xs:px-3 xs:py-1
@@ -128,7 +132,7 @@ export function Carousel_05() {
                                       md:text-[25px]
                                       lg:text-[12px]
                                       2xl:text-[20px]">
-                            ADD TO CART</p>
+                            {t(product.addToCart)}</p>
                           <i>
                             <IoIosArrowForward />
                           </i>

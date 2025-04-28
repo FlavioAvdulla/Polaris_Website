@@ -14,7 +14,12 @@ import {
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 export function Carousel_03() {
+
+  const { t } = useTranslation()
   const [api, setApi] = React.useState<CarouselApi>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [current, setCurrent] = React.useState(0);
@@ -71,7 +76,7 @@ export function Carousel_03() {
                                                     
                                 xs:w-[100%] xs:pl-7 xs:bottom-0 xs:mb-[30px]
                                 sm:w-[80%] sm:bottom-0 sm:mb-[30px]
-                                md:w-[80%] md:bottom-0 md:mb-[70px] md:gap-5
+                                md:w-[80%] md:mb-[70px] md:gap-5
                                 lg:w-[90%] lg:mb-[30px] lg:gap-2
                                 xl:w-[90%] xl:pl-12
                                 2xl:bottom-0 2xl:mb-[30px] 2xl:gap-0">
@@ -88,7 +93,7 @@ export function Carousel_03() {
                                     md:text-[20px]
                                     lg:text-[15px]
                                     2xl:text-[16px]">
-                          Exclusive Offer
+                          {t(product.exclusiveOffer)}
                         </p>
                         <div
                           className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
@@ -101,7 +106,7 @@ export function Carousel_03() {
                                       md:text-[20px] md:px-6 md:py-[3px]
                                       lg:text-[15px]
                                       2xl:text-[16px]">
-                            -20% OFF
+                            {t(product.discount)}
                           </p>
                         </div>
                       </div>
@@ -113,7 +118,7 @@ export function Carousel_03() {
                                   md:text-[65px]
                                   lg:text-[35px]
                                   2xl:text-[45px]">
-                        {product.title}
+                        {t(product.title)}
                       </h1>
                       <p
                         className="text-white font-camptonBook
@@ -123,7 +128,7 @@ export function Carousel_03() {
                                   md:w-[100%] md:text-[20px]
                                   lg:text-[15px] lg:w-[90%]
                                   2xl:text-[16px] 2xl:w-[100%]">
-                        {product.description}
+                        {t(product.paragraph)}
                       </p>
                       <div className="w-auto mt-7">
                         <button
@@ -138,7 +143,7 @@ export function Carousel_03() {
                                       md:text-[20px]
                                       lg:text-[15px]
                                       2xl:text-[20px]">
-                            ADD TO CART
+                            {t(product.addToCart)}
                           </p>
                           <i>
                             <IoIosArrowForward

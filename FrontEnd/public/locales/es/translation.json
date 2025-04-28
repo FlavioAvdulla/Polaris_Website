@@ -104,5 +104,35 @@
     "description_02": "Cámara sin espejo con vídeo 4K",
     "description_03": "Cámara sin espejo con vídeo 4K",
     "description_04": "Cámara sin espejo con vídeo 4K"
+  },
+  "carousel_03": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-20% DE",
+    "discount_02": "-30% DE",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "RENDIMIENTO SÚPER RÁPIDO",
+    "title_02": "RENDIMIENTO SÚPER LENTO",
+    "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
+    "paragraph_02": "¡No te pierdas estas oportunidades! Hemos preparado descuentos especiales para ti en productos electrónicos."
+  },
+  "carousel_04": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-20% DE",
+    "discount_02": "-30% DE",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "RENDIMIENTO SÚPER RÁPIDO",
+    "title_02": "RENDIMIENTO SÚPER LENTO",
+    "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
+    "paragraph_02": "¡No te pierdas estas oportunidades! Hemos preparado descuentos especiales para ti en productos electrónicos."
+  },
+  "carousel_05": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-20% DE",
+    "discount_02": "-30% DE",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "RENDIMIENTO SÚPER RÁPIDO",
+    "title_02": "RENDIMIENTO SÚPER LENTO",
+    "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
+    "paragraph_02": "¡No te pierdas estas oportunidades! Hemos preparado descuentos especiales para ti en productos electrónicos."
   }
 }
