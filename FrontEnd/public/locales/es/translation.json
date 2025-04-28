@@ -94,5 +94,15 @@
     "title_06": "Audio y auriculares",
     "items": "elementos",
     "viewMore": "Ver más"
+  },
+  "productSection_05": {
+    "title_01": "Computadoras",
+    "title_02": "Auriculares de realidad virtual",
+    "title_03": "Tarjetas gráficas",
+    "title_04": "Teclados",
+    "description_01": "Cámara sin espejo con vídeo 4K",
+    "description_02": "Cámara sin espejo con vídeo 4K",
+    "description_03": "Cámara sin espejo con vídeo 4K",
+    "description_04": "Cámara sin espejo con vídeo 4K"
   }
 }

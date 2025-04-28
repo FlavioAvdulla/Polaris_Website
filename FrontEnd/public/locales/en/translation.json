@@ -84,5 +84,15 @@
     "title_06": "Audio & Headphone",
     "items": "items",
     "viewMore": "View More"
+  },
+  "productSection_05": {
+    "title_01": "Computers",
+    "title_02": "VR HeadSet",
+    "title_03": "Graphic Cards",
+    "title_04": "Keyboards",
+    "description_01": "Mirrorless Camera with 4K Video",
+    "description_02": "Mirrorless Camera with 4K Video",
+    "description_03": "Mirrorless Camera with 4K Video",
+    "description_04": "Mirrorless Camera with 4K Video"
   }
 }

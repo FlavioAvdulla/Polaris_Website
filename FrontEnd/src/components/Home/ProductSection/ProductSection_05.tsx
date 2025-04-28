@@ -10,8 +10,12 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 // Import the product data.
 import { productSection_05 } from "./ProductSection";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const ProductSection_05 = () => {
 
+  const { t } = useTranslation();
   const navigate = useNavigate();
   
     const handleProductClick = (id) => {
@@ -82,7 +86,7 @@ const ProductSection_05 = () => {
         {/* ============= Section - right ============= */}
         {productSection_05.map((product, index) => (
           <div
-            className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden cursor-pointer"
+            className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden"
             key={index}
             onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 ============= */}
@@ -124,7 +128,7 @@ const ProductSection_05 = () => {
                                 sm:text-[20px]
                                 md:text-[27px]
                                 lg:text-[22px]">
-                  {product.title}
+                  {t(product.title)}
                 </h1>
                 <p className="text-gray-500
                               
@@ -132,7 +136,7 @@ const ProductSection_05 = () => {
                               sm:text-[12px]
                               md:text-[20px]
                               lg:text-[15px]">
-                  {product.description}
+                  {t(product.description)}
                 </p>
                 <div className="flex gap-4 items-center">
                   <p className="font-camptonBold text-primary
