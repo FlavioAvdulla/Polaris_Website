@@ -87,7 +87,7 @@ export function Carousel_04() {
                                   xs:flex">
                         <p className="flex text-white gap-3 items-center
                                                                       
-                                      
+                                      xs:text-[11px]
                                       sm:text-[13px]
                                       md:text-[20px]
                                       lg:text-[15px]
@@ -100,7 +100,7 @@ export function Carousel_04() {
                                       hover:bg-transparent hover:scale-110 ease-in-out duration-300">
                           <p className="
                                                                               
-                                      xs:px-4 xs:py-[1px]
+                                      xs:px-4 xs:text-[15px] xs:py-[1px]
                                       md:text-[20px] md:px-6 md:py-[3px]
                                       lg:text-[15px]
                                       2xl:text-[16px]">
@@ -135,6 +135,7 @@ export function Carousel_04() {
                                     md:gap-3 md:px-4 md:py-2">
                           <p className="
                                      
+                                      xs:text-[12px]
                                       md:text-[20px]
                                       lg:text-[15px]
                                       2xl:text-[20px]">
@@ -144,6 +145,7 @@ export function Carousel_04() {
                             <IoIosArrowForward
                               className="
                                         
+                                        xs:text-[12px]
                                         md:text-[15px]
                                         lg:text-[20px]
                                         2xl:text-[20px]"/>
