@@ -45,6 +45,16 @@
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
     "paragraph_02": "Don't miss these opportunities... We have prepared special discounts for you on electronic products."
   },
+  "benefitsSection": {
+    "onlineSupport": "Online Support 24/7",
+    "onlineSupportDesc": "Support online 24 hours a day",
+    "memberDiscount": "Member Discount",
+    "memberDiscountDesc": "Onevery order over $120.00",
+    "moneyReturn": "Money Return",
+    "moneyReturnDesc": "Back guarantee under 7 days",
+    "freeShipping": "Fast, Free Shipping",
+    "freeShippingDesc": "Fast, Free Shipping"
+  },
   "bannerSection": {
     "exclusiveOffer": "Exclusive Offer",
     "-20%off": "-20% OFF",

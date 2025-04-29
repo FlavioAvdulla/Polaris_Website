@@ -45,7 +45,7 @@ const BannerSection = () => {
                         md:text-[35px]
                         lg:text-[40px]
                         xl:text-[50px]">
-          {t('bannerSection.superFastPerformance')}
+          {t('bannerSection.title')}
         </h1>
         <p className="text-white
                       
