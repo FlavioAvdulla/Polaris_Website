@@ -118,7 +118,7 @@ export function Carousel_04() {
                       </h1>
                       <p className="text-white font-camptonBook
                                                       
-                                    xs:text-[10px] xs:w-[80%]
+                                    xs:text-[12px] xs:w-[80%]
                                     sm:text-[13px] sm:w-[90%]
                                     md:w-[100%] md:text-[20px]
                                     lg:text-[15px] lg:w-[90%]
