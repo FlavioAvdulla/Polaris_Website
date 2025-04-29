@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { carousel_04 } from "../Home/ProductSection/ProductSection";
+import { carousel_05 } from "../Home/ProductSection/ProductSection";
 import {
   Carousel,
   CarouselContent,
@@ -58,7 +58,7 @@ export function Carousel_05() {
         onMouseUp={() => setIsGrabbing(false)}
       >
         <CarouselContent>
-          {carousel_04.map((product, index) => (
+          {carousel_05.map((product, index) => (
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
