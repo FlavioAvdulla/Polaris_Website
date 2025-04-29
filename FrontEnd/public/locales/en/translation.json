@@ -124,5 +124,24 @@
     "title_02": "SUPER SLOW PERFORMANCE",
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
     "paragraph_02": "Don't miss these opportunities... We have prepared special discounts for you on electronic products."
+  },
+  "footer": {
+    "usefulLinks": "USEFUL LINKS",
+    "aboutUs": "ABOUT US",
+    "ourTeam": "OUR TEAM",
+    "recentNews": "RECENT NEWS",
+    "projects": "PROJECTS",
+    "ourAllServices": "OUR ALL SERVICES",
+    "category": "CATEGORY",
+    "coordinator": "COORDINATOR",
+    "architect": "ARCHITECT",
+    "manager": "MANAGER",
+    "producer": "PRODUCER",
+    "designer": "DESIGNER",
+    "contact": "CONTACT",
+    "copyright": "Copyright 2025 © Flavio Avdulla - All rights reserved",
+    "terms&conditions": "Terms & Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "contactUs": "Contact Us"
   }
 }

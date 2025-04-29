@@ -134,5 +134,24 @@
     "title_02": "RENDIMIENTO SÚPER LENTO",
     "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
     "paragraph_02": "¡No te pierdas estas oportunidades! Hemos preparado descuentos especiales para ti en productos electrónicos."
+  },
+  "footer": {
+    "usefulLinks": "ENLACES ÚTILES",
+    "aboutUs": "SOBRE NOSOTRAS",
+    "ourTeam": "NUESTRO EQUIPO",
+    "recentNews": "NOTICIAS RECIENTES",
+    "projects": "PROYECTOS",
+    "ourAllServices": "TODOS NUESTROS SERVICIOS",
+    "category": "CATEGORÍA",
+    "coordinator": "COORDINADORA",
+    "architect": "ARQUITECTO",
+    "manager": "GERENTE",
+    "producer": "PRODUCTOR",
+    "designer": "DISEÑADOR",
+    "contact": "CONTACTO",
+    "copyright": "Copyright 2025 © Flavio Avdulla - Todos los derechos reservados",
+    "terms&conditions": "Términos y condiciones",
+    "privacyPolicy": "política de privacidad",
+    "contactUs": "Contacta con nosotras"
   }
 }

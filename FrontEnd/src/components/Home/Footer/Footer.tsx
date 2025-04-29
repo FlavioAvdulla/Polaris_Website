@@ -7,7 +7,13 @@ import Polaris_Logo_White from "../../../assets/images/Polaris_Logo_White.svg";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter, FaSquarePinterest, FaLinkedin } from "react-icons/fa6";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
+
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col w-[100%] justify-center pt-10 bg-primary">
       <div className="flex gap-5 justify-between mx-auto mb-8
@@ -78,37 +84,37 @@ const Footer = () => {
           
                           md:text-[18px]
                           lg:text-[22px]">
-            USEFUL LINKS
+            {t("footer.usefulLinks")}
           </h1>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">ABOUT US</p>
+                          lg:text-[16px]">{t("footer.aboutUs")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">OUR TEAM</p>
+                          lg:text-[16px]">{t("footer.ourTeam")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">RECENT NEWS</p>
+                          lg:text-[16px]">{t("footer.recentNews")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">PROJECTS</p>
+                          lg:text-[16px]">{t("footer.projects")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">OUR ALL SERVICES</p>
+                          lg:text-[16px]">{t("footer.ourAllServices")}</p>
           </button>
         </div>
         {/* ============= Useful Links ============= */}
@@ -117,37 +123,37 @@ const Footer = () => {
           
                           md:text-[18px]
                           lg:text-[22px]">
-            CATEGORY
+            {t("footer.category")}
           </h1>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">COORDINATOR</p>
+                          lg:text-[16px]">{t("footer.coordinator")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">ARCHITECT</p>
+                          lg:text-[16px]">{t("footer.architect")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">MANAGER</p>
+                          lg:text-[16px]">{t("footer.manager")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">PRODUCER</p>
+                          lg:text-[16px]">{t("footer.producer")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           md:text-[12px]
-                          lg:text-[16px]">DESIGNER</p>
+                          lg:text-[16px]">{t("footer.designer")}</p>
           </button>
         </div>
         {/* ============= Useful Links ============= */}
@@ -155,7 +161,7 @@ const Footer = () => {
           <h1 className="text-white font-camptonBold
           
                           md:text-[18px]
-                          lg:text-[22px]">CONTACT</h1>
+                          lg:text-[22px]">{t("footer.contact")}</h1>
           <button>
             <p className="text-white font-camptonBook
             
@@ -192,7 +198,7 @@ const Footer = () => {
                       xs:text-[10px]
                       sm:text-[12px]
                       lg:text-[15px]">
-          Copyright 2025 © Flavio Avdulla - All rights reserved
+          {t("footer.copyright")}
         </p>
         <div className="flex gap-5">
           <button>
@@ -200,21 +206,21 @@ const Footer = () => {
             
                           xs:text-[10px]
                           sm:text-[12px]
-                          lg:text-[15px]">Terms & Conditions</p>
+                          lg:text-[15px]">{t("footer.terms&conditions")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           xs:text-[10px]
                           sm:text-[12px]
-                          lg:text-[15px]">Privacy Policy</p>
+                          lg:text-[15px]">{t("footer.privacyPolicy")}</p>
           </button>
           <button>
             <p className="text-white font-camptonBook
             
                           xs:text-[10px]
                           sm:text-[12px]
-                          lg:text-[15px]">Contact Us</p>
+                          lg:text-[15px]">{t("footer.contactUs")}</p>
           </button>
         </div>
       </div>
