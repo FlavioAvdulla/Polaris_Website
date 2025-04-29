@@ -87,7 +87,7 @@ export function Carousel_04() {
                                   xs:flex">
                         <p className="flex text-white gap-3 items-center
                                                                       
-                                      xs:text-[10px]
+                                      
                                       sm:text-[13px]
                                       md:text-[20px]
                                       lg:text-[15px]
@@ -100,7 +100,7 @@ export function Carousel_04() {
                                       hover:bg-transparent hover:scale-110 ease-in-out duration-300">
                           <p className="
                                                                               
-                                      xs:text-[10px] xs:px-4 xs:py-[1px]
+                                      xs:px-4 xs:py-[1px]
                                       md:text-[20px] md:px-6 md:py-[3px]
                                       lg:text-[15px]
                                       2xl:text-[16px]">
@@ -110,8 +110,7 @@ export function Carousel_04() {
                       </div>
                       <h1 className="text-white font-camptonBold leading-tight my-3
                                                       
-                                    xs:text-[22px] xs:w-[80%]
-                                    sm:text-[30px]
+                                    xs:text-[30px] xs:w-[80%]
                                     md:text-[65px]
                                     lg:text-[35px]
                                     2xl:text-[45px]">
@@ -119,7 +118,7 @@ export function Carousel_04() {
                       </h1>
                       <p className="text-white font-camptonBook
                                                       
-                                    xs:text-[8px] xs:w-[80%]
+                                     xs:w-[80%]
                                     sm:text-[13px] sm:w-[90%]
                                     md:w-[100%] md:text-[20px]
                                     lg:text-[15px] lg:w-[90%]
@@ -135,7 +134,7 @@ export function Carousel_04() {
                                     xs:gap-2 xs:px-3 xs:py-1
                                     md:gap-3 md:px-4 md:py-2">
                           <p className="
-                                      xs:text-[10px]
+                                     
                                       md:text-[20px]
                                       lg:text-[15px]
                                       2xl:text-[20px]">
@@ -144,7 +143,7 @@ export function Carousel_04() {
                           <i>
                             <IoIosArrowForward
                               className="
-                                        xs:text-[10px]
+                                        
                                         md:text-[15px]
                                         lg:text-[20px]
                                         2xl:text-[20px]"/>

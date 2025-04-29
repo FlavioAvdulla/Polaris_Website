@@ -61,16 +61,16 @@ const Top_Rating = () => {
                             bg-slate-500" src={product.image} alt={product.title} />
             </div>
             {/* ============= Title ============= */}
-            <div className="flex flex-col font-camptonMedium w-[100%] h-[140px] p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
+            <div className="flex flex-col font-camptonMedium w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
                             group-hover:shadow-shadow-dark transition-all duration-300 
             
                             xs:text-[20px]
                             md:text-[18px]
                             lg:text-[20px]
                             xl:text-[17px]">
-              <h1 className="mb-4">{product.title}</h1>
+              <h1 className="flex mb-4 justify-center">{product.title}</h1>
               {/* ============= Price ============= */}
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-4 items-center justify-center">
                 <p className="font-camptonBold text-primary
                 
                               xs:text-[25px]
