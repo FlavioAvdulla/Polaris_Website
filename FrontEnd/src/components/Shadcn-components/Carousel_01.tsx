@@ -67,7 +67,7 @@ export function Carousel_01() {
                   className={`flex aspect-square items-center justify-center m-0 p-0 
                     rounded-xl overflow-hidden
                     
-                    xs:h-[400px]
+                    xs:h-[300px]
                     md:h-[400px]
                     2xl:h-[600px]
 
@@ -77,8 +77,8 @@ export function Carousel_01() {
                     <div
                       className="flex flex-col absolute h-auto justify-center
                     
-                                    xs:w-[100%] xs:py-0 xs:pl-7 xs:mb-[150px] 
-                                    sm:w-[80%] sm:mb-0
+                                    xs:w-[100%] xs:py-0 xs:pl-7
+                                    sm:w-[80%]
                                     md:w-[50%]
                                     lg:pl-10
                                     xl:w-[60%] xl:py-10 xl:pl-12">

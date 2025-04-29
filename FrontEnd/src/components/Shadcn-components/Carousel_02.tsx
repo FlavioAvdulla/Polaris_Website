@@ -65,7 +65,7 @@ export function Carousel_02() {
                   className={`flex aspect-square items-center justify-center m-0 p-0
                     rounded-xl overflow-hidden bg-slate-300
                     
-                    xs:h-auto
+                    xs:h-[300px]
                     md:h-[400px]
                     2xl:h-[600px]
 
