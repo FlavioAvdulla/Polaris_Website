@@ -19,18 +19,17 @@ const ProductSection_05 = () => {
   const navigate = useNavigate();
   
     const handleProductClick = (id) => {
-      console.log(`Image with id ${id} clicked.`)
-      if (id === "1") {
-        navigate("/Product_01")
-      }
-      if (id === "2") {
-        navigate("/Product_02")
-      }
-      if (id === "3") {
-        navigate("/Product_04")
-      }
-      if (id === "4") {
-        navigate("/Product_05")
+      console.log(`Image with id ${id} clicked.`);
+      const routeMap = {
+        "1": "/Product_01",
+        "2": "/Product_02",
+        "3": "/Product_03",
+        "4": "/Product_04"
+      };
+
+      const route = routeMap[id];
+      if (route) {
+        navigate(route);
       }
     }
 

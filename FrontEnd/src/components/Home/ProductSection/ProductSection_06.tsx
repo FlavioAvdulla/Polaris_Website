@@ -9,37 +9,59 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 // Import the product data correctly
 import { productSection_06 } from "./ProductSection";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const ProductSection_05 = () => {
 
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleProductClick = (id) => {
-    console.log(`Image with ${id} clicked.`)
-    if (id === "1") {
-      navigate("/Product_01")
+    console.log(`Image with ${id} clicked.`);
+    const routeMap = {
+      "1": "/Product_01",
+      "2": "/Product_02",
+      "3": "/Product_04",
+      "4": "/Product_06",
+      "5": "/Product_04",
+      "6": "/Product_03",
+      "7": "/Product_05",
+      "8": "/Product_04"
+    };
+    
+    const route = routeMap[id];
+    if (route) {
+      navigate(route);
     }
-    if (id === "2") {
-      navigate("/Product_02")
-    }
-    if (id === "3") {
-      navigate("/Product_04")
-    }
-    if (id === "4") {
-      navigate("/Product_06")
-    }
-    if (id === "5") {
-      navigate("/Product_04")
-    }
-    if (id === "6") {
-      navigate("/Product_03")
-    }
-    if (id === "7") {
-      navigate("/Product_05")
-    }
-    if (id === "8") {
-      navigate("/Product_04")
-    }
-  }
+  };
+  // const handleProductClick = (id) => {
+  //   console.log(`Image with ${id} clicked.`)
+  //   if (id === "1") {
+  //     navigate("/Product_01")
+  //   }
+  //   if (id === "2") {
+  //     navigate("/Product_02")
+  //   }
+  //   if (id === "3") {
+  //     navigate("/Product_04")
+  //   }
+  //   if (id === "4") {
+  //     navigate("/Product_06")
+  //   }
+  //   if (id === "5") {
+  //     navigate("/Product_04")
+  //   }
+  //   if (id === "6") {
+  //     navigate("/Product_03")
+  //   }
+  //   if (id === "7") {
+  //     navigate("/Product_05")
+  //   }
+  //   if (id === "8") {
+  //     navigate("/Product_04")
+  //   }
+  // }
 
   const getStars = (rating) => {
     const stars = [];
@@ -104,13 +126,13 @@ const ProductSection_05 = () => {
                               xl:text-[13px]">({product.rating})</p>
               </div>
               <h1 className="text-[16px] font-camptonMedium leading-tight">
-                {product.title}
+              {t(product.title)}
               </h1>
               <p className="text-gray-500 leading-tight
                             
                             xs:text-[12px] xs:w-[70%]
                             lg:w-[80%]
-                            xl:text-[17px] xl:w-[70%]">{product.description}</p>
+                            xl:text-[17px] xl:w-[70%]">{t(product.description)}</p>
 
               {/* ============= Price ============= */}
               <div className="flex items-center gap-4">

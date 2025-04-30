@@ -17,25 +17,41 @@ const ProductSection_04 = () => {
 
   const handleImageClick = (id) => {
     console.log(`Image with id ${id} clicked.`)
-    if (id === "1") {
-      navigate("/Computers")
+    const routeMap = {
+      "1": "/Computers",
+      "2": "/MobilesAndTablets",
+      "3": "/GameAccessories",
+      "4": "/CameraAndPhoto",
+      "5": "/Electronics",
+      "6": "/AudioAndHeadphones"
     }
-    if (id === "2") {
-      navigate("/MobilesAndTablets")
-    }
-    if (id === "3") {
-      navigate("/GameAccessories")
-    }
-    if (id === "4") {
-      navigate("/CameraAndPhoto")
-    }
-    if (id === "5") {
-      navigate("/Electronics")
-    }
-    if (id === "6") {
-      navigate("/AudioAndHeadphones")
+
+    const route = routeMap[id];
+    if (route) {
+      navigate(route);
     }
   }
+  // const handleImageClick = (id) => {
+  //   console.log(`Image with id ${id} clicked.`)
+  //   if (id === "1") {
+  //     navigate("/Computers")
+  //   }
+  //   if (id === "2") {
+  //     navigate("/MobilesAndTablets")
+  //   }
+  //   if (id === "3") {
+  //     navigate("/GameAccessories")
+  //   }
+  //   if (id === "4") {
+  //     navigate("/CameraAndPhoto")
+  //   }
+  //   if (id === "5") {
+  //     navigate("/Electronics")
+  //   }
+  //   if (id === "6") {
+  //     navigate("/AudioAndHeadphones")
+  //   }
+  // }
 
   return (
     <div className="flex flex-col w-[85%] mx-auto">

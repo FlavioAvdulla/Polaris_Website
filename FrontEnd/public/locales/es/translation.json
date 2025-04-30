@@ -135,6 +135,24 @@
     "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
     "paragraph_02": "¡No te pierdas estas oportunidades! Hemos preparado descuentos especiales para ti en productos electrónicos."
   },
+  "productSection_06": {
+    "title_01": "Computadoras",
+    "title_02": "Auriculares de realidad virtual",
+    "title_03": "Tarjetas gráficas",
+    "title_04": "Teclados",
+    "title_05": "Smart teléfonos",
+    "title_06": "consolas de juegos",
+    "title_07": "Auriculares",
+    "title_08": "Tarjetas gráficas",
+    "description_01": "Cámara sin espejo con vídeo 4K",
+    "description_02": "Cámara sin espejo con vídeo 4K",
+    "description_03": "Cámara sin espejo con vídeo 4K",
+    "description_04": "Cámara sin espejo con vídeo 4K",
+    "description_05": "Cámara sin espejo con vídeo 4K",
+    "description_06": "Cámara sin espejo con vídeo 4K",
+    "description_07": "Cámara sin espejo con vídeo 4K",
+    "description_08": "Cámara sin espejo con vídeo 4K"
+  },
   "footer": {
     "usefulLinks": "ENLACES ÚTILES",
     "aboutUs": "SOBRE NOSOTRAS",

@@ -18,14 +18,15 @@ const ProductSection_01 = () => {
 
   const handleProductClick = (id) => {
     console.log(`Image with id ${id} clicked.`)
-    if (id === "1") {
-      navigate("/Product_05")
+    const routeMap = {
+      "1": "/Product_05",
+      "2": "/Product_04",
+      "3": "/Product_03"
     }
-    if (id === "2") {
-      navigate("/Product_04")
-    }
-    if (id === "3") {
-      navigate("/Product_03")
+
+    const route = routeMap[id];
+    if (route) {
+      navigate(route)
     }
   }
 
