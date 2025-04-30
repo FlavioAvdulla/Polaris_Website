@@ -22,31 +22,30 @@ import Slider_07 from "../../../assets/images/Sliders/Slider_07.jpg";
 import { CiMedal, CiDeliveryTruck, CiWallet } from "react-icons/ci";
 import { PiHandbagSimpleLight } from "react-icons/pi";
 
-
 export const benefits = [
   {
     _id: "1",
     image: CiMedal,
     titleKey: "benefitsSection.onlineSupport",
-    descriptionKey: "benefitsSection.onlineSupportDesc"
+    descriptionKey: "benefitsSection.onlineSupportDesc",
   },
   {
     _id: "2",
     image: CiDeliveryTruck,
     titleKey: "benefitsSection.freeShipping",
-    descriptionKey: "benefitsSection.freeShippingDesc"
+    descriptionKey: "benefitsSection.freeShippingDesc",
   },
   {
     _id: "3",
     image: CiWallet,
     titleKey: "benefitsSection.moneyReturn",
-    descriptionKey: "benefitsSection.moneyReturnDesc"
+    descriptionKey: "benefitsSection.moneyReturnDesc",
   },
   {
     _id: "4",
     image: PiHandbagSimpleLight,
     titleKey: "benefitsSection.memberDiscount",
-    descriptionKey: "benefitsSection.memberDiscountDesc"
+    descriptionKey: "benefitsSection.memberDiscountDesc",
   },
 ];
 
@@ -61,7 +60,7 @@ export const productSection_01 = [
     available: "productSection_01.available",
     quantitySold: "5",
     sold: "productSection_01.sold",
-    info: "productSection_01.info"
+    info: "productSection_01.info",
   },
   {
     _id: "2",
@@ -73,7 +72,7 @@ export const productSection_01 = [
     available: "productSection_01.available",
     quantitySold: "15",
     sold: "productSection_01.sold",
-    info: "productSection_01.info"
+    info: "productSection_01.info",
   },
   {
     _id: "3",
@@ -85,7 +84,7 @@ export const productSection_01 = [
     available: "productSection_01.available",
     quantitySold: "7",
     sold: "productSection_01.sold",
-    info: "productSection_01.info"
+    info: "productSection_01.info",
   },
 ];
 
@@ -152,7 +151,7 @@ export const mobilesAndTablets = [
     image: Product_05,
     rating: "2.0",
     normalPrice: "€179",
-    title: "Sony A7 III Mirrorless Camera with 4K Video",
+    title: "mobilesAndTablets.title_01",
     available: "25",
     sold: "5",
   },
@@ -161,7 +160,7 @@ export const mobilesAndTablets = [
     image: Product_04,
     rating: "5.0",
     normalPrice: "€2799",
-    title: "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
+    title: "mobilesAndTablets.title_02",
     available: "16",
     sold: "14",
   },
@@ -170,7 +169,7 @@ export const mobilesAndTablets = [
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
-    title: "Console PlayStation®5 Pro Digital 2TB",
+    title: "mobilesAndTablets.title_03",
     available: "12",
     sold: "2",
   },
@@ -179,7 +178,7 @@ export const mobilesAndTablets = [
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
-    title: "Console PlayStation®5 Pro Digital 2TB",
+    title: "mobilesAndTablets.title_04",
     available: "12",
     sold: "2",
   },
@@ -188,7 +187,7 @@ export const mobilesAndTablets = [
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
-    title: "Console PlayStation®5 Pro Digital 2TB",
+    title: "mobilesAndTablets.title_05",
     available: "12",
     sold: "2",
   },
@@ -197,7 +196,7 @@ export const mobilesAndTablets = [
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
-    title: "Console PlayStation®5 Pro Digital 2TB",
+    title: "mobilesAndTablets.title_06",
     available: "12",
     sold: "2",
   },
@@ -206,7 +205,7 @@ export const mobilesAndTablets = [
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
-    title: "Console PlayStation®5 Pro Digital 2TB",
+    title: "mobilesAndTablets.title_07",
     available: "12",
     sold: "2",
   },
@@ -215,7 +214,7 @@ export const mobilesAndTablets = [
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
-    title: "Console PlayStation®5 Pro Digital 2TB",
+    title: "mobilesAndTablets.title_08",
     available: "12",
     sold: "2",
   },
@@ -224,7 +223,7 @@ export const mobilesAndTablets = [
     image: Product_03,
     rating: "4.0",
     normalPrice: "€799",
-    title: "Console PlayStation®5 Pro Digital 2TB",
+    title: "mobilesAndTablets.title_09",
     available: "12",
     sold: "2",
   },
@@ -258,7 +257,6 @@ export const gameAccessories = [
     available: "12",
     sold: "2",
   },
-
 ];
 
 export const cameraAndPhoto = [
@@ -387,7 +385,6 @@ export const audioAndHeadphones = [
   },
 ];
 
-
 export const shopByCategories = [
   {
     _id: "1",
@@ -401,7 +398,7 @@ export const shopByCategories = [
     detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
     detail_04: "Windows 11 Professional (64bit)",
     rating: "3.0",
-    reviews: "3 Customer Reviews"
+    reviews: "3 Customer Reviews",
   },
   {
     _id: "2",
@@ -415,7 +412,7 @@ export const shopByCategories = [
     detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
     detail_04: "Windows 11 Professional (64bit)",
     rating: "3.0",
-    reviews: "3 Customer Reviews"
+    reviews: "3 Customer Reviews",
   },
   {
     _id: "3",
@@ -429,7 +426,7 @@ export const shopByCategories = [
     detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
     detail_04: "Windows 11 Professional (64bit)",
     rating: "3.0",
-    reviews: "3 Customer Reviews"
+    reviews: "3 Customer Reviews",
   },
   {
     _id: "4",
@@ -443,7 +440,7 @@ export const shopByCategories = [
     detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
     detail_04: "Windows 11 Professional (64bit)",
     rating: "3.0",
-    reviews: "3 Customer Reviews"
+    reviews: "3 Customer Reviews",
   },
   {
     _id: "5",
@@ -457,7 +454,7 @@ export const shopByCategories = [
     detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
     detail_04: "Windows 11 Professional (64bit)",
     rating: "3.0",
-    reviews: "3 Customer Reviews"
+    reviews: "3 Customer Reviews",
   },
   {
     _id: "6",
@@ -471,7 +468,7 @@ export const shopByCategories = [
     detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
     detail_04: "Windows 11 Professional (64bit)",
     rating: "3.0",
-    reviews: "3 Customer Reviews"
+    reviews: "3 Customer Reviews",
   },
 ];
 
@@ -492,8 +489,7 @@ export const productSection_03 = [
     description: "productSection_03.description",
     button: "productSection_03.button",
   },
-
-]
+];
 
 export const productSection_05 = [
   {
@@ -532,8 +528,7 @@ export const productSection_05 = [
     normalPrice: "€69",
     offerPrice: "€39",
   },
-
-]
+];
 
 export const productSection_06 = [
   {
@@ -608,7 +603,7 @@ export const productSection_06 = [
     normalPrice: "€69",
     offerPrice: "€39",
   },
-]
+];
 
 export const latestProducts = [
   {
@@ -726,7 +721,6 @@ export const bestSelling = [
     rating: "3.0",
     reviews: "3 Customer Reviews",
   },
-  
   {
     _id: "3",
     image: Product_04,
@@ -872,7 +866,6 @@ export const topRating = [
   },
 ];
 
-
 export const carousel_01 = [
   {
     _id: "1",
@@ -881,7 +874,7 @@ export const carousel_01 = [
     title: "carousel_01.title_01",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_01",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
   {
     _id: "2",
@@ -890,7 +883,7 @@ export const carousel_01 = [
     title: "carousel_01.title_02",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_02",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
 ];
 
@@ -913,7 +906,7 @@ export const carousel_03 = [
     title: "carousel_01.title_01",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_01",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
   {
     _id: "2",
@@ -922,7 +915,7 @@ export const carousel_03 = [
     title: "carousel_01.title_02",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_02",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
 ];
 
@@ -934,7 +927,7 @@ export const carousel_04 = [
     title: "carousel_01.title_01",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_01",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
   {
     _id: "2",
@@ -943,7 +936,7 @@ export const carousel_04 = [
     title: "carousel_01.title_02",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_02",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
 ];
 
@@ -955,7 +948,7 @@ export const carousel_05 = [
     title: "carousel_01.title_01",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_01",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
   {
     _id: "2",
@@ -964,30 +957,30 @@ export const carousel_05 = [
     title: "carousel_01.title_02",
     addToCart: "carousel_01.addToCart",
     paragraph: "carousel_01.paragraph_02",
-    exclusiveOffer: "carousel_01.exclusiveOffer"
+    exclusiveOffer: "carousel_01.exclusiveOffer",
   },
 ];
 
 export const cartList = [
   {
-    _id:"1",
+    _id: "1",
     image: Product_01,
     title: "Lenovo Legion 5",
     unitPrice: "10.00$",
     quantity: "1",
   },
   {
-    _id:"2",
+    _id: "2",
     image: Product_02,
     title: "VR HeadSet",
     unitPrice: "10.00$",
     quantity: "1",
   },
   {
-    _id:"3",
+    _id: "3",
     image: Product_04,
     title: "Geforce Rtx 3090 24GB",
     unitPrice: "1320.50$",
     quantity: "2",
   },
-]
+];

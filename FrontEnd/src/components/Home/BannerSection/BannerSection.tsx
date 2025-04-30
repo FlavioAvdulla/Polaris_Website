@@ -29,7 +29,8 @@ const BannerSection = () => {
                       lg:text-[18px]
                       xl:text-[20px]">
           {t('bannerSection.exclusiveOffer')}
-          <span className="rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer border-white text-white items-center justify-center
+          <span className="rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary
+                          border-[1px] cursor-pointer border-white text-white items-center justify-center
                           hover:bg-transparent hover:scale-110 ease-in-out duration-300
                           
                           xs:px-3 xs:py-[1px] xs:text-[8px]
@@ -39,8 +40,7 @@ const BannerSection = () => {
           </span>
         </p>
         <h1 className="text-white font-camptonBold leading-tight
-        
-                        
+
                         sm:text-[15px]
                         md:text-[35px]
                         lg:text-[40px]
@@ -48,7 +48,7 @@ const BannerSection = () => {
           {t('bannerSection.title')}
         </h1>
         <p className="text-white
-                      
+
                       xs:text-[8px]
                       sm:text-[8px]
                       md:text-[15px]
