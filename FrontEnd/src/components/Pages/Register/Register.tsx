@@ -9,7 +9,6 @@ interface RegisterProps {
 }
 
 const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) => {
-  const [fullname, setFullname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
@@ -34,10 +33,10 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
 
     try {
       setIsLoading(true); // Show loading state
-      const response = await axios.post("http://localhost:3001/auth/register", {
-        fullname,
+      const response = await axios.post("http://localhost:4004/auth/register", {
         email,
         password,
+        confirmPassword
       });
       console.log("Registration successful:", response.data);
       alert("Registration successful! Please sign in.");
@@ -63,16 +62,6 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
               <IoIosCloseCircle
                 className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
                 onClick={handleClose}
-              />
-            </div>
-            <div className="flex flex-col w-[100%] gap-2">
-              <h2 className="ml-5">Fullname</h2>
-              <input
-                className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
-                type="text"
-                placeholder="Enter your Fullname"
-                required
-                onChange={(e) => setFullname(e.target.value)}
               />
             </div>
             <div className="flex flex-col w-[100%] gap-2">

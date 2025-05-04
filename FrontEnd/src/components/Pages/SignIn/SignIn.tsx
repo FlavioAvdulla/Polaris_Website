@@ -27,7 +27,7 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
 
     try {
       setIsLoading(true);
-      const response = await axios.post("http://localhost:3001/auth/login", {
+      const response = await axios.post("http://localhost:4004/auth/login", {
         email,
         password,
       });
