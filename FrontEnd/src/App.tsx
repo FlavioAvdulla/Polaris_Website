@@ -44,20 +44,40 @@ import Cart from "./components/Pages/Cart/Cart";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import Contacts from "./components/Pages/Contacts/Contacts";
 
-import './i18n';
+import "./i18n";
+import SignOut from "./components/Pages/SignOut/SignOut";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
+  const [showSignOut, setShowSignOut] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [showFaq, setShowFaq] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
   const [favouriteQuantity, setFavouriteQuantity] = useState(0);
 
   return (
     <>
-      {showSignIn && <SignIn setShowSignIn={setShowSignIn} setShowRegister={setShowRegister} />}
-      {showRegister && <Register setShowRegister={setShowRegister} setShowSignIn={setShowSignIn} />}
+      {showSignIn && (
+        <SignIn
+          setShowSignIn={setShowSignIn}
+          setShowRegister={setShowRegister}
+          setIsSignedIn={setIsSignedIn}
+        />
+      )}
+      {showRegister && (
+        <Register
+          setShowRegister={setShowRegister}
+          setShowSignIn={setShowSignIn}
+        />
+      )}
       {showFaq && <Faq setShowFaq={setShowFaq} />}
+      {showSignOut && (
+        <SignOut
+          setShowSignOut={setShowSignOut}
+          setIsSignedIn={setIsSignedIn}
+        />
+      )}
 
       <div>
         <Router>
@@ -65,7 +85,13 @@ const App = () => {
           {/* Navigation Components */}
           <Navbar_01 setShowFaq={setShowFaq} />
           {/* Pass quantity state to Navbar_02 */}
-          <Navbar_02 cartQuantity={cartQuantity} favouriteQuantity={favouriteQuantity} setShowSignIn={setShowSignIn} />
+          <Navbar_02
+            cartQuantity={cartQuantity}
+            favouriteQuantity={favouriteQuantity}
+            setShowSignIn={setShowSignIn}
+            isSignedIn={isSignedIn}
+            setShowSignOut={setShowSignOut}
+          />
           <Navbar_03 />
           {/* Main Routes */}
           <Routes>
@@ -85,9 +111,20 @@ const App = () => {
             <Route path="/GameAccessories" element={<GameAccessories />} />
             <Route path="/CameraAndPhoto" element={<CameraAndPhoto />} />
             <Route path="/Electronics" element={<Electronics />} />
-            <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones />} />
-            <Route path="/Cart" element={<Cart setCartQuantity={setCartQuantity} />} />
-            <Route path="/Favourites" element={<Favourites setFavouriteQuantity={setFavouriteQuantity} />} />
+            <Route
+              path="/AudioAndHeadphones"
+              element={<AudioAndHeadphones />}
+            />
+            <Route
+              path="/Cart"
+              element={<Cart setCartQuantity={setCartQuantity} />}
+            />
+            <Route
+              path="/Favourites"
+              element={
+                <Favourites setFavouriteQuantity={setFavouriteQuantity} />
+              }
+            />
             {/* Main Home Page */}
             <Route
               path="/"
@@ -107,7 +144,10 @@ const App = () => {
             >
               {/* Nested Routes for ProductSection_02 */}
               <Route index element={<Latest_Products />} />
-              <Route path="deals/latest-products" element={<Latest_Products />} />
+              <Route
+                path="deals/latest-products"
+                element={<Latest_Products />}
+              />
               <Route path="deals/top-rating" element={<Top_Rating />} />
               <Route path="deals/best-selling" element={<Best_Selling />} />
             </Route>

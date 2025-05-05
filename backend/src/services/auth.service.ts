@@ -99,10 +99,10 @@ export const loginUser = async ({
   userAgent,
 }: LoginParams) => {
   const user = await UserModel.findOne({ email });
-  appAssert(user, UNAUTHORIZED, "Invalid email or password");
+  appAssert(user, UNAUTHORIZED, "Invalid email or password!");
 
   const isValid = await user.comparePassword(password);
-  appAssert(isValid, UNAUTHORIZED, "Invalid email or password");
+  appAssert(isValid, UNAUTHORIZED, "Invalid email or password!");
 
   const userId = user._id;
   const session = await SessionModel.create({
@@ -132,7 +132,7 @@ export const verifyEmail = async (code: string) => {
     type: VerificationCodeType.EmailVerification,
     expiresAt: { $gt: new Date() },
   });
-  appAssert(validCode, NOT_FOUND, "Invalid or expired verification code");
+  appAssert(validCode, NOT_FOUND, "Invalid or expired verification code!");
 
   const updatedUser = await UserModel.findByIdAndUpdate(
     validCode.userId,
@@ -141,7 +141,7 @@ export const verifyEmail = async (code: string) => {
     },
     { new: true }
   );
-  appAssert(updatedUser, INTERNAL_SERVER_ERROR, "Failed to verify email");
+  appAssert(updatedUser, INTERNAL_SERVER_ERROR, "Failed to verify email!");
 
   await validCode.deleteOne();
 
@@ -208,7 +208,7 @@ export const sendPasswordResetEmail = async (email: string) => {
     appAssert(
       count <= 1,
       TOO_MANY_REQUESTS,
-      "Too many requests, please try again later"
+      "Too many requests, please try again later."
     );
 
     const expiresAt = oneHourFromNow();
@@ -261,7 +261,7 @@ export const resetPassword = async ({
   const updatedUser = await UserModel.findByIdAndUpdate(validCode.userId, {
     password: await hashValue(password),
   });
-  appAssert(updatedUser, INTERNAL_SERVER_ERROR, "Failed to reset password");
+  appAssert(updatedUser, INTERNAL_SERVER_ERROR, "Failed to reset password!");
 
   await validCode.deleteOne();
 

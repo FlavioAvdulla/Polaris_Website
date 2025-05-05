@@ -12,6 +12,7 @@
   "navbar_02": {
     "all": "All",
     "signIn": "Sign In",
+    "signedIn": "Signed In",
     "searchPlaceholder": "Search for products...",
     "account": "Account",
     "total": "Total",

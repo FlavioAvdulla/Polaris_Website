@@ -1,18 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Google_Logo from "../../../assets/images/Google_Logo.svg";
+
+// React Icons
 import { IoIosCloseCircle } from "react-icons/io";
 
 interface SignInProps {
   setShowSignIn: (value: boolean) => void;
   setShowRegister: (value: boolean) => void;
+  setIsSignedIn: (signedIn: boolean) => void;
 }
 
-const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
+const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSignedIn }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+
+  const handleSignInClose = () => {
+    setShowSignIn(false);
+  };
 
   const handleRegisterOpen = () => {
     setShowSignIn(false);
@@ -33,6 +40,8 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
         email,
         password,
       });
+      setIsSignedIn(true);
+      setShowSignIn(false);
       console.log("Login successful:", response.data);
       setMessage({ text: "Login successful!", type: "success" });
       // Close the modal after a delay on successful login

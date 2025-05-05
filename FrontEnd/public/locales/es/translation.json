@@ -12,6 +12,7 @@
   "navbar_02": {
     "all": "Todo",
     "signIn": "Iniciar Sesión",
+    "signedIn": "Iniciado sesión",
     "searchPlaceholder": "Buscar productos...",
     "account": "Cuenta",
     "total": "Total",

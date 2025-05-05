@@ -114,7 +114,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                     : "bg-red-100 text-red-800"
                 }`}
               >
-                {message.text}
+                <p className="font-camptonBook">{message.text}</p>
               </div>
             )}
             <button
