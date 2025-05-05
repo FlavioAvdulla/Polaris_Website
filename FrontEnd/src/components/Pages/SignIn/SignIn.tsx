@@ -12,6 +12,7 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
 
   const handleRegisterOpen = () => {
     setShowSignIn(false);
@@ -24,6 +25,7 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setMessage(null); // Clear previous messages
 
     try {
       setIsLoading(true);
@@ -32,11 +34,15 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
         password,
       });
       console.log("Login successful:", response.data);
-      alert("Login successful!");
-      setShowSignIn(false); // Close the modal on successful login
+      setMessage({ text: "Login successful!", type: "success" });
+      // Close the modal after a delay on successful login
+      setTimeout(() => setShowSignIn(false), 1500);
     } catch (error: any) {
       console.error("Error during login:", error);
-      alert(error.response?.data?.message || "Invalid email or password. Please try again.");
+      setMessage({
+        text: error.response?.data?.message || "Invalid email or password. Please try again.",
+        type: "error"
+      });
     } finally {
       setIsLoading(false);
     }
@@ -56,6 +62,7 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
                 onClick={handleClose}
               />
             </div>
+            
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Email Address</h2>
               <input
@@ -73,8 +80,22 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister }) => {
                 type="password"
                 placeholder="Enter your Password"
                 required
-                onChange={(e) => setPassword(e.target.value)}/>
+                onChange={(e) => setPassword(e.target.value)}
+              />
             </div>
+
+            {/* Message display */}
+            {message && (
+              <div 
+                className={`flex w-[100%] h-[45px] rounded-full p-5 items-center ${
+                  message.type === "success" 
+                    ? "bg-green-100 text-green-800" 
+                    : "bg-red-100 text-red-800"
+                }`}
+              >
+                {message.text}
+              </div>
+            )}
             <button
               className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
               type="submit"

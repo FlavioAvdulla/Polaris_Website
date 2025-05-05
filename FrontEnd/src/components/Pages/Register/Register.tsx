@@ -13,6 +13,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
 
   const handleSignInOpen = () => {
     setShowRegister(false);
@@ -25,28 +26,36 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setMessage(null); // Clear previous messages
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      setMessage({ text: "Passwords do not match!", type: "error" });
       return;
     }
 
     try {
-      setIsLoading(true); // Show loading state
+      setIsLoading(true);
       const response = await axios.post("http://localhost:4004/auth/register", {
         email,
         password,
         confirmPassword
       });
       console.log("Registration successful:", response.data);
-      alert("Registration successful! Please sign in.");
-      setShowRegister(false);
-      setShowSignIn(true);
+      setMessage({ text: "Registration successful! Redirecting to sign in...", type: "success" });
+      
+      // Redirect to sign in after a delay
+      setTimeout(() => {
+        setShowRegister(false);
+        setShowSignIn(true);
+      }, 1500);
     } catch (error: any) {
       console.error("Error during registration:", error);
-      alert(error.response?.data?.message || "An unexpected error occurred. Please try again.");
+      setMessage({
+        text: error.response?.data?.message || "An unexpected error occurred. Please try again.",
+        type: "error"
+      });
     } finally {
-      setIsLoading(false); // Reset loading state
+      setIsLoading(false);
     }
   };
 
@@ -64,6 +73,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                 onClick={handleClose}
               />
             </div>
+            
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Email Address</h2>
               <input
@@ -94,6 +104,19 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             </div>
+            
+            {/* Message display */}
+            {message && (
+              <div 
+                className={`flex w-[100%] h-[45px] rounded-full p-5 items-center ${
+                  message.type === "success" 
+                    ? "bg-green-100 text-green-800" 
+                    : "bg-red-100 text-red-800"
+                }`}
+              >
+                {message.text}
+              </div>
+            )}
             <button
               className="flex items-center justify-center border-primary border-[1px] text-white duration-300
                           text-[17px] w-[100%] h-[45px] bg-primary rounded-full
