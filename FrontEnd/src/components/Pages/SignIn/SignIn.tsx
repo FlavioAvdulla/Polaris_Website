@@ -11,11 +11,19 @@ interface SignInProps {
   setIsSignedIn: (signedIn: boolean) => void;
 }
 
-const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSignedIn, setShowForgotPassword }) => {
+const SignIn: React.FC<SignInProps> = ({
+  setShowSignIn,
+  setShowRegister,
+  setIsSignedIn,
+  setShowForgotPassword,
+}) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+  const [message, setMessage] = useState<{
+    text: string;
+    type: "success" | "error";
+  } | null>(null);
 
   // const handleSignInClose = () => {
   //   setShowSignIn(false);
@@ -28,8 +36,8 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSi
 
   const handleForgotPasswordOpen = () => {
     setShowSignIn(false);
-    setShowForgotPassword(true)
-  }
+    setShowForgotPassword(true);
+  };
 
   const handleClose = () => {
     setShowSignIn(false);
@@ -54,8 +62,10 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSi
     } catch (error: any) {
       console.error("Error during login:", error);
       setMessage({
-        text: error.response?.data?.message || "Invalid email or password. Please try again.",
-        type: "error"
+        text:
+          error.response?.data?.message ||
+          "Invalid email or password. Please try again.",
+        type: "error",
       });
     } finally {
       setIsLoading(false);
@@ -68,15 +78,16 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSi
         <div className="flex p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]">
           <form
             className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]"
-            onSubmit={handleSubmit}>
+            onSubmit={handleSubmit}
+          >
             <div className="flex w-[100%] h-auto items-center justify-between">
-              <h1 className="font-camptonBook text-[25px] ml-5">Sign In</h1>
+              <h1 className="font-camptonBook text-[20px] ml-5">Sign In</h1>
               <IoIosCloseCircle
                 className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
                 onClick={handleClose}
               />
             </div>
-            
+
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5">Email Address</h2>
               <input
@@ -100,22 +111,24 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSi
 
             {/* Message display */}
             {message && (
-              <div 
+              <div
                 className={`flex w-[100%] h-[45px] rounded-full p-5 items-center ${
-                  message.type === "success" 
-                    ? "bg-green-100 text-green-800" 
-                    : "bg-red-100 text-red-800"
-                }`}
-              >
+                  message.type === "success"
+                    ? "bg-green-100 text-green-800"
+                    : "bg-red-100 text-primary"
+                }`}>
                 {message.text}
               </div>
             )}
             <p
-                  className="ml-2 text-primary xs:text-[12px] md:text-[16px] cursor-pointer" onClick={handleForgotPasswordOpen}>
-                  Forgot Password?
-                </p>
+              className="ml-10 text-primary w-[100%] xs:text-[12px] md:text-[16px] cursor-pointer"
+              onClick={handleForgotPasswordOpen}>
+              Forgot Password?
+            </p>
             <button
-              className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
+              className="flex items-center justify-center border-primary border-[1px] text-white
+                          duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full
+                          hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
               type="submit"
               disabled={isLoading}>
               {isLoading ? "Signing In..." : "Sign In"}
@@ -125,16 +138,26 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSi
               <p>OR</p>
               <div className="h-[0.5px] w-[100%] bg-black" />
             </div>
-            <button className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300 text-[17px] w-[100%] h-[45px] bg-transparent rounded-full">
-              <img className="w-[25px] h-auto" src={Google_Logo} alt="Google_Logo" />
-              <p className="xs:text-[14px] md:text-[16px]">Sign in with Google</p>
+            <button
+              className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300
+                              text-[17px] w-[100%] h-[45px] bg-transparent rounded-full">
+              <img
+                className="w-[25px] h-auto"
+                src={Google_Logo}
+                alt="Google_Logo"/>
+              <p className="xs:text-[14px] md:text-[16px]">
+                Sign in with Google
+              </p>
             </button>
             <div className="flex w-[100%] h-auto justify-center">
-              <p className="xs:text-[12px] md:text-[16px]">Don't have an account?</p>
+              <p className="xs:text-[12px] md:text-[16px]">
+                Don't have an account?
+              </p>
               <button className="outline-none border-none underline-offset-1">
                 <p
                   className="ml-2 text-primary xs:text-[12px] md:text-[16px]"
-                  onClick={handleRegisterOpen}>
+                  onClick={handleRegisterOpen}
+                >
                   Register
                 </p>
               </button>

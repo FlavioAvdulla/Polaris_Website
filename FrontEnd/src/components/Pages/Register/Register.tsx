@@ -69,7 +69,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
             className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]"
             onSubmit={handleSubmit}>
             <div className="flex w-[100%] h-auto items-center justify-between">
-              <h1 className="font-camptonBook text-[25px] ml-5">Register</h1>
+              <h1 className="font-camptonBook text-[20px] ml-5">Register</h1>
               <IoIosCloseCircle
                 className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
                 onClick={handleClose}
