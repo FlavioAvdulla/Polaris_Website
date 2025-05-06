@@ -17,23 +17,18 @@ const Top_Rating = () => {
 
   const handleImageClick = (id) => {
     console.log(`Image with id ${id} clicked.`)
-    if (id === "1") {
-      navigate("/Product_01")
+    const routeMap = {
+      "1": "/Product_01",
+      "2": "/Product_02",
+      "3": "/Product_03",
+      "4": "/Product_04",
+      "5": "/Product_05",
+      "6": "/Product_06"
     }
-    if (id === "2") {
-      navigate("/Product_02")
-    }
-    if (id === "3") {
-      navigate("/Product_03")
-    }
-    if (id === "4") {
-      navigate("/Product_04")
-    }
-    if (id === "5") {
-      navigate("/Product_05")
-    }
-    if (id === "6") {
-      navigate("/Product_06")
+
+    const route = routeMap[id];
+    if (route) {
+      navigate(route)
     }
   }
 

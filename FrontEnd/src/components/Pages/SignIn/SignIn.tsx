@@ -11,20 +11,25 @@ interface SignInProps {
   setIsSignedIn: (signedIn: boolean) => void;
 }
 
-const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSignedIn }) => {
+const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSignedIn, setShowForgotPassword }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
 
-  const handleSignInClose = () => {
-    setShowSignIn(false);
-  };
+  // const handleSignInClose = () => {
+  //   setShowSignIn(false);
+  // };
 
   const handleRegisterOpen = () => {
     setShowSignIn(false);
     setShowRegister(true);
   };
+
+  const handleForgotPasswordOpen = () => {
+    setShowSignIn(false);
+    setShowForgotPassword(true)
+  }
 
   const handleClose = () => {
     setShowSignIn(false);
@@ -105,6 +110,10 @@ const SignIn: React.FC<SignInProps> = ({ setShowSignIn, setShowRegister, setIsSi
                 {message.text}
               </div>
             )}
+            <p
+                  className="ml-2 text-primary xs:text-[12px] md:text-[16px] cursor-pointer" onClick={handleForgotPasswordOpen}>
+                  Forgot Password?
+                </p>
             <button
               className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
               type="submit"

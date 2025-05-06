@@ -32,6 +32,12 @@ const SignOut = ({ setShowSignOut, setIsSignedIn }) => {
           <button
             className="flex items-center justify-center border-primary border-[1px] text-white
                         duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full
+                        hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary">
+            <p className="font-camptonBook">Change Password</p>
+          </button>
+          <button
+            className="flex items-center justify-center border-primary border-[1px] text-white
+                        duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full
                         hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
             onClick={handleSignOut}>
             <p className="font-camptonBook">Sign Out</p>

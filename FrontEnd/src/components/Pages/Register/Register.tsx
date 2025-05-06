@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Google_Logo from "../../../assets/images/Google_Logo.svg";
+
+// React Icons
 import { IoIosCloseCircle } from "react-icons/io";
 
 interface RegisterProps {

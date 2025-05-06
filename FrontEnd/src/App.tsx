@@ -46,11 +46,13 @@ import Contacts from "./components/Pages/Contacts/Contacts";
 
 import "./i18n";
 import SignOut from "./components/Pages/SignOut/SignOut";
+import ForgotPassword from "./components/Pages/ForgotPassword/ForgotPassword";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showSignOut, setShowSignOut] = useState(false);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [showFaq, setShowFaq] = useState(false);
   const [cartQuantity, setCartQuantity] = useState(0);
@@ -62,16 +64,28 @@ const App = () => {
         <SignIn
           setShowSignIn={setShowSignIn}
           setShowRegister={setShowRegister}
+          setShowForgotPassword={setShowForgotPassword}
           setIsSignedIn={setIsSignedIn}
         />
       )}
+
       {showRegister && (
         <Register
           setShowRegister={setShowRegister}
           setShowSignIn={setShowSignIn}
         />
       )}
+
+      {showForgotPassword && (
+        <ForgotPassword
+          setShowRegister={setShowRegister}
+          setShowForgotPassword={setShowForgotPassword}
+          setShowSignIn={setShowSignIn}
+        />
+      )}
+
       {showFaq && <Faq setShowFaq={setShowFaq} />}
+
       {showSignOut && (
         <SignOut
           setShowSignOut={setShowSignOut}
