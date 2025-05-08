@@ -269,5 +269,31 @@
     "detail_03": "Retroiluminación RGB.",
     "detail_04": "Diseño resistente a salpicaduras.",
     "addToCart": "AÑADIR A LA CESTA"
+  },
+  "contacts": {
+    "address": "Dirección",
+    "talkToUs": "Habla con nosotros",
+    "sendUsEmail": "Envíanos un correo electrónico",
+    "contactUs": "Contacta con nosotras",
+    "title": "¿TIENES ALGUNA PREGUNTA?",
+    "description": "Si tienes alguna pregunta, ¡no dudes en contactarnos!",
+    "fullName": "Nombre completo",
+    "email": "Correo electrónico",
+    "phoneNumber": "Número de teléfono",
+    "subject": "Sujeto",
+    "service": "Servicio",
+    "yourMessage": "Tu mensaje",
+    "submit": "ENVIAR AHORA"
+  },
+  "faq": {
+    "faq": "Preguntas Frecuentes",
+    "question_01": "¿Cuanto tiempo tarda el envio?",
+    "answer_01": "La mayoría de los pedidos llegan en un plazo de 7 a 14 días laborables. Recibirás información de seguimiento por correo electrónico una vez enviado tu pedido. Los plazos de entrega pueden variar según la ubicación.",
+    "question_02": "¿Cuál es su política de devolución?",
+    "answer_02": "Aceptamos devoluciones en un plazo de 30 días. Los artículos deben estar sin usar y en su embalaje original. Por favor, contáctenos para obtener la autorización de devolución antes de enviarlos.",
+    "question_03": "¿Hacen envíos internacionales?",
+    "answer_03": "¡Sí! Enviamos a la mayoría de los países del mundo. Los clientes internacionales son responsables de cualquier tarifa aduanera o impuesto de importación aplicable.",
+    "question_04": "¿Cómo puedo rastrear mi pedido?",
+    "answer_04": "Recibirás tu número de seguimiento por correo electrónico en cuanto se envíe tu pedido. Si no lo encuentras, revisa tu carpeta de correo no deseado o contacta con nuestro equipo de soporte."
   }
 }

@@ -269,5 +269,31 @@
     "detail_03": "RGB backlighting",
     "detail_04": "Splash resistant design",
     "addToCart": "ADD TO CART"
+  },
+  "contacts": {
+    "address": "Address",
+    "talkToUs": "Talk to us",
+    "sendUsEmail": "Send us email",
+    "contactUs": "Contact Us",
+    "title": "DO YOU HAVE ANY QUESTION?",
+    "description": "If you have any questions, please feel free to contact us!",
+    "fullName": "Full Name",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "subject": "Subject",
+    "service": "Service",
+    "yourMessage": "Your message",
+    "submit": "SUBMIT NOW"
+  },
+  "faq": {
+    "faq": "Frequent Questions",
+    "question_01": "How long does shipping take?",
+    "answer_01": "Most orders arrive in 7-14 business days. You'll receive tracking information via email once your order ships. Delivery times may vary by location.",
+    "question_02": "What is your return policy?",
+    "answer_02": "We accept returns within 30 days. Items must be unused and in original packaging. Please contact us for return authorization before shipping back.",
+    "question_03": "Do you ship internationally?",
+    "answer_03": "Yes! We ship to most countries worldwide. International customers are responsible for any customs fees or import taxes that may apply.",
+    "question_04": "How can I track my order?",
+    "answer_04": "Your tracking number will be emailed as soon as your order ships. If you don't see it, please check your spam folder or contact our support team."
   }
 }

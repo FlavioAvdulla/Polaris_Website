@@ -9,7 +9,12 @@ import {
 
 import { IoIosCloseCircle } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const Faq = ({ setShowFaq }) => {
+
+  const { t } = useTranslation();
 
   const handleClose = () => {
     setShowFaq(false);
@@ -29,17 +34,17 @@ const Faq = ({ setShowFaq }) => {
                               xs:w-[95%] md:w-[350px]">
                                 
           <div className="flex w-[100%] h-auto items-center justify-between">
-            <h1 className="font-camptonBook text-[25px]">Faq</h1>
+            <h1 className="font-camptonBook text-[20px]">{t("faq.faq")}</h1>
             <IoIosCloseCircle
               className="text-primary text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
               onClick={handleClose}
             />
           </div>
           <AccordionTrigger className="font-camptonMedium">
-            Is it accessible?
+          {t("faq.question_01")}
           </AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          <AccordionContent className="text-justify">
+          {t("faq.answer_01")}
           </AccordionContent>
         </AccordionItem>
         {/* ============= Question 02 ============= */}
@@ -48,10 +53,10 @@ const Faq = ({ setShowFaq }) => {
           className="flex-col p-5 h-auto rounded-none bg-white xs:w-[95%] md:w-[350px]"
         >
           <AccordionTrigger className="font-camptonMedium">
-            Is it accessible?
+          {t("faq.question_02")}
           </AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          <AccordionContent className="text-justify">
+          {t("faq.answer_02")}
           </AccordionContent>
         </AccordionItem>
         {/* ============= Question 03 ============= */}
@@ -60,10 +65,10 @@ const Faq = ({ setShowFaq }) => {
           className="flex-col p-5 h-auto rounded-none bg-white xs:w-[95%] md:w-[350px]"
         >
           <AccordionTrigger className="font-camptonMedium">
-            Is it accessible?
+          {t("faq.question_03")}
           </AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          <AccordionContent className="text-justify">
+          {t("faq.answer_03")}
           </AccordionContent>
         </AccordionItem>
         {/* ============= Question 04 ============= */}
@@ -72,10 +77,10 @@ const Faq = ({ setShowFaq }) => {
           className="flex-col p-5 h-auto rounded-xl rounded-tl-none rounded-tr-none bg-white xs:w-[95%] md:w-[350px]"
         >
           <AccordionTrigger className="font-camptonMedium">
-            Is it accessible?
+          {t("faq.question_04")}
           </AccordionTrigger>
-          <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+          <AccordionContent className="text-justify">
+          {t("faq.answer_04")}
           </AccordionContent>
         </AccordionItem>
       </Accordion>
