@@ -229,5 +229,45 @@
     "detail_03": "Field of View: Approx. 100 degrees",
     "detail_04": "Sensors: Accelerometer, gyroscope",
     "addToCart": "ADD TO CART"
+  },
+  "product_03": {
+    "title": "PLAYSTATION®5 PRO",
+    "description": "Play PS5® games with the most impressive visuals ever possible on a PlayStation console.",
+    "review": "6 Customer Reviews",
+    "detail_01": "Ultra-high definition play with astonishing detail.",
+    "detail_02": "Consistent frame rates for silky smooth gameplay with support for 60Hz and 120Hz displays.",
+    "detail_03": "Next-level realism with ray-traced reflections, shadows, and high-quality",
+    "detail_04": "Up to 1tb storage",
+    "addToCart": "ADD TO CART"
+  },
+  "product_04": {
+    "title": "GEFORCE RTX 3090 24GB",
+    "description": "The GeForce RTX 3090 delivers incredible performance with enhanced ray tracing, AI capabilities, and 24 GB of memory.",
+    "review": "6 Customer Reviews",
+    "detail_01": "24GB GDDR6X (384-bit).",
+    "detail_02": "PCI Express 4.0.",
+    "detail_03": "Antialiasing and anisotropic filtering.",
+    "detail_04": "DirectX 12 Ultimate.",
+    "addToCart": "ADD TO CART"
+  },
+  "product_05": {
+    "title": "SONY HEADSET WH-1000XM5",
+    "description": "Industry-leading noise cancellation optimized to you Magnificent Sound, engineered to perfectio Crystal clear.",
+    "review": "7 Customer Reviews",
+    "detail_01": "Industry-Leading Noise Cancellation.",
+    "detail_02": "Extraordinary Sound Quality.",
+    "detail_03": "Crystal Clear Call Quality.",
+    "detail_04": "Up to 30-Hour Battery Life.",
+    "addToCart": "ADD TO CART"
+  },
+  "product_06": {
+    "title": "REDRAGON K535 KEYBOARD",
+    "description": "Industry-leading noise cancellation optimized to you Magnificent Sound, engineered to perfectio Crystal clear.",
+    "review": "7 Customer Reviews",
+    "detail_01": "Wired mechanical keyboard",
+    "detail_02": "Type C to USB detachable cable",
+    "detail_03": "RGB backlighting",
+    "detail_04": "Splash resistant design",
+    "addToCart": "ADD TO CART"
   }
 }

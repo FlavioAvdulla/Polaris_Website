@@ -213,7 +213,7 @@
   "product_01": {
     "title": "LENOVO LEGION 5",
     "description": "SSD ultrarrápido, impresionantes gráficos 4K y una experiencia háptica inmersiva en el DualSense. El futuro de los videojuegos ya está aquí.",
-    "review": "4 Opiniones de clientes",
+    "review": "4 Opiniones de clientes.",
     "detail_01": "Ryzen 7 5800H hasta 4,40 GHz",
     "detail_02": "Gráficos RTX 3070 8GB GDDR6",
     "detail_03": "12 GB de RAM DDR4 + SSD NVMe de 4 TB",
@@ -223,11 +223,51 @@
   "product_02": {
     "title": "PS VR AURICULARES",
     "description": "Experience new realities with a custom OLED screen and smooth 120fps visuals to create complete immersion in your games.",
-    "review": "6 Opiniones de clientes",
+    "review": "6 Opiniones de clientes.",
     "detail_01": "Pantalla: OLED",
     "detail_02": "Tamaño de la pantalla: 5,7 pulgadas",
     "detail_03": "Campo de visión: Aprox. 100 grados",
     "detail_04": "Sensores: Acelerómetro, giroscopio",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "product_03": {
+    "title": "PLAYSTATION®5 PRO",
+    "description": "Juega juegos de PS5® con las imágenes más impresionantes jamás vistas en una consola PlayStation.",
+    "review": "6 Opiniones de clientes.",
+    "detail_01": "Juego de ultra alta definición con detalles asombrosos.",
+    "detail_02": "Velocidades de cuadro consistentes para una experiencia de juego fluida y compatible con pantallas de 60 Hz y 120 Hz.",
+    "detail_03": "Realismo de siguiente nivel con reflejos, sombras y alta calidad trazados por rayos.",
+    "detail_04": "Hasta 1TB de almacenamiento.",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "product_04": {
+    "title": "GEFORCE RTX 3090 24GB",
+    "description": "La GeForce RTX 3090 ofrece un rendimiento increíble con trazado de rayos mejorado, capacidades de IA y 24 GB de memoria.",
+    "review": "6 Opiniones de clientes.",
+    "detail_01": "24GB GDDR6X (384-bit).",
+    "detail_02": "PCI Express 4.0.",
+    "detail_03": "Antialiasing y filtrado anisotrópico.",
+    "detail_04": "DirectX 12 Ultimate.",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "product_05": {
+    "title": "AURICULARES SONY WH-1000XM5",
+    "description": "Cancelación de ruido líder en la industria optimizada para usted. Sonido magnífico, diseñado a la perfección. Nitidez cristalina.",
+    "review": "5 Opiniones de clientes.",
+    "detail_01": "Cancelación de ruido líder en la industria.",
+    "detail_02": "Calidad de sonido extraordinaria.",
+    "detail_03": "Calidad de llamada nítida.",
+    "detail_04": "Hasta 30 horas de duración de batería.",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "product_06": {
+    "title": "TECLADO REDRAGON K535",
+    "description": "Cancelación de ruido líder en la industria optimizada para usted. Sonido magnífico, diseñado a la perfección. Nitidez cristalina.",
+    "review": "7 Opiniones de clientes.",
+    "detail_01": "Teclado mecánico con cable.",
+    "detail_02": "Cable desmontable tipo C a USB.",
+    "detail_03": "Retroiluminación RGB.",
+    "detail_04": "Diseño resistente a salpicaduras.",
     "addToCart": "AÑADIR A LA CESTA"
   }
 }

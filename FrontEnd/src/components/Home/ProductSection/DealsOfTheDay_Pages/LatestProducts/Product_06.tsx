@@ -9,6 +9,9 @@ import { IoIosArrowForward } from "react-icons/io";
 // Scroll
 import ScrollToTop from "@/ScrollToTop/ScrollToTop";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 
 // Photos
 import Keyboard_01 from "../../../../../assets/images/Products/Keyboard/Keyboard_01.jpg";
@@ -19,6 +22,8 @@ import Keyboard_04 from "../../../../../assets/images/Products/Keyboard/Keyboard
 import { latestProducts } from "../../ProductSection";
 
 const Product_06 = () => {
+
+  const { t } = useTranslation();
   const [mainPhoto, setMainPhoto] = useState(Keyboard_01);
   const [quantity, setQuantity] = useState("01");
 
@@ -337,7 +342,7 @@ const Product_06 = () => {
                           xs:text-[10px]
                           lg:text-[18px]
                           2xl:text-[20px]">
-                ADD TO CART</p>
+                {t(product.addToCart)}</p>
               <i>
                 <IoIosArrowForward className="
                                               xs:text-[10px]

@@ -178,14 +178,14 @@ const Product_01 = () => {
                         lg:text-[38px]
                         xl:text-[45px]
                         ">
-          {t("product_01.title")}
+          {t(product.title)}
         </h1>
         <p className="w-[100%] font-camptonBook leading-tight
         
                       xs:text-[10px] text-justify
                       md:text-[13px]
                       lg:text-[15px]">
-          {t("product_01.description")}
+          {t(product.description)}
         </p>
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook
@@ -228,7 +228,7 @@ const Product_01 = () => {
                         
                         xs:text-[10px]
                         lg:text-[13px]
-                        xl:text-[15px]">{t("product_01.detail_01")}</p>
+                        xl:text-[15px]">{t(product.detail_01)}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -243,7 +243,7 @@ const Product_01 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{t("product_01.detail_02")}</p>
+                          xl:text-[15px]">{t(product.detail_02)}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -257,7 +257,7 @@ const Product_01 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{t("product_01.detail_03")}</p>
+                          xl:text-[15px]">{t(product.detail_03)}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -272,7 +272,7 @@ const Product_01 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{t("product_01.detail_04")}</p>
+                          xl:text-[15px]">{t(product.detail_04)}</p>
           </div>
         </div>
         {/* ============= Quantity ============= */}
@@ -339,7 +339,7 @@ const Product_01 = () => {
                           xs:text-[10px]
                           lg:text-[18px]
                           2xl:text-[20px]">
-                {t("product_01.addToCart")}</p>
+                {t(product.addToCart)}</p>
               <i>
                 <IoIosArrowForward className="
                                               xs:text-[10px]
