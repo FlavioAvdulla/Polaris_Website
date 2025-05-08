@@ -3,6 +3,9 @@ import React, { useState } from "react";
 // React Icons
 import { IoIosCloseCircle } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const ForgotPassword = ({
   setShowSignIn,
   setShowRegister,
@@ -12,6 +15,8 @@ const ForgotPassword = ({
     setShowForgotPassword(false);
     setShowSignIn(true);
   };
+
+  const { t } = useTranslation();
 
   const handleRegisterOpen = () => {
     setShowForgotPassword(false);
@@ -30,7 +35,7 @@ const ForgotPassword = ({
         <div className="flex flex-col gap-10 p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]">
           <div className="flex w-[100%] h-auto items-center justify-between">
             <h1 className="font-camptonBook text-[20px] ml-5">
-              Reset Password.
+            {t("authentication.resetPassword")}
             </h1>
             <IoIosCloseCircle
               className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
@@ -39,11 +44,11 @@ const ForgotPassword = ({
           </div>
 
           <div className="flex flex-col w-[100%] gap-2">
-            <h2 className="ml-5">Email Address</h2>
+            <h2 className="ml-5">{t("authentication.emailAddress")}</h2>
             <input
               className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
               type="email"
-              placeholder="Enter your Email"
+              placeholder={t("authentication.enterEmail")}
               required
               // onChange={(e) => setEmail(e.target.value)}
             />
@@ -53,17 +58,17 @@ const ForgotPassword = ({
               className="flex items-center justify-center border-primary border-[1px] text-white duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full
                         hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary">
               <p className="ml-2 xs:text-[12px] md:text-[16px] font-camptonBook">
-                Reset Password
+              {t("authentication.resetPassword")}
               </p>
             </button>
             <p className="font-camptonBook ml-5">
-              Go back to{" "}
+            {t("authentication.goBackTo")}{" "}
               <button className="text-primary" onClick={handleSignInOpen}>
-                Sign In
+              {t("authentication.signIn")}
               </button>{" "}
-              or{" "}
+              {t("authentication.or2")}{" "}
               <button className="text-primary" onClick={handleRegisterOpen}>
-                Sign up
+              {t("authentication.signup")}
               </button>.
             </p>
           </div>

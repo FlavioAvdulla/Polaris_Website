@@ -189,5 +189,45 @@
     "info_02": "Tiempo restante hasta el final de la oferta.",
     "available": "Disponible",
     "sold": "Vendido"
+  },
+  "authentication": {
+    "signIn": "Iniciar sesión",
+    "signingIn": "Iniciar sesión...",
+    "signup": "Inscribirse",
+    "register": "Registro",
+    "registering": "Registrarse...",
+    "emailAddress": "Correo electrónico",
+    "enterEmail": "Introduce tu correo electrónico",
+    "enterPassword": "Ingrese su contraseña",
+    "forgotPassword": "¿Has olvidado tu contraseña?",
+    "password": "Contraseña",
+    "confirmPassword": "Confirme su contraseña",
+    "alreadyHaveAnAccount": "¿Ya tienes una cuenta?",
+    "signInWithGoogle": "Iniciar sesión con Google",
+    "dontHaveAnAccount": "¿No tienes una cuenta?",
+    "resetPassword": "Restablecer contraseña.",
+    "goBackTo": "Regresar a",
+    "or1": "O",
+    "or2": "o"
+  },
+  "product_01": {
+    "title": "LENOVO LEGION 5",
+    "description": "SSD ultrarrápido, impresionantes gráficos 4K y una experiencia háptica inmersiva en el DualSense. El futuro de los videojuegos ya está aquí.",
+    "review": "4 Opiniones de clientes",
+    "detail_01": "Ryzen 7 5800H hasta 4,40 GHz",
+    "detail_02": "Gráficos RTX 3070 8GB GDDR6",
+    "detail_03": "12 GB de RAM DDR4 + SSD NVMe de 4 TB",
+    "detail_04": "Windows 11 Professional (64 bits)",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "product_02": {
+    "title": "PS VR AURICULARES",
+    "description": "Experience new realities with a custom OLED screen and smooth 120fps visuals to create complete immersion in your games.",
+    "review": "6 Opiniones de clientes",
+    "detail_01": "Pantalla: OLED",
+    "detail_02": "Tamaño de la pantalla: 5,7 pulgadas",
+    "detail_03": "Campo de visión: Aprox. 100 grados",
+    "detail_04": "Sensores: Acelerómetro, giroscopio",
+    "addToCart": "AÑADIR A LA CESTA"
   }
 }

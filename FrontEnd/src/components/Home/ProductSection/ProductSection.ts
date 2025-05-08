@@ -56,6 +56,7 @@ export const productSection_01 = [
     rating: "2.0",
     normalPrice: "€359",
     title: "productSection_01.title_01",
+    description: "productSection_01.decription_01",
     quantity: "25",
     available: "productSection_01.available",
     quantitySold: "5",
@@ -609,8 +610,8 @@ export const latestProducts = [
   {
     _id: "1",
     image: Product_01,
-    title: "LENOVO LEGION 5",
-    description: "hetrhstejs",
+    title: "productSection_01.title_03",
+    description: "productSection_01.description_03",
     normalPrice: "€759",
     offerPrice: "€639",
     detail_01: "Ryzen 7 5800H up to 4.40GHz",

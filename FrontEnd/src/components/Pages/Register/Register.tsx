@@ -5,6 +5,9 @@ import Google_Logo from "../../../assets/images/Google_Logo.svg";
 // React Icons
 import { IoIosCloseCircle } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 interface RegisterProps {
   setShowSignIn: (value: boolean) => void;
   setShowRegister: (value: boolean) => void;
@@ -16,6 +19,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+  const { t } = useTranslation();
 
   const handleSignInOpen = () => {
     setShowRegister(false);
@@ -69,7 +73,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
             className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]"
             onSubmit={handleSubmit}>
             <div className="flex w-[100%] h-auto items-center justify-between">
-              <h1 className="font-camptonBook text-[20px] ml-5">Register</h1>
+              <h1 className="font-camptonBook text-[20px] ml-5">{t("authentication.register")}</h1>
               <IoIosCloseCircle
                 className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
                 onClick={handleClose}
@@ -77,31 +81,31 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
             </div>
             
             <div className="flex flex-col w-[100%] gap-2">
-              <h2 className="ml-5">Email Address</h2>
+              <h2 className="ml-5">{t("authentication.emailAddress")}</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="email"
-                placeholder="Enter your Email"
+                placeholder={t("authentication.enterEmail")}
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="flex flex-col w-[100%] gap-2">
-              <h2 className="ml-5">Password</h2>
+              <h2 className="ml-5">{t("authentication.password")}</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="password"
-                placeholder="Enter your Password"
+                placeholder={t("authentication.enterPassword")}
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="flex flex-col w-[100%] gap-2">
-              <h2 className="ml-5">Confirm Password</h2>
+              <h2 className="ml-5">{t("authentication.confirmPassword")}</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="password"
-                placeholder="Confirm your Password"
+                placeholder={t("authentication.confirmPassword")}
                 required
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
@@ -125,16 +129,15 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                           hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
               type="submit"
               disabled={isLoading}>
-              {isLoading ? "Registering..." : "Register"}
+              {isLoading ? t("authentication.registering") : t("authentication.register")}
             </button>
             <div className="flex w-[100%] h-auto justify-center">
-              <p className="xs:text-[12px] md:text-[16px]">Already have an account?</p>
+              <p className="xs:text-[12px] md:text-[16px]">{t("authentication.alreadyHaveAnAccount")}</p>
               <button className="outline-none border-none underline-offset-1">
                 <p
                   className="ml-2 text-primary xs:text-[12px] md:text-[16px]"
-                  onClick={handleSignInOpen}
-                >
-                  Sign in
+                  onClick={handleSignInOpen}>
+                  {t("authentication.signIn")}
                 </p>
               </button>
             </div>

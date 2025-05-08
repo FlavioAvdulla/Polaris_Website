@@ -189,5 +189,45 @@
     "info_02": "Time remaining until the end of the offer.",
     "available": "Available",
     "sold": "Sold"
+  },
+  "authentication": {
+    "signIn": "Sign In",
+    "signingIn": "Signing In...",
+    "signup": "Sign Up",
+    "register": "Register",
+    "registering": "Registering...",
+    "emailAddress": "Email Address",
+    "enterEmail": "Enter your Email",
+    "enterPassword": "Enter your Password",
+    "forgotPassword": "Forgot Password?",
+    "password": "Password",
+    "confirmPassword": "Confirm your Password",
+    "alreadyHaveAnAccount": "Already have an account?",
+    "signInWithGoogle": "Sign In with Google",
+    "dontHaveAnAccount": "Don't have an account?",
+    "resetPassword": "Reset Password.",
+    "goBackTo": "Go back to",
+    "or1": "OR",
+    "or2": "or"
+  },
+  "product_01": {
+    "title": "LENOVO LEGION 5",
+    "description": "Blazing-fast SSD, stunning 4K graphics, and immersive DualSense haptics. The future of gaming is here.",
+    "review": "4 Customer Reviews",
+    "detail_01": "Ryzen 7 5800H up to 4.40GHz",
+    "detail_02": "RTX 3070 8GB GDDR6 Graphics",
+    "detail_03": "12GB DDR4 RAM + 4TB NVMe SSD",
+    "detail_04": "Windows 11 Professional (64bit)",
+    "addToCart": "ADD TO CART"
+  },
+  "product_02": {
+    "title": "PS VR HEADSET",
+    "description": "Experience new realities with a custom OLED screen and smooth 120fps visuals to create complete immersion in your games.",
+    "review": "6 Customer Reviews",
+    "detail_01": "Display: OLED",
+    "detail_02": "Display Size: 5.7 inches",
+    "detail_03": "Field of View: Approx. 100 degrees",
+    "detail_04": "Sensors: Accelerometer, gyroscope",
+    "addToCart": "ADD TO CART"
   }
 }

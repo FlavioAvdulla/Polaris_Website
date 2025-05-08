@@ -9,6 +9,9 @@ import { IoIosArrowForward } from "react-icons/io";
 // Scroll
 import ScrollToTop from "@/ScrollToTop/ScrollToTop";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 
 // Photos
 import Vr_HeadSet_01 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_HeadSet_01.jpg";
@@ -19,6 +22,7 @@ import Vr_HeadSet_04 from "../../../../../assets/images/Products/Vr_HeadSet/Vr_H
 import { latestProducts } from "../../ProductSection";
 
 const Product_02 = () => {
+  const { t } = useTranslation();
   const [mainPhoto, setMainPhoto] = useState(Vr_HeadSet_01);
   const [quantity, setQuantity] = useState("01");
 
@@ -176,14 +180,14 @@ const Product_02 = () => {
                         lg:text-[38px]
                         xl:text-[45px]
                         ">
-          {product.title}
+          {t("product_02.title")}
         </h1>
         <p className="w-[100%] font-camptonBook leading-tight
         
                       xs:text-[10px] text-justify
                       md:text-[13px]
                       lg:text-[15px]">
-          {product.description}
+          {t("product_02.description")}
         </p>
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook
@@ -191,7 +195,7 @@ const Product_02 = () => {
                       xs:text-[12px]
                       md:text-[15px]
                       lg:text-[18px]
-                      xl:text-[20px]">{product.reviews}</p>
+                      xl:text-[20px]">{t("product_02.review")}</p>
         {/* ============= Price ============= */}
         <div className="flex items-center
         
@@ -226,7 +230,7 @@ const Product_02 = () => {
                         
                         xs:text-[10px]
                         lg:text-[13px]
-                        xl:text-[15px]">{product.detail_01}</p>
+                        xl:text-[15px]">{t("product_02.detail_01")}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -241,7 +245,7 @@ const Product_02 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{product.detail_02}</p>
+                          xl:text-[15px]">{t("product_02.detail_02")}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -255,7 +259,7 @@ const Product_02 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{product.detail_03}</p>
+                          xl:text-[15px]">{t("product_02.detail_03")}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -270,7 +274,7 @@ const Product_02 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{product.detail_04}</p>
+                          xl:text-[15px]">{t("product_02.detail_04")}</p>
           </div>
         </div>
         {/* ============= Quantity ============= */}
@@ -337,7 +341,7 @@ const Product_02 = () => {
                           xs:text-[10px]
                           lg:text-[18px]
                           2xl:text-[20px]">
-                ADD TO CART</p>
+                {t("product_01.addToCart")}</p>
               <i>
                 <IoIosArrowForward className="
                                               xs:text-[10px]

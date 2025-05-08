@@ -5,6 +5,9 @@ import Google_Logo from "../../../assets/images/Google_Logo.svg";
 // React Icons
 import { IoIosCloseCircle } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 interface SignInProps {
   setShowSignIn: (value: boolean) => void;
   setShowRegister: (value: boolean) => void;
@@ -15,11 +18,12 @@ const SignIn: React.FC<SignInProps> = ({
   setShowSignIn,
   setShowRegister,
   setIsSignedIn,
-  setShowForgotPassword,
+  setShowForgotPassword
 }) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
+  const { t } = useTranslation();
   const [message, setMessage] = useState<{
     text: string;
     type: "success" | "error";
@@ -78,10 +82,9 @@ const SignIn: React.FC<SignInProps> = ({
         <div className="flex p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]">
           <form
             className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]"
-            onSubmit={handleSubmit}
-          >
+            onSubmit={handleSubmit}>
             <div className="flex w-[100%] h-auto items-center justify-between">
-              <h1 className="font-camptonBook text-[20px] ml-5">Sign In</h1>
+              <h1 className="font-camptonBook text-[20px] ml-5">{t("authentication.signIn")}</h1>
               <IoIosCloseCircle
                 className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
                 onClick={handleClose}
@@ -89,21 +92,21 @@ const SignIn: React.FC<SignInProps> = ({
             </div>
 
             <div className="flex flex-col w-[100%] gap-2">
-              <h2 className="ml-5">Email Address</h2>
+              <h2 className="ml-5">{t("authentication.emailAddress")}</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="email"
-                placeholder="Enter your Email"
+                placeholder={t("authentication.enterEmail")}
                 required
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="flex flex-col w-[100%] gap-2">
-              <h2 className="ml-5">Password</h2>
+              <h2 className="ml-5">{t("authentication.password")}</h2>
               <input
                 className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
                 type="password"
-                placeholder="Enter your Password"
+                placeholder={t("authentication.enterPassword")}
                 required
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -123,7 +126,7 @@ const SignIn: React.FC<SignInProps> = ({
             <p
               className="ml-10 text-primary w-[100%] xs:text-[12px] md:text-[16px] cursor-pointer"
               onClick={handleForgotPasswordOpen}>
-              Forgot Password?
+              {t("authentication.forgotPassword")}
             </p>
             <button
               className="flex items-center justify-center border-primary border-[1px] text-white
@@ -131,11 +134,11 @@ const SignIn: React.FC<SignInProps> = ({
                           hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary"
               type="submit"
               disabled={isLoading}>
-              {isLoading ? "Signing In..." : "Sign In"}
+              {isLoading ? t("authentication.signingIn") : t("authentication.signIn")}
             </button>
             <div className="flex w-[80%] gap-5 items-center">
               <div className="h-[0.5px] w-[100%] bg-black" />
-              <p>OR</p>
+              <p>{t("authentication.or1")}</p>
               <div className="h-[0.5px] w-[100%] bg-black" />
             </div>
             <button
@@ -146,19 +149,18 @@ const SignIn: React.FC<SignInProps> = ({
                 src={Google_Logo}
                 alt="Google_Logo"/>
               <p className="xs:text-[14px] md:text-[16px]">
-                Sign in with Google
+              {t("authentication.signInWithGoogle")}
               </p>
             </button>
             <div className="flex w-[100%] h-auto justify-center">
               <p className="xs:text-[12px] md:text-[16px]">
-                Don't have an account?
+              {t("authentication.dontHaveAnAccount")}
               </p>
               <button className="outline-none border-none underline-offset-1">
                 <p
                   className="ml-2 text-primary xs:text-[12px] md:text-[16px]"
-                  onClick={handleRegisterOpen}
-                >
-                  Register
+                  onClick={handleRegisterOpen}>
+                  {t("authentication.register")}
                 </p>
               </button>
             </div>
