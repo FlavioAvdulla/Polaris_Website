@@ -31,28 +31,24 @@ const Navbar_03 = () => {
   return (
     <div
       className="bg-white bg-opacity-50 backdrop-blur-[15px] sticky
-                  border-b-[1px] border-b-gray-400 mb-20 top-0 z-10"
-    >
+                  border-b-[1px] border-b-gray-400 mb-20 top-0 z-10
+                  dark:bg-darkColor dark:bg-opacity-50 dark:border-b-gray-700">
       <div
         className="flex w-[85%] h-auto mx-auto items-center justify-between py-5
                       sm:gap-5
-                      md:gap-0"
-      >
+                      md:gap-0">
         <AllCategories />
         <div
-          className="
-                        xs:w-auto
-                        lg:w-[50%]"
-        >
+          className="xs:w-auto
+                     lg:w-[50%]">
           {/* ============= Navbar Pages ============= */}
           <ul
             className="flex justify-between
-                        xs:hidden
-                        lg:flex"
-          >
+                       xs:hidden
+                       lg:flex">
             {/* ============= Home Pages ============= */}
             <li
-              className={`cursor-pointer ease-in-out duration-300 hover:text-primary ${
+              className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                 activeSection === "Home" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("Home");
@@ -61,7 +57,7 @@ const Navbar_03 = () => {
             </li>
             {/* ============= Shop Pages ============= */}
             <li
-              className={`cursor-pointer ease-in-out duration-300 hover:text-primary ${
+              className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                 activeSection === "Shop" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("Shop");
@@ -71,7 +67,7 @@ const Navbar_03 = () => {
             
             {/* ============= Computers Page ============= */}
             <li
-              className={`cursor-pointer ease-in-out duration-300 hover:text-primary ${
+              className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                 activeSection === "Computers" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("Computers");
@@ -80,7 +76,7 @@ const Navbar_03 = () => {
             </li>
             {/* ============= blog Pages ============= */}
             <li
-              className={`cursor-pointer ease-in-out duration-300 hover:text-primary ${
+              className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                 activeSection === "Blog" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("Blog");
@@ -89,9 +85,9 @@ const Navbar_03 = () => {
             </li>
             <li
               className="cursor-pointer ease-in-out duration-300
-                      hover:text-primary active:text-primary"
-            >
-              <p className="font-camptonBook">{t('navbar_03.pages')}</p>
+                      hover:text-primary active:text-primary">
+              <p className="font-camptonBook
+                          dark:text-white">{t('navbar_03.pages')}</p>
             </li>
           </ul>
         </div>
@@ -101,14 +97,15 @@ const Navbar_03 = () => {
                       cursor-pointer ease-in-out duration-300 hover:text-primary
                       xs:w-auto
                       lg:flex">
-          <i
-            className="xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-full">
+          <i className="dark:bg-gray-700 dark:text-white
+                          
+                          xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-full">
             <CiDiscount1
-              className="
-                          sm:text-[20px]"/>
+              className="sm:text-[20px]"/>
           </i>
-          <p
-            className="font-camptonBook
+          <p className="font-camptonBook
+                      dark:text-white
+
                         xs:hidden
                         sm:flex
                         md:flex md:text-[16px]

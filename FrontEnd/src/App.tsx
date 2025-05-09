@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "../src/components/context/ThemeContext"; // Import ThemeProvider
 import Navbar_01 from "./components/Navbar/Navbar_01";
 import Navbar_02 from "./components/Navbar/Navbar_02";
 import Navbar_03 from "./components/Navbar/Navbar_03";
@@ -59,118 +60,120 @@ const App = () => {
   const [favouriteQuantity, setFavouriteQuantity] = useState(0);
 
   return (
-    <>
-      {showSignIn && (
-        <SignIn
-          setShowSignIn={setShowSignIn}
-          setShowRegister={setShowRegister}
-          setShowForgotPassword={setShowForgotPassword}
-          setIsSignedIn={setIsSignedIn}
-        />
-      )}
-
-      {showRegister && (
-        <Register
-          setShowRegister={setShowRegister}
-          setShowSignIn={setShowSignIn}
-        />
-      )}
-
-      {showForgotPassword && (
-        <ForgotPassword
-          setShowRegister={setShowRegister}
-          setShowForgotPassword={setShowForgotPassword}
-          setShowSignIn={setShowSignIn}
-        />
-      )}
-
-      {showFaq && <Faq setShowFaq={setShowFaq} />}
-
-      {showSignOut && (
-        <SignOut
-          setShowSignOut={setShowSignOut}
-          setIsSignedIn={setIsSignedIn}
-        />
-      )}
-
-      <div>
-        <Router>
-          <ScrollManager />
-          {/* Navigation Components */}
-          <Navbar_01 setShowFaq={setShowFaq} />
-          {/* Pass quantity state to Navbar_02 */}
-          <Navbar_02
-            cartQuantity={cartQuantity}
-            favouriteQuantity={favouriteQuantity}
+    <ThemeProvider> {/* Wrap entire app with ThemeProvider */}
+      <>
+        {showSignIn && (
+          <SignIn
             setShowSignIn={setShowSignIn}
-            isSignedIn={isSignedIn}
-            setShowSignOut={setShowSignOut}
+            setShowRegister={setShowRegister}
+            setShowForgotPassword={setShowForgotPassword}
+            setIsSignedIn={setIsSignedIn}
           />
-          <Navbar_03 />
-          {/* Main Routes */}
-          <Routes>
-            <Route path="/Product_01" element={<Product_01 />} />
-            <Route path="/Product_02" element={<Product_02 />} />
-            <Route path="/Product_03" element={<Product_03 />} />
-            <Route path="/Product_04" element={<Product_04 />} />
-            <Route path="/Product_05" element={<Product_05 />} />
-            <Route path="/Product_06" element={<Product_06 />} />
+        )}
 
-            <Route path="/Shop" element={<Shop />} />
-            <Route path="/Blog" element={<Blog />} />
-            <Route path="/Contacts" element={<Contacts />} />
+        {showRegister && (
+          <Register
+            setShowRegister={setShowRegister}
+            setShowSignIn={setShowSignIn}
+          />
+        )}
 
-            <Route path="/Computers" element={<Computers />} />
-            <Route path="/MobilesAndTablets" element={<MobilesAndTablets />} />
-            <Route path="/GameAccessories" element={<GameAccessories />} />
-            <Route path="/CameraAndPhoto" element={<CameraAndPhoto />} />
-            <Route path="/Electronics" element={<Electronics />} />
-            <Route
-              path="/AudioAndHeadphones"
-              element={<AudioAndHeadphones />}
+        {showForgotPassword && (
+          <ForgotPassword
+            setShowRegister={setShowRegister}
+            setShowForgotPassword={setShowForgotPassword}
+            setShowSignIn={setShowSignIn}
+          />
+        )}
+
+        {showFaq && <Faq setShowFaq={setShowFaq} />}
+
+        {showSignOut && (
+          <SignOut
+            setShowSignOut={setShowSignOut}
+            setIsSignedIn={setIsSignedIn}
+          />
+        )}
+
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+          <Router>
+            <ScrollManager />
+            {/* Navigation Components */}
+            <Navbar_01 setShowFaq={setShowFaq} />
+            {/* Pass quantity state to Navbar_02 */}
+            <Navbar_02
+              cartQuantity={cartQuantity}
+              favouriteQuantity={favouriteQuantity}
+              setShowSignIn={setShowSignIn}
+              isSignedIn={isSignedIn}
+              setShowSignOut={setShowSignOut}
             />
-            <Route
-              path="/Cart"
-              element={<Cart setCartQuantity={setCartQuantity} />}
-            />
-            <Route
-              path="/Favourites"
-              element={
-                <Favourites setFavouriteQuantity={setFavouriteQuantity} />
-              }
-            />
-            {/* Main Home Page */}
-            <Route
-              path="/"
-              element={
-                <>
-                  <Carousel />
-                  <BenefitsPackage />
-                  <ProductSection_01 />
-                  <ProductSection_02 />
-                  <ProductSection_03 />
-                  <ProductSection_04 />
-                  <ProductSection_05 />
-                  <BannerSection />
-                  <ProductSection_06 />
-                </>
-              }
-            >
-              {/* Nested Routes for ProductSection_02 */}
-              <Route index element={<Latest_Products />} />
+            <Navbar_03 />
+            {/* Main Routes */}
+            <Routes>
+              <Route path="/Product_01" element={<Product_01 />} />
+              <Route path="/Product_02" element={<Product_02 />} />
+              <Route path="/Product_03" element={<Product_03 />} />
+              <Route path="/Product_04" element={<Product_04 />} />
+              <Route path="/Product_05" element={<Product_05 />} />
+              <Route path="/Product_06" element={<Product_06 />} />
+
+              <Route path="/Shop" element={<Shop />} />
+              <Route path="/Blog" element={<Blog />} />
+              <Route path="/Contacts" element={<Contacts />} />
+
+              <Route path="/Computers" element={<Computers />} />
+              <Route path="/MobilesAndTablets" element={<MobilesAndTablets />} />
+              <Route path="/GameAccessories" element={<GameAccessories />} />
+              <Route path="/CameraAndPhoto" element={<CameraAndPhoto />} />
+              <Route path="/Electronics" element={<Electronics />} />
               <Route
-                path="deals/latest-products"
-                element={<Latest_Products />}
+                path="/AudioAndHeadphones"
+                element={<AudioAndHeadphones />}
               />
-              <Route path="deals/top-rating" element={<Top_Rating />} />
-              <Route path="deals/best-selling" element={<Best_Selling />} />
-            </Route>
-          </Routes>
-          {/* Footer */}
-          <Footer />
-        </Router>
-      </div>
-    </>
+              <Route
+                path="/Cart"
+                element={<Cart setCartQuantity={setCartQuantity} />}
+              />
+              <Route
+                path="/Favourites"
+                element={
+                  <Favourites setFavouriteQuantity={setFavouriteQuantity} />
+                }
+              />
+              {/* Main Home Page */}
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Carousel />
+                    <BenefitsPackage />
+                    <ProductSection_01 />
+                    <ProductSection_02 />
+                    <ProductSection_03 />
+                    <ProductSection_04 />
+                    <ProductSection_05 />
+                    <BannerSection />
+                    <ProductSection_06 />
+                  </>
+                }
+              >
+                {/* Nested Routes for ProductSection_02 */}
+                <Route index element={<Latest_Products />} />
+                <Route
+                  path="deals/latest-products"
+                  element={<Latest_Products />}
+                />
+                <Route path="deals/top-rating" element={<Top_Rating />} />
+                <Route path="deals/best-selling" element={<Best_Selling />} />
+              </Route>
+            </Routes>
+            {/* Footer */}
+            <Footer />
+          </Router>
+        </div>
+      </>
+    </ThemeProvider>
   );
 };
 

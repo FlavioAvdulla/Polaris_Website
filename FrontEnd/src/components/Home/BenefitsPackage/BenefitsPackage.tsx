@@ -24,24 +24,28 @@ const BenefitsPackage = () => {
                       xs:mb-5
                       md:mb-0" key={index}>
         <div className="flex items-center justify-center border-[1px] border-primary
+                        dark:border-white
                          
                         
                         xs:w-[80px] xs:h-[80px] xs:rounded-[8px] xs:mb-3
                         md:w-[120px] md:h-[120px] md:rounded-[15px] md:mb-6
                         lg:w-[150px] lg:h-[150px]">
           <i><benefit.image className="text-primary
-          
-                                    xs:text-[40px]
-                                    md:text-[55px]
-                                    lg:text-[65px]"/></i>
+                                          dark:text-white
+
+                                          xs:text-[40px]
+                                          md:text-[55px]
+                                          lg:text-[65px]"/></i>
         </div>
         <h1 className="font-camptonMedium
+                       dark:text-white
                       
                       xs:text-[11px]
                       md:text-[14px] 
                       lg:text-[17px]
                        ">{t(benefit.titleKey)}</h1>
         <p className="text-gray-500 font-camptonBook w-[80%]
+                        dark:text-gray-400
                         
                         xs:text-[10px]
                         md:text-[12px]

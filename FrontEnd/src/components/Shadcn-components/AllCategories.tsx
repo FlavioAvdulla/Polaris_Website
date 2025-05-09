@@ -21,6 +21,7 @@ export function AllCategories() {
     <Select>
       <SelectTrigger className="w-[200px] h-[45px] gap-3 border-none
                                 rounded-md rounded-bl-none rounded-br-none bg-gray-100 font-camptonBook
+                                dark:bg-gray-700 dark:text-white
                                 
                                 sm:w-[150px]
                                 lg:w-[200px]">
