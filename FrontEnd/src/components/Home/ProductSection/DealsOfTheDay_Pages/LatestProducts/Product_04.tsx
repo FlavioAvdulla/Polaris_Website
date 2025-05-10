@@ -14,10 +14,10 @@ import { useTranslation } from 'react-i18next';
 
 
 // Photos
-import Rtx_01 from "../../../../../assets/images/Products/Rtx/Rtx_01.jpg";
-import Rtx_02 from "../../../../../assets/images/Products/Rtx/Rtx_02.jpg";
-import Rtx_03 from "../../../../../assets/images/Products/Rtx/Rtx_03.jpg";
-import Rtx_04 from "../../../../../assets/images/Products/Rtx/Rtx_04.jpg";
+import Rtx_01 from "../../../../../assets/images/Products/Rtx/Rtx_01.png";
+import Rtx_02 from "../../../../../assets/images/Products/Rtx/Rtx_02.png";
+import Rtx_03 from "../../../../../assets/images/Products/Rtx/Rtx_03.png";
+import Rtx_04 from "../../../../../assets/images/Products/Rtx/Rtx_04.png";
 
 import { latestProducts } from "../../ProductSection";
 

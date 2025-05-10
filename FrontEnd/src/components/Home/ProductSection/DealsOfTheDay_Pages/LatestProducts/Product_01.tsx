@@ -10,10 +10,10 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useTranslation } from 'react-i18next';
 
 // Photos
-import Lenovo_01 from "../../../../../assets/images/Products/Legion/Legion_01.jpg";
-import Lenovo_02 from "../../../../../assets/images/Products/Legion/Legion_02.jpg";
-import Lenovo_03 from "../../../../../assets/images/Products/Legion/Legion_03.jpg";
-import Lenovo_04 from "../../../../../assets/images/Products/Legion/Legion_04.jpg";
+import Lenovo_01 from "../../../../../assets/images/Products/Legion/Legion_01.png";
+import Lenovo_02 from "../../../../../assets/images/Products/Legion/Legion_02.png";
+import Lenovo_03 from "../../../../../assets/images/Products/Legion/Legion_03.png";
+import Lenovo_04 from "../../../../../assets/images/Products/Legion/Legion_04.png";
 
 import { latestProducts } from "../../ProductSection";
 import ScrollToTop from "@/ScrollToTop/ScrollToTop";

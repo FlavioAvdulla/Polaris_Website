@@ -14,10 +14,10 @@ import { useTranslation } from 'react-i18next';
 
 
 // Photos
-import Sony_01 from "../../../../../assets/images/Products/Sony/Sony_01.jpg";
-import Sony_02 from "../../../../../assets/images/Products/Sony/Sony_02.jpg";
-import Sony_03 from "../../../../../assets/images/Products/Sony/Sony_03.jpg";
-import Sony_04 from "../../../../../assets/images/Products/Sony/Sony_04.jpg";
+import Sony_01 from "../../../../../assets/images/Products/Sony/Sony_01.png";
+import Sony_02 from "../../../../../assets/images/Products/Sony/Sony_02.png";
+import Sony_03 from "../../../../../assets/images/Products/Sony/Sony_03.png";
+import Sony_04 from "../../../../../assets/images/Products/Sony/Sony_04.png";
 
 import { latestProducts } from "../../ProductSection";
 
@@ -223,12 +223,10 @@ const Product_05 = () => {
             <i>
               <GoDot className="text-primary
               
-                               
                                 xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
             
-                        
                         xs:text-[10px]
                         lg:text-[13px]
                         xl:text-[15px]">{t(product.detail_01)}</p>

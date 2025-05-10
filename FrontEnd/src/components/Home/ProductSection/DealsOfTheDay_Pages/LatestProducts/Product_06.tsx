@@ -14,10 +14,10 @@ import { useTranslation } from 'react-i18next';
 
 
 // Photos
-import Keyboard_01 from "../../../../../assets/images/Products/Keyboard/Keyboard_01.jpg";
-import Keyboard_02 from "../../../../../assets/images/Products/Keyboard/Keyboard_02.jpg";
-import Keyboard_03 from "../../../../../assets/images/Products/Keyboard/Keyboard_03.jpg";
-import Keyboard_04 from "../../../../../assets/images/Products/Keyboard/Keyboard_04.jpg";
+import Keyboard_01 from "../../../../../assets/images/Products/Keyboard/Keyboard_01.png";
+import Keyboard_02 from "../../../../../assets/images/Products/Keyboard/Keyboard_02.png";
+import Keyboard_03 from "../../../../../assets/images/Products/Keyboard/Keyboard_03.png";
+import Keyboard_04 from "../../../../../assets/images/Products/Keyboard/Keyboard_04.png";
 
 import { latestProducts } from "../../ProductSection";
 
@@ -181,14 +181,14 @@ const Product_06 = () => {
                         lg:text-[38px]
                         xl:text-[45px]
                         ">
-          {product.title}
+          {t(product.title)}
         </h1>
         <p className="w-[100%] font-camptonBook leading-tight
         
                       xs:text-[10px] text-justify
                       md:text-[13px]
                       lg:text-[15px]">
-          {product.description}
+          {t(product.description)}
         </p>
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook
@@ -196,7 +196,7 @@ const Product_06 = () => {
                       xs:text-[12px]
                       md:text-[15px]
                       lg:text-[18px]
-                      xl:text-[20px]">{product.reviews}</p>
+                      xl:text-[20px]">{t(product.review)}</p>
         {/* ============= Price ============= */}
         <div className="flex items-center
         
@@ -231,7 +231,7 @@ const Product_06 = () => {
                         
                         xs:text-[10px]
                         lg:text-[13px]
-                        xl:text-[15px]">{product.detail_01}</p>
+                        xl:text-[15px]">{t(product.detail_01)}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -246,7 +246,7 @@ const Product_06 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{product.detail_02}</p>
+                          xl:text-[15px]">{t(product.detail_02)}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -260,7 +260,7 @@ const Product_06 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{product.detail_03}</p>
+                          xl:text-[15px]">{t(product.detail_03)}</p>
           </div>
 
           <div className="flex items-center gap-1">
@@ -275,7 +275,7 @@ const Product_06 = () => {
                           
                           xs:text-[10px]
                           lg:text-[13px]
-                          xl:text-[15px]">{product.detail_04}</p>
+                          xl:text-[15px]">{t(product.detail_04)}</p>
           </div>
         </div>
         {/* ============= Quantity ============= */}
@@ -301,7 +301,6 @@ const Product_06 = () => {
             <input
               className="text-center text-white font-camptonMedium bg-transparent outline-none
               
-                       
                         xs:w-[25px] xs:h-[26px] xs:text-[12px]
                         lg:w-[40px] lg:h-[40px] lg:text-[20px]"
               type="text"
@@ -323,7 +322,6 @@ const Product_06 = () => {
             <i>
               <FaCirclePlus className="text-primary cursor-pointer
               
-                                  
                                         xs:text-[13px]
                                         lg:text-[22px]" />
             </i>

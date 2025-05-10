@@ -42,8 +42,9 @@ const Latest_Products = () => {
                   xl:flex">
         {/* ============= Product List ============= */}
         {latestProducts.map((product, index) => (
-          <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer
-                          rounded-lg" key={index} onClick={() => handleImageClick(product._id)}>
+          <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer rounded-lg
+          
+                          dark:border-white" key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
             <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
               <img className="
@@ -51,27 +52,30 @@ const Latest_Products = () => {
                               
                               xs:h-auto
                               lg:w-[100%] w-[100%]
-                              xl:w-[100%]
-                            bg-slate-500" src={product.image} alt={product.title} />
+                              xl:w-[100%]" src={product.image} alt={product.title} />
             </div>
             {/* ============= Title ============= */}
-            <div className="flex flex-col font-camptonMedium w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
-                            group-hover:shadow-shadow-dark transition-all duration-300 
+            <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
+                            group-hover:shadow-shadow-dark transition-all duration-300
+                            dark:bg-gray-700
             
                             xs:text-[20px]
                             md:text-[18px]
                             lg:text-[20px]
                             xl:text-[17px]">
-              <h1 className="flex mb-4 justify-center">{product.title}</h1>
+              <h1 className="flex mb-4 justify-center font-camptonBook
+                             dark:text-white">{t(product.title)}</h1>
               {/* ============= Price ============= */}
               <div className="flex gap-4 items-center justify-center">
                 <p className="font-camptonBold text-primary
+                              dark:text-secondary_01
                 
                               xs:text-[25px]
                               2xl:text-[25px]">{product.offerPrice}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
-                  <p className="text-gray-700 rounded-br-lg rounded-bl-lg text-[20px]
+                  <p className="text-gray-700 rounded-br-lg rounded-bl-lg text-[17px]
+                                  dark:text-white
                                 ">{product.normalPrice}</p>
                 </div>
               </div>

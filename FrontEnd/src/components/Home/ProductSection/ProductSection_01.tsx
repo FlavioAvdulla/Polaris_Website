@@ -63,14 +63,15 @@ const ProductSection_01 = () => {
         // ============= Product 1 =============
         <div
           className=" rounded-lg overflow-hidden h-auto
-                      bg-gray-100 border-[1px] border-primary cursor-pointer
+                    bg-gray-100 border-[1px] border-primary cursor-pointer
+                      dark:bg-transparent dark:border-white
                       
                       xs:mb-5
                       md:w-[100%]"
           key={index}
           onClick={() => handleProductClick(product._id)}>
           {/* ============= Image ============= */}
-          <div className="flex w-[100%] h-[300px] justify-center items-center bg-white">
+          <div className="flex w-[100%] h-[300px] justify-center items-center">
             <img
               src={product.image}
               alt={product.title}
@@ -83,6 +84,7 @@ const ProductSection_01 = () => {
             <div className="flex gap-2">
               {getStars(product.rating)}
               <p className="font-camptonBook
+                            dark:text-white
               
                             md:text-[12px]
                             lg:text-[15px]">
@@ -90,6 +92,7 @@ const ProductSection_01 = () => {
               </p>
             </div>
             <h1 className="font-camptonMedium
+                           dark:text-white
 
                               xs:w-[80%]
                               sm:w-[60%]
@@ -99,6 +102,7 @@ const ProductSection_01 = () => {
 
             <div className="flex justify-between items-center">
               <h1 className="font-camptonBold text-primary
+                              dark:text-secondary_01
               
                               xs:text-[40px]
                               md:text-[30px]
@@ -108,22 +112,26 @@ const ProductSection_01 = () => {
               </h1>
               <i className="bg-primary border-[1px] border-primary cursor-pointer
                               hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
+                              dark:bg-gray-700 dark:border-gray-700 dark:hover:border-gray-700 dark:hover:bg-transparent
                               
                               xs:rounded-md
                               md:rounded-sm
                               lg:rounded-md">
                 <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
+                                                dark:hover:text-white
                                                 
                                                 xs:text-[40px] xs:p-1"/></i>
             </div>
             <div className="flex justify-between items-center">
               <p className="font-camptonBook flex
+                            dark:text-white
               
                             xs:text-[12px]
                             lg:text-[15px]
                             2xl:text-[20px]">
                 {t(product.available)}:
                 <span className="font-camptonMedium
+                               dark:text-secondary_01
                 
                                   xs:text-[12px]
                                   lg:text-[15px]
@@ -132,17 +140,20 @@ const ProductSection_01 = () => {
                 </span>
               </p>
               <p className="text-[15px] font-camptonBook flex
+                            dark:text-white
               
                             xs:text-[12px]
                             lg:text-[15px]
                             2xl:text-[20px]">
                 {t(product.sold)}:
-                <span className="text-red-500 font-camptonMedium">
+                <span className="text-primary font-camptonMedium
+                                 dark:text-secondary_01">
                   &nbsp;&nbsp;{product.quantitySold}
                 </span>
               </p>
             </div>
             <p className="font-camptonBook
+                          dark:text-white
             
                           xs:text-[10px]
                           lg:text-[15px]

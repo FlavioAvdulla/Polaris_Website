@@ -26,6 +26,7 @@ const ProductSection_02 = () => {
                       md:flex-row">
         <h1
           className="font-camptonMedium
+                     dark:text-white
 
                       xs:text-[17px]
                       md:text-[15px]
@@ -36,6 +37,7 @@ const ProductSection_02 = () => {
         {/* ============= Deals of the day - right ============= */}
         <div
           className="flex items-center
+                     dark:text-white
 
                      xs:gap-3
                      sm:gap-4
@@ -51,7 +53,7 @@ const ProductSection_02 = () => {
               className={`flex items-center rounded-full
                 
                 ${activeSection === label
-                  ? "border-[1px] border-primary bg-primary text-white"
+                  ? "border-[1px] border-primary bg-primary text-white dark:border-secondary_01 dark:bg-secondary_01"
                   : ""}`}
 
               onClick={() => {

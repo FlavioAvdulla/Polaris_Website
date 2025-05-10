@@ -14,10 +14,10 @@ import { useTranslation } from 'react-i18next';
 
 
 // Photos
-import Ps5_01 from "../../../../../assets/images/Products/Ps5/Ps5_01.jpg";
-import Ps5_02 from "../../../../../assets/images/Products/Ps5/Ps5_02.jpg";
-import Ps5_03 from "../../../../../assets/images/Products/Ps5/Ps5_03.jpg";
-import Ps5_04 from "../../../../../assets/images/Products/Ps5/Ps5_04.jpg";
+import Ps5_01 from "../../../../../assets/images/Products/Ps5/Ps5_01.png";
+import Ps5_02 from "../../../../../assets/images/Products/Ps5/Ps5_02.png";
+import Ps5_03 from "../../../../../assets/images/Products/Ps5/Ps5_03.png";
+import Ps5_04 from "../../../../../assets/images/Products/Ps5/Ps5_04.png";
 
 import { latestProducts } from "../../ProductSection";
 

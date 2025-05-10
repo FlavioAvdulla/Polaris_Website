@@ -1,15 +1,15 @@
 // Photos
-import Product_01 from "../../../assets/images/Products/Product_01.jpg";
-import Product_02 from "../../../assets/images/Products/Product_02.jpg";
-import Product_03 from "../../../assets/images/Products/Product_03.jpg";
-import Product_04 from "../../../assets/images/Products/Product_04.jpg";
-import Product_05 from "../../../assets/images/Products/Product_05.jpg";
-import Product_06 from "../../../assets/images/Products/Product_06.jpg";
-import Product_07 from "../../../assets/images/Products/Product_07.jpg";
-import Product_08 from "../../../assets/images/Products/Product_08.jpg";
-import Product_09 from "../../../assets/images/Products/Product_09.jpg";
-import Product_10 from "../../../assets/images/Products/Product_10.jpg";
-import Product_11 from "../../../assets/images/Products/Product_11.jpg";
+import Product_01 from "../../../assets/images/Products/Product_01.png";
+import Product_02 from "../../../assets/images/Products/Product_02.png";
+import Product_03 from "../../../assets/images/Products/Product_03.png";
+import Product_04 from "../../../assets/images/Products/Product_04.png";
+import Product_05 from "../../../assets/images/Products/Product_05.png";
+import Product_06 from "../../../assets/images/Products/Product_06.png";
+import Product_07 from "../../../assets/images/Products/Product_07.png";
+import Product_08 from "../../../assets/images/Products/Product_08.png";
+import Product_09 from "../../../assets/images/Products/Product_09.png";
+import Product_10 from "../../../assets/images/Products/Product_10.png";
+import Product_11 from "../../../assets/images/Products/Product_11.png";
 
 import Slider_01 from "../../../assets/images/Sliders/Slider_01.jpg";
 import Slider_02 from "../../../assets/images/Sliders/Slider_02.jpg";
@@ -611,7 +611,7 @@ export const latestProducts = [
     _id: "1",
     image: Product_01,
     title: "product_01.title",
-    description: "product_02.description",
+    description: "product_01.description",
     normalPrice: "€759",
     offerPrice: "€639",
     detail_01: "product_01.detail_01",
@@ -772,12 +772,13 @@ export const bestSelling = [
     detail_04: "product_06.detail_04",
     rating: "3.0",
     reviews: "product_06.review",
+    addToCart: "product_06.addToCart"
   },
   {
     _id: "6",
     image: Product_01,
     title: "product_01.title",
-    description: "product_02.description",
+    description: "product_01.description",
     normalPrice: "€759",
     offerPrice: "€639",
     detail_01: "product_01.detail_01",
@@ -794,35 +795,37 @@ export const topRating = [
   {
     _id: "1",
     image: Product_03,
-    title: "PLAYSTATION 5 PRO",
-    description: "hetrhstejs",
+    title: "product_03.title",
+    description: "product_03.description",
     normalPrice: "€959",
     offerPrice: "€539",
-    detail_01: "Ryzen 7 5800H up to 4.40GHz",
-    detail_02: "RTX 3070 8GB GDDR6 Graphics",
-    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
-    detail_04: "Windows 11 Professional (64bit)",
+    detail_01: "product_03.detail_01",
+    detail_02: "product_03.detail_02",
+    detail_03: "product_03.detail_03",
+    detail_04: "product_03.detail_04",
     rating: "3.0",
-    reviews: "3 Customer Reviews",
+    reviews: "product_03.review",
+    addToCart: "product_03.addToCart"
   },
   {
     _id: "2",
     image: Product_04,
-    title: "GEFORCE RTX 3090 24GB",
-    description: "The GeForce RTX 3090 delivers incredible performance with enhanced ray tracing, AI capabilities, and 24 GB of memory.",
+    title: "product_04.title",
+    description: "product_04.description",
     normalPrice: "€759",
     offerPrice: "€639",
-    detail_01: "24GB GDDR6X (384-bit)",
-    detail_02: "PCI Express 4.0",
-    detail_03: "Antialiasing and anisotropic filtering",
-    detail_04: "DirectX 12 Ultimate",
+    detail_01: "product_04.detail_01",
+    detail_02: "product_04.detail_02",
+    detail_03: "product_04.detail_03",
+    detail_04: "product_04.detail_04",
     rating: "3.0",
-    reviews: "3 Customer Reviews",
+    reviews: "product_04.review",
+    addToCart: "product_04.addToCart"
   },
   {
     _id: "3",
     image: Product_01,
-    title: "LENOVO LEGION 5",
+    title: "product_01.title",
     description: "hetrhstejs",
     normalPrice: "€759",
     offerPrice: "€639",
@@ -836,7 +839,7 @@ export const topRating = [
   {
     _id: "4",
     image: Product_05,
-    title: "SONY HEADSET WH-1000XM5",
+    title: "Sproduct_05.title",
     description: "Industry-leading noise cancellation optimized to you Magnificent Sound, engineered to perfectio Crystal clear ",
     normalPrice: "€759",
     offerPrice: "€639",
@@ -849,22 +852,8 @@ export const topRating = [
   },
   {
     _id: "5",
-    image: Product_02,
-    title: "VR HEADSET",
-    description: "hetrhstejs",
-    normalPrice: "€759",
-    offerPrice: "€639",
-    detail_01: "Ryzen 7 5800H up to 4.40GHz",
-    detail_02: "RTX 3070 8GB GDDR6 Graphics",
-    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
-    detail_04: "Windows 11 Professional (64bit)",
-    rating: "3.0",
-    reviews: "3 Customer Reviews",
-  },
-  {
-    _id: "6",
     image: Product_06,
-    title: "REDRAGON K535 KEYBOARD",
+    title: "product_06.title",
     description: "The Redragon K535 Apas Slimline 104 Key RGB Mechanical Gaming Keyboard has everything you need to get an edge in gaming.",
     normalPrice: "€759",
     offerPrice: "€639",
@@ -874,6 +863,21 @@ export const topRating = [
     detail_04: "Splash resistant design",
     rating: "3.0",
     reviews: "5 Customer Reviews",
+    addToCart: "product_06.addToCart"
+  },
+  {
+    _id: "6",
+    image: Product_02,
+    title: "product_02.title",
+    description: "hetrhstejs",
+    normalPrice: "€759",
+    offerPrice: "€639",
+    detail_01: "Ryzen 7 5800H up to 4.40GHz",
+    detail_02: "RTX 3070 8GB GDDR6 Graphics",
+    detail_03: "12GB DDR4 RAM + 4TB NVMe SSD",
+    detail_04: "Windows 11 Professional (64bit)",
+    rating: "3.0",
+    reviews: "3 Customer Reviews",
   },
 ];
 
