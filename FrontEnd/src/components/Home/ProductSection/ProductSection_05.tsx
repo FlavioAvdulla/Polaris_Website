@@ -90,7 +90,7 @@ const ProductSection_05 = () => {
             onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 ============= */}
             <div className="flex w-[100%] h-[100%] bg-gray-100 items-center rounded-lg border-[1px] border-primary
-                            dark:bg-transparent dark:border-white dark:">
+                            dark:bg-transparent dark:border-white">
               {/* ============= Section - right - 01 - Photo ============= */}
               <div className="flex w-[40%] h-[100%] items-center justify-center rounded-tl-lg rounded-bl-lg bg-white
                               dark:bg-transparent">
@@ -104,13 +104,13 @@ const ProductSection_05 = () => {
                             2xl:w-[75%]"/>
               </div>
               {/* ============= Section - right - 01 - Info ============= */}
-              <div className="flex flex-col w-[60%] h-[100%] justify-center rounded-tr-lg rounded-br-lg
+              <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center rounded-tr-lg rounded-br-lg
                               dark:bg-gray-700
                               
-                              xs:px-2 
-                              sm:px-4 
+                              xs:px-2 xs:gap-1
+                              sm:px-4 sm:gap-2
                               md:px-6 
-                              lg:px-2
+                              lg:px-2 lg:gap-1
                               xl:px-6">
                 {/* ============= Stars ============= */}
                 <div className="flex gap-2 items-center">
