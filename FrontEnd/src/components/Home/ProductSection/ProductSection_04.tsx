@@ -58,11 +58,12 @@ const ProductSection_04 = () => {
       {/* ============= Shop by Categories - Head ============= */}
       <div className="flex w-[100%] justify-between items-center mb-7">
         <h1 className="font-camptonMedium
+                        dark:text-white
                       
-                      xs:text-[10px]
-                      sm:text-[11px]
-                      md:text-[15px] 
-                      lg:text-[22px]">{t("productSection_04.shopByCategories")}</h1>
+                        xs:text-[10px]
+                        sm:text-[11px]
+                        md:text-[15px] 
+                        lg:text-[22px]">{t("productSection_04.shopByCategories")}</h1>
 
         <div className="flex items-center
                         
@@ -70,11 +71,12 @@ const ProductSection_04 = () => {
                         md:w-fit">
 
           <p className="text-gray-500
+                        dark:text-white
                         
-                        xs:text-[10px]
-                        sm:text-[11px]
-                        md:text-[15px]
-                        xl:text-[18px]">
+                          xs:text-[10px]
+                          sm:text-[11px]
+                          md:text-[15px]
+                          xl:text-[18px]">
             {t("productSection_04.info")}
           </p>
         </div>
@@ -88,10 +90,12 @@ const ProductSection_04 = () => {
         {/* ============= Product List ============= */}
         {shopByCategories.map((product, index) => (
           <div
-            className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg cursor-pointer"
+            className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg cursor-pointer
+                       dark:border-white"
             key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
-            <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-white">
+            <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-white
+                            dark:bg-transparent">
               <img className="
                               xs:h-auto
                               lg:w-[90%] w-[100%]
@@ -101,8 +105,10 @@ const ProductSection_04 = () => {
             {/* ============= Title ============= */}
             <div
               className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg text-center
-                  group-hover:shadow-shadow-dark transition-all duration-300 items-center">
+                  group-hover:shadow-shadow-dark transition-all duration-300 items-center
+                  dark:bg-gray-700">
               <h1 className="mb-1 font-camptonMedium
+                             dark:text-white
               
                             xs:text-[23px]
                             md:text-[17px]
@@ -110,6 +116,7 @@ const ProductSection_04 = () => {
                             xl:text-[16px]
                             2xl:text-[20px]">{t(product.title)}</h1>
               <p className="text-gray-500
+                            dark:text-white
               
                             xs:text-[19px]
                             md:text-[17px]

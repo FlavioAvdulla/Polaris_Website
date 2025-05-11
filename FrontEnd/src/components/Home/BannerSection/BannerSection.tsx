@@ -77,8 +77,8 @@ const BannerSection = () => {
                       md:h-[300px]
                       lg:h-[350px]
                       xl:h-[450px]">
-        <img className="relative -z-10 w-[100%] object-cover" src={banner_01} alt="banner_01" />
       </div>
+        <img className="w-[100%] object-cover" src={banner_01} alt="banner_01" />
     </div>
   );
 };

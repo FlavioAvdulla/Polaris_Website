@@ -89,9 +89,11 @@ const ProductSection_05 = () => {
             key={index}
             onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 ============= */}
-            <div className="flex w-[100%] h-[100%] bg-gray-100 items-center rounded-lg border-[1px] border-primary">
+            <div className="flex w-[100%] h-[100%] bg-gray-100 items-center rounded-lg border-[1px] border-primary
+                            dark:bg-transparent dark:border-white dark:">
               {/* ============= Section - right - 01 - Photo ============= */}
-              <div className="flex w-[40%] h-[100%] items-center justify-center rounded-tl-lg rounded-bl-lg bg-white">
+              <div className="flex w-[40%] h-[100%] items-center justify-center rounded-tl-lg rounded-bl-lg bg-white
+                              dark:bg-transparent">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -102,7 +104,8 @@ const ProductSection_05 = () => {
                             2xl:w-[75%]"/>
               </div>
               {/* ============= Section - right - 01 - Info ============= */}
-              <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center
+              <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center rounded-tr-lg rounded-br-lg
+                              dark:bg-gray-700
                               
                               xs:px-2 xs:gap-1
                               sm:px-4 sm:gap-2
@@ -113,6 +116,7 @@ const ProductSection_05 = () => {
                 <div className="flex gap-2 items-center">
                   {getStars(product.rating)}
                   <p className="font-camptonBook mt-[3px]
+                                dark:text-white
                                 
                                 xs:text-[10px]
                                 md:text-[15px]
@@ -122,6 +126,7 @@ const ProductSection_05 = () => {
                   </p>
                 </div>
                 <h1 className="font-camptonMedium leading-tight
+                                dark:text-white
                 
                                 xs:text-[18px]
                                 sm:text-[20px]
@@ -130,6 +135,7 @@ const ProductSection_05 = () => {
                   {t(product.title)}
                 </h1>
                 <p className="text-gray-500
+                              dark:text-white
                               
                               xs:text-[10px]
                               sm:text-[12px]
@@ -139,6 +145,7 @@ const ProductSection_05 = () => {
                 </p>
                 <div className="flex gap-4 items-center">
                   <p className="font-camptonBold text-primary
+                                dark:text-secondary_01
                                 
                                 xs:text-[25px]
                                 md:text-[35px]
@@ -148,6 +155,7 @@ const ProductSection_05 = () => {
                   <div className="flex w-auto relative items-center">
                     <div className="absolute h-[1px] w-[100%] bg-primary"/>
                     <p className="text-gray-700
+                                  dark:text-white
                     
                                   xs:text-[17px]
                                   md:text-[22px]

@@ -15,7 +15,8 @@ const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="flex flex-col w-[100%] justify-center pt-10 bg-primary">
+    <div className="flex flex-col w-[100%] justify-center pt-10 bg-primary
+                    dark:bg-gray-700">
       <div className="flex gap-5 justify-between mx-auto mb-8
       
                       xs:flex-col xs:w-[80%]
