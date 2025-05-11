@@ -107,10 +107,10 @@ const ProductSection_05 = () => {
               <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center rounded-tr-lg rounded-br-lg
                               dark:bg-gray-700
                               
-                              xs:px-2 xs:gap-1
-                              sm:px-4 sm:gap-2
+                              xs:px-2 
+                              sm:px-4 
                               md:px-6 
-                              lg:px-2 lg:gap-1
+                              lg:px-2
                               xl:px-6">
                 {/* ============= Stars ============= */}
                 <div className="flex gap-2 items-center">
