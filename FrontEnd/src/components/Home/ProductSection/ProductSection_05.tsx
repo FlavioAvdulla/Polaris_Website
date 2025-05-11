@@ -104,7 +104,7 @@ const ProductSection_05 = () => {
                             2xl:w-[75%]"/>
               </div>
               {/* ============= Section - right - 01 - Info ============= */}
-              <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center rounded-tr-lg rounded-br-lg
+              <div className="flex flex-col w-[60%] h-[100%] justify-center rounded-tr-lg rounded-br-lg
                               dark:bg-gray-700
                               
                               xs:px-2 
