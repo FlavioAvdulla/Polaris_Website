@@ -106,7 +106,7 @@ const ProductSection_04 = () => {
             <div
               className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg text-center
                   group-hover:shadow-shadow-dark transition-all duration-300 items-center
-                  dark:bg-gray-700">
+                  dark:bg-gray-800">
               <h1 className="mb-1 font-camptonMedium
                              dark:text-white
               

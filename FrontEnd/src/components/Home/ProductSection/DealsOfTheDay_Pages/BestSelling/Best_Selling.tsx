@@ -57,7 +57,7 @@ const Best_Selling = () => {
             {/* ============= Title ============= */}
             <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
                             group-hover:shadow-shadow-dark transition-all duration-300
-                            dark:bg-gray-700
+                            dark:bg-gray-800
             
                             xs:text-[20px]
                             md:text-[18px]

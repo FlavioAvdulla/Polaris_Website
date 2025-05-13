@@ -32,7 +32,7 @@ const Navbar_03 = () => {
     <div
       className="bg-white bg-opacity-50 backdrop-blur-[15px] sticky
                   border-b-[1px] border-b-gray-400 mb-20 top-0 z-10
-                  dark:bg-darkColor dark:bg-opacity-50 dark:border-b-gray-700">
+                  dark:bg-darkColor dark:bg-opacity-50 dark:border-b-gray-800">
       <div
         className="flex w-[85%] h-auto mx-auto items-center justify-between py-5
                       sm:gap-5
@@ -97,7 +97,7 @@ const Navbar_03 = () => {
                       cursor-pointer ease-in-out duration-300 hover:text-primary
                       xs:w-auto
                       lg:flex">
-          <i className="dark:bg-gray-700 dark:text-white
+          <i className="dark:bg-gray-800 dark:text-white
                           
                           xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-full">
             <CiDiscount1

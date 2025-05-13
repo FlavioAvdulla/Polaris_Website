@@ -105,7 +105,7 @@ const ProductSection_05 = () => {
               </div>
               {/* ============= Section - right - 01 - Info ============= */}
               <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center rounded-tr-lg rounded-br-lg
-                              dark:bg-gray-700
+                              dark:bg-gray-800
                               
                               xs:px-2 xs:gap-1
                               sm:px-4 sm:gap-2
@@ -154,7 +154,7 @@ const ProductSection_05 = () => {
                   </p>
                   <div className="flex w-auto relative items-center">
                     <div className="absolute h-[1px] w-[100%] bg-primary"/>
-                    <p className="text-gray-700
+                    <p className="text-gray-800
                                   dark:text-white
                     
                                   xs:text-[17px]

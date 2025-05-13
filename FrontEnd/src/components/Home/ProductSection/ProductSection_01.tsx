@@ -79,7 +79,7 @@ const ProductSection_01 = () => {
             />
           </div>
           {/* ============= Info ============= */}
-          <div className="flex flex-col w-[100%] h-[35%] gap-2 p-4 justify-between">
+          <div className="flex flex-col w-[100%] h-[35%] gap-2 p-4 justify-between dark:bg-gray-800">
             {/* ============= Stars ============= */}
             <div className="flex gap-2">
               {getStars(product.rating)}
@@ -112,7 +112,7 @@ const ProductSection_01 = () => {
               </h1>
               <i className="bg-primary border-[1px] border-primary cursor-pointer
                               hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
-                              dark:bg-gray-700 dark:border-gray-700 dark:hover:border-gray-700 dark:hover:bg-transparent
+                              dark:bg-gray-800 dark:border-gray-800 dark:hover:border-gray-800 dark:hover:bg-transparent
                               
                               xs:rounded-md
                               md:rounded-sm

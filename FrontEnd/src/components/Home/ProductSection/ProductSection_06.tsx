@@ -92,7 +92,7 @@ const ProductSection_05 = () => {
             </div>
             {/* ============= Section - right - 01 - Info ============= */}
             <div className="flex flex-col w-[60%] h-[100%] p-3 justify-center gap-1
-                            dark:bg-gray-700">
+                            dark:bg-gray-800">
               {/* ============= Stars ============= */}
               <div className="flex gap-2 items-center">
                 {getStars(product.rating)}
@@ -124,7 +124,7 @@ const ProductSection_05 = () => {
 
                 <div className="flex w-auto relative items-center">
                   <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
-                  <p className="text-gray-700
+                  <p className="text-gray-800
                                 dark:text-white
 
                                 lg:text-[12px]

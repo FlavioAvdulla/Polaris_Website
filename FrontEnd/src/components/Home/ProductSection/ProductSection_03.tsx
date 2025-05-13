@@ -46,7 +46,7 @@ const ProductSection_03 = () => {
           {/* ============= Product Part Left ============= */}
           <div
             className="flex flex-col h-[100%] bg-primary p-5 justify-center rounded-tl-lg rounded-bl-lg
-                       dark:bg-gray-700
+                       dark:bg-gray-800
                         
                         xs:w-[100%]
                         lg:w-[50%]">

@@ -57,7 +57,7 @@ const Top_Rating = () => {
             {/* ============= Title ============= */}
             <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
                             group-hover:shadow-shadow-dark transition-all duration-300
-                            dark:bg-gray-700
+                            dark:bg-gray-800
             
                             xs:text-[20px]
                             md:text-[18px]
@@ -74,7 +74,7 @@ const Top_Rating = () => {
                               2xl:text-[25px]">{product.offerPrice}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
-                  <p className="text-gray-700 rounded-br-lg rounded-bl-lg text-[17px]
+                  <p className="text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
                                   dark:text-white
                                 ">{product.normalPrice}</p>
                 </div>

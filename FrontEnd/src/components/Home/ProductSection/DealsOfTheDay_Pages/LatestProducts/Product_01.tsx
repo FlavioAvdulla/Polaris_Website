@@ -100,7 +100,7 @@ const Product_01 = () => {
                       xl:h-[600px]">
         {/* ============= Big Photo ============= */}
         <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
-                        ">
+                        dark:bg-transparent dark:border-white">
           <img
             className="w-[85%] object-cover"
             src={mainPhoto}
@@ -116,8 +116,8 @@ const Product_01 = () => {
           <div
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
-                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary"
-          >
+                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary
+                          dark:bg-transparent dark:border-white">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_01}
@@ -128,8 +128,8 @@ const Product_01 = () => {
           <div
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
-                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary"
-          >
+                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary
+                          dark:bg-transparent dark:border-white">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_02}
@@ -140,8 +140,8 @@ const Product_01 = () => {
           <div
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
-                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary"
-          >
+                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary
+                          dark:bg-transparent dark:border-white">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_03}
@@ -152,8 +152,8 @@ const Product_01 = () => {
           <div
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
-                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary"
-          >
+                          ease-in-out duration-300 border-[1px] overflow-hidden border-primary
+                          dark:bg-transparent dark:border-white">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_04}
@@ -166,13 +166,15 @@ const Product_01 = () => {
 
       {/* ============= Right - Product - Infos ============= */}
       <div className="flex flex-col bg-gray-100 gap-2 rounded-lg mx-auto justify-between
-      
+                      dark:bg-gray-800
+
                       xs:p-3 xs:h-auto xs:w-[100%]
                       md:p-4 lg:w-[50%]
                       lg:h-[500px] lg:p-5
                       xl:h-[600px] xl:p-10">
         <h1 className="font-camptonBold leading-tight text-primary
-        
+                        dark:text-secondary_01
+
                         xs:text-[20px]
                         md:text-[28px]
                         lg:text-[38px]
@@ -181,7 +183,8 @@ const Product_01 = () => {
           {t(product.title)}
         </h1>
         <p className="w-[100%] font-camptonBook leading-tight
-        
+                      dark:text-white
+
                       xs:text-[10px] text-justify
                       md:text-[13px]
                       lg:text-[15px]">
@@ -189,18 +192,20 @@ const Product_01 = () => {
         </p>
         <div className="flex gap-2">{getStars(product.rating)}</div>
         <p className="font-camptonBook
-        
+                      dark:text-white
+
                       xs:text-[12px]
                       md:text-[15px]
                       lg:text-[18px]
                       xl:text-[20px]">{t("product_01.review")}</p>
         {/* ============= Price ============= */}
         <div className="flex items-center
-        
+
                         xs:gap-2
                         md:gap-4">
           <p className="font-camptonBold text-primary
-          
+                        dark:text-secondary_01
+
                         xs:text-[22px]
                         md:text-[30px]
                         lg:text-[40px]">
@@ -209,7 +214,8 @@ const Product_01 = () => {
           <div className="flex w-auto relative items-center">
             <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
             <p className="text-gray-700
-            
+                          dark:text-white
+
                           xs:text-[16px]
                           md:text-[17px]
                           lg:text-[25px]">{product.normalPrice}</p>
@@ -219,13 +225,13 @@ const Product_01 = () => {
           <div className="flex items-center gap-1">
             <i>
               <GoDot className="text-primary
-              
-                               
+                                dark:text-secondary_01
+
                                 xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
-            
-                        
+                          dark:text-white
+
                         xs:text-[10px]
                         lg:text-[13px]
                         xl:text-[15px]">{t(product.detail_01)}</p>
@@ -234,13 +240,13 @@ const Product_01 = () => {
           <div className="flex items-center gap-1">
             <i>
               <GoDot className="text-primary
-              
-                                
+                                dark:text-secondary_01
+
                                 xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
-            
-                          
+                          dark:text-white
+
                           xs:text-[10px]
                           lg:text-[13px]
                           xl:text-[15px]">{t(product.detail_02)}</p>
@@ -249,12 +255,13 @@ const Product_01 = () => {
           <div className="flex items-center gap-1">
             <i>
               <GoDot className="text-primary
-              
+                                dark:text-secondary_01
+
                                 xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
-            
-                          
+                          dark:text-white
+
                           xs:text-[10px]
                           lg:text-[13px]
                           xl:text-[15px]">{t(product.detail_03)}</p>
@@ -263,13 +270,13 @@ const Product_01 = () => {
           <div className="flex items-center gap-1">
             <i>
               <GoDot className="text-primary
-              
-                                
+                                dark:text-secondary_01
+
                                 xs:text-[12px]" />
             </i>
             <p className="font-camptonBook
-            
-                          
+                          dark:text-white
+
                           xs:text-[10px]
                           lg:text-[13px]
                           xl:text-[15px]">{t(product.detail_04)}</p>
@@ -280,25 +287,24 @@ const Product_01 = () => {
           <div
             className="flex items-center justify-center
                         border-[1px] border-primary cursor-pointer
-                        
-                        
+                        dark:border-secondary_01
+
                         xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
                         lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
-            onClick={decreaseQuantity}
-          >
+            onClick={decreaseQuantity}>
             <i>
               <FaCircleMinus className="text-primary cursor-pointer
-              
-                                      
+                                        dark:text-secondary_01
+
                                         xs:text-[13px]
                                         lg:text-[22px]" />
             </i>
           </div>
-          <div className="flex items-center text-center justify-center w-[100%] h-[100%]  bg-primary ">
+          <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary
+                          dark:bg-secondary_01">
             <input
               className="text-center text-white font-camptonMedium bg-transparent outline-none
-              
-                       
+
                         xs:w-[25px] xs:h-[26px] xs:text-[12px]
                         lg:w-[40px] lg:h-[40px] lg:text-[20px]"
               type="text"
@@ -312,15 +318,16 @@ const Product_01 = () => {
           <div
             className="flex items-center justify-center
                         border-[1px] border-primary cursor-pointer
-                        
+                        dark:border-secondary_01
+
                         xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
                         lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
             onClick={increaseQuantity}
           >
             <i>
               <FaCirclePlus className="text-primary cursor-pointer
-              
-                                  
+                                        dark:text-secondary_01
+
                                         xs:text-[13px]
                                         lg:text-[22px]" />
             </i>
@@ -331,6 +338,7 @@ const Product_01 = () => {
               className=" flex items-center w-fit justify-center gap-3 border-[1px] bg-primary
                         border-white text-white px-4 py-2 rounded-tr-3xl rounded-br-3xl rounded-tl-lg rounded-bl-lg
                           hover:scale-110 hover:border-[1px] hover:bg-transparent hover:border-primary hover:text-primary ease-in-out duration-300
+                          dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white
                           
                           xs:gap-2 xs:px-4 xs:py-2
                           md:gap-3">

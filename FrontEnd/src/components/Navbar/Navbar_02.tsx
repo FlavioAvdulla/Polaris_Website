@@ -144,7 +144,7 @@ const Navbar_02 = ({ setShowSignIn, setShowSignOut, cartQuantity, favouriteQuant
             />
           </i>
           <div className="absolute top-0 ml-6 mt-1 flex rounded-full bg-primary items-center justify-center
-                          dark:bg-gray-700
+                          dark:bg-gray-800
 
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
@@ -170,7 +170,7 @@ const Navbar_02 = ({ setShowSignIn, setShowSignOut, cartQuantity, favouriteQuant
             />
           </i>
           <div className="absolute top-0 flex rounded-full bg-primary items-center justify-center
-                          dark:bg-gray-700
+                          dark:bg-gray-800
                           
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1

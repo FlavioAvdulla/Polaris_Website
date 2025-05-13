@@ -16,7 +16,7 @@ const Footer = () => {
 
   return (
     <div className="flex flex-col w-[100%] justify-center pt-10 bg-primary
-                    dark:bg-gray-700">
+                    dark:bg-gray-800">
       <div className="flex gap-5 justify-between mx-auto mb-8
       
                       xs:flex-col xs:w-[80%]
@@ -82,6 +82,7 @@ const Footer = () => {
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
           <h1 className="text-white font-camptonBold
+                          dark:text-secondary_01
           
                           md:text-[18px]
                           lg:text-[22px]">
@@ -121,6 +122,7 @@ const Footer = () => {
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
           <h1 className="text-white font-camptonBold
+                          dark:text-secondary_01
           
                           md:text-[18px]
                           lg:text-[22px]">
@@ -160,6 +162,7 @@ const Footer = () => {
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
           <h1 className="text-white font-camptonBold
+                        dark:text-secondary_01
           
                           md:text-[18px]
                           lg:text-[22px]">{t("footer.contact")}</h1>
