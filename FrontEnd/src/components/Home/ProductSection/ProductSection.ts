@@ -695,6 +695,7 @@ export const latestProducts = [
     detail_04: "product_06.detail_04",
     rating: "3.0",
     reviews: "product_06.review",
+    addToCart: "product_05.addToCart"
   },
 ];
 

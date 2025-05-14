@@ -36,7 +36,7 @@ const ProductSection_03 = () => {
         // ============= Product Container =============
         <div
           className="flex border-[1px] border-primary rounded-lg overflow-hidden bg-transparent mx-auto cursor-pointer
-                     dark:border-white
+                     dark:border-gray-600
           
                     xs:flex-col
                     lg:flex-row lg:w-[50%]

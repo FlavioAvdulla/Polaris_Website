@@ -29,57 +29,70 @@ const Faq = ({ setShowFaq }) => {
         {/* ============= Question 01 ============= */}
         <AccordionItem
           value="item-1"
-          className="flex-col p-5 h-auto rounded-xl rounded-bl-none rounded-br-none bg-white
-        
-                              xs:w-[95%] md:w-[350px]">
+          className="flex-col p-5 h-auto rounded-xl rounded-bl-none rounded-br-none
+                     dark:bg-darkColor
+
+                    xs:w-[95%]
+                    md:w-[350px]">
                                 
           <div className="flex w-[100%] h-auto items-center justify-between">
-            <h1 className="font-camptonBook text-[20px]">{t("faq.faq")}</h1>
+            <h1 className="font-camptonBook text-[20px]
+                           dark:text-white">{t("faq.faq")}</h1>
             <IoIosCloseCircle
-              className="text-primary text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]"
+              className="text-primary text-[30px] cursor-pointer duration-300
+                          dark:text-secondary_01
+                          hover:rotate-[180deg]"
               onClick={handleClose}
             />
           </div>
-          <AccordionTrigger className="font-camptonMedium">
+          <AccordionTrigger className="font-camptonMedium
+                                       dark:text-white">
           {t("faq.question_01")}
           </AccordionTrigger>
-          <AccordionContent className="text-justify">
+          <AccordionContent className="text-justify
+                                       dark:text-white">
           {t("faq.answer_01")}
           </AccordionContent>
         </AccordionItem>
         {/* ============= Question 02 ============= */}
         <AccordionItem
           value="item-2"
-          className="flex-col p-5 h-auto rounded-none bg-white xs:w-[95%] md:w-[350px]"
-        >
-          <AccordionTrigger className="font-camptonMedium">
+          className="flex-col p-5 h-auto rounded-none xs:w-[95%] md:w-[350px]
+                     dark:bg-darkColor">
+          <AccordionTrigger className="font-camptonMedium
+                                       dark:text-white">
           {t("faq.question_02")}
           </AccordionTrigger>
-          <AccordionContent className="text-justify">
+          <AccordionContent className="text-justify
+                                       dark:text-white">
           {t("faq.answer_02")}
           </AccordionContent>
         </AccordionItem>
         {/* ============= Question 03 ============= */}
         <AccordionItem
           value="item-3"
-          className="flex-col p-5 h-auto rounded-none bg-white xs:w-[95%] md:w-[350px]"
-        >
-          <AccordionTrigger className="font-camptonMedium">
+          className="flex-col p-5 h-auto rounded-none xs:w-[95%] md:w-[350px]
+                     dark:bg-darkColor">
+          <AccordionTrigger className="font-camptonMedium
+                                       dark:text-white">
           {t("faq.question_03")}
           </AccordionTrigger>
-          <AccordionContent className="text-justify">
+          <AccordionContent className="text-justify
+                                       dark:text-white">
           {t("faq.answer_03")}
           </AccordionContent>
         </AccordionItem>
         {/* ============= Question 04 ============= */}
         <AccordionItem
           value="item-4"
-          className="flex-col p-5 h-auto rounded-xl rounded-tl-none rounded-tr-none bg-white xs:w-[95%] md:w-[350px]"
-        >
-          <AccordionTrigger className="font-camptonMedium">
+          className="flex-col p-5 h-auto rounded-xl rounded-tl-none rounded-tr-none xs:w-[95%] md:w-[350px]
+                     dark:bg-darkColor">
+          <AccordionTrigger className="font-camptonMedium
+                                       dark:text-white">
           {t("faq.question_04")}
           </AccordionTrigger>
-          <AccordionContent className="text-justify">
+          <AccordionContent className="text-justify
+                                       dark:text-white">
           {t("faq.answer_04")}
           </AccordionContent>
         </AccordionItem>

@@ -100,7 +100,7 @@ const Product_01 = () => {
                       xl:h-[600px]">
         {/* ============= Big Photo ============= */}
         <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
-                        dark:bg-transparent dark:border-white">
+                        dark:bg-transparent dark:border-gray-600">
           <img
             className="w-[85%] object-cover"
             src={mainPhoto}
@@ -117,7 +117,7 @@ const Product_01 = () => {
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
                           ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                          dark:bg-transparent dark:border-white">
+                          dark:bg-transparent dark:border-gray-600">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_01}
@@ -129,7 +129,7 @@ const Product_01 = () => {
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
                           ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                          dark:bg-transparent dark:border-white">
+                          dark:bg-transparent dark:border-gray-600">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_02}
@@ -141,7 +141,7 @@ const Product_01 = () => {
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
                           ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                          dark:bg-transparent dark:border-white">
+                          dark:bg-transparent dark:border-gray-600">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_03}
@@ -153,7 +153,7 @@ const Product_01 = () => {
             className="w-[25%] items-center justify-center rounded-lg
                           cursor-pointer hover:scale-105 hover:shadow-shadow-dark
                           ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                          dark:bg-transparent dark:border-white">
+                          dark:bg-transparent dark:border-gray-600">
             <img
               className="w-[100%] h-[100%] object-cover"
               src={Lenovo_04}

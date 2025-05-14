@@ -190,7 +190,8 @@ const Footer = () => {
           </button>
         </div>
       </div>
-      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
+                      dark:bg-gray-600" />
 
       {/* ============= Copyright ============= */}
       <div className="flex w-[85%] h-auto py-6 justify-between items-center mx-auto

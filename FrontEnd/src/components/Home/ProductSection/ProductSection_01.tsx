@@ -64,7 +64,7 @@ const ProductSection_01 = () => {
         <div
           className=" rounded-lg overflow-hidden h-auto
                     bg-gray-100 border-[1px] border-primary cursor-pointer
-                      dark:bg-transparent dark:border-white
+                      dark:bg-transparent dark:border-gray-600
                       
                       xs:mb-5
                       md:w-[100%]"

@@ -31,27 +31,6 @@ const ProductSection_04 = () => {
       navigate(route);
     }
   }
-  // const handleImageClick = (id) => {
-  //   console.log(`Image with id ${id} clicked.`)
-  //   if (id === "1") {
-  //     navigate("/Computers")
-  //   }
-  //   if (id === "2") {
-  //     navigate("/MobilesAndTablets")
-  //   }
-  //   if (id === "3") {
-  //     navigate("/GameAccessories")
-  //   }
-  //   if (id === "4") {
-  //     navigate("/CameraAndPhoto")
-  //   }
-  //   if (id === "5") {
-  //     navigate("/Electronics")
-  //   }
-  //   if (id === "6") {
-  //     navigate("/AudioAndHeadphones")
-  //   }
-  // }
 
   return (
     <div className="flex flex-col w-[85%] mx-auto">
@@ -81,7 +60,8 @@ const ProductSection_04 = () => {
           </p>
         </div>
       </div>
-      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
+                      dark:bg-gray-600" />
       <div className="flex w-[100%] h-auto mx-auto items-center justify-between mb-20 mt-10
       
                       xs:grid xs:grid-cols-1 xs:gap-y-[60px]
@@ -91,11 +71,10 @@ const ProductSection_04 = () => {
         {shopByCategories.map((product, index) => (
           <div
             className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg cursor-pointer
-                       dark:border-white"
+                       dark:border-gray-600"
             key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
-            <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-white
-                            dark:bg-transparent">
+            <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-transparent">
               <img className="
                               xs:h-auto
                               lg:w-[90%] w-[100%]

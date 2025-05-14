@@ -80,11 +80,10 @@ const ProductSection_05 = () => {
           <div
             className="flex w-[100%] h-auto overflow-hidden bg-gray-100
                       items-center rounded-lg border-[1px] border-primary cursor-pointer
-                      dark:bg-transparent dark:border-white"
+                      dark:bg-transparent dark:border-gray-600"
             key={index} onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 - Photo ============= */}
-            <div className="flex w-[40%] h-[100%] items-center rounded-tl-lg rounded-bl-lg bg-white
-                            dark:bg-transparent">
+            <div className="flex w-[40%] h-[100%] items-center rounded-tl-lg rounded-bl-lg bg-transparent">
               <img
                 src={product.image}
                 alt={product.title}

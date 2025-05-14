@@ -72,7 +72,8 @@ const ProductSection_02 = () => {
           ))}
         </div>
       </div>
-      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+      <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
+                      dark:bg-gray-600" />
       {/* Outlet to display nested routes */}
       <Outlet />
     </div>

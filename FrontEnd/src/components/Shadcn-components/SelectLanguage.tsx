@@ -30,9 +30,9 @@ export function SelectLanguage() {
   return (
     <Select 
       defaultValue={i18n.language} 
-      onValueChange={handleLanguageChange}
-    >
-      <SelectTrigger className="w-auto gap-2 shadow-none border-[1px] border-gray-300">
+      onValueChange={handleLanguageChange}>
+      <SelectTrigger className="w-auto gap-2 shadow-none border-[1px] border-gray-300
+                                dark:border-gray-600">
         <SelectValue placeholder="">
           <p className="font-camptonBook xs:text-[12px] md:text-[14px]">
             {languages.find(lang => lang.code === i18n.language)?.name || 'English'}
@@ -42,7 +42,8 @@ export function SelectLanguage() {
       <SelectContent>
         <SelectGroup>
           <SelectLabel>
-            <p className="font-camptonBook text-primary">{t('navbar_02.languages')}</p>
+            <p className="font-camptonBook text-primary
+                          dark:text-secondary_01">{t('navbar_02.languages')}</p>
           </SelectLabel>
           {languages.map((language) => (
             <SelectItem key={language.code} value={language.code}>

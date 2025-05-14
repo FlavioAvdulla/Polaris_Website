@@ -83,13 +83,13 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
             className="font-camptonBook flex items-center md:gap-2"
             aria-label={t('navbar_01.contactUs')}
           >
-            <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-full sm:hidden dark:bg-gray-700">
+            <i className="xs:bg-primary xs:p-2 xs:text-white xs:rounded-full sm:hidden dark:bg-gray-800">
               <BsPhone className="text-[15px]" />
             </i>
             <div className="flex items-center lg:flex-col lg:gap-2 xl:flex-row">
               <p className="text-[14px] xs:hidden xl:flex">{t('navbar_01.contactUs')}</p>
               <p className="font-camptonMedium bg-gray-100 rounded-md text-primary px-2 py-1 xs:hidden
-                            dark:bg-gray-700 dark:text-white
+                            dark:bg-gray-800 dark:text-white
                             
                             sm:flex sm:text-[10px] md:text-[14px]">
                 +355 (0) 67 63 11 918
@@ -97,7 +97,7 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
             </div>
           </button>
           <SelectLanguage />
-          <div className="h-auto w-[1px] bg-gray-300 dark:bg-gray-700" />
+          <div className="h-auto w-[1px] bg-gray-300 dark:bg-gray-600" />
           <SelectCurrency />
           <button 
             type="button"
@@ -109,7 +109,7 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
               {theme === 'light' ? (
                 <BsMoon className="bg-gray-100 w-auto h-auto p-1 rounded-md text-[15px] ease-in-out duration-300" />
               ) : (
-                <BsBrightnessHigh className="dark:bg-gray-700 w-auto h-auto p-1 rounded-md text-[15px] ease-in-out duration-300" />
+                <BsBrightnessHigh className="dark:bg-gray-800 w-auto h-auto p-1 rounded-md text-[15px] ease-in-out duration-300" />
               )}
             </i>
             <p className="text-[14px] ease-in-out duration-300 xs:hidden lg:flex">

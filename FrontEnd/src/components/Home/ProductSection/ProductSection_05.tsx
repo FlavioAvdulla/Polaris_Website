@@ -90,7 +90,7 @@ const ProductSection_05 = () => {
             onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 ============= */}
             <div className="flex w-[100%] h-[100%] bg-gray-100 items-center rounded-lg border-[1px] border-primary
-                            dark:bg-transparent dark:border-white">
+                            dark:bg-transparent dark:border-gray-600">
               {/* ============= Section - right - 01 - Photo ============= */}
               <div className="flex w-[40%] h-[100%] items-center justify-center rounded-tl-lg rounded-bl-lg bg-white
                               dark:bg-transparent">

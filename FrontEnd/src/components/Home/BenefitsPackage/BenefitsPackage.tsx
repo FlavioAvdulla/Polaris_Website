@@ -24,7 +24,7 @@ const BenefitsPackage = () => {
                       xs:mb-5
                       md:mb-0" key={index}>
         <div className="flex items-center justify-center border-[1px] border-primary
-                        dark:border-white
+                        dark:border-gray-600
                          
                         
                         xs:w-[80px] xs:h-[80px] xs:rounded-[8px] xs:mb-3
@@ -45,7 +45,7 @@ const BenefitsPackage = () => {
                       lg:text-[17px]
                        ">{t(benefit.titleKey)}</h1>
         <p className="text-gray-500 font-camptonBook w-[80%]
-                        dark:text-gray-400
+                      dark:text-gray-400
                         
                         xs:text-[10px]
                         md:text-[12px]

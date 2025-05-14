@@ -44,7 +44,7 @@ const Best_Selling = () => {
         {bestSelling.map((product, index) => (
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer rounded-lg
           
-                          dark:border-white" key={index} onClick={() => handleImageClick(product._id)}>
+                          dark:border-gray-600" key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
             <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
               <img className="
