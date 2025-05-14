@@ -50,17 +50,19 @@ const Cart = ({ setFavouriteQuantity }) => {
             <div className="flex w-[100%] justify-between items-center mb-7">
               <h1
                 className="font-camptonMedium
-
-                            xs:text-[10px]
-                            sm:text-[11px]
-                            md:text-[15px] 
-                            lg:text-[22px]">{" "}Add to Favourites</h1>
+                           dark:text-white
+      
+                           xs:text-[10px]
+                           sm:text-[11px]
+                           md:text-[15px] 
+                           lg:text-[22px]">{" "}Add to Favourites</h1>
               <div className="flex items-center
-
+      
                               xs:w-[50%]
                               md:w-fit">
                 <p className="text-gray-500
-
+                              dark:text-white
+      
                               xs:text-[10px]
                               sm:text-[11px]
                               md:text-[15px]
@@ -71,26 +73,37 @@ const Cart = ({ setFavouriteQuantity }) => {
             </div>
             <div className="h-[1px] w-full mx-auto" />
             {/* ============= Add to Cart - Table ============= */}
-            <div className="flex overflow-scroll scrollbar-hide">
+            <div className="flex overflow-scroll [&::-webkit-scrollbar]:hidden
+                            [-ms-overflow-style:none] [scrollbar-width:none]">
             <table className="flex flex-col 
-
+      
                               xs:min-w-[1000px]
                               lg:min-w-[100%]">
               <thead>
                 <tr className="flex w-[100%] justify-between gap-[1px]">
-                  <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+                  <th className="flex p-2 justify-center w-[100%] h-[100%]
+                                 bg-primary font-camptonLight text-[17px]
+                                 dark:bg-secondary_01">
                     <p className="text-white">Product</p>
                   </th>
-                  <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+                  <th className="flex p-2 justify-center w-[100%] h-[100%]
+                                 bg-primary font-camptonLight text-[17px]
+                                 dark:bg-secondary_01">
                     <p className="text-white">Unit Price</p>
                   </th>
-                  <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+                  <th className="flex p-2 justify-center w-[100%] h-[100%]
+                                 bg-primary font-camptonLight text-[17px]
+                                 dark:bg-secondary_01">
                     <p className="text-white">Quantity</p>
                   </th>
-                  <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+                  <th className="flex p-2 justify-center w-[100%] h-[100%]
+                                 bg-primary font-camptonLight text-[17px]
+                                 dark:bg-secondary_01">
                     <p className="text-white">Subtotal</p>
                   </th>
-                  <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+                  <th className="flex p-2 justify-center w-[100%] h-[100%]
+                                 bg-primary font-camptonLight text-[17px]
+                                 dark:bg-secondary_01">
                     <p className="text-white">Remove</p>
                   </th>
                 </tr>
@@ -99,42 +112,51 @@ const Cart = ({ setFavouriteQuantity }) => {
               <tbody>
                 {cartItems.map((product, index) => (
                   <tr key={index} className="flex w-[100%] justify-between">
-                    <td className="flex px-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
-                      <img
-                        className="
-                                    xs:w-[50px]
-                                    lg:w-[70px]"
+                    <td className="flex px-5 items-center w-[100%] gap-5 justify-center
+                                   border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
+                                   dark:border-secondary_01 dark:text-white">
+                      <img className="xs:w-[50px]
+                                      lg:w-[70px]"
                         src={product.image}
                         alt={product.title}
                       />
                       {product.title}
                     </td>
-                    <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
+                    <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+                                   border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
+                                   dark:border-secondary_01 dark:text-white">
                       {product.unitPrice}
                     </td>
-                    <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
+                    <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+                                   border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
+                                   dark:border-secondary_01 dark:text-white">
                       {/* ============= Quantity ============= */}
                       <div className="flex h-auto items-center">
                         <div
-                          className="flex items-center justify-center border-[1px] border-primary cursor-pointer
-                                                                     
-                                      xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
-                                      lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
+                          className="flex items-center justify-center
+                                     border-[1px] border-primary cursor-pointer
+                                     dark:border-secondary_01
+                                
+                                     xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
+                                     lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
                           onClick={decreaseQuantity}>
                           <i>
                             <FaCircleMinus
                               className="text-primary cursor-pointer
-                                                                     
-                                          xs:text-[13px]
-                                          lg:text-[22px]"/></i>
+                                         dark:text-secondary_01
+      
+                                         xs:text-[13px]
+                                         lg:text-[22px]"/></i>
                         </div>
                         {/* ============= Quantity number ============= */}
-                        <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary border-[1px] border-primary">
+                        <div className="flex items-center text-center justify-center w-[100%] h-[100%]
+                                        bg-primary border-[1px] border-primary
+                                        dark:bg-secondary_01 dark:border-secondary_01">
                           <input
                             className="text-center text-white font-camptonMedium bg-transparent outline-none
-                              
-                                      xs:w-[25px] xs:h-[26px] xs:text-[12px]
-                                      lg:w-[40px] lg:h-[40px] lg:text-[20px]"
+      
+                                       xs:w-[25px] xs:h-[26px] xs:text-[12px]
+                                       lg:w-[40px] lg:h-[40px] lg:text-[20px]"
                             type="text"
                             id="quantity"
                             name="quantity"
@@ -144,21 +166,25 @@ const Cart = ({ setFavouriteQuantity }) => {
                         </div>
                         <div
                           className="flex items-center justify-center
-                                      border-[1px] border-primary cursor-pointer
-                                                      
-                                      xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
-                                      lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
+                                     border-[1px] border-primary cursor-pointer
+                                     dark:border-secondary_01
+      
+                                     xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
+                                     lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
                           onClick={increaseQuantity}>
       
-                          <i><FaCirclePlus className="text-primary cursor-pointer
-                                                                    
-                                          xs:text-[13px]
-                                          lg:text-[22px]"/></i>
+                          <i><FaCirclePlus
+                                className="text-primary cursor-pointer
+                                           dark:text-secondary_01
+                           
+                                            xs:text-[13px]
+                                            lg:text-[22px]"/></i>
                         </div>
                       </div>
                     </td>
                     <td className="flex p-5 items-center w-[100%] gap-5 justify-center
-                                  border-[1px] border-r-0 border-t-0 border-primary">
+                                   border-[1px] border-r-0 border-t-0 border-primary
+                                   dark:border-secondary_01 dark:text-white">
                       <p>
                         {(
                           parseInt(localQuantity, 10) *
@@ -166,9 +192,12 @@ const Cart = ({ setFavouriteQuantity }) => {
                         ).toFixed(2)}$
                       </p>
                     </td>
-                    <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-t-0 border-primary">
+                    <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+                                   border-[1px] border-t-0 border-primary
+                                   dark:border-secondary_01 ">
                       <i>
-                        <IoCloseCircle className="text-[29px] text-primary cursor-pointer"
+                        <IoCloseCircle className="text-[29px] text-primary cursor-pointer
+                                                  dark:text-secondary_01"
                         onClick={() => handleRemoveItem(product._id)} />
                       </i>
                     </td>

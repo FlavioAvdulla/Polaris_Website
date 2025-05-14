@@ -69,17 +69,19 @@ const calculations = CartCalculations({cartItems})
       <div className="flex w-[100%] justify-between items-center mb-7">
         <h1
           className="font-camptonMedium
-                      
-                      xs:text-[10px]
-                      sm:text-[11px]
-                      md:text-[15px] 
-                      lg:text-[22px]">{" "}Add to Cart</h1>
+                     dark:text-white
+
+                     xs:text-[10px]
+                     sm:text-[11px]
+                     md:text-[15px] 
+                     lg:text-[22px]">{" "}Add to Cart</h1>
         <div className="flex items-center
-                        
+
                         xs:w-[50%]
                         md:w-fit">
           <p className="text-gray-500
-                        
+                        dark:text-white
+
                         xs:text-[10px]
                         sm:text-[11px]
                         md:text-[15px]
@@ -90,26 +92,37 @@ const calculations = CartCalculations({cartItems})
       </div>
       <div className="h-[1px] w-full mx-auto" />
       {/* ============= Add to Cart - Table ============= */}
-      <div className="flex overflow-scroll scrollbar-hide">
+      <div className="flex overflow-scroll [&::-webkit-scrollbar]:hidden
+                      [-ms-overflow-style:none] [scrollbar-width:none]">
       <table className="flex flex-col 
-      
+
                         xs:min-w-[1000px]
                         lg:min-w-[100%]">
         <thead>
           <tr className="flex w-[100%] justify-between gap-[1px]">
-            <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+            <th className="flex p-2 justify-center w-[100%] h-[100%]
+                           bg-primary font-camptonLight text-[17px]
+                           dark:bg-secondary_01">
               <p className="text-white">Product</p>
             </th>
-            <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+            <th className="flex p-2 justify-center w-[100%] h-[100%]
+                           bg-primary font-camptonLight text-[17px]
+                           dark:bg-secondary_01">
               <p className="text-white">Unit Price</p>
             </th>
-            <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+            <th className="flex p-2 justify-center w-[100%] h-[100%]
+                           bg-primary font-camptonLight text-[17px]
+                           dark:bg-secondary_01">
               <p className="text-white">Quantity</p>
             </th>
-            <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+            <th className="flex p-2 justify-center w-[100%] h-[100%]
+                           bg-primary font-camptonLight text-[17px]
+                           dark:bg-secondary_01">
               <p className="text-white">Subtotal</p>
             </th>
-            <th className="flex p-2 justify-center w-[100%] h-[100%] bg-primary font-camptonLight text-[17px]">
+            <th className="flex p-2 justify-center w-[100%] h-[100%]
+                           bg-primary font-camptonLight text-[17px]
+                           dark:bg-secondary_01">
               <p className="text-white">Remove</p>
             </th>
           </tr>
@@ -118,43 +131,51 @@ const calculations = CartCalculations({cartItems})
         <tbody>
           {cartItems.map((product, index) => (
             <tr key={index} className="flex w-[100%] justify-between">
-              <td className="flex px-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
-                <img
-                  className="
-                              xs:w-[50px]
-                              lg:w-[70px]"
+              <td className="flex px-5 items-center w-[100%] gap-5 justify-center
+                             border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
+                             dark:border-secondary_01 dark:text-white">
+                <img className="xs:w-[50px]
+                                lg:w-[70px]"
                   src={product.image}
                   alt={product.title}
                 />
                 {product.title}
               </td>
-              <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
+              <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+                             border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
+                             dark:border-secondary_01 dark:text-white">
                 {product.unitPrice}
               </td>
-              <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-r-0 border-t-0 border-primary">
+              <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+                             border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
+                             dark:border-secondary_01 dark:text-white">
                 {/* ============= Quantity ============= */}
                 <div className="flex h-auto items-center">
                   <div
                     className="flex items-center justify-center
-                                border-[1px] border-primary cursor-pointer
-                                                               
-                                xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
-                                lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
+                               border-[1px] border-primary cursor-pointer
+                               dark:border-secondary_01
+                          
+                               xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
+                               lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
                     onClick={decreaseQuantity}>
                     <i>
                       <FaCircleMinus
                         className="text-primary cursor-pointer
-                                                               
-                                    xs:text-[13px]
-                                    lg:text-[22px]"/></i>
+                                   dark:text-secondary_01
+
+                                   xs:text-[13px]
+                                   lg:text-[22px]"/></i>
                   </div>
                   {/* ============= Quantity number ============= */}
-                  <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary border-[1px] border-primary">
+                  <div className="flex items-center text-center justify-center w-[100%] h-[100%]
+                                  bg-primary border-[1px] border-primary
+                                  dark:bg-secondary_01 dark:border-secondary_01">
                     <input
                       className="text-center text-white font-camptonMedium bg-transparent outline-none
-                        
-                                xs:w-[25px] xs:h-[26px] xs:text-[12px]
-                                lg:w-[40px] lg:h-[40px] lg:text-[20px]"
+
+                                 xs:w-[25px] xs:h-[26px] xs:text-[12px]
+                                 lg:w-[40px] lg:h-[40px] lg:text-[20px]"
                       type="text"
                       id="quantity"
                       name="quantity"
@@ -164,21 +185,25 @@ const calculations = CartCalculations({cartItems})
                   </div>
                   <div
                     className="flex items-center justify-center
-                                border-[1px] border-primary cursor-pointer
-                                                
-                                xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
-                                lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
+                               border-[1px] border-primary cursor-pointer
+                               dark:border-secondary_01
+
+                               xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
+                               lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
                     onClick={increaseQuantity}>
 
-                    <i><FaCirclePlus className="text-primary cursor-pointer
-                                                              
-                                    xs:text-[13px]
-                                    lg:text-[22px]"/></i>
+                    <i><FaCirclePlus
+                          className="text-primary cursor-pointer
+                                     dark:text-secondary_01
+                     
+                                      xs:text-[13px]
+                                      lg:text-[22px]"/></i>
                   </div>
                 </div>
               </td>
               <td className="flex p-5 items-center w-[100%] gap-5 justify-center
-                            border-[1px] border-r-0 border-t-0 border-primary">
+                             border-[1px] border-r-0 border-t-0 border-primary
+                             dark:border-secondary_01 dark:text-white">
                 <p>
                   {(
                     parseInt(localQuantity, 10) *
@@ -186,9 +211,12 @@ const calculations = CartCalculations({cartItems})
                   ).toFixed(2)}$
                 </p>
               </td>
-              <td className="flex p-5 items-center w-[100%] gap-5 justify-center border-[1px] border-t-0 border-primary">
+              <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+                             border-[1px] border-t-0 border-primary
+                             dark:border-secondary_01 ">
                 <i>
-                  <IoCloseCircle className="text-[29px] text-primary cursor-pointer"
+                  <IoCloseCircle className="text-[29px] text-primary cursor-pointer
+                                            dark:text-secondary_01"
                   onClick={() => handleRemoveItem(product._id)} />
                 </i>
               </td>
@@ -210,15 +238,18 @@ const calculations = CartCalculations({cartItems})
           {/* ============= Coupon input ============= */}
           <div className="flex w-[100%]">
             <input
-              className="w-[100%] h-[45px] rounded-md rounded-r-none font-camptonLight bg-gray-100 p-5 outline-none border-none"
+              className="w-[100%] h-[45px] rounded-md rounded-r-none font-camptonLight
+                       bg-gray-100 p-5 outline-none border-none
+                       dark:bg-gray-800"
               type="text"
               placeholder="Coupon Code"
               required/>
             <button
               className="flex w-[150px] h-[45px] rounded-md rounded-l-none items-center
                           justify-center text-white font-camptonLight bg-primary p-5 border-[1px] border-primary
+                          dark:bg-secondary_01 dark:border-secondary_01
                           
-                          hover:text-primary hover:bg-transparent duration-300">
+                          dark:hover:bg-transparent duration-300">
               <p className="font-camptonLight">Apply</p>
             </button>
           </div>
@@ -226,21 +257,24 @@ const calculations = CartCalculations({cartItems})
           <div className="flex flex-col gap-3">
             <input
               className="w-[100%] h-[45px] rounded-md font-camptonLight
-                      bg-gray-100 p-5 outline-none border-none"
+                        bg-gray-100 p-5 outline-none border-none
+                        dark:bg-gray-800"
               type="text"
               placeholder="Country"
               required
             />
             <input
               className="w-[100%] h-[45px] rounded-md font-camptonLight
-                      bg-gray-100 p-5 outline-none border-none"
+                      bg-gray-100 p-5 outline-none border-none
+                      dark:bg-gray-800"
               type="text"
               placeholder="City"
               required
             />
             <input
               className="w-[100%] h-[45px] rounded-md font-camptonLight
-                      bg-gray-100 p-5 outline-none border-none"
+                      bg-gray-100 p-5 outline-none border-none
+                      dark:bg-gray-800"
               type="text"
               placeholder="Postcode / ZIP"
               required
@@ -250,40 +284,51 @@ const calculations = CartCalculations({cartItems})
 
         {/* ============= Section - 02 ============= */}
         <div className="flex flex-col rounded-md border-[1px] border-primary px-4 justify-center
+                        dark:border-secondary_01
         
                         xs:w-[100%] xs:h-[303px]
                         lg:w-[33.33%]">
           <div className="flex flex-col gap-3">
-            <p className="font-camptonSemiBold">Cart Total</p>
+
+            <p className="font-camptonSemiBold
+                          dark:text-white">Cart Total</p>
 
             <div className="flex justify-between">
-              <p className="font-camptonBook">Subtotal</p>
-              <p className="font-camptonSemiBold">{calculations.subtotalElement}</p>
+              <p className="font-camptonBook
+                            dark:text-white">Subtotal</p>
+              <p className="font-camptonSemiBoldfont-camptonBook
+                            dark:text-white">{calculations.subtotalElement}</p>
             </div>
 
-            <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+            <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
+                            dark:bg-gray-600" />
 
             <div className="flex justify-between">
-              <p className="font-camptonBook">Shipping</p>
+
+              <p className="font-camptonBook
+                            dark:text-white">Shipping</p>
               <div className="font-camptonBook">
-                <p className="flex gap-1">Flat rate: <span className="font-camptonSemiBold">{calculations.flatRateElement}</span></p>
-                <p className="font-camptonBook">Free shipping</p>
-                <p className="font-camptonBook">
+                <p className="flex gap-1 dark:text-white">Flat rate: <span className="font-camptonSemiBold">{calculations.flatRateElement}</span></p>
+                <p className="dark:text-white">Free shipping</p>
+                <p className="dark:text-white">
                   Shipping to <span className="font-camptonSemiBold">CA.</span>
                 </p>
               </div>
             </div>
 
-            <div className="h-[1px] w-[100%] bg-gray-300 mx-auto" />
+            <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
+                            dark:bg-gray-600" />
 
             <div className="flex justify-between">
-              <p className="font-camptonBook">Total</p>
-              <p className="font-camptonSemiBold">{calculations.totalElement}</p>
+              <p className="font-camptonBook dark:text-white">Total</p>
+              <p className="font-camptonSemiBold dark:text-white">{calculations.totalElement}</p>
             </div>
             <button
               className="flex w-[100%] h-[45px] rounded-md items-center justify-center
-                          font-camptonLight bg-primary border-primary p-5 text-white border-[1px]
-                          hover:bg-transparent hover:text-primary duration-300">
+                         font-camptonLight bg-primary border-primary p-5 text-white border-[1px]
+                         hover:bg-transparent hover:text-primary duration-300
+                         dark:hover:text-white dark:bg-secondary_01 dark:hover:bg-transparent dark:border-secondary_01">
+
               <p className="font-camptonLight">Proceed to Checkout</p>
             </button>
           </div>
@@ -296,23 +341,30 @@ const calculations = CartCalculations({cartItems})
                         lg:w-[33.33%] lg:flex-row">
           <button
             className="flex w-[100%] h-[45px] rounded-md items-center justify-center
-                        font-camptonLight border-[1px] border-primary p-5">
-            <p className="font-camptonLight text-primary">Continue Shopping</p>
+                       font-camptonLight border-[1px] border-primary p-5
+                       dark:border-secondary_01">
+
+            <p className="font-camptonLight text-primary
+                          dark:text-white">Continue Shopping</p>
           </button>
-          <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center font-camptonLight bg-primary p-5 gap-2 group">
+          <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center
+                             font-camptonLight bg-primary p-5 gap-2 group
+                             dark:bg-secondary_01">
             <i>
-              <HiOutlineRefresh className="text-white group-hover:rotate-[180deg] group-hover:duration-300 group-hover:ease-in-out" />
+              <HiOutlineRefresh className="text-white group-hover:rotate-[180deg]
+                                           group-hover:duration-300 group-hover:ease-in-out" />
             </i>
             <p className="font-camptonLight text-white">Update Cart</p>
           </button>
         </div>
       </div>
       <button
-        className="flex h-[45px] rounded-md items-center justify-center
-                  font-camptonLight bg-primary border-primary p-5 mt-3 text-white border-[1px]
-                  hover:bg-transparent hover:text-primary duration-300
+        className="flex h-[45px] rounded-md items-center justify-center border-[1px]
+                   font-camptonLight bg-primary border-primary p-5 mt-3 text-white 
+                   hover:bg-transparent hover:text-primary duration-300
+                   dark:bg-secondary_01 dark:border-secondary_01
                   
-                  lg:w-[150px]">
+                   lg:w-[150px]">
         <p className="font-camptonLight">Update</p>
       </button>
     </div>
