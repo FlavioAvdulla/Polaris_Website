@@ -77,17 +77,16 @@ const ProductSection_05 = () => {
                       lg:h-[600px]
                       xl:h-[700px]">
         {productSection_06.map((product, index) => (
-          <div
-            className="flex w-[100%] h-auto overflow-hidden bg-gray-100
-                      items-center rounded-lg border-[1px] border-primary cursor-pointer
-                      dark:bg-transparent dark:border-gray-600"
-            key={index} onClick={() => handleProductClick(product._id)}>
+          <div className="flex w-[100%] h-auto overflow-hidden bg-gray-100
+                          items-center rounded-lg border-[1px] border-primary cursor-pointer
+                          dark:bg-transparent dark:border-gray-600"
+               key={index}
+               onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 - Photo ============= */}
             <div className="flex w-[40%] h-[100%] items-center rounded-tl-lg rounded-bl-lg bg-transparent">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-auto rounded-tl-lg rounded-bl-lg"/>
+              <img src={product.image}
+                   alt={product.title}
+                   className="w-full h-auto rounded-tl-lg rounded-bl-lg"/>
             </div>
             {/* ============= Section - right - 01 - Info ============= */}
             <div className="flex flex-col w-[60%] h-[100%] p-3 justify-center gap-1
@@ -102,7 +101,7 @@ const ProductSection_05 = () => {
                               xl:text-[13px]">({product.rating})</p>
               </div>
               <h1 className="text-[20px] font-camptonMedium leading-tight
-                            dark:text-white">
+                             dark:text-white">
               {t(product.title)}
               </h1>
               <p className="text-gray-500 leading-tight

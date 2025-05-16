@@ -61,22 +61,19 @@ const ProductSection_01 = () => {
                 md:grid md:grid-cols-3">
       {productSection_01.map((product, index) => (
         // ============= Product 1 =============
-        <div
-          className=" rounded-lg overflow-hidden h-auto
-                    bg-gray-100 border-[1px] border-primary cursor-pointer
+        <div className=" rounded-lg overflow-hidden h-auto
+                      bg-gray-100 border-[1px] border-primary cursor-pointer
                       dark:bg-transparent dark:border-gray-600
                       
                       xs:mb-5
                       md:w-[100%]"
-          key={index}
-          onClick={() => handleProductClick(product._id)}>
+             key={index}
+             onClick={() => handleProductClick(product._id)}>
           {/* ============= Image ============= */}
           <div className="flex w-[100%] h-[300px] justify-center items-center">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-auto h-full object-cover"
-            />
+            <img className="w-auto h-full object-cover"
+                 src={product.image}
+                 alt={product.title}/>
           </div>
           {/* ============= Info ============= */}
           <div className="flex flex-col w-[100%] h-[35%] gap-2 p-4 justify-between dark:bg-gray-800">
@@ -94,29 +91,28 @@ const ProductSection_01 = () => {
             <h1 className="font-camptonMedium
                            dark:text-white
 
-                              xs:w-[80%]
-                              sm:w-[60%]
-                              md:text-[13px] md:w-[90%]
-                              lg:text-[18px]
-                              xl:text-[22px] xl:w-[70%]">{t(product.title)}</h1>
+                           xs:w-[80%]
+                           sm:w-[60%]
+                           md:text-[13px] md:w-[90%]
+                           lg:text-[18px]
+                           xl:text-[22px] xl:w-[70%]">{t(product.title)}</h1>
 
             <div className="flex justify-between items-center">
               <h1 className="font-camptonBold text-primary
-                              dark:text-secondary_01
-              
-                              xs:text-[40px]
-                              md:text-[30px]
-                              lg:text-[36px]
-                              xl:text-[40px]">
-                {product.normalPrice}
+                             dark:text-secondary_01
+            
+                             xs:text-[40px]
+                             md:text-[30px]
+                             lg:text-[36px]
+                             xl:text-[40px]">{product.normalPrice}
               </h1>
               <i className="bg-primary border-[1px] border-primary cursor-pointer
-                              hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
-                              dark:bg-gray-800 dark:border-gray-800 dark:hover:border-gray-800 dark:hover:bg-transparent
+                            hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
+                            dark:bg-gray-800 dark:border-gray-800 dark:hover:border-gray-800 dark:hover:bg-transparent
                               
-                              xs:rounded-md
-                              md:rounded-sm
-                              lg:rounded-md">
+                            xs:rounded-md
+                            md:rounded-sm
+                            lg:rounded-md">
                 <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
                                                 dark:hover:text-white
                                                 
@@ -131,11 +127,11 @@ const ProductSection_01 = () => {
                             2xl:text-[20px]">
                 {t(product.available)}:
                 <span className="font-camptonMedium
-                               dark:text-secondary_01
+                                 dark:text-secondary_01
                 
-                                  xs:text-[12px]
-                                  lg:text-[15px]
-                                  2xl:text-[20px]">
+                                 xs:text-[12px]
+                                 lg:text-[15px]
+                                 2xl:text-[20px]">
                   &nbsp;&nbsp;{product.quantity}
                 </span>
               </p>

@@ -91,8 +91,7 @@ const SignIn: React.FC<SignInProps> = ({
               <IoIosCloseCircle
                 className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]
                             dark:text-secondary_01"
-                onClick={handleClose}
-              />
+                onClick={handleClose}/>
             </div>
 
             <div className="flex flex-col w-[100%] gap-2">

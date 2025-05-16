@@ -117,80 +117,69 @@ const Cart = ({ setFavouriteQuantity }) => {
                                    dark:border-secondary_01 dark:text-white">
                       <img className="xs:w-[50px]
                                       lg:w-[70px]"
-                        src={product.image}
-                        alt={product.title}
-                      />
-                      {product.title}
+                           src={product.image}
+                           alt={product.title}/>{product.title}
                     </td>
                     <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                                    border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
-                                   dark:border-secondary_01 dark:text-white">
-                      {product.unitPrice}
+                                   dark:border-secondary_01 dark:text-white">{product.unitPrice}
                     </td>
                     <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                                    border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
                                    dark:border-secondary_01 dark:text-white">
                       {/* ============= Quantity ============= */}
                       <div className="flex h-auto items-center">
-                        <div
-                          className="flex items-center justify-center
-                                     border-[1px] border-primary cursor-pointer
-                                     dark:border-secondary_01
-                                
-                                     xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
-                                     lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
+                        <div className="flex items-center justify-center
+                                        border-[1px] border-primary cursor-pointer
+                                        dark:border-secondary_01
+                                    
+                                        xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
+                                        lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
                           onClick={decreaseQuantity}>
-                          <i>
-                            <FaCircleMinus
-                              className="text-primary cursor-pointer
-                                         dark:text-secondary_01
-      
-                                         xs:text-[13px]
-                                         lg:text-[22px]"/></i>
+                          <i><FaCircleMinus className="text-primary cursor-pointer
+                                                       dark:text-secondary_01
+                      
+                                                       xs:text-[13px]
+                                                       lg:text-[22px]"/></i>
                         </div>
                         {/* ============= Quantity number ============= */}
                         <div className="flex items-center text-center justify-center w-[100%] h-[100%]
                                         bg-primary border-[1px] border-primary
                                         dark:bg-secondary_01 dark:border-secondary_01">
-                          <input
-                            className="text-center text-white font-camptonMedium bg-transparent outline-none
+                          <input className="text-center text-white font-camptonMedium bg-transparent outline-none
       
-                                       xs:w-[25px] xs:h-[26px] xs:text-[12px]
-                                       lg:w-[40px] lg:h-[40px] lg:text-[20px]"
-                            type="text"
-                            id="quantity"
-                            name="quantity"
-                            min="1"
-                            value={localQuantity}
-                            onChange={handleQuantityChange}/>
+                                            xs:w-[25px] xs:h-[26px] xs:text-[12px]
+                                            lg:w-[40px] lg:h-[40px] lg:text-[20px]"
+                                 type="text"
+                                 id="quantity"
+                                 name="quantity"
+                                 min="1"
+                                 value={localQuantity}
+                                 onChange={handleQuantityChange}/>
                         </div>
-                        <div
-                          className="flex items-center justify-center
-                                     border-[1px] border-primary cursor-pointer
-                                     dark:border-secondary_01
+                        <div className="flex items-center justify-center
+                                        border-[1px] border-primary cursor-pointer
+                                        dark:border-secondary_01
+          
+                                        xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
+                                        lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
+                             onClick={increaseQuantity}>
       
-                                     xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
-                                     lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
-                          onClick={increaseQuantity}>
-      
-                          <i><FaCirclePlus
-                                className="text-primary cursor-pointer
-                                           dark:text-secondary_01
-                           
-                                            xs:text-[13px]
-                                            lg:text-[22px]"/></i>
+                          <i><FaCirclePlus className="text-primary cursor-pointer
+                                                      dark:text-secondary_01
+                                      
+                                                        xs:text-[13px]
+                                                        lg:text-[22px]"/></i>
                         </div>
                       </div>
                     </td>
                     <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                                    border-[1px] border-r-0 border-t-0 border-primary
                                    dark:border-secondary_01 dark:text-white">
-                      <p>
-                        {(
+                      <p>{(
                           parseInt(localQuantity, 10) *
                           parseFloat(product.unitPrice.replace("$", ""))
-                        ).toFixed(2)}$
-                      </p>
+                        ).toFixed(2)}$</p>
                     </td>
                     <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                                    border-[1px] border-t-0 border-primary
@@ -198,7 +187,7 @@ const Cart = ({ setFavouriteQuantity }) => {
                       <i>
                         <IoCloseCircle className="text-[29px] text-primary cursor-pointer
                                                   dark:text-secondary_01"
-                        onClick={() => handleRemoveItem(product._id)} />
+                                       onClick={() => handleRemoveItem(product._id)} />
                       </i>
                     </td>
                   </tr>

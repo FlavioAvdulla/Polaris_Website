@@ -34,12 +34,11 @@ const Top_Rating = () => {
   return (
     <div className="flex flex-col w-[100%] mx-auto">
       <ScrollManager/>
-      <div
-        className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
+      <div className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
         
-                  xs:grid-cols-1 xs:grid xs:gap-y-[60px]
-                  md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
-                  xl:flex">
+                      xs:grid-cols-1 xs:grid xs:gap-y-[60px]
+                      md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
+                      xl:flex">
         {/* ============= Product List ============= */}
         {topRating.map((product, index) => (
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer rounded-lg
@@ -47,12 +46,11 @@ const Top_Rating = () => {
                           dark:border-gray-600" key={index} onClick={() => handleImageClick(product._id)}>
             {/* ============= Image ============= */}
             <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
-              <img className="
-              
-                              
-                              xs:h-auto
+              <img className="xs:h-auto
                               lg:w-[100%] w-[100%]
-                              xl:w-[100%]" src={product.image} alt={product.title} />
+                              xl:w-[100%]"
+                   src={product.image}
+                   alt={product.title}/>
             </div>
             {/* ============= Title ============= */}
             <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
@@ -75,8 +73,7 @@ const Top_Rating = () => {
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
                   <p className="text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
-                                  dark:text-white
-                                ">{product.normalPrice}</p>
+                                  dark:text-white">{product.normalPrice}</p>
                 </div>
               </div>
             </div>
@@ -84,8 +81,7 @@ const Top_Rating = () => {
             <button
               className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
                          rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all -z-10
-                         duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary"
-            >
+                         duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary">
               <i>
                 <PiShoppingCartLight className="text-[18px] text-white" />
               </i>

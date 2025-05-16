@@ -99,8 +99,7 @@ const Navbar_02 = ({
           type="search"
           id="search"
           name="search"
-          placeholder={t('navbar_02.searchPlaceholder')}
-        />
+          placeholder={t('navbar_02.searchPlaceholder')}/>
         <i className="bg-white text-primary text-[30px] p-3 border-primary border-[1px] border-l-0
                         items-center justify-center flex rounded-tr-md rounded-br-md
                         dark:bg-transparent dark:border-gray-600 dark:text-white">
@@ -110,16 +109,16 @@ const Navbar_02 = ({
 
       {/* User Controls */}
       <div className="w-auto h-[100%] flex
+
                       xs:gap-3
                       sm:gap-5">
         {/* User Account */}
-        <div 
-          className="flex items-center justify-center gap-3 cursor-pointer"
-          onClick={isSignedIn ? handleSignOutClick : handleSignInClick}>
-          <i>
-            <PiUser className="dark:text-white
-                                xs:text-[17px]
-                                md:text-[28px]" />
+        <div className="flex items-center justify-center gap-3 cursor-pointer"
+             onClick={isSignedIn ? handleSignOutClick : handleSignInClick}>
+          <i> <PiUser className="dark:text-white
+
+                                 xs:text-[17px]
+                                 md:text-[28px]" />
           </i>
           <div className="flex flex-col">
             <p className="font-camptonBook text-[13px]
@@ -136,15 +135,11 @@ const Navbar_02 = ({
 
         {/* Favorites */}
         <div className="relative flex items-center justify-center">
-          <i>
-            <SlHeart 
-              className="cursor-pointer
-                        dark:text-white
-                        
-                        xs:text-[17px]
-                        md:text-[28px]" 
-              onClick={handleFavouritesOpen}
-            />
+          <i><SlHeart className="cursor-pointer
+                                 dark:text-white
+                                
+                                 xs:text-[17px]
+                                 md:text-[28px]"onClick={handleFavouritesOpen}/>
           </i>
           <div className="absolute top-0 ml-6 mt-1 flex rounded-full bg-primary items-center justify-center
                           dark:bg-secondary_01
@@ -162,30 +157,30 @@ const Navbar_02 = ({
 
         {/* Shopping Cart */}
         <div className="relative flex items-center justify-center">
-          <i>
-            <PiShoppingCartLight 
+          <i><PiShoppingCartLight 
               className="cursor-pointer
                         dark:text-white
               
                         xs:text-[17px] md:text-[28px]" 
-              onClick={handleCartOpen}
-            />
-          </i>
+              onClick={handleCartOpen}/></i>
           <div className="absolute top-0 flex rounded-full bg-primary items-center justify-center
                           dark:bg-secondary_01
                           
                           xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                           sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                           md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">
-              {cartItemCount}
-            </p>
+            <p className="text-white
+            
+                          xs:text-[8px]
+                          sm:text-[10px]">{cartItemCount}</p>
           </div>
         </div>
 
         {/* Cart Total */}
         <div className="flex-col justify-center
-                        xs:hidden md:flex">
+        
+                        xs:hidden
+                        md:flex">
           <p className="font-camptonBook
                         dark:text-white
           

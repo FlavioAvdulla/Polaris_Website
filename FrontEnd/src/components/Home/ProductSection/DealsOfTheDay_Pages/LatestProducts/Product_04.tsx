@@ -106,8 +106,8 @@ const Product_04 = () => {
                             border-[1px] overflow-hidden border-primary bg-white
                             dark:bg-transparent dark:border-gray-600">
               <img className="w-[85%] object-cover"
-                src={mainPhoto}
-                alt="Image_01"/>
+                   src={mainPhoto}
+                   alt="Image_01"/>
             </div>
             {/* ============= Small Photos ============= */}
             <div className="flex w-[100%] h-[25%]
@@ -121,28 +121,18 @@ const Product_04 = () => {
                               dark:bg-transparent dark:border-gray-600">
 
                 <img className="w-[100%] h-[100%] object-cover"
-                  src={Rtx_01}
-                  alt="Image_02"
-                  onClick={() => handleClick(Rtx_01)}/>
+                     src={Rtx_01}
+                     alt="Image_02"
+                     onClick={() => handleClick(Rtx_01)}/>
               </div>
               <div className="w-[25%] items-center justify-center rounded-lg
                               cursor-pointer hover:scale-105 hover:shadow-shadow-dark
                               ease-in-out duration-300 border-[1px] overflow-hidden border-primary
                               dark:bg-transparent dark:border-gray-600">
                 <img className="w-[100%] h-[100%] object-cover"
-                  src={Rtx_02}
-                  alt="Image_03"
-                  onClick={() => handleClick(Rtx_02)}/>
-              </div>
-              <div className="w-[25%] items-center justify-center rounded-lg
-                              cursor-pointer hover:scale-105 hover:shadow-shadow-dark
-                              ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                              dark:bg-transparent dark:border-gray-600">
-
-                <img className="w-[100%] h-[100%] object-cover"
-                  src={Rtx_03}
-                  alt="Image_04"
-                  onClick={() => handleClick(Rtx_03)}/>
+                     src={Rtx_02}
+                     alt="Image_03"
+                     onClick={() => handleClick(Rtx_02)}/>
               </div>
               <div className="w-[25%] items-center justify-center rounded-lg
                               cursor-pointer hover:scale-105 hover:shadow-shadow-dark
@@ -150,9 +140,19 @@ const Product_04 = () => {
                               dark:bg-transparent dark:border-gray-600">
 
                 <img className="w-[100%] h-[100%] object-cover"
-                  src={Rtx_04}
-                  alt="Image_01"
-                  onClick={() => handleClick(Rtx_04)}/>
+                     src={Rtx_03}
+                     alt="Image_04"
+                     onClick={() => handleClick(Rtx_03)}/>
+              </div>
+              <div className="w-[25%] items-center justify-center rounded-lg
+                              cursor-pointer hover:scale-105 hover:shadow-shadow-dark
+                              ease-in-out duration-300 border-[1px] overflow-hidden border-primary
+                              dark:bg-transparent dark:border-gray-600">
+
+                <img className="w-[100%] h-[100%] object-cover"
+                     src={Rtx_04}
+                     alt="Image_01"
+                     onClick={() => handleClick(Rtx_04)}/>
               </div>
             </div>
           </div>

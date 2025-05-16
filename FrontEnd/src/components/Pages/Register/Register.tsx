@@ -79,8 +79,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
               <IoIosCloseCircle
                 className="text-primary mr-[15px] text-[30px] cursor-pointer duration-300 hover:rotate-[180deg]
                            dark:text-secondary_01"
-                onClick={handleClose}
-              />
+                onClick={handleClose}/>
             </div>
             
             <div className="flex flex-col w-[100%] gap-2">
@@ -92,8 +91,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                 type="email"
                 placeholder={t("authentication.enterEmail")}
                 required
-                onChange={(e) => setEmail(e.target.value)}
-              />
+                onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5 font-camptonBook
@@ -104,8 +102,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                 type="password"
                 placeholder={t("authentication.enterPassword")}
                 required
-                onChange={(e) => setPassword(e.target.value)}
-              />
+                onChange={(e) => setPassword(e.target.value)}/>
             </div>
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5 font-camptonBook
@@ -116,8 +113,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                 type="password"
                 placeholder={t("authentication.confirmPassword")}
                 required
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              />
+                onChange={(e) => setConfirmPassword(e.target.value)}/>
             </div>
             
             {/* Message display */}
@@ -133,9 +129,9 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
             )}
             <button
               className="flex items-center justify-center border-primary border-[1px] text-white duration-300
-                          text-[17px] w-[100%] h-[45px] bg-primary rounded-full
-                          hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary
-                          dark:border-secondary_01 dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white"
+                         text-[17px] w-[100%] h-[45px] bg-primary rounded-full
+                         hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary
+                         dark:border-secondary_01 dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white"
               type="submit"
               disabled={isLoading}>
               {isLoading ? t("authentication.registering") : t("authentication.register")}

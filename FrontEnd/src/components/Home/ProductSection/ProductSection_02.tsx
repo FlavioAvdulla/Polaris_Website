@@ -9,12 +9,12 @@ const ProductSection_02 = () => {
   const { t } = useTranslation();
 
   const [activeSection, setActiveSection] = useState(() => {
-    return localStorage.getItem("activeSection") || ""; // Retrieve saved active section or set default
+    return localStorage.getItem("activeSection") || "";
   });
   const navigate = useNavigate();
 
   useEffect(() => {
-    localStorage.setItem("activeSection", activeSection); // Save active section on change
+    localStorage.setItem("activeSection", activeSection);
   }, [activeSection]);
 
   return (
@@ -28,10 +28,10 @@ const ProductSection_02 = () => {
           className="font-camptonMedium
                      dark:text-white
 
-                      xs:text-[17px]
-                      md:text-[15px]
-                      lg:text-[22px]
-                      xl:text-[20px]">
+                     xs:text-[17px]
+                     md:text-[15px]
+                     lg:text-[22px]
+                     xl:text-[20px]">
           {t("productSection_02.dealsOfTheDay")}
         </h1>
         {/* ============= Deals of the day - right ============= */}
@@ -58,15 +58,13 @@ const ProductSection_02 = () => {
 
               onClick={() => {
                 navigate(path);
-                setActiveSection(label); // Update the active section
+                setActiveSection(label);
               }}>
-              <p className="
-                          xs:text-[10px] w-auto xs:px-3 py-1
-                          sm:text-[11px]
-                          md:text-[15px] md:px-5 md:py-2
-                          lg:text-[22px]
-                          xl:text-[18px]">
-                {label}
+              <p className="xs:text-[10px] w-auto xs:px-3 py-1
+                            sm:text-[11px]
+                            md:text-[15px] md:px-5 md:py-2
+                            lg:text-[22px]
+                            xl:text-[18px]">{label}
               </p>
             </button>
           ))}

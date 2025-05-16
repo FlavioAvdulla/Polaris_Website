@@ -49,7 +49,7 @@ const Contacts = () => {
           </div>
           <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100">
             <i>
-              <FaSquarePhone className="text-primary text-[30px]" />
+              <FaSquarePhone className="text-primary text-[30px]"/>
             </i>
             <div className="flex flex-col">
               <p className="font-camptonMedium text-[22px]">{t("contacts.talkToUs")}</p>
@@ -58,7 +58,7 @@ const Contacts = () => {
           </div>
           <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100">
             <i>
-              <MdMail className="text-primary text-[30px]" />
+              <MdMail className="text-primary text-[30px]"/>
             </i>
             <div className="flex flex-col">
               <p className="font-camptonMedium text-[22px]">{t("contacts.sendUsEmail")}</p>
@@ -80,94 +80,76 @@ const Contacts = () => {
 
           <div>
             <div className="flex gap-4">
-              <i>
-                <FaFacebookSquare
-                  className="text-primary cursor-pointer
-                              hover:scale-110 ease-in-out duration-300
-                              
-                              xs:text-[25px]
-                              md:text-[20px]
-                              lg:text-[35px]"
-                />
-              </i>
-              <i>
-                <FaSquareXTwitter
-                  className="text-primary cursor-pointer
-                                hover:scale-110 ease-in-out duration-300
+              <i><FaFacebookSquare
+                    className="text-primary cursor-pointer
+                               hover:scale-110 ease-in-out duration-300
                                 
-                                xs:text-[25px]
-                                md:text-[20px]
-                                lg:text-[35px]"
-                />
-              </i>
-              <i>
-                <FaLinkedin
-                  className="text-primary cursor-pointer
-                              hover:scale-110 ease-in-out duration-300
-                              
-                              xs:text-[25px]
-                              md:text-[20px]
-                              lg:text-[35px]"
-                />
-              </i>
-              <i>
-                <FaSquarePinterest
-                  className="text-primary cursor-pointer
-                              hover:scale-110 ease-in-out duration-300
-                              
-                              xs:text-[25px]
-                              md:text-[20px]
-                              lg:text-[35px]"
-                />
-              </i>
+                               xs:text-[25px]
+                               md:text-[20px]
+                               lg:text-[35px]"/></i>
+              <i><FaSquareXTwitter
+                    className="text-primary cursor-pointer
+                               hover:scale-110 ease-in-out duration-300
+                                
+                               xs:text-[25px]
+                               md:text-[20px]
+                               lg:text-[35px]"/></i>
+              <i><FaLinkedin
+                    className="text-primary cursor-pointer
+                               hover:scale-110 ease-in-out duration-300
+                                
+                               xs:text-[25px]
+                               md:text-[20px]
+                               lg:text-[35px]"/></i>
+              <i><FaSquarePinterest
+                    className="text-primary cursor-pointer
+                               hover:scale-110 ease-in-out duration-300
+                                
+                               xs:text-[25px]
+                               md:text-[20px]
+                               lg:text-[35px]"/></i>
             </div>
           </div>
         </div>
 
         <div className="flex flex-col w-[50%] gap-5">
           <div className="grid grid-cols-2 gap-5">
-            <input
-              className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
-              type="text"
-              placeholder={t("contacts.fullName")}
-              required
-            />
-            <input
-              className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
-              type="text"
-              placeholder={t("contacts.email")}
-              required
-            />
-            <input
-              className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
-              type="text"
-              placeholder={t("contacts.phoneNumber")}
-              required
-            />
-            <input
-              className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
-              type="email"
-              placeholder={t("contacts.subject")}
-              required
-            />
+            <input className="w-[100%] h-[45px] rounded-full font-camptonLight
+                        bg-gray-100 p-5 outline-none border-none"
+                   type="text"
+                   placeholder={t("contacts.fullName")}
+                   required/>
+            <input className="w-[100%] h-[45px] rounded-full font-camptonLight
+                        bg-gray-100 p-5 outline-none border-none"
+                   type="text"
+                   placeholder={t("contacts.email")}
+                   required/>
+            <input className="w-[100%] h-[45px] rounded-full font-camptonLight
+                              bg-gray-100 p-5 outline-none border-none"
+                   type="text"
+                   placeholder={t("contacts.phoneNumber")}
+                   required/>
+            <input className="w-[100%] h-[45px] rounded-full font-camptonLight
+                            bg-gray-100 p-5 outline-none border-none"
+                   type="email"
+                   placeholder={t("contacts.subject")}
+                   required/>
           </div>
-          <input
-              className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none"
-              type="email"
-              placeholder={t("contacts.service")}
-              required
-            />
-            <textarea
-            className="w-[100%] min-h-[200px] rounded-[23px] font-camptonLight bg-gray-100 p-5 outline-none border-none"
-            type="text"
-            placeholder={t("contacts.yourMessage")}
-            required
-          />
+          <input className="w-[100%] h-[45px] rounded-full font-camptonLight
+                            bg-gray-100 p-5 outline-none border-none"
+                 type="email"
+                 placeholder={t("contacts.service")}
+                 required/>
+            <textarea className="w-[100%] min-h-[200px] rounded-[23px] font-camptonLight
+                                 bg-gray-100 p-5 outline-none border-none"
+                      // type="text"
+                      placeholder={t("contacts.yourMessage")}
+                      required/>
           <button className="flex w-[100%] h-[45px] rounded-full bg-primary border-[1px] border-primary
-                          text-white items-center justify-center font-camptonBook p-5
+                             text-white items-center justify-center font-camptonBook p-5
 
-                          hover:bg-transparent hover:text-primary duration-300 ease-in-out
-                          ">{t("contacts.submit")}</button>
+                             hover:bg-transparent hover:text-primary duration-300 ease-in-out">
+                             {t("contacts.submit")}</button>
         </div>
       </div>
     </div>
