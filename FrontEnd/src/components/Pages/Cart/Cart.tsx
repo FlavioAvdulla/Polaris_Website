@@ -10,7 +10,12 @@ import { IoCloseCircle } from "react-icons/io5";
 import { HiOutlineRefresh } from "react-icons/hi";
 // import { IoIosArrowRoundForward } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const Cart = ({ setCartQuantity }) => {
+
+  const { t } = useTranslation();
   const [localQuantity, setLocalQuantity] = useState(0);
   const [cartItems, setCartItems] = useState(initialCartList);
   
@@ -74,7 +79,7 @@ const calculations = CartCalculations({cartItems})
                      xs:text-[10px]
                      sm:text-[11px]
                      md:text-[15px] 
-                     lg:text-[22px]">{" "}Add to Cart</h1>
+                     lg:text-[22px]">{" "}{t("addToCart.addToCart")}</h1>
         <div className="flex items-center
 
                         xs:w-[50%]
@@ -86,7 +91,7 @@ const calculations = CartCalculations({cartItems})
                         sm:text-[11px]
                         md:text-[15px]
                         xl:text-[18px]">
-            No handling fees + free shipping on orders over $35*
+            {t("addToCart.info")}
           </p>
         </div>
       </div>
@@ -103,27 +108,27 @@ const calculations = CartCalculations({cartItems})
             <th className="flex p-2 justify-center w-[100%] h-[100%]
                            bg-primary font-camptonLight text-[17px]
                            dark:bg-secondary_01">
-              <p className="text-white">Product</p>
+              <p className="text-white">{t("addToCart.product")}</p>
             </th>
             <th className="flex p-2 justify-center w-[100%] h-[100%]
                            bg-primary font-camptonLight text-[17px]
                            dark:bg-secondary_01">
-              <p className="text-white">Unit Price</p>
+              <p className="text-white">{t("addToCart.unitPrice")}</p>
             </th>
             <th className="flex p-2 justify-center w-[100%] h-[100%]
                            bg-primary font-camptonLight text-[17px]
                            dark:bg-secondary_01">
-              <p className="text-white">Quantity</p>
+              <p className="text-white">{t("addToCart.quantity")}</p>
             </th>
             <th className="flex p-2 justify-center w-[100%] h-[100%]
                            bg-primary font-camptonLight text-[17px]
                            dark:bg-secondary_01">
-              <p className="text-white">Subtotal</p>
+              <p className="text-white">{t("addToCart.subtotal")}</p>
             </th>
             <th className="flex p-2 justify-center w-[100%] h-[100%]
                            bg-primary font-camptonLight text-[17px]
                            dark:bg-secondary_01">
-              <p className="text-white">Remove</p>
+              <p className="text-white">{t("addToCart.remove")}</p>
             </th>
           </tr>
         </thead>
@@ -137,7 +142,7 @@ const calculations = CartCalculations({cartItems})
                 <img className="xs:w-[50px]
                                 lg:w-[70px]"
                      src={product.image}
-                     alt={product.title}/>{product.title}
+                     alt={product.title}/>{t(product.title)}
               </td>
               <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                              border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
@@ -231,14 +236,14 @@ const calculations = CartCalculations({cartItems})
                               bg-gray-100 p-5 outline-none border-none
                               dark:bg-gray-800"
                    type="text"
-                   placeholder="Coupon Code"
+                   placeholder={t("addToCart.couponCode")}
                    required/>
             <button className="flex w-[150px] h-[45px] rounded-md rounded-l-none items-center
                                justify-center text-white font-camptonLight bg-primary p-5 border-[1px] border-primary
                                dark:bg-secondary_01 dark:border-secondary_01
 
                                dark:hover:bg-transparent duration-300">
-              <p className="font-camptonLight">Apply</p>
+              <p className="font-camptonLight">{t("addToCart.apply")}</p>
             </button>
           </div>
           {/* ============= Coupon Infos input ============= */}
@@ -247,19 +252,19 @@ const calculations = CartCalculations({cartItems})
                               bg-gray-100 p-5 outline-none border-none
                               dark:bg-gray-800"
                    type="text"
-                   placeholder="Country"
+                   placeholder={t("addToCart.country")}
                    required/>
             <input className="w-[100%] h-[45px] rounded-md font-camptonLight
                               bg-gray-100 p-5 outline-none border-none
                               dark:bg-gray-800"
                    type="text"
-                   placeholder="City"
+                   placeholder={t("addToCart.city")}
                    required/>
             <input className="w-[100%] h-[45px] rounded-md font-camptonLight
                               bg-gray-100 p-5 outline-none border-none
                               dark:bg-gray-800"
                    type="text"
-                   placeholder="Postcode / ZIP"
+                   placeholder={t("addToCart.postCode")}
                    required/>
           </div>
         </div>
@@ -273,11 +278,11 @@ const calculations = CartCalculations({cartItems})
           <div className="flex flex-col gap-3">
 
             <p className="font-camptonSemiBold
-                          dark:text-white">Cart Total</p>
+                          dark:text-white">{t("addToCart.cartTotal")}</p>
 
             <div className="flex justify-between">
               <p className="font-camptonBook
-                            dark:text-white">Subtotal</p>
+                            dark:text-white">{t("addToCart.subtotal")}</p>
               <p className="font-camptonSemiBoldfont-camptonBook
                             dark:text-white">{calculations.subtotalElement}</p>
             </div>
@@ -288,13 +293,13 @@ const calculations = CartCalculations({cartItems})
             <div className="flex justify-between">
 
               <p className="font-camptonBook
-                            dark:text-white">Shipping</p>
+                            dark:text-white">{t("addToCart.shipping")}</p>
               <div className="font-camptonBook">
-                <p className="flex gap-1 dark:text-white">Flat rate:
+                <p className="flex gap-1 dark:text-white">{t("addToCart.flatRate")}:
                   <span className="font-camptonSemiBold">{calculations.flatRateElement}</span></p>
-                <p className="dark:text-white">Free shipping</p>
+                <p className="dark:text-white">{t("addToCart.freeShipping")}</p>
                 <p className="dark:text-white">
-                  Shipping to <span className="font-camptonSemiBold">CA.</span>
+                  {t("addToCart.shippingTo")} <span className="font-camptonSemiBold">CA.</span>
                 </p>
               </div>
             </div>
@@ -303,7 +308,7 @@ const calculations = CartCalculations({cartItems})
                             dark:bg-gray-600" />
 
             <div className="flex justify-between">
-              <p className="font-camptonBook dark:text-white">Total</p>
+              <p className="font-camptonBook dark:text-white">{t("addToCart.total")}</p>
               <p className="font-camptonSemiBold dark:text-white">{calculations.totalElement}</p>
             </div>
             <button
@@ -312,7 +317,7 @@ const calculations = CartCalculations({cartItems})
                          hover:bg-transparent hover:text-primary duration-300
                          dark:hover:text-white dark:bg-secondary_01 dark:hover:bg-transparent dark:border-secondary_01">
 
-              <p className="font-camptonLight">Proceed to Checkout</p>
+              <p className="font-camptonLight">{t("addToCart.proceedToCheckout")}</p>
             </button>
           </div>
         </div>
@@ -321,14 +326,13 @@ const calculations = CartCalculations({cartItems})
         <div className="flex gap-3
         
                         xs:w-[100%] xs:flex-col
-                        lg:w-[33.33%] lg:flex-row">
-          <button
-            className="flex w-[100%] h-[45px] rounded-md items-center justify-center
-                       font-camptonLight border-[1px] border-primary p-5
-                       dark:border-secondary_01">
+                        lg:w-[33.33%]">
+          <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center
+                             font-camptonLight border-[1px] border-primary p-5
+                             dark:border-secondary_01">
 
             <p className="font-camptonLight text-primary
-                          dark:text-white">Continue Shopping</p>
+                          dark:text-white">{t("addToCart.continueShopping")}</p>
           </button>
           <button className="flex w-[100%] h-[45px] rounded-md items-center justify-center
                              font-camptonLight bg-primary p-5 gap-2 group
@@ -336,7 +340,7 @@ const calculations = CartCalculations({cartItems})
             <i><HiOutlineRefresh className="text-white group-hover:rotate-[180deg]
                                             group-hover:duration-300 group-hover:ease-in-out" />
             </i>
-            <p className="font-camptonLight text-white">Update Cart</p>
+            <p className="font-camptonLight text-white">{t("addToCart.updateCart")}</p>
           </button>
         </div>
       </div>
@@ -347,7 +351,7 @@ const calculations = CartCalculations({cartItems})
                    dark:bg-secondary_01 dark:border-secondary_01
                   
                    lg:w-[150px]">
-        <p className="font-camptonLight">Update</p>
+        <p className="font-camptonLight">{t("addToCart.update")}</p>
       </button>
     </div>
   );

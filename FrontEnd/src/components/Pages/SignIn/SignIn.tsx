@@ -97,26 +97,22 @@ const SignIn: React.FC<SignInProps> = ({
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5
                           dark:text-white">{t("authentication.emailAddress")}</h2>
-              <input
-                className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none
+              <input className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none
                            dark:bg-gray-800"
-                type="email"
-                placeholder={t("authentication.enterEmail")}
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              />
+                     type="email"
+                     placeholder={t("authentication.enterEmail")}
+                     required
+                     onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className="flex flex-col w-[100%] gap-2">
               <h2 className="ml-5 font-camptonBook
                           dark:text-white">{t("authentication.password")}</h2>
-              <input
-                className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none
+              <input className="w-[100%] h-[45px] rounded-full font-camptonLight bg-gray-100 p-5 outline-none border-none
                            dark:bg-gray-800"
-                type="password"
-                placeholder={t("authentication.enterPassword")}
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              />
+                     type="password"
+                     placeholder={t("authentication.enterPassword")}
+                     required
+                     onChange={(e) => setPassword(e.target.value)}/>
             </div>
 
             {/* Message display */}
@@ -130,34 +126,31 @@ const SignIn: React.FC<SignInProps> = ({
                 {message.text}
               </div>
             )}
-            <p
-              className="ml-10 text-primary w-[100%] xs:text-[12px] md:text-[16px] cursor-pointer
+            <p className="ml-10 text-primary w-[100%] xs:text-[12px] md:text-[16px] cursor-pointer
                         dark:text-secondary_01"
-              onClick={handleForgotPasswordOpen}>
-              {t("authentication.forgotPassword")}
+               onClick={handleForgotPasswordOpen}>
+               {t("authentication.forgotPassword")}
             </p>
-            <button
-              className="flex items-center justify-center border-primary border-[1px] text-white
-                          duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full
-                          hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary
-                          dark:border-secondary_01 dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white"
-              type="submit"
-              disabled={isLoading}>
-              {isLoading ? t("authentication.signingIn") : t("authentication.signIn")}
+            <button className="flex items-center justify-center border-primary border-[1px] text-white
+                               duration-300 text-[17px] w-[100%] h-[45px] bg-primary rounded-full
+                               hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary
+                               dark:border-secondary_01 dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white"
+                    type="submit"
+                    disabled={isLoading}>
+                    {isLoading ? t("authentication.signingIn") : t("authentication.signIn")}
             </button>
 
             <div className="flex w-[80%] gap-5 items-center">
               <div className="h-[0.5px] w-[100%] bg-black
-                              dark:bg-gray-600" />
+                              dark:bg-gray-600"/>
               <p className="font-camptonBook
                             dark:text-white">{t("authentication.or1")}</p>
               <div className="h-[0.5px] w-[100%] bg-black
-                              dark:bg-gray-600" />
+                              dark:bg-gray-600"/>
             </div>
-            <button
-              className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300
-                          text-[17px] w-[100%] h-[45px] bg-transparent rounded-full
-                          dark:border-gray-600">
+            <button className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300
+                               text-[17px] w-[100%] h-[45px] bg-transparent rounded-full
+                               dark:border-gray-600">
 
               <img className="w-[25px] h-auto" src={Google_Logo} alt="Google_Logo"/>
               

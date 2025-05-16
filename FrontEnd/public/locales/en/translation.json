@@ -296,5 +296,29 @@
     "answer_03": "Yes! We ship to most countries worldwide. International customers are responsible for any customs fees or import taxes that may apply.",
     "question_04": "How can I track my order?",
     "answer_04": "Your tracking number will be emailed as soon as your order ships. If you don't see it, please check your spam folder or contact our support team."
+  },
+  "addToCart": {
+    "addToCart": "Add to Cart",
+    "info": "No handling fees + free shipping on orders over $35*",
+    "product": "Product",
+    "unitPrice": "Unit Price",
+    "quantity": "Quantity",
+    "subtotal": "Subtotal",
+    "remove": "Remove",
+    "couponCode": "Coupon Code",
+    "apply": "Apply",
+    "country": "Country",
+    "city": "City",
+    "postCode": "Postcode / ZIP",
+    "update": "Update",
+    "cartTotal": "Cart Total",
+    "shipping": "Shipping",
+    "flatRate": "Flat rate",
+    "freeShipping": "Free shipping",
+    "shippingTo": "Shipping to",
+    "total": "Total",
+    "proceedToCheckout": "Proceed To Checkout",
+    "continueShopping": "Continue Shopping",
+    "updateCart": "Update Cart"
   }
 }

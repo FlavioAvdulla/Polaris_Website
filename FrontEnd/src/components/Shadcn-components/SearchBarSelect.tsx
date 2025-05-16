@@ -21,11 +21,11 @@ export function SearchBarSelect() {
     <Select>
       <SelectTrigger
         className="w-auto h-auto gap-3 outline-none focus:ring-0
-                    border-[1px] border-primary border-r-0 rounded-none
-                    rounded-tl-md rounded-bl-md bg-white
-                    dark:bg-transparent dark:border-gray-600 dark:text-white
-                    
-                    xs:gap-1">
+                   border-[1px] border-primary border-r-0 rounded-none
+                   rounded-tl-md rounded-bl-md bg-white
+                   dark:bg-transparent dark:border-gray-600 dark:text-white
+                   
+                   xs:gap-1">
         <SelectValue placeholder={t('navbar_02.all')} />
       </SelectTrigger>
       <SelectContent>

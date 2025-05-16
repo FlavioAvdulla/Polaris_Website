@@ -41,7 +41,7 @@ export function Carousel_02() {
       } else {
         api.scrollNext();
       }
-    }, 7000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, [api, count]);
@@ -63,15 +63,14 @@ export function Carousel_02() {
               <Card className="border-none shadow-none">
                 <CardContent
                   className={`flex aspect-square items-center justify-center m-0 p-0
-                    rounded-xl overflow-hidden bg-slate-300
-                    
-                    xs:h-[300px]
-                    md:h-[400px]
-                    2xl:h-[600px]
+                              rounded-xl overflow-hidden bg-slate-300
+                              
+                              xs:h-[300px]
+                              md:h-[400px]
+                              2xl:h-[600px]
 
                     ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
-                    }`}
-                >
+                    }`}>
                   <div className="flex items-center justify-center w-[100%] h-[100%]">
                     <img
                       className="w-[100%] h-[100%] object-cover"

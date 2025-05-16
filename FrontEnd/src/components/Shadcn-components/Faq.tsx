@@ -71,33 +71,35 @@ const Faq = ({ setShowFaq }) => {
         {/* ============= Question 03 ============= */}
         <AccordionItem
           value="item-3"
-          className="flex-col p-5 h-auto rounded-none xs:w-[95%] md:w-[350px]
-                     dark:bg-darkColor">
+          className="flex-col p-5 h-auto rounded-none
+                     dark:bg-darkColor
+                     
+                     xs:w-[95%]
+                     md:w-[350px]">
           <AccordionTrigger className="font-camptonMedium
-                                       dark:text-white">
-          {t("faq.question_03")}
+                                       dark:text-white">{t("faq.question_03")}
           </AccordionTrigger>
           <AccordionContent className="text-justify
-                                       dark:text-white">
-          {t("faq.answer_03")}
+                                       dark:text-white">{t("faq.answer_03")}
           </AccordionContent>
         </AccordionItem>
         {/* ============= Question 04 ============= */}
         <AccordionItem
           value="item-4"
-          className="flex-col p-5 h-auto rounded-xl rounded-tl-none rounded-tr-none xs:w-[95%] md:w-[350px]
-                     dark:bg-darkColor">
+          className="flex-col p-5 h-auto rounded-xl rounded-tl-none rounded-tr-none
+                     dark:bg-darkColor 
+          
+                     xs:w-[95%]
+                     md:w-[350px]">
           <AccordionTrigger className="font-camptonMedium
-                                       dark:text-white">
-          {t("faq.question_04")}
+                                       dark:text-white">{t("faq.question_04")}
           </AccordionTrigger>
           <AccordionContent className="text-justify
-                                       dark:text-white">
-          {t("faq.answer_04")}
+                                       dark:text-white">{t("faq.answer_04")}
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-      <div className="flex fixed bg-black bg-opacity-60 w-[100%] h-[100%] backdrop-blur-[3px]" />
+      <div className="flex fixed bg-black bg-opacity-60 w-[100%] h-[100%] backdrop-blur-[3px]"/>
     </div>
   );
 };

@@ -296,5 +296,29 @@
     "answer_03": "¡Sí! Enviamos a la mayoría de los países del mundo. Los clientes internacionales son responsables de cualquier tarifa aduanera o impuesto de importación aplicable.",
     "question_04": "¿Cómo puedo rastrear mi pedido?",
     "answer_04": "Recibirás tu número de seguimiento por correo electrónico en cuanto se envíe tu pedido. Si no lo encuentras, revisa tu carpeta de correo no deseado o contacta con nuestro equipo de soporte."
+  },
+  "addToCart": {
+    "addToCart": "Añadir a la Cesta",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*",
+    "product": "Producto",
+    "unitPrice": "Precio Unitario",
+    "quantity": "Cantidad",
+    "subtotal": "Total parcial",
+    "remove": "Eliminar",
+    "couponCode": "Código de cupón",
+    "apply": "Aplicar",
+    "country": "País",
+    "city": "Ciudad",
+    "postCode": "Código postal",
+    "update": "Actualizar",
+    "cartTotal": "Total del Carrito",
+    "shipping": "Envío",
+    "flatRate": "Tarifa plana",
+    "freeShipping": "Envío gratis",
+    "shippingTo": "Envío a",
+    "total": "Total",
+    "proceedToCheckout": "Pasar por la caja",
+    "continueShopping": "Seguir comprando",
+    "updateCart": "Actualizar carrito"
   }
 }

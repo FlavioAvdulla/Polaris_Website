@@ -44,7 +44,7 @@ export function Carousel_01() {
       } else {
         api.scrollNext();
       }
-    }, 10000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [api, count]);
@@ -77,15 +77,14 @@ export function Carousel_01() {
                     <div
                       className="flex flex-col absolute h-auto justify-center
                     
-                                    xs:w-[100%] xs:py-0 xs:pl-7
-                                    sm:w-[80%]
-                                    md:w-[50%]
-                                    lg:pl-10
-                                    xl:w-[60%] xl:py-10 xl:pl-12">
+                                 xs:w-[100%] xs:py-0 xs:pl-7
+                                 sm:w-[80%]
+                                 md:w-[50%]
+                                 lg:pl-10
+                                 xl:w-[60%] xl:py-10 xl:pl-12">
                       {/* ============= Exclusive offer ============= */}                
                       <div className="gap-3
-                      
-                                      
+
                                       xs:flex">
                         <p className="flex text-white gap-3 items-center
                                       
@@ -95,11 +94,9 @@ export function Carousel_01() {
                           {t(product.exclusiveOffer)}
                         </p>
                         <div className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
-                                      border-white text-white items-center justify-center
+                                        border-white text-white items-center justify-center
                                         hover:bg-transparent hover:scale-110 ease-in-out duration-300">
-                          <p className="
-
-                                        xs:text-[12px] xs:px-4 xs:py-[1px]
+                          <p className="xs:text-[12px] xs:px-4 xs:py-[1px]
                                         md:text-[15px] md:px-6 md:py-[3px]
                                         2xl:text-[20px]">{t(product.discount)}</p>
                         </div>
@@ -107,36 +104,34 @@ export function Carousel_01() {
                       <h1
                         className="text-white font-camptonBold leading-tight my-3
                       
-                                      xs:text-[22px] xs:w-[80%]
-                                      sm:text-[30px]
-                                      md:text-[35px]
-                                      2xl:text-[60px]">
+                                    xs:text-[22px] xs:w-[80%]
+                                    sm:text-[30px]
+                                    md:text-[35px]
+                                    2xl:text-[60px]">
                         {t(product.title)}
                       </h1>
                       <p className="text-white font-camptonBook
                       
-                                      xs:text-[10px] xs:w-[70%]
-                                      sm:text-[13px] sm:w-[90%]
-                                      md:w-[100%]
-                                      lg:text-[15px] lg:w-[90%]
-                                      2xl:text-[20px]">
+                                    xs:text-[10px] xs:w-[70%]
+                                    sm:text-[13px] sm:w-[90%]
+                                    md:w-[100%]
+                                    lg:text-[15px] lg:w-[90%]
+                                    2xl:text-[20px]">
                         {t(product.paragraph)}
                       </p>
                       <div className="w-auto mt-7">
                         <button
-                          className=" flex items-center justify-center bg-primary border-[1px] border-white text-white
-                                      rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
-                                      hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                          className="flex items-center justify-center bg-primary border-[1px] border-white text-white
+                                     rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
+                                     hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
                                           
-                                          xs:gap-2 xs:px-3 xs:py-1
-                                          md:gap-3 md:px-4 md:py-2">
-                          <p className="
-                                       xs:text-[10px]
-                                       md:text-[15px]
-                                       2xl:text-[20px]">{t(product.addToCart)}</p>
+                                     xs:gap-2 xs:px-3 xs:py-1
+                                     md:gap-3 md:px-4 md:py-2">
+                          <p className="xs:text-[10px]
+                                        md:text-[15px]
+                                        2xl:text-[20px]">{t(product.addToCart)}</p>
                           <i>
-                            <IoIosArrowForward className="
-                                                          xs:text-[10px]
+                            <IoIosArrowForward className="xs:text-[10px]
                                                           md:text-[15px]
                                                           2xl:text-[20px]"/>
                           </i>
@@ -147,8 +142,7 @@ export function Carousel_01() {
                     <img
                       className="w-[100%] h-[100%] object-cover"
                       src={product.image}
-                      alt={product.title}
-                    />
+                      alt={product.title}/>
                   </div>
                 </CardContent>
               </Card>
