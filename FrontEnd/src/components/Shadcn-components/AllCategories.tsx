@@ -29,7 +29,8 @@ export function AllCategories() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel><p className="font-camptonBook text-primary">{t('navbar_03.categories')}</p></SelectLabel>
+          <SelectLabel><p className="font-camptonBook text-primary
+                                     dark:text-secondary_01">{t('navbar_03.categories')}</p></SelectLabel>
           <SelectItem value="smartphones"><p className="font-camptonBook">{t('navbar_03.smartphones')}</p></SelectItem>
           <SelectItem value="tablets"><p className="font-camptonBook">{t('navbar_03.tablets')}</p></SelectItem>
           <SelectItem value="fitnessTrackers"><p className="font-camptonBook">{t('navbar_03.fitnessTrackers')}</p></SelectItem>

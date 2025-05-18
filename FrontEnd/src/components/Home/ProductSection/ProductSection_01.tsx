@@ -54,14 +54,13 @@ const ProductSection_01 = () => {
   };
 
   return (
-    <div
-      className="w-[85%] h-auto mx-auto gap-5 items-center
-                justify-between my-20
-                
-                md:grid md:grid-cols-3">
+    <div className="w-[85%] h-auto mx-auto gap-5 items-center
+                    justify-between my-20
+                    
+                    md:grid md:grid-cols-3">
       {productSection_01.map((product, index) => (
         // ============= Product 1 =============
-        <div className=" rounded-lg overflow-hidden h-auto
+        <div className="rounded-lg overflow-hidden h-auto
                       bg-gray-100 border-[1px] border-primary cursor-pointer
                       dark:bg-transparent dark:border-gray-600
                       
@@ -70,7 +69,8 @@ const ProductSection_01 = () => {
              key={index}
              onClick={() => handleProductClick(product._id)}>
           {/* ============= Image ============= */}
-          <div className="flex w-[100%] h-[300px] justify-center items-center">
+          <div className="flex w-[100%] h-[300px] justify-center items-center bg-white
+                          dark:bg-transparent">
             <img className="w-auto h-full object-cover"
                  src={product.image}
                  alt={product.title}/>
