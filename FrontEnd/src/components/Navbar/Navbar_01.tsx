@@ -33,6 +33,9 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
   const handleContactsOpen = () => {
     navigate("/Contacts");
   };
+  const handleTrackOrderOpen = () => {
+    navigate("/TrackOrder");
+  };
 
   return (
     <div className="flex h-auto py-5 mx-auto justify-between bg-white
@@ -45,6 +48,7 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
       <div className="flex gap-7 w-fit">
         <button type="button" 
                 className="font-camptonBook"
+                onClick={handleTrackOrderOpen}
                 aria-label={t('navbar_01.trackOrder')}>
           <p className="hover:text-primary ease-in-out duration-300
                         dark:hover:text-secondary_02

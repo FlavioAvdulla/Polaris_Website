@@ -48,6 +48,7 @@ import Contacts from "./components/Pages/Contacts/Contacts";
 import "./i18n";
 import SignOut from "./components/Pages/SignOut/SignOut";
 import ForgotPassword from "./components/Pages/ForgotPassword/ForgotPassword";
+import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
@@ -127,20 +128,11 @@ const App = () => {
               <Route path="/GameAccessories" element={<GameAccessories />} />
               <Route path="/CameraAndPhoto" element={<CameraAndPhoto />} />
               <Route path="/Electronics" element={<Electronics />} />
-              <Route
-                path="/AudioAndHeadphones"
-                element={<AudioAndHeadphones />}
-              />
-              <Route
-                path="/Cart"
-                element={<Cart setCartQuantity={setCartQuantity} />}
-              />
-              <Route
-                path="/Favourites"
-                element={
-                  <Favourites setFavouriteQuantity={setFavouriteQuantity} />
-                }
-              />
+              <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones />} />
+              <Route path="/trackOrder" element={<TrackOrder />} />
+              <Route path="/Cart" element={<Cart setCartQuantity={setCartQuantity} />} />
+              <Route path="/Favourites" element={ <Favourites setFavouriteQuantity={setFavouriteQuantity} />}/>
+
               {/* Main Home Page */}
               <Route
                 path="/"

@@ -10,7 +10,12 @@ import { IoCloseCircle } from "react-icons/io5";
 // import { HiOutlineRefresh } from "react-icons/hi";
 // import { IoIosArrowRoundForward } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const Cart = ({ setFavouriteQuantity }) => {
+
+  const { t } = useTranslation();
   const [localQuantity, setLocalQuantity] = useState(0);
   const [cartItems, setCartItems] = useState(initialCartList);
 
@@ -55,7 +60,7 @@ const Cart = ({ setFavouriteQuantity }) => {
                            xs:text-[10px]
                            sm:text-[11px]
                            md:text-[15px] 
-                           lg:text-[22px]">{" "}Add to Favourites</h1>
+                           lg:text-[22px]">{" "}{t("addToCart.addToCart")}</h1>
               <div className="flex items-center
       
                               xs:w-[50%]
@@ -67,7 +72,7 @@ const Cart = ({ setFavouriteQuantity }) => {
                               sm:text-[11px]
                               md:text-[15px]
                               xl:text-[18px]">
-                  No handling fees + free shipping on orders over $35*
+                  {t("addToCart.info")}
                 </p>
               </div>
             </div>
@@ -84,27 +89,27 @@ const Cart = ({ setFavouriteQuantity }) => {
                   <th className="flex p-2 justify-center w-[100%] h-[100%]
                                  bg-primary font-camptonLight text-[17px]
                                  dark:bg-secondary_01">
-                    <p className="text-white">Product</p>
+                    <p className="text-white">{t("addToCart.product")}</p>
                   </th>
                   <th className="flex p-2 justify-center w-[100%] h-[100%]
                                  bg-primary font-camptonLight text-[17px]
                                  dark:bg-secondary_01">
-                    <p className="text-white">Unit Price</p>
+                    <p className="text-white">{t("addToCart.unitPrice")}</p>
                   </th>
                   <th className="flex p-2 justify-center w-[100%] h-[100%]
                                  bg-primary font-camptonLight text-[17px]
                                  dark:bg-secondary_01">
-                    <p className="text-white">Quantity</p>
+                    <p className="text-white">{t("addToCart.quantity")}</p>
                   </th>
                   <th className="flex p-2 justify-center w-[100%] h-[100%]
                                  bg-primary font-camptonLight text-[17px]
                                  dark:bg-secondary_01">
-                    <p className="text-white">Subtotal</p>
+                    <p className="text-white">{t("addToCart.subtotal")}</p>
                   </th>
                   <th className="flex p-2 justify-center w-[100%] h-[100%]
                                  bg-primary font-camptonLight text-[17px]
                                  dark:bg-secondary_01">
-                    <p className="text-white">Remove</p>
+                    <p className="text-white">{t("addToCart.remove")}</p>
                   </th>
                 </tr>
               </thead>
@@ -118,7 +123,7 @@ const Cart = ({ setFavouriteQuantity }) => {
                       <img className="xs:w-[50px]
                                       lg:w-[70px]"
                            src={product.image}
-                           alt={product.title}/>{product.title}
+                           alt={product.title}/>{t(product.title)}
                     </td>
                     <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                                    border-[1px] border-r-0 border-t-0 border-primary font-camptonBook

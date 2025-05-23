@@ -37,7 +37,7 @@ const Computers = () => {
 
   return (
     <div className="w-[85%] flex flex-col mx-auto">
-      {/* ============= Shop by Categories - Head ============= */}
+      {/* ============= Computers - Head ============= */}
       <div className="flex w-[100%] justify-between items-center mb-7">
         <h1 className="font-camptonMedium
                        dark:text-white

@@ -2,16 +2,20 @@ import React from "react";
 
 // Polaris Logo
 import Polaris_Logo_White from "../../../assets/images/Polaris_Logo_White.svg";
+import Polaris_Logo_Secondary from "../../../assets/images/Polaris_Logo_Secondary_01.svg";
 
 // React Icons
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter, FaSquarePinterest, FaLinkedin } from "react-icons/fa6";
+
+import { useTheme } from "../../../components/context/ThemeContext";
 
 // Translation
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
 
+  const { theme } = useTheme();
   const { t } = useTranslation();
 
   return (
@@ -34,7 +38,7 @@ const Footer = () => {
             
                       xs:w-[80px]
                       lg:w-[110px]"
-            src={Polaris_Logo_White}
+            src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo_White}
             alt="Polaris_Logo_White"
           />
           <p className="text-white font-camptonBook

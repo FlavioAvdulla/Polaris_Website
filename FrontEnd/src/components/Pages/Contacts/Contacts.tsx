@@ -36,33 +36,45 @@ const Contacts = () => {
         </div>
         {/* ============= Contact Details ============= */}
         <div className="flex flex-col w-[50%] gap-5">
-          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100">
+          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100
+                          dark:bg-gray-800">
             <i>
-              <FaLocationDot className="text-primary text-[30px]" />
+              <FaLocationDot className="text-primary text-[30px]
+                                        dark:text-secondary_01" />
             </i>
             <div className="flex flex-col">
-              <p className="font-camptonMedium text-[22px]">{t("contacts.address")}</p>
-              <p className="font-camptonBook">
+              <p className="font-camptonMedium text-[22px]
+                            dark:text-white">{t("contacts.address")}</p>
+              <p className="font-camptonBook
+                            dark:text-white">
                 4517 Washington Ave. Manchester, Kentucky 39495
               </p>
             </div>
           </div>
-          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100">
+          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100
+                          dark:bg-gray-800">
             <i>
-              <FaSquarePhone className="text-primary text-[30px]"/>
+              <FaSquarePhone className="text-primary text-[30px]
+                                        dark:text-secondary_01"/>
             </i>
             <div className="flex flex-col">
-              <p className="font-camptonMedium text-[22px]">{t("contacts.talkToUs")}</p>
-              <p className="font-camptonBook">+355 67 63 11 918</p>
+              <p className="font-camptonMedium text-[22px]
+                            dark:text-white">{t("contacts.talkToUs")}</p>
+              <p className="font-camptonBook
+                            dark:text-white">+355 67 63 11 918</p>
             </div>
           </div>
-          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100">
+          <div className="flex w-[100%] h-[100%] p-5 gap-4 justify-left items-center bg-gray-100
+                          dark:bg-gray-800">
             <i>
-              <MdMail className="text-primary text-[30px]"/>
+              <MdMail className="text-primary text-[30px]
+                                 dark:text-secondary_01"/>
             </i>
             <div className="flex flex-col">
-              <p className="font-camptonMedium text-[22px]">{t("contacts.sendUsEmail")}</p>
-              <p className="font-camptonBook">a.flavio4366@gmail.com</p>
+              <p className="font-camptonMedium text-[22px]
+                            dark:text-white">{t("contacts.sendUsEmail")}</p>
+              <p className="font-camptonBook
+                            dark:text-white">a.flavio4366@gmail.com</p>
             </div>
           </div>
         </div>
@@ -70,11 +82,14 @@ const Contacts = () => {
       {/* ============= Section - 02 ============= */}
       <div className="flex w-[100%] gap-10 h-auto">
         <div className="flex flex-col justify-between my-auto w-[50%] gap-10">
-          <h2 className="font-camptonMedium text-primary">{t("contacts.contactUs")}</h2>
-          <h1 className="font-camptonBold text-[45px] leading-tight">
+          <h2 className="font-camptonMedium text-primary
+                         dark:text-white">{t("contacts.contactUs")}</h2>
+          <h1 className="font-camptonBold text-[45px] leading-tight
+                         dark:text-secondary_01">
           {t("contacts.title")}
           </h1>
-          <p className="font-camptonBook">
+          <p className="font-camptonBook
+                        dark:text-white">
           {t("contacts.description")}
           </p>
 
@@ -83,6 +98,7 @@ const Contacts = () => {
               <i><FaFacebookSquare
                     className="text-primary cursor-pointer
                                hover:scale-110 ease-in-out duration-300
+                               dark:text-secondary_01
                                 
                                xs:text-[25px]
                                md:text-[20px]
@@ -90,6 +106,7 @@ const Contacts = () => {
               <i><FaSquareXTwitter
                     className="text-primary cursor-pointer
                                hover:scale-110 ease-in-out duration-300
+                               dark:text-secondary_01
                                 
                                xs:text-[25px]
                                md:text-[20px]
@@ -97,6 +114,7 @@ const Contacts = () => {
               <i><FaLinkedin
                     className="text-primary cursor-pointer
                                hover:scale-110 ease-in-out duration-300
+                               dark:text-secondary_01
                                 
                                xs:text-[25px]
                                md:text-[20px]
@@ -104,6 +122,7 @@ const Contacts = () => {
               <i><FaSquarePinterest
                     className="text-primary cursor-pointer
                                hover:scale-110 ease-in-out duration-300
+                               dark:text-secondary_01
                                 
                                xs:text-[25px]
                                md:text-[20px]
@@ -115,38 +134,45 @@ const Contacts = () => {
         <div className="flex flex-col w-[50%] gap-5">
           <div className="grid grid-cols-2 gap-5">
             <input className="w-[100%] h-[45px] rounded-full font-camptonLight
-                        bg-gray-100 p-5 outline-none border-none"
+                        bg-gray-100 p-5 outline-none border-none
+                        dark:bg-gray-800 dark:text-white"
                    type="text"
                    placeholder={t("contacts.fullName")}
                    required/>
             <input className="w-[100%] h-[45px] rounded-full font-camptonLight
-                        bg-gray-100 p-5 outline-none border-none"
+                        bg-gray-100 p-5 outline-none border-none
+                        dark:bg-gray-800 dark:text-white"
                    type="text"
                    placeholder={t("contacts.email")}
                    required/>
             <input className="w-[100%] h-[45px] rounded-full font-camptonLight
-                              bg-gray-100 p-5 outline-none border-none"
+                              bg-gray-100 p-5 outline-none border-none
+                              dark:bg-gray-800 dark:text-white"
                    type="text"
                    placeholder={t("contacts.phoneNumber")}
                    required/>
             <input className="w-[100%] h-[45px] rounded-full font-camptonLight
-                            bg-gray-100 p-5 outline-none border-none"
+                            bg-gray-100 p-5 outline-none border-none
+                            dark:bg-gray-800 dark:text-white"
                    type="email"
                    placeholder={t("contacts.subject")}
                    required/>
           </div>
           <input className="w-[100%] h-[45px] rounded-full font-camptonLight
-                            bg-gray-100 p-5 outline-none border-none"
+                            bg-gray-100 p-5 outline-none border-none
+                            dark:bg-gray-800 dark:text-white"
                  type="email"
                  placeholder={t("contacts.service")}
                  required/>
             <textarea className="w-[100%] min-h-[200px] rounded-[23px] font-camptonLight
-                                 bg-gray-100 p-5 outline-none border-none"
+                                 bg-gray-100 p-5 outline-none border-none
+                                 dark:bg-gray-800 dark:text-white"
                       // type="text"
                       placeholder={t("contacts.yourMessage")}
                       required/>
           <button className="flex w-[100%] h-[45px] rounded-full bg-primary border-[1px] border-primary
                              text-white items-center justify-center font-camptonBook p-5
+                             dark:bg-secondary_01 dark:border-secondary_01 dark:hover:bg-transparent dark:hover:text-secondary_01
 
                              hover:bg-transparent hover:text-primary duration-300 ease-in-out">
                              {t("contacts.submit")}</button>

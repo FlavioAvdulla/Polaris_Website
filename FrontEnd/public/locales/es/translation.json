@@ -320,5 +320,9 @@
     "proceedToCheckout": "Pasar por la caja",
     "continueShopping": "Seguir comprando",
     "updateCart": "Actualizar carrito"
+  },
+  "addToFavourites": {
+    "addToFavourites": "Añadir a favoritos",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
   }
 }

@@ -320,5 +320,9 @@
     "proceedToCheckout": "Proceed To Checkout",
     "continueShopping": "Continue Shopping",
     "updateCart": "Update Cart"
+  },
+  "addToFavourites": {
+    "addToFavourites": "Add To Favourites",
+    "info": "No handling fees + free shipping on orders over $35*"
   }
 }
