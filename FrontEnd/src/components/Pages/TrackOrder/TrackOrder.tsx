@@ -24,26 +24,22 @@ const TrackOrder = () => {
     <div className="w-[85%] flex flex-col mx-auto my-20">
       {/* ============= Track Orders - Head ============= */}
       <div className="flex w-[100%] justify-between items-center mb-7">
-        <h1
-          className="font-camptonMedium
+        <h1 className="font-camptonMedium
                        dark:text-white
                       
                        xs:text-[10px]
                        sm:text-[11px]
                        md:text-[15px] 
-                       lg:text-[22px]">
-          My Orders / Tracking
-        </h1>
+                       lg:text-[22px]">Order Tracking</h1>
 
         <div
           className="flex items-center
                         
-                        xs:w-[50%]
-                        md:w-fit">
-          <p
-            className="text-gray-500 font-camptonBook
-                       dark:text-white
-                        
+                     xs:w-[50%]
+                     md:w-fit">
+          <p className="text-gray-500 font-camptonBook
+                        dark:text-white
+                         
                         xs:text-[10px]
                         sm:text-[11px]
                         md:text-[15px]
@@ -81,12 +77,11 @@ const TrackOrder = () => {
                           lg:text-[20px]">29 Nov 2025</p>
           </div>
 
-          <div
-            className="bg-primary
-                       dark:bg-secondary_01
-                       
-                       xs:h-[1px] xs:w-[max]
-                       lg:h-[max] lg:w-[1px]"/>
+          <div className="bg-primary
+                          dark:bg-secondary_01
+                          
+                          xs:h-[1px] xs:w-[max]
+                          lg:h-[max] lg:w-[1px]"/>
 
           <div className="flex flex-col">
             <p className="font-camptonSemiBold text-primary
@@ -142,51 +137,91 @@ const TrackOrder = () => {
 
         {/* ============= Track Path ============= */}
 
-        <div className="flex flex-col w-[100%] h-auto items-center justify-center relative mt-6">
-          <div className="flex w-[65%] justify-between absolute">
-            <div className="flex items-center justify-center text-[30px] w-[60px] aspect-1 bg-primary rounded-full
-                            dark:bg-secondary_01">
+        <div className="flex flex-col w-[100%] h-auto items-center justify-center relative mt-10">
+          <div className="flex justify-between absolute mx-auto
+          
+                          xs:w-[80%]
+                          lg:w-[70%]">
+            <div className="flex items-center justify-center text-[30px] aspect-1 bg-primary rounded-full
+                            dark:bg-secondary_01
+                            
+                            xs:w-[40px]
+                            md:w-[50px]
+                            lg:w-[60px]
+                            xl:w-[70px]">
               <i>
-                <LuCheckCheck className="text-white" />
+                <LuCheckCheck className="text-white
+                
+                                         xs:w-[19px]
+                                         lg:w-[23px]
+                                         xl:w-[30px]" />
               </i>
             </div>
             <div className="flex items-center justify-center text-[30px] w-[60px] aspect-1 bg-primary rounded-full
-                            dark:bg-secondary_01">
+                            dark:bg-secondary_01
+                            
+                            xs:w-[40px]
+                            md:w-[50px]
+                            lg:w-[60px]
+                            xl:w-[70px]">
               <i>
-                <PiUser className="text-white" />
+                <PiUser className="text-white
+                
+                                   xs:w-[19px]
+                                   lg:w-[23px]
+                                   xl:w-[30px]" />
               </i>
             </div>
-            <div className="flex items-center justify-center text-[30px] w-[60px] aspect-1 bg-gray-300 rounded-full">
-              <i>
-                <PiMotorcycleFill className="text-darkColor" />
+            <div className="flex items-center justify-center text-[30px] w-[60px] aspect-1 bg-gray-300 rounded-full
+            
+                            xs:w-[40px]
+                            md:w-[50px]
+                            lg:w-[60px]
+                            xl:w-[70px]">
+              <i><PiMotorcycleFill className="text-darkColor
+
+                                              xs:w-[19px]
+                                              lg:w-[23px]
+                                              xl:w-[30px]"/>
               </i>
             </div>
-            <div className="flex items-center justify-center text-[30px] w-[60px] aspect-1 bg-gray-300 rounded-full">
-              <i>
-                <BiSolidPackage className="text-darkColor" />
+            <div className="flex items-center justify-center text-[30px] w-[60px] aspect-1 bg-gray-300 rounded-full
+            
+                            xs:w-[40px]
+                            md:w-[50px]
+                            lg:w-[60px]
+                            xl:w-[70px]">
+              <i><BiSolidPackage className="text-darkColor
+                                            xs:w-[19px]
+                                            lg:w-[23px]
+                                            xl:w-[30px]"/>
               </i>
             </div>
           </div>
 
           <div className="flex w-[100%]">
-            <div className="w-[50%] h-[10px] bg-primary
-                            dark:bg-secondary_01"></div>
-            <div className="w-[50%] h-[10px] bg-gray-300"></div>
+            <div className="w-[50%] bg-primary
+                            dark:bg-secondary_01
+                            
+                            xs:h-[5px]
+                            lg:h-[10px]"></div>
+            <div className="w-[50%] bg-gray-300
+            
+                            xs:h-[5px]
+                            lg:h-[10px]"></div>
           </div>
         </div>
 
-        <div
-          className="h-[1px] w-[100%] bg-gray-300 mx-auto mt-10
-          dark:bg-gray-600"
-        />
+        <div className="h-[1px] w-[100%] bg-gray-300 mx-auto mt-10
+                        dark:bg-gray-600"/>
         {/* ============= Orders ============= */}
-        <div className="grid grid-cols-3 w-[100%] gap-5">
+        <div className="grid w-[100%] gap-5
+        
+                        xs: grid-cols-1
+                        lg:grid-cols-3">
           {cartList.map((product, index) => (
-            <div
-              className="flex w-[100%] h-[100px] border-[1px] border-primary rounded-lg
-                         dark:border-gray-600"
-              key={index}
-            >
+            <div className="flex w-[100%] h-[100px] border-[1px] border-primary rounded-lg
+                            dark:border-gray-600" key={index}>
               {/* ============= Orders - Photo ============= */}
               <div className="flex aspect-1 p-1 justify-center items-center">
                 <img
@@ -199,9 +234,17 @@ const TrackOrder = () => {
               <div className="flex flex-col justify-center py-3 px-4 bg-gray-100 w-[100%] rounded-lg rounded-tl-none rounded-bl-none
                               dark:bg-gray-800">
                 <h1 className="font-camptonMedium
-                               dark:text-white">SONY HEADSET WH-1000XM5</h1>
+                               dark:text-white
+                               
+                               xs:text-[15px]
+                               md:text-[20px]
+                               lg:text-[18px]">SONY HEADSET WH-1000XM5</h1>
                 <p className="flex font-camptonSemiBold text-primary text-[25px]
-                              dark:text-secondary_01">
+                              dark:text-secondary_01
+                              
+                              xs:text-[20px]
+                              md:text-[30px]
+                              lg:text-[25px]">
                   {product.unitPrice}
                 </p>
               </div>
@@ -213,13 +256,14 @@ const TrackOrder = () => {
                         dark:bg-gray-600"/>
 
         <button
-          className="flex w-[180px] items-center justify-center bg-primary border-[1px] border-white text-white
+          className="flex items-center justify-center bg-primary border-[1px] border-white text-white
                      rounded-bl-3xl rounded-tl-3xl rounded-tr-lg rounded-br-lg
                      hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
                      dark:bg-secondary_01 dark:hover:bg-transparent
                         
-                     xs:gap-2 xs:px-3 xs:py-1
-                     md:gap-3 md:px-4 md:py-2">
+                     xs:gap-2 xs:px-3 xs:py-1 xs:w-[120px]
+                     md:gap-3 md:px-4 md:py-2 md:w-[180px]
+                     lg:w-[250px]">
           <i><IoIosArrowForward className="xs:text-[10px] rotate-[180deg]
                                            md:text-[15px]
                                            2xl:text-[20px]"/>
