@@ -56,7 +56,7 @@ const Best_Selling = () => {
             </div>
             {/* ============= Title ============= */}
             <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
-                            group-hover:shadow-shadow-dark transition-all duration-300
+                            group-hover:shadow-shadow-dark transition-all duration-300 z-10
                             dark:bg-gray-800
             
                             xs:text-[20px]
@@ -83,7 +83,7 @@ const Best_Selling = () => {
             {/* ============= Add to cart ============= */}
             <button
               className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
-                         rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all -z-10
+                         rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
                          duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary"
             >
               <i>

@@ -324,5 +324,16 @@
   "addToFavourites": {
     "addToFavourites": "Añadir a favoritos",
     "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
+  },
+  "trackOrder": {
+    "trackOrders": "Seguimiento de pedidos",
+    "orderId": "ID del pedido:",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*",
+    "deliveryTime":"El tiempo de entrega:",
+    "shippedBy": "Enviado por:",
+    "statusT": "Estado:",
+    "statusP": "Recogido por el mensajero",
+    "tracking": "Seguimiento:",
+    "backToHome": "DE VUELTA A CASA"
   }
 }

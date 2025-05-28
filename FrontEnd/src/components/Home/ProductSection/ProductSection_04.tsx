@@ -81,7 +81,7 @@ const ProductSection_04 = () => {
                    alt={product.title} />
             </div>
             {/* ============= Title ============= */}
-            <div className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg text-center
+            <div className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg text-center z-10
                             group-hover:shadow-shadow-dark transition-all duration-300 items-center
                             dark:bg-gray-800">
               <h1 className="mb-1 font-camptonMedium
@@ -102,7 +102,7 @@ const ProductSection_04 = () => {
                             2xl:text-[17px]">{product.quantity} {t("productSection_04.items")}</p>
             </div>
             {/* ============= Add to cart ============= */}
-            <button className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center -z-10
+            <button className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center 
                                rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
                                duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary">
                             

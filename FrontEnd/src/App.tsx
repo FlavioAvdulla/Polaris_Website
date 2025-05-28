@@ -96,7 +96,7 @@ const App = () => {
           />
         )}
 
-        <div className="min-h-screen bg-white dark:bg-darkColor transition-colors duration-200">
+        <div className="min-h-screen bg-white dark:bg-darkColor transition-colors duration-200 -z-10">
           <Router>
             <ScrollManager />
             {/* Navigation Components */}

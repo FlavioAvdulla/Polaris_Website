@@ -324,5 +324,16 @@
   "addToFavourites": {
     "addToFavourites": "Add To Favourites",
     "info": "No handling fees + free shipping on orders over $35*"
+  },
+  "trackOrder": {
+    "trackOrders": "Track Orders",
+    "orderId": "Order ID:",
+    "info": "No handling fees + free shipping on orders over $35*",
+    "deliveryTime":"Delivery Time:",
+    "shippedBy": "Shipped By:",
+    "statusT": "Status:",
+    "statusP": "Picked by the courier",
+    "tracking": "Tracking:",
+    "backToHome": "BACK TO HOME"
   }
 }

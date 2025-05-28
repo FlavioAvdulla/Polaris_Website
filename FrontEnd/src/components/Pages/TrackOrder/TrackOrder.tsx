@@ -12,9 +12,13 @@ import { cartList } from "../../../components/Home/ProductSection/ProductSection
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
 const TrackOrder = () => {
 
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleHomeOpen = () => {
     navigate("/");
@@ -30,7 +34,7 @@ const TrackOrder = () => {
                        xs:text-[10px]
                        sm:text-[11px]
                        md:text-[15px]
-                       lg:text-[22px]">Order Tracking</h1>
+                       lg:text-[22px]">{t("trackOrder.trackOrders")}</h1>
 
         <div className="flex items-center
                         
@@ -43,7 +47,7 @@ const TrackOrder = () => {
                         sm:text-[11px]
                         md:text-[15px]
                         xl:text-[18px]">
-            No handling fees + free shipping on orders over $35*
+            {t("trackOrder.info")}
           </p>
         </div>
       </div>
@@ -53,7 +57,7 @@ const TrackOrder = () => {
                       dark:text-white
                       
                       xs:text-[15px]
-                      lg:text-[20px]">Order ID: ODOIEFHW9323</p>
+                      lg:text-[20px]"><span>{t("trackOrder.orderId")}</span> ODOIEFHW9323</p>
 
         {/* ============= Package Track Details ============= */}
         <div className="flex w-[100%] h-auto border-primary border-[1px]
@@ -71,14 +75,14 @@ const TrackOrder = () => {
                           xs:text-[15px]
                           md:text-[17px]
                           xl:text-[20px]">
-              Delivery Time:
+              {t("trackOrder.deliveryTime")}
             </p>
             <p className="font-camptonBook
                           dark:text-white
                           
                           xs:text-[15px]
                           md:text-[14px]
-                          xl:text-[20px]">29 Nov 2025</p>
+                          xl:text-[20px]">29/12/2025</p>
           </div>
 
           <div className="bg-primary
@@ -94,7 +98,7 @@ const TrackOrder = () => {
                           
                           xs:text-[15px]
                           md:text-[17px]
-                          xl:text-[20px]">Shipped By:</p>
+                          xl:text-[20px]">{t("trackOrder.shippedBy")}</p>
             <p className="font-camptonBook
                           dark:text-white
                           
@@ -116,13 +120,13 @@ const TrackOrder = () => {
 
                           xs:text-[15px]
                           md:text-[17px]
-                          xl:text-[20px]">Status:</p>
+                          xl:text-[20px]">{t("trackOrder.statusT")}</p>
             <p className="font-camptonBook
                           dark:text-white
 
                           xs:text-[15px]
                           md:text-[14px]
-                          xl:text-[20px]">Picked by the courier</p>
+                          xl:text-[20px]">{t("trackOrder.statusP")}</p>
           </div>
 
           <div className="bg-primary
@@ -138,7 +142,7 @@ const TrackOrder = () => {
 
                           xs:text-[15px]
                           md:text-[17px]
-                          xl:text-[20px]">Tracking #:</p>
+                          xl:text-[20px]">{t("trackOrder.tracking")}</p>
             <p className="font-camptonBook
                           dark:text-white
 
@@ -239,7 +243,7 @@ const TrackOrder = () => {
                 <img
                   className="xs:w-[100%] aspect-1"
                   src={product.image}
-                  alt={product.title}
+                  alt={t(product.title)}
                 />
               </div>
               {/* ============= Orders - Info ============= */}
@@ -250,7 +254,7 @@ const TrackOrder = () => {
 
                                xs:text-[15px]
                                md:text-[20px]
-                               lg:text-[18px]">SONY HEADSET WH-1000XM5</h1>
+                               lg:text-[18px]">{t(product.title)}</h1>
                 <p className="flex font-camptonSemiBold text-primary text-[25px]
                               dark:text-secondary_01
 
@@ -283,7 +287,7 @@ const TrackOrder = () => {
                         md:text-[15px]
                         2xl:text-[20px]"
                         onClick={handleHomeOpen}>
-            BACK TO HOME
+            {t("trackOrder.backToHome")}
           </p>
         </button>
       </div>
