@@ -104,7 +104,8 @@ const ProductSection_04 = () => {
             {/* ============= Add to cart ============= */}
             <button className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center 
                                rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
-                               duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary">
+                               duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary
+                               dark:bg-secondary_01 dark:border-secondary_01">
                             
               <i><IoIosSearch className="text-[18px] text-white" /></i>
               <p className="text-white">{t("productSection_04.viewMore")}</p>

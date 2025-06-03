@@ -30,7 +30,7 @@ const ForgotPassword = ({
   // const [email, setEmail] = useState<string>("");
 
   return (
-    <div className="flex fixed items-center z-20 w-[100%] h-[100%]">
+    <div className="flex fixed items-center z-30 w-[100%] h-[100%]">
       <div className="flex mx-auto justify-center items-center z-10">
 
         <div className="flex flex-col gap-10 p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]

@@ -21,7 +21,7 @@ const Faq = ({ setShowFaq }) => {
   };
 
   return (
-    <div className="flex fixed items-center z-20 w-[100%] h-[100%]">
+    <div className="flex fixed items-center z-30 w-[100%] h-[100%]">
       <Accordion
         type="single"
         collapsible
