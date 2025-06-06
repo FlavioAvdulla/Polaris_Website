@@ -45,7 +45,7 @@ const Computers = () => {
                        xs:text-[10px]
                        sm:text-[11px]
                        md:text-[15px] 
-                       lg:text-[22px]">Computers</h1>
+                       lg:text-[22px]">{t("computers.computers")}</h1>
 
         <div className="flex items-center
                         
@@ -58,7 +58,7 @@ const Computers = () => {
                         sm:text-[11px]
                         md:text-[15px]
                         xl:text-[18px]">
-            No handling fees + free shipping on orders over $35*
+            {t("computers.info")}
           </p>
         </div>
       </div>

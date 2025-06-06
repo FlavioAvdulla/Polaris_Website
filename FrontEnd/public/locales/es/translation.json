@@ -335,5 +335,9 @@
     "statusP": "Recogido por el mensajero",
     "tracking": "Seguimiento:",
     "backToHome": "DE VUELTA A CASA"
+  },
+  "computers": {
+    "computers": "Computadoras",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
   }
 }

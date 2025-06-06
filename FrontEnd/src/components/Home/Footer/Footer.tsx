@@ -25,57 +25,56 @@ const Footer = () => {
       
                       xs:flex-col xs:w-[80%]
                       sm:w-[73%]
-                      md:flex-row md:w-[85%]
-                      md:h-[150px]
+                      md:flex-row md:w-[85%] md:h-[150px]
                       lg:h-[180px]">
         {/* ============= Logo Section ============= */}
         <div className="flex flex-col h-auto justify-between
         
                         xs:gap-5 xs:w-[100%]
                         md:gap-0 md:w-[20%]">
-          <img
-            className="
-            
-                      xs:w-[80px]
-                      lg:w-[110px]"
+          <img className="xs:w-[80px]
+                          lg:w-[110px]"
             src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo_White}
-            alt="Polaris_Logo_White"
-          />
+            alt="Polaris_Logo_White"/>
           <p className="text-white font-camptonBook
                         
                         md:text-[12px] md:leading-tight
                         lg:text-[16px] lg:leading-normal">
-            Lorem ipsum dolor amet, consectetur
-            sell adipis elit
+
+                        Lorem ipsum dolor amet, consectetur
+                        sell adipis elit
           </p>
           <div className="flex gap-4">
-            <i>
-              <FaFacebookSquare className="text-white cursor-pointer
+            <i><FaFacebookSquare className="text-white cursor-pointer
                                             hover:scale-110 ease-in-out duration-300
-                                            
+                                            dark:text-secondary_01
+                                              
                                             xs:text-[25px]
                                             md:text-[20px]
                                             lg:text-[30px]" />
             </i>
             <i>
               <FaSquareXTwitter className="text-white cursor-pointer
-                                            hover:scale-110 ease-in-out duration-300
+                                           hover:scale-110 ease-in-out duration-300
+                                           dark:text-secondary_01
                                             
-                                            xs:text-[25px]
-                                            md:text-[20px]
-                                            lg:text-[30px]" />
+                                           xs:text-[25px]
+                                           md:text-[20px]
+                                           lg:text-[30px]" />
             </i>
             <i>
               <FaLinkedin className="text-white cursor-pointer
-                                            hover:scale-110 ease-in-out duration-300
-                                            
-                                            xs:text-[25px]
-                                            md:text-[20px]
-                                            lg:text-[30px]" />
+                                     hover:scale-110 ease-in-out duration-300
+                                     dark:text-secondary_01
+                                      
+                                     xs:text-[25px]
+                                     md:text-[20px]
+                                     lg:text-[30px]" />
             </i>
             <i>
               <FaSquarePinterest className="text-white cursor-pointer
                                             hover:scale-110 ease-in-out duration-300
+                                            dark:text-secondary_01
                                             
                                             xs:text-[25px]
                                             md:text-[20px]
@@ -86,10 +85,10 @@ const Footer = () => {
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
           <h1 className="text-white font-camptonBold
-                          dark:text-secondary_01
+                         dark:text-secondary_01
           
-                          md:text-[18px]
-                          lg:text-[22px]">
+                         md:text-[18px]
+                         lg:text-[22px]">
             {t("footer.usefulLinks")}
           </h1>
           <button>
@@ -126,10 +125,10 @@ const Footer = () => {
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
           <h1 className="text-white font-camptonBold
-                          dark:text-secondary_01
+                         dark:text-secondary_01
           
-                          md:text-[18px]
-                          lg:text-[22px]">
+                         md:text-[18px]
+                         lg:text-[22px]">
             {t("footer.category")}
           </h1>
           <button>
@@ -166,10 +165,10 @@ const Footer = () => {
         {/* ============= Useful Links ============= */}
         <div className="flex flex-col w-fit justify-between items-start">
           <h1 className="text-white font-camptonBold
-                        dark:text-secondary_01
+                         dark:text-secondary_01
           
-                          md:text-[18px]
-                          lg:text-[22px]">{t("footer.contact")}</h1>
+                         md:text-[18px]
+                         lg:text-[22px]">{t("footer.contact")}</h1>
           <button>
             <p className="text-white font-camptonBook
             

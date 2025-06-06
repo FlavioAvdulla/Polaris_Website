@@ -8,39 +8,34 @@ import authenticate from "./middleware/authenticate";
 import authRoutes from "./routes/auth.route";
 import userRoutes from "./routes/user.route";
 import sessionRoutes from "./routes/session.route";
+import productRoutes from "./routes/product.route"; // Added this line
 import { APP_ORIGIN, NODE_ENV, PORT } from "./constants/env";
+
+import path from "path";
 
 const app = express();
 
-// add middleware
+// Middleware setup
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: APP_ORIGIN,
-    credentials: true,
-  })
-);
+app.use(cors({ origin: APP_ORIGIN, credentials: true }));
 app.use(cookieParser());
 
-// health check
-app.get("/", (_, res) => {
-  return res.status(200).json({
-    status: "healthy",
-  });
-});
+// Health check
+app.get("/", (_, res) => res.status(200).json({ status: "healthy" }));
 
-// auth routes
+// Routes
 app.use("/auth", authRoutes);
-
-// protected routes
 app.use("/user", authenticate, userRoutes);
 app.use("/sessions", authenticate, sessionRoutes);
+app.use("/api/products", productRoutes); // Ensuring this is included
+app.use('/images', express.static(path.join(__dirname, '..', 'public', 'images')));
 
-// error handler
+// Error handling middleware
 app.use(errorHandler);
 
+// Start server & connect to DB
 app.listen(PORT, async () => {
-  console.log(`Server listening on port ${PORT} in ${NODE_ENV} environment`);
+  console.log(`Server running on port ${PORT} in ${NODE_ENV} environment`);
   await connectToDatabase();
 });

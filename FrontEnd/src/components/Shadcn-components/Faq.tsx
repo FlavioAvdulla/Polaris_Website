@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 import {
   Accordion,
@@ -15,13 +15,30 @@ import { useTranslation } from 'react-i18next';
 const Faq = ({ setShowFaq }) => {
 
   const { t } = useTranslation();
+  const faqRef = useRef(null)
 
   const handleClose = () => {
     setShowFaq(false);
   };
 
+  {/* ============= Close when clicking outside ============= */}
+  const handleCloseOutside = (event) => {
+    if (faqRef.current && !faqRef.current.contains(event.target)) {
+      handleClose();
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleCloseOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleCloseOutside)
+    }
+  }, [])
+
   return (
-    <div className="flex fixed items-center z-30 w-[100%] h-[100%]">
+    <div className="flex fixed items-center z-30 w-[100%] h-[100%]"
+         ref={faqRef}
+         onClick={(e) => e.stopPropagation()}>
       <Accordion
         type="single"
         collapsible
@@ -99,7 +116,7 @@ const Faq = ({ setShowFaq }) => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-      <div className="flex fixed bg-black bg-opacity-60 w-[100%] h-[100%] backdrop-blur-[3px]"/>
+      <div className="flex fixed bg-black bg-opacity-60 w-[100%] h-[100%] backdrop-blur-[3px]" onClick={handleClose}/>
     </div>
   );
 };

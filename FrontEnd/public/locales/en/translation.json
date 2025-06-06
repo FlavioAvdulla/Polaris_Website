@@ -335,5 +335,9 @@
     "statusP": "Picked by the courier",
     "tracking": "Tracking:",
     "backToHome": "BACK TO HOME"
+  },
+  "computers": {
+    "computers": "Computers",
+    "info": "No handling fees + free shipping on orders over $35*"
   }
 }

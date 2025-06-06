@@ -94,7 +94,8 @@ export function Carousel_03() {
                         <div
                           className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
                                      border-white text-white items-center justify-center
-                                      hover:bg-transparent hover:scale-110 ease-in-out duration-300">
+                                      hover:bg-transparent hover:scale-110 ease-in-out duration-300
+                                      dark:bg-darkColor dark:hover:bg-transparent">
                           <p className="xs:px-4 xs:text-[12px] xs:py-[1px]
                                         md:text-[20px] md:px-6 md:py-[3px]
                                         lg:text-[15px]
@@ -125,6 +126,7 @@ export function Carousel_03() {
                           className="flex items-center justify-center bg-primary border-[1px] border-white
                                      text-white rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                                      hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                                     dark:bg-darkColor dark:hover:bg-transparent
                                                                           
                                      xs:gap-2 xs:px-3 xs:py-1
                                      md:gap-3 md:px-4 md:py-2">

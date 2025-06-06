@@ -95,7 +95,8 @@ export function Carousel_01() {
                         </p>
                         <div className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
                                         border-white text-white items-center justify-center
-                                        hover:bg-transparent hover:scale-110 ease-in-out duration-300">
+                                        hover:bg-transparent hover:scale-110 ease-in-out duration-300
+                                        dark:bg-darkColor dark:hover:bg-transparent">
                           <p className="xs:text-[12px] xs:px-4 xs:py-[1px]
                                         md:text-[15px] md:px-6 md:py-[3px]
                                         2xl:text-[20px]">{t(product.discount)}</p>
@@ -124,6 +125,7 @@ export function Carousel_01() {
                           className="flex items-center justify-center bg-primary border-[1px] border-white text-white
                                      rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                                      hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                                     dark:bg-darkColor dark:hover:bg-transparent
                                           
                                      xs:gap-2 xs:px-3 xs:py-1
                                      md:gap-3 md:px-4 md:py-2">
