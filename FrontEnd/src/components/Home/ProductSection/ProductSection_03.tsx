@@ -1,7 +1,7 @@
-import React from "react";
-// Import the product data and image.
-import { productSection_03 } from "./ProductSection";
+import React, { useEffect, useState } from "react";
+// import { productSection_03 } from "./ProductSection";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 // React Icons
 import { IoIosArrowForward } from "react-icons/io";
@@ -9,8 +9,23 @@ import { IoIosArrowForward } from "react-icons/io";
 // Translation
 import { useTranslation } from 'react-i18next';
 
+interface Product {
+  _id: string;
+  image: string;
+  title_01: string;
+  title_02: string;
+  description: string;
+  button: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['10', '11'];
+
 const ProductSection_03 = () => {
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
   const navigate = useNavigate();
   
@@ -27,12 +42,53 @@ const ProductSection_03 = () => {
       }
     }
 
+    useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include those with IDs in featuredProductIds
+        const filteredProducts = response.data.filter((product: Product) => 
+          featuredProductIds.includes(product._id)
+        );
+        setProducts(filteredProducts);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError(err.message || "Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.loadingProducts")}</p>
+      </div>;
+  }
+
+  if (error) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.networkError")}</p>
+      </div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.noProducts")}</p>
+      </div>;
+  }
+
   return (
     <div className="flex w-[85%] mx-auto mb-20 mt-10 gap-5
                     
                     xs:flex-col
                     md:flex-row">
-      {productSection_03.map((product, index) => (
+      {products.map((product, index) => (
         // ============= Product Container =============
         <div className="flex border-[1px] border-primary rounded-lg overflow-hidden bg-transparent mx-auto cursor-pointer
                         dark:border-gray-600
@@ -85,7 +141,7 @@ const ProductSection_03 = () => {
                         
                             xs:h-[300px]
                             md:w-[100%] md:h-auto"
-                 src={product.image}
+                 src={`http://localhost:4004/images/${product.image}`}
                  alt={product.title_01}/>
           </div>
         </div>

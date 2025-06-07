@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 // React Icons
 import { IoIosSearch } from "react-icons/io";
@@ -10,8 +11,29 @@ import { shopByCategories } from "./ProductSection";
 // Translation
 import { useTranslation } from 'react-i18next';
 
+interface Product {
+  _id: string;
+  image: string;
+  title: string;
+  quantity: number;
+  normalPrice: string;
+  offerPrice: string;
+  detail_01: string;
+  detail_02: string;
+  detail_03: string;
+  detail_04: string;
+  rating: string;
+  reviews: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['12', '13', '14', '15', '16', '17'];
+
 const ProductSection_04 = () => {
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -30,6 +52,47 @@ const ProductSection_04 = () => {
     if (route) {
       navigate(route);
     }
+  }
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include those with IDs in featuredProductIds
+        const filteredProducts = response.data.filter((product: Product) => 
+          featuredProductIds.includes(product._id)
+        );
+        setProducts(filteredProducts);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError(err.message || "Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.loadingProducts")}</p>
+      </div>;
+  }
+
+  if (error) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.networkError")}</p>
+      </div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.noProducts")}</p>
+      </div>;
   }
 
   return (

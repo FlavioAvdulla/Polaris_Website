@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel_03 } from "../../Shadcn-components/Carousel_03";
 import { Carousel_04 } from "../../Shadcn-components/Carousel_04";
 
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 // React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
@@ -13,8 +14,24 @@ import { productSection_05 } from "./ProductSection";
 // Translation
 import { useTranslation } from 'react-i18next';
 
+interface Product {
+  _id: string;
+  image: string; // or typeof Product_01 if using image variables
+  rating: string;
+  title: string;
+  description: string;
+  normalPrice: string;
+  offerPrice: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['18', '19', '20', '21'];
+
 const ProductSection_05 = () => {
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
   const navigate = useNavigate();
   
@@ -32,6 +49,47 @@ const ProductSection_05 = () => {
         navigate(route);
       }
     }
+
+    useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include those with IDs in featuredProductIds
+        const filteredProducts = response.data.filter((product: Product) => 
+          featuredProductIds.includes(product._id)
+        );
+        setProducts(filteredProducts);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError(err.message || "Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.loadingProducts")}</p>
+      </div>;
+  }
+
+  if (error) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.networkError")}</p>
+      </div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.noProducts")}</p>
+      </div>;
+  }
 
   const getStars = (rating) => {
     const stars = [];

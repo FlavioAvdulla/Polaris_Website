@@ -1,7 +1,8 @@
-import React from "react";
-import { bestSelling, latestProducts, topRating } from "../../ProductSection";
+import React, { useEffect, useState } from "react";
+// import { bestSelling, latestProducts, topRating } from "../../ProductSection";
 import { useNavigate } from "react-router-dom";
 import ScrollManager from "@/ScrollManager/ScrollManager";
+import axios from 'axios';
 
 // React Icons
 import { PiShoppingCartLight } from "react-icons/pi";
@@ -9,8 +10,29 @@ import { PiShoppingCartLight } from "react-icons/pi";
 // Translation
 import { useTranslation } from 'react-i18next';
 
+interface Product {
+  _id: string;
+  image: string;
+  rating: number;
+  normalPrice: string;
+  title: string;
+  description: string;
+  quantity: number;
+  available: string;
+  quantitySold: number;
+  sold: string;
+  info: string;
+  offerPrice: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['4', '5', '6', '7', '8', '9'];
+
 const Best_Selling = () => {
   
+  const [products, setProducts] = useState<Product[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -31,6 +53,49 @@ const Best_Selling = () => {
     }
   }
 
+  useEffect(() => {
+  const fetchProducts = async () => {
+    try {
+      const response = await axios.get('http://localhost:4004/api/products');
+      // Filter and sort products to match featuredProductIds order
+      const filteredProducts = response.data
+        .filter((product: Product) => featuredProductIds.includes(product._id))
+        .sort((a, b) => {
+          return featuredProductIds.indexOf(a._id) - featuredProductIds.indexOf(b._id);
+        });
+      setProducts(filteredProducts);
+    } catch (err) {
+      console.error("Failed to fetch products:", err);
+      setError(err.message || "Failed to load products");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchProducts();
+}, []);
+
+if (loading) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.loadingProducts")}</p>
+      </div>;
+  }
+
+  if (error) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.networkError")}</p>
+      </div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.noProducts")}</p>
+      </div>;
+  }
+
   return (
     <div className="flex flex-col w-[100%] mx-auto">
       <ScrollManager/>
@@ -41,7 +106,7 @@ const Best_Selling = () => {
                   md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
                   xl:flex">
         {/* ============= Product List ============= */}
-        {bestSelling.map((product, index) => (
+        {products.map((product, index) => (
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer rounded-lg
           
                           dark:border-gray-600" key={index} onClick={() => handleImageClick(product._id)}>
@@ -52,7 +117,7 @@ const Best_Selling = () => {
                               
                               xs:h-auto
                               lg:w-[100%] w-[100%]
-                              xl:w-[100%]" src={product.image} alt={product.title} />
+                              xl:w-[100%]" src={`http://localhost:4004/images/${product.image}`} alt={product.title} />
             </div>
             {/* ============= Title ============= */}
             <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg

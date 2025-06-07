@@ -74,15 +74,24 @@ const ProductSection_01 = () => {
   };
 
   if (loading) {
-    return <div className="text-center py-20">Loading products...</div>;
+    return <div className="flex mb-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_01.loadingProducts")}</p>
+      </div>;
   }
 
   if (error) {
-    return <div className="text-center py-20 text-red-500">{error}</div>;
+    return <div className="flex mb-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_01.networkError")}</p>
+      </div>;
   }
 
   if (products.length === 0) {
-    return <div className="text-center py-20">No featured products available</div>;
+    return <div className="flex mb-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_01.noProducts")}</p>
+      </div>;
   }
 
   return (
@@ -100,8 +109,13 @@ const ProductSection_01 = () => {
           key={product._id}
           onClick={() => handleProductClick(product._id)}>
           {/* Product image */}
-          <div className="flex w-[100%] h-[300px] justify-center items-center bg-white
-                          dark:bg-transparent">
+          <div className="flex w-[100%] justify-center items-center bg-white
+                          dark:bg-transparent
+                          
+                          xs:h-[250px]
+                          sm:h-[320px]
+                          md:h-[200px]
+                          lg:h-[300px]">
             <img className="w-[75%]" src={`http://localhost:4004/images/${product.image}`} alt={product.title} />
           </div>
           

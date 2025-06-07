@@ -70,14 +70,20 @@
     "title_03": "SONY PLAYSTATION 5 PRO",
     "available": "Disponible",
     "sold": "Vendida",
-    "info": "Tiempo restante hasta el final de la oferta."
+    "info": "Tiempo restante hasta el final de la oferta.",
+    "loadingProducts": "Cargando productos...",
+    "noProducts": "No hay productos destacados disponibles.",
+    "networkError": "Error de red"
   },
   "productSection_02": {
     "dealsOfTheDay": "Ofertas del día",
     "latestProducts": "Últimos productos",
     "topRating": "Calificación superior",
     "bestSelling": "Los más vendidos",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "AÑADIR A LA CESTA",
+    "loadingProducts": "Cargando productos...",
+    "noProducts": "No hay productos destacados disponibles.",
+    "networkError": "Error de red"
   },
   "productSection_03": {
     "title_02": "Descuento de fin de semana",
