@@ -521,42 +521,42 @@ export const productSection_03 = [
 ];
 
 export const productSection_05 = [
-  {
-    _id: "1",
-    image: Product_01,
-    rating: "3.0",
-    title: "productSection_05.title_01",
-    description: "productSection_05.description_01",
-    normalPrice: "€1169",
-    offerPrice: "€839",
-  },
-  {
-    _id: "2",
-    image: Product_02,
-    rating: "5.0",
-    title: "productSection_05.title_02",
-    description: "productSection_05.description_02",
-    normalPrice: "€1169",
-    offerPrice: "€939",
-  },
-  {
-    _id: "3",
-    image: Product_04,
-    rating: "3.0",
-    title: "productSection_05.title_03",
-    description: "productSection_05.description_03",
-    normalPrice: "€769",
-    offerPrice: "€539",
-  },
-  {
-    _id: "4",
-    image: Product_06,
-    rating: "4.0",
-    title: "productSection_05.title_04",
-    description: "productSection_05.description_04",
-    normalPrice: "€69",
-    offerPrice: "€39",
-  },
+  // {
+  //   _id: "1",
+  //   image: Product_01,
+  //   rating: "3.0",
+  //   title: "productSection_05.title_01",
+  //   description: "productSection_05.description_01",
+  //   normalPrice: "€1169",
+  //   offerPrice: "€839",
+  // },
+  // {
+  //   _id: "2",
+  //   image: Product_02,
+  //   rating: "5.0",
+  //   title: "productSection_05.title_02",
+  //   description: "productSection_05.description_02",
+  //   normalPrice: "€1169",
+  //   offerPrice: "€939",
+  // },
+  // {
+  //   _id: "3",
+  //   image: Product_04,
+  //   rating: "3.0",
+  //   title: "productSection_05.title_03",
+  //   description: "productSection_05.description_03",
+  //   normalPrice: "€769",
+  //   offerPrice: "€539",
+  // },
+  // {
+  //   _id: "4",
+  //   image: Product_06,
+  //   rating: "4.0",
+  //   title: "productSection_05.title_04",
+  //   description: "productSection_05.description_04",
+  //   normalPrice: "€69",
+  //   offerPrice: "€39",
+  // },
 ];
 
 export const productSection_06 = [
@@ -974,24 +974,24 @@ export const carousel_02 = [
 ];
 
 export const carousel_03 = [
-  {
-    _id: "1",
-    image: Slider_03,
-    discount: "carousel_01.discount_01",
-    title: "carousel_01.title_01",
-    addToCart: "carousel_01.addToCart",
-    paragraph: "carousel_01.paragraph_01",
-    exclusiveOffer: "carousel_01.exclusiveOffer",
-  },
-  {
-    _id: "2",
-    image: Slider_06,
-    discount: "carousel_01.discount_02",
-    title: "carousel_01.title_02",
-    addToCart: "carousel_01.addToCart",
-    paragraph: "carousel_01.paragraph_02",
-    exclusiveOffer: "carousel_01.exclusiveOffer",
-  },
+  // {
+  //   _id: "1",
+  //   image: Slider_03,
+  //   discount: "carousel_01.discount_01",
+  //   title: "carousel_01.title_01",
+  //   addToCart: "carousel_01.addToCart",
+  //   paragraph: "carousel_01.paragraph_01",
+  //   exclusiveOffer: "carousel_01.exclusiveOffer",
+  // },
+  // {
+  //   _id: "2",
+  //   image: Slider_06,
+  //   discount: "carousel_01.discount_02",
+  //   title: "carousel_01.title_02",
+  //   addToCart: "carousel_01.addToCart",
+  //   paragraph: "carousel_01.paragraph_02",
+  //   exclusiveOffer: "carousel_01.exclusiveOffer",
+  // },
 ];
 
 export const carousel_04 = [

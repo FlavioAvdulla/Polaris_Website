@@ -9,7 +9,7 @@ import axios from 'axios';
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 // Import the product data.
-import { productSection_05 } from "./ProductSection";
+// import { productSection_05 } from "./ProductSection";
 
 // Translation
 import { useTranslation } from 'react-i18next';
@@ -141,7 +141,7 @@ const ProductSection_05 = () => {
                       lg:grid lg:grid-cols-2
                       xl:flex xl:flex-col xl:h-[700px] xl:w-[60.66%]">
         {/* ============= Section - right ============= */}
-        {productSection_05.map((product, index) => (
+        {products.map((product, index) => (
           <div className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden"
                key={index}
                onClick={() => handleProductClick(product._id)}>
@@ -151,13 +151,13 @@ const ProductSection_05 = () => {
               {/* ============= Section - right - 01 - Photo ============= */}
               <div className="flex w-[40%] h-[100%] items-center justify-center rounded-tl-lg rounded-bl-lg bg-white
                               dark:bg-transparent">
-                <img src={product.image}
+                <img src={`http://localhost:4004/images/${product.image}`}
                      alt={product.title}
                      className="object-cover rounded-tl-lg rounded-bl-lg
 
-                                md:w-[80%] md:h-[80%]
-                                xl:w-full xl:h-full
-                                2xl:w-[75%]"/>
+                               md:w-[80%] md:h-[80%]
+                               xl:w-full xl:h-full
+                               2xl:w-[75%]"/>
               </div>
               {/* ============= Section - right - 01 - Info ============= */}
               <div className="flex flex-col w-[60%] h-[100%] py-3 justify-center rounded-tr-lg rounded-br-lg

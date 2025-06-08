@@ -130,7 +130,7 @@ const ProductSection_04 = () => {
                       md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
                       xl:flex">
         {/* ============= Product List ============= */}
-        {shopByCategories.map((product, index) => (
+        {products.map((product, index) => (
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg cursor-pointer
                           dark:border-gray-600"
                key={index}
@@ -140,7 +140,7 @@ const ProductSection_04 = () => {
               <img className="xs:h-auto
                               lg:w-[90%] w-[100%]
                               xl:w-[100%]"
-                   src={product.image}
+                   src={`http://localhost:4004/images/${product.image}`}
                    alt={product.title} />
             </div>
             {/* ============= Title ============= */}
