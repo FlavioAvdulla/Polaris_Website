@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 import { Carousel_05 } from "../../Shadcn-components/Carousel_05";
 
 import { useNavigate } from "react-router-dom";
@@ -7,13 +8,30 @@ import { useNavigate } from "react-router-dom";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 
 // Import the product data correctly
-import { productSection_06 } from "./ProductSection";
+// import { productSection_06 } from "./ProductSection";
 
 // Translation
 import { useTranslation } from 'react-i18next';
 
+interface Product {
+  _id: string;
+  image: string; // or typeof Product_01 if using image variables
+  rating: string;
+  title: string;
+  description: string;
+  normalPrice: string;
+  offerPrice: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['27', '28', '29', '30', '31', '32', '33', '34'];
+
+
 const ProductSection_05 = () => {
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -35,6 +53,47 @@ const ProductSection_05 = () => {
       navigate(route);
     }
   };
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include those with IDs in featuredProductIds
+        const filteredProducts = response.data.filter((product: Product) => 
+          featuredProductIds.includes(product._id)
+        );
+        setProducts(filteredProducts);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError(err.message || "Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.loadingProducts")}</p>
+      </div>;
+  }
+
+  if (error) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.networkError")}</p>
+      </div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="flex mb-10 mt-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_02.noProducts")}</p>
+      </div>;
+  }
 
   const getStars = (rating) => {
     const stars = [];
@@ -76,7 +135,7 @@ const ProductSection_05 = () => {
                       md:grid md:grid-cols-2
                       lg:h-[600px]
                       xl:h-[700px]">
-        {productSection_06.map((product, index) => (
+        {products.map((product, index) => (
           <div className="flex w-[100%] h-auto overflow-hidden bg-gray-100
                           items-center rounded-lg border-[1px] border-primary cursor-pointer
                           dark:bg-transparent dark:border-gray-600"
@@ -84,7 +143,7 @@ const ProductSection_05 = () => {
                onClick={() => handleProductClick(product._id)}>
             {/* ============= Section - right - 01 - Photo ============= */}
             <div className="flex w-[40%] h-[100%] items-center rounded-tl-lg rounded-bl-lg bg-transparent">
-              <img src={product.image}
+              <img src={`http://localhost:4004/images/${product.image}`}
                    alt={product.title}
                    className="w-full h-auto rounded-tl-lg rounded-bl-lg"/>
             </div>

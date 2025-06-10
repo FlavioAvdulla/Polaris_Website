@@ -1,7 +1,8 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 
 import { Card, CardContent } from "@/components/ui/card";
-import { carousel_05 } from "../Home/ProductSection/ProductSection";
+// import { carousel_05 } from "../Home/ProductSection/ProductSection";
 import {
   Carousel,
   CarouselContent,
@@ -17,14 +18,50 @@ import { IoIosArrowForward } from "react-icons/io";
 // Translation
 import { useTranslation } from 'react-i18next';
 
+interface Product {
+  _id: string;
+  image: string;
+  discount: string;
+  title: string;
+  addToCart: string;
+  paragraph: string;
+  exclusiveOffer: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['35', '36'];
+
 export function Carousel_05() {
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation()
   const [api, setApi] = React.useState<CarouselApi>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [isGrabbing, setIsGrabbing] = React.useState(false);
+
+    useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include those with IDs in featuredProductIds
+        const filteredProducts = response.data.filter((product: Product) => 
+          featuredProductIds.includes(product._id)
+        );
+        setProducts(filteredProducts);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError(err instanceof Error ? err.message : "Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   React.useEffect(() => {
     if (!api) {
@@ -49,6 +86,36 @@ export function Carousel_05() {
     return () => clearInterval(interval);
   }, [api, count]);
 
+  if (loading) {
+    return (
+      <div className="flex mb-10 mt-20 justify-center">
+        <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full dark:bg-secondary_01">
+          {t("productSection_02.loadingProducts")}
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex mb-10 mt-20 justify-center">
+        <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full dark:bg-secondary_01">
+          {t("productSection_02.networkError")}
+        </p>
+      </div>
+    );
+  }
+
+  if (products.length === 0) {
+    return (
+      <div className="flex mb-10 mt-20 justify-center">
+        <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full dark:bg-secondary_01">
+          {t("productSection_02.noProducts")}
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-auto xs:w-[100%]
                     lg:w-[50%]">
@@ -58,7 +125,7 @@ export function Carousel_05() {
         onMouseDown={() => setIsGrabbing(true)}
         onMouseUp={() => setIsGrabbing(false)}>
         <CarouselContent>
-          {carousel_05.map((product, index) => (
+          {products.map((product, index) => (
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
@@ -139,7 +206,7 @@ export function Carousel_05() {
                     </div>
 
                     <img className="w-[100%] h-[100%] object-cover"
-                         src={product.image}
+                         src={`http://localhost:4004/images/${product.image}`}
                          alt={product.title}/>
                   </div>
                 </CardContent>
