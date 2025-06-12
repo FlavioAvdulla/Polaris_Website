@@ -120,7 +120,7 @@ export function Carousel_01() {
     <div
       className="mx-auto
                     
-                xs:w-[100%]">
+                 xs:w-[100%]">
       <Carousel
         setApi={setApi}
         className="w-full flex flex-col"

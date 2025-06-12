@@ -1,4 +1,5 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
 
 import { Card, CardContent } from "@/components/ui/card";
 import { carousel_02 } from "../Home/ProductSection/ProductSection";
@@ -13,15 +14,51 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
+// Translation
+import { useTranslation } from 'react-i18next';
+
+interface Product {
+  _id: string;
+  image: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['39', '40', '41', '42', '43', '44', '45', '46', '47'];
+
 // React Icons
 // import { IoIosArrowForward } from "react-icons/io";
 
 export function Carousel_02() {
+
+  const [products, setProducts] = useState<Product[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
+  const { t } = useTranslation()
   const [api, setApi] = React.useState<CarouselApi>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [isGrabbing, setIsGrabbing] = React.useState(false);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include those with IDs in featuredProductIds
+        const filteredProducts = response.data.filter((product: Product) => 
+          featuredProductIds.includes(product._id)
+        );
+        setProducts(filteredProducts);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError(err instanceof Error ? err.message : "Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   React.useEffect(() => {
     if (!api) {
@@ -45,6 +82,36 @@ export function Carousel_02() {
 
     return () => clearInterval(interval);
   }, [api, count]);
+
+  if (loading) {
+    return (
+      <div className="flex mb-10 mt-20 justify-center">
+        <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full dark:bg-secondary_01">
+          {t("productSection_02.loadingProducts")}
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex mb-10 mt-20 justify-center">
+        <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full dark:bg-secondary_01">
+          {t("productSection_02.networkError")}
+        </p>
+      </div>
+    );
+  }
+
+  if (products.length === 0) {
+    return (
+      <div className="flex mb-10 mt-20 justify-center">
+        <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full dark:bg-secondary_01">
+          {t("productSection_02.noProducts")}
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto w-[50%]
