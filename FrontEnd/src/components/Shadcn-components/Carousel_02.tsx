@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 
 import { Card, CardContent } from "@/components/ui/card";
-import { carousel_02 } from "../Home/ProductSection/ProductSection";
+// import { carousel_02 } from "../Home/ProductSection/ProductSection";
 import {
   Carousel,
   CarouselContent,
@@ -125,7 +125,7 @@ export function Carousel_02() {
         onMouseUp={() => setIsGrabbing(false)}
       >
         <CarouselContent>
-          {carousel_02.map((product, index) => (
+          {products.map((product, index) => (
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
@@ -141,7 +141,7 @@ export function Carousel_02() {
                   <div className="flex items-center justify-center w-[100%] h-[100%]">
                     <img
                       className="w-[100%] h-[100%] object-cover"
-                      src={product.image}
+                      src={`http://localhost:4004/images/${product.image}`}
                       alt="image_01"
                     />
                   </div>
