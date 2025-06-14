@@ -46,7 +46,7 @@ export function Carousel_04() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:4004/api/products');
+        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/products`);
         // Filter products to only include those with IDs in featuredProductIds
         const filteredProducts = response.data.filter((product: Product) => 
           featuredProductIds.includes(product._id)

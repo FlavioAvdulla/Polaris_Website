@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { useTheme } from "../../components/context/ThemeContext";
 import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
 import Polaris_Logo_Secondary from "../../assets/images/Polaris_Logo_Secondary_01.svg";
 import { SearchBarSelect } from "../Shadcn-components/SearchBarSelect";
-import { IoIosSearch } from "react-icons/io";
+import { IoIosSearch, IoIosClose } from "react-icons/io";
 import { PiUser, PiShoppingCartLight } from "react-icons/pi";
 import { SlHeart } from "react-icons/sl";
 import { cartList } from "../Home/ProductSection/ProductSection";
+import { debounce } from "lodash";
 
 const Navbar_02 = ({ 
   setShowSignIn, 
@@ -20,22 +21,68 @@ const Navbar_02 = ({
   const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
-  const [activeSection, setActiveSection] = useState("/SignIn");
   const { theme } = useTheme();
+  const searchRef = useRef(null);
 
-  // Calculate total items in cart
+  // Search functionality state
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
+
+  // Your existing state and calculations (UNCHANGED)
+  const [activeSection, setActiveSection] = useState("/SignIn");
   const cartItemCount = cartList.reduce((sum) => sum + cartQuantity, 0);
-
-  // Calculate subtotal
   const calculateSubtotal = () => {
     return cartList.reduce((total, item) => {
       const price = parseFloat(item.unitPrice.replace("$", ""));
       return total + (cartQuantity * price);
     }, 0);
   };
-
   const subtotal = calculateSubtotal();
 
+  // Search functions
+  const performSearch = useCallback(async (query) => {
+    if (query.length < 3) {
+      setSearchResults([]);
+      return;
+    }
+    setIsSearching(true);
+    try {
+      const response = await fetch(`/api/products/search?q=${encodeURIComponent(query)}`);
+      const data = await response.json();
+      setSearchResults(data);
+    } catch (error) {
+      console.error("Search error:", error);
+    } finally {
+      setIsSearching(false);
+    }
+  }, []);
+
+  const debouncedSearch = useCallback(
+    debounce((query) => performSearch(query), 500),
+    [performSearch]
+  );
+
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    debouncedSearch(query);
+  };
+
+  const clearSearch = () => {
+    setSearchQuery("");
+    setSearchResults([]);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+      clearSearch();
+    }
+  };
+
+  // Your existing handlers (UNCHANGED)
   useEffect(() => {
     setActiveSection(location.pathname);
   }, [location.pathname]);
@@ -65,91 +112,141 @@ const Navbar_02 = ({
     setActiveSection("Favourites");
   };
 
+  // Click outside handler for search
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setSearchResults([]);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
-                    xs:gap-5
-                    lg:gap-0">
-      {/* Logo - switches based on theme */}
+                    xs:gap-5 lg:gap-0">
+      {/* Logo - UNCHANGED */}
       <img 
-        className="w-[110px] cursor-pointer
-                  xs:hidden
-                  sm:w-[80px]
-                  md:flex
-                  xl:w-[100px]"
+        className="w-[110px] cursor-pointer xs:hidden sm:w-[80px] md:flex xl:w-[100px]"
         src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo} 
         alt="Polaris Logo" 
-        onClick={handleLogoClick}/>
+        onClick={handleLogoClick}
+      />
 
-      {/* Search Bar */}
-      <div className="w-auto h-full flex">
-        <div className="w-auto h-auto
-                        xs:hidden
-                        sm:flex">
+      {/* Search Bar - UPDATED WITH SEARCH */}
+      <div className="relative w-auto h-full flex" ref={searchRef}>
+        <div className="w-auto h-auto xs:hidden sm:flex">
           <SearchBarSelect />
         </div>
-        <input
-          className="w-[600px] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
+        
+        <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full">
+          <input
+            className="w-[600px] h-[100%] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
                       focus:ring-0 focus:bg-white font-camptonBook bg-white
-                      dark:bg-transparent dark:border-gray-600
-                      
-                      xs:w-[100%] xs:rounded-tl-md xs:rounded-bl-md
+                      dark:bg-transparent dark:border-gray-600 dark:text-white
+                      xs:w-full xs:rounded-tl-md xs:rounded-bl-md
                       sm:rounded-tl-none sm:rounded-bl-none
-                      lg:w-[300px]
-                      xl:w-[600px]"
-          type="search"
-          id="search"
-          name="search"
-          placeholder={t('navbar_02.searchPlaceholder')}/>
-        <i className="bg-white text-primary text-[30px] p-3 border-primary border-[1px] border-l-0
-                        items-center justify-center flex rounded-tr-md rounded-br-md
-                        dark:bg-transparent dark:border-gray-600 dark:text-white">
-          <IoIosSearch className="text-[20px]"/>
-        </i>
+                      lg:w-[300px] xl:w-[600px]"
+            type="text"
+            id="search"
+            name="search"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onKeyDown={(e) => e.key === 'Escape' && clearSearch()}
+            placeholder={t('navbar_02.searchPlaceholder')}
+            autoComplete="off"
+          />
+          
+          {searchQuery && (
+            <button
+              type="button"
+              onClick={clearSearch}
+              className="absolute right-12 text-gray-400 hover:text-gray-600
+                        dark:text-gray-300 dark:hover:text-gray-100"
+              aria-label="Clear search"
+            >
+              <IoIosClose size={24} />
+            </button>
+          )}
+          
+          <button
+            type="submit"
+            className="bg-white h-[100%] text-primary text-[30px] p-3 border-primary border-[1px] border-l-0
+                      items-center justify-center flex rounded-tr-md rounded-br-md
+                      dark:bg-transparent dark:border-gray-600 dark:text-white"
+          >
+            <IoIosSearch className="text-[20px]"/>
+          </button>
+        </form>
+
+        {/* Search Results Dropdown */}
+        {searchQuery.length > 0 && (
+          <div className="absolute top-full left-0 right-0 z-50 mt-1 bg-white shadow-lg rounded-md
+                        max-h-[400px] overflow-y-auto border border-gray-200
+                        dark:bg-gray-800 dark:border-gray-700 w-full">
+            {isSearching ? (
+              <div className="p-4 text-center text-gray-500 dark:text-gray-400">
+                Searching...
+              </div>
+            ) : searchResults.length > 0 ? (
+              searchResults.map((product) => (
+                <div 
+                  key={product._id}
+                  className="p-3 border-b border-gray-100 hover:bg-gray-50 cursor-pointer
+                            dark:border-gray-700 dark:hover:bg-gray-700"
+                  onClick={() => {
+                    navigate(`/product/${product._id}`);
+                    clearSearch();
+                  }}
+                >
+                  <div className="flex items-center gap-3">
+                    <img 
+                      src={`/images/${product.image}`} 
+                      alt={product.title}
+                      className="w-10 h-10 object-contain"
+                    />
+                    <div>
+                      <h4 className="font-camptonMedium">{product.title}</h4>
+                      <p className="text-sm font-camptonBook text-gray-600 dark:text-gray-300">
+                        {product.offerPrice || product.normalPrice}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            ) : searchQuery.length > 2 ? (
+              <div className="p-4 text-center text-gray-500 dark:text-gray-400">
+                No results found
+              </div>
+            ) : null}
+          </div>
+        )}
       </div>
 
-      {/* User Controls */}
-      <div className="w-auto h-[100%] flex
-
-                      xs:gap-3
-                      sm:gap-5">
+      {/* User Controls - UNCHANGED */}
+      <div className="w-auto h-[100%] flex xs:gap-3 sm:gap-5">
         {/* User Account */}
         <div className="flex items-center justify-center gap-3 cursor-pointer"
              onClick={isSignedIn ? handleSignOutClick : handleSignInClick}>
-          <i> <PiUser className="dark:text-white
-
-                                 xs:text-[17px]
-                                 md:text-[28px]" />
+          <i> <PiUser className="dark:text-white xs:text-[17px] md:text-[28px]" />
           </i>
           <div className="flex flex-col">
-            <p className="font-camptonBook text-[13px]
-                          dark:text-white
-                          
-                          xs:hidden
-                          lg:flex">
+            <p className="font-camptonBook text-[13px] dark:text-white xs:hidden lg:flex">
               {isSignedIn ? t('navbar_02.signedIn') : t('navbar_02.signIn')}
             </p>
-            <p className="font-camptonMedium text-[13px]
-                          dark:text-white">{t('navbar_02.account')}</p>
+            <p className="font-camptonMedium text-[13px] dark:text-white">{t('navbar_02.account')}</p>
           </div>
         </div>
 
         {/* Favorites */}
         <div className="relative flex items-center justify-center">
-          <i><SlHeart className="cursor-pointer
-                                 dark:text-white
-                                
-                                 xs:text-[17px]
-                                 md:text-[28px]"onClick={handleFavouritesOpen}/>
+          <i><SlHeart className="cursor-pointer dark:text-white xs:text-[17px] md:text-[28px]" onClick={handleFavouritesOpen}/>
           </i>
           <div className="absolute top-0 ml-6 mt-1 flex rounded-full bg-primary items-center justify-center
-                          dark:bg-secondary_01
-
-                          xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
-                          sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
-                          md:ml-6 md:mt-1">
-            <p className="text-white
-                          xs:text-[8px]
-                          sm:text-[10px]">
+                          dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                          sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
+            <p className="text-white xs:text-[8px] sm:text-[10px]">
               {favouriteQuantity}
             </p>
           </div>
@@ -158,39 +255,19 @@ const Navbar_02 = ({
         {/* Shopping Cart */}
         <div className="relative flex items-center justify-center">
           <i><PiShoppingCartLight 
-              className="cursor-pointer
-                        dark:text-white
-              
-                        xs:text-[17px] md:text-[28px]" 
+              className="cursor-pointer dark:text-white xs:text-[17px] md:text-[28px]" 
               onClick={handleCartOpen}/></i>
           <div className="absolute top-0 flex rounded-full bg-primary items-center justify-center
-                          dark:bg-secondary_01
-                          
-                          xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
-                          sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
-                          md:ml-6 md:mt-1">
-            <p className="text-white
-            
-                          xs:text-[8px]
-                          sm:text-[10px]">{cartItemCount}</p>
+                          dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                          sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
+            <p className="text-white xs:text-[8px] sm:text-[10px]">{cartItemCount}</p>
           </div>
         </div>
 
-        {/* Cart Total */}
-        <div className="flex-col justify-center
-        
-                        xs:hidden
-                        md:flex">
-          <p className="font-camptonBook
-                        dark:text-white
-          
-                        xs:text-[10px]
-                        sm:text-[13px]">Total</p>
-          <p className="font-camptonMedium
-                        dark:text-white
-          
-                        xs:text-[10px]
-                        sm:text-[13px]">
+        {/* Cart Total - UNCHANGED */}
+        <div className="flex-col justify-center xs:hidden md:flex">
+          <p className="font-camptonBook dark:text-white xs:text-[10px] sm:text-[13px]">Total</p>
+          <p className="font-camptonMedium dark:text-white xs:text-[10px] sm:text-[13px]">
             ${subtotal.toFixed(2)}
           </p>
         </div>
