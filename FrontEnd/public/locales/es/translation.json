@@ -17,7 +17,10 @@
     "searchPlaceholder": "Buscar productos...",
     "account": "Cuenta",
     "total": "Total",
-    "languages": "Idiomas"
+    "languages": "Idiomas",
+    "searching": "Búsqueda...",
+    "noResults": "No se encontraron resultados.",
+    "searchError": "La búsqueda falló, por favor inténtelo de nuevo."
   },
   "navbar_03": {
     "allCategories": "Todas las categorías",

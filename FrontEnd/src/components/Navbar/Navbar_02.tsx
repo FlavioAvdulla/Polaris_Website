@@ -240,8 +240,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                   onClick={() => {
                     navigate(`/products/${product._id}`);
                     clearSearch();
-                  }}
-                >
+                  }}>
                   <div className="flex items-center gap-3">
                     <img 
                       src={`http://localhost:4004/images/${product.image}`}
@@ -249,8 +248,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                       className="w-10 h-10 object-contain"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = '/placeholder-product.png';
-                      }}
-                    />
+                      }}/>
                     <div>
                       <h4 className="font-camptonMedium">{product.title}</h4>
                       <p className="text-sm font-camptonBook text-gray-600 dark:text-gray-300">
