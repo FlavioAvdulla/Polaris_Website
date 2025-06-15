@@ -235,26 +235,28 @@ const Navbar_02: React.FC<NavbarProps> = ({
               searchResults.map((product) => (
                 <div 
                   key={product._id}
-                  className="p-3 border-b border-gray-100 hover:bg-gray-50 cursor-pointer
-                            dark:border-gray-700 dark:hover:bg-gray-700"
+                  className="w-[100%] p-3 border-b border-gray-300 hover:bg-gray-100 cursor-pointer
+                            dark:border-gray-600 dark:hover:bg-gray-700"
                   onClick={() => {
                     navigate(`/products/${product._id}`);
                     clearSearch();
                   }}>
-                  <div className="flex items-center gap-3">
+                  <div className="flex w-[70%] justify-between items-center gap-4 mx-auto">
+                    <div className="flex gap-3 items-center">
                     <img 
                       src={`http://localhost:4004/images/${product.image}`}
                       alt={product.title}
-                      className="w-10 h-10 object-contain"
+                      className="w-[60px] aspect-1 object-contain"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = '/placeholder-product.png';
                       }}/>
-                    <div>
-                      <h4 className="font-camptonMedium">{product.title}</h4>
-                      <p className="text-sm font-camptonBook text-gray-600 dark:text-gray-300">
+
+                      <h4 className="font-camptonBook
+                                     dark:text-white">{product.title}</h4></div>
+                      <p className="text-[20px] font-camptonBold text-primary dark:text-secondary_01">
                         {product.offerPrice || product.normalPrice}
                       </p>
-                    </div>
+               
                   </div>
                 </div>
               ))
