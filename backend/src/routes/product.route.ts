@@ -5,14 +5,22 @@ import {
   getProductById,
   updateProduct,
   deleteProduct,
+  searchProducts
 } from "../controllers/product.controller";
 import authenticate from "../middleware/authenticate";
 import { authorizeRoles } from "../middleware/authorize";
 import { UserRole } from "../constants/user";
+import { validateRequest } from "../middleware/validateRequest";
+import { searchProductSchema } from "../validations/product.validation";
 
 const router = Router();
 
 router.get("/", getProducts);
+router.get("/search", 
+  validateRequest(searchProductSchema), // Add validation for search parameters
+  searchProducts
+);
+
 router.get("/:id", getProductById);
 
 // Protect admin-only routes

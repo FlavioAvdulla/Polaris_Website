@@ -10,8 +10,29 @@ import { PiUser, PiShoppingCartLight } from "react-icons/pi";
 import { SlHeart } from "react-icons/sl";
 import { cartList } from "../Home/ProductSection/ProductSection";
 import { debounce } from "lodash";
+import axios from 'axios';
 
-const Navbar_02 = ({ 
+interface Product {
+  _id: string;
+  image: string;
+  title: string;
+  normalPrice: string;
+  offerPrice?: string;
+  rating: number;
+  quantity?: number;
+}
+
+interface NavbarProps {
+  setShowSignIn: (show: boolean) => void;
+  setShowSignOut: (show: boolean) => void;
+  cartQuantity: number;
+  favouriteQuantity: number;
+  isSignedIn: boolean;
+}
+
+const API_BASE_URL = 'http://localhost:4004/api';
+
+const Navbar_02: React.FC<NavbarProps> = ({ 
   setShowSignIn, 
   setShowSignOut, 
   cartQuantity, 
@@ -22,48 +43,64 @@ const Navbar_02 = ({
   const location = useLocation();
   const navigate = useNavigate();
   const { theme } = useTheme();
-  const searchRef = useRef(null);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   // Search functionality state
   const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState<string | null>(null);
 
-  // Your existing state and calculations (UNCHANGED)
+  // Navigation state
   const [activeSection, setActiveSection] = useState("/SignIn");
+  
+  // Cart calculations
   const cartItemCount = cartList.reduce((sum) => sum + cartQuantity, 0);
+  
   const calculateSubtotal = () => {
     return cartList.reduce((total, item) => {
       const price = parseFloat(item.unitPrice.replace("$", ""));
       return total + (cartQuantity * price);
     }, 0);
   };
+  
   const subtotal = calculateSubtotal();
 
   // Search functions
-  const performSearch = useCallback(async (query) => {
-    if (query.length < 3) {
+  const performSearch = useCallback(async (query: string) => {
+    if (query.length < 2) {
       setSearchResults([]);
       return;
     }
+    
     setIsSearching(true);
+    setSearchError(null);
+    
     try {
-      const response = await fetch(`/api/products/search?q=${encodeURIComponent(query)}`);
-      const data = await response.json();
-      setSearchResults(data);
+      const response = await axios.get(`${API_BASE_URL}/products/search`, {
+        params: { q: query },
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      });
+      
+      setSearchResults(response.data);
     } catch (error) {
       console.error("Search error:", error);
+      setSearchError(t('navbar_02.searchError') || "Failed to perform search");
+      setSearchResults([]);
     } finally {
       setIsSearching(false);
     }
-  }, []);
+  }, [t]);
 
   const debouncedSearch = useCallback(
-    debounce((query) => performSearch(query), 500),
+    debounce((query: string) => performSearch(query), 300),
     [performSearch]
   );
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
     setSearchQuery(query);
     debouncedSearch(query);
@@ -72,9 +109,10 @@ const Navbar_02 = ({
   const clearSearch = () => {
     setSearchQuery("");
     setSearchResults([]);
+    setSearchError(null);
   };
 
-  const handleSearchSubmit = (e) => {
+  const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
@@ -82,7 +120,7 @@ const Navbar_02 = ({
     }
   };
 
-  // Your existing handlers (UNCHANGED)
+  // Navigation handlers
   useEffect(() => {
     setActiveSection(location.pathname);
   }, [location.pathname]);
@@ -114,19 +152,19 @@ const Navbar_02 = ({
 
   // Click outside handler for search
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (searchRef.current && !searchRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setSearchResults([]);
       }
     };
+    
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
-    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
-                    xs:gap-5 lg:gap-0">
-      {/* Logo - UNCHANGED */}
+    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between xs:gap-5 lg:gap-0">
+      {/* Logo */}
       <img 
         className="w-[110px] cursor-pointer xs:hidden sm:w-[80px] md:flex xl:w-[100px]"
         src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo} 
@@ -134,7 +172,7 @@ const Navbar_02 = ({
         onClick={handleLogoClick}
       />
 
-      {/* Search Bar - UPDATED WITH SEARCH */}
+      {/* Search Bar */}
       <div className="relative w-auto h-full flex" ref={searchRef}>
         <div className="w-auto h-auto xs:hidden sm:flex">
           <SearchBarSelect />
@@ -187,7 +225,11 @@ const Navbar_02 = ({
                         dark:bg-gray-800 dark:border-gray-700 w-full">
             {isSearching ? (
               <div className="p-4 text-center text-gray-500 dark:text-gray-400">
-                Searching...
+                {t('navbar_02.searching')}
+              </div>
+            ) : searchError ? (
+              <div className="p-4 text-center text-red-500 dark:text-red-400">
+                {searchError}
               </div>
             ) : searchResults.length > 0 ? (
               searchResults.map((product) => (
@@ -196,15 +238,18 @@ const Navbar_02 = ({
                   className="p-3 border-b border-gray-100 hover:bg-gray-50 cursor-pointer
                             dark:border-gray-700 dark:hover:bg-gray-700"
                   onClick={() => {
-                    navigate(`/product/${product._id}`);
+                    navigate(`/products/${product._id}`);
                     clearSearch();
                   }}
                 >
                   <div className="flex items-center gap-3">
                     <img 
-                      src={`/images/${product.image}`} 
+                      src={`http://localhost:4004/images/${product.image}`}
                       alt={product.title}
                       className="w-10 h-10 object-contain"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = '/placeholder-product.png';
+                      }}
                     />
                     <div>
                       <h4 className="font-camptonMedium">{product.title}</h4>
@@ -215,16 +260,16 @@ const Navbar_02 = ({
                   </div>
                 </div>
               ))
-            ) : searchQuery.length > 2 ? (
+            ) : searchQuery.length > 1 ? (
               <div className="p-4 text-center text-gray-500 dark:text-gray-400">
-                No results found
+                {t('navbar_02.noResults')}
               </div>
             ) : null}
           </div>
         )}
       </div>
 
-      {/* User Controls - UNCHANGED */}
+      {/* User Controls */}
       <div className="w-auto h-[100%] flex xs:gap-3 sm:gap-5">
         {/* User Account */}
         <div className="flex items-center justify-center gap-3 cursor-pointer"
@@ -264,7 +309,7 @@ const Navbar_02 = ({
           </div>
         </div>
 
-        {/* Cart Total - UNCHANGED */}
+        {/* Cart Total */}
         <div className="flex-col justify-center xs:hidden md:flex">
           <p className="font-camptonBook dark:text-white xs:text-[10px] sm:text-[13px]">Total</p>
           <p className="font-camptonMedium dark:text-white xs:text-[10px] sm:text-[13px]">
