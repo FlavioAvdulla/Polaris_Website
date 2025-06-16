@@ -122,8 +122,7 @@ export function Carousel_02() {
         setApi={setApi}
         className="w-full flex flex-col"
         onMouseDown={() => setIsGrabbing(true)}
-        onMouseUp={() => setIsGrabbing(false)}
-      >
+        onMouseUp={() => setIsGrabbing(false)}>
         <CarouselContent>
           {products.map((product, index) => (
             <CarouselItem key={index}>
@@ -131,14 +130,14 @@ export function Carousel_02() {
                 <CardContent
                   className={`flex aspect-square items-center justify-center m-0 p-0
                               rounded-xl overflow-hidden bg-slate-300
-                              
+
                               xs:h-[300px]
                               md:h-[400px]
                               2xl:h-[600px]
 
                     ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
                     }`}>
-                  <div className="flex items-center justify-center w-[100%] h-[100%]">
+                  <div className="flex items-center justify-center w-[100%] bg-carousel_red">
                     <img
                       className="w-[100%] h-[100%] object-cover"
                       src={`http://localhost:4004/images/${product.image}`}

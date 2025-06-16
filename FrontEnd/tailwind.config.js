@@ -12,6 +12,7 @@ module.exports = {
   		},
   		colors: {
   			primary: '#e4232b',
+			carousel_red: '#ce131a',
 			darkColor: '#111827',
   			secondary_01: '#f05253',
   			secondary_02: '#f37a7a',

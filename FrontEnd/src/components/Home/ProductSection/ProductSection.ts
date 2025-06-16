@@ -20,7 +20,7 @@ import Slider_07 from "../../../assets/images/Sliders/Slider_07.jpg";
 import Slider_08 from "../../../assets/images/Sliders/Slider_08.jpg";
 import Slider_09 from "../../../assets/images/Sliders/Slider_09.jpg";
 import Slider_10 from "../../../assets/images/Sliders/Slider_10.jpg";
-import Slider_11 from "../../../assets/images/Sliders/Slider_11.jpg";
+// import Slider_11 from "../../../assets/images/Sliders/Slider_11.jpg";
 import Slider_12 from "../../../assets/images/Sliders/Slider_12.jpg";
 import Slider_13 from "../../../assets/images/Sliders/Slider_13.jpg";
 import Slider_14 from "../../../assets/images/Sliders/Slider_14.jpg";
@@ -934,44 +934,44 @@ export const carousel_01 = [
   },
 ];
 
-export const carousel_02 = [
-  {
-    _id: "1",
-    image: Slider_02,
-  },
-  {
-    _id: "2",
-    image: Slider_08,
-  },
-  {
-    _id: "3",
-    image: Slider_09,
-  },
-  {
-    _id: "4",
-    image: Slider_10,
-  },
-  {
-    _id: "5",
-    image: Slider_11,
-  },
-  {
-    _id: "6",
-    image: Slider_12,
-  },
-  {
-    _id: "7",
-    image: Slider_13,
-  },
-  {
-    _id: "8",
-    image: Slider_14,
-  },
-  {
-    _id: "9",
-    image: Slider_15,
-  },
-];
+// export const carousel_02 = [
+//   {
+//     _id: "1",
+//     image: Slider_02,
+//   },
+//   {
+//     _id: "2",
+//     image: Slider_08,
+//   },
+//   {
+//     _id: "3",
+//     image: Slider_09,
+//   },
+//   {
+//     _id: "4",
+//     image: Slider_10,
+//   },
+//   {
+//     _id: "5",
+//     image: Slider_11,
+//   },
+//   {
+//     _id: "6",
+//     image: Slider_12,
+//   },
+//   {
+//     _id: "7",
+//     image: Slider_13,
+//   },
+//   {
+//     _id: "8",
+//     image: Slider_14,
+//   },
+//   {
+//     _id: "9",
+//     image: Slider_15,
+//   },
+// ];
 
 export const carousel_03 = [
   // {
