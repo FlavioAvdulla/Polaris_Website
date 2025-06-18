@@ -130,16 +130,18 @@ export function Carousel_02() {
                 <CardContent
                   className={`flex aspect-square items-center justify-center m-0 p-0
                               rounded-xl overflow-hidden bg-slate-300
+                              ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}
 
                               xs:h-[300px]
                               md:h-[400px]
-                              2xl:h-[600px]
-
-                    ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
-                    }`}>
-                  <div className="flex items-center justify-center w-[100%] bg-carousel_red">
+                              2xl:h-[600px]`}>
+                  <div className="flex items-center justify-center w-[100%] h-[100%] bg-carousel_red">
                     <img
-                      className="w-[100%] h-[100%] object-cover"
+                      className="aspect-1 object-cover
+
+                                 xs:h-[90%]
+                                 md:h-[100%]
+                                 lg:h-[100%]"
                       src={`http://localhost:4004/images/${product.image}`}
                       alt="image_01"
                     />

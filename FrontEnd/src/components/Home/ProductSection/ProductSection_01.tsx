@@ -161,13 +161,13 @@ const ProductSection_01 = () => {
                 onClick={(e) => handleAddToCart(e, product._id)}
                 className="bg-primary border-[1px] border-primary cursor-pointer
                            hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
-                           dark:bg-gray-800 dark:border-gray-800 dark:hover:border-gray-800 dark:hover:bg-transparent
+                           dark:bg-secondary_01 dark:border-gray-800 dark:hover:bg-transparent dark:hover:border-secondary_01
                            
                            xs:rounded-md
                            md:rounded-sm
                            lg:rounded-md">
                 <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
-                                                dark:hover:text-white
+                                                dark:hover:text-secondary_01
 
                                                 xs:text-[40px] xs:p-1"/>
               </button>

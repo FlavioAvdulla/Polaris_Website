@@ -6,8 +6,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  // CarouselNext,
+  // CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
 
@@ -141,14 +141,13 @@ export function Carousel_01() {
                     ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
                     }`}>
                   <div className="flex items-center w-[100%] h-[100%]">
-                    <div
-                      className="flex flex-col absolute h-auto justify-center
+                    <div className="flex flex-col absolute h-auto justify-center
                     
-                                 xs:w-[100%] xs:py-0 xs:pl-7
-                                 sm:w-[80%]
-                                 md:w-[50%]
-                                 lg:pl-10
-                                 xl:w-[60%] xl:py-10 xl:pl-12">
+                                    xs:w-[100%] xs:py-0 xs:pl-7
+                                    sm:w-[80%]
+                                    md:w-[50%]
+                                    lg:pl-10
+                                    xl:w-[60%] xl:py-10 xl:pl-12">
                       {/* ============= Exclusive offer ============= */}                
                       <div className="gap-3
 
@@ -207,11 +206,15 @@ export function Carousel_01() {
                         </button>
                       </div>
                     </div>
-
+                    <div className="flex w-[100%] h-[100%] bg-carousel_red">
                     <img
-                      className="w-[100%] h-[100%] object-cover"
+                      className="w-[100%] h-[100%] object-cover
+                      
+                                 xs:hidden
+                                 md:flex"
                       src={`http://localhost:4004/images/${product.image}`}
                       alt={product.title}/>
+                      </div>
                   </div>
                 </CardContent>
               </Card>
