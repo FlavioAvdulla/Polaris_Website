@@ -29,6 +29,20 @@ const ProductSection_01 = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
+  const handleProductClick = (id: string) => {
+    console.log(`Image with id ${id} clicked.`)
+    const routeMap: Record<string, string> = {
+      "1": "/Product_05",
+      "2": "/Product_04",
+      "3": "/Product_03",
+    }
+
+    const route = routeMap[id];
+    if (route) {
+      navigate(route)
+    }
+  }
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -49,9 +63,9 @@ const ProductSection_01 = () => {
     fetchProducts();
   }, []);
 
-  const handleProductClick = (id: string) => {
-    navigate(`/products/${id}`);
-  };
+  // const handleProductClick = (id: string) => {
+  //   navigate(`/products/${id}`);
+  // };
 
   const handleAddToCart = (e: React.MouseEvent, productId: string) => {
     e.stopPropagation();
@@ -116,7 +130,9 @@ const ProductSection_01 = () => {
                           sm:h-[320px]
                           md:h-[200px]
                           lg:h-[300px]">
-            <img className="w-[75%]" src={`http://localhost:4004/images/${product.image}`} alt={product.title} />
+            <img className="w-[75%]"
+            src={`http://localhost:4004/images/${product.image}`}
+            alt={product.title} />
           </div>
           
           {/* Product info */}

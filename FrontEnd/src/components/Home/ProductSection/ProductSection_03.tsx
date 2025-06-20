@@ -29,18 +29,18 @@ const ProductSection_03 = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   
-    const handleProductClick = (id) => {
-      console.log(`Image with id ${id} clicked.`)
-      const routeMap = {
-        "1": "/Product_01",
-        "2": "/Product_04",
-      }
-
-      const route = routeMap[id]
-      if (route) {
-        navigate(route)
-      }
+    const handleProductClick = (id: string) => {
+    console.log(`Image with id ${id} clicked.`)
+    const routeMap: Record<string, string> = {
+      "10": "/Product_01",
+      "11": "/Product_04",
     }
+
+    const route = routeMap[id];
+    if (route) {
+      navigate(route)
+    }
+  }
 
     useEffect(() => {
     const fetchProducts = async () => {

@@ -184,21 +184,24 @@
     "contactUs": "Contacta con nosotras"
   },
   "mobilesAndTablets": {
-    "computers": "Computadoras",
     "mobilesAndTabletsTitle": "Móviles y tabletas",
-    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*",
-    "title_01": "Cámara sin espejo Sony A7 III con vídeo 4K",
-    "title_02": "GeForce RTX 3060 Ti Gaming OC PRO de 8 GB",
-    "title_03": "Consola PlayStation®5 Pro Digital 2TB",
-    "title_04": "Consola PlayStation®5 Pro Digital 2TB",
-    "title_05": "Consola PlayStation®5 Pro Digital 2TB",
-    "title_06": "Consola PlayStation®5 Pro Digital 2TB",
-    "title_07": "Consola PlayStation®5 Pro Digital 2TB",
-    "title_08": "Consola PlayStation®5 Pro Digital 2TB",
-    "title_09": "Consola PlayStation®5 Pro Digital 2TB",
-    "info_02": "Tiempo restante hasta el final de la oferta.",
-    "available": "Disponible",
-    "sold": "Vendido"
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
+  },
+  "gameAccessories": {
+    "gameAccessoriesTitle": "Accesorios de juego",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
+  },
+  "cameraAndPhoto": {
+    "cameraAndPhotoTitle": "Cámara y fotografía",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
+  },
+  "electronics": {
+    "electronicsTitle": "Electrónica",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
+  },
+  "audioAndHeadphones": {
+    "audioAndHeadphonesTitle": "Audio & Headphones",
+    "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*"
   },
   "authentication": {
     "signIn": "Iniciar sesión",

@@ -40,12 +40,12 @@ const ProductSection_04 = () => {
   const handleImageClick = (id) => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap = {
-      "1": "/Computers",
-      "2": "/MobilesAndTablets",
-      "3": "/GameAccessories",
-      "4": "/CameraAndPhoto",
-      "5": "/Electronics",
-      "6": "/AudioAndHeadphones"
+      "12": "/Computers",
+      "13": "/MobilesAndTablets",
+      "14": "/GameAccessories",
+      "15": "/CameraAndPhoto",
+      "16": "/Electronics",
+      "17": "/AudioAndHeadphones"
     }
 
     const route = routeMap[id];

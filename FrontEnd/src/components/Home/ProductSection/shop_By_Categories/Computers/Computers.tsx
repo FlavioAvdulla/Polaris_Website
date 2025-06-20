@@ -1,17 +1,73 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+
 // React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 
-// Data
-import { computers } from "../../ProductSection";
-
 // Translation
 import { useTranslation } from 'react-i18next';
 
+interface Product {
+  _id: string;
+  image: string;
+  rating: number;
+  normalPrice: string;
+  title: string;
+  description: string;
+  quantity: number;
+  available: string;
+  quantitySold: number;
+  sold: string;
+  info: string;
+}
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['1', '2', '3'];
+
 const Computers = () => {
 
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
   const { t } = useTranslation();
+
+  const handleProductClick = (id: string) => {
+    console.log(`Image with id ${id} clicked.`)
+    const routeMap: Record<string, string> = {
+      "1": "/Product_05",
+      "2": "/Product_04",
+      "3": "/Product_03",
+    }
+
+    const route = routeMap[id];
+    if (route) {
+      navigate(route)
+    }
+  }
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include those with IDs in featuredProductIds
+        const filteredProducts = response.data.filter((product: Product) => 
+          featuredProductIds.includes(product._id)
+        );
+        setProducts(filteredProducts);
+      } catch (err) {
+        console.error("Failed to fetch products:", err);
+        setError(err.message || "Failed to load products");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+  
   const getStars = (rating) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -34,6 +90,27 @@ const Computers = () => {
     }
     return stars;
   };
+
+  if (loading) {
+    return <div className="flex mb-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_01.loadingProducts")}</p>
+      </div>;
+  }
+
+  if (error) {
+    return <div className="flex mb-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_01.networkError")}</p>
+      </div>;
+  }
+
+  if (products.length === 0) {
+    return <div className="flex mb-20 justify-center">
+      <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
+                    dark:bg-secondary_01">{t("productSection_01.noProducts")}</p>
+      </div>;
+  }
 
   return (
     <div className="w-[85%] flex flex-col mx-auto">
@@ -69,7 +146,7 @@ const Computers = () => {
                  justify-between my-20
                 
                  md:grid md:grid-cols-3">
-      {computers.map((product, index) => (
+      {products.map((product, index) => (
               // ============= Product 1 =============
               <div className="rounded-lg overflow-hidden h-auto
                               bg-gray-100 border-[1px] border-primary cursor-pointer
@@ -78,12 +155,11 @@ const Computers = () => {
                               xs:mb-5
                               md:w-[100%]"
                    key={index}
-                  //  onClick={() => handleProductClick(product._id)}
-                  >
+                  onClick={() => handleProductClick(product._id)}>
                 {/* ============= Image ============= */}
                 <div className="flex w-[100%] h-[300px] justify-center items-center">
                   <img className="w-auto h-full object-cover"
-                       src={product.image}
+                       src={`http://localhost:4004/images/${product.image}`}
                        alt={product.title}/>
                 </div>
                 {/* ============= Info ============= */}

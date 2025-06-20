@@ -184,21 +184,24 @@
     "contactUs": "Contact Us"
   },
   "mobilesAndTablets": {
-    "computers": "Computers",
     "mobilesAndTabletsTitle": "Mobiles & Tablets",
-    "info": "No handling fees + free shipping on orders over $35*",
-    "title_01": "Sony A7 III Mirrorless Camera with 4K Video",
-    "title_02": "GeForce RTX 3060 Ti Gaming OC PRO 8Gb",
-    "title_03": "Console PlayStation®5 Pro Digital 2TB",
-    "title_04": "Console PlayStation®5 Pro Digital 2TB",
-    "title_05": "Console PlayStation®5 Pro Digital 2TB",
-    "title_06": "Console PlayStation®5 Pro Digital 2TB",
-    "title_07": "Console PlayStation®5 Pro Digital 2TB",
-    "title_08": "Console PlayStation®5 Pro Digital 2TB",
-    "title_09": "Console PlayStation®5 Pro Digital 2TB",
-    "info_02": "Time remaining until the end of the offer.",
-    "available": "Available",
-    "sold": "Sold"
+    "info": "No handling fees + free shipping on orders over $35*"
+  },
+  "gameAccessories": {
+    "gameAccessoriesTitle": "Game Accessories",
+    "info": "No handling fees + free shipping on orders over $35*"
+  },
+  "cameraAndPhoto": {
+    "cameraAndPhotoTitle": "Camera & Photo",
+    "info": "No handling fees + free shipping on orders over $35*"
+  },
+  "electronics": {
+    "electronicsTitle": "Electronics",
+    "info": "No handling fees + free shipping on orders over $35*"
+  },
+  "audioAndHeadphones": {
+    "audioAndHeadphonesTitle": "Audio & Headphones",
+    "info": "No handling fees + free shipping on orders over $35*"
   },
   "authentication": {
     "signIn": "Sign In",
