@@ -108,24 +108,24 @@ const ProductSection_04 = () => {
                        lg:text-[22px]">{t("productSection_04.shopByCategories")}</h1>
 
         <div className="flex items-center
-                        
+
                         xs:w-[50%]
                         md:w-fit">
 
           <p className="text-gray-500
                         dark:text-white
-                        
-                          xs:text-[10px]
-                          sm:text-[11px]
-                          md:text-[15px]
-                          xl:text-[18px]">{t("productSection_04.info")}
+
+                        xs:text-[10px]
+                        sm:text-[11px]
+                        md:text-[15px]
+                        xl:text-[18px]">{t("productSection_04.info")}
           </p>
         </div>
       </div>
       <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
                       dark:bg-gray-600" />
       <div className="flex w-[100%] h-auto mx-auto items-center justify-between mb-20 mt-10
-      
+
                       xs:grid xs:grid-cols-1 xs:gap-y-[60px]
                       md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
                       xl:flex">
@@ -149,7 +149,7 @@ const ProductSection_04 = () => {
                             dark:bg-gray-800">
               <h1 className="mb-1 font-camptonMedium
                              dark:text-white
-              
+
                              xs:text-[23px]
                              md:text-[17px]
                              lg:text-[20px]
@@ -157,7 +157,7 @@ const ProductSection_04 = () => {
                              2xl:text-[20px]">{t(product.title)}</h1>
               <p className="text-gray-500
                             dark:text-white
-              
+
                             xs:text-[19px]
                             md:text-[17px]
                             lg:text-[16px]

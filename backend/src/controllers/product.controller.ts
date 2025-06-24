@@ -11,13 +11,56 @@ interface SearchParams {
   sort?: string;
 }
 
-// Translation mapping (should be moved to a separate config file if large)
-const PRODUCT_NAME_MAP: Record<string, string> = {
-  "productSection_01.title_01": "SONY HEADSET WH-1000XM5",
-  "productSection_01.title_02": "GEFORCE RTX 3090 24GB",
-  "productSection_01.title_03": "SONY PLAYSTATION 5 PRO",
-  // Add all other product mappings
+// Enhanced product mapping with IDs and additional details
+const PRODUCT_MAP: Record<string, { 
+  id: string;
+  name: string;
+  image?: string;
+  normalPrice?: string;
+}> = {
+  "productSection_01.title_01": {
+    id: "1",
+    name: "SONY HEADSET WH-1000XM5",
+    image: "Product_05.png",
+    normalPrice: "€359"
+  },
+  "productSection_01.title_02": {
+    id: "2",
+    name: "GEFORCE RTX 3090 24GB",
+    image: "Product_04.png",
+    normalPrice: "€2799"
+  },
+  "productSection_01.title_03": {
+    id: "3",
+    name: "SONY PLAYSTATION 5 PRO",
+    image: "Product_03.png",
+    normalPrice: "€799"
+  },
+  "product_02.title": {
+    id: "4",
+    name: "PS VR HEADSET",
+    image: "Product_02.png",
+    normalPrice: "€759"
+  },
+  "product_06.title": {
+    id: "4",
+    name: "PS VR HEADSET",
+    image: "Product_06.png",
+    normalPrice: "€759"
+  }
 };
+
+// Maintain backward compatibility with existing name mapping
+const PRODUCT_NAME_MAP: Record<string, string> = Object.entries(PRODUCT_MAP).reduce(
+  (acc, [key, value]) => {
+    acc[key] = value.name;
+    return acc;
+  },
+  {} as Record<string, string>
+);
+
+// Get only the IDs from PRODUCT_MAP
+const MAPPED_PRODUCT_IDS = Object.values(PRODUCT_MAP).map(product => product.id);
 
 export const createProduct = async (req: Request, res: Response) => {
   try {
@@ -32,7 +75,14 @@ export const createProduct = async (req: Request, res: Response) => {
 export const getProducts = async (_req: Request, res: Response) => {
   try {
     const products = await Product.find();
-    res.status(OK).json(products);
+    const response = products.map(product => ({
+      ...product.toObject(),
+      title: PRODUCT_MAP[product.title]?.name || product.title,
+      id: PRODUCT_MAP[product.title]?.id || product._id,
+      image: PRODUCT_MAP[product.title]?.image || product.image,
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
+    }));
+    res.status(OK).json(response);
   } catch (error) {
     res.status(BAD_REQUEST).json({ error: "Failed to fetch products" });
   }
@@ -44,7 +94,16 @@ export const getProductById = async (req: Request, res: Response) => {
     if (!product) {
       return res.status(NOT_FOUND).json({ error: "Product not found" });
     }
-    res.status(OK).json(product);
+    
+    const response = {
+      ...product.toObject(),
+      title: PRODUCT_MAP[product.title]?.name || product.title,
+      id: PRODUCT_MAP[product.title]?.id || product._id,
+      image: PRODUCT_MAP[product.title]?.image || product.image,
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
+    };
+    
+    res.status(OK).json(response);
   } catch (error) {
     res.status(BAD_REQUEST).json({ error: "Error retrieving product" });
   }
@@ -59,7 +118,16 @@ export const updateProduct = async (req: Request, res: Response) => {
     if (!product) {
       return res.status(NOT_FOUND).json({ error: "Product not found" });
     }
-    res.status(OK).json(product);
+    
+    const response = {
+      ...product.toObject(),
+      title: PRODUCT_MAP[product.title]?.name || product.title,
+      id: PRODUCT_MAP[product.title]?.id || product._id,
+      image: PRODUCT_MAP[product.title]?.image || product.image,
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
+    };
+    
+    res.status(OK).json(response);
   } catch (error) {
     res.status(BAD_REQUEST).json({ error: "Failed to update product" });
   }
@@ -96,18 +164,18 @@ export const searchProducts = async (req: Request, res: Response) => {
     }
 
     // 1. Find all possible translation keys that match real names
-    const matchingKeys = Object.entries(PRODUCT_NAME_MAP)
-      .filter(([_, realName]) => 
-        realName.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchingKeys = Object.entries(PRODUCT_MAP)
+      .filter(([_, productInfo]) => 
+        productInfo.name.toLowerCase().includes(searchQuery.toLowerCase())
       )
       .map(([key]) => key);
 
     // 2. Build search conditions
     const searchConditions: any = {
       $or: [
-        { title: { $in: matchingKeys } }, // Search by matched keys
-        { description: { $regex: searchQuery, $options: 'i' } }, // Fallback to description
-        { info: { $regex: searchQuery, $options: 'i' } } // Fallback to info
+        { title: { $in: matchingKeys } },
+        { description: { $regex: searchQuery, $options: 'i' } },
+        { info: { $regex: searchQuery, $options: 'i' } }
       ]
     };
 
@@ -153,13 +221,24 @@ export const searchProducts = async (req: Request, res: Response) => {
     // 3. Execute search
     const products = await Product.find(searchConditions)
       .sort(sortOptions)
-      .limit(parseInt(limit, 10) || 10);
+      .limit(100); // Get more than needed to account for deduplication
 
-    // 4. Convert results to display real names
-    const response = products.map(product => ({
+    // 4. Deduplicate products by title
+    const uniqueProducts = products.reduce((acc: any[], product) => {
+      const existingProduct = acc.find(p => p.title === product.title);
+      if (!existingProduct) {
+        acc.push(product);
+      }
+      return acc;
+    }, []).slice(0, parseInt(limit, 10) || 10);
+
+    // 5. Convert results to display mapped data
+    const response = uniqueProducts.map(product => ({
       ...product.toObject(),
-      title: PRODUCT_NAME_MAP[product.title] || product.title,
-      // Keep original key if needed for frontend
+      title: PRODUCT_MAP[product.title]?.name || product.title,
+      id: PRODUCT_MAP[product.title]?.id || product._id,
+      image: PRODUCT_MAP[product.title]?.image || product.image,
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice,
       originalTitle: product.title
     }));
 
