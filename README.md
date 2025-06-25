@@ -67,6 +67,7 @@ Navigate to the backend folder and install required packages:
 `
 cd backend
 `
+
 `
 npm install
 `
@@ -75,8 +76,9 @@ npm install
 Navigate to the frontend folder and install required packages:
 
 `
-cd ../frontend
+cd frontend
 `
+
 `
 npm install
 `
