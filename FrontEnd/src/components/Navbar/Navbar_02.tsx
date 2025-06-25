@@ -56,23 +56,6 @@ const Navbar_02: React.FC<NavbarProps> = ({
   // Navigation state
   const [activeSection, setActiveSection] = useState("/SignIn");
   
-  const handleProductClick = (id: string) => {
-    console.log(`Image with id ${id} clicked.`)
-    const routeMap: Record<string, string> = {
-      "4": "/Product_01",
-      "48": "/Product_02",
-      "49": "/Product_03",
-      "50": "/Product_04",
-      "51": "/Product_05",
-      "52": "/Product_06"
-    }
-
-    const route = routeMap[id];
-    if (route) {
-      navigate(route)
-    }
-  }
-
   // Cart calculations
   const cartItemCount = cartList.reduce((sum) => sum + cartQuantity, 0);
   
