@@ -18,10 +18,10 @@ interface Product {
   title: string;
   description: string;
   quantity: number;
-  available: string;
+  available: string; 
   quantitySold: number;
   sold: string;
-  info: string; 
+  info: string;
   offerPrice: string;
 }
 
