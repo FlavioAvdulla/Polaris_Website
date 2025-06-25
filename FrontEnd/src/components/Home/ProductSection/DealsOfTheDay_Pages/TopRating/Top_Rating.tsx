@@ -21,7 +21,7 @@ interface Product {
   available: string;
   quantitySold: number;
   sold: string;
-  info: string;
+  info: string; 
   offerPrice: string;
 }
 
