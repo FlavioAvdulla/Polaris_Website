@@ -59,7 +59,7 @@ Polaris is a full-featured e-commerce platform with a modern tech stack, featuri
 ### Installation
 
 **1. Clone the repository:**
-git clone https://github.com/FlavioAvdulla/Food_Delivery_React_Website.git
+git clone [https://github.com/FlavioAvdulla/Food_Delivery_React_Website.git](https://github.com/FlavioAvdulla/Polaris_Website.git)
 
 **2. Install backend dependencies:**
 Navigate to the backend folder and install required packages:
