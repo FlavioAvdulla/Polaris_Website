@@ -17,7 +17,7 @@ interface Product {
   normalPrice: string;
   title: string;
   description: string;
-  quantity: number;
+  quantity: number; 
   available: string;
   quantitySold: number;
   sold: string;
