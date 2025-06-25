@@ -1,10 +1,15 @@
 #!/bin/bash
 
-# Remove .env from Git (keeps local file)
-git rm --cached .env  
+# Ensure .env is in .gitignore
+if ! grep -q ".env" .gitignore; then
+  echo ".env" >> .gitignore
+fi
 
-# Add remaining files
-git add .  
+# Untrack .env (if it was ever tracked)
+git rm --cached .env 2> /dev/null
+
+# Add all non-ignored files
+git add .
 
 # Commit & push
 git commit -m "$1"
