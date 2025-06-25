@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
+import ScrollManager from "@/ScrollManager/ScrollManager";
 
 // Translation
 import { useTranslation } from 'react-i18next';
@@ -19,6 +20,7 @@ const ProductSection_02 = () => {
 
   return (
     <div className="flex flex-col w-[85%] mx-auto">
+      <ScrollManager/>
       {/* ============= Deals of the day - left ============= */}
       <div className="flex justify-between items-center mb-7
       

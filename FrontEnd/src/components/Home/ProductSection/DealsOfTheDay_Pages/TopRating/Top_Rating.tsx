@@ -39,15 +39,15 @@ const Top_Rating = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const handleImageClick = (id) => {
+  const handleImageClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
-    const routeMap = {
+    const routeMap: Record<string, string> = {
       "4": "/Product_01",
-      "5": "/Product_02",
-      "6": "/Product_03",
-      "7": "/Product_04",
-      "8": "/Product_05",
-      "9": "/Product_06"
+      "48": "/Product_02",
+      "49": "/Product_03",
+      "50": "/Product_04",
+      "51": "/Product_05",
+      "52": "/Product_06"
     }
 
     const route = routeMap[id];
