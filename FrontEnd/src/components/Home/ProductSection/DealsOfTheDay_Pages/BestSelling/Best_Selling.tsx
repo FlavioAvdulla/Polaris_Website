@@ -26,7 +26,7 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['4', '5', '6', '7', '8', '9'];
+const featuredProductIds = ['48', '51', '52', '49', '50', '4'];
 
 const Best_Selling = () => {
   

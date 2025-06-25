@@ -26,7 +26,10 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['9', '7', '8', '5', '6', '4'];
+// const featuredProductIds = ['9', '7', '8', '5', '6', '4'];
+
+// Array of specific product IDs you want to display
+const featuredProductIds = ['51', '48', '49', '50', '4', '52'];
 
 const Top_Rating = () => {
   

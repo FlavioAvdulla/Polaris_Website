@@ -11,20 +11,20 @@ import { useTranslation } from 'react-i18next';
 interface Product {
   _id: string;
   image: string;
-  rating: number;
+  // rating: number;
   normalPrice: string;
   title: string;
-  description: string;
-  quantity: number;
-  available: string;
-  quantitySold: number;
-  sold: string;
-  info: string;
+  // description: string;
+  // quantity: number;
+  // available: string;
+  // quantitySold: number;
+  // sold: string;
+  // info: string;
   offerPrice: string;
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['4', '5', '6', '7', '8', '9'];
+const featuredProductIds = ['4', '48', '49', '50', '51', '52'];
 
 const Latest_Products = () => {
   const [products, setProducts] = useState<Product[]>([]);

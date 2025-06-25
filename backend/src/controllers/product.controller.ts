@@ -18,41 +18,35 @@ const PRODUCT_MAP: Record<string, {
   image?: string;
   normalPrice?: string;
 }> = {
+  // Id - 4
   "product_01.title": {
     id: "4",
     name: "LENOVO LEGION 5",
-    image: "Product_01.png",
-    normalPrice: "€639"
   },
+  // Id - 48
   "product_02.title": {
     id: "4",
     name: "PS VR HEADSET",
-    image: "Product_02.png",
-    normalPrice: "€639"
   },
+  // Id - 49
   "productSection_01.title_03": {
     id: "3",
     name: "SONY PLAYSTATION 5 PRO",
-    image: "Product_03.png",
-    normalPrice: "€639"
   },
+  // Id - 50
   "productSection_01.title_02": {
     id: "2",
     name: "GEFORCE RTX 3090 24GB",
-    image: "Product_04.png",
-    normalPrice: "€639"
   },
+  // Id - 51
   "productSection_01.title_01": {
     id: "1",
     name: "SONY HEADSET WH-1000XM5",
-    image: "Product_05.png",
-    normalPrice: "€639"
   },
+  // Id - 52
   "product_06.title": {
     id: "4",
     name: "REDRAGON K535 KEYBOARD",
-    image: "Product_06.png",
-    normalPrice: "€639"
   }
 };
 
