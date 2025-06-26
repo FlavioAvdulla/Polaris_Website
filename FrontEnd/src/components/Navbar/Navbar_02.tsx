@@ -16,6 +16,7 @@ import axios from 'axios';
 
 interface Product {
   _id: string;
+  id?: string; // For mapped product IDs
   image: string;
   title: string;
   normalPrice: string;
@@ -33,6 +34,26 @@ interface NavbarProps {
 }
 
 const API_BASE_URL = 'http://localhost:4004/api';
+
+// Define your specific product route mappings
+const PRODUCT_ROUTE_MAP: Record<string, string> = {
+  "4": "/Product_01",
+  "48": "/Product_02",
+  "49": "/Product_03",
+  "50": "/Product_04",
+  "51": "/Product_05",
+  "52": "/Product_06"
+};
+
+// Map product titles to their IDs for search results
+const PRODUCT_TITLE_MAP: Record<string, string> = {
+  "LENOVO LEGION 5": "4",
+  "PS VR HEADSET": "48",
+  "SONY PLAYSTATION 5 PRO": "49",
+  "GEFORCE RTX 3090 24GB": "50",
+  "SONY HEADSET WH-1000XM5": "51",
+  "REDRAGON K535 KEYBOARD": "52"
+};
 
 const Navbar_02: React.FC<NavbarProps> = ({ 
   setShowSignIn, 
@@ -55,20 +76,35 @@ const Navbar_02: React.FC<NavbarProps> = ({
 
   // Navigation state
   const [activeSection, setActiveSection] = useState("/SignIn");
-  
+
   // Cart calculations
-  const cartItemCount = cartList.reduce((sum) => sum + cartQuantity, 0);
+  const cartItemCount = useMemo(() => 
+    cartList.reduce((sum) => sum + cartQuantity, 0), 
+    [cartQuantity]
+  );
   
-  const calculateSubtotal = () => {
-    return cartList.reduce((total, item) => {
+  const subtotal = useMemo(() => 
+    cartList.reduce((total, item) => {
       const price = parseFloat(item.unitPrice.replace("$", ""));
       return total + (cartQuantity * price);
-    }, 0);
-  };
-  
-  const subtotal = calculateSubtotal();
+    }, 0),
+    [cartQuantity]
+  );
 
-  // Search functions
+  // Product click handler with specific route mapping
+  const handleProductClick = useCallback((id: string) => {
+    const route = PRODUCT_ROUTE_MAP[id];
+    if (route) {
+      navigate(route);
+    } else {
+      // Fallback for unmapped products
+      console.warn(`No route mapping for product ID: ${id}`);
+      navigate(`/Product_${id.padStart(2, '0')}`);
+    }
+    clearSearch();
+  }, [navigate]);
+
+  // Search function with product ID mapping
   const performSearch = useCallback(async (query: string) => {
     if (query.length < 2) {
       setSearchResults([]);
@@ -80,45 +116,48 @@ const Navbar_02: React.FC<NavbarProps> = ({
     setSearchError(null);
     
     try {
-      const cancelTokenSource = axios.CancelToken.source();
       const response = await axios.get(`${API_BASE_URL}/products/search`, {
         params: { q: query },
-        cancelToken: cancelTokenSource.token,
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         }
       });
       
-      // Remove duplicates by _id
-      const uniqueResults = response.data.reduce((acc: Product[], current: Product) => {
-        const existingItem = acc.find(item => item._id === current._id);
+      // Map results to include both backend _id and mapped id
+      const mappedResults = response.data.map((product: Product) => {
+        // Find matching product by title
+        const mappedId = PRODUCT_TITLE_MAP[product.title.toUpperCase()];
+        return {
+          ...product,
+          id: mappedId || product._id
+        };
+      });
+
+      // Remove duplicates by id
+      const uniqueResults = mappedResults.reduce((acc: Product[], current: Product) => {
+        const existingItem = acc.find(item => item.id === current.id);
         return existingItem ? acc : [...acc, current];
       }, []);
       
       setSearchResults(uniqueResults);
     } catch (error) {
-      if (!axios.isCancel(error)) {
-        console.error("Search error:", error);
-        setSearchError(t('navbar_02.searchError') || "Failed to perform search");
-        setSearchResults([]);
-      }
+      console.error("Search error:", error);
+      setSearchError(t('navbar_02.searchError') || "Failed to perform search");
+      setSearchResults([]);
     } finally {
       setIsSearching(false);
     }
   }, [t]);
 
-  // Proper debounce implementation with cleanup
+  // Debounced search with cleanup
   const debouncedSearch = useMemo(
-    () => debounce((query: string) => performSearch(query), 300),
+    () => debounce(performSearch, 300),
     [performSearch]
   );
 
-  // Clean up debounce on unmount
   useEffect(() => {
-    return () => {
-      debouncedSearch.cancel();
-    };
+    return () => debouncedSearch.cancel();
   }, [debouncedSearch]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -127,11 +166,11 @@ const Navbar_02: React.FC<NavbarProps> = ({
     debouncedSearch(query);
   };
 
-  const clearSearch = () => {
+  const clearSearch = useCallback(() => {
     setSearchQuery("");
     setSearchResults([]);
     setSearchError(null);
-  };
+  }, []);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -146,32 +185,32 @@ const Navbar_02: React.FC<NavbarProps> = ({
     setActiveSection(location.pathname);
   }, [location.pathname]);
 
-  const handleLogoClick = () => {
+  const handleLogoClick = useCallback(() => {
     navigate("/");
     setActiveSection("Home");
-  };
-  
-  const handleSignInClick = () => {
+  }, [navigate]);
+
+  const handleSignInClick = useCallback(() => {
     setActiveSection("/SignIn");
     setShowSignIn(true);
-  };
+  }, [setShowSignIn]);
 
-  const handleSignOutClick = () => {
+  const handleSignOutClick = useCallback(() => {
     setActiveSection("/SignOut");
     setShowSignOut(true);
-  };
+  }, [setShowSignOut]);
 
-  const handleCartOpen = () => {
+  const handleCartOpen = useCallback(() => {
     navigate("/Cart");
     setActiveSection("Cart");
-  };
+  }, [navigate]);
 
-  const handleFavouritesOpen = () => {
+  const handleFavouritesOpen = useCallback(() => {
     navigate("/Favourites");
     setActiveSection("Favourites");
-  };
+  }, [navigate]);
 
-  // Click outside handler for search
+  // Click outside handler
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
@@ -183,6 +222,12 @@ const Navbar_02: React.FC<NavbarProps> = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Image error handler
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const target = e.target as HTMLImageElement;
+    target.src = '/placeholder-product.png';
+  };
+
   return (
     <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between xs:gap-5 lg:gap-0">
       {/* Logo */}
@@ -191,6 +236,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
         src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo} 
         alt="Polaris Logo" 
         onClick={handleLogoClick}
+        loading="lazy"
       />
         
       <img 
@@ -198,6 +244,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
         src={theme === "dark" ? Polaris_Logo_Icon_Secondary_01 : Polaris_Logo_Icon} 
         alt="Polaris Logo" 
         onClick={handleLogoClick}
+        loading="lazy"
       />
 
       {/* Search Bar */}
@@ -222,6 +269,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
             onKeyDown={(e) => e.key === 'Escape' && clearSearch()}
             placeholder={t('navbar_02.searchPlaceholder')}
             autoComplete="off"
+            aria-label="Search products"
           />
           
           {searchQuery && (
@@ -241,6 +289,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
             className="bg-white h-[100%] text-primary text-[30px] p-3 border-primary border-[1px] border-l-0
                       items-center justify-center flex rounded-tr-md rounded-br-md
                       dark:bg-transparent dark:border-gray-600 dark:text-white"
+            aria-label="Submit search"
           >
             <IoIosSearch className="text-[20px]"/>
           </button>
@@ -251,6 +300,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
           <div className="w-full absolute top-full left-0 right-0 z-50 mt-1 bg-white shadow-lg rounded-md
                         max-h-[400px] overflow-y-auto border border-gray-200
                         dark:bg-gray-800 dark:border-gray-700"
+               aria-live="polite"
           >
             {isSearching && searchResults.length === 0 ? (
               <div className="p-4 text-center text-gray-500 dark:text-gray-400">
@@ -261,38 +311,36 @@ const Navbar_02: React.FC<NavbarProps> = ({
                 {searchError}
               </div>
             ) : searchResults.length > 0 ? (
-              searchResults.map((product) => (
-                <div
-                  key={`${product._id}-${product.title}`} // More unique key
-                  className="w-[100%] p-3 border-b border-gray-300 hover:bg-gray-100 cursor-pointer
-                            dark:border-gray-600 dark:hover:bg-gray-700"
-                  onClick={() => {
-                    navigate(`/products/${product._id}`);
-                    clearSearch();
-                  }}
-                >
-                  <div className="flex justify-between items-center mx-auto lg:w-[100%] xl:w-[80%]">
-                    <div className="flex gap-3 items-center">
-                      <img 
-                        src={`http://localhost:4004/images/${product.image}`}
-                        alt={product.title}
-                        className="aspect-1 object-contain xs:w-[30px] md:w-[40px] lg:w-[60px]"
-                        // onError={(e) => {
-                        //   (e.target as HTMLImageElement).src = '/placeholder-product.png';
-                        // }}
-                      />
-                      <h4 className="font-camptonBook dark:text-white
-                                   xs:text-[8px] md:text-[10px] lg:text-[15px] xl:text-[20px]">
-                        {product.title}
-                      </h4>
+              <ul>
+                {searchResults.map((product) => (
+                  <li
+                    key={`${product.id}-${product.title}`}
+                    className="w-[100%] p-3 border-b border-gray-300 hover:bg-gray-100 cursor-pointer
+                              dark:border-gray-600 dark:hover:bg-gray-700"
+                    onClick={() => handleProductClick(product.id || product._id)}
+                  >
+                    <div className="flex justify-between items-center mx-auto lg:w-[100%] xl:w-[80%]">
+                      <div className="flex gap-3 items-center">
+                        <img 
+                          src={`http://localhost:4004/images/${product.image}`}
+                          alt={product.title}
+                          className="aspect-1 object-contain xs:w-[30px] md:w-[40px] lg:w-[60px]"
+                          onError={handleImageError}
+                          loading="lazy"
+                        />
+                        <h4 className="font-camptonBook dark:text-white
+                                     xs:text-[8px] md:text-[10px] lg:text-[15px] xl:text-[20px]">
+                          {product.title}
+                        </h4>
+                      </div>
+                      <p className="font-camptonBold text-primary dark:text-secondary_01 mr-[6px]
+                                  xs:text-[12px] md:text-[15px] lg:text-[20px] xl:text-[28px]">
+                        {product.offerPrice || product.normalPrice}
+                      </p>
                     </div>
-                    <p className="font-camptonBold text-primary dark:text-secondary_01 mr-[6px]
-                                xs:text-[12px] md:text-[15px] lg:text-[20px] xl:text-[28px]">
-                      {product.offerPrice || product.normalPrice}
-                    </p>
-                  </div>
-                </div>
-              ))
+                  </li>
+                ))}
+              </ul>
             ) : searchQuery.length > 1 ? (
               <div className="p-4 text-center text-gray-500 dark:text-gray-400">
                 {t('navbar_02.noResults')}
@@ -305,9 +353,11 @@ const Navbar_02: React.FC<NavbarProps> = ({
       {/* User Controls */}
       <div className="w-auto h-[100%] flex xs:gap-3 sm:gap-5">
         {/* User Account */}
-        <div 
+        <button 
           className="flex items-center justify-center cursor-pointer xs:gap-0 md:gap-3"
-          onClick={isSignedIn ? handleSignOutClick : handleSignInClick}>
+          onClick={isSignedIn ? handleSignOutClick : handleSignInClick}
+          aria-label={isSignedIn ? "Sign out" : "Sign in"}
+        >
           <i><PiUser className="dark:text-white xs:text-[17px] md:text-[28px]"/></i>
           <div className="flex flex-col">
             <p className="font-camptonBook text-[13px] dark:text-white xs:hidden lg:flex">
@@ -317,46 +367,52 @@ const Navbar_02: React.FC<NavbarProps> = ({
               {t('navbar_02.account')}
             </p>
           </div>
-        </div>
+        </button>
 
         {/* Favorites */}
         <div className="relative flex items-center justify-center">
-          <i>
-            <SlHeart 
-              className="cursor-pointer dark:text-white xs:text-[17px] md:text-[28px]" 
-              onClick={handleFavouritesOpen}
-            />
-          </i>
-          <div className="absolute top-0 ml-6 mt-1 flex rounded-full bg-primary items-center justify-center
-                          dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
-                          sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">
-              {favouriteQuantity}
-            </p>
-          </div>
+          <button 
+            onClick={handleFavouritesOpen}
+            aria-label="Favorites"
+            className="cursor-pointer"
+          >
+            <SlHeart className="dark:text-white xs:text-[17px] md:text-[28px]" />
+          </button>
+          {favouriteQuantity > 0 && (
+            <div className="absolute top-0 ml-6 mt-1 flex rounded-full bg-primary items-center justify-center
+                            dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                            sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
+              <p className="text-white xs:text-[8px] sm:text-[10px]">
+                {favouriteQuantity}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Shopping Cart */}
         <div className="relative flex items-center justify-center">
-          <i>
-            <PiShoppingCartLight 
-              className="cursor-pointer dark:text-white xs:text-[17px] md:text-[28px]" 
-              onClick={handleCartOpen}
-            />
-          </i>
-          <div className="absolute top-0 flex rounded-full bg-primary items-center justify-center
-                          dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
-                          sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
-            <p className="text-white xs:text-[8px] sm:text-[10px]">
-              {cartItemCount}
-            </p>
-          </div>
+          <button 
+            onClick={handleCartOpen}
+            aria-label="Shopping cart"
+            className="cursor-pointer"
+          >
+            <PiShoppingCartLight className="dark:text-white xs:text-[17px] md:text-[28px]" />
+          </button>
+          {cartItemCount > 0 && (
+            <div className="absolute top-0 flex rounded-full bg-primary items-center justify-center
+                            dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                            sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
+              <p className="text-white xs:text-[8px] sm:text-[10px]">
+                {cartItemCount}
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Cart Total */}
         <div className="flex-col justify-center xs:hidden md:flex">
           <p className="font-camptonBook dark:text-white xs:text-[10px] sm:text-[13px]">
-            Total
+            {t('navbar_02.total')}
           </p>
           <p className="font-camptonMedium dark:text-white xs:text-[10px] sm:text-[13px]">
             ${subtotal.toFixed(2)}
