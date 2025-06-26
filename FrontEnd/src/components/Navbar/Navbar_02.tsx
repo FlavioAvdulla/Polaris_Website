@@ -211,16 +211,16 @@ const Navbar_02: React.FC<NavbarProps> = ({
   }, [navigate]);
 
   // Click outside handler
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setSearchResults([]);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+  //       setSearchResults([]);
+  //     }
+  //   };
     
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, []);
 
   // Image error handler
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {

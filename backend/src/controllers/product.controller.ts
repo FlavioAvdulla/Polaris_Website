@@ -170,13 +170,14 @@ export const searchProducts = async (req: Request, res: Response) => {
       )
       .map(([key]) => key);
 
+    // If no matching keys found, return empty array
+    if (matchingKeys.length === 0) {
+      return res.status(OK).json([]);
+    }
+
     // 2. Build search conditions
     const searchConditions: any = {
-      $or: [
-        { title: { $in: matchingKeys } },
-        { description: { $regex: searchQuery, $options: 'i' } },
-        { info: { $regex: searchQuery, $options: 'i' } }
-      ]
+      title: { $in: matchingKeys } // Only search for products with mapped titles
     };
 
     // Add numeric price filter if provided
@@ -218,28 +219,18 @@ export const searchProducts = async (req: Request, res: Response) => {
         sortOptions.rating = -1;
     }
 
-    // 3. Execute search
+    // 3. Execute search only for mapped products
     const products = await Product.find(searchConditions)
       .sort(sortOptions)
-      .limit(100); // Get more than needed to account for deduplication
+      .limit(parseInt(limit, 10) || 10);
 
-    // 4. Deduplicate products by title
-    const uniqueProducts = products.reduce((acc: any[], product) => {
-      const existingProduct = acc.find(p => p.title === product.title);
-      if (!existingProduct) {
-        acc.push(product);
-      }
-      return acc;
-    }, []).slice(0, parseInt(limit, 10) || 10);
-
-    // 5. Convert results to display mapped data
-    const response = uniqueProducts.map(product => ({
+    // 4. Convert results to display mapped data
+    const response = products.map(product => ({
       ...product.toObject(),
-      title: PRODUCT_MAP[product.title]?.name || product.title,
-      id: PRODUCT_MAP[product.title]?.id || product._id,
+      title: PRODUCT_MAP[product.title].name, // Always use mapped name
+      id: PRODUCT_MAP[product.title].id || product._id,
       image: PRODUCT_MAP[product.title]?.image || product.image,
-      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice,
-      originalTitle: product.title
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
     }));
 
     res.status(OK).json(response);
