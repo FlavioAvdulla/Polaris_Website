@@ -243,7 +243,7 @@ const Product_03 = () => {
                         xs:text-[22px]
                         md:text-[30px]
                         lg:text-[40px]">
-            {product.offerPrice}
+            {t(product.offerPrice)}
           </p>
           <div className="flex w-auto relative items-center">
 
@@ -255,7 +255,7 @@ const Product_03 = () => {
                           xs:text-[16px]
                           md:text-[17px]
                           lg:text-[25px]">
-              {product.normalPrice}
+              {t(product.normalPrice)}
             </p>
           </div>
         </div>
@@ -324,7 +324,7 @@ const Product_03 = () => {
                                         lg:text-[22px]" /></i>
           </button>
         </div>
-        
+
         {/* Add to Cart Button */}
         <button className="flex items-center w-fit justify-center gap-3 border-[1px] bg-primary border-white 
                            py-2 rounded-tr-3xl rounded-br-3xl rounded-tl-lg rounded-bl-lg text-white px-4

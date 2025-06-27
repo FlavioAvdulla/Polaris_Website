@@ -177,7 +177,7 @@ const ProductSection_05 = () => {
                               
                               xs:text-[23px]
                               lg:text-[15px]
-                              xl:text-[23px]">{product.offerPrice}</p>
+                              xl:text-[23px]">{t(product.offerPrice)}</p>
 
                 <div className="flex w-auto relative items-center">
                   <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
@@ -185,7 +185,7 @@ const ProductSection_05 = () => {
                                 dark:text-white
 
                                 lg:text-[12px]
-                                xl:text-[17px]">{product.normalPrice}</p>
+                                xl:text-[17px]">{t(product.normalPrice)}</p>
                 </div>
               </div>
             </div>

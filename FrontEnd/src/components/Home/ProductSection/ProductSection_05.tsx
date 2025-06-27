@@ -202,7 +202,7 @@ const ProductSection_05 = () => {
                                 
                                 xs:text-[25px]
                                 md:text-[35px]
-                                lg:text-[25px]">{product.offerPrice}
+                                lg:text-[25px]">{t(product.offerPrice)}
                   </p>
                   <div className="flex w-auto relative items-center">
                     <div className="absolute h-[1px] w-[100%] bg-primary"/>
@@ -211,7 +211,7 @@ const ProductSection_05 = () => {
                     
                                   xs:text-[17px]
                                   md:text-[22px]
-                                  lg:text-[20px]">{product.normalPrice}
+                                  lg:text-[20px]">{t(product.normalPrice)}
                     </p>
                   </div>
                 </div>

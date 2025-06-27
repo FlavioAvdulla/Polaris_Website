@@ -171,7 +171,7 @@ const ProductSection_01 = () => {
                              md:text-[30px]
                              lg:text-[36px]
                              xl:text-[40px]">
-                {product.normalPrice}
+                {t(product.normalPrice)}
               </h1>
               <button
                 onClick={(e) => handleAddToCart(e, product._id)}

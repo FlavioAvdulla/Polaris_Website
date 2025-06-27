@@ -137,11 +137,11 @@ const Top_Rating = () => {
                               dark:text-secondary_01
                 
                               xs:text-[25px]
-                              2xl:text-[25px]">{product.offerPrice}</p>
+                              2xl:text-[25px]">{t(product.offerPrice)}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
                   <p className="text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
-                                  dark:text-white">{product.normalPrice}</p>
+                                  dark:text-white">{t(product.normalPrice)}</p>
                 </div>
               </div>
             </div>

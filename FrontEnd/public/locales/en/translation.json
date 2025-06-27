@@ -231,6 +231,8 @@
     "detail_02": "RTX 3070 8GB GDDR6 Graphics",
     "detail_03": "12GB DDR4 RAM + 4TB NVMe SSD",
     "detail_04": "Windows 11 Professional (64bit)",
+    "normalPrice": "€1599",
+    "offerPrice": "€1499",
     "addToCart": "ADD TO CART"
   },
   "product_02": {
@@ -241,6 +243,8 @@
     "detail_02": "Display Size: 5.7 inches",
     "detail_03": "Field of View: Approx. 100 degrees",
     "detail_04": "Sensors: Accelerometer, gyroscope",
+    "normalPrice": "€399",
+    "offerPrice": "€379",
     "addToCart": "ADD TO CART"
   },
   "product_03": {
@@ -251,6 +255,8 @@
     "detail_02": "Stable frame rates for smooth gameplay on 60Hz and 120Hz displays.",
     "detail_03": "Next-level realism with ray-traced reflections, shadows, and high-quality",
     "detail_04": "Up to 1tb storage",
+    "normalPrice": "€699",
+    "offerPrice": "€599",
     "addToCart": "ADD TO CART"
   },
   "product_04": {
@@ -261,6 +267,8 @@
     "detail_02": "PCI Express 4.0.",
     "detail_03": "Antialiasing and anisotropic filtering.",
     "detail_04": "DirectX 12 Ultimate.",
+    "normalPrice": "€1649",
+    "offerPrice": "€1449",
     "addToCart": "ADD TO CART"
   },
   "product_05": {
@@ -271,6 +279,8 @@
     "detail_02": "Extraordinary Sound Quality.",
     "detail_03": "Crystal Clear Call Quality.",
     "detail_04": "Up to 30-Hour Battery Life.",
+    "normalPrice": "€359",
+    "offerPrice": "€269",
     "addToCart": "ADD TO CART"
   },
   "product_06": {
@@ -281,6 +291,8 @@
     "detail_02": "Type C to USB detachable cable",
     "detail_03": "RGB backlighting",
     "detail_04": "Splash resistant design",
+    "normalPrice": "€67",
+    "offerPrice": "€59",
     "addToCart": "ADD TO CART"
   },
   "contacts": {

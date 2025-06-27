@@ -243,7 +243,7 @@ const Product_06 = () => {
                         xs:text-[22px]
                         md:text-[30px]
                         lg:text-[40px]">
-            {product.offerPrice}
+            {t(product.offerPrice)}
           </p>
           <div className="flex w-auto relative items-center">
 
@@ -255,7 +255,7 @@ const Product_06 = () => {
                           xs:text-[16px]
                           md:text-[17px]
                           lg:text-[25px]">
-              {product.normalPrice}
+              {t(product.normalPrice)}
             </p>
           </div>
         </div>
