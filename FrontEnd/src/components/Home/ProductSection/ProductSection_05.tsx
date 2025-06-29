@@ -40,8 +40,8 @@ const ProductSection_05 = () => {
       const routeMap = {
         "18": "/Computers",
         "19": "/Product_02",
-        "20": "/Product_03",
-        "21": "/Product_04"
+        "20": "/Product_04",
+        "21": "/Product_06"
       };
 
       const route = routeMap[id];

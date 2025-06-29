@@ -191,7 +191,7 @@ const Computers = () => {
                                    xs:text-[40px]
                                    md:text-[30px]
                                    lg:text-[36px]
-                                   xl:text-[40px]">{product.normalPrice}
+                                   xl:text-[40px]">{t(product.normalPrice)}
                     </h1>
                     <i className="bg-primary border-[1px] border-primary cursor-pointer
                                   hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300

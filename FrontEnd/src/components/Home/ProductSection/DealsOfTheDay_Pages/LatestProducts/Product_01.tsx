@@ -179,18 +179,14 @@ const Product_01 = () => {
                         md:gap-3
                         lg:gap-5">
           {thumbnails.map((thumbnail, index) => (
-            <div
-              key={index}
-              className="w-[25%] items-center justify-center rounded-lg cursor-pointer
+            <div key={index}
+                 className="w-[25%] items-center justify-center rounded-lg cursor-pointer
                          hover:scale-105 hover:shadow-shadow-dark ease-in-out duration-300 border-[1px] overflow-hidden border-primary
                          dark:bg-transparent dark:border-gray-600"
-              onClick={() => handleClick(thumbnail)}
-            >
-              <img
-                className="w-[100%] h-[100%] object-cover"
-                src={thumbnail}
-                alt={`Thumbnail ${index + 1}`}
-              />
+                 onClick={() => handleClick(thumbnail)}>
+              <img className="w-[100%] h-[100%] object-cover"
+                   src={thumbnail}
+                   alt={`Thumbnail ${index + 1}`}/>
             </div>
           ))}
         </div>

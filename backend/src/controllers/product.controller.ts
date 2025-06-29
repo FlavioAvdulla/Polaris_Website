@@ -17,6 +17,7 @@ const PRODUCT_MAP: Record<string, {
   name: string;
   image?: string;
   normalPrice?: string;
+  offerPrice?: string;
 }> = {
   // Id - 4
   "product_01.title": {
@@ -25,27 +26,27 @@ const PRODUCT_MAP: Record<string, {
   },
   // Id - 48
   "product_02.title": {
-    id: "4",
+    id: "48",
     name: "PS VR HEADSET",
   },
   // Id - 49
   "productSection_01.title_03": {
-    id: "3",
+    id: "49",
     name: "SONY PLAYSTATION 5 PRO",
   },
   // Id - 50
   "productSection_01.title_02": {
-    id: "2",
+    id: "50",
     name: "GEFORCE RTX 3090 24GB",
   },
   // Id - 51
   "productSection_01.title_01": {
-    id: "1",
+    id: "51",
     name: "SONY HEADSET WH-1000XM5",
   },
   // Id - 52
   "product_06.title": {
-    id: "4",
+    id: "52",
     name: "REDRAGON K535 KEYBOARD",
   }
 };
@@ -80,7 +81,8 @@ export const getProducts = async (_req: Request, res: Response) => {
       title: PRODUCT_MAP[product.title]?.name || product.title,
       id: PRODUCT_MAP[product.title]?.id || product._id,
       image: PRODUCT_MAP[product.title]?.image || product.image,
-      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice,
+      offerPrice: PRODUCT_MAP[product.title]?.offerPrice || product.offerPrice
     }));
     res.status(OK).json(response);
   } catch (error) {
@@ -100,7 +102,8 @@ export const getProductById = async (req: Request, res: Response) => {
       title: PRODUCT_MAP[product.title]?.name || product.title,
       id: PRODUCT_MAP[product.title]?.id || product._id,
       image: PRODUCT_MAP[product.title]?.image || product.image,
-      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice,
+      offerPrice: PRODUCT_MAP[product.title]?.offerPrice || product.offerPrice
     };
     
     res.status(OK).json(response);
@@ -124,7 +127,8 @@ export const updateProduct = async (req: Request, res: Response) => {
       title: PRODUCT_MAP[product.title]?.name || product.title,
       id: PRODUCT_MAP[product.title]?.id || product._id,
       image: PRODUCT_MAP[product.title]?.image || product.image,
-      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice,
+      offerPrice: PRODUCT_MAP[product.title]?.offerPrice || product.offerPrice
     };
     
     res.status(OK).json(response);
@@ -230,7 +234,8 @@ export const searchProducts = async (req: Request, res: Response) => {
       title: PRODUCT_MAP[product.title].name, // Always use mapped name
       id: PRODUCT_MAP[product.title].id || product._id,
       image: PRODUCT_MAP[product.title]?.image || product.image,
-      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice
+      normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice,
+      offerPrice: PRODUCT_MAP[product.title]?.offerPrice || product.offerPrice
     }));
 
     res.status(OK).json(response);

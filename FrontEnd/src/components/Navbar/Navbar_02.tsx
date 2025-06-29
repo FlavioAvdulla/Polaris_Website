@@ -16,7 +16,7 @@ import axios from 'axios';
 
 interface Product {
   _id: string;
-  id?: string; // For mapped product IDs
+  id?: string;
   image: string;
   title: string;
   normalPrice: string;
@@ -35,7 +35,6 @@ interface NavbarProps {
 
 const API_BASE_URL = 'http://localhost:4004/api';
 
-// Define your specific product route mappings
 const PRODUCT_ROUTE_MAP: Record<string, string> = {
   "4": "/Product_01",
   "48": "/Product_02",
@@ -43,16 +42,6 @@ const PRODUCT_ROUTE_MAP: Record<string, string> = {
   "50": "/Product_04",
   "51": "/Product_05",
   "52": "/Product_06"
-};
-
-// Map product titles to their IDs for search results
-const PRODUCT_TITLE_MAP: Record<string, string> = {
-  "LENOVO LEGION 5": "4",
-  "PS VR HEADSET": "48",
-  "SONY PLAYSTATION 5 PRO": "49",
-  "GEFORCE RTX 3090 24GB": "50",
-  "SONY HEADSET WH-1000XM5": "51",
-  "REDRAGON K535 KEYBOARD": "52"
 };
 
 const Navbar_02: React.FC<NavbarProps> = ({ 
@@ -68,16 +57,12 @@ const Navbar_02: React.FC<NavbarProps> = ({
   const { theme } = useTheme();
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Search functionality state
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<Product[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
-
-  // Navigation state
   const [activeSection, setActiveSection] = useState("/SignIn");
 
-  // Cart calculations
   const cartItemCount = useMemo(() => 
     cartList.reduce((sum) => sum + cartQuantity, 0), 
     [cartQuantity]
@@ -91,20 +76,17 @@ const Navbar_02: React.FC<NavbarProps> = ({
     [cartQuantity]
   );
 
-  // Product click handler with specific route mapping
   const handleProductClick = useCallback((id: string) => {
     const route = PRODUCT_ROUTE_MAP[id];
     if (route) {
       navigate(route);
     } else {
-      // Fallback for unmapped products
       console.warn(`No route mapping for product ID: ${id}`);
       navigate(`/Product_${id.padStart(2, '0')}`);
     }
     clearSearch();
   }, [navigate]);
 
-  // Search function with product ID mapping
   const performSearch = useCallback(async (query: string) => {
     if (query.length < 2) {
       setSearchResults([]);
@@ -124,17 +106,11 @@ const Navbar_02: React.FC<NavbarProps> = ({
         }
       });
       
-      // Map results to include both backend _id and mapped id
-      const mappedResults = response.data.map((product: Product) => {
-        // Find matching product by title
-        const mappedId = PRODUCT_TITLE_MAP[product.title.toUpperCase()];
-        return {
-          ...product,
-          id: mappedId || product._id
-        };
-      });
+      const mappedResults = response.data.map((product: Product) => ({
+        ...product,
+        id: product.id || product._id // Use the ID already mapped by the backend
+      }));
 
-      // Remove duplicates by id
       const uniqueResults = mappedResults.reduce((acc: Product[], current: Product) => {
         const existingItem = acc.find(item => item.id === current.id);
         return existingItem ? acc : [...acc, current];
@@ -150,7 +126,6 @@ const Navbar_02: React.FC<NavbarProps> = ({
     }
   }, [t]);
 
-  // Debounced search with cleanup
   const debouncedSearch = useMemo(
     () => debounce(performSearch, 300),
     [performSearch]
@@ -180,7 +155,6 @@ const Navbar_02: React.FC<NavbarProps> = ({
     }
   };
 
-  // Navigation handlers
   useEffect(() => {
     setActiveSection(location.pathname);
   }, [location.pathname]);
@@ -210,19 +184,6 @@ const Navbar_02: React.FC<NavbarProps> = ({
     setActiveSection("Favourites");
   }, [navigate]);
 
-  // Click outside handler
-  // useEffect(() => {
-  //   const handleClickOutside = (event: MouseEvent) => {
-  //     if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-  //       setSearchResults([]);
-  //     }
-  //   };
-    
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
-
-  // Image error handler
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
     const target = e.target as HTMLImageElement;
     target.src = '/placeholder-product.png';
@@ -333,10 +294,25 @@ const Navbar_02: React.FC<NavbarProps> = ({
                           {product.title}
                         </h4>
                       </div>
-                      <p className="font-camptonBold text-primary dark:text-secondary_01 mr-[6px]
-                                  xs:text-[12px] md:text-[15px] lg:text-[20px] xl:text-[28px]">
-                        {product.offerPrice || product.normalPrice}
-                      </p>
+                      {/* ============= Price ============= */}
+                      <div className="flex items-center gap-4">
+                        {/* Offer Price (highlighted) */}
+                        {product.offerPrice && (
+                          <p className="font-camptonBold text-primary dark:text-secondary_01
+                                      xs:text-[23px] lg:text-[15px] xl:text-[23px]">
+                            {t(product.offerPrice)}
+                          </p>
+                        )}
+                        
+                        {/* Normal Price (with strikethrough) */}
+                        <div className="flex w-auto relative items-center">
+                          <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
+                          <p className="text-gray-800 dark:text-white
+                                      lg:text-[12px] xl:text-[17px]">
+                            {t(product.normalPrice)}
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </li>
                 ))}

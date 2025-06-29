@@ -7,6 +7,7 @@ const productBaseSchema = z.object({
   title: z.string().min(1, "Title is required").max(100),
   description: z.string().min(1, "Description is required").max(500),
   normalPrice: z.string().regex(/^\$\d+(\.\d{2})?$/, "Invalid price format"),
+  offerPrice: z.string().regex(/^\$\d+(\.\d{2})?$/, "Invalid price format"),
   quantity: z.number().int().min(0, "Quantity cannot be negative"),
   available: z.string().min(1, "Availability status is required"),
   info: z.string().optional(),
