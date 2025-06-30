@@ -11,7 +11,7 @@ interface Product {
   rating: number;
   normalPrice: string;
   title: string;
-  description: string;
+  // description: string;
   quantity: number;
   available: string;
   quantitySold: number;

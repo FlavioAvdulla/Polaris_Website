@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import { AllCategories } from "../Shadcn-components/AllCategories";
-// React Icons
-import { CiDiscount1 } from "react-icons/ci";
-
-// Translation
+import { useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
+import { CiDiscount1 } from "react-icons/ci";
 
 const Navbar_03 = () => {
 
@@ -14,7 +11,6 @@ const Navbar_03 = () => {
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState("/");
 
-  // useEffect hook to update active section based on current URL path
   useEffect(() => {
     const path = location.pathname;
     if (path === "/") {

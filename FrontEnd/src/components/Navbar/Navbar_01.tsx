@@ -1,25 +1,14 @@
-import React from "react";
 import { SelectLanguage } from "../Shadcn-components/SelectLanguage";
 import { SelectCurrency } from "../Shadcn-components/SelectCurrency";
 import { BsBrightnessHigh, BsPhone, BsMoon } from "react-icons/bs";
+import { useTheme } from "../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import { useTheme } from "../context/ThemeContext";
+import React from "react";
 
 interface Navbar01Props {
   setShowFaq: (show: boolean) => void;
 }
-
-// Type for your translation keys
-// type NavbarTranslations = {
-//   trackOrder: string;
-//   aboutUs: string;
-//   contact: string;
-//   faq: string;
-//   contactUs: string;
-//   darkTheme: string;
-//   lightTheme: string;
-// };
 
 const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
   const { t } = useTranslation();

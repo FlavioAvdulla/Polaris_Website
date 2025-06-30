@@ -1,19 +1,11 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-
-import { LuCheckCheck } from "react-icons/lu";
-import { PiUser } from "react-icons/pi";
-import { PiMotorcycleFill } from "react-icons/pi";
-import { BiSolidPackage } from "react-icons/bi";
-
-// Data
 import { cartList } from "../../../components/Home/ProductSection/ProductSection";
-
-// React Icons
+import { PiUser, PiMotorcycleFill } from "react-icons/pi";
 import { IoIosArrowForward } from "react-icons/io";
-
-// Translation
+import { BiSolidPackage } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import { LuCheckCheck } from "react-icons/lu";
+import React from "react";
 
 const TrackOrder = () => {
 

@@ -1,4 +1,6 @@
+import { IoIosCloseCircle } from "react-icons/io";
 import React, { useRef, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 
 import {
   Accordion,
@@ -6,11 +8,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-import { IoIosCloseCircle } from "react-icons/io";
-
-// Translation
-import { useTranslation } from 'react-i18next';
 
 const Faq = ({ setShowFaq }) => {
 

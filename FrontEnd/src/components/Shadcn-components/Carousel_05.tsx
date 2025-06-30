@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
-
 import { Card, CardContent } from "@/components/ui/card";
-// import { carousel_05 } from "../Home/ProductSection/ProductSection";
+import { IoIosArrowForward } from "react-icons/io";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  // CarouselNext,
+  // CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-
-// React Icons
-import { IoIosArrowForward } from "react-icons/io";
-
-// Translation
-import { useTranslation } from 'react-i18next';
 
 interface Product {
   _id: string;
@@ -38,7 +32,6 @@ export function Carousel_05() {
   const [loading, setLoading] = useState(true);
   const { t } = useTranslation()
   const [api, setApi] = React.useState<CarouselApi>();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [current, setCurrent] = React.useState(0);
   const [count, setCount] = React.useState(0);
   const [isGrabbing, setIsGrabbing] = React.useState(false);

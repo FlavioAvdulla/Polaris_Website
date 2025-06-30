@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-
-// React Icons
-import { IoIosSearch } from "react-icons/io";
-
-// Data
-import { shopByCategories } from "./ProductSection";
-
-// Translation
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
+import { IoIosSearch } from "react-icons/io";
+import axios from 'axios';
 
 interface Product {
   _id: string;

@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from "react";
-// import { productSection_03 } from "./ProductSection";
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-
-// React Icons
 import { IoIosArrowForward } from "react-icons/io";
-
-// Translation
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 interface Product {
   _id: string;
   image: string;
-  title_01: string;
   title_02: string;
+  title_01: string;
   description: string;
   button: string;
 }

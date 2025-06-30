@@ -1,7 +1,5 @@
-import React, { useEffect, useRef } from "react";
-
-// React Icons
 import { IoIosCloseCircle } from "react-icons/io";
+import React, { useEffect, useRef } from "react";
 
 const SignOut = ({ setShowSignOut, setIsSignedIn }) => {
   const handleSignOut = () => {

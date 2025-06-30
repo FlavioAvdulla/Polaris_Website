@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
 import { Carousel_05 } from "../../Shadcn-components/Carousel_05";
-
-import { useNavigate } from "react-router-dom";
-
-// React Icons
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
-
-// Import the product data correctly
-// import { productSection_06 } from "./ProductSection";
-
-// Translation
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 interface Product {
   _id: string;
-  image: string; // or typeof Product_01 if using image variables
+  image: string;
   rating: string;
   title: string;
   description: string;

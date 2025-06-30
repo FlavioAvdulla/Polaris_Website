@@ -1,17 +1,8 @@
-import React, { useState } from "react";
-
-// Data
 import { cartList as initialCartList } from "../../../components/Home/ProductSection/ProductSection";
-
-// React Icons
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
-// import { IoIosArrowForward } from "react-icons/io";
 import { IoCloseCircle } from "react-icons/io5";
-// import { HiOutlineRefresh } from "react-icons/hi";
-// import { IoIosArrowRoundForward } from "react-icons/io";
-
-// Translation
 import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
 
 const Cart = ({ setFavouriteQuantity }) => {
 

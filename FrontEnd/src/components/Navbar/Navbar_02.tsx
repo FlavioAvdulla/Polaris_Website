@@ -293,10 +293,10 @@ const Navbar_02: React.FC<NavbarProps> = ({
                              alt={product.title}
                              className="aspect-1 object-contain
                               
-                                       xs:w-[30px]
-                                       md:w-[55px]
-                                       lg:w-[60px] lg:mr-3
-                                       xl:mr-0"
+                                        xs:w-[30px]
+                                        md:w-[55px]
+                                        lg:w-[60px] lg:mr-3
+                                        xl:mr-0"
                              onError={handleImageError}
                              loading="lazy"/>
                       
@@ -309,10 +309,10 @@ const Navbar_02: React.FC<NavbarProps> = ({
                                       xl:gap-[40px]">
                           <h4 className="font-camptonBook dark:text-white
 
-                                          xs:text-[8px]
-                                          md:text-[13px]
-                                          lg:text-[15px]
-                                          xl:text-[20px]">
+                                         xs:text-[8px]
+                                         md:text-[13px]
+                                         lg:text-[15px]
+                                         xl:text-[20px]">
                             {product.title}
                           </h4>
                           {/* ============= Product Price ============= */}
@@ -373,8 +373,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                      xs:gap-0
                      md:gap-3"
           onClick={isSignedIn ? handleSignOutClick : handleSignInClick}
-          aria-label={isSignedIn ? "Sign out" : "Sign in"}
-        >
+          aria-label={isSignedIn ? "Sign out" : "Sign in"}>
           <i><PiUser className="dark:text-white
           
                                 xs:text-[17px]

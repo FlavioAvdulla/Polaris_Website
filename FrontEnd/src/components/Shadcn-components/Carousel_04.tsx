@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
-
 import { Card, CardContent } from "@/components/ui/card";
+import React, { useEffect, useState } from "react";
+import { IoIosArrowForward } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 import {
   Carousel,
   CarouselContent,
@@ -10,12 +11,6 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-
-// React Icons
-import { IoIosArrowForward } from "react-icons/io";
-
-// Translation
-import { useTranslation } from 'react-i18next';
 
 interface Product {
   _id: string;
@@ -26,7 +21,6 @@ interface Product {
   paragraph: string;
   exclusiveOffer: string;
 }
-
 
 // Array of specific product IDs you want to display
 const featuredProductIds = ['24', '25'];

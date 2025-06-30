@@ -1,10 +1,6 @@
-import React, { useState } from "react";
-
-// React Icons
 import { IoIosCloseCircle } from "react-icons/io";
-
-// Translation
 import { useTranslation } from 'react-i18next';
+import React from "react";
 
 const ForgotPassword = ({
   setShowSignIn,

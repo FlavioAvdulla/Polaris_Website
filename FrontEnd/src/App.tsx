@@ -1,54 +1,47 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "../src/components/context/ThemeContext"; // Import ThemeProvider
-import Navbar_01 from "./components/Navbar/Navbar_01";
-import Navbar_02 from "./components/Navbar/Navbar_02";
-import Navbar_03 from "./components/Navbar/Navbar_03";
-import Faq from "./components/Shadcn-components/Faq";
-import Carousel from "./components/Home/Carousel/Carousel";
-import BenefitsPackage from "./components/Home/BenefitsPackage/BenefitsPackage";
-import ProductSection_01 from "./components/Home/ProductSection/ProductSection_01";
-import ProductSection_02 from "./components/Home/ProductSection/ProductSection_02";
-import ProductSection_03 from "./components/Home/ProductSection/ProductSection_03";
-import ProductSection_04 from "./components/Home/ProductSection/ProductSection_04";
-import ProductSection_05 from "./components/Home/ProductSection/ProductSection_05";
-import BannerSection from "./components/Home/BannerSection/BannerSection";
-import ProductSection_06 from "./components/Home/ProductSection/ProductSection_06";
-import Footer from "./components/Home/Footer/Footer";
-
-// Pages
+import AudioAndHeadphones from "./components/Home/ProductSection/shop_By_Categories/AudioAndHeadphones/AudioAndHeadphones";
+import MobilesAndTablets from "./components/Home/ProductSection/shop_By_Categories/MobilesAndTablets/MobilesAndTablets";
+import Latest_Products from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Latest_Products";
+import GameAccessories from "./components/Home/ProductSection/shop_By_Categories/GameAccessories/GameAccessories";
+import CameraAndPhoto from "./components/Home/ProductSection/shop_By_Categories/CameraAndPhoto/CameraAndPhoto";
+import Best_Selling from "./components/Home/ProductSection/DealsOfTheDay_Pages/BestSelling/Best_Selling";
 import Product_01 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_01";
 import Product_02 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_02";
 import Product_03 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_03";
 import Product_04 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_04";
 import Product_05 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_05";
 import Product_06 from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Product_06";
-import Shop from "./components/Pages/Shop/Shop";
-import Blog from "./components/Pages/Blog/Blog";
-
-import Latest_Products from "./components/Home/ProductSection/DealsOfTheDay_Pages/LatestProducts/Latest_Products";
-import Top_Rating from "./components/Home/ProductSection/DealsOfTheDay_Pages/TopRating/Top_Rating";
-import Best_Selling from "./components/Home/ProductSection/DealsOfTheDay_Pages/BestSelling/Best_Selling";
-import Computers from "./components/Home/ProductSection/shop_By_Categories/Computers/Computers";
-import MobilesAndTablets from "./components/Home/ProductSection/shop_By_Categories/MobilesAndTablets/MobilesAndTablets";
-import GameAccessories from "./components/Home/ProductSection/shop_By_Categories/GameAccessories/GameAccessories";
-import CameraAndPhoto from "./components/Home/ProductSection/shop_By_Categories/CameraAndPhoto/CameraAndPhoto";
 import Electronics from "./components/Home/ProductSection/shop_By_Categories/Electronics/Electronics";
-import AudioAndHeadphones from "./components/Home/ProductSection/shop_By_Categories/AudioAndHeadphones/AudioAndHeadphones";
-
-import Register from "./components/Pages/Register/Register";
-import SignIn from "./components/Pages/SignIn/SignIn";
-
-// Scroll
-import ScrollManager from "./ScrollManager/ScrollManager";
-import Cart from "./components/Pages/Cart/Cart";
+import Top_Rating from "./components/Home/ProductSection/DealsOfTheDay_Pages/TopRating/Top_Rating";
+import Computers from "./components/Home/ProductSection/shop_By_Categories/Computers/Computers";
+import ProductSection_01 from "./components/Home/ProductSection/ProductSection_01";
+import ProductSection_02 from "./components/Home/ProductSection/ProductSection_02";
+import ProductSection_03 from "./components/Home/ProductSection/ProductSection_03";
+import ProductSection_04 from "./components/Home/ProductSection/ProductSection_04";
+import ProductSection_05 from "./components/Home/ProductSection/ProductSection_05";
+import ProductSection_06 from "./components/Home/ProductSection/ProductSection_06";
+import BenefitsPackage from "./components/Home/BenefitsPackage/BenefitsPackage";
+import ForgotPassword from "./components/Pages/ForgotPassword/ForgotPassword";
+import BannerSection from "./components/Home/BannerSection/BannerSection";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "../src/components/context/ThemeContext";
+import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import Contacts from "./components/Pages/Contacts/Contacts";
-
-import "./i18n";
+import Register from "./components/Pages/Register/Register";
+import ScrollManager from "./ScrollManager/ScrollManager";
+import Carousel from "./components/Home/Carousel/Carousel";
 import SignOut from "./components/Pages/SignOut/SignOut";
-import ForgotPassword from "./components/Pages/ForgotPassword/ForgotPassword";
-import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
+import SignIn from "./components/Pages/SignIn/SignIn";
+import Navbar_01 from "./components/Navbar/Navbar_01";
+import Navbar_02 from "./components/Navbar/Navbar_02";
+import Navbar_03 from "./components/Navbar/Navbar_03";
+import Footer from "./components/Home/Footer/Footer";
+import Faq from "./components/Shadcn-components/Faq";
+import Cart from "./components/Pages/Cart/Cart";
+import Shop from "./components/Pages/Shop/Shop";
+import Blog from "./components/Pages/Blog/Blog";
+import React, { useState } from "react";
+import "./i18n";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
@@ -96,7 +89,8 @@ const App = () => {
           />
         )}
 
-        <div className="min-h-screen bg-white dark:bg-darkColor transition-colors duration-200 -z-10">
+        <div className="min-h-screen bg-white transition-colors duration-200 -z-10
+                        dark:bg-darkColor">
           <Router>
             <ScrollManager />
             {/* Navigation Components */}

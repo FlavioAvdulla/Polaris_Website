@@ -1,5 +1,5 @@
+import { useTranslation } from 'react-i18next';
 import * as React from "react";
-
 import {
   Select,
   SelectContent,
@@ -9,9 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-// Translation
-import { useTranslation } from 'react-i18next';
 
 export function SearchBarSelect() {
 

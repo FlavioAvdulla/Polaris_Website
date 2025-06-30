@@ -1,12 +1,7 @@
+import { IoIosCloseCircle } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
 import React, { useState } from "react";
 import axios from "axios";
-import Google_Logo from "../../../assets/images/Google_Logo.svg";
-
-// React Icons
-import { IoIosCloseCircle } from "react-icons/io";
-
-// Translation
-import { useTranslation } from 'react-i18next';
 
 interface RegisterProps {
   setShowSignIn: (value: boolean) => void;

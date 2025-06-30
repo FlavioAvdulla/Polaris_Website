@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import * as React from "react";
 import {
   Select,
@@ -8,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useTranslation } from 'react-i18next';
 
 export function SelectLanguage() {
   const { i18n } = useTranslation();
