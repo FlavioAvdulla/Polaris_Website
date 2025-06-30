@@ -220,23 +220,22 @@ const Navbar_02: React.FC<NavbarProps> = ({
         </div>
         
         <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full">
-          <input 
-            className="w-[600px] h-[100%] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
+          <input className="w-[600px] h-[100%] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
                        focus:ring-0 focus:bg-white font-camptonBook bg-white
                        dark:bg-transparent dark:border-gray-600 dark:text-white
 
                        xs:w-full xs:rounded-tl-md xs:rounded-bl-md
                        sm:rounded-tl-none sm:rounded-bl-none
                        lg:w-[300px] xl:w-[600px]"
-            type="text"
-            id="search"
-            name="search"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            onKeyDown={(e) => e.key === 'Escape' && clearSearch()}
-            placeholder={t('navbar_02.searchPlaceholder')}
-            autoComplete="off"
-            aria-label="Search products"/>
+                 type="text"
+                 id="search"
+                 name="search"
+                 value={searchQuery}
+                 onChange={handleSearchChange}
+                 onKeyDown={(e) => e.key === 'Escape' && clearSearch()}
+                 placeholder={t('navbar_02.searchPlaceholder')}
+                 autoComplete="off"
+                 aria-label="Search products"/>
           
           {searchQuery && (
             <button
@@ -249,12 +248,11 @@ const Navbar_02: React.FC<NavbarProps> = ({
             </button>
           )}
           
-          <button 
-            type="submit"
-            className="bg-white h-[100%] text-primary text-[30px] p-3 border-primary border-[1px] border-l-0
-                       items-center justify-center flex rounded-tr-md rounded-br-md
-                       dark:bg-transparent dark:border-gray-600 dark:text-white"
-            aria-label="Submit search">
+          <button className="bg-white h-[100%] text-primary text-[30px] p-3 border-primary border-[1px] border-l-0
+                             items-center justify-center flex rounded-tr-md rounded-br-md
+                             dark:bg-transparent dark:border-gray-600 dark:text-white"
+                  type="submit"
+                  aria-label="Submit search">
             <IoIosSearch className="text-[20px]"/>
           </button>
         </form>
@@ -288,16 +286,15 @@ const Navbar_02: React.FC<NavbarProps> = ({
                                     lg:w-[100%]
                                     xl:w-[80%]">
                       <div className="flex gap-3 items-center">
-                        <img 
-                          src={`http://localhost:4004/images/${product.image}`}
-                          alt={product.title}
-                          className="aspect-1 object-contain
-                          
-                                     xs:w-[30px]
-                                     md:w-[40px]
-                                     lg:w-[60px]"
-                          onError={handleImageError}
-                          loading="lazy"/>
+                        <img src={`http://localhost:4004/images/${product.image}`}
+                             alt={product.title}
+                             className="aspect-1 object-contain
+                              
+                                       xs:w-[30px]
+                                       md:w-[40px]
+                                       lg:w-[60px]"
+                             onError={handleImageError}
+                             loading="lazy"/>
                         <h4 className="font-camptonBook dark:text-white
 
                                        xs:text-[8px]
