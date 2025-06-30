@@ -30,17 +30,17 @@ const PRODUCT_MAP: Record<string, {
     name: "PS VR HEADSET",
   },
   // Id - 49
-  "productSection_01.title_03": {
+  "product_03.title": {
     id: "49",
     name: "SONY PLAYSTATION 5 PRO",
   },
   // Id - 50
-  "productSection_01.title_02": {
+  "product_04.title": {
     id: "50",
     name: "GEFORCE RTX 3090 24GB",
   },
   // Id - 51
-  "productSection_01.title_01": {
+  "product_05.title": {
     id: "51",
     name: "SONY HEADSET WH-1000XM5",
   },

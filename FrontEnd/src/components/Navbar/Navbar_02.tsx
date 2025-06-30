@@ -16,13 +16,13 @@ import axios from 'axios';
 
 interface Product {
   _id: string;
-  id?: string;
+  // id?: string;
   image: string;
   title: string;
   normalPrice: string;
-  offerPrice?: string;
-  rating: number;
-  quantity?: number;
+  offerPrice: string;
+  // rating: number;
+  // quantity?: number;
 }
 
 interface NavbarProps {
@@ -190,38 +190,44 @@ const Navbar_02: React.FC<NavbarProps> = ({
   };
 
   return (
-    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between xs:gap-5 lg:gap-0">
+    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
+    
+                    xs:gap-5
+                    lg:gap-0">
       {/* Logo */}
-      <img 
-        className="w-[110px] cursor-pointer xs:hidden sm:w-[80px] md:flex xl:w-[100px]"
-        src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo} 
-        alt="Polaris Logo" 
-        onClick={handleLogoClick}
-        loading="lazy"
-      />
+      <img className="w-[110px] cursor-pointer xs:hidden sm:w-[80px] md:flex xl:w-[100px]"
+           src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo} 
+           alt="Polaris Logo" 
+           onClick={handleLogoClick}
+           loading="lazy"/>
         
-      <img 
-        className="cursor-pointer xs:flex xs:h-[25px] md:hidden"
-        src={theme === "dark" ? Polaris_Logo_Icon_Secondary_01 : Polaris_Logo_Icon} 
-        alt="Polaris Logo" 
-        onClick={handleLogoClick}
-        loading="lazy"
-      />
+      <img className="cursor-pointer
+        
+                      xs:flex xs:h-[25px]
+                      md:hidden"
+           src={theme === "dark" ? Polaris_Logo_Icon_Secondary_01 : Polaris_Logo_Icon} 
+           alt="Polaris Logo" 
+           onClick={handleLogoClick}
+           loading="lazy"/>
 
       {/* Search Bar */}
       <div className="relative w-auto h-full flex" ref={searchRef}>
-        <div className="w-auto h-auto xs:hidden sm:flex">
+        <div className="w-auto h-auto
+        
+                        xs:hidden
+                        sm:flex">
           <SearchBarSelect />
         </div>
         
         <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full">
           <input 
             className="w-[600px] h-[100%] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
-                      focus:ring-0 focus:bg-white font-camptonBook bg-white
-                      dark:bg-transparent dark:border-gray-600 dark:text-white
-                      xs:w-full xs:rounded-tl-md xs:rounded-bl-md
-                      sm:rounded-tl-none sm:rounded-bl-none
-                      lg:w-[300px] xl:w-[600px]"
+                       focus:ring-0 focus:bg-white font-camptonBook bg-white
+                       dark:bg-transparent dark:border-gray-600 dark:text-white
+
+                       xs:w-full xs:rounded-tl-md xs:rounded-bl-md
+                       sm:rounded-tl-none sm:rounded-bl-none
+                       lg:w-[300px] xl:w-[600px]"
             type="text"
             id="search"
             name="search"
@@ -230,8 +236,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
             onKeyDown={(e) => e.key === 'Escape' && clearSearch()}
             placeholder={t('navbar_02.searchPlaceholder')}
             autoComplete="off"
-            aria-label="Search products"
-          />
+            aria-label="Search products"/>
           
           {searchQuery && (
             <button
@@ -239,19 +244,17 @@ const Navbar_02: React.FC<NavbarProps> = ({
               onClick={clearSearch}
               className="absolute right-12 text-gray-400 hover:text-gray-600
                         dark:text-gray-300 dark:hover:text-gray-100"
-              aria-label="Clear search"
-            >
-              <IoIosClose size={24} />
+              aria-label="Clear search">
+              <IoIosClose className="text-[20px]" />
             </button>
           )}
           
           <button 
             type="submit"
             className="bg-white h-[100%] text-primary text-[30px] p-3 border-primary border-[1px] border-l-0
-                      items-center justify-center flex rounded-tr-md rounded-br-md
-                      dark:bg-transparent dark:border-gray-600 dark:text-white"
-            aria-label="Submit search"
-          >
+                       items-center justify-center flex rounded-tr-md rounded-br-md
+                       dark:bg-transparent dark:border-gray-600 dark:text-white"
+            aria-label="Submit search">
             <IoIosSearch className="text-[20px]"/>
           </button>
         </form>
@@ -259,38 +262,48 @@ const Navbar_02: React.FC<NavbarProps> = ({
         {/* Search Results Dropdown */}
         {searchQuery.length > 0 && (
           <div className="w-full absolute top-full left-0 right-0 z-50 mt-1 bg-white shadow-lg rounded-md
-                        max-h-[400px] overflow-y-auto border border-gray-200
-                        dark:bg-gray-800 dark:border-gray-700"
-               aria-live="polite"
-          >
+                          max-h-[400px] overflow-y-auto border border-gray-200
+                          dark:bg-gray-800 dark:border-gray-700"
+               aria-live="polite">
             {isSearching && searchResults.length === 0 ? (
-              <div className="p-4 text-center text-gray-500 dark:text-gray-400">
+              <div className="p-4 text-center text-gray-500
+                              dark:text-gray-400">
                 {t('navbar_02.searching')}
               </div>
             ) : searchError ? (
-              <div className="p-4 text-center text-red-500 dark:text-red-400">
+              <div className="p-4 text-center text-red-500
+                              dark:text-red-400">
                 {searchError}
               </div>
             ) : searchResults.length > 0 ? (
               <ul>
                 {searchResults.map((product) => (
                   <li
-                    key={`${product.id}-${product.title}`}
+                    key={`${product._id}-${product.title}`}
                     className="w-[100%] p-3 border-b border-gray-300 hover:bg-gray-100 cursor-pointer
                               dark:border-gray-600 dark:hover:bg-gray-700"
-                    onClick={() => handleProductClick(product.id || product._id)}
-                  >
-                    <div className="flex justify-between items-center mx-auto lg:w-[100%] xl:w-[80%]">
+                    onClick={() => handleProductClick(product._id || product._id)}>
+                    <div className="flex justify-between items-center mx-auto
+
+                                    lg:w-[100%]
+                                    xl:w-[80%]">
                       <div className="flex gap-3 items-center">
                         <img 
                           src={`http://localhost:4004/images/${product.image}`}
                           alt={product.title}
-                          className="aspect-1 object-contain xs:w-[30px] md:w-[40px] lg:w-[60px]"
+                          className="aspect-1 object-contain
+                          
+                                     xs:w-[30px]
+                                     md:w-[40px]
+                                     lg:w-[60px]"
                           onError={handleImageError}
-                          loading="lazy"
-                        />
+                          loading="lazy"/>
                         <h4 className="font-camptonBook dark:text-white
-                                     xs:text-[8px] md:text-[10px] lg:text-[15px] xl:text-[20px]">
+
+                                       xs:text-[8px]
+                                       md:text-[10px]
+                                       lg:text-[15px]
+                                       xl:text-[20px]">
                           {product.title}
                         </h4>
                       </div>
@@ -298,8 +311,12 @@ const Navbar_02: React.FC<NavbarProps> = ({
                       <div className="flex items-center gap-4">
                         {/* Offer Price (highlighted) */}
                         {product.offerPrice && (
-                          <p className="font-camptonBold text-primary dark:text-secondary_01
-                                      xs:text-[23px] lg:text-[15px] xl:text-[23px]">
+                          <p className="font-camptonBold text-primary
+                                        dark:text-secondary_01
+                                        
+                                        xs:text-[23px]
+                                        lg:text-[15px]
+                                        xl:text-[23px]">
                             {t(product.offerPrice)}
                           </p>
                         )}
@@ -308,7 +325,9 @@ const Navbar_02: React.FC<NavbarProps> = ({
                         <div className="flex w-auto relative items-center">
                           <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
                           <p className="text-gray-800 dark:text-white
-                                      lg:text-[12px] xl:text-[17px]">
+
+                                        lg:text-[12px]
+                                        xl:text-[17px]">
                             {t(product.normalPrice)}
                           </p>
                         </div>
@@ -318,7 +337,8 @@ const Navbar_02: React.FC<NavbarProps> = ({
                 ))}
               </ul>
             ) : searchQuery.length > 1 ? (
-              <div className="p-4 text-center text-gray-500 dark:text-gray-400">
+              <div className="p-4 text-center text-gray-500
+                              dark:text-gray-400">
                 {t('navbar_02.noResults')}
               </div>
             ) : null}
@@ -327,19 +347,36 @@ const Navbar_02: React.FC<NavbarProps> = ({
       </div>
 
       {/* User Controls */}
-      <div className="w-auto h-[100%] flex xs:gap-3 sm:gap-5">
+      <div className="w-auto h-[100%] flex
+      
+                      xs:gap-3
+                      sm:gap-5">
         {/* User Account */}
         <button 
-          className="flex items-center justify-center cursor-pointer xs:gap-0 md:gap-3"
+          className="flex items-center justify-center cursor-pointer
+          
+                     xs:gap-0
+                     md:gap-3"
           onClick={isSignedIn ? handleSignOutClick : handleSignInClick}
           aria-label={isSignedIn ? "Sign out" : "Sign in"}
         >
-          <i><PiUser className="dark:text-white xs:text-[17px] md:text-[28px]"/></i>
+          <i><PiUser className="dark:text-white
+          
+                                xs:text-[17px]
+                                md:text-[28px]"/></i>
           <div className="flex flex-col">
-            <p className="font-camptonBook text-[13px] dark:text-white xs:hidden lg:flex">
+            <p className="font-camptonBook text-[13px]
+                          dark:text-white
+                          
+                          xs:hidden 
+                          lg:flex">
               {isSignedIn ? t('navbar_02.signedIn') : t('navbar_02.signIn')}
             </p>
-            <p className="font-camptonMedium text-[13px] dark:text-white xs:hidden md:flex">
+            <p className="font-camptonMedium text-[13px]
+                        dark:text-white
+                        
+                        xs:hidden
+                        md:flex">
               {t('navbar_02.account')}
             </p>
           </div>
@@ -350,15 +387,23 @@ const Navbar_02: React.FC<NavbarProps> = ({
           <button 
             onClick={handleFavouritesOpen}
             aria-label="Favorites"
-            className="cursor-pointer"
-          >
-            <SlHeart className="dark:text-white xs:text-[17px] md:text-[28px]" />
+            className="cursor-pointer">
+            <SlHeart className="dark:text-white
+            
+                                xs:text-[17px]
+                                md:text-[28px]" />
           </button>
           {favouriteQuantity > 0 && (
             <div className="absolute top-0 ml-6 mt-1 flex rounded-full bg-primary items-center justify-center
-                            dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
-                            sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
-              <p className="text-white xs:text-[8px] sm:text-[10px]">
+                            dark:bg-secondary_01
+                            
+                            xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                            sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
+                            md:ml-6 md:mt-1">
+              <p className="text-white
+              
+                            xs:text-[8px]
+                            sm:text-[10px]">
                 {favouriteQuantity}
               </p>
             </div>
@@ -370,15 +415,23 @@ const Navbar_02: React.FC<NavbarProps> = ({
           <button 
             onClick={handleCartOpen}
             aria-label="Shopping cart"
-            className="cursor-pointer"
-          >
-            <PiShoppingCartLight className="dark:text-white xs:text-[17px] md:text-[28px]" />
+            className="cursor-pointer">
+            <PiShoppingCartLight className="dark:text-white
+            
+                                            xs:text-[17px]
+                                            md:text-[28px]" />
           </button>
           {cartItemCount > 0 && (
             <div className="absolute top-0 flex rounded-full bg-primary items-center justify-center
-                            dark:bg-secondary_01 xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
-                            sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1 md:ml-6 md:mt-1">
-              <p className="text-white xs:text-[8px] sm:text-[10px]">
+                            dark:bg-secondary_01
+                            
+                            xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
+                            sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
+                            md:ml-6 md:mt-1">
+              <p className="text-white
+              
+                            xs:text-[8px]
+                            sm:text-[10px]">
                 {cartItemCount}
               </p>
             </div>
@@ -387,10 +440,18 @@ const Navbar_02: React.FC<NavbarProps> = ({
 
         {/* Cart Total */}
         <div className="flex-col justify-center xs:hidden md:flex">
-          <p className="font-camptonBook dark:text-white xs:text-[10px] sm:text-[13px]">
+          <p className="font-camptonBook
+                        dark:text-white
+                        
+                        xs:text-[10px]
+                        sm:text-[13px]">
             {t('navbar_02.total')}
           </p>
-          <p className="font-camptonMedium dark:text-white xs:text-[10px] sm:text-[13px]">
+          <p className="font-camptonMedium
+                        dark:text-white
+                        
+                        xs:text-[10px]
+                        sm:text-[13px]">
             ${subtotal.toFixed(2)}
           </p>
         </div>
