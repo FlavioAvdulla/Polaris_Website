@@ -281,7 +281,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                     className="w-[100%] p-3 border-b border-gray-300 hover:bg-gray-100 cursor-pointer
                               dark:border-gray-600 dark:hover:bg-gray-700"
                     onClick={() => handleProductClick(product._id || product._id)}>
-                    <div className="flex justify-between items-center mx-auto bg-slate-500
+                    <div className="flex justify-between items-center mx-auto
 
                                     xs:w-auto
                                     sm:w-[90%]
