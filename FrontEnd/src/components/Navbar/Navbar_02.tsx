@@ -244,7 +244,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
               className="absolute right-12 text-gray-400 hover:text-gray-600
                         dark:text-gray-300 dark:hover:text-gray-100"
               aria-label="Clear search">
-              <IoIosClose className="text-[20px]" />
+              <IoIosClose className="text-[24px]" />
             </button>
           )}
           
@@ -281,52 +281,70 @@ const Navbar_02: React.FC<NavbarProps> = ({
                     className="w-[100%] p-3 border-b border-gray-300 hover:bg-gray-100 cursor-pointer
                               dark:border-gray-600 dark:hover:bg-gray-700"
                     onClick={() => handleProductClick(product._id || product._id)}>
-                    <div className="flex justify-between items-center mx-auto
+                    <div className="flex justify-between items-center mx-auto bg-slate-500
 
+                                    xs:w-auto
+                                    sm:w-[90%]
+                                    md:w-[100%]
                                     lg:w-[100%]
                                     xl:w-[80%]">
-                      <div className="flex gap-3 items-center">
+                    
                         <img src={`http://localhost:4004/images/${product.image}`}
                              alt={product.title}
                              className="aspect-1 object-contain
                               
                                        xs:w-[30px]
-                                       md:w-[40px]
-                                       lg:w-[60px]"
+                                       md:w-[55px]
+                                       lg:w-[60px] lg:mr-3
+                                       xl:mr-0"
                              onError={handleImageError}
                              loading="lazy"/>
-                        <h4 className="font-camptonBook dark:text-white
+                      
+                      {/* ============= Product Infos ============= */}
+                      <div className="flex w-auto
+                                      
+                                      xs:flex-col xs:pl-1 xs:items-start
+                                      md:pl-0
+                                      lg:flex-row lg:items-center lg:gap-[35px]
+                                      xl:gap-[40px]">
+                          <h4 className="font-camptonBook dark:text-white
 
-                                       xs:text-[8px]
-                                       md:text-[10px]
-                                       lg:text-[15px]
-                                       xl:text-[20px]">
-                          {product.title}
-                        </h4>
-                      </div>
-                      {/* ============= Price ============= */}
-                      <div className="flex items-center gap-4">
-                        {/* Offer Price (highlighted) */}
+                                          xs:text-[8px]
+                                          md:text-[13px]
+                                          lg:text-[15px]
+                                          xl:text-[20px]">
+                            {product.title}
+                          </h4>
+                          {/* ============= Product Price ============= */}
+                          <div className="flex
+                          
+                                          xs:gap-2 xs:flex-row
+                                           
+                                          lg:flex-row lg:gap-4">
                         {product.offerPrice && (
                           <p className="font-camptonBold text-primary
                                         dark:text-secondary_01
                                         
-                                        xs:text-[23px]
-                                        lg:text-[15px]
+                                        xs:text-[11px]
+                                        md:text-[18px]
+                                        lg:text-[20px]
                                         xl:text-[23px]">
                             {t(product.offerPrice)}
                           </p>
                         )}
                         
                         {/* Normal Price (with strikethrough) */}
-                        <div className="flex w-auto relative items-center">
+                        <div className="flex w-fit relative items-center">
                           <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
                           <p className="text-gray-800 dark:text-white
 
-                                        lg:text-[12px]
+                                        xs:text-[9px]
+                                        md:text-[14px]
+                                        lg:text-[15px]
                                         xl:text-[17px]">
                             {t(product.normalPrice)}
                           </p>
+                          </div>
                         </div>
                       </div>
                     </div>
