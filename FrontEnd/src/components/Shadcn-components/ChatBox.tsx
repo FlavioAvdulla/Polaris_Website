@@ -6,7 +6,8 @@ import {
 } from "@/components/ui/popover";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { MdSend } from "react-icons/md";
-import Polaris_Logo_White_Icon from "../../assets/images/Polaris_Logo_White_Icon.svg";
+// import Polaris_Logo_White_Icon from "../../assets/images/Polaris_Logo_White_Icon.svg";
+import Chat_Girl from "../../assets/images/Chat_Girl.jpg";
 // import Polaris_Logo_Icon_Secondary_01 from "../../assets/images/Polaris_Logo_Icon_Secondary_01.svg";
 import { useTheme } from "../../components/context/ThemeContext";
 
@@ -24,10 +25,10 @@ const ChatBox = () => {
         </PopoverTrigger>
         <PopoverContent className="mr-10 mb-3">
           <div className="flex w-[100%] h-auto p-4 rounded-lg rounded-bl-none rounded-br-none bg-primary">
-            <div className="flex items-center justify-center p-1 bg-white w-[50px] aspect-1 rounded-full">
+            <div className="flex items-center justify-center w-[50px] aspect-1 rounded-full">
               <img
-                className="cursor-pointer w-[20px]"
-                src={Polaris_Logo_White_Icon}
+                className="cursor-pointer w-[100%] rounded-full"
+                src={Chat_Girl}
                 alt="Polaris Logo"
                 loading="lazy"
               />
