@@ -42,6 +42,7 @@ import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import React, { useState } from "react";
 import "./i18n";
+import ChatBox from "./components/Shadcn-components/ChatBox";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
@@ -54,7 +55,8 @@ const App = () => {
   const [favouriteQuantity, setFavouriteQuantity] = useState(0);
 
   return (
-    <ThemeProvider> {/* Wrap entire app with ThemeProvider */}
+    <ThemeProvider>
+      <ChatBox/> {/* Wrap entire app with ThemeProvider */}
       <>
         {showSignIn && (
           <SignIn
@@ -101,9 +103,9 @@ const App = () => {
               favouriteQuantity={favouriteQuantity}
               setShowSignIn={setShowSignIn}
               isSignedIn={isSignedIn}
-              setShowSignOut={setShowSignOut}
-            />
+              setShowSignOut={setShowSignOut}/>
             <Navbar_03 />
+            
             {/* Main Routes */}
             <Routes>
               <Route path="/Product_01" element={<Product_01 />} />
@@ -142,14 +144,10 @@ const App = () => {
                     <BannerSection />
                     <ProductSection_06 />
                   </>
-                }
-              >
+                }>
                 {/* Nested Routes for ProductSection_02 */}
                 <Route index element={<Latest_Products />} />
-                <Route
-                  path="deals/latest-products"
-                  element={<Latest_Products />}
-                />
+                <Route path="deals/latest-products" element={<Latest_Products />}/>
                 <Route path="deals/top-rating" element={<Top_Rating />} />
                 <Route path="deals/best-selling" element={<Best_Selling />} />
               </Route>

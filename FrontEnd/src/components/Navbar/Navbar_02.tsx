@@ -1,28 +1,26 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import { useTheme } from "../../components/context/ThemeContext";
-import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
-import Polaris_Logo_Secondary from "../../assets/images/Polaris_Logo_Secondary_01.svg";
 import Polaris_Logo_Icon_Secondary_01 from "../../assets/images/Polaris_Logo_Icon_Secondary_01.svg";
+import Polaris_Logo_Secondary_01 from "../../assets/images/Polaris_Logo_Secondary_01.svg";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Polaris_Logo_Icon from "../../assets/images/Polaris_Logo_Icon.svg";
 import { SearchBarSelect } from "../Shadcn-components/SearchBarSelect";
-import { IoIosSearch, IoIosClose } from "react-icons/io";
-import { PiUser, PiShoppingCartLight } from "react-icons/pi";
-import { SlHeart } from "react-icons/sl";
 import { cartList } from "../Home/ProductSection/ProductSection";
+import { useTheme } from "../../components/context/ThemeContext";
+import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
+import { PiUser, PiShoppingCartLight } from "react-icons/pi";
+import { useNavigate, useLocation } from "react-router-dom";
+import { IoIosSearch, IoIosClose } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
+import { SlHeart } from "react-icons/sl";
 import { debounce } from "lodash";
 import axios from 'axios';
 
 interface Product {
   _id: string;
-  // id?: string;
+  id: string;
   image: string;
   title: string;
   normalPrice: string;
   offerPrice: string;
-  // rating: number;
-  // quantity?: number;
 }
 
 interface NavbarProps {
@@ -62,6 +60,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
   const [isSearching, setIsSearching] = useState(false);
   const [searchError, setSearchError] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState("/SignIn");
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   const cartItemCount = useMemo(() => 
     cartList.reduce((sum) => sum + cartQuantity, 0), 
@@ -75,6 +74,28 @@ const Navbar_02: React.FC<NavbarProps> = ({
     }, 0),
     [cartQuantity]
   );
+
+  const fetchAllProducts = useCallback(async () => {
+    setIsSearching(true);
+    setSearchError(null);
+    
+    try {
+      const response = await axios.get(`${API_BASE_URL}/products`);
+      
+      const mappedResults = response.data.map((product: Product) => ({
+        ...product,
+        id: product.id || product._id
+      }));
+
+      setSearchResults(mappedResults);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+      setSearchError(t('navbar_02.fetchError') || "Failed to fetch products");
+      setSearchResults([]);
+    } finally {
+      setIsSearching(false);
+    }
+  }, [t]);
 
   const handleProductClick = useCallback((id: string) => {
     const route = PRODUCT_ROUTE_MAP[id];
@@ -108,15 +129,10 @@ const Navbar_02: React.FC<NavbarProps> = ({
       
       const mappedResults = response.data.map((product: Product) => ({
         ...product,
-        id: product.id || product._id // Use the ID already mapped by the backend
+        id: product.id || product._id
       }));
 
-      const uniqueResults = mappedResults.reduce((acc: Product[], current: Product) => {
-        const existingItem = acc.find(item => item.id === current.id);
-        return existingItem ? acc : [...acc, current];
-      }, []);
-      
-      setSearchResults(uniqueResults);
+      setSearchResults(mappedResults);
     } catch (error) {
       console.error("Search error:", error);
       setSearchError(t('navbar_02.searchError') || "Failed to perform search");
@@ -145,6 +161,17 @@ const Navbar_02: React.FC<NavbarProps> = ({
     setSearchQuery("");
     setSearchResults([]);
     setSearchError(null);
+  }, []);
+
+  const handleSearchFocus = useCallback(() => {
+    setIsSearchFocused(true);
+    if (searchQuery.length === 0) {
+      fetchAllProducts();
+    }
+  }, [fetchAllProducts, searchQuery.length]);
+
+  const handleSearchBlur = useCallback(() => {
+    setTimeout(() => setIsSearchFocused(false), 200);
   }, []);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -190,21 +217,15 @@ const Navbar_02: React.FC<NavbarProps> = ({
   };
 
   return (
-    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
-    
-                    xs:gap-5
-                    lg:gap-0">
+    <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between xs:gap-5 lg:gap-0">
       {/* Logo */}
       <img className="w-[110px] cursor-pointer xs:hidden sm:w-[80px] md:flex xl:w-[100px]"
-           src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo} 
+           src={theme === "dark" ? Polaris_Logo_Secondary_01 : Polaris_Logo} 
            alt="Polaris Logo" 
            onClick={handleLogoClick}
            loading="lazy"/>
         
-      <img className="cursor-pointer
-        
-                      xs:flex xs:h-[25px]
-                      md:hidden"
+      <img className="cursor-pointer xs:flex xs:h-[25px] md:hidden"
            src={theme === "dark" ? Polaris_Logo_Icon_Secondary_01 : Polaris_Logo_Icon} 
            alt="Polaris Logo" 
            onClick={handleLogoClick}
@@ -212,30 +233,29 @@ const Navbar_02: React.FC<NavbarProps> = ({
 
       {/* Search Bar */}
       <div className="relative w-auto h-full flex" ref={searchRef}>
-        <div className="w-auto h-auto
-        
-                        xs:hidden
-                        sm:flex">
+        <div className="w-auto h-auto xs:hidden sm:flex">
           <SearchBarSelect />
         </div>
         
         <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full">
-          <input className="w-[600px] h-[100%] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
+          <input 
+            className="w-[600px] h-[100%] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
                        focus:ring-0 focus:bg-white font-camptonBook bg-white
                        dark:bg-transparent dark:border-gray-600 dark:text-white
-
                        xs:w-full xs:rounded-tl-md xs:rounded-bl-md
                        sm:rounded-tl-none sm:rounded-bl-none
                        lg:w-[300px] xl:w-[600px]"
-                 type="text"
-                 id="search"
-                 name="search"
-                 value={searchQuery}
-                 onChange={handleSearchChange}
-                 onKeyDown={(e) => e.key === 'Escape' && clearSearch()}
-                 placeholder={t('navbar_02.searchPlaceholder')}
-                 autoComplete="off"
-                 aria-label="Search products"/>
+            type="text"
+            id="search"
+            name="search"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            onFocus={handleSearchFocus}
+            onBlur={handleSearchBlur}
+            onKeyDown={(e) => e.key === 'Escape' && clearSearch()}
+            placeholder={t('navbar_02.searchPlaceholder')}
+            autoComplete="off"
+            aria-label="Search products"/>
           
           {searchQuery && (
             <button
@@ -258,92 +278,85 @@ const Navbar_02: React.FC<NavbarProps> = ({
         </form>
 
         {/* Search Results Dropdown */}
-        {searchQuery.length > 0 && (
+        {(isSearchFocused || searchQuery.length > 0) && (
           <div className="w-full absolute top-full left-0 right-0 z-50 mt-1 bg-white shadow-lg rounded-md
                           max-h-[400px] overflow-y-auto border border-gray-200
                           dark:bg-gray-800 dark:border-gray-700"
                aria-live="polite">
+            <div className="p-2 border-b border-gray-200 dark:border-gray-700">
+              <h3 className="font-camptonMedium dark:text-white">
+                {searchQuery.length > 0 ? t('navbar_02.searchResults') : t('navbar_02.allProducts')}
+              </h3>
+            </div>
+            
             {isSearching && searchResults.length === 0 ? (
-              <div className="p-4 text-center text-gray-500
-                              dark:text-gray-400">
+              <div className="p-4 text-center text-gray-500 dark:text-gray-400">
                 {t('navbar_02.searching')}
               </div>
             ) : searchError ? (
-              <div className="p-4 text-center text-red-500
-                              dark:text-red-400">
+              <div className="p-4 text-center text-red-500 dark:text-red-400">
                 {searchError}
               </div>
             ) : searchResults.length > 0 ? (
               <ul>
                 {searchResults.map((product) => (
                   <li
-                    key={`${product._id}-${product.title}`}
+                    key={`${product.id}-${product.title}`}
                     className="w-[100%] p-3 border-b border-gray-300 hover:bg-gray-100 cursor-pointer
                               dark:border-gray-600 dark:hover:bg-gray-700"
-                    onClick={() => handleProductClick(product._id || product._id)}>
+                    onClick={() => handleProductClick(product.id)}>
                     <div className="flex justify-between items-center mx-auto
-
                                     xs:w-auto
                                     sm:w-[90%]
                                     md:w-[100%]
                                     lg:w-[100%]
                                     xl:w-[80%]">
-                    
-                        <img src={`http://localhost:4004/images/${product.image}`}
-                             alt={product.title}
-                             className="aspect-1 object-contain
-                              
+                      <img src={`http://localhost:4004/images/${product.image}`}
+                           alt={product.title}
+                           className="aspect-1 object-contain
                                         xs:w-[30px]
                                         md:w-[55px]
                                         lg:w-[60px] lg:mr-3
                                         xl:mr-0"
-                             onError={handleImageError}
-                             loading="lazy"/>
+                           onError={handleImageError}
+                           loading="lazy"/>
                       
-                      {/* ============= Product Infos ============= */}
                       <div className="flex w-auto
-                                      
                                       xs:flex-col xs:pl-1 xs:items-start
                                       md:pl-0
                                       lg:flex-row lg:items-center lg:gap-[35px]
                                       xl:gap-[40px]">
-                          <h4 className="font-camptonBook dark:text-white
-
-                                         xs:text-[8px]
-                                         md:text-[13px]
-                                         lg:text-[15px]
-                                         xl:text-[20px]">
-                            {product.title}
-                          </h4>
-                          {/* ============= Product Price ============= */}
-                          <div className="flex
-                          
-                                          xs:gap-2 xs:flex-row
-                                           
-                                          lg:flex-row lg:gap-4">
-                        {product.offerPrice && (
-                          <p className="font-camptonBold text-primary
-                                        dark:text-secondary_01
-                                        
-                                        xs:text-[11px]
-                                        md:text-[18px]
-                                        lg:text-[20px]
-                                        xl:text-[23px]">
-                            {t(product.offerPrice)}
-                          </p>
-                        )}
+                        <h4 className="font-camptonBook dark:text-white
+                                       xs:text-[8px]
+                                       md:text-[13px]
+                                       lg:text-[15px]
+                                       xl:text-[20px]">
+                          {product.title}
+                        </h4>
                         
-                        {/* Normal Price (with strikethrough) */}
-                        <div className="flex w-fit relative items-center">
-                          <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
-                          <p className="text-gray-800 dark:text-white
-
-                                        xs:text-[9px]
-                                        md:text-[14px]
-                                        lg:text-[15px]
-                                        xl:text-[17px]">
-                            {t(product.normalPrice)}
-                          </p>
+                        <div className="flex
+                                        xs:gap-2 xs:flex-row
+                                        lg:flex-row lg:gap-4">
+                          {product.offerPrice && (
+                            <p className="font-camptonBold text-primary
+                                          dark:text-secondary_01
+                                          xs:text-[11px]
+                                          md:text-[18px]
+                                          lg:text-[20px]
+                                          xl:text-[23px]">
+                              {product.offerPrice}
+                            </p>
+                          )}
+                          
+                          <div className="flex w-fit relative items-center">
+                            <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
+                            <p className="text-gray-800 dark:text-white
+                                          xs:text-[9px]
+                                          md:text-[14px]
+                                          lg:text-[15px]
+                                          xl:text-[17px]">
+                              {product.normalPrice}
+                            </p>
                           </div>
                         </div>
                       </div>
@@ -352,8 +365,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                 ))}
               </ul>
             ) : searchQuery.length > 1 ? (
-              <div className="p-4 text-center text-gray-500
-                              dark:text-gray-400">
+              <div className="p-4 text-center text-gray-500 dark:text-gray-400">
                 {t('navbar_02.noResults')}
               </div>
             ) : null}
@@ -362,35 +374,18 @@ const Navbar_02: React.FC<NavbarProps> = ({
       </div>
 
       {/* User Controls */}
-      <div className="w-auto h-[100%] flex
-      
-                      xs:gap-3
-                      sm:gap-5">
+      <div className="w-auto h-[100%] flex xs:gap-3 sm:gap-5">
         {/* User Account */}
         <button 
-          className="flex items-center justify-center cursor-pointer
-          
-                     xs:gap-0
-                     md:gap-3"
+          className="flex items-center justify-center cursor-pointer xs:gap-0 md:gap-3"
           onClick={isSignedIn ? handleSignOutClick : handleSignInClick}
           aria-label={isSignedIn ? "Sign out" : "Sign in"}>
-          <i><PiUser className="dark:text-white
-          
-                                xs:text-[17px]
-                                md:text-[28px]"/></i>
+          <i><PiUser className="dark:text-white xs:text-[17px] md:text-[28px]"/></i>
           <div className="flex flex-col">
-            <p className="font-camptonBook text-[13px]
-                          dark:text-white
-                          
-                          xs:hidden 
-                          lg:flex">
+            <p className="font-camptonBook text-[13px] dark:text-white xs:hidden lg:flex">
               {isSignedIn ? t('navbar_02.signedIn') : t('navbar_02.signIn')}
             </p>
-            <p className="font-camptonMedium text-[13px]
-                        dark:text-white
-                        
-                        xs:hidden
-                        md:flex">
+            <p className="font-camptonMedium text-[13px] dark:text-white xs:hidden md:flex">
               {t('navbar_02.account')}
             </p>
           </div>
@@ -402,22 +397,15 @@ const Navbar_02: React.FC<NavbarProps> = ({
             onClick={handleFavouritesOpen}
             aria-label="Favorites"
             className="cursor-pointer">
-            <SlHeart className="dark:text-white
-            
-                                xs:text-[17px]
-                                md:text-[28px]" />
+            <SlHeart className="dark:text-white xs:text-[17px] md:text-[28px]" />
           </button>
           {favouriteQuantity > 0 && (
             <div className="absolute top-0 ml-6 mt-1 flex rounded-full bg-primary items-center justify-center
                             dark:bg-secondary_01
-                            
                             xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                             sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                             md:ml-6 md:mt-1">
-              <p className="text-white
-              
-                            xs:text-[8px]
-                            sm:text-[10px]">
+              <p className="text-white xs:text-[8px] sm:text-[10px]">
                 {favouriteQuantity}
               </p>
             </div>
@@ -430,22 +418,15 @@ const Navbar_02: React.FC<NavbarProps> = ({
             onClick={handleCartOpen}
             aria-label="Shopping cart"
             className="cursor-pointer">
-            <PiShoppingCartLight className="dark:text-white
-            
-                                            xs:text-[17px]
-                                            md:text-[28px]" />
+            <PiShoppingCartLight className="dark:text-white xs:text-[17px] md:text-[28px]" />
           </button>
           {cartItemCount > 0 && (
             <div className="absolute top-0 flex rounded-full bg-primary items-center justify-center
                             dark:bg-secondary_01
-                            
                             xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                             sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                             md:ml-6 md:mt-1">
-              <p className="text-white
-              
-                            xs:text-[8px]
-                            sm:text-[10px]">
+              <p className="text-white xs:text-[8px] sm:text-[10px]">
                 {cartItemCount}
               </p>
             </div>
@@ -454,18 +435,10 @@ const Navbar_02: React.FC<NavbarProps> = ({
 
         {/* Cart Total */}
         <div className="flex-col justify-center xs:hidden md:flex">
-          <p className="font-camptonBook
-                        dark:text-white
-                        
-                        xs:text-[10px]
-                        sm:text-[13px]">
+          <p className="font-camptonBook dark:text-white xs:text-[10px] sm:text-[13px]">
             {t('navbar_02.total')}
           </p>
-          <p className="font-camptonMedium
-                        dark:text-white
-                        
-                        xs:text-[10px]
-                        sm:text-[13px]">
+          <p className="font-camptonMedium dark:text-white xs:text-[10px] sm:text-[13px]">
             ${subtotal.toFixed(2)}
           </p>
         </div>
