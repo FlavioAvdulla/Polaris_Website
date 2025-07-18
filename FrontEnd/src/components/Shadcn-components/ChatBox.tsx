@@ -8,11 +8,20 @@ import { IoChatbubblesOutline } from "react-icons/io5";
 import { MdSend } from "react-icons/md";
 import Chat_Girl from "../../assets/images/Chat_Girl.jpg";
 import { useTheme } from "../../components/context/ThemeContext";
+import { SlEmotsmile } from "react-icons/sl";
+import { IoIosAttach } from "react-icons/io";
+import EmojiPicker, { EmojiClickData } from 'emoji-picker-react';
+import { FiFile, FiImage, FiDownload } from "react-icons/fi";
 
 interface Message {
   text: string;
   sender: 'user' | 'support';
   timestamp: Date;
+  attachment?: {
+    name: string;
+    type: string;
+    url: string;
+  };
 }
 
 const ChatBox = () => {
@@ -20,19 +29,21 @@ const ChatBox = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [showEmojiPicker, setShowEmojiPicker] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Initialize with a welcome message
   useEffect(() => {
     setMessages([{
-      text: "Hello! How can we help you today?",
+      text: "Hello! How can we help you today? You can send us files or images.",
       sender: 'support',
       timestamp: new Date()
     }]);
   }, []);
 
   const handleSendMessage = async () => {
-    if (!message.trim()) return;
+    if (!message.trim() && !fileInputRef.current?.files?.length) return;
 
     const userMessage: Message = {
       text: message,
@@ -40,26 +51,48 @@ const ChatBox = () => {
       timestamp: new Date()
     };
 
+    // Handle file attachment if exists
+    const file = fileInputRef.current?.files?.[0];
+    if (file) {
+      // In a real app, you would upload the file to your server here
+      // For demo, we'll create a mock URL
+      const mockFileUrl = URL.createObjectURL(file);
+      
+      userMessage.attachment = {
+        name: file.name,
+        type: file.type,
+        url: mockFileUrl
+      };
+    }
+
     try {
       setIsLoading(true);
       setMessages(prev => [...prev, userMessage]);
       setMessage("");
+      setShowEmojiPicker(false);
+      
+      // Clear file input after sending
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
 
-      // In a real implementation, you would send this to your backend
-      // which would then forward it to WhatsApp via the API
-      // This is just a simulation
+      // Simulate response
       setTimeout(() => {
         const reply: Message = {
-          text: "Thanks for your message! Our team will respond shortly via WhatsApp.",
+          text: "Thank you! We've received your message" + 
+                (file ? ` and attachment (${file.name})` : "") + 
+                ". We'll respond shortly via WhatsApp.",
           sender: 'support',
           timestamp: new Date()
         };
         setMessages(prev => [...prev, reply]);
         setIsLoading(false);
 
-        // Open WhatsApp with a pre-filled message
-        const whatsappUrl = `https://wa.me/355676311918?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
+        // Open WhatsApp with the message text (without attachment)
+        if (message.trim()) {
+          const whatsappUrl = `https://wa.me/355676311918?text=${encodeURIComponent(message)}`;
+          window.open(whatsappUrl, '_blank');
+        }
       }, 1000);
       
     } catch (err) {
@@ -73,6 +106,50 @@ const ChatBox = () => {
       e.preventDefault();
       handleSendMessage();
     }
+  };
+
+  const handleEmojiClick = (emojiData: EmojiClickData) => {
+    setMessage(prev => prev + emojiData.emoji);
+  };
+
+  const handleFileUpload = () => {
+    fileInputRef.current?.click();
+  };
+
+  const renderAttachment = (attachment: Message['attachment']) => {
+    if (!attachment) return null;
+    
+    const isImage = attachment.type.startsWith('image/');
+    
+    return (
+      <div className="mt-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg">
+        <div className="flex items-center gap-2">
+          {isImage ? (
+            <FiImage className="text-lg" />
+          ) : (
+            <FiFile className="text-lg" />
+          )}
+          <span className="text-sm truncate">{attachment.name}</span>
+          <a 
+            href={attachment.url} 
+            download={attachment.name}
+            className="ml-auto text-primary dark:text-secondary_01"
+            title="Download"
+          >
+            <FiDownload className="text-lg" />
+          </a>
+        </div>
+        {isImage && (
+          <div className="mt-2">
+            <img 
+              src={attachment.url} 
+              alt={attachment.name}
+              className="max-w-full h-auto max-h-40 rounded"
+            />
+          </div>
+        )}
+      </div>
+    );
   };
 
   useEffect(() => {
@@ -112,14 +189,17 @@ const ChatBox = () => {
             {messages.map((msg, index) => (
               <div 
                 key={index} 
-                className={`mb-3 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
+                className={`mb-3 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}
+              >
                 <div 
                   className={`inline-block px-4 py-2 rounded-lg max-w-[80%] text-[15px] ${
                     msg.sender === 'user' 
                       ? 'bg-primary text-white dark:bg-secondary_01' 
                       : 'bg-gray-100 dark:bg-gray-700 dark:text-white'
-                  }`}>
+                  }`}
+                >
                   {msg.text}
+                  {msg.attachment && renderAttachment(msg.attachment)}
                   <div className="text-xs mt-1 opacity-70">
                     {msg.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </div>
@@ -129,8 +209,48 @@ const ChatBox = () => {
             <div ref={messagesEndRef} />
           </div>
 
+          {/* Emoji Picker */}
+          {showEmojiPicker && (
+            <div className="absolute bottom-20 right-4 z-10">
+              <EmojiPicker 
+                onEmojiClick={handleEmojiClick}
+                width={300}
+                height={350}
+                theme={theme === 'dark' ? 'dark' : 'light'}
+              />
+            </div>
+          )}
+
+          {/* Hidden file input */}
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={() => {}} // We'll handle the file when sending
+            className="hidden"
+            accept="image/*, .pdf, .doc, .docx, .txt"
+          />
+
+          {/* Divider */}
+          <div className="h-px w-full bg-gray-300 dark:bg-gray-600" />
+
           {/* Input Area */}
           <div className="p-3">
+            {fileInputRef.current?.files?.length > 0 && (
+              <div className="mb-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center">
+                <FiFile className="text-lg mr-2" />
+                <span className="text-sm truncate flex-grow">
+                  {fileInputRef.current.files[0].name}
+                </span>
+                <button 
+                  onClick={() => {
+                    if (fileInputRef.current) fileInputRef.current.value = "";
+                  }}
+                  className="text-red-500 text-sm"
+                >
+                  Remove
+                </button>
+              </div>
+            )}
             <div className="flex items-center gap-2">
               <textarea
                 value={message}
@@ -143,12 +263,27 @@ const ChatBox = () => {
                 rows={1}
                 disabled={isLoading}
               />
+              <div className="h-[30px] w-[1px] bg-gray-300 dark:bg-gray-600" />
               <button 
                 onClick={handleSendMessage}
-                disabled={!message.trim() || isLoading}
+                disabled={(!message.trim() && !fileInputRef.current?.files?.length) || isLoading}
                 className="p-2 text-primary dark:text-secondary_01 disabled:opacity-50"
               >
                 <MdSend className="text-xl" />
+              </button>
+            </div>
+            <div className="flex pl-3 gap-3 mb-3">
+              <button 
+                onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+                className="text-primary dark:text-secondary_01"
+              >
+                <SlEmotsmile className="text-xl" />
+              </button>
+              <button 
+                onClick={handleFileUpload}
+                className="text-primary dark:text-secondary_01"
+              >
+                <IoIosAttach className="text-xl" />
               </button>
             </div>
           </div>
