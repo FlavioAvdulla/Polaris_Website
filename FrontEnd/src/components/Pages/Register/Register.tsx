@@ -1,6 +1,6 @@
 import { IoIosCloseCircle } from "react-icons/io";
 import { useTranslation } from 'react-i18next';
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 interface RegisterProps {
@@ -60,9 +60,26 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
     }
   };
 
+  {/* Outside click to Close Component */}
+
+  const registerRef = useRef<HTMLDivElement>(null);
+
+  const handleCloseOutside = (event: MouseEvent) => {
+    if (registerRef.current && !registerRef.current.contains(event.target as Node)) {
+      handleClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleCloseOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleCloseOutside)
+    }
+  }, [])
+
   return (
     <div className="flex fixed items-center z-30 w-[100%] h-[100%]">
-      <div className="flex mx-auto justify-center items-center z-10">
+      <div className="flex mx-auto justify-center items-center z-10" ref={registerRef}>
         
         <div className="flex p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]
                         dark:bg-darkColor">

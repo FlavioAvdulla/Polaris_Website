@@ -5,7 +5,7 @@ import {
   PopoverTrigger,
   PopoverClose,
 } from "@/components/ui/popover";
-import { IoIosCloseCircle } from "react-icons/io";
+import { IoMdArrowDropdown } from "react-icons/io";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { MdSend } from "react-icons/md";
 import { SlEmotsmile } from "react-icons/sl";
@@ -151,7 +151,11 @@ const ChatBox = () => {
                                    dark:bg-secondary_01 hover:opacity-90 transition-opacity">
           <IoChatbubblesOutline className="flex p-4 text-[55px] text-white" />
         </PopoverTrigger>
-        <PopoverContent className="mr-10 mb-3 w-[350px] p-0">
+        <PopoverContent className="mr-10 mb-3 p-0
+                                   
+                                   xs:w-[240px]
+                                   sm:w-[320px]
+                                   md:w-[350px]">
 
           {/* Header with close button */}
           <div className="flex w-full h-[80px] p-4 rounded-t-lg bg-primary relative items-center justify-between
@@ -173,7 +177,7 @@ const ChatBox = () => {
               </div>
             </div>
             <PopoverClose>
-              <i><IoIosCloseCircle className="text-[23px] text-white duration-300 hover:rotate-[180deg]"/></i>
+              <i><IoMdArrowDropdown className="text-[26px] text-white"/></i>
             </PopoverClose>
           </div>
 
@@ -184,7 +188,10 @@ const ChatBox = () => {
                 key={index} 
                 className={`mb-3 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
                 <div 
-                  className={`inline-block px-4 py-2 rounded-lg max-w-[80%] text-[15px] ${
+                  className={`inline-block px-4 py-2 rounded-lg max-w-[80%]
+                              
+                              xs:text-[12px]
+                              md:text-[15px] ${
                     msg.sender === 'user' 
                       ? 'bg-primary text-white dark:bg-secondary_01' 
                       : 'bg-gray-100 dark:bg-gray-700 dark:text-white'
@@ -227,9 +234,9 @@ const ChatBox = () => {
             <div className="flex items-center gap-2">
               <button 
                 onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                className="text-primary dark:text-secondary_01"
-              >
-                <SlEmotsmile className="text-xl" />
+                className="text-primary dark:text-secondary_01">
+                <SlEmotsmile className="xs:text-[16px]
+                                        md:text-[20px]" />
               </button>
               <textarea
                 value={message}
@@ -237,7 +244,11 @@ const ChatBox = () => {
                 onKeyDown={handleKeyPress}
                 className="flex w-[100%] h-[45px] font-camptonLight rounded-lg
                            rounded-tl-none rounded-tr-none p-3 pr-0 outline-none border-none min-h-[50px]
-                           dark:bg-transparent dark:text-white resize-none text-[15px]
+                           dark:bg-transparent dark:text-white resize-none text-[15px] 
+
+                           xs:text-[12px] xs:mt-2
+                           md:text-[15px] md:mt-1
+
                            [&::-webkit-resizer]:hidden
                            [&::-webkit-scrollbar]:hidden
                            [&::-webkit-inner-spin-button]:hidden
@@ -252,7 +263,8 @@ const ChatBox = () => {
                 onClick={handleSendMessage}
                 disabled={(!message.trim() && !fileInputRef.current?.files?.length) || isLoading}
                 className="p-2 text-primary dark:text-secondary_01 disabled:opacity-50">
-                <MdSend className="text-xl" />
+                <MdSend className="xs:text-[16px]
+                                   md:text-[20px]" />
               </button>
             </div>
           </div>
