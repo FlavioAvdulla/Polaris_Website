@@ -3,13 +3,13 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
+  PopoverClose,
 } from "@/components/ui/popover";
+import { IoIosCloseCircle } from "react-icons/io";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { MdSend } from "react-icons/md";
 import Chat_Girl from "../../assets/images/Chat_Girl.jpg";
 import { useTheme } from "../../components/context/ThemeContext";
-import { SlEmotsmile } from "react-icons/sl";
-import { IoIosAttach } from "react-icons/io";
 import EmojiPicker, { EmojiClickData } from 'emoji-picker-react';
 import { FiFile, FiImage, FiDownload } from "react-icons/fi";
 
@@ -33,7 +33,6 @@ const ChatBox = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Initialize with a welcome message
   useEffect(() => {
     setMessages([{
       text: "Hello! How can we help you today? You can send us files or images.",
@@ -51,11 +50,8 @@ const ChatBox = () => {
       timestamp: new Date()
     };
 
-    // Handle file attachment if exists
     const file = fileInputRef.current?.files?.[0];
     if (file) {
-      // In a real app, you would upload the file to your server here
-      // For demo, we'll create a mock URL
       const mockFileUrl = URL.createObjectURL(file);
       
       userMessage.attachment = {
@@ -71,12 +67,10 @@ const ChatBox = () => {
       setMessage("");
       setShowEmojiPicker(false);
       
-      // Clear file input after sending
       if (fileInputRef.current) {
         fileInputRef.current.value = "";
       }
 
-      // Simulate response
       setTimeout(() => {
         const reply: Message = {
           text: "Thank you! We've received your message" + 
@@ -88,7 +82,6 @@ const ChatBox = () => {
         setMessages(prev => [...prev, reply]);
         setIsLoading(false);
 
-        // Open WhatsApp with the message text (without attachment)
         if (message.trim()) {
           const whatsappUrl = `https://wa.me/355676311918?text=${encodeURIComponent(message)}`;
           window.open(whatsappUrl, '_blank');
@@ -112,10 +105,6 @@ const ChatBox = () => {
     setMessage(prev => prev + emojiData.emoji);
   };
 
-  const handleFileUpload = () => {
-    fileInputRef.current?.click();
-  };
-
   const renderAttachment = (attachment: Message['attachment']) => {
     if (!attachment) return null;
     
@@ -134,8 +123,7 @@ const ChatBox = () => {
             href={attachment.url} 
             download={attachment.name}
             className="ml-auto text-primary dark:text-secondary_01"
-            title="Download"
-          >
+            title="Download">
             <FiDownload className="text-lg" />
           </a>
         </div>
@@ -144,8 +132,7 @@ const ChatBox = () => {
             <img 
               src={attachment.url} 
               alt={attachment.name}
-              className="max-w-full h-auto max-h-40 rounded"
-            />
+              className="max-w-full h-auto max-h-40 rounded"/>
           </div>
         )}
       </div>
@@ -163,9 +150,11 @@ const ChatBox = () => {
                                    dark:bg-secondary_01 hover:opacity-90 transition-opacity">
           <IoChatbubblesOutline className="flex p-4 text-[55px] text-white" />
         </PopoverTrigger>
-        <PopoverContent className="mr-10 mb-3 w-[350px]">
-          {/* Header */}
-          <div className="flex w-full h-[80px] p-4 rounded-t-lg bg-primary dark:bg-secondary_01">
+        <PopoverContent className="mr-10 mb-3 w-[350px] p-0">
+
+          {/* Header with close button */}
+          <div className="flex w-full h-[80px] p-4 rounded-t-lg bg-primary relative items-center justify-between
+                          dark:bg-secondary_01">
             <div className="flex items-center gap-4">
               <img
                 className="w-10 h-10 rounded-full object-cover"
@@ -182,6 +171,9 @@ const ChatBox = () => {
                 </h1>
               </div>
             </div>
+            <PopoverClose>
+              <i><IoIosCloseCircle className="text-[23px] text-white duration-300 hover:rotate-[180deg]"/></i>
+            </PopoverClose>
           </div>
 
           {/* Messages Container */}
@@ -189,15 +181,13 @@ const ChatBox = () => {
             {messages.map((msg, index) => (
               <div 
                 key={index} 
-                className={`mb-3 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}
-              >
+                className={`mb-3 ${msg.sender === 'user' ? 'text-right' : 'text-left'}`}>
                 <div 
                   className={`inline-block px-4 py-2 rounded-lg max-w-[80%] text-[15px] ${
                     msg.sender === 'user' 
                       ? 'bg-primary text-white dark:bg-secondary_01' 
                       : 'bg-gray-100 dark:bg-gray-700 dark:text-white'
-                  }`}
-                >
+                  }`}>
                   {msg.text}
                   {msg.attachment && renderAttachment(msg.attachment)}
                   <div className="text-xs mt-1 opacity-70">
@@ -216,8 +206,7 @@ const ChatBox = () => {
                 onEmojiClick={handleEmojiClick}
                 width={300}
                 height={350}
-                theme={theme === 'dark' ? 'dark' : 'light'}
-              />
+                theme={theme === 'dark' ? 'dark' : 'light'}/>
             </div>
           )}
 
@@ -225,65 +214,38 @@ const ChatBox = () => {
           <input
             type="file"
             ref={fileInputRef}
-            onChange={() => {}} // We'll handle the file when sending
+            onChange={() => {}}
             className="hidden"
-            accept="image/*, .pdf, .doc, .docx, .txt"
-          />
+            accept="image/*, .pdf, .doc, .docx, .txt"/>
 
           {/* Divider */}
           <div className="h-px w-full bg-gray-300 dark:bg-gray-600" />
 
           {/* Input Area */}
           <div className="p-3">
-            {fileInputRef.current?.files?.length > 0 && (
-              <div className="mb-2 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center">
-                <FiFile className="text-lg mr-2" />
-                <span className="text-sm truncate flex-grow">
-                  {fileInputRef.current.files[0].name}
-                </span>
-                <button 
-                  onClick={() => {
-                    if (fileInputRef.current) fileInputRef.current.value = "";
-                  }}
-                  className="text-red-500 text-sm"
-                >
-                  Remove
-                </button>
-              </div>
-            )}
             <div className="flex items-center gap-2">
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyPress}
                 className="flex w-[100%] h-[45px] font-camptonLight rounded-lg
-                         rounded-tl-none rounded-tr-none p-3 pr-0 outline-none border-none min-h-[50px]
-                         dark:bg-transparent dark:text-white resize-none text-[15px]"
+                           rounded-tl-none rounded-tr-none p-3 pr-0 outline-none border-none min-h-[50px]
+                           dark:bg-transparent dark:text-white resize-none text-[15px]
+                           [&::-webkit-resizer]:hidden
+                           [&::-webkit-scrollbar]:hidden
+                           [&::-webkit-inner-spin-button]:hidden
+                           [&::-webkit-outer-spin-button]:hidden
+                           [&::-webkit-search-cancel-button]:hidden
+                           [&::-webkit-clear-button]:hidden"
                 placeholder="Type your message..."
                 rows={1}
-                disabled={isLoading}
-              />
+                disabled={isLoading}/>
               <div className="h-[30px] w-[1px] bg-gray-300 dark:bg-gray-600" />
               <button 
                 onClick={handleSendMessage}
                 disabled={(!message.trim() && !fileInputRef.current?.files?.length) || isLoading}
-                className="p-2 text-primary dark:text-secondary_01 disabled:opacity-50"
-              >
+                className="p-2 text-primary dark:text-secondary_01 disabled:opacity-50">
                 <MdSend className="text-xl" />
-              </button>
-            </div>
-            <div className="flex pl-3 gap-3 mb-3">
-              <button 
-                onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-                className="text-primary dark:text-secondary_01"
-              >
-                <SlEmotsmile className="text-xl" />
-              </button>
-              <button 
-                onClick={handleFileUpload}
-                className="text-primary dark:text-secondary_01"
-              >
-                <IoIosAttach className="text-xl" />
               </button>
             </div>
           </div>
