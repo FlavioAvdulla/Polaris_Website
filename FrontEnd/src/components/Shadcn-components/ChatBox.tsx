@@ -8,6 +8,7 @@ import {
 import { IoIosCloseCircle } from "react-icons/io";
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { MdSend } from "react-icons/md";
+import { SlEmotsmile } from "react-icons/sl";
 import Chat_Girl from "../../assets/images/Chat_Girl.jpg";
 import { useTheme } from "../../components/context/ThemeContext";
 import EmojiPicker, { EmojiClickData } from 'emoji-picker-react';
@@ -224,6 +225,12 @@ const ChatBox = () => {
           {/* Input Area */}
           <div className="p-3">
             <div className="flex items-center gap-2">
+              <button 
+                onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+                className="text-primary dark:text-secondary_01"
+              >
+                <SlEmotsmile className="text-xl" />
+              </button>
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
