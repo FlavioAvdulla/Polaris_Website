@@ -55,7 +55,6 @@ const Navbar_02: React.FC<NavbarProps> = ({
   const location = useLocation();
   const navigate = useNavigate();
   const { theme } = useTheme();
-  const searchRef = useRef<HTMLDivElement>(null);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<Product[]>([]);
@@ -188,12 +187,28 @@ const Navbar_02: React.FC<NavbarProps> = ({
     const target = e.target as HTMLImageElement;
     target.src = '/placeholder-product.png';
   };
+  
+
+  const searchRef = useRef<HTMLDivElement>(null);
+    
+    const handleCloseOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        clearSearch();
+      }
+    };
+  
+    useEffect(() => {
+      document.addEventListener("mousedown", handleCloseOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleCloseOutside);
+      };
+    }, []);
 
   return (
     <div className="flex w-[85%] h-[45px] py-0 mx-auto items-center justify-between
     
                     xs:gap-5
-                    lg:gap-0">
+                    lg:gap-0" ref={searchRef}>
       {/* Logo */}
       <img className="w-[110px] cursor-pointer xs:hidden sm:w-[80px] md:flex xl:w-[100px]"
            src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo} 
@@ -211,7 +226,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
            loading="lazy"/>
 
       {/* Search Bar */}
-      <div className="relative w-auto h-full flex" ref={searchRef}>
+      <div className="relative w-auto h-full flex">
         <div className="w-auto h-auto
         
                         xs:hidden
@@ -262,7 +277,8 @@ const Navbar_02: React.FC<NavbarProps> = ({
           <div className="w-full absolute top-full left-0 right-0 z-50 mt-1 bg-white shadow-lg rounded-md
                           max-h-[400px] overflow-y-auto border border-gray-200
                           dark:bg-gray-800 dark:border-gray-700"
-               aria-live="polite">
+               aria-live="polite"
+               ref={searchRef}>
             {isSearching && searchResults.length === 0 ? (
               <div className="p-4 text-center text-gray-500
                               dark:text-gray-400">
