@@ -69,6 +69,7 @@ const SignIn: React.FC<SignInProps> = ({
     }
   };
 
+  {/* ============= Close when clicking outside ============= */}
   const signInRef = useRef<HTMLDivElement>(null);
   
   const handleCloseOutside = (event: MouseEvent) => {
@@ -189,10 +190,8 @@ const SignIn: React.FC<SignInProps> = ({
               <div className="h-[0.5px] w-[100%] bg-black dark:bg-gray-600"/>
             </div>
 
-            <button
-              className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300
-                         text-[17px] w-[100%] h-[45px] bg-transparent rounded-full dark:border-gray-600"
-            >
+            <button className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300
+                               text-[17px] w-[100%] h-[45px] bg-transparent rounded-full dark:border-gray-600">
               <img className="w-[25px] h-auto" src={Google_Logo} alt="Google_Logo"/>
               <p className="xs:text-[14px] md:text-[16px] font-camptonBook dark:text-white">
                 {t("authentication.signInWithGoogle")}
@@ -200,14 +199,20 @@ const SignIn: React.FC<SignInProps> = ({
             </button>
 
             <div className="flex w-[100%] h-auto justify-center">
-              <p className="xs:text-[12px] md:text-[16px] font-camptonBook dark:text-white">
+              <p className="font-camptonBook
+                            dark:text-white
+
+                            xs:text-[12px]
+                            md:text-[16px]">
                 {t("authentication.dontHaveAnAccount")}
               </p>
               <button className="outline-none border-none underline-offset-1">
-                <p
-                  className="ml-2 text-primary xs:text-[12px] md:text-[16px] font-camptonBook dark:text-secondary_01"
-                  onClick={handleRegisterOpen}
-                >
+                <p className="ml-2 text-primary font-camptonBook
+                             dark:text-secondary_01
+                  
+                             xs:text-[12px]
+                             md:text-[16px]"
+                   onClick={handleRegisterOpen}>
                   {t("authentication.register")}
                 </p>
               </button>
@@ -215,9 +220,8 @@ const SignIn: React.FC<SignInProps> = ({
           </form>
         </div>
       </div>
-      <div
-        className="flex fixed bg-black bg-opacity-60 w-[100%] h-[100%] backdrop-blur-[3px]"
-        onClick={handleClose}
+      <div className="flex fixed bg-black bg-opacity-60 w-[100%] h-[100%] backdrop-blur-[3px]"
+           onClick={handleClose}
       />
     </div>
   );

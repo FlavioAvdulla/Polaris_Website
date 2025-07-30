@@ -1,6 +1,6 @@
+import React, { useEffect, useState, useRef } from "react";
 import { IoIosCloseCircle } from "react-icons/io";
 import { useTranslation } from 'react-i18next';
-import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 interface RegisterProps {

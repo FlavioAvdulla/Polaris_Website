@@ -125,15 +125,14 @@ export function Carousel_01() {
             <CarouselItem key={index}>
               <Card className="border-none shadow-none">
                 <CardContent
-                  className={`flex aspect-square items-center justify-center m-0 p-0 
-                    rounded-xl overflow-hidden
-                    
-                    xs:h-[300px]
-                    md:h-[400px]
-                    2xl:h-[600px]
+                  className={`flex aspect-square items-center justify-center m-0 p-0
+                              rounded-xl overflow-hidden
 
-                    ${isGrabbing ? "cursor-grabbing" : "cursor-grab"
-                    }`}>
+                              xs:h-[300px]
+                              md:h-[400px]
+                              2xl:h-[600px]
+
+                              ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}>
                   <div className="flex items-center w-[100%] h-[100%]">
                     <div className="flex flex-col absolute h-auto justify-center
                     
@@ -153,8 +152,8 @@ export function Carousel_01() {
                                       2xl:text-[20px]">
                           {t(product.exclusiveOffer)}
                         </p>
-                        <div className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
-                                        border-white text-white items-center justify-center
+                        <div className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary
+                                        border-[1px] cursor-pointer border-white text-white items-center justify-center
                                         hover:bg-transparent hover:scale-110 ease-in-out duration-300
                                         dark:bg-darkColor dark:hover:bg-transparent">
                           <p className="xs:text-[12px] xs:px-4 xs:py-[1px]

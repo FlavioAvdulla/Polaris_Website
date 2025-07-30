@@ -46,16 +46,16 @@ const Faq = ({ setShowFaq }) => {
           className="flex-col p-5 h-auto rounded-xl rounded-bl-none rounded-br-none
                      dark:bg-darkColor
 
-                    xs:w-[95%]
-                    md:w-[350px]">
+                     xs:w-[95%]
+                     md:w-[350px]">
                                 
           <div className="flex w-[100%] h-auto items-center justify-between">
             <h1 className="font-camptonBook text-[20px]
                            dark:text-white">{t("faq.faq")}</h1>
             <IoIosCloseCircle
               className="text-primary text-[30px] cursor-pointer duration-300
-                          dark:text-secondary_01
-                          hover:rotate-[180deg]"
+                         dark:text-secondary_01
+                         hover:rotate-[180deg]"
               onClick={handleClose}
             />
           </div>

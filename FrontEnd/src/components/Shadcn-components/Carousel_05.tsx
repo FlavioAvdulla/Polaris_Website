@@ -123,11 +123,7 @@ export function Carousel_05() {
               <Card className="border-none shadow-none">
                 <CardContent
                   className={`flex items-center m-0 p-0 rounded-xl overflow-hidden
-                              ${
-                                isGrabbing
-                                  ? "cursor-grabbing"
-                                  : "cursor-grab"
-                              }`}>
+                              ${isGrabbing ? "cursor-grabbing" : "cursor-grab"}`}>
                   <div className="flex items-center w-[100%]
                                   
                                   xl:h-[700px]">
@@ -151,7 +147,8 @@ export function Carousel_05() {
                                       lg:text-[15px]
                                       2xl:text-[16px]">{t(product.exclusiveOffer)}
                         </p>
-                        <div className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg bg-primary border-[1px] cursor-pointer
+                        <div className="w-fit rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
+                                      bg-primary border-[1px] cursor-pointer
                                         border-white text-white items-center justify-center
                                         hover:bg-transparent hover:scale-110 ease-in-out duration-300">
 

@@ -123,11 +123,7 @@ export function Carousel_04() {
               <Card className="border-none shadow-none">
                 <CardContent
                   className={`flex items-center m-0 p-0 rounded-xl overflow-hidden
-                              ${
-                                isGrabbing
-                                  ? "cursor-grabbing"
-                                  : "cursor-grab"
-                              }`}>
+                              ${isGrabbing ? "cursor-grabbing" : "cursor-grab" }`}>
                   <div className="flex items-center w-[100%]
                                   
                                   xl:h-[700px]">

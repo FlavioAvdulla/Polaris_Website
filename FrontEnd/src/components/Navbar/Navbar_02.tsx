@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
-import { useTheme } from "../../components/context/ThemeContext";
-import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
-import Polaris_Logo_Secondary from "../../assets/images/Polaris_Logo_Secondary_01.svg";
 import Polaris_Logo_Icon_Secondary_01 from "../../assets/images/Polaris_Logo_Icon_Secondary_01.svg";
+import Polaris_Logo_Secondary from "../../assets/images/Polaris_Logo_Secondary_01.svg";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import Polaris_Logo_Icon from "../../assets/images/Polaris_Logo_Icon.svg";
 import { SearchBarSelect } from "../Shadcn-components/SearchBarSelect";
-import { IoIosSearch, IoIosClose } from "react-icons/io";
-import { PiUser, PiShoppingCartLight } from "react-icons/pi";
-import { SlHeart } from "react-icons/sl";
 import { cartList } from "../Home/ProductSection/ProductSection";
+import { useTheme } from "../../components/context/ThemeContext";
+import Polaris_Logo from "../../assets/images/Polaris_Logo.svg";
+import { PiUser, PiShoppingCartLight } from "react-icons/pi";
+import { useNavigate, useLocation } from "react-router-dom";
+import { IoIosSearch, IoIosClose } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
+import { SlHeart } from "react-icons/sl";
 import { debounce } from "lodash";
 import axios from 'axios';
 
@@ -188,7 +188,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
     target.src = '/placeholder-product.png';
   };
   
-
+  {/* Outside click to Close Component */}
   const searchRef = useRef<HTMLDivElement>(null);
     
     const handleCloseOutside = (event: MouseEvent) => {
@@ -236,12 +236,12 @@ const Navbar_02: React.FC<NavbarProps> = ({
         
         <form onSubmit={handleSearchSubmit} className="relative flex items-center w-full">
           <input className="w-[600px] h-[100%] py-3 px-5 appearance-none border-[1px] border-primary border-r-0 outline-none
-                       focus:ring-0 focus:bg-white font-camptonBook bg-white
-                       dark:bg-transparent dark:border-gray-600 dark:text-white
+                            focus:ring-0 focus:bg-white font-camptonBook bg-white
+                            dark:bg-transparent dark:border-gray-600 dark:text-white
 
-                       xs:w-full xs:rounded-tl-md xs:rounded-bl-md
-                       sm:rounded-tl-none sm:rounded-bl-none
-                       lg:w-[300px] xl:w-[600px]"
+                            xs:w-full xs:rounded-tl-md xs:rounded-bl-md
+                            sm:rounded-tl-none sm:rounded-bl-none
+                            lg:w-[300px] xl:w-[600px]"
                  type="text"
                  id="search"
                  name="search"
@@ -309,10 +309,10 @@ const Navbar_02: React.FC<NavbarProps> = ({
                              alt={product.title}
                              className="aspect-1 object-contain
                               
-                                       xs:w-[30px]
-                                       md:w-[55px]
-                                       lg:w-[60px] lg:mr-3
-                                       xl:mr-0"
+                                        xs:w-[30px]
+                                        md:w-[55px]
+                                        lg:w-[60px] lg:mr-3
+                                        xl:mr-0"
                              onError={handleImageError}
                              loading="lazy"/>
                       
@@ -325,17 +325,16 @@ const Navbar_02: React.FC<NavbarProps> = ({
                                       xl:gap-[40px]">
                           <h4 className="font-camptonBook dark:text-white
 
-                                          xs:text-[8px]
-                                          md:text-[13px]
-                                          lg:text-[15px]
-                                          xl:text-[20px]">
+                                         xs:text-[8px]
+                                         md:text-[13px]
+                                         lg:text-[15px]
+                                         xl:text-[20px]">
                             {product.title}
                           </h4>
                           {/* ============= Product Price ============= */}
                           <div className="flex
                           
                                           xs:gap-2 xs:flex-row
-                                           
                                           lg:flex-row lg:gap-4">
                         {product.offerPrice && (
                           <p className="font-camptonBold text-primary
@@ -389,8 +388,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                      xs:gap-0
                      md:gap-3"
           onClick={isSignedIn ? handleSignOutClick : handleSignInClick}
-          aria-label={isSignedIn ? "Sign out" : "Sign in"}
-        >
+          aria-label={isSignedIn ? "Sign out" : "Sign in"}>
           <i><PiUser className="dark:text-white
           
                                 xs:text-[17px]

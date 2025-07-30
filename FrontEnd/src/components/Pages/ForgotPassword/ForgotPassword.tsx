@@ -1,6 +1,6 @@
 import { IoIosCloseCircle } from "react-icons/io";
-import { useTranslation } from 'react-i18next';
 import React, { useEffect, useRef } from "react";
+import { useTranslation } from 'react-i18next';
 
 const ForgotPassword = ({
   setShowSignIn,
@@ -46,8 +46,10 @@ const ForgotPassword = ({
     <div className="flex fixed items-center z-30 w-[100%] h-[100%]">
       <div className="flex mx-auto justify-center items-center z-10" ref={forgotPasswordRef}>
 
-        <div className="flex flex-col gap-10 p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]
-                        dark:bg-darkColor">
+        <div className="flex flex-col gap-10 p-5 h-auto rounded-xl bg-white
+                        dark:bg-darkColor
+
+                        xs:w-[95%] md:w-[350px]">
           <div className="flex w-[100%] h-auto items-center justify-between">
             <h1 className="font-camptonBook text-[20px] ml-5
                            dark:text-white">

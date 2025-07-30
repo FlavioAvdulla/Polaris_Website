@@ -191,11 +191,10 @@ const ChatBox = () => {
                   className={`inline-block px-4 py-2 rounded-lg max-w-[80%]
                               
                               xs:text-[12px]
-                              md:text-[15px] ${
-                    msg.sender === 'user' 
-                      ? 'bg-primary text-white dark:bg-secondary_01' 
-                      : 'bg-gray-100 dark:bg-gray-700 dark:text-white'
-                  }`}>
+                              md:text-[15px]
+                              ${msg.sender === 'user' 
+                                ? 'bg-primary text-white dark:bg-secondary_01' 
+                                : 'bg-gray-100 dark:bg-gray-700 dark:text-white'}`}>
                   {msg.text}
                   {msg.attachment && renderAttachment(msg.attachment)}
                   <div className="text-xs mt-1 opacity-70">

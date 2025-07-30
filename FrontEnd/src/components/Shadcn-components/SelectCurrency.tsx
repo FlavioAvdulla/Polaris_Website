@@ -14,10 +14,10 @@ export function SelectCurrency() {
     <Select defaultValue="eur">
       <SelectTrigger className="w-auto gap-2 shadow-none border-[1px] border-gray-300
                                 dark:border-gray-600">
-        <SelectValue placeholder="" /><p className="font-camptonBook
-                                                    xs:text-[12px]
-                                                    md:text-[14px]
-                                                    "></p>
+        <SelectValue /><p className="font-camptonBook
+        
+                                    xs:text-[12px]
+                                    md:text-[14px]"></p>
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>

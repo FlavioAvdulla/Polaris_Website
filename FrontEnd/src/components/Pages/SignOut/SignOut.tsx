@@ -12,7 +12,7 @@ const SignOut = ({ setShowSignOut, setIsSignedIn }) => {
     setShowSignOut(false);
   };
 
-  {/* ============= Close when clicking outside ============= */}
+  {/* Outside click to Close Component */}
   const signOutRef = useRef(null)
   const handleCloseOutside = (event) => {
     if (signOutRef.current && !signOutRef.current.contains(event.target)) {
