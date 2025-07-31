@@ -151,6 +151,7 @@ const Product_04 = () => {
 
   return (
     <div className="flex w-[85%] h-auto mx-auto my-20
+
                     xs:flex-col xs:gap-2
                     md:flex-row md:gap-3
                     lg:gap-5">
@@ -158,12 +159,14 @@ const Product_04 = () => {
       
       {/* Left - Product Photos */}
       <div className="flex flex-col mx-auto
+
                       xs:gap-1 xs:w-[100%]
                       md:gap-3 lg:h-[500px]
                       lg:gap-5 lg:w-[50%]
                       xl:h-[600px]">
         {/* Main Photo */}
-        <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
+        <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg
+                        border-[1px] overflow-hidden border-primary bg-white
                         dark:bg-transparent dark:border-gray-600">
           <img
             className="w-[85%] object-cover"
@@ -179,18 +182,15 @@ const Product_04 = () => {
                         md:gap-3
                         lg:gap-5">
           {thumbnails.map((thumbnail, index) => (
-            <div
-              key={index}
-              className="w-[25%] items-center justify-center rounded-lg cursor-pointer
-                         hover:scale-105 hover:shadow-shadow-dark ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                         dark:bg-transparent dark:border-gray-600"
-              onClick={() => handleClick(thumbnail)}
-            >
-              <img
-                className="w-[100%] h-[100%] object-cover"
-                src={thumbnail}
-                alt={`Thumbnail ${index + 1}`}
-              />
+            <div key={index}
+                 className="w-[25%] items-center justify-center rounded-lg cursor-pointer
+                            hover:scale-105 hover:shadow-shadow-dark ease-in-out duration-300
+                            border-[1px] overflow-hidden border-primary
+                            dark:bg-transparent dark:border-gray-600"
+                 onClick={() => handleClick(thumbnail)}>
+              <img className="w-[100%] h-[100%] object-cover"
+                   src={thumbnail}
+                   alt={`Thumbnail ${index + 1}`}/>
             </div>
           ))}
         </div>
@@ -312,14 +312,15 @@ const Product_04 = () => {
           </div>
           
           <button className="flex items-center justify-center border-[1px] border-primary cursor-pointer
-                       dark:border-secondary_01
-                       
-                       xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
-                       lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
+                             dark:border-secondary_01
+
+                             xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tr-md xs:rounded-br-md
+                             lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tr-lg lg:rounded-br-lg"
                   onClick={increaseQuantity}
                   aria-label="Increase quantity">
             <i><FaCirclePlus className="text-primary
                                         dark:text-secondary_01
+                                        
                                         xs:text-[13px]
                                         lg:text-[22px]" /></i>
           </button>

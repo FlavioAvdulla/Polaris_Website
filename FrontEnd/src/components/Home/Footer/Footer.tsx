@@ -1,17 +1,11 @@
-import React from "react";
-
-// Polaris Logo
-import Polaris_Logo_White from "../../../assets/images/Polaris_Logo_White.svg";
 import Polaris_Logo_Secondary from "../../../assets/images/Polaris_Logo_Secondary_01.svg";
-
-// React Icons
-import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareXTwitter, FaSquarePinterest, FaLinkedin } from "react-icons/fa6";
-
+import Polaris_Logo_White from "../../../assets/images/Polaris_Logo_White.svg";
 import { useTheme } from "../../../components/context/ThemeContext";
-
-// Translation
+import { FaFacebookSquare } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
+
+// import React from "react";
 
 const Footer = () => {
 
@@ -51,7 +45,7 @@ const Footer = () => {
                                               
                                             xs:text-[25px]
                                             md:text-[20px]
-                                            lg:text-[30px]" />
+                                            lg:text-[30px]"/>
             </i>
             <i>
               <FaSquareXTwitter className="text-white cursor-pointer
@@ -60,7 +54,7 @@ const Footer = () => {
                                             
                                            xs:text-[25px]
                                            md:text-[20px]
-                                           lg:text-[30px]" />
+                                           lg:text-[30px]"/>
             </i>
             <i>
               <FaLinkedin className="text-white cursor-pointer
@@ -69,7 +63,7 @@ const Footer = () => {
                                       
                                      xs:text-[25px]
                                      md:text-[20px]
-                                     lg:text-[30px]" />
+                                     lg:text-[30px]"/>
             </i>
             <i>
               <FaSquarePinterest className="text-white cursor-pointer
@@ -78,7 +72,7 @@ const Footer = () => {
                                             
                                             xs:text-[25px]
                                             md:text-[20px]
-                                            lg:text-[30px]" />
+                                            lg:text-[30px]"/>
             </i>
           </div>
         </div>

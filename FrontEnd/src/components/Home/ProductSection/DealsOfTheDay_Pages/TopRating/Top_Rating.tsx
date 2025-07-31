@@ -13,20 +13,19 @@ import { useTranslation } from 'react-i18next';
 interface Product {
   _id: string;
   image: string;
-  rating: number;
-  normalPrice: string;
   title: string;
   description: string;
-  quantity: number; 
-  available: string;
-  quantitySold: number;
-  sold: string;
-  info: string;
+  normalPrice: string;
   offerPrice: string;
+  detail_01: string;
+  detail_02: string;
+  detail_03: string;
+  detail_04: string;
+  rating: number;
+  reviews: string;
+  addToCart: string;
+  additionalImages: string[];
 }
-
-// Array of specific product IDs you want to display
-// const featuredProductIds = ['9', '7', '8', '5', '6', '4'];
 
 // Array of specific product IDs you want to display
 const featuredProductIds = ['51', '48', '49', '50', '4', '52'];
@@ -124,7 +123,7 @@ const Top_Rating = () => {
             <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg z-10
                             group-hover:shadow-shadow-dark transition-all duration-300
                             dark:bg-gray-800
-            
+
                             xs:text-[20px]
                             md:text-[18px]
                             lg:text-[20px]
@@ -141,7 +140,7 @@ const Top_Rating = () => {
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
                   <p className="text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
-                                  dark:text-white">{t(product.normalPrice)}</p>
+                                dark:text-white">{t(product.normalPrice)}</p>
                 </div>
               </div>
             </div>

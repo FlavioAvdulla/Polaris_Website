@@ -81,8 +81,11 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
     <div className="flex fixed items-center z-30 w-[100%] h-[100%]">
       <div className="flex mx-auto justify-center items-center z-10" ref={registerRef}>
         
-        <div className="flex p-5 h-auto rounded-xl bg-white xs:w-[95%] md:w-[350px]
-                        dark:bg-darkColor">
+        <div className="flex p-5 h-auto rounded-xl bg-white
+                        dark:bg-darkColor
+                        
+                        xs:w-[95%]
+                        md:w-[350px]">
           <form
             className="flex flex-col items-center justify-center gap-4 w-[100%] h-[100%]"
             onSubmit={handleSubmit}>
@@ -131,11 +134,8 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
             {/* Message display */}
             {message && (
               <div 
-                className={`flex w-[100%] h-[45px] rounded-full p-5 items-center ${
-                  message.type === "success" 
-                    ? "bg-green-100 text-green-800" 
-                    : "bg-red-100 text-red-800 dark:text-secondary_01"
-                }`}>
+                className={`flex w-[100%] h-[45px] rounded-full p-5 items-center
+                    ${message.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800 dark:text-secondary_01"}`}>
                 <p className="font-camptonBook">{message.text}</p>
               </div>
             )}
@@ -150,12 +150,18 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
             </button>
 
             <div className="flex w-[100%] h-auto justify-center">
-              <p className="xs:text-[12px] md:text-[16px] font-camptonBook
-                            dark:text-white">{t("authentication.alreadyHaveAnAccount")}</p>
+              <p className="font-camptonBook
+                            dark:text-white
+
+                            xs:text-[12px]
+                            md:text-[16px]">{t("authentication.alreadyHaveAnAccount")}</p>
               <button className="outline-none border-none underline-offset-1">
                 <p
-                  className="ml-2 text-primary xs:text-[12px] md:text-[16px]
-                             dark:text-secondary_01"
+                  className="ml-2 text-primary
+                             dark:text-secondary_01
+                             
+                             xs:text-[12px]
+                             md:text-[16px]"
                   onClick={handleSignInOpen}>
                   {t("authentication.signIn")}
                 </p>

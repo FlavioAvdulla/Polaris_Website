@@ -11,16 +11,18 @@ import { useTranslation } from 'react-i18next';
 interface Product {
   _id: string;
   image: string;
-  // rating: number;
-  normalPrice: string;
   title: string;
-  // description: string;
-  // quantity: number;
-  // available: string;
-  // quantitySold: number;
-  // sold: string;
-  // info: string;
+  description: string;
+  normalPrice: string;
   offerPrice: string;
+  detail_01: string;
+  detail_02: string;
+  detail_03: string;
+  detail_04: string;
+  rating: number;
+  reviews: string;
+  addToCart: string;
+  additionalImages: string[];
 }
 
 // Array of specific product IDs you want to display

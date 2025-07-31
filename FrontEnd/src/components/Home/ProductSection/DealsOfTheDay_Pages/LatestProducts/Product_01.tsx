@@ -163,7 +163,8 @@ const Product_01 = () => {
                       lg:gap-5 lg:w-[50%]
                       xl:h-[600px]">
         {/* Main Photo */}
-        <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
+        <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg
+                        border-[1px] overflow-hidden border-primary bg-white
                         dark:bg-transparent dark:border-gray-600">
           <img
             className="w-[85%] object-cover"
@@ -181,8 +182,9 @@ const Product_01 = () => {
           {thumbnails.map((thumbnail, index) => (
             <div key={index}
                  className="w-[25%] items-center justify-center rounded-lg cursor-pointer
-                         hover:scale-105 hover:shadow-shadow-dark ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                         dark:bg-transparent dark:border-gray-600"
+                            hover:scale-105 hover:shadow-shadow-dark ease-in-out duration-300
+                            border-[1px] overflow-hidden border-primary
+                            dark:bg-transparent dark:border-gray-600"
                  onClick={() => handleClick(thumbnail)}>
               <img className="w-[100%] h-[100%] object-cover"
                    src={thumbnail}
@@ -232,7 +234,10 @@ const Product_01 = () => {
         </p>
         
         {/* Price */}
-        <div className="flex items-center xs:gap-2 md:gap-4">
+        <div className="flex items-center
+        
+                        xs:gap-2
+                        md:gap-4">
           <p className="font-camptonBold text-primary
                         dark:text-secondary_01
                         
@@ -316,6 +321,7 @@ const Product_01 = () => {
                   aria-label="Increase quantity">
             <i><FaCirclePlus className="text-primary
                                         dark:text-secondary_01
+
                                         xs:text-[13px]
                                         lg:text-[22px]" /></i>
           </button>

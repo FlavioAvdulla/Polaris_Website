@@ -5,7 +5,7 @@ import { BiSolidPackage } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { LuCheckCheck } from "react-icons/lu";
-import React from "react";
+// import React from "react";
 
 const TrackOrder = () => {
 
@@ -177,7 +177,7 @@ const TrackOrder = () => {
 
                                    xs:w-[19px]
                                    lg:w-[23px]
-                                   xl:w-[30px]" />
+                                   xl:w-[30px]"/>
               </i>
             </div>
             <div className="flex items-center justify-center text-[30px] w-[60px] aspect-1 bg-gray-300 rounded-full
@@ -271,7 +271,9 @@ const TrackOrder = () => {
                            xs:gap-2 xs:px-3 xs:py-1 xs:w-[120px]
                            md:gap-3 md:px-4 md:py-2 md:w-[180px]
                            lg:w-[250px]">
-          <i><IoIosArrowForward className="xs:text-[10px] rotate-[180deg]
+          <i><IoIosArrowForward className="rotate-[180deg]
+
+                                           xs:text-[10px]
                                            md:text-[15px]
                                            2xl:text-[20px]"/>
           </i>
