@@ -277,12 +277,12 @@ const TrackOrder = () => {
                                            md:text-[15px]
                                            2xl:text-[20px]"/>
           </i>
-          <p className="xs:text-[10px]
+          <button className="xs:text-[10px]
                         md:text-[15px]
                         2xl:text-[20px]"
                         onClick={handleHomeOpen}>
             {t("trackOrder.backToHome")}
-          </p>
+          </button>
         </button>
       </div>
     </div>

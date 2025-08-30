@@ -135,12 +135,12 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
             {message && (
               <div 
                 className={`flex w-[100%] h-[45px] rounded-full p-5 items-center
-                    ${message.type === "success" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800 dark:text-secondary_01"}`}>
+                    ${message.type === "success" ? "bg-green-100 text-green-800 dark:text-green-500" : "bg-red-100 text-red-800 dark:text-secondary_01"}`}>
                 <p className="font-camptonBook">{message.text}</p>
               </div>
             )}
             <button
-              className="flex items-center justify-center border-primary border-[1px] text-white duration-300
+              className="flex items-center justify-center border-primary border-[1px] text-white duration-300 font-camptonBook
                          text-[17px] w-[100%] h-[45px] bg-primary rounded-full
                          hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary
                          dark:border-secondary_01 dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white"
@@ -157,7 +157,7 @@ const Register: React.FC<RegisterProps> = ({ setShowSignIn, setShowRegister }) =
                             md:text-[16px]">{t("authentication.alreadyHaveAnAccount")}</p>
               <button className="outline-none border-none underline-offset-1">
                 <p
-                  className="ml-2 text-primary
+                  className="ml-2 text-primary font-camptonBook
                              dark:text-secondary_01
                              
                              xs:text-[12px]

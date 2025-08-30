@@ -55,7 +55,7 @@
     "-20%off": "-20% DE",
     "shopNow": "COMPRAR AHORA",
     "title": "RENDIMIENTO SÚPER RÁPIDO",
-    "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
+    "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!"
   },
   "benefitsSection": {
     "onlineSupport": "Soporte en línea 24/7",
@@ -145,6 +145,20 @@
     "title_02": "RENDIMIENTO SÚPER LENTO",
     "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
     "paragraph_02": "¡No te pierdas estas oportunidades! Hemos preparado descuentos especiales para ti en productos electrónicos."
+  },
+  "carousel_06": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-35% DE",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "XIAOMI 15 PRO",
+    "paragraph_01": "El Xiaomi 15 Pro combina la potencia inigualable del Snapdragon 8 Gen 4 con un sistema de cámara Leica profesional para lograr el máximo rendimiento y creatividad."
+  },
+  "carousel_07": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-27% OFF",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "IPHONE 16 PRO MAX",
+    "paragraph_01": "Fabricada a partir de una sola lámina de titanio luminoso, se siente como sostener un rayo de luz pulida. La cámara TetraPrism, con una estructura impecable, captura el mundo con una claridad impresionante y profunda."
   },
   "productSection_06": {
     "title_01": "Computadoras",
@@ -293,6 +307,18 @@
     "detail_04": "Diseño resistente a salpicaduras.",
     "normalPrice": "€67",
     "offerPrice": "€59",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "product_33": {
+    "title": "SAMSUNG GALAXY S24",
+    "description": "La experiencia Galaxy definitiva. Descubre el Samsung Galaxy S24: una combinación perfecta de IA de vanguardia, una impresionante pantalla adaptable y una cámara de calidad profesional para transformar tu conexión con el mundo.",
+    "review": "4 Opiniones de clientes.",
+    "detail_01": "Pantalla AMOLED dinámica de 6,2 pulgadas con una resolución de 1080x2400.",
+    "detail_02": "Sistema de triple cámara trasera con un sensor principal de 50 MP.",
+    "detail_03": "Clasificación IP68 para resistencia al agua y al polvo.",
+    "detail_04": "Procesador octa-core de 3,2 GHz con 8 GB de RAM.",
+    "normalPrice": "€575",
+    "offerPrice": "€519",
     "addToCart": "AÑADIR A LA CESTA"
   },
   "contacts": {

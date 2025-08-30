@@ -16,6 +16,31 @@ import { useTranslation } from 'react-i18next';
 
 const Contacts = () => {
 
+  const [result, setResult] = React.useState("")
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending...")
+    const formData = new FormData(event.target)
+
+    formData.append("access_key", "6051b6b5-751e-4800-8de9-89c9c0bb27e9")
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData,
+    })
+
+    const data = await response.json()
+
+    if (data.success) {
+      setResult("Form Submitted Successfully!")
+      event.target.reset();
+    } else {
+      console.log("Error", data)
+      setResult(data.message)
+    }
+  }
+
   const { t } = useTranslation();
 
   return (
@@ -49,7 +74,7 @@ const Contacts = () => {
                           dark:bg-gray-800">
             <i>
               <FaLocationDot className="text-primary text-[30px]
-                                        dark:text-secondary_01" />
+                                        dark:text-secondary_01"/>
             </i>
             <div className="flex flex-col">
               <p className="font-camptonMedium
@@ -89,10 +114,11 @@ const Contacts = () => {
         </div>
       </div>
       {/* ============= Section - 02 ============= */}
-      <div className="flex w-[100%] gap-10 h-auto
+      <form className="flex w-[100%] gap-10 h-auto
       
                       xs:flex-col
-                      lg:flex-row">
+                      lg:flex-row"
+            onSubmit={onSubmit}>
         <div className="flex flex-col justify-between my-auto gap-10
         
                         xs:w-[100%] xs:text-center
@@ -168,12 +194,14 @@ const Contacts = () => {
                         bg-gray-100 p-5 outline-none border-none
                         dark:bg-gray-800 dark:text-white"
                    type="text"
+                   name="fullname"
                    placeholder={t("contacts.fullName")}
                    required/>
             <input className="w-[100%] h-[45px] rounded-full font-camptonLight
                         bg-gray-100 p-5 outline-none border-none
                         dark:bg-gray-800 dark:text-white"
-                   type="text"
+                   type="email"
+                   name="email"
                    placeholder={t("contacts.email")}
                    required/>
             <input className="w-[100%] h-[45px] rounded-full font-camptonLight
@@ -185,30 +213,36 @@ const Contacts = () => {
             <input className="w-[100%] h-[45px] rounded-full font-camptonLight
                             bg-gray-100 p-5 outline-none border-none
                             dark:bg-gray-800 dark:text-white"
-                   type="email"
+                   type="text"
+                   name="subject"
                    placeholder={t("contacts.subject")}
                    required/>
           </div>
           <input className="w-[100%] h-[45px] rounded-full font-camptonLight
                             bg-gray-100 p-5 outline-none border-none
                             dark:bg-gray-800 dark:text-white"
-                 type="email"
+                 type="text"
+                 name="services"
                  placeholder={t("contacts.service")}
                  required/>
             <textarea className="w-[100%] min-h-[200px] rounded-[23px] font-camptonLight
                                  bg-gray-100 p-5 outline-none border-none
                                  dark:bg-gray-800 dark:text-white"
                       // type="text"
+                      name="message"
                       placeholder={t("contacts.yourMessage")}
                       required/>
           <button className="flex w-[100%] h-[45px] rounded-full bg-primary border-[1px] border-primary
                              text-white items-center justify-center font-camptonBook p-5
                              dark:bg-secondary_01 dark:border-secondary_01 dark:hover:bg-transparent dark:hover:text-secondary_01
 
-                             hover:bg-transparent hover:text-primary duration-300 ease-in-out">
+                             hover:bg-transparent hover:text-primary duration-300 ease-in-out"
+                  type="submit">
                              {t("contacts.submit")}</button>
+            <span className="text-primary font-camptonBook
+                             dark:text-white">{result}</span>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

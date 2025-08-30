@@ -24,8 +24,10 @@ import ForgotPassword from "./components/Pages/ForgotPassword/ForgotPassword";
 import BannerSection from "./components/Home/BannerSection/BannerSection";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "../src/components/context/ThemeContext";
+import Product_33 from "./components/Home/otherProducts/Product_33";
 import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
 import Favourites from "./components/Pages/Favourites/Favourites";
+import ChatBox from "./components/Shadcn-components/ChatBox";
 import Contacts from "./components/Pages/Contacts/Contacts";
 import Register from "./components/Pages/Register/Register";
 import ScrollManager from "./ScrollManager/ScrollManager";
@@ -42,7 +44,7 @@ import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import React, { useState } from "react";
 import "./i18n";
-import ChatBox from "./components/Shadcn-components/ChatBox";
+import SmartPhones from "./components/Navbar/Categories/SmartPhones";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
@@ -114,6 +116,7 @@ const App = () => {
               <Route path="/Product_04" element={<Product_04 />} />
               <Route path="/Product_05" element={<Product_05 />} />
               <Route path="/Product_06" element={<Product_06 />} />
+              <Route path="/Product_33" element={<Product_33 />} />
 
               <Route path="/Shop" element={<Shop />} />
               <Route path="/Blog" element={<Blog />} />
@@ -126,6 +129,7 @@ const App = () => {
               <Route path="/Electronics" element={<Electronics />} />
               <Route path="/AudioAndHeadphones" element={<AudioAndHeadphones />} />
               <Route path="/trackOrder" element={<TrackOrder />} />
+              <Route path="/SmartPhones" element={<SmartPhones />} />
               <Route path="/Cart" element={<Cart setCartQuantity={setCartQuantity} />} />
               <Route path="/Favourites" element={ <Favourites setFavouriteQuantity={setFavouriteQuantity} />}/>
 

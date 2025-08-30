@@ -4,6 +4,8 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
+import { Carousel_07 } from "../../Shadcn-components/Carousel_07";
+import { Carousel_06 } from "../../Shadcn-components/Carousel_06";
 
 interface Product {
   _id: string;
@@ -20,9 +22,9 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['1', '2', '3'];
+const featuredProductIds = ['74', '2', '3'];
 
-const ProductSection_01 = () => {
+const SmartPhones = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -32,7 +34,7 @@ const ProductSection_01 = () => {
   const handleProductClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap: Record<string, string> = {
-      "1": "/Product_05",
+      "74": "/Product_33",
       "2": "/Product_04",
       "3": "/Product_03",
     }
@@ -109,7 +111,15 @@ const ProductSection_01 = () => {
   }
 
   return (
-    <div className="w-[85%] h-auto mx-auto gap-5 items-center justify-between my-20
+    <div className="flex flex-col w-[85%] h-auto mx-auto gap-5 items-center justify-between">
+      <div className="flex gap-5
+      
+                      xs:flex-col
+                      xl:flex-row">
+        <Carousel_06 />
+        <Carousel_07 />
+      </div>
+    <div className="h-auto mx-auto gap-5 items-center justify-between my-20
     
                     md:grid md:grid-cols-3">
       {products.map((product) => (
@@ -235,7 +245,8 @@ const ProductSection_01 = () => {
         </div>
       ))}
     </div>
+    </div>
   );
 };
 
-export default ProductSection_01;
+export default SmartPhones;
