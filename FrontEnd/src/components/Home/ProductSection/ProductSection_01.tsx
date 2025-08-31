@@ -10,6 +10,7 @@ interface Product {
   image: string;
   rating: number;
   normalPrice: string;
+  offerPrice: string;
   title: string;
   // description: string;
   quantity: number;
@@ -109,11 +110,13 @@ const ProductSection_01 = () => {
   }
 
   return (
-    <div className="w-[85%] h-auto mx-auto gap-5 items-center justify-between my-20
+    <div
+      className="w-[85%] h-auto mx-auto gap-5 items-center justify-between my-20
     
-                    md:grid md:grid-cols-3">
+                    md:grid md:grid-cols-3"
+    >
       {products.map((product) => (
-        <div 
+        <div
           className="rounded-lg overflow-hidden h-auto bg-gray-100 border-[1px] border-primary cursor-pointer
                      hover:shadow-lg transition-shadow duration-300
                      dark:bg-transparent dark:border-gray-600
@@ -121,40 +124,50 @@ const ProductSection_01 = () => {
                      xs:mb-5
                      md:w-[100%]"
           key={product._id}
-          onClick={() => handleProductClick(product._id)}>
+          onClick={() => handleProductClick(product._id)}
+        >
           {/* Product image */}
-          <div className="flex w-[100%] justify-center items-center bg-white
+          <div
+            className="flex w-[100%] justify-center items-center bg-white
                           dark:bg-transparent
                           
                           xs:h-[250px]
                           sm:h-[320px]
                           md:h-[200px]
-                          lg:h-[300px]">
-            <img className="w-[75%]"
-            src={`http://localhost:4004/images/${product.image}`}
-            alt={product.title} />
+                          lg:h-[300px]"
+          >
+            <img
+              className="w-[75%]"
+              src={`http://localhost:4004/images/${product.image}`}
+              alt={product.title}
+            />
           </div>
-          
+
           {/* Product info */}
-          <div className="flex flex-col w-[100%] gap-4 p-4 justify-between
+          <div
+            className="flex flex-col w-[100%] gap-4 p-4 justify-between
                           dark:bg-gray-800
                           
                           xs:h-auto
-                          md:h-[290px]">
+                          md:h-[290px]"
+          >
             {/* Rating */}
             <div className="flex gap-2">
               {getStars(product.rating)}
-              <p className="font-camptonBook
+              <p
+                className="font-camptonBook
                             dark:text-white
                             
                             md:text-[12px]
-                            lg:text-[15px]">
+                            lg:text-[15px]"
+              >
                 ({product.rating.toFixed(1)})
               </p>
             </div>
-            
+
             {/* Title */}
-            <h1 className="font-camptonMedium
+            <h1
+              className="font-camptonMedium
                            dark:text-white
             
                            xs:w-[80%]
@@ -167,15 +180,30 @@ const ProductSection_01 = () => {
 
             {/* Price and cart */}
             <div className="flex justify-between items-center">
-              <h1 className="font-camptonBold text-primary
+              <div className="flex items-center xs:gap-2 md:gap-4">
+                <p
+                  className="font-camptonBold text-primary
                              dark:text-secondary_01
                               
-                             xs:text-[40px]
+                             xs:text-[22px]
                              md:text-[30px]
-                             lg:text-[36px]
-                             xl:text-[40px]">
-                {t(product.normalPrice)}
-              </h1>
+                             lg:text-[40px]">
+                  {t(product.offerPrice)}
+                </p>
+                <div className="flex w-auto relative items-center">
+                  <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
+
+                  <p
+                    className="text-gray-700
+                               dark:text-white
+                                
+                               xs:text-[16px]
+                               md:text-[17px]
+                               lg:text-[25px]">
+                    {t(product.normalPrice)}
+                  </p>
+                </div>
+              </div>
               <button
                 onClick={(e) => handleAddToCart(e, product._id)}
                 className="bg-primary border-[1px] border-primary cursor-pointer
@@ -185,10 +213,11 @@ const ProductSection_01 = () => {
                            xs:rounded-md
                            md:rounded-sm
                            lg:rounded-md">
-                <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
-                                                dark:hover:text-secondary_01
+                <PiShoppingCartLight
+                  className="text-white group-hover:text-primary duration-300
+                             dark:hover:text-secondary_01
 
-                                                xs:text-[40px] xs:p-1"/>
+                             xs:text-[40px] xs:p-1"/>
               </button>
             </div>
 
@@ -201,22 +230,25 @@ const ProductSection_01 = () => {
                             lg:text-[15px]
                             2xl:text-[20px]">
                 {t(product.available)}:
-                <span className="font-camptonMedium
-                                 dark:text-secondary_01 
-                                  
-                                 xs:text-[12px]
-                                 lg:text-[15px]
-                                 2xl:text-[20px]">
+                <span
+                  className="font-camptonMedium
+                             dark:text-secondary_01 
+                            
+                             xs:text-[12px]
+                             lg:text-[15px]
+                             2xl:text-[20px]">
                   &nbsp;&nbsp;{product.quantity}
                 </span>
               </p>
-              <p className="text-[15px] font-camptonBook flex dark:text-white
+              <p
+                className="text-[15px] font-camptonBook flex dark:text-white
               
-                            xs:text-[12px]
-                            lg:text-[15px]
-                            2xl:text-[20px]">
+                           xs:text-[12px]
+                           lg:text-[15px]
+                           2xl:text-[20px]">
                 {t(product.sold)}:
-                <span className="text-primary font-camptonMedium
+                <span
+                  className="text-primary font-camptonMedium
                                  dark:text-secondary_01">
                   &nbsp;&nbsp;{product.quantitySold}
                 </span>
@@ -224,11 +256,12 @@ const ProductSection_01 = () => {
             </div>
 
             {/* Description */}
-            <p className="font-camptonBook dark:text-white
+            <p
+              className="font-camptonBook dark:text-white
                           
-                          xs:text-[10px]
-                          lg:text-[15px]
-                          2xl:text-[16px]">
+                         xs:text-[10px]
+                         lg:text-[15px]
+                         2xl:text-[16px]">
               {t(product.info)}
             </p>
           </div>

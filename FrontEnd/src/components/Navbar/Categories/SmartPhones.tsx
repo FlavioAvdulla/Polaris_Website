@@ -12,6 +12,7 @@ interface Product {
   image: string;
   rating: number;
   normalPrice: string;
+  offerPrice: string;
   title: string;
   // description: string;
   quantity: number;
@@ -177,15 +178,30 @@ const SmartPhones = () => {
 
             {/* Price and cart */}
             <div className="flex justify-between items-center">
-              <h1 className="font-camptonBold text-primary
+              <div className="flex items-center xs:gap-2 md:gap-4">
+                <p
+                  className="font-camptonBold text-primary
                              dark:text-secondary_01
                               
-                             xs:text-[40px]
+                             xs:text-[22px]
                              md:text-[30px]
-                             lg:text-[36px]
-                             xl:text-[40px]">
-                {t(product.normalPrice)}
-              </h1>
+                             lg:text-[40px]">
+                  {t(product.offerPrice)}
+                </p>
+                <div className="flex w-auto relative items-center">
+                  <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
+
+                  <p
+                    className="text-gray-700
+                               dark:text-white
+                                
+                               xs:text-[16px]
+                               md:text-[17px]
+                               lg:text-[25px]">
+                    {t(product.normalPrice)}
+                  </p>
+                </div>
+              </div>
               <button
                 onClick={(e) => handleAddToCart(e, product._id)}
                 className="bg-primary border-[1px] border-primary cursor-pointer
