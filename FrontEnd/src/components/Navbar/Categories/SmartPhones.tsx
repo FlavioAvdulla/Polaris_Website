@@ -23,7 +23,7 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['74', '76', '3'];
+const featuredProductIds = ['74', '77', '3'];
 
 const SmartPhones = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -36,7 +36,7 @@ const SmartPhones = () => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap: Record<string, string> = {
       "74": "/Product_33",
-      "2": "/Product_04",
+      "77": "/Product_35",
       "3": "/Product_03",
     }
 

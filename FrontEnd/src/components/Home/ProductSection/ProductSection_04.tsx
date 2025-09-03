@@ -163,12 +163,12 @@ const ProductSection_04 = () => {
                             lg:text-[16px]
                             xl:text-[14px]
                             2xl:text-[17px]">
-                              {product._id === '12' && `${featuredComputersProductIdsLength} ${t("productSection_04.items")}`}
-                              {product._id === '13' && `${featuredMobilesAndTabletsProductIdsLength} ${t("productSection_04.items")}`}
-                              {product._id === '14' && `${featuredGameAccessoriesProductIdsLength} ${t("productSection_04.items")}`}
-                              {product._id === '15' && `${featuredCameraAndPhotoProductIdsLength} ${t("productSection_04.items")}`}
-                              {product._id === '16' && `${featuredElectronicsProductIdsLength} ${t("productSection_04.items")}`}
-                              {product._id === '17' && `${featuredAudioAndHeadphonesProductIdsLength} ${t("productSection_04.items")}`}</p>
+                            {product._id === '12' && `${featuredComputersProductIdsLength} ${t("productSection_04.items")}`}
+                            {product._id === '13' && `${featuredMobilesAndTabletsProductIdsLength} ${t("productSection_04.items")}`}
+                            {product._id === '14' && `${featuredGameAccessoriesProductIdsLength} ${t("productSection_04.items")}`}
+                            {product._id === '15' && `${featuredCameraAndPhotoProductIdsLength} ${t("productSection_04.items")}`}
+                            {product._id === '16' && `${featuredElectronicsProductIdsLength} ${t("productSection_04.items")}`}
+                            {product._id === '17' && `${featuredAudioAndHeadphonesProductIdsLength} ${t("productSection_04.items")}`}</p>
             </div>
             {/* ============= Add to cart ============= */}
             <button className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center 
