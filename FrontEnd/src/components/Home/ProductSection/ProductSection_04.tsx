@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import axios from 'axios';
+import { featuredComputersProductIdsLength } from '../ProductSection/shop_By_Categories/Computers/Computers'
+import { featuredElectronicsProductIdsLength } from '../ProductSection/shop_By_Categories/Electronics/Electronics'
 
 interface Product {
   _id: string;
@@ -148,14 +150,17 @@ const ProductSection_04 = () => {
                              lg:text-[20px]
                              xl:text-[16px]
                              2xl:text-[20px]">{t(product.title)}</h1>
-              <p className="text-gray-500
+              {/* Replace product.quantity with featuredProductIdsLength */}
+              <p className="text-gray-500 font-camptonBook
                             dark:text-white
 
                             xs:text-[19px]
                             md:text-[17px]
                             lg:text-[16px]
                             xl:text-[14px]
-                            2xl:text-[17px]">{product.quantity} {t("productSection_04.items")}</p>
+                            2xl:text-[17px]">
+                              {product._id === '12' && `${featuredComputersProductIdsLength} ${t("productSection_04.items")}`}
+                              {product._id === '16' && `${featuredElectronicsProductIdsLength} ${t("productSection_04.items")}`}</p>
             </div>
             {/* ============= Add to cart ============= */}
             <button className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center 

@@ -23,7 +23,7 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['74', '2', '3'];
+const featuredProductIds = ['74', '76', '3'];
 
 const SmartPhones = () => {
   const [products, setProducts] = useState<Product[]>([]);

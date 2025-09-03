@@ -24,6 +24,8 @@ import ForgotPassword from "./components/Pages/ForgotPassword/ForgotPassword";
 import BannerSection from "./components/Home/BannerSection/BannerSection";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "../src/components/context/ThemeContext";
+import SmartPhones from "./components/Navbar/Categories/SmartPhones";
+import Product_35 from "./components/Home/otherProducts/Product_35";
 import Product_33 from "./components/Home/otherProducts/Product_33";
 import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
 import Favourites from "./components/Pages/Favourites/Favourites";
@@ -44,7 +46,6 @@ import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import React, { useState } from "react";
 import "./i18n";
-import SmartPhones from "./components/Navbar/Categories/SmartPhones";
 
 const App = () => {
   const [showRegister, setShowRegister] = useState(false);
@@ -117,6 +118,7 @@ const App = () => {
               <Route path="/Product_05" element={<Product_05 />} />
               <Route path="/Product_06" element={<Product_06 />} />
               <Route path="/Product_33" element={<Product_33 />} />
+              <Route path="/Product_35" element={<Product_35 />} />
 
               <Route path="/Shop" element={<Shop />} />
               <Route path="/Blog" element={<Blog />} />

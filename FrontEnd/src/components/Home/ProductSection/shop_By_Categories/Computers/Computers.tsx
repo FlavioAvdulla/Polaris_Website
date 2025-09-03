@@ -24,7 +24,8 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['1', '2', '3'];
+const featuredProductIds = ['1', '2', '3', '74'];
+export const featuredComputersProductIdsLength = featuredProductIds.length
 
 const Computers = () => {
 
