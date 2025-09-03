@@ -1,10 +1,14 @@
+import { featuredGameAccessoriesProductIdsLength } from '../ProductSection/shop_By_Categories/GameAccessories/GameAccessories'
+import { featuredElectronicsProductIdsLength } from '../ProductSection/shop_By_Categories/Electronics/Electronics'
+import { featuredComputersProductIdsLength } from '../ProductSection/shop_By_Categories/Computers/Computers'
+import { featuredAudioAndHeadphonesProductIdsLength } from '../ProductSection/shop_By_Categories/AudioAndHeadphones/AudioAndHeadphones'
+import { featuredCameraAndPhotoProductIdsLength } from '../ProductSection/shop_By_Categories/CameraAndPhoto/CameraAndPhoto'
+import { featuredMobilesAndTabletsProductIdsLength } from '../ProductSection/shop_By_Categories/MobilesAndTablets/MobilesAndTablets'
 import React, { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import axios from 'axios';
-import { featuredComputersProductIdsLength } from '../ProductSection/shop_By_Categories/Computers/Computers'
-import { featuredElectronicsProductIdsLength } from '../ProductSection/shop_By_Categories/Electronics/Electronics'
 
 interface Product {
   _id: string;
@@ -160,7 +164,11 @@ const ProductSection_04 = () => {
                             xl:text-[14px]
                             2xl:text-[17px]">
                               {product._id === '12' && `${featuredComputersProductIdsLength} ${t("productSection_04.items")}`}
-                              {product._id === '16' && `${featuredElectronicsProductIdsLength} ${t("productSection_04.items")}`}</p>
+                              {product._id === '13' && `${featuredMobilesAndTabletsProductIdsLength} ${t("productSection_04.items")}`}
+                              {product._id === '14' && `${featuredGameAccessoriesProductIdsLength} ${t("productSection_04.items")}`}
+                              {product._id === '15' && `${featuredCameraAndPhotoProductIdsLength} ${t("productSection_04.items")}`}
+                              {product._id === '16' && `${featuredElectronicsProductIdsLength} ${t("productSection_04.items")}`}
+                              {product._id === '17' && `${featuredAudioAndHeadphonesProductIdsLength} ${t("productSection_04.items")}`}</p>
             </div>
             {/* ============= Add to cart ============= */}
             <button className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center 
