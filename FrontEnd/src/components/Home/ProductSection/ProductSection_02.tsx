@@ -46,14 +46,13 @@ const ProductSection_02 = () => {
           {t("productSection_02.dealsOfTheDay")}
         </h1>
         {/* ============= Deals of the day - right ============= */}
-        <div
-          className="flex items-center
-                     dark:text-white
+        <div className="flex items-center
+                        dark:text-white
 
-                     xs:gap-3
-                     sm:gap-4
-                     md:gap-7
-                     lg:gap-10">
+                        xs:gap-3
+                        sm:gap-4
+                        md:gap-7
+                        lg:gap-10">
           {[
             { label: t("productSection_02.latestProducts"), path: "/deals/latest-products" },
             { label: t("productSection_02.topRating"), path: "/deals/top-rating" },
@@ -87,7 +86,7 @@ const ProductSection_02 = () => {
       {/* Divider line */}
       <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
                       dark:bg-gray-600" />
-                      
+
       {/* Outlet to display nested route components */}
       <Outlet />
     </div>
