@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 
-// React Icons
+// React Icons for star ratings and shopping cart
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 
-// Translation
+// Translation functionality
 import { useTranslation } from 'react-i18next';
 
+// Product interface defining the structure of product data
 interface Product {
   _id: string;
   image: string;
@@ -23,37 +24,50 @@ interface Product {
   info: string;
 }
 
-// Array of specific product IDs you want to display
+// Array of specific product IDs to display as featured products
 const featuredProductIds = ['1', '2', '3'];
+// Exporting the length of featured product IDs array for potential external use
 export const featuredMobilesAndTabletsProductIdsLength = featuredProductIds.length
 
+// Main component for displaying featured mobiles and tablets
 const MobilesAndTablets = () => {
 
+  // State for storing product data
   const [products, setProducts] = useState<Product[]>([]);
+  // State to track loading status
   const [loading, setLoading] = useState(true);
+  // State to handle any errors during data fetching
   const [error, setError] = useState<string | null>(null);
+
+  // Navigation hook for programmatic routing
   const navigate = useNavigate();
+  // Translation hook for internationalization
   const { t } = useTranslation();
 
+  // Handler for product click events
   const handleProductClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
+    // Mapping product IDs to their respective routes
     const routeMap: Record<string, string> = {
       "1": "/Product_05",
       "2": "/Product_04",
       "3": "/Product_03",
     }
 
+    // Navigate to the corresponding product page if route exists
     const route = routeMap[id];
     if (route) {
       navigate(route)
     }
   }
 
+  // useEffect hook to fetch products data on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // API call to get all products
         const response = await axios.get('http://localhost:4004/api/products');
-        // Filter products to only include those with IDs in featuredProductIds
+        // Filter products to only include featured ones
         const filteredProducts = response.data.filter((product: Product) => 
           featuredProductIds.includes(product._id)
         );
@@ -69,20 +83,25 @@ const MobilesAndTablets = () => {
     fetchProducts();
   }, []);
   
+  // Function to generate star rating UI based on product rating
   const getStars = (rating) => {
     const stars = [];
+    // Create 5 stars, filling based on rating value
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
+        // Full star
         stars.push(<FaStar key={i} className="text-[#fcc419]
                                               
                                               md:text-[15px]
                                               lg:text-[20px]" />);
       } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+        // Half star for fractional ratings
         stars.push(<FaStarHalfAlt key={i} className="text-[#fcc419]
                                                       
                                                       md:text-[15px]
                                                       lg:text-[20px]" />);
       } else {
+        // Empty star
         stars.push(<FaStar key={i} className="text-gray-300
                                               
                                               md:text-[15px]
@@ -92,6 +111,7 @@ const MobilesAndTablets = () => {
     return stars;
   };
 
+  // Loading state UI
   if (loading) {
     return <div className="flex mb-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -99,6 +119,7 @@ const MobilesAndTablets = () => {
       </div>;
   }
 
+  // Error state UI
   if (error) {
     return <div className="flex mb-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -106,6 +127,7 @@ const MobilesAndTablets = () => {
       </div>;
   }
 
+  // No products state UI
   if (products.length === 0) {
     return <div className="flex mb-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -113,9 +135,10 @@ const MobilesAndTablets = () => {
       </div>;
   }
 
+  // Main component render
   return (
     <div className="w-[85%] flex flex-col mx-auto">
-      {/* ============= Computers - Head ============= */}
+      {/* ============= Section Header ============= */}
       <div className="flex w-[100%] justify-between items-center mb-7">
         <h1 className="font-camptonMedium
                        dark:text-white
@@ -147,8 +170,9 @@ const MobilesAndTablets = () => {
                  justify-between my-20
                 
                  md:grid md:grid-cols-3">
+      {/* Map through products and render each product card */}
       {products.map((product, index) => (
-              // ============= Product 1 =============
+              // ============= Product Card =============
               <div className="rounded-lg overflow-hidden h-auto
                               bg-gray-100 border-[1px] border-primary cursor-pointer
                               dark:bg-transparent dark:border-gray-600
@@ -157,15 +181,15 @@ const MobilesAndTablets = () => {
                               md:w-[100%]"
                    key={index}
                   onClick={() => handleProductClick(product._id)}>
-                {/* ============= Image ============= */}
+                {/* ============= Product Image ============= */}
                 <div className="flex w-[100%] h-[300px] justify-center items-center">
                   <img className="w-auto h-full object-cover"
                        src={`http://localhost:4004/images/${product.image}`}
                        alt={product.title}/>
                 </div>
-                {/* ============= Info ============= */}
+                {/* ============= Product Info ============= */}
                 <div className="flex flex-col w-[100%] h-[35%] gap-2 p-4 justify-between dark:bg-gray-800">
-                  {/* ============= Stars ============= */}
+                  {/* ============= Star Rating ============= */}
                   <div className="flex gap-2">
                     {getStars(product.rating)}
                     <p className="font-camptonBook
@@ -176,6 +200,7 @@ const MobilesAndTablets = () => {
                       ({product.rating})
                     </p>
                   </div>
+                  {/* Product Title */}
                   <h1 className="font-camptonMedium
                                  dark:text-white
       
@@ -184,7 +209,8 @@ const MobilesAndTablets = () => {
                                  md:text-[13px] md:w-[90%]
                                  lg:text-[18px]
                                  xl:text-[22px] xl:w-[70%]">{t(product.title)}</h1>
-      
+                  
+                  {/* Price and Add to Cart Button */}
                   <div className="flex justify-between items-center">
                     <h1 className="font-camptonBold text-primary
                                    dark:text-secondary_01
@@ -206,6 +232,7 @@ const MobilesAndTablets = () => {
                                                       
                                                       xs:text-[40px] xs:p-1"/></i>
                   </div>
+                  {/* Availability and Sales Info */}
                   <div className="flex justify-between items-center">
                     <p className="font-camptonBook flex
                                   dark:text-white
@@ -236,6 +263,8 @@ const MobilesAndTablets = () => {
                       </span>
                     </p>
                   </div>
+
+                  {/* Additional Product Information */}
                   <p className="font-camptonBook
                                 dark:text-white
                   
@@ -247,7 +276,7 @@ const MobilesAndTablets = () => {
                 </div>
               </div>
             ))}
-    </div>
+      </div>
     </div>
   );
 };
