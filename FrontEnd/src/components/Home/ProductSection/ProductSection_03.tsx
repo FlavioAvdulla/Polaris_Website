@@ -1,47 +1,55 @@
+// Importing React hooks and other dependencies
 import React, { useEffect, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
+// Interface defining the structure of a Product object
 interface Product {
   _id: string;
   image: string;
-  title_02: string;
-  title_01: string;
+  title_02: string; // Subtitle or category text
+  title_01: string; // Main title text
   description: string;
-  button: string;
+  button: string; // Button text
 }
 
-// Array of specific product IDs you want to display
+// Array of specific product IDs to display as promotional banners
 const featuredProductIds = ['10', '11'];
 
 const ProductSection_03 = () => {
 
+  // State management for products, errors, and loading status
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+
+  // Hooks for translation and navigation
   const { t } = useTranslation();
   const navigate = useNavigate();
   
+  // Handler for when a promotional banner is clicked - navigates to specific product pages
     const handleProductClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap: Record<string, string> = {
-      "10": "/Product_01",
-      "11": "/Product_04",
+      "10": "/Product_01", // Route for product with ID 10
+      "11": "/Product_04", // Route for product with ID 11
     }
 
     const route = routeMap[id];
     if (route) {
-      navigate(route)
+      navigate(route) // Navigate to the specified route
     }
   }
 
+    // useEffect hook to fetch products from the API when component mounts
     useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // API call to get all products
         const response = await axios.get('http://localhost:4004/api/products');
-        // Filter products to only include those with IDs in featuredProductIds
+        // Filter to only include products with IDs in featuredProductIds
         const filteredProducts = response.data.filter((product: Product) => 
           featuredProductIds.includes(product._id)
         );
@@ -55,8 +63,9 @@ const ProductSection_03 = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, []); // Empty dependency array means this runs once on component mount
 
+  // Display loading state while fetching data
   if (loading) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -64,6 +73,7 @@ const ProductSection_03 = () => {
       </div>;
   }
 
+  // Display error state if API call fails
   if (error) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -71,6 +81,7 @@ const ProductSection_03 = () => {
       </div>;
   }
 
+  // Display message if no products are found
   if (products.length === 0) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -78,13 +89,15 @@ const ProductSection_03 = () => {
       </div>;
   }
 
+  // Main component render
   return (
     <div className="flex w-[85%] mx-auto mb-20 mt-10 gap-5
                     
                     xs:flex-col
                     md:flex-row">
+      {/* Map through products and render each promotional banner */}
       {products.map((product, index) => (
-        // ============= Product Container =============
+        // ============ Product Container =============
         <div className="flex border-[1px] border-primary rounded-lg overflow-hidden bg-transparent mx-auto cursor-pointer
                         dark:border-gray-600
               
@@ -92,16 +105,19 @@ const ProductSection_03 = () => {
                         lg:flex-row lg:w-[50%]
                         xl:h-[400px]"
              key={index}
-             onClick={() => handleProductClick(product._id)}>
-          {/* ============= Product Part Left ============= */}
+             onClick={() => handleProductClick(product._id)}> {/* Click handler for navigation */}
+          {/* ============= Left Section - Text Content ============= */}
           <div className="flex flex-col h-[100%] bg-primary p-5 justify-center rounded-tl-lg rounded-bl-lg
                           dark:bg-gray-800
                             
                           xs:w-[100%]
                           lg:w-[50%]">
+            {/* Subtitle/Category text */}
             <p className="text-white font-camptonMedium">
             {t(product.title_02)}
             </p>
+
+            {/* Main title text */}
             <h1 className="text-white font-camptonMedium leading-tight my-3
             
                            xs:text-[20px]
@@ -109,6 +125,8 @@ const ProductSection_03 = () => {
                            md:w-[100%]
                            xl:text-[30px]">{t(product.title_01)}
             </h1>
+
+            {/* Description text */}
             <p className="text-white font-camptonLight leading-tight">{t(product.description)}</p>
             {/* ============= Button ============= */}
             <div className="w-auto mt-7">
@@ -118,7 +136,7 @@ const ProductSection_03 = () => {
                                  dark:bg-secondary_01 dark:text-white dark:hover:bg-transparent
 
                                  xs:text-[12px] xs:gap-2 xs:px-3 xs:py-1
-                                 xl:px-4 xl:py-2 xl:text-[20px] xl:gap-3">{t(product.button)}
+                                 xl:px-4 xl:py-2 xl:text-[20px] xl:gap-3">{t(product.button)} {/* Button text */}
                 <IoIosArrowForward className="font-camptonLight
                 
                                               xs:text-[12px]
@@ -126,12 +144,12 @@ const ProductSection_03 = () => {
                                               xl:text-[20px]"/>
               </button>
             </div>
-          </div>
-          {/* ============= Product Part Right ============= */}
+            </div>
+          {/* ============= Right Section - Image ============= */}
           <div className="flex items-center justify-center rounded-tr-lg rounded-br-lg mx-auto
 
                           xs:w-[100%] xs:h-[100%]
-                          lg:w-[50%]">
+                          lg:w-[50%]"> {/* 50% width on large screens */}
             <img className="object-cover
                         
                             xs:h-[300px]
