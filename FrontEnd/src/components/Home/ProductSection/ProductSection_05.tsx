@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
+// Interface defining the structure of a Product object
 interface Product {
   _id: string;
-  image: string; // or typeof Product_01 if using image variables
+  image: string;
   rating: string;
   title: string;
   description: string;
@@ -16,17 +17,19 @@ interface Product {
   offerPrice: string;
 }
 
-// Array of specific product IDs you want to display
+// Array of specific product IDs to display as featured products
 const featuredProductIds = ['18', '19', '20', '21'];
 
 const ProductSection_05 = () => {
-
+  // State management for products, errors, and loading status
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  // Hooks for translation and navigation
   const { t } = useTranslation();
   const navigate = useNavigate();
   
+    // Handler for when a product is clicked - navigates to specific routes based on product ID
     const handleProductClick = (id) => {
       console.log(`Image with id ${id} clicked.`);
       const routeMap = {
@@ -42,11 +45,13 @@ const ProductSection_05 = () => {
       }
     }
 
+    // useEffect hook to fetch products from the API when component mounts
     useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // API call to get all products
         const response = await axios.get('http://localhost:4004/api/products');
-        // Filter products to only include those with IDs in featuredProductIds
+        // Filter to only include products with IDs in featuredProductIds
         const filteredProducts = response.data.filter((product: Product) => 
           featuredProductIds.includes(product._id)
         );
@@ -60,8 +65,9 @@ const ProductSection_05 = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, []); // Empty dependency array means this runs once on component mount
 
+  // Display loading state while fetching data
   if (loading) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -69,6 +75,7 @@ const ProductSection_05 = () => {
       </div>;
   }
 
+  // Display error state if API call fails
   if (error) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -76,6 +83,7 @@ const ProductSection_05 = () => {
       </div>;
   }
 
+  // Display message if no products are found
   if (products.length === 0) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -83,10 +91,13 @@ const ProductSection_05 = () => {
       </div>;
   }
 
+  // Helper function to generate star rating UI based on numeric rating
   const getStars = (rating) => {
     const stars = [];
+    // Convert rating string to number
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
+        // Full star
         stars.push(<FaStar key={i} className="text-[#fcc419]
           
                                               xs:text-[10px]
@@ -94,6 +105,7 @@ const ProductSection_05 = () => {
                                               lg:text-[15px]
                                               xl:text-[17px]" />);
       } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+        // Half star
         stars.push(
           <FaStarHalfAlt key={i} className="text-[#fcc419]
           
@@ -103,6 +115,7 @@ const ProductSection_05 = () => {
                                             xl:text-[17px]" />
         );
       } else {
+        // Empty star
         stars.push(<FaStar key={i} className="text-gray-300
           
                                               xs:text-[10px]
@@ -114,11 +127,13 @@ const ProductSection_05 = () => {
     return stars;
   };
 
+  // Main component render
   return (
     <div className="flex w-[85%] h-auto mx-auto gap-5 items-center justify-between mb-20
     
                     xs:flex-col
                     xl:flex-row">
+      {/* Left section with carousels */}
       <div className="flex gap-5
                       
                       xs:flex-col
@@ -126,6 +141,7 @@ const ProductSection_05 = () => {
       <Carousel_03 />
       <Carousel_04 /> 
       </div>
+      {/* Right section with product listings */}
       <div className="gap-5 flex flex-col
       
                       xs:w-[100%]
@@ -133,6 +149,7 @@ const ProductSection_05 = () => {
                       lg:grid lg:grid-cols-2
                       xl:flex xl:flex-col xl:h-[700px] xl:w-[60.66%]">
         {/* ============= Section - right ============= */}
+        {/* Map through products and render each one */}
         {products.map((product, index) => (
           <div className="flex flex-col w-[100%] justify-between gap-5 cursor-pointer overflow-hidden"
                key={index}
@@ -172,6 +189,7 @@ const ProductSection_05 = () => {
                                 xl:text-[12px]">({product.rating})
                   </p>
                 </div>
+                {/* Product title */}
                 <h1 className="font-camptonMedium leading-tight
                                dark:text-white
               
@@ -180,6 +198,7 @@ const ProductSection_05 = () => {
                                md:text-[27px]
                                lg:text-[22px]">{t(product.title)}
                 </h1>
+                {/* Product description */}
                 <p className="text-gray-500
                               dark:text-white
                               
@@ -196,6 +215,7 @@ const ProductSection_05 = () => {
                                 md:text-[35px]
                                 lg:text-[25px]">{t(product.offerPrice)}
                   </p>
+                  {/* Pricing information */}
                   <div className="flex w-auto relative items-center">
                     <div className="absolute h-[1px] w-[100%] bg-primary"/>
                     <p className="text-gray-800

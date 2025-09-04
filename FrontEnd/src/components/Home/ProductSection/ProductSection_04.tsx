@@ -1,15 +1,19 @@
+// Importing product count variables from various category modules
 import { featuredGameAccessoriesProductIdsLength } from '../ProductSection/shop_By_Categories/GameAccessories/GameAccessories'
 import { featuredElectronicsProductIdsLength } from '../ProductSection/shop_By_Categories/Electronics/Electronics'
 import { featuredComputersProductIdsLength } from '../ProductSection/shop_By_Categories/Computers/Computers'
 import { featuredAudioAndHeadphonesProductIdsLength } from '../ProductSection/shop_By_Categories/AudioAndHeadphones/AudioAndHeadphones'
 import { featuredCameraAndPhotoProductIdsLength } from '../ProductSection/shop_By_Categories/CameraAndPhoto/CameraAndPhoto'
 import { featuredMobilesAndTabletsProductIdsLength } from '../ProductSection/shop_By_Categories/MobilesAndTablets/MobilesAndTablets'
+
+// Importing React hooks and other dependencies
 import React, { useEffect, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { IoIosSearch } from "react-icons/io";
 import axios from 'axios';
 
+// Interface defining the structure of a Product object
 interface Product {
   _id: string;
   image: string;
@@ -25,17 +29,20 @@ interface Product {
   reviews: string;
 }
 
-// Array of specific product IDs you want to display
+// Array of specific product IDs to display as category cards
 const featuredProductIds = ['12', '13', '14', '15', '16', '17'];
 
 const ProductSection_04 = () => {
 
+  // State management for products, errors, and loading status
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  // Hooks for translation and navigation
   const { t } = useTranslation();
   const navigate = useNavigate();
 
+  // Handler for when a category card is clicked - navigates to specific category pages
   const handleImageClick = (id) => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap = {
@@ -53,11 +60,13 @@ const ProductSection_04 = () => {
     }
   }
 
+  // useEffect hook to fetch products from the API when component mounts
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // API call to get all products
         const response = await axios.get('http://localhost:4004/api/products');
-        // Filter products to only include those with IDs in featuredProductIds
+        // Filter to only include products with IDs in featuredProductIds
         const filteredProducts = response.data.filter((product: Product) => 
           featuredProductIds.includes(product._id)
         );
@@ -71,8 +80,9 @@ const ProductSection_04 = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, []); // Empty dependency array means this runs once on component mount
 
+  // Display loading state while fetching data
   if (loading) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -80,6 +90,7 @@ const ProductSection_04 = () => {
       </div>;
   }
 
+  // Display error state if API call fails
   if (error) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -87,6 +98,7 @@ const ProductSection_04 = () => {
       </div>;
   }
 
+  // Display message if no products are found
   if (products.length === 0) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -94,9 +106,10 @@ const ProductSection_04 = () => {
       </div>;
   }
 
+  // Main component render
   return (
     <div className="flex flex-col w-[85%] mx-auto">
-      {/* ============= Shop by Categories - Head ============= */}
+      {/* ============= Shop by Categories - Header ============= */}
       <div className="flex w-[100%] justify-between items-center mb-7">
         <h1 className="font-camptonMedium
                        dark:text-white
@@ -121,20 +134,24 @@ const ProductSection_04 = () => {
           </p>
         </div>
       </div>
+
+      {/* Divider line */}
       <div className="h-[1px] w-[100%] bg-gray-300 mx-auto
                       dark:bg-gray-600" />
+
+      {/* ============= Categories Grid ============= */}
       <div className="flex w-[100%] h-auto mx-auto items-center justify-between mb-20 mt-10
 
                       xs:grid xs:grid-cols-1 xs:gap-y-[60px]
                       md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
                       xl:flex">
-        {/* ============= Product List ============= */}
+        {/* Map through products and render each category card */}
         {products.map((product, index) => (
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary rounded-lg cursor-pointer
                           dark:border-gray-600"
                key={index}
                onClick={() => handleImageClick(product._id)}>
-            {/* ============= Image ============= */}
+            {/* ============= Category Image ============= */}
             <div className="flex w-[100%] h-auto rounded-tl-lg rounded-tr-lg overflow-hidden items-center justify-center bg-transparent">
               <img className="xs:h-auto
                               lg:w-[90%] w-[100%]
@@ -142,10 +159,11 @@ const ProductSection_04 = () => {
                    src={`http://localhost:4004/images/${product.image}`}
                    alt={product.title} />
             </div>
-            {/* ============= Title ============= */}
+            {/* ============= Category Info ============= */}
             <div className="flex flex-col w-[100%] h-auto p-4 bg-gray-100 justify-between rounded-br-lg rounded-bl-lg text-center z-10
                             group-hover:shadow-shadow-dark transition-all duration-300 items-center
                             dark:bg-gray-800">
+              {/* Category title */}
               <h1 className="mb-1 font-camptonMedium
                              dark:text-white
 
@@ -154,7 +172,7 @@ const ProductSection_04 = () => {
                              lg:text-[20px]
                              xl:text-[16px]
                              2xl:text-[20px]">{t(product.title)}</h1>
-              {/* Replace product.quantity with featuredProductIdsLength */}
+              {/* Category item count - dynamically shows count based on imported variables */}
               <p className="text-gray-500 font-camptonBook
                             dark:text-white
 
@@ -170,13 +188,14 @@ const ProductSection_04 = () => {
                             {product._id === '16' && `${featuredElectronicsProductIdsLength} ${t("productSection_04.items")}`}
                             {product._id === '17' && `${featuredAudioAndHeadphonesProductIdsLength} ${t("productSection_04.items")}`}</p>
             </div>
-            {/* ============= Add to cart ============= */}
+            {/* ============= View More Button (appears on hover) ============= */}
             <button className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center 
                                rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
                                duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary
                                dark:bg-secondary_01 dark:border-secondary_01">
-                            
+              {/* Search icon */}              
               <i><IoIosSearch className="text-[18px] text-white" /></i>
+              {/* "View More" text */}
               <p className="text-white">{t("productSection_04.viewMore")}</p>
             </button>
           </div>
