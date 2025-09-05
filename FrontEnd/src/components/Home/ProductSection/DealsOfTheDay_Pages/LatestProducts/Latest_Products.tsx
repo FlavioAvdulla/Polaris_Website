@@ -1,13 +1,13 @@
+import ScrollManager from "@/ScrollManager/ScrollManager";
+import { PiShoppingCartLight } from "react-icons/pi";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ScrollManager from "@/ScrollManager/ScrollManager";
-// React Icons
-import { PiShoppingCartLight } from "react-icons/pi";
 import axios from 'axios';
 
 // Translation
 import { useTranslation } from 'react-i18next';
 
+// Product interface defining the structure of product data
 interface Product {
   _id: string;
   image: string;
@@ -25,18 +25,26 @@ interface Product {
   additionalImages: string[];
 }
 
-// Array of specific product IDs you want to display
+// Array of specific product IDs to be displayed as featured products
 const featuredProductIds = ['4', '48', '49', '50', '51', '52'];
 
 const Latest_Products = () => {
+
+  // State for storing products data
   const [products, setProducts] = useState<Product[]>([]);
+  // State for handling errors
   const [error, setError] = useState<string | null>(null);
+  // State for tracking loading status
   const [loading, setLoading] = useState(true);
+  // Translation hook for internationalization
   const { t } = useTranslation();
+  // Navigation hook for programmatic routing
   const navigate = useNavigate();
 
+  // Handler for product image click - navigates to product detail page
   const handleImageClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
+    // Mapping of product IDs to their respective routes
     const routeMap: Record<string, string> = {
       "4": "/Product_01",
       "48": "/Product_02",
@@ -52,9 +60,11 @@ const Latest_Products = () => {
     }
   }
 
+  // Effect hook to fetch products data on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // API call to fetch all products
         const response = await axios.get('http://localhost:4004/api/products');
         // Filter products to only include those with IDs in featuredProductIds
         const filteredProducts = response.data.filter((product: Product) => 
@@ -72,6 +82,7 @@ const Latest_Products = () => {
     fetchProducts();
   }, []);
 
+  // Loading state UI
   if (loading) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -79,6 +90,7 @@ const Latest_Products = () => {
       </div>;
   }
 
+  // Error state UI
   if (error) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -86,6 +98,7 @@ const Latest_Products = () => {
       </div>;
   }
 
+  // Empty products state UI
   if (products.length === 0) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -93,8 +106,10 @@ const Latest_Products = () => {
       </div>;
   }
 
+  // Main component render
   return (
     <div className="flex flex-col w-[100%] mx-auto">
+      {/* Component for managing scroll behavior */}
       <ScrollManager/>
       <div
         className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
@@ -108,7 +123,7 @@ const Latest_Products = () => {
                       dark:border-gray-600" 
             key={index} 
             onClick={() => handleImageClick(product._id)}>
-            {/* ============= Image ============= */}
+            {/* ============= Product Image ============= */}
             <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
               <img 
                 className="xs:h-auto
@@ -118,7 +133,7 @@ const Latest_Products = () => {
                 alt={product.title} 
               />
             </div>
-            {/* ============= Title ============= */}
+            {/* ============= Product Title and Price ============= */}
             <div className="flex flex-col w-[100%] h-[140px] text-center p-4 z-10
                           justify-center rounded-br-lg rounded-bl-lg bg-gray-100
                           group-hover:shadow-shadow-dark transition-all duration-300
@@ -129,7 +144,7 @@ const Latest_Products = () => {
                           xl:text-[17px]">
               <h1 className="flex mb-4 justify-center font-camptonBook
                             dark:text-white">{t(product.title)}</h1>
-              {/* ============= Price ============= */}
+              {/* ============= Price Display ============= */}
               <div className="flex gap-4 items-center justify-center">
                 <p className="font-camptonBold text-primary
                             dark:text-secondary_01
@@ -143,7 +158,7 @@ const Latest_Products = () => {
                 </div>
               </div>
             </div>
-            {/* ============= Add to cart ============= */}
+            {/* ============= Add to Cart Button ============= */}
             <button
               className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
                         rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all

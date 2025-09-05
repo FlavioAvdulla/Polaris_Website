@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import { bestSelling, latestProducts, topRating } from "../../ProductSection";
 import { useNavigate } from "react-router-dom";
 import ScrollManager from "@/ScrollManager/ScrollManager";
 import axios from 'axios';
@@ -10,6 +9,7 @@ import { PiShoppingCartLight } from "react-icons/pi";
 // Translation
 import { useTranslation } from 'react-i18next';
 
+// Product interface defining the structure of product data
 interface Product {
   _id: string;
   image: string;
@@ -27,19 +27,26 @@ interface Product {
   additionalImages: string[];
 }
 
-// Array of specific product IDs you want to display
+// Array of specific product IDs to be displayed as featured products
 const featuredProductIds = ['48', '51', '52', '49', '50', '4'];
 
 const Best_Selling = () => {
   
+  // State for storing products data
   const [products, setProducts] = useState<Product[]>([]);
+  // State for handling errors
   const [error, setError] = useState<string | null>(null);
+  // State for tracking loading status
   const [loading, setLoading] = useState(true);
+  // Translation hook for internationalization
   const { t } = useTranslation();
+  // Navigation hook for programmatic routing
   const navigate = useNavigate();
 
+  // Handler for product image click - navigates to product detail page
   const handleImageClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
+    // Mapping of product IDs to their respective routes
     const routeMap: Record<string, string> = {
       "4": "/Product_01",
       "48": "/Product_02",
@@ -55,9 +62,11 @@ const Best_Selling = () => {
     }
   }
 
+  // Effect hook to fetch products data on component mount
   useEffect(() => {
   const fetchProducts = async () => {
     try {
+      // API call to fetch all products
       const response = await axios.get('http://localhost:4004/api/products');
       // Filter and sort products to match featuredProductIds order
       const filteredProducts = response.data
@@ -77,6 +86,7 @@ const Best_Selling = () => {
   fetchProducts();
 }, []);
 
+// Loading state UI
 if (loading) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -84,6 +94,7 @@ if (loading) {
       </div>;
   }
 
+  // Error state UI
   if (error) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -91,6 +102,7 @@ if (loading) {
       </div>;
   }
 
+  // Empty products state UI
   if (products.length === 0) {
     return <div className="flex mb-10 mt-20 justify-center">
       <p className="font-camptonBook bg-primary text-white px-10 py-2 rounded-full
@@ -98,8 +110,10 @@ if (loading) {
       </div>;
   }
 
+  // Main component render
   return (
     <div className="flex flex-col w-[100%] mx-auto">
+      {/* Component for managing scroll behavior */}
       <ScrollManager/>
       <div
         className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
@@ -112,7 +126,7 @@ if (loading) {
           <div className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer rounded-lg
           
                           dark:border-gray-600" key={index} onClick={() => handleImageClick(product._id)}>
-            {/* ============= Image ============= */}
+            {/* ============= Product Image ============= */}
             <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
               <img className="
               
@@ -121,7 +135,7 @@ if (loading) {
                               lg:w-[100%] w-[100%]
                               xl:w-[100%]" src={`http://localhost:4004/images/${product.image}`} alt={product.title} />
             </div>
-            {/* ============= Title ============= */}
+            {/* ============= Product Title and Price ============= */}
             <div className="flex flex-col  w-[100%] h-[140px] text-center p-4 bg-gray-100 justify-center rounded-br-lg rounded-bl-lg
                             group-hover:shadow-shadow-dark transition-all duration-300 z-10
                             dark:bg-gray-800
@@ -132,7 +146,7 @@ if (loading) {
                             xl:text-[17px]">
               <h1 className="flex mb-4 justify-center font-camptonBook
                              dark:text-white">{t(product.title)}</h1>
-              {/* ============= Price ============= */}
+              {/* ============= Price Display ============= */}
               <div className="flex gap-4 items-center justify-center">
                 <p className="font-camptonBold text-primary
                               dark:text-secondary_01
@@ -147,7 +161,7 @@ if (loading) {
                 </div>
               </div>
             </div>
-            {/* ============= Add to cart ============= */}
+            {/* ============= Add to Cart Button ============= */}
             <button
               className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
                          rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
