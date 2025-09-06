@@ -337,6 +337,18 @@
     "offerPrice": "€329",
     "addToCart": "ADD TO CART"
   },
+  "product_36": {
+    "title": "XIAOMI 15 PRO",
+    "description": "Experience revolutionary performance with the Xiaomi 15 Pro, featuring a cutting-edge Snapdragon 8 Gen 4 processor and a stunning Leica-engineered camera system.",
+    "review": "22 Customer Reviews",
+    "detail_01": "Display 6.73 inches (1440x 3200 pixels) 120Hz Refresh rate.",
+    "detail_02": "Camera 50+50+50 MP (Triple Camera) 32 MP Selfie 8K Video.",
+    "detail_03": "Hardware Qualcomm SM8750-AB Snapdragon 8 Elite.",
+    "detail_04": "Battery Si/C Li-Ion 6100 mAh 90W wired Charger.",
+    "normalPrice": "€990",
+    "offerPrice": "€890",
+    "addToCart": "ADD TO CART"
+  },
   "contacts": {
     "address": "Address",
     "talkToUs": "Talk to us",
