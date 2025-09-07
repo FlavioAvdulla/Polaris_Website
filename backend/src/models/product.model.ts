@@ -1,5 +1,9 @@
 import mongoose, { Schema, Document } from "mongoose";
 
+/**
+ * Interface representing a Product document in MongoDB
+ * Extends mongoose.Document to include Mongoose-specific properties and methods
+ */
 export interface IProduct extends Document {
   _id: string;
   image: string;
@@ -15,6 +19,10 @@ export interface IProduct extends Document {
   info: string;
 }
 
+/**
+ * Mongoose schema definition for the Product model
+ * Defines the structure, types, and validation rules for product documents
+ */
 const ProductSchema: Schema = new Schema(
   {
     _id: { type: String, required: true },
@@ -30,7 +38,11 @@ const ProductSchema: Schema = new Schema(
     sold: { type: String, required: true },
     info: { type: String, required: true },
   },
-  { timestamps: true }
+  { timestamps: true } // Automatically adds createdAt and updatedAt fields
 );
 
+/**
+ * Mongoose model for the Product collection
+ * Provides interface to interact with the products collection in MongoDB
+ */
 export default mongoose.model<IProduct>("Product", ProductSchema);
