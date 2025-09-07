@@ -2,22 +2,29 @@ import { Request, Response } from "express";
 import Product from "../models/product.model";
 import { NOT_FOUND, BAD_REQUEST, CREATED, OK } from "../constants/http";
 
+/**
+ * Interface defining the search parameters for product queries
+ */
 interface SearchParams {
-  q?: string;
-  minRating?: string;
-  maxPrice?: string;
-  inStock?: string;
-  limit?: string;
-  sort?: string;
+  q?: string;          // Search query string
+  minRating?: string;  // Minimum rating filter
+  maxPrice?: string;   // Maximum price filter
+  inStock?: string;    // Stock availability filter ('true'/'false')
+  limit?: string;      // Number of results to return
+  sort?: string;       // Sort criteria ('rating', 'price', 'newest', 'popular')
 }
 
-// Enhanced product mapping with IDs and additional details
+/**
+ * Mapping object that translates product title keys to actual product information
+ * Used for maintaining consistent product data across the application
+ * This serves as a translation layer between database storage and frontend display
+ */
 const PRODUCT_MAP: Record<string, { 
-  id: string;
-  name: string;
-  image?: string;
-  normalPrice?: string;
-  offerPrice?: string;
+  id: string;          // Product ID for frontend
+  name: string;        // Display name
+  image?: string;      // Optional image URL override
+  normalPrice?: string; // Optional normal price override
+  offerPrice?: string;  // Optional offer price override
 }> = {
   // Id - 4
   "product_01.title": {
@@ -51,7 +58,10 @@ const PRODUCT_MAP: Record<string, {
   }
 };
 
-// Maintain backward compatibility with existing name mapping
+/**
+ * Legacy mapping for backward compatibility
+ * Maintains the original name-only mapping structure
+ */
 const PRODUCT_NAME_MAP: Record<string, string> = Object.entries(PRODUCT_MAP).reduce(
   (acc, [key, value]) => {
     acc[key] = value.name;
@@ -60,9 +70,14 @@ const PRODUCT_NAME_MAP: Record<string, string> = Object.entries(PRODUCT_MAP).red
   {} as Record<string, string>
 );
 
-// Get only the IDs from PRODUCT_MAP
+// Array of all mapped product IDs for quick reference
 const MAPPED_PRODUCT_IDS = Object.values(PRODUCT_MAP).map(product => product.id);
 
+/**
+ * Creates a new product in the database
+ * @param req - Express request object containing product data
+ * @param res - Express response object
+ */
 export const createProduct = async (req: Request, res: Response) => {
   try {
     const product = new Product(req.body);
@@ -73,9 +88,16 @@ export const createProduct = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Retrieves all products from the database
+ * Applies product mapping to transform database titles to display names
+ * @param _req - Express request object
+ * @param res - Express response object
+ */
 export const getProducts = async (_req: Request, res: Response) => {
   try {
     const products = await Product.find();
+    // Transform each product using the mapping system
     const response = products.map(product => ({
       ...product.toObject(),
       title: PRODUCT_MAP[product.title]?.name || product.title,
@@ -90,6 +112,12 @@ export const getProducts = async (_req: Request, res: Response) => {
   }
 };
 
+/**
+ * Retrieves a single product by ID
+ * Applies product mapping and returns the transformed product
+ * @param req - Express request object with product ID parameter
+ * @param res - Express response object
+ */
 export const getProductById = async (req: Request, res: Response) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -97,6 +125,7 @@ export const getProductById = async (req: Request, res: Response) => {
       return res.status(NOT_FOUND).json({ error: "Product not found" });
     }
     
+    // Apply product mapping transformations
     const response = {
       ...product.toObject(),
       title: PRODUCT_MAP[product.title]?.name || product.title,
@@ -112,16 +141,23 @@ export const getProductById = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Updates an existing product by ID
+ * Returns the updated product with mapping applied
+ * @param req - Express request object with product ID and update data
+ * @param res - Express response object
+ */
 export const updateProduct = async (req: Request, res: Response) => {
   try {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
+      new: true, // Return the updated document
+      runValidators: true, // Run model validators on update
     });
     if (!product) {
       return res.status(NOT_FOUND).json({ error: "Product not found" });
     }
     
+    // Apply product mapping to the updated product
     const response = {
       ...product.toObject(),
       title: PRODUCT_MAP[product.title]?.name || product.title,
@@ -137,6 +173,11 @@ export const updateProduct = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Deletes a product by ID
+ * @param req - Express request object with product ID parameter
+ * @param res - Express response object
+ */
 export const deleteProduct = async (req: Request, res: Response) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
@@ -149,42 +190,48 @@ export const deleteProduct = async (req: Request, res: Response) => {
   }
 };
 
+/**
+ * Searches products based on various criteria
+ * Supports text search, price range, rating, stock availability, and sorting
+ * @param req - Express request object with search query parameters
+ * @param res - Express response object
+ */
 export const searchProducts = async (req: Request, res: Response) => {
   try {
     const { 
-      q: searchQuery, 
-      minRating, 
-      maxPrice, 
-      inStock,
-      limit = '10',
-      sort = 'rating'
+      q: searchQuery,     // Search query string
+      minRating,          // Minimum rating filter
+      maxPrice,           // Maximum price filter
+      inStock,            // Stock availability filter
+      limit = '10',       // Results limit (default: 10)
+      sort = 'rating'     // Sort criteria (default: rating)
     } = req.query as SearchParams;
 
-    // Validate search query
+    // Validate that search query exists and is a string
     if (!searchQuery || typeof searchQuery !== 'string') {
       return res.status(BAD_REQUEST).json({ 
         error: "Search query (q) is required and must be a string" 
       });
     }
 
-    // 1. Find all possible translation keys that match real names
+    // 1. Find all product keys that match the search query in their display names
     const matchingKeys = Object.entries(PRODUCT_MAP)
       .filter(([_, productInfo]) => 
         productInfo.name.toLowerCase().includes(searchQuery.toLowerCase())
       )
       .map(([key]) => key);
 
-    // If no matching keys found, return empty array
+    // Return empty array if no products match the search
     if (matchingKeys.length === 0) {
       return res.status(OK).json([]);
     }
 
-    // 2. Build search conditions
+    // 2. Build search conditions object for MongoDB query
     const searchConditions: any = {
       title: { $in: matchingKeys } // Only search for products with mapped titles
     };
 
-    // Add numeric price filter if provided
+    // Add maximum price filter if provided
     if (maxPrice) {
       const numericPrice = parseFloat(maxPrice);
       if (!isNaN(numericPrice)) {
@@ -194,7 +241,7 @@ export const searchProducts = async (req: Request, res: Response) => {
       }
     }
 
-    // Add rating filter if provided
+    // Add minimum rating filter if provided
     if (minRating) {
       const rating = parseFloat(minRating);
       if (!isNaN(rating)) {
@@ -207,31 +254,31 @@ export const searchProducts = async (req: Request, res: Response) => {
       searchConditions.quantity = { $gt: 0 };
     }
 
-    // Build sort object
+    // 3. Build sort options based on the sort parameter
     const sortOptions: Record<string, 1 | -1> = {};
     switch (sort) {
       case 'price':
-        sortOptions.normalPrice = 1;
+        sortOptions.normalPrice = 1; // Sort by price ascending
         break;
       case 'newest':
-        sortOptions.createdAt = -1;
+        sortOptions.createdAt = -1; // Sort by creation date descending
         break;
       case 'popular':
-        sortOptions.quantitySold = -1;
+        sortOptions.quantitySold = -1; // Sort by sales quantity descending
         break;
       default:
-        sortOptions.rating = -1;
+        sortOptions.rating = -1; // Default: sort by rating descending
     }
 
-    // 3. Execute search only for mapped products
+    // 4. Execute the search query with conditions, sorting, and limit
     const products = await Product.find(searchConditions)
       .sort(sortOptions)
       .limit(parseInt(limit, 10) || 10);
 
-    // 4. Convert results to display mapped data
+    // 5. Transform the results using the product mapping
     const response = products.map(product => ({
       ...product.toObject(),
-      title: PRODUCT_MAP[product.title].name, // Always use mapped name
+      title: PRODUCT_MAP[product.title].name, // Always use mapped display name
       id: PRODUCT_MAP[product.title].id || product._id,
       image: PRODUCT_MAP[product.title]?.image || product.image,
       normalPrice: PRODUCT_MAP[product.title]?.normalPrice || product.normalPrice,
