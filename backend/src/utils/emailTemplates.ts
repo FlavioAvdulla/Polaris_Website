@@ -1,15 +1,15 @@
 /**
  * Generates email template content for password reset requests
  * Provides both plain text and HTML versions for email client compatibility
- * 
+ *
  * @param url - The password reset URL with token that will be included in the email
  * @returns {Object} Email content object with subject, text, and HTML properties
- * 
+ *
  * @example
  * const resetUrl = `https://yourapp.com/reset-password?token=${resetToken}`;
  * const emailContent = getPasswordResetTemplate(resetUrl);
  * await sendEmail(user.email, emailContent.subject, emailContent);
- * 
+ *
  * @features
  * - Responsive HTML design that works on desktop and mobile
  * - Fallback text version for email clients that don't support HTML
@@ -30,15 +30,15 @@ export const getPasswordResetTemplate = (url: string) => ({
 /**
  * Generates email template content for email verification requests
  * Provides both plain text and HTML versions for email client compatibility
- * 
+ *
  * @param url - The email verification URL with token that will be included in the email
  * @returns {Object} Email content object with subject, text, and HTML properties
- * 
+ *
  * @example
  * const verifyUrl = `https://yourapp.com/verify-email?token=${verifyToken}`;
  * const emailContent = getVerifyEmailTemplate(verifyUrl);
  * await sendEmail(user.email, emailContent.subject, emailContent);
- * 
+ *
  * @features
  * - Responsive HTML design that works on desktop and mobile
  * - Fallback text version for email clients that don't support HTML
