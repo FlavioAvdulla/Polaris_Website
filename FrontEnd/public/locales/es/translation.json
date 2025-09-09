@@ -313,6 +313,18 @@
     "offerPrice": "€59",
     "addToCart": "AÑADIR A LA CESTA"
   },
+  "product_32": {
+    "title": "SAMSUNG GALAXY S25 ULTRA",
+    "description": "Experimente lo último en innovación móvil con la impresionante pantalla y la revolucionaria cámara del Samsung Galaxy S25 Ultra.",
+    "review": "16 Opiniones de clientes.",
+    "detail_01": "Pantalla: Dynamic AMOLED 2X de 6,9 ​​pulgadas, 1440 x 3120 píxeles.",
+    "detail_02": "Procesador: Chipset Qualcomm Snapdragon 8 Elite.",
+    "detail_03": "RAM: Disponible en opciones de 12 GB y 16 GB.",
+    "detail_04": "Batería: 5000 mAh con soporte de carga de 45 W.",
+    "normalPrice": "€1249",
+    "offerPrice": "€1199",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
   "product_33": {
     "title": "SAMSUNG GALAXY S24",
     "description": "La experiencia Galaxy definitiva. Descubre el Samsung Galaxy S24: una combinación perfecta de IA de vanguardia, una impresionante pantalla adaptable y una cámara de calidad profesional para transformar tu conexión con el mundo.",

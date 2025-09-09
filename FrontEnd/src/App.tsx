@@ -48,6 +48,7 @@ import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import React, { useState } from "react";
 import "./i18n"; // Internationalization setup
+import Product_32 from "./components/Home/otherProducts/Product_32";
 
 // Main App component
 const App = () => {
@@ -129,6 +130,7 @@ const App = () => {
               <Route path="/Product_04" element={<Product_04 />} />
               <Route path="/Product_05" element={<Product_05 />} />
               <Route path="/Product_06" element={<Product_06 />} />
+              <Route path="/Product_32" element={<Product_32 />} />
               <Route path="/Product_33" element={<Product_33 />} />
               <Route path="/Product_35" element={<Product_35 />} />
               <Route path="/Product_36" element={<Product_36 />} />
