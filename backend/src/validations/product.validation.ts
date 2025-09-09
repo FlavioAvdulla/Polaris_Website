@@ -41,28 +41,31 @@ export const productIdSchema = z.object({
   }),
 });
 
-// Search products schema
+// Schema for product search functionality
+// Validates query parameters for searching and filtering products
 export const searchProductSchema = z.object({
   query: z.object({
-    q: z.string().min(1, "Search query is required").max(100),
-    minRating: z.coerce.number().min(0).max(5).optional(),
-    maxPrice: z.coerce.number().min(0).optional(),
-    inStock: z.enum(["true", "false"]).optional(),
-    limit: z.coerce.number().min(1).max(100).default(10),
-    sort: z.enum(["price", "rating", "newest", "popular"]).default("rating"),
+    q: z.string().min(1, "Search query is required").max(100), // Validates search query string
+    minRating: z.coerce.number().min(0).max(5).optional(), // Validates optional minimum rating filter
+    maxPrice: z.coerce.number().min(0).optional(), // Validates optional maximum price filter
+    inStock: z.enum(["true", "false"]).optional(), // Validates optional in-stock filter
+    limit: z.coerce.number().min(1).max(100).default(10), // Validates results limit with default
+    sort: z.enum(["price", "rating", "newest", "popular"]).default("rating"), // Validates sort option with default
   }),
 });
 
-// Admin actions schema
+// Schema for admin-only actions
+// Validates authorization header to ensure user has admin privileges
 export const adminActionSchema = z.object({
   headers: z.object({
-    authorization: z.string().min(1, "Authorization header is required"),
+    authorization: z.string().min(1, "Authorization header is required"), // Validates presence of auth header
   }),
 });
 
-// Type exports
-export type CreateProductInput = z.infer<typeof createProductSchema>;
-export type UpdateProductInput = z.infer<typeof updateProductSchema>;
-export type ProductIdInput = z.infer<typeof productIdSchema>;
-export type SearchProductInput = z.infer<typeof searchProductSchema>;
-export type AdminActionInput = z.infer<typeof adminActionSchema>;
+// Type exports inferred from Zod schemas for TypeScript type safety
+// These types can be used throughout the application for type checking
+export type CreateProductInput = z.infer<typeof createProductSchema>; // Type for product creation data
+export type UpdateProductInput = z.infer<typeof updateProductSchema>; // Type for product update data
+export type ProductIdInput = z.infer<typeof productIdSchema>; // Type for product ID parameters
+export type SearchProductInput = z.infer<typeof searchProductSchema>; // Type for search query parameters
+export type AdminActionInput = z.infer<typeof adminActionSchema>; // Type for admin action requests
