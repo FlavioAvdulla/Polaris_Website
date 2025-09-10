@@ -361,6 +361,18 @@
     "offerPrice": "€890",
     "addToCart": "ADD TO CART"
   },
+  "product_37": {
+    "title": "SAMSUNG GALAXY Z FLIP 7",
+    "description": "The Sony Z Flip 7 unfolds a world of cinematic brilliance, merging a stunning foldable display with unparalleled Alpha-series camera technology in your pocket.",
+    "review": "14 Customer Reviews",
+    "detail_01": "Display 6.9 inches (1080x 2520 pixels) 120Hz Refresh rate.",
+    "detail_02": "Camera 50+12 MP (Dual Camera) 10 MP Selfie 4K Video.",
+    "detail_03": "Ram & Storage 12GB RAM, 256GB.",
+    "detail_04": "OS Android 16 One Ui 8.",
+    "normalPrice": "€1199",
+    "offerPrice": "€1099",
+    "addToCart": "ADD TO CART"
+  },
   "contacts": {
     "address": "Address",
     "talkToUs": "Talk to us",
