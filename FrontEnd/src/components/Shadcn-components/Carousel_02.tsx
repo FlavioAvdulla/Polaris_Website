@@ -17,7 +17,7 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['39', '40', '41', '42', '43', '44', '45', '46', '47'];
+const featuredProductIds = ['86', '82', '41', '85', '43', '44', '87', '46', '47', '40', '83', '84', '42', '39', '45'];
 
 export function Carousel_02() {
 

@@ -19,10 +19,17 @@ const ProductSection_02 = () => {
   // Hook for programmatic navigation
   const navigate = useNavigate();
 
-  // Effect to persist the active section to localStorage whenever it changes
+  // Effect to set default section and navigate on component mount
   useEffect(() => {
-    localStorage.setItem("activeSection", activeSection);
-  }, [activeSection]);
+    const defaultLabel = t("productSection_02.latestProducts");
+    const defaultPath = "/deals/latest-products";
+    
+    // If no active section is set, set the default one
+    if (!activeSection) {
+      setActiveSection(defaultLabel);
+      navigate(defaultPath);
+    }
+  }, [activeSection, navigate, t]);
 
   return (
     <div className="flex flex-col w-[85%] mx-auto">
@@ -31,7 +38,7 @@ const ProductSection_02 = () => {
       <ScrollManager/>
       {/* ============= Deals of the day - left ============= */}
       <div className="flex justify-between items-center mb-7
-      
+
                       xs:flex-col xs:gap-5
                       md:flex-row">
 
@@ -63,7 +70,7 @@ const ProductSection_02 = () => {
 
               // Conditional styling based on active state
               className={`flex items-center rounded-full
-                
+
                 ${activeSection === label
                   ? "border-[1px] border-primary bg-primary text-white dark:border-secondary_01 dark:bg-secondary_01"
                   : ""}`}
