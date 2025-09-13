@@ -28,6 +28,7 @@ import { ThemeProvider } from "../src/components/context/ThemeContext";
 import SmartPhones from "./components/Navbar/Categories/SmartPhones";
 import Product_32 from "./components/Home/otherProducts/Product_32";
 import Product_33 from "./components/Home/otherProducts/Product_33";
+import Product_34 from "./components/Home/otherProducts/Product_34";
 import Product_35 from "./components/Home/otherProducts/Product_35";
 import Product_36 from "./components/Home/otherProducts/Product_36";
 import Product_37 from "./components/Home/otherProducts/Product_37";
@@ -133,6 +134,7 @@ const App = () => {
               <Route path="/Product_06" element={<Product_06 />} />
               <Route path="/Product_32" element={<Product_32 />} />
               <Route path="/Product_33" element={<Product_33 />} />
+              <Route path="/Product_34" element={<Product_34 />} />
               <Route path="/Product_35" element={<Product_35 />} />
               <Route path="/Product_36" element={<Product_36 />} />
               <Route path="/Product_37" element={<Product_37 />} />

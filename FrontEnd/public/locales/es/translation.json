@@ -160,6 +160,20 @@
     "title_01": "IPHONE 16 PRO MAX",
     "paragraph_01": "Fabricada a partir de una sola lámina de titanio luminoso, se siente como sostener un rayo de luz pulida. La cámara TetraPrism, con una estructura impecable, captura el mundo con una claridad impresionante y profunda."
   },
+  "carousel_08": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-47% OFF",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "GAMING LAPTOPS",
+    "paragraph_01": "Experimente un rendimiento incomparable y domine la competencia con nuestras plataformas de juego diseñadas a medida, diseñadas con los últimos gráficos de alta frecuencia de actualización y procesadores de vanguardia para una victoria fluida e inmersiva."
+  },
+  "carousel_09": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-55% OFF",
+    "addToCart": "AÑADIR A LA CESTA",
+    "title_01": "GAMING DESKTOPS",
+    "paragraph_01": "Experience unparalleled performance and dominate the competition with our custom-built gaming rigs, engineered with the latest high-refresh-rate graphics and cutting-edge processors for a seamless, immersive victory."
+  },
   "productSection_06": {
     "title_01": "Computadoras",
     "title_02": "Auriculares de realidad virtual",
@@ -335,6 +349,18 @@
     "detail_04": "Procesador octa-core de 3,2 GHz con 8 GB de RAM.",
     "normalPrice": "€575",
     "offerPrice": "€519",
+    "addToCart": "AÑADIR A LA CESTA"
+  },
+  "product_34": {
+    "title": "IPHONE 16 PRO MAX",
+    "description": "Experimente el futuro en su mano con el revolucionario iPhone 16 Pro Max, donde una pantalla increíblemente brillante, un sistema de cámara inteligente y una integración perfecta de IA redefinen lo que puede ser un teléfono inteligente.",
+    "review": "18 Opiniones de clientes.",
+    "detail_01": "Pantalla AMOLED dinámica de 6,2 pulgadas con una resolución de 1080x2400.",
+    "detail_02": "Sistema de triple cámara trasera con un sensor principal de 50 MP.",
+    "detail_03": "Clasificación IP68 para resistencia al agua y al polvo.",
+    "detail_04": "Procesador octa-core de 3,2 GHz con 8 GB de RAM.",
+    "normalPrice": "€1199",
+    "offerPrice": "€1099",
     "addToCart": "AÑADIR A LA CESTA"
   },
    "product_35": {

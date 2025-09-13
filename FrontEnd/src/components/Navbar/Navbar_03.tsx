@@ -1,5 +1,5 @@
 import { AllCategories } from "../Shadcn-components/AllCategories";
-import { useLocation, useNavigate } from "react-router-dom";
+import { To, useLocation, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { CiDiscount1 } from "react-icons/ci";
@@ -20,7 +20,7 @@ const Navbar_03 = () => {
     }
   }, [location]);
 
-  const handleNavigation = (path) => {
+  const handleNavigation = (path: To) => {
     navigate(path);
   };
 
@@ -33,7 +33,7 @@ const Navbar_03 = () => {
 
                       sm:gap-5
                       md:gap-0">
-        <AllCategories />
+        <AllCategories onCategorySelect={undefined} />
         <div className="xs:w-auto
                         lg:w-[50%]">
           {/* ============= Navbar Pages ============= */}

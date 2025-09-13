@@ -27,7 +27,7 @@ export function AllCategories({ onCategorySelect }) {
   // Define all categories with their paths
   const categories = [
     { value: "smartphones", label: t('navbar_03.smartphones'), path: "/SmartPhones" },
-    { value: "tablets", label: t('navbar_03.tablets'), path: "/Tablets" },
+    { value: "computers", label: t('navbar_03.computers'), path: "/Computers" },
     { value: "fitnessTrackers", label: t('navbar_03.fitnessTrackers'), path: "/FitnessTrackers" },
     { value: "headphones", label: t('navbar_03.headphones'), path: "/Headphones" },
     { value: "speakers", label: t('navbar_03.speakers'), path: "/Speakers" },

@@ -178,6 +178,20 @@
     "title_01": "IPHONE 16 PRO MAX",
     "paragraph_01": "Crafted from a single sheet of luminous titanium, it feels like holding a sliver of polished light. The seamless TetraPrism camera captures the world with stunning, profound clarity."
   },
+  "carousel_08": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-47% OFF",
+    "addToCart": "ADD TO CART",
+    "title_01": "GAMING LAPTOPS",
+    "paragraph_01": "Experience unparalleled performance and dominate the competition with our custom-built gaming rigs, engineered with the latest high-refresh-rate graphics and cutting-edge processors for a seamless, immersive victory."
+  },
+  "carousel_09": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-55% OFF",
+    "addToCart": "ADD TO CART",
+    "title_01": "GAMING DESKTOPS",
+    "paragraph_01": "Experimente un rendimiento incomparable y domine la competencia con nuestras plataformas de juego diseñadas a medida, diseñadas con los últimos gráficos de alta frecuencia de actualización y procesadores de vanguardia para una victoria fluida e inmersiva."
+  },
   "footer": {
     "usefulLinks": "USEFUL LINKS",
     "aboutUs": "ABOUT US",
@@ -335,6 +349,18 @@
     "detail_04": "3.2 GHz octa-core processor with 8 GB of RAM.",
     "normalPrice": "€575",
     "offerPrice": "€519",
+    "addToCart": "ADD TO CART"
+  },
+  "product_34": {
+    "title": "IPHONE 16 PRO MAX",
+    "description": "Experience the future in your hand with the revolutionary iPhone 16 Pro Max, where an impossibly brilliant display, an intelligent camera system, and seamless AI integration redefine what a smartphone can be.",
+    "review": "18 Customer Reviews",
+    "detail_01": "6.2-inch Dynamic AMOLED display with a resolution of 1080x2400.",
+    "detail_02": "Triple rear camera system with a 50 MP main sensor.",
+    "detail_03": "IP68 rating for water and dust resistance.",
+    "detail_04": "3.2GHz octa-core processor with 8GB of RAM.",
+    "normalPrice": "€1199",
+    "offerPrice": "€1099",
     "addToCart": "ADD TO CART"
   },
   "product_35": {
