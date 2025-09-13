@@ -4,7 +4,7 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
-import { Carousel_07 } from "../../../../Shadcn-components/Carousel_07";
+import { Carousel_09 } from "../../../../Shadcn-components/Carousel_09";
 import { Carousel_08 } from "../../../../Shadcn-components/Carousel_08";
 
 interface Product {
@@ -124,7 +124,7 @@ const Computers = () => {
                       xs:flex-col
                       xl:flex-row">
         <Carousel_08 />
-        <Carousel_07 />
+        <Carousel_09 />
       </div>
     <div className="h-auto mx-auto gap-5 items-center justify-between my-20
     
