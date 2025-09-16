@@ -23,7 +23,7 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['74', '77', '79', '81', '89', '91'];
+const featuredProductIds = ['104', '77', '79', '81', '89', '91'];
 
 // Export the length of featured product IDs for potential external use
 export const featuredComputersProductIdsLength = featuredProductIds.length
@@ -38,7 +38,7 @@ const Computers = () => {
   const handleProductClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap: Record<string, string> = {
-      "74": "/Product_33",
+      "104": "/Product_01",
       "77": "/Product_35",
       "79": "/Product_36",
       "81": "/Product_32",
