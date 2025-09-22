@@ -334,7 +334,9 @@ const Product_04 = () => {
                            
                            xs:gap-2 xs:px-4 xs:py-2
                            md:gap-3">
-          <p className="xs:text-[10px]
+          <p className="font-camptonBook
+          
+                        xs:text-[10px]
                         lg:text-[18px]
                         2xl:text-[20px]">
             {t(product.addToCart)}

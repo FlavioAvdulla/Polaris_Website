@@ -152,7 +152,7 @@ const MobilesAndTablets = () => {
                         
                         xs:w-[50%]
                         md:w-fit">
-          <p className="text-gray-500
+          <p className="text-gray-500 font-camptonBook
                         dark:text-white
                         
                         xs:text-[10px]
@@ -218,7 +218,7 @@ const MobilesAndTablets = () => {
                                    xs:text-[40px]
                                    md:text-[30px]
                                    lg:text-[36px]
-                                   xl:text-[40px]">{product.normalPrice}
+                                   xl:text-[40px]">{t(product.normalPrice)}
                     </h1>
                     <i className="bg-primary border-[1px] border-primary cursor-pointer
                                   hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300

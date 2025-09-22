@@ -145,7 +145,7 @@ export function Carousel_01() {
                       <div className="gap-3
 
                                       xs:flex">
-                        <p className="flex text-white gap-3 items-center
+                        <p className="font-camptonBook flex text-white gap-3 items-center
                                       
                                       xs:text-[13px]
                                       md:text-[15px]
@@ -156,18 +156,17 @@ export function Carousel_01() {
                                         border-[1px] cursor-pointer border-white text-white items-center justify-center
                                         hover:bg-transparent hover:scale-110 ease-in-out duration-300
                                         dark:bg-darkColor dark:hover:bg-transparent">
-                          <p className="xs:text-[12px] xs:px-4 xs:py-[1px]
+                          <p className="font-camptonBook xs:text-[12px] xs:px-4 xs:py-[1px]
                                         md:text-[15px] md:px-6 md:py-[3px]
                                         2xl:text-[20px]">{t(product.discount)}</p>
                         </div>
                       </div>
-                      <h1
-                        className="text-white font-camptonBold leading-tight my-3
+                      <h1 className="text-white font-camptonBold leading-tight my-3
                       
-                                    xs:text-[22px] xs:w-[80%]
-                                    sm:text-[30px]
-                                    md:text-[35px]
-                                    2xl:text-[60px]">
+                                     xs:text-[22px] xs:w-[80%]
+                                     sm:text-[30px]
+                                     md:text-[35px]
+                                     2xl:text-[60px]">
                         {t(product.title)}
                       </h1>
                       <p className="text-white font-camptonBook
@@ -180,15 +179,16 @@ export function Carousel_01() {
                         {t(product.paragraph)}
                       </p>
                       <div className="w-auto mt-7">
-                        <button
-                          className="flex items-center justify-center bg-primary border-[1px] border-white text-white
-                                     rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
-                                     hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
-                                     dark:bg-darkColor dark:hover:bg-transparent
-                                          
-                                     xs:gap-2 xs:px-3 xs:py-1
-                                     md:gap-3 md:px-4 md:py-2">
-                          <p className="xs:text-[10px]
+                        <button className="flex items-center justify-center bg-primary border-[1px] border-white text-white
+                                           rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
+                                           hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                                           dark:bg-darkColor dark:hover:bg-transparent
+                                                  
+                                           xs:gap-2 xs:px-3 xs:py-1
+                                           md:gap-3 md:px-4 md:py-2">
+                          <p className="font-camptonBook
+
+                                        xs:text-[10px]
                                         md:text-[15px]
                                         2xl:text-[20px]">{t(product.addToCart)}</p>
                           <i>
@@ -200,13 +200,12 @@ export function Carousel_01() {
                       </div>
                     </div>
                     <div className="flex w-[100%] h-[100%] bg-carousel_red">
-                    <img
-                      className="w-[100%] h-[100%] object-cover
+                    <img className="w-[100%] h-[100%] object-cover
                       
-                                 xs:hidden
-                                 md:flex"
-                      src={`http://localhost:4004/images/${product.image}`}
-                      alt={product.title}/>
+                                    xs:hidden
+                                    md:flex"
+                         src={`http://localhost:4004/images/${product.image}`}
+                         alt={product.title}/>
                       </div>
                   </div>
                 </CardContent>

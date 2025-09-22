@@ -257,7 +257,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
               type="button"
               onClick={clearSearch}
               className="absolute right-12 text-gray-400 hover:text-gray-600
-                        dark:text-gray-300 dark:hover:text-gray-100"
+                         dark:text-gray-300 dark:hover:text-gray-100"
               aria-label="Clear search">
               <IoIosClose className="text-[24px]" />
             </button>
@@ -323,7 +323,8 @@ const Navbar_02: React.FC<NavbarProps> = ({
                                       md:pl-0
                                       lg:flex-row lg:items-center lg:gap-[35px]
                                       xl:gap-[40px]">
-                          <h4 className="font-camptonBook dark:text-white
+                          <h4 className="font-camptonBook
+                                         dark:text-white
 
                                          xs:text-[8px]
                                          md:text-[13px]
@@ -351,7 +352,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                         {/* Normal Price (with strikethrough) */}
                         <div className="flex w-fit relative items-center">
                           <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
-                          <p className="text-gray-800 dark:text-white
+                          <p className="font-camptonBook text-gray-800 dark:text-white
 
                                         xs:text-[9px]
                                         md:text-[14px]
@@ -429,7 +430,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                             xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                             sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                             md:ml-6 md:mt-1">
-              <p className="text-white
+              <p className="font-camptonBook text-white
               
                             xs:text-[8px]
                             sm:text-[10px]">
@@ -457,7 +458,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                             xs:w-[13px] xs:h-[13px] xs:ml-4 xs:mt-2
                             sm:w-[18px] sm:h-[18px] sm:ml-6 sm:mt-1
                             md:ml-6 md:mt-1">
-              <p className="text-white
+              <p className="font-camptonBook text-white
               
                             xs:text-[8px]
                             sm:text-[10px]">

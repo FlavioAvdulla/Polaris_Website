@@ -152,7 +152,7 @@ const Latest_Products = () => {
                             2xl:text-[25px]">{t(product.offerPrice)}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
-                  <p className="text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
+                  <p className="font-camptonBook text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
                               dark:text-white
                               ">{t(product.normalPrice)}</p>
                 </div>
@@ -167,7 +167,7 @@ const Latest_Products = () => {
               <i>
                 <PiShoppingCartLight className="text-[18px] text-white" />
               </i>
-              <p className="text-white text-[13px] font-camptonBook">{t("productSection_02.addToCart")}</p>
+              <p className="font-camptonBook text-white text-[13px] font-camptonBook">{t("productSection_02.addToCart")}</p>
             </button>
           </div>
         ))}

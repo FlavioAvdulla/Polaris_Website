@@ -124,7 +124,7 @@ const ProductSection_04 = () => {
                         xs:w-[50%]
                         md:w-fit">
 
-          <p className="text-gray-500
+          <p className="font-camptonBook text-gray-500
                         dark:text-white
 
                         xs:text-[10px]
@@ -196,7 +196,7 @@ const ProductSection_04 = () => {
               {/* Search icon */}              
               <i><IoIosSearch className="text-[18px] text-white" /></i>
               {/* "View More" text */}
-              <p className="text-white">{t("productSection_04.viewMore")}</p>
+              <p className="font-camptonBook text-white">{t("productSection_04.viewMore")}</p>
             </button>
           </div>
         ))}

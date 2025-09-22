@@ -76,7 +76,7 @@ const calculations = CartCalculations({cartItems})
 
                         xs:w-[50%]
                         md:w-fit">
-          <p className="text-gray-500
+          <p className="font-camptonBook text-gray-500
                         dark:text-white
 
                         xs:text-[10px]
@@ -96,9 +96,9 @@ const calculations = CartCalculations({cartItems})
                         xs:min-w-[1000px]
                         lg:min-w-[100%]">
         <thead>
-          <tr className="flex w-[100%] justify-between gap-[1px]">
+          <tr className="font-camptonLight flex w-[100%] justify-between gap-[1px]">
             <th className="flex p-2 justify-center w-[100%] h-[100%]
-                           bg-primary font-camptonLight text-[17px]
+                           bg-primary text-[17px]
                            dark:bg-secondary_01">
               <p className="text-white">{t("addToCart.product")}</p>
             </th>
@@ -127,7 +127,7 @@ const calculations = CartCalculations({cartItems})
         {/* ============= Add to Cart - List ============= */}
         <tbody>
           {cartItems.map((product, index) => (
-            <tr key={index} className="flex w-[100%] justify-between">
+            <tr key={index} className="font-camptonLight flex w-[100%] justify-between">
               <td className="flex px-5 items-center w-[100%] gap-5 justify-center
                              border-[1px] border-r-0 border-t-0 border-primary font-camptonBook
                              dark:border-secondary_01 dark:text-white">
@@ -184,12 +184,12 @@ const calculations = CartCalculations({cartItems})
                     <i><FaCirclePlus className="text-primary cursor-pointer
                                                 dark:text-secondary_01
                                 
-                                                  xs:text-[13px]
-                                                  lg:text-[22px]"/></i>
+                                                xs:text-[13px]
+                                                lg:text-[22px]"/></i>
                   </div>
                 </div>
               </td>
-              <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+              <td className="font-camptonLight flex p-5 items-center w-[100%] gap-5 justify-center
                              border-[1px] border-r-0 border-t-0 border-primary
                              dark:border-secondary_01 dark:text-white">
                 <p>
@@ -199,7 +199,7 @@ const calculations = CartCalculations({cartItems})
                   ).toFixed(2)}$
                 </p>
               </td>
-              <td className="flex p-5 items-center w-[100%] gap-5 justify-center
+              <td className="font-camptonLight flex p-5 items-center w-[100%] gap-5 justify-center
                              border-[1px] border-t-0 border-primary
                              dark:border-secondary_01">
                 <i><IoCloseCircle className="text-[29px] text-primary cursor-pointer
@@ -275,7 +275,7 @@ const calculations = CartCalculations({cartItems})
             <div className="flex justify-between">
               <p className="font-camptonBook
                             dark:text-white">{t("addToCart.subtotal")}</p>
-              <p className="font-camptonSemiBoldfont-camptonBook
+              <p className="font-camptonSemiBold
                             dark:text-white">{calculations.subtotalElement}</p>
             </div>
 
@@ -336,13 +336,12 @@ const calculations = CartCalculations({cartItems})
           </button>
         </div>
       </div>
-      <button
-        className="flex h-[45px] rounded-md items-center justify-center border-[1px]
-                   font-camptonLight bg-primary border-primary p-5 mt-3 text-white 
-                   hover:bg-transparent hover:text-primary duration-300
-                   dark:bg-secondary_01 dark:border-secondary_01
-                  
-                   lg:w-[150px]">
+      <button className="flex h-[45px] rounded-md items-center justify-center border-[1px]
+                         font-camptonLight bg-primary border-primary p-5 mt-3 text-white 
+                         hover:bg-transparent hover:text-primary duration-300
+                         dark:bg-secondary_01 dark:border-secondary_01
+
+                         lg:w-[150px]">
         <p className="font-camptonLight">{t("addToCart.update")}</p>
       </button>
     </div>

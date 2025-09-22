@@ -79,7 +79,10 @@ const ProductSection_02 = () => {
                 navigate(path); // Navigate to the specified path
                 setActiveSection(label); // Update active section state
               }}>
-              <p className="xs:text-[10px] w-auto xs:px-3 py-1
+              <p className="font-camptonBook text-gray-700
+                            dark:text-white
+
+                            xs:text-[10px] w-auto xs:px-3 py-1
                             sm:text-[11px]
                             md:text-[15px] md:px-5 md:py-2
                             lg:text-[22px]

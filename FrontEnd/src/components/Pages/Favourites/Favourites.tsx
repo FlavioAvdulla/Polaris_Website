@@ -44,19 +44,18 @@ const Cart = ({ setFavouriteQuantity }) => {
     <div className="w-[85%] flex flex-col mx-auto my-20">
       {/* ============= Add to Cart - Head ============= */}
             <div className="flex w-[100%] justify-between items-center mb-7">
-              <h1
-                className="font-camptonMedium
-                           dark:text-white
-      
-                           xs:text-[10px]
-                           sm:text-[11px]
-                           md:text-[15px] 
-                           lg:text-[22px]">{" "}{t("addToCart.addToCart")}</h1>
+              <h1 className="font-camptonMedium
+                             dark:text-white
+
+                             xs:text-[10px]
+                             sm:text-[11px]
+                             md:text-[15px] 
+                             lg:text-[22px]">{" "}{t("addToCart.addToCart")}</h1>
               <div className="flex items-center
       
                               xs:w-[50%]
                               md:w-fit">
-                <p className="text-gray-500
+                <p className="font-camptonBook text-gray-500
                               dark:text-white
       
                               xs:text-[10px]
@@ -172,7 +171,7 @@ const Cart = ({ setFavouriteQuantity }) => {
                     <td className="flex p-5 items-center w-[100%] gap-5 justify-center
                                    border-[1px] border-r-0 border-t-0 border-primary
                                    dark:border-secondary_01 dark:text-white">
-                      <p>{(
+                      <p className="font-camptonBook">{(
                           parseInt(localQuantity, 10) *
                           parseFloat(product.unitPrice.replace("$", ""))
                         ).toFixed(2)}$</p>

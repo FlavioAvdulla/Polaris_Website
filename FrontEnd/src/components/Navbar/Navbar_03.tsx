@@ -42,7 +42,7 @@ const Navbar_03 = () => {
                          xs:hidden
                          lg:flex">
             {/* ============= Home Pages ============= */}
-            <li className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
+            <li className={`font-camptonBook cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                             activeSection === "Home" ? "active" : ""}`}
                 onClick={() => {
                   setActiveSection("Home");
@@ -50,7 +50,7 @@ const Navbar_03 = () => {
                 }}>{t('navbar_03.home')}
             </li>
             {/* ============= Shop Pages ============= */}
-            <li className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
+            <li className={`font-camptonBook cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                             activeSection === "Shop" ? "active" : ""}`}
                 onClick={() => {
                   setActiveSection("Shop");
@@ -60,7 +60,7 @@ const Navbar_03 = () => {
             
             {/* ============= Computers Page ============= */}
             <li
-              className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
+              className={`font-camptonBook cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                 activeSection === "Computers" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("Computers");
@@ -69,7 +69,7 @@ const Navbar_03 = () => {
             </li>
             {/* ============= blog Pages ============= */}
             <li
-              className={`cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
+              className={`font-camptonBook cursor-pointer ease-in-out duration-300 hover:text-primary dark:text-white ${
                 activeSection === "Blog" ? "active" : ""}`}
               onClick={() => {
                 setActiveSection("Blog");
@@ -77,19 +77,18 @@ const Navbar_03 = () => {
               }}>Blog
             </li>
             <li
-              className="cursor-pointer ease-in-out duration-300
-                      hover:text-primary active:text-primary">
+              className="font-camptonBook cursor-pointer ease-in-out duration-300
+                         hover:text-primary active:text-primary">
               <p className="font-camptonBook
                           dark:text-white">{t('navbar_03.pages')}</p>
             </li>
           </ul>
         </div>
         {/* ============= best Discounts ============= */}
-        <div
-          className="flex w-auto h-[100%] items-center gap-2
-                     cursor-pointer ease-in-out duration-300 hover:text-primary
-                     xs:w-auto
-                     lg:flex">
+        <div className="flex w-auto h-[100%] items-center gap-2
+                        cursor-pointer ease-in-out duration-300 hover:text-primary
+                        xs:w-auto
+                        lg:flex">
           <i className="dark:bg-gray-800 dark:text-white
                           
                         xs:bg-gray-100 xs:p-2 xs:text-primary xs:rounded-full">

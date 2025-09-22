@@ -172,8 +172,7 @@ const ProductSection_01 = () => {
             {/* Rating display with stars */}
             <div className="flex gap-2">
               {getStars(product.rating)}
-              <p
-                className="font-camptonBook
+              <p className="font-camptonBook
                             dark:text-white
                             
                             md:text-[12px]
@@ -183,8 +182,7 @@ const ProductSection_01 = () => {
             </div>
 
             {/* Product title */}
-            <h1
-              className="font-camptonMedium
+            <h1 className="font-camptonMedium
                            dark:text-white
             
                            xs:w-[80%]
@@ -199,20 +197,19 @@ const ProductSection_01 = () => {
             <div className="flex justify-between items-center">
               <div className="flex items-center xs:gap-2 md:gap-4">
                 {/* Discounted price */}
-                <p
-                  className="font-camptonBold text-primary
-                             dark:text-secondary_01
-                              
-                             xs:text-[22px]
-                             md:text-[30px]
-                             lg:text-[40px]">
+                <p className="font-camptonBold text-primary
+                              dark:text-secondary_01
+                                
+                              xs:text-[22px]
+                              md:text-[30px]
+                              lg:text-[40px]">
                   {t(product.offerPrice)}
                 </p>
                 {/* Original price with strikethrough */}
                 <div className="flex w-auto relative items-center">
                   <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" /> {/* Strikethrough line */}
 
-                  <p className="text-gray-700
+                  <p className="font-camptonBook text-gray-700
                                 dark:text-white
                                 
                                 xs:text-[16px]

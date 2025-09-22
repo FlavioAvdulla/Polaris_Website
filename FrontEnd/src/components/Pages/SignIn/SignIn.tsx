@@ -167,10 +167,8 @@ const SignIn: React.FC<SignInProps> = ({
               </div>
             )}
 
-            <p 
-              className="ml-10 text-primary w-[100%] xs:text-[12px] md:text-[16px] cursor-pointer dark:text-secondary_01"
-              onClick={handleForgotPasswordOpen}
-            >
+            <p className="ml-10 text-primary w-[100%] xs:text-[12px] md:text-[16px] cursor-pointer dark:text-secondary_01"
+               onClick={handleForgotPasswordOpen}>
               {t("authentication.forgotPassword")}
             </p>
 
@@ -180,8 +178,7 @@ const SignIn: React.FC<SignInProps> = ({
                          hover:bg-transparent hover:border-primary hover:border-[1px] hover:text-primary
                          dark:border-secondary_01 dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white"
               type="submit"
-              disabled={isLoading}
-            >
+              disabled={isLoading}>
               {isLoading ? t("authentication.signingIn") : t("authentication.signIn")}
             </button>
 
@@ -194,7 +191,11 @@ const SignIn: React.FC<SignInProps> = ({
             <button className="flex items-center gap-3 justify-center border-primary border-[1px] duration-300
                                text-[17px] w-[100%] h-[45px] bg-transparent rounded-full dark:border-gray-600">
               <img className="w-[25px] h-auto" src={Google_Logo} alt="Google_Logo"/>
-              <p className="xs:text-[14px] md:text-[16px] font-camptonBook dark:text-white">
+              <p className="font-camptonBook
+                            dark:text-white
+              
+                            xs:text-[14px]
+                            md:text-[16px]">
                 {t("authentication.signInWithGoogle")}
               </p>
             </button>

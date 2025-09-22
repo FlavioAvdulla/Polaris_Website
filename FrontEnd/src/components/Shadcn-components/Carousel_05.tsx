@@ -139,7 +139,7 @@ export function Carousel_05() {
                       <div className="gap-3
                                                       
                                       xs:flex">
-                        <p className="flex text-white gap-3 items-center
+                        <p className="font-camptonBook flex text-white gap-3 items-center
                                                                       
                                       xs:text-[12px]
                                       sm:text-[13px]
@@ -152,7 +152,9 @@ export function Carousel_05() {
                                         border-white text-white items-center justify-center
                                         hover:bg-transparent hover:scale-110 ease-in-out duration-300">
 
-                          <p className="xs:px-4 xs:text-[12px] xs:py-[1px]
+                          <p className="font-camptonBook xs:px-4
+
+                                        xs:text-[12px] xs:py-[1px]
                                         md:text-[20px] md:px-6 md:py-[3px]
                                         lg:text-[15px]
                                         2xl:text-[16px]">{t(product.discount)}
@@ -181,7 +183,9 @@ export function Carousel_05() {
                                                                                     
                                             xs:gap-2 xs:px-3 xs:py-1
                                             md:gap-3 md:px-4 md:py-2">
-                          <p className="xs:text-[12px]
+                          <p className="font-camptonBook
+                          
+                                        xs:text-[12px]
                                         md:text-[20px]
                                         lg:text-[15px]
                                         2xl:text-[20px]">{t(product.addToCart)}

@@ -146,7 +146,7 @@ const AudioAndHeadphones = () => {
                         
                         xs:w-[50%]
                         md:w-fit">
-          <p className="text-gray-500
+          <p className="font-camptonBook text-gray-500
                         dark:text-white
                         
                         xs:text-[10px]

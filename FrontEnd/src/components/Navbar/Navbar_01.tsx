@@ -90,8 +90,8 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
 
                             lg:flex-col lg:gap-2
                             xl:flex-row">
-                              
-              <p className="text-[14px] xs:hidden xl:flex">{t('navbar_01.contactUs')}</p>
+
+              <p className="font-camptonBook text-[14px] xs:hidden xl:flex">{t('navbar_01.contactUs')}</p>
               <p className="font-camptonMedium bg-gray-100 rounded-md text-primary px-2 py-1
                             dark:bg-gray-800 dark:text-white
                             
@@ -114,7 +114,7 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
                 <BsBrightnessHigh className="dark:bg-gray-800 w-auto h-auto p-1 rounded-md text-[15px] ease-in-out duration-300" />
               )}
             </i>
-            <p className="text-[14px] ease-in-out duration-300
+            <p className="font-camptonBook text-[14px] ease-in-out duration-300
                           
                           xs:hidden
                           lg:flex">

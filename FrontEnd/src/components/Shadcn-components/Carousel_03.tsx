@@ -136,7 +136,7 @@ export function Carousel_03() {
                                     2xl:bottom-0 2xl:mb-[30px] 2xl:gap-0">
                       {/* Exclusive offer */}
                       <div className="gap-3 xs:flex">
-                        <p className="flex text-white gap-3 items-center
+                        <p className="font-camptonBook flex text-white gap-3 items-center
 
                                       xs:text-[12px]
                                       sm:text-[13px]
@@ -149,7 +149,9 @@ export function Carousel_03() {
                                         border-white text-white items-center justify-center
                                         hover:bg-transparent hover:scale-110 ease-in-out duration-300
                                         dark:bg-darkColor dark:hover:bg-transparent">
-                          <p className="xs:px-4 xs:text-[12px] xs:py-[1px]
+                          <p className="font-camptonBook
+
+                                        xs:px-4 xs:text-[12px] xs:py-[1px]
                                         md:text-[20px] md:px-6 md:py-[3px]
                                         lg:text-[15px]
                                         2xl:text-[16px]">
@@ -175,15 +177,16 @@ export function Carousel_03() {
                         {t(product.paragraph)}
                       </p>
                       <div className="w-auto mt-7">
-                        <button
-                          className="flex items-center justify-center bg-primary border-[1px] border-white
-                            text-white rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
-                            hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
-                            dark:bg-darkColor dark:hover:bg-transparent
+                        <button className="flex items-center justify-center bg-primary border-[1px] border-white
+                                           text-white rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
+                                           hover:scale-110 hover:border-[1px] hover:bg-transparent ease-in-out duration-300
+                                           dark:bg-darkColor dark:hover:bg-transparent
 
-                            xs:gap-2 xs:px-3 xs:py-1
-                            md:gap-3 md:px-4 md:py-2">
-                          <p className="xs:text-[12px]
+                                           xs:gap-2 xs:px-3 xs:py-1
+                                           md:gap-3 md:px-4 md:py-2">
+                          <p className="font-camptonBook
+                          
+                                        xs:text-[12px]
                                         md:text-[20px]
                                         lg:text-[15px]
                                         2xl:text-[20px]">

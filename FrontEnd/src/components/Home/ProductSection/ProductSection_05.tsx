@@ -199,7 +199,7 @@ const ProductSection_05 = () => {
                                lg:text-[22px]">{t(product.title)}
                 </h1>
                 {/* Product description */}
-                <p className="text-gray-500
+                <p className="font-camptonBook text-gray-500
                               dark:text-white
                               
                               xs:text-[10px]
@@ -218,7 +218,7 @@ const ProductSection_05 = () => {
                   {/* Pricing information */}
                   <div className="flex w-auto relative items-center">
                     <div className="absolute h-[1px] w-[100%] bg-primary"/>
-                    <p className="text-gray-800
+                    <p className="font-camptonBook text-gray-800
                                   dark:text-white
                     
                                   xs:text-[17px]
