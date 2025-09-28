@@ -399,6 +399,30 @@
     "offerPrice": "€1099",
     "addToCart": "ADD TO CART"
   },
+  "product_40": {
+    "title": "APPLE 2025 MACBOOK AIR",
+    "description": "Experience unparalleled performance and all-day battery life in the impossibly thin, lightweight design of the future.",
+    "review": "18 Customer Reviews",
+    "detail_01": "MacBook Air with the M4 chip lets you blaze through work and play.",
+    "detail_02": "Built for apple intelligence.",
+    "detail_03": "Up to 18 hours of battery life.",
+    "detail_04": "MacBook Air features two Thunderbolt 4 ports.",
+    "normalPrice": "€1499",
+    "offerPrice": "€1299",
+    "addToCart": "ADD TO CART"
+  },
+  "product_41": {
+    "title": "HP OMEN 16 ULTRA SLIM",
+    "description": "Dominate the competition with relentless power and a blazing-fast display packed into a surprisingly slim chassis.",
+    "review": "8 Customer Reviews",
+    "detail_01": "2K IPS Display with 144 Hz refresh rate.",
+    "detail_02": "NVIDIA GeForce RTX 5060 Laptop GPU.",
+    "detail_03": "AMD Ryzen 9 8940HX processor & Windows 11 Pro",
+    "detail_04": "1 USB Type-C.",
+    "normalPrice": "€1599",
+    "offerPrice": "€1199",
+    "addToCart": "ADD TO CART"
+  },
   "contacts": {
     "address": "Address",
     "talkToUs": "Talk to us",
