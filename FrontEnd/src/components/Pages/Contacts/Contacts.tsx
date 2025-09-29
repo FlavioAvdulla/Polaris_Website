@@ -3,6 +3,7 @@ import React from "react";
 // React Icons
 import { MdMail } from "react-icons/md";
 import { FaFacebookSquare } from "react-icons/fa";
+import ScrollToTop from "../../../../src/ScrollToTop/ScrollToTop"
 import {
   FaSquareXTwitter,
   FaSquarePinterest,
@@ -45,6 +46,7 @@ const Contacts = () => {
 
   return (
     <div className="w-[85%] flex flex-col mx-auto my-20">
+      <ScrollToTop/>
       <div className="flex gap-5 mb-20
       
                       xs:flex-col
