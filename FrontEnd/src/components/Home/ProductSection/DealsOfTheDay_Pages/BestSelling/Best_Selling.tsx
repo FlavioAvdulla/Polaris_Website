@@ -62,6 +62,42 @@ const Best_Selling = () => {
     }
   }
 
+  // Handler for Whatsapp message - sends product info to Whatsapp
+    const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
+      event.stopPropagation() // Prevent triggering the parent click event
+  
+      const imageUrl = `http://localhost:4004/images/${product.image}`;
+  
+    // Construct the Whatsapp message with product details
+    const message = `Hello! I want to buy this product:
+    
+    *Product Details:*
+    *Title:* ${t(product.title)}
+    *Description:* ${t(product.description)}
+    *Original Price:* ${t(product.description)}
+    *Original Price:* ${t(product.normalPrice)}
+    *Offer Price:* ${t(product.offerPrice)}
+  
+    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+  
+    *Product Image:* ${imageUrl}
+  
+    Please contact me to proceed with the purchase. Thank you!`;
+  
+    // Encode the message for URL
+      const encodedMessage = encodeURIComponent(message);
+  
+      // WhatsApp API URL (Replace with your actual WhatsApp number)
+      const whatsappNumber = "355676311918"
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+      // Open Whatsapp in a new tab
+      window.open(whatsappUrl, '_blank')
+    }
+
   // Effect hook to fetch products data on component mount
   useEffect(() => {
   const fetchProducts = async () => {
@@ -162,11 +198,11 @@ if (loading) {
               </div>
             </div>
             {/* ============= Add to Cart Button ============= */}
-            <button
-              className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
-                         rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
-                         duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary
-                         dark:bg-secondary_01 dark:border-secondary_01">
+            <button onClick={(e) => handleWhatsappMessage(product, e)}
+                    className="flex px-3 pt-5 pb-3 w-full h-auto items-center gap-3 justify-center
+                              rounded-br-lg rounded-bl-lg absolute bottom-0 transition-all
+                              duration-300 group-hover:bottom-[-45px] bg-primary border-[1px] border-primary
+                              dark:bg-secondary_01 dark:border-secondary_01">
               <i>
                 <PiShoppingCartLight className="text-[18px] text-white" />
               </i>

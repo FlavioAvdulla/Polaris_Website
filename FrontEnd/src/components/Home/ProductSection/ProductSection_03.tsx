@@ -7,6 +7,13 @@ import axios from 'axios';
 
 // Interface defining the structure of a Product object
 interface Product {
+  title: any | string | string[];
+  offerPrice: any | string | string[];
+  normalPrice: any | string | string[];
+  detail_02: any | string | string[];
+  detail_01: any | string | string[];
+  detail_03: any | string | string[];
+  detail_04: any | string | string[];
   _id: string;
   image: string;
   title_02: string; // Subtitle or category text
@@ -42,6 +49,42 @@ const ProductSection_03 = () => {
       navigate(route) // Navigate to the specified route
     }
   }
+
+  // Handler for Whatsapp message - sends product info to Whatsapp
+        const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
+          event.stopPropagation() // Prevent triggering the parent click event
+      
+          const imageUrl = `http://localhost:4004/images/${product.image}`;
+      
+        // Construct the Whatsapp message with product details
+        const message = `Hello! I want to buy this product:
+        
+        *Product Details:*
+        *Title:* ${t(product.title)}
+        *Description:* ${t(product.description)}
+        *Original Price:* ${t(product.description)}
+        *Original Price:* ${t(product.normalPrice)}
+        *Offer Price:* ${t(product.offerPrice)}
+      
+        ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+        ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+        ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+        ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+      
+        *Product Image:* ${imageUrl}
+      
+        Please contact me to proceed with the purchase. Thank you!`;
+      
+        // Encode the message for URL
+          const encodedMessage = encodeURIComponent(message);
+      
+          // WhatsApp API URL (Replace with your actual WhatsApp number)
+          const whatsappNumber = "355676311918"
+          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      
+          // Open Whatsapp in a new tab
+          window.open(whatsappUrl, '_blank')
+        }
 
     // useEffect hook to fetch products from the API when component mounts
     useEffect(() => {
@@ -130,13 +173,14 @@ const ProductSection_03 = () => {
             <p className="text-white font-camptonLight leading-tight">{t(product.description)}</p>
             {/* ============= Button ============= */}
             <div className="w-auto mt-7">
-              <button className="flex items-center justify-center bg-white border-[1px] text-primary rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
+              <button onClick={(e) => handleWhatsappMessage(product, e)}
+                      className="flex items-center justify-center bg-white border-[1px] text-primary rounded-br-3xl rounded-tr-3xl rounded-tl-lg rounded-bl-lg
                                  hover:bg-transparent  hover:border-white hover:border-[1px] hover:scale-105 ease-in-out
                                  duration-300 hover:text-white
                                  dark:bg-secondary_01 dark:text-white dark:hover:bg-transparent
 
                                  xs:text-[12px] xs:gap-2 xs:px-3 xs:py-1
-                                 xl:px-4 xl:py-2 xl:text-[20px] xl:gap-3">{t(product.button)} {/* Button text */}
+                                 xl:px-4 xl:py-2 xl:text-[20px] xl:gap-3">{t(product.button)}
                 <IoIosArrowForward className="font-camptonLight
                 
                                               xs:text-[12px]
