@@ -34,6 +34,7 @@ import Product_36 from "./components/Home/otherProducts/Product_36";
 import Product_37 from "./components/Home/otherProducts/Product_37";
 import Product_40 from "./components/Home/otherProducts/Product_40";
 import Product_41 from "./components/Home/otherProducts/Product_41";
+import Product_42 from "./components/Home/otherProducts/Product_42";
 import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import ChatBox from "./components/Shadcn-components/ChatBox";
@@ -142,6 +143,7 @@ const App = () => {
               <Route path="/Product_37" element={<Product_37 />} />
               <Route path="/Product_40" element={<Product_40 />} />
               <Route path="/Product_41" element={<Product_41 />} />
+              <Route path="/Product_42" element={<Product_42 />} />
 
               {/* Main section pages */}
               <Route path="/Shop" element={<Shop />} />

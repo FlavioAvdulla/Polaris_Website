@@ -44,7 +44,7 @@
     "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-20% DE",
     "discount_02": "-30% DE",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "RENDIMIENTO SÚPER RÁPIDO",
     "title_02": "RENDIMIENTO SÚPER LENTO",
     "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
@@ -83,7 +83,7 @@
     "latestProducts": "Últimos productos",
     "topRating": "Calificación superior",
     "bestSelling": "Los más vendidos",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "loadingProducts": "Cargando productos...",
     "noProducts": "No hay productos destacados disponibles.",
     "networkError": "Error de red"
@@ -92,7 +92,7 @@
     "title_02": "Descuento de fin de semana",
     "title_01": "CÁMARA SIN ESPEJO OLYMPUS MARK II",
     "description": "Cámara sin espejo con vídeo 4K",
-    "button": "AÑADIR A LA CESTA"
+    "button": "ORDENAR AHORA"
   },
   "productSection_04": {
     "shopByCategories": "Comprar por categorías",
@@ -120,7 +120,7 @@
     "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-20% DE",
     "discount_02": "-30% DE",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "RENDIMIENTO SÚPER RÁPIDO",
     "title_02": "RENDIMIENTO SÚPER LENTO",
     "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
@@ -130,7 +130,7 @@
     "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-20% DE",
     "discount_02": "-30% DE",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "RENDIMIENTO SÚPER RÁPIDO",
     "title_02": "RENDIMIENTO SÚPER LENTO",
     "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
@@ -140,7 +140,7 @@
     "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-20% DE",
     "discount_02": "-30% DE",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "RENDIMIENTO SÚPER RÁPIDO",
     "title_02": "RENDIMIENTO SÚPER LENTO",
     "paragraph_01": "Hemos preparado descuentos especiales para ti en productos electrónicos. ¡No te pierdas estas oportunidades!",
@@ -149,28 +149,28 @@
   "carousel_06": {
     "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-35% DE",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "XIAOMI 15 PRO",
     "paragraph_01": "El Xiaomi 15 Pro combina la potencia inigualable del Snapdragon 8 Gen 4 con un sistema de cámara Leica profesional para lograr el máximo rendimiento y creatividad."
   },
   "carousel_07": {
     "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-27% OFF",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "IPHONE 16 PRO MAX",
     "paragraph_01": "Fabricada a partir de una sola lámina de titanio luminoso, se siente como sostener un rayo de luz pulida. La cámara TetraPrism, con una estructura impecable, captura el mundo con una claridad impresionante y profunda."
   },
   "carousel_08": {
     "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-47% OFF",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "GAMING LAPTOPS",
     "paragraph_01": "Experimente un rendimiento incomparable y domine la competencia con nuestras plataformas de juego diseñadas a medida, diseñadas con los últimos gráficos de alta frecuencia de actualización y procesadores de vanguardia para una victoria fluida e inmersiva."
   },
   "carousel_09": {
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-55% OFF",
-    "addToCart": "AÑADIR A LA CESTA",
+    "addToCart": "ORDENAR AHORA",
     "title_01": "GAMING DESKTOPS",
     "paragraph_01": "Un centro de mando personal donde los mundos digitales cobran vida. Es una sinfonía de luz, potencia y comodidad, meticulosamente diseñado para ser el portal perfecto a la aventura, la competición y la evasión."
   },
@@ -254,7 +254,7 @@
   "product_01": {
     "title": "LENOVO LEGION 5",
     "description": "SSD ultrarrápido, impresionantes gráficos 4K y una experiencia háptica inmersiva en el DualSense. El futuro de los videojuegos ya está aquí.",
-    "review": "4 Opiniones de clientes.",
+    "review": "4 Opiniones de clientes",
     "rating": "1",
     "detail_01": "Ryzen 7 5800H hasta 4,40 GHz",
     "detail_02": "Gráficos RTX 3070 8GB GDDR6",
@@ -262,12 +262,12 @@
     "detail_04": "Windows 11 Professional (64 bits)",
     "normalPrice": "€1599",
     "offerPrice": "€1499",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_02": {
     "title": "PS VR AURICULARES",
     "description": "Experience new realities with a custom OLED screen and smooth 120fps visuals to create complete immersion in your games.",
-    "review": "6 Opiniones de clientes.",
+    "review": "6 Opiniones de clientes",
     "rating": "1",
     "detail_01": "Pantalla: OLED",
     "detail_02": "Tamaño de la pantalla: 5,7 pulgadas",
@@ -275,12 +275,12 @@
     "detail_04": "Sensores: Acelerómetro, giroscopio",
     "normalPrice": "€399",
     "offerPrice": "€379",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_03": {
     "title": "PLAYSTATION®5 PRO",
     "description": "Juega juegos de PS5® con las imágenes más impresionantes jamás vistas en una consola PlayStation.",
-    "review": "6 Opiniones de clientes.",
+    "review": "6 Opiniones de clientes",
     "rating": "1",
     "detail_01": "Juego de ultra alta definición con detalles asombrosos.",
     "detail_02": "Velocidades de cuadro estables para un juego fluido en pantallas de 60 Hz y 120 Hz.",
@@ -288,12 +288,12 @@
     "detail_04": "Hasta 1TB de almacenamiento.",
     "normalPrice": "€699",
     "offerPrice": "€599",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_04": {
     "title": "GEFORCE RTX 3090 24GB",
     "description": "La GeForce RTX 3090 ofrece un rendimiento increíble con trazado de rayos mejorado, capacidades de IA y 24 GB de memoria.",
-    "review": "6 Opiniones de clientes.",
+    "review": "6 Opiniones de clientes",
     "rating": "2.5",
     "detail_01": "24GB GDDR6X (384-bit).",
     "detail_02": "PCI Express 4.0.",
@@ -301,127 +301,139 @@
     "detail_04": "DirectX 12 Ultimate.",
     "normalPrice": "€1649",
     "offerPrice": "€1449",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_05": {
     "title": "AURICULARES SONY WH-1000XM5",
     "description": "Cancelación de ruido líder en la industria optimizada para usted. Sonido magnífico, diseñado a la perfección. Nitidez cristalina.",
-    "review": "5 Opiniones de clientes.",
+    "review": "5 Opiniones de clientes",
     "detail_01": "Cancelación de ruido líder en la industria.",
     "detail_02": "Calidad de sonido extraordinaria.",
     "detail_03": "Calidad de llamada nítida.",
     "detail_04": "Hasta 30 horas de duración de batería.",
     "normalPrice": "€359",
     "offerPrice": "€269",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_06": {
     "title": "TECLADO REDRAGON K535",
     "description": "Cancelación de ruido líder en la industria optimizada para usted. Sonido magnífico, diseñado a la perfección. Nitidez cristalina.",
-    "review": "7 Opiniones de clientes.",
+    "review": "7 Opiniones de clientes",
     "detail_01": "Teclado mecánico con cable.",
     "detail_02": "Cable desmontable tipo C a USB.",
     "detail_03": "Retroiluminación RGB.",
     "detail_04": "Diseño resistente a salpicaduras.",
     "normalPrice": "€67",
     "offerPrice": "€59",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_32": {
     "title": "SAMSUNG GALAXY S25 ULTRA",
     "description": "Experimente lo último en innovación móvil con la impresionante pantalla y la revolucionaria cámara del Samsung Galaxy S25 Ultra.",
-    "review": "16 Opiniones de clientes.",
+    "review": "16 Opiniones de clientes",
     "detail_01": "Pantalla: Dynamic AMOLED 2X de 6,9 ​​pulgadas, 1440 x 3120 píxeles.",
     "detail_02": "Procesador: Chipset Qualcomm Snapdragon 8 Elite.",
     "detail_03": "RAM: Disponible en opciones de 12 GB y 16 GB.",
     "detail_04": "Batería: 5000 mAh con soporte de carga de 45 W.",
     "normalPrice": "€1249",
     "offerPrice": "€1199",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_33": {
     "title": "SAMSUNG GALAXY S24",
     "description": "La experiencia Galaxy definitiva. Descubre el Samsung Galaxy S24: una combinación perfecta de IA de vanguardia, una impresionante pantalla adaptable y una cámara de calidad profesional para transformar tu conexión con el mundo.",
-    "review": "4 Opiniones de clientes.",
+    "review": "4 Opiniones de clientes",
     "detail_01": "Pantalla AMOLED dinámica de 6,2 pulgadas con una resolución de 1080x2400.",
     "detail_02": "Sistema de triple cámara trasera con un sensor principal de 50 MP.",
     "detail_03": "Clasificación IP68 para resistencia al agua y al polvo.",
     "detail_04": "Procesador octa-core de 3,2 GHz con 8 GB de RAM.",
     "normalPrice": "€575",
     "offerPrice": "€519",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_34": {
     "title": "IPHONE 16 PRO MAX",
     "description": "Experimente el futuro en su mano con el revolucionario iPhone 16 Pro Max, donde una pantalla increíblemente brillante, un sistema de cámara inteligente y una integración perfecta de IA redefinen lo que puede ser un teléfono inteligente.",
-    "review": "18 Opiniones de clientes.",
+    "review": "18 Opiniones de clientes",
     "detail_01": "Pantalla AMOLED dinámica de 6,2 pulgadas con una resolución de 1080x2400.",
     "detail_02": "Sistema de triple cámara trasera con un sensor principal de 50 MP.",
     "detail_03": "Clasificación IP68 para resistencia al agua y al polvo.",
     "detail_04": "Procesador octa-core de 3,2 GHz con 8 GB de RAM.",
     "normalPrice": "€1199",
     "offerPrice": "€1099",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
    "product_35": {
     "title": "XIAOMI 12 PRO",
     "description": "A Symphony of Sight and Speed. Immerse yourself in the flawless, world-class display and feel the power of seamless performance with the Xiaomi 12 Pro.",
-    "review": "12 Opiniones de clientes.",
+    "review": "12 Opiniones de clientes",
     "detail_01": "DISPLAY: LTPO AMOLED, 6.73 inches, 1440 x 3200 pixels.",
     "detail_02": "256GB 12GB RAM; Triple 50MP Camera; Li-Po 4600 mAh, non-removable Battery.",
     "detail_03": "Chipset: Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm) CPU; Octa-core.",
     "detail_04": "Xiaomi 12 Pro 5G Global Version.",
     "normalPrice": "€345",
     "offerPrice": "€329",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_36": {
     "title": "XIAOMI 15 PRO",
     "description": "Experimente un rendimiento revolucionario con el Xiaomi 15 Pro, con un procesador Snapdragon 8 Gen 4 de última generación y un impresionante sistema de cámara diseñado por Leica.",
-    "review": "22 Opiniones de clientes.",
+    "review": "22 Opiniones de clientes",
     "detail_01": "Pantalla 6,73 pulgadas (1440 x 3200 píxeles) Frecuencia de actualización de 120 Hz",
     "detail_02": "Cámara 50+50+50 MP (Triple Cámara) 32 MP Selfie Video 8K.",
     "detail_03": "Hardware Qualcomm SM8750-AB Snapdragon 8 Elite.",
     "detail_04": "Batería Si/C Li-Ion 6100 mAh 90W Cargador con cable.",
     "normalPrice": "€990",
     "offerPrice": "€890",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_37": {
     "title": "SAMSUNG GALAXY Z FLIP 7",
     "description": "El Sony Z Flip 7 despliega un mundo de brillantez cinematográfica, fusionando una sorprendente pantalla plegable con la incomparable tecnología de cámara de la serie Alpha en tu bolsillo.",
-    "review": "14 Opiniones de clientes.",
+    "review": "14 Opiniones de clientes",
     "detail_01": "Pantalla de 6,9 ​​pulgadas (1080 x 2520 píxeles), frecuencia de actualización de 120 Hz.",
     "detail_02": "Cámara 50+12 MP (Cámara dual) 10 MP Selfie Video 4K.",
     "detail_03": "Ram y almacenamiento 12 GB de RAM, 256 GB.",
     "detail_04": "Sistema operativo Android 16 One Ui 8.",
     "normalPrice": "€1199",
     "offerPrice": "€1099",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_40": {
     "title": "APPLE 2025 MACBOOK AIR",
     "description": "Experimente un rendimiento incomparable y una batería que dura todo el día en el diseño increíblemente delgado y liviano del futuro.",
-    "review": "18 Opiniones de clientes.",
+    "review": "18 Opiniones de clientes",
     "detail_01": "La MacBook Air con chip M4 te permite trabajar y jugar a toda velocidad.",
     "detail_02": "Creado para la inteligencia de Apple.",
     "detail_03": "Hasta 18 horas de duración de batería.",
     "detail_04": "MacBook Air cuenta con dos puertos Thunderbolt 4.",
     "normalPrice": "€1499",
     "offerPrice": "€1299",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
   },
   "product_41": {
     "title": "HP OMEN 16 ULTRA SLIM",
     "description": "Domine la competencia con una potencia implacable y una pantalla ultrarrápida en un chasis sorprendentemente delgado.",
-    "review": "8 Opiniones de clientes.",
+    "review": "8 Opiniones de clientes",
     "detail_01": "Pantalla IPS 2K con frecuencia de actualización de 144 Hz.",
     "detail_02": "GPU NVIDIA GeForce RTX 5060 para computadora portátil.",
     "detail_03": "Procesador AMD Ryzen 9 8940HX y Windows 11 Pro",
     "detail_04": "1 USB Tipo-C.",
     "normalPrice": "€1599",
     "offerPrice": "€1199",
-    "addToCart": "AÑADIR A LA CESTA"
+    "addToCart": "ORDENAR AHORA"
+  },
+  "product_42": {
+    "title": "RAZER BASILISK V3",
+    "description": "El Razer Basilisk V3 ofrece una combinación perfecta de controles personalizables, sorprendente iluminación RGB y precisión para lograr la máxima ventaja en los juegos.",
+    "review": "25 Opiniones de clientes",
+    "detail_01": "11 zonas de iluminación Razer Chroma RGB.",
+    "detail_02": "Rueda inclinable Razer HyperScroll para una experiencia suave.",
+    "detail_03": "Diseño ergonómico icónico con apoyo para el pulgar para un uso sin esfuerzo.",
+    "detail_04": "Interruptores ópticos para mouse Razer Gen-2 para una velocidad y confiabilidad inigualables.",
+    "normalPrice": "€75",
+    "offerPrice": "€65",
+    "addToCart": "ORDENAR AHORA"
   },
   "contacts": {
     "address": "Dirección",
@@ -450,7 +462,7 @@
     "answer_04": "Recibirás tu número de seguimiento por correo electrónico en cuanto se envíe tu pedido. Si no lo encuentras, revisa tu carpeta de correo no deseado o contacta con nuestro equipo de soporte."
   },
   "addToCart": {
-    "addToCart": "Añadir a la Cesta",
+    "addToCart": "ORDENAR AHORA",
     "info": "Sin cargos por manipulación + envío gratuito en pedidos superiores a $35*",
     "product": "Producto",
     "unitPrice": "Precio Unitario",

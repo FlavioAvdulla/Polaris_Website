@@ -44,7 +44,7 @@
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-20% OFF",
     "discount_02": "-30% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "SUPER FAST PERFORMANCE",
     "title_02": "SUPER SLOW PERFORMANCE",
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
@@ -83,7 +83,7 @@
     "latestProducts": "Latest Products",
     "topRating": "Top Rating",
     "bestSelling": "Best Selling",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "loadingProducts": "Loading products...",
     "noProducts": "No featured products available.",
     "networkError": "Network Error"
@@ -92,7 +92,7 @@
     "title_02": "Weekend Discount",
     "title_01": "OLYMPUS MARK II MIRRORLESS CAMERA",
     "description": "Mirrorless Camera with 4K Video",
-    "button": "ADD TO CART"
+    "button": "ORDER NOW"
   },
   "productSection_04": {
     "shopByCategories": "Shop By Categories",
@@ -138,7 +138,7 @@
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-20% OFF",
     "discount_02": "-30% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "SUPER FAST PERFORMANCE",
     "title_02": "SUPER SLOW PERFORMANCE",
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
@@ -148,7 +148,7 @@
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-20% OFF",
     "discount_02": "-30% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "SUPER FAST PERFORMANCE",
     "title_02": "SUPER SLOW PERFORMANCE",
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
@@ -158,7 +158,7 @@
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-20% OFF",
     "discount_02": "-30% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "SUPER FAST PERFORMANCE",
     "title_02": "SUPER SLOW PERFORMANCE",
     "paragraph_01": "We have prepared special discounts for you on electronic products. Don't miss these opportunities...",
@@ -167,28 +167,28 @@
   "carousel_06": {
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-35% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "XIAOMI 15 PRO",
     "paragraph_01": "The Xiaomi 15 Pro combines the unrivaled power of the Snapdragon 8 Gen 4 with a professional Leica camera system for ultimate performance and creativity."
   },
   "carousel_07": {
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-27% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "IPHONE 16 PRO MAX",
     "paragraph_01": "Crafted from a single sheet of luminous titanium, it feels like holding a sliver of polished light. The seamless TetraPrism camera captures the world with stunning, profound clarity."
   },
   "carousel_08": {
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-47% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "GAMING LAPTOPS",
     "paragraph_01": "Experience unparalleled performance and dominate the competition with our custom-built gaming rigs, engineered with the latest high-refresh-rate graphics and cutting-edge processors for a seamless, immersive victory."
   },
   "carousel_09": {
     "exclusiveOffer": "Exclusive Offer",
     "discount_01": "-55% OFF",
-    "addToCart": "ADD TO CART",
+    "addToCart": "ORDER NOW",
     "title_01": "GAMING DESKTOPS",
     "paragraph_01": "A personal command center where digital worlds come to life. It's a symphony of light, power, and comfort, meticulously crafted to be the perfect portal to adventure, competition, and escape."
   },
@@ -262,7 +262,7 @@
     "detail_04": "Windows 11 Professional (64bit)",
     "normalPrice": "€1599",
     "offerPrice": "€1499",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_02": {
     "title": "PS VR HEADSET",
@@ -275,7 +275,7 @@
     "detail_04": "Sensors: Accelerometer, gyroscope",
     "normalPrice": "€399",
     "offerPrice": "€379",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_03": {
     "title": "PLAYSTATION®5 PRO DIGITAL 2TB",
@@ -288,7 +288,7 @@
     "detail_04": "Up to 1tb storage",
     "normalPrice": "€699",
     "offerPrice": "€599",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_04": {
     "title": "GEFORCE RTX 3090 24GB",
@@ -301,7 +301,7 @@
     "detail_04": "DirectX 12 Ultimate.",
     "normalPrice": "€1649",
     "offerPrice": "€1449",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_05": {
     "title": "SONY HEADSET WH-1000XM5",
@@ -313,7 +313,7 @@
     "detail_04": "Up to 30-Hour Battery Life.",
     "normalPrice": "€359",
     "offerPrice": "€269",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_06": {
     "title": "REDRAGON K535 KEYBOARD",
@@ -325,7 +325,7 @@
     "detail_04": "Splash resistant design",
     "normalPrice": "€67",
     "offerPrice": "€59",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_32": {
     "title": "SAMSUNG GALAXY S25 ULTRA",
@@ -337,7 +337,7 @@
     "detail_04": "Battery: 5000 mAh with 45W charging support.",
     "normalPrice": "€1249",
     "offerPrice": "€1199",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_33": {
     "title": "SAMSUNG GALAXY S24",
@@ -349,7 +349,7 @@
     "detail_04": "3.2 GHz octa-core processor with 8 GB of RAM.",
     "normalPrice": "€575",
     "offerPrice": "€519",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_34": {
     "title": "IPHONE 16 PRO MAX",
@@ -361,7 +361,7 @@
     "detail_04": "3.2GHz octa-core processor with 8GB of RAM.",
     "normalPrice": "€1199",
     "offerPrice": "€1099",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_35": {
     "title": "XIAOMI 12 PRO",
@@ -373,7 +373,7 @@
     "detail_04": "Xiaomi 12 Pro 5G Global Version.",
     "normalPrice": "€345",
     "offerPrice": "€329",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_36": {
     "title": "XIAOMI 15 PRO",
@@ -385,7 +385,7 @@
     "detail_04": "Battery Si/C Li-Ion 6100 mAh 90W wired Charger.",
     "normalPrice": "€990",
     "offerPrice": "€890",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_37": {
     "title": "SAMSUNG GALAXY Z FLIP 7",
@@ -397,7 +397,7 @@
     "detail_04": "OS Android 16 One Ui 8.",
     "normalPrice": "€1199",
     "offerPrice": "€1099",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_40": {
     "title": "APPLE 2025 MACBOOK AIR",
@@ -409,7 +409,7 @@
     "detail_04": "MacBook Air features two Thunderbolt 4 ports.",
     "normalPrice": "€1499",
     "offerPrice": "€1299",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
   },
   "product_41": {
     "title": "HP OMEN 16 ULTRA SLIM",
@@ -421,7 +421,19 @@
     "detail_04": "1 USB Type-C.",
     "normalPrice": "€1599",
     "offerPrice": "€1199",
-    "addToCart": "ADD TO CART"
+    "addToCart": "ORDER NOW"
+  },
+  "product_42": {
+    "title": "RAZER BASILISK V3",
+    "description": "The Razer Basilisk V3 delivers a perfect blend of customizable controls, stunning RGB lighting, and precision for the ultimate gaming advantage.",
+    "review": "25 Customer Reviews",
+    "detail_01": "11 Razer Chroma RGB Lighting Zones.",
+    "detail_02": "Razer HyperScroll Tilt Wheel For Smooth.",
+    "detail_03": "Iconic Ergonomic Design with Thumb Rest For Effortless use.",
+    "detail_04": "Razer Optical Mouse Switches Gen-2 For Unrivalled Speed and Reliability.",
+    "normalPrice": "€75",
+    "offerPrice": "€65",
+    "addToCart": "ORDER NOW"
   },
   "contacts": {
     "address": "Address",
@@ -450,7 +462,7 @@
     "answer_04": "Your tracking number will be emailed as soon as your order ships. If you don't see it, please check your spam folder or contact our support team."
   },
   "addToCart": {
-    "addToCart": "Add to Cart",
+    "addToCart": "ORDER NOW",
     "info": "No handling fees + free shipping on orders over $35*",
     "product": "Product",
     "unitPrice": "Unit Price",

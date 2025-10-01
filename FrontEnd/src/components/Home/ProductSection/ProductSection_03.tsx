@@ -7,13 +7,13 @@ import axios from 'axios';
 
 // Interface defining the structure of a Product object
 interface Product {
-  title: any | string | string[];
-  offerPrice: any | string | string[];
-  normalPrice: any | string | string[];
-  detail_02: any | string | string[];
-  detail_01: any | string | string[];
-  detail_03: any | string | string[];
-  detail_04: any | string | string[];
+  title: never | string | string[];
+  offerPrice: never | string | string[];
+  normalPrice: never | string | string[];
+  detail_01: never | string | string[];
+  detail_02: never | string | string[];
+  detail_03: never | string | string[];
+  detail_04: never | string | string[];
   _id: string;
   image: string;
   title_02: string; // Subtitle or category text

@@ -23,7 +23,7 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['104', '105', '107', '81', '89', '91'];
+const featuredProductIds = ['104', '105', '107', '109', '89', '91'];
 
 // Export the length of featured product IDs for potential external use
 export const featuredComputersProductIdsLength = featuredProductIds.length
@@ -41,7 +41,7 @@ const Computers = () => {
       "104": "/Product_01",
       "105": "/Product_40",
       "107": "/Product_41",
-      "81": "/Product_32",
+      "109": "/Product_42",
       "89": "/Product_37",
       "91": "/Product_34",
     }

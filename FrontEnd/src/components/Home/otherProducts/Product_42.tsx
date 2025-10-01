@@ -24,9 +24,9 @@ interface Product {
   additionalImages: string[];
 }
 
-const featuredProductIds = ['4'];
+const featuredProductIds = ['110'];
 
-const Product_01 = () => {
+const Product_42 = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -55,42 +55,6 @@ const Product_01 = () => {
 
     fetchProducts();
   }, []);
-
-  // Handler for Whatsapp message - sends product info to Whatsapp
-  const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
-    event.stopPropagation() // Prevent triggering the parent click event
-
-    const imageUrl = `http://localhost:4004/images/${product.image}`;
-
-  // Construct the Whatsapp message with product details
-  const message = `Hello! I want to buy this product:
-  
-  *Product Details:*
-  *Title:* ${t(product.title)}
-  *Description:* ${t(product.description)}
-  *Original Price:* ${t(product.description)}
-  *Original Price:* ${t(product.normalPrice)}
-  *Offer Price:* ${t(product.offerPrice)}
-
-  ${product.detail_01 ? `${t(product.detail_01)}` : ''}
-  ${product.detail_02 ? `${t(product.detail_02)}` : ''}
-  ${product.detail_03 ? `${t(product.detail_03)}` : ''}
-  ${product.detail_04 ? `${t(product.detail_04)}` : ''}
-
-  *Product Image:* ${imageUrl}
-
-  Please contact me to proceed with the purchase. Thank you!`;
-
-  // Encode the message for URL
-    const encodedMessage = encodeURIComponent(message);
-
-    // WhatsApp API URL (Replace with your actual WhatsApp number)
-    const whatsappNumber = "355676311918"
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-
-    // Open Whatsapp in a new tab
-    window.open(whatsappUrl, '_blank')
-  }
 
   const handleClick = useCallback((photo: string) => {
     setMainPhoto(photo);
@@ -364,8 +328,7 @@ const Product_01 = () => {
         </div>
         
         {/* Add to Cart Button */}
-        <button onClick={(e) => handleWhatsappMessage(product, e)}
-                className="flex items-center w-fit justify-center gap-3 border-[1px] bg-primary border-white 
+        <button className="flex items-center w-fit justify-center gap-3 border-[1px] bg-primary border-white 
                            py-2 rounded-tr-3xl rounded-br-3xl rounded-tl-lg rounded-bl-lg text-white px-4
                            hover:scale-110 hover:border-[1px] hover:bg-transparent hover:border-primary hover:text-primary ease-in-out duration-300
                            dark:bg-secondary_01 dark:hover:border-white dark:hover:bg-transparent dark:hover:text-white
@@ -388,4 +351,4 @@ const Product_01 = () => {
   );
 };
 
-export default Product_01;
+export default Product_42;

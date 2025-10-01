@@ -20,11 +20,11 @@ interface Product {
   quantitySold: number;
   sold: string;
   info: string;
-  description: any | string | string[];
-  detail_01: any | string | string[];
-  detail_02: any | string | string[];
-  detail_03: any | string | string[];
-  detail_04: any | string | string[];
+  description: never | string | string[];
+  detail_01: never | string | string[];
+  detail_02: never | string | string[];
+  detail_03: never | string | string[];
+  detail_04: never | string | string[];
 }
 
 // Array of specific product IDs to display as featured products
@@ -119,11 +119,11 @@ const ProductSection_01 = () => {
   // };
 
   // Handler for adding products to cart (prevents event propagation to parent)
-  const handleAddToCart = (e: React.MouseEvent, productId: string) => {
-    e.stopPropagation();
-    console.log("Add to cart:", productId);
-    // Add your cart logic here
-  };
+  // const handleAddToCart = (e: React.MouseEvent, productId: string) => {
+  //   e.stopPropagation();
+  //   console.log("Add to cart:", productId);
+  //   // Add your cart logic here
+  // };
 
   // Helper function to generate star rating UI based on numeric rating
   const getStars = (rating: number) => {
@@ -205,6 +205,7 @@ const ProductSection_01 = () => {
           {/* Product information section */}
           <div
             className="flex flex-col w-[100%] gap-4 p-4 justify-between
+                      dark:bg-slate-800 
                      
 
                        xs:h-auto
