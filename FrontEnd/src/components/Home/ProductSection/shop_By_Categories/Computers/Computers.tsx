@@ -8,6 +8,11 @@ import { Carousel_09 } from "../../../../Shadcn-components/Carousel_09";
 import { Carousel_08 } from "../../../../Shadcn-components/Carousel_08";
 
 interface Product {
+  description: never | string | string[];
+  detail_01: never | string | string[];
+  detail_04: never | string | string[];
+  detail_03: never | string | string[];
+  detail_02: never | string | string[];
   _id: string;
   image: string;
   rating: number;
@@ -72,15 +77,51 @@ const Computers = () => {
     fetchProducts();
   }, []);
 
+  // Handler for Whatsapp message - sends product info to Whatsapp
+    const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
+      event.stopPropagation() // Prevent triggering the parent click event
+  
+      const imageUrl = `http://localhost:4004/images/${product.image}`;
+  
+    // Construct the Whatsapp message with product details
+    const message = `Hello! I want to buy this product:
+    
+    *Product Details:*
+    *Title:* ${t(product.title)}
+    *Description:* ${t(product.description)}
+    *Original Price:* ${t(product.description)}
+    *Original Price:* ${t(product.normalPrice)}
+    *Offer Price:* ${t(product.offerPrice)}
+  
+    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+  
+    *Product Image:* ${imageUrl}
+  
+    Please contact me to proceed with the purchase. Thank you!`;
+  
+    // Encode the message for URL
+      const encodedMessage = encodeURIComponent(message);
+  
+      // WhatsApp API URL (Replace with your actual WhatsApp number)
+      const whatsappNumber = "355676311918"
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+      // Open Whatsapp in a new tab
+      window.open(whatsappUrl, '_blank')
+    }
+
   // const handleProductClick = (id: string) => {
   //   navigate(`/products/${id}`);
   // };
 
-  const handleAddToCart = (e: React.MouseEvent, productId: string) => {
-    e.stopPropagation();
-    console.log("Add to cart:", productId);
-    // Add your cart logic here
-  };
+  // const handleAddToCart = (e: React.MouseEvent, productId: string) => {
+  //   e.stopPropagation();
+  //   console.log("Add to cart:", productId);
+  //   // Add your cart logic here
+  // };
 
   const getStars = (rating: number) => {
     const stars = [];
@@ -208,7 +249,7 @@ const Computers = () => {
                 </div>
               </div>
               <button
-                onClick={(e) => handleAddToCart(e, product._id)}
+                onClick={(e) => handleWhatsappMessage(product, e)}
                 className="bg-primary border-[1px] border-primary cursor-pointer
                            hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
                            dark:bg-secondary_01 dark:border-gray-800 dark:hover:bg-transparent dark:hover:border-secondary_01

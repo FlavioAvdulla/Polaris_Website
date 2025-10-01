@@ -162,6 +162,7 @@ const ProductSection_03 = () => {
 
             {/* Main title text */}
             <h1 className="text-white font-camptonMedium leading-tight my-3
+                           dark:text-secondary_01
             
                            xs:text-[20px]
                            sm:w-[80%]
@@ -180,7 +181,7 @@ const ProductSection_03 = () => {
                                  dark:bg-secondary_01 dark:text-white dark:hover:bg-transparent
 
                                  xs:text-[12px] xs:gap-2 xs:px-3 xs:py-1
-                                 xl:px-4 xl:py-2 xl:text-[20px] xl:gap-3">{t(product.button)}
+                                 xl:px-4 xl:py-2 xl:text-[15px] xl:gap-3">{t(product.button)}
                 <IoIosArrowForward className="font-camptonLight
                 
                                               xs:text-[12px]

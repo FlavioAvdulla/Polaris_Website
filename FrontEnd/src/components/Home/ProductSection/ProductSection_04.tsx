@@ -43,7 +43,7 @@ const ProductSection_04 = () => {
   const navigate = useNavigate();
 
   // Handler for when a category card is clicked - navigates to specific category pages
-  const handleImageClick = (id) => {
+  const handleImageClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap = {
       "12": "/Computers",

@@ -364,7 +364,7 @@ const Product_37 = () => {
         </div>
         
         {/* Add to Cart Button */}
-        <button onClick={(e) =>handleWhatsappMessage(product, e)}
+        <button onClick={(e) => handleWhatsappMessage(product, e)}
                 className="flex items-center w-fit justify-center gap-3 border-[1px] bg-primary border-white 
                            py-2 rounded-tr-3xl rounded-br-3xl rounded-tl-lg rounded-bl-lg text-white px-4
                            hover:scale-110 hover:border-[1px] hover:bg-transparent hover:border-primary hover:text-primary ease-in-out duration-300
