@@ -4,6 +4,9 @@ import Polaris_Logo_White from "../../../assets/images/Polaris_Logo_White.svg";
 import { useTheme } from "../../../components/context/ThemeContext";
 import { FaFacebookSquare } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
+
 
 // import React from "react";
 
@@ -11,6 +14,12 @@ const Footer = () => {
 
   const { theme } = useTheme();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleLogoClick = useCallback(() => {
+    navigate("/");
+    // setActiveSection("Home");
+  }, [navigate]);
 
   return (
     <div className="flex flex-col w-[100%] justify-center pt-10 bg-primary
@@ -26,10 +35,13 @@ const Footer = () => {
         
                         xs:gap-5 xs:w-[100%]
                         md:gap-0 md:w-[20%]">
-          <img className="xs:w-[80px]
+          <img className="cursor-pointer
+          
+                          xs:w-[80px]
                           lg:w-[110px]"
-            src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo_White}
-            alt="Polaris_Logo_White"/>
+               onClick={handleLogoClick} 
+               src={theme === "dark" ? Polaris_Logo_Secondary : Polaris_Logo_White}
+               alt="Polaris_Logo_White"/>
           <p className="text-white font-camptonBook
                         
                         md:text-[12px] md:leading-tight

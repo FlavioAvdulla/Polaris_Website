@@ -53,7 +53,7 @@ import Cart from "./components/Pages/Cart/Cart";
 import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import React, { useState } from "react";
-import "./i18n"; // Internationalization setup
+import "./i18n";
 
 // Main App component
 const App = () => {

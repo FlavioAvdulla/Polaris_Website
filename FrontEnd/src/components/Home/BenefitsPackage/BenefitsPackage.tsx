@@ -121,13 +121,14 @@ const BenefitsPackage = () => {
                             md:w-[120px] md:h-[120px] md:rounded-[15px] md:mb-6
                             lg:w-[150px] lg:h-[150px]">
               {/* Render the icon component with responsive sizing */}
-              <IconComponent className="text-primary
-                           dark:text-white
+              <i><IconComponent
+                    className="text-primary
+                               dark:text-white
 
-                           xs:text-[40px]
-                           md:text-[55px]
-                           lg:text-[65px]"
-              />
+                               xs:text-[40px]
+                               md:text-[55px]
+                               lg:text-[65px]"
+              /></i>
             </div>
             {/* Benefit title with translation and responsive text sizing */}
             <h1 className="font-camptonMedium

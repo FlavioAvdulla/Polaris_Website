@@ -304,21 +304,21 @@ const Navbar_02: React.FC<NavbarProps> = ({
                                     md:w-[100%]
                                     lg:w-[100%]
                                     xl:w-[80%]">
-                    
+
                         <img src={`http://localhost:4004/images/${product.image}`}
                              alt={product.title}
                              className="aspect-1 object-contain
-                              
+
                                         xs:w-[30px]
                                         md:w-[55px]
                                         lg:w-[60px] lg:mr-3
                                         xl:mr-0"
                              onError={handleImageError}
                              loading="lazy"/>
-                      
+
                       {/* ============= Product Infos ============= */}
                       <div className="flex w-auto
-                                      
+
                                       xs:flex-col xs:pl-1 xs:items-start
                                       md:pl-0
                                       lg:flex-row lg:items-center lg:gap-[35px]
@@ -334,13 +334,13 @@ const Navbar_02: React.FC<NavbarProps> = ({
                           </h4>
                           {/* ============= Product Price ============= */}
                           <div className="flex
-                          
+
                                           xs:gap-2 xs:flex-row
                                           lg:flex-row lg:gap-4">
                         {product.offerPrice && (
                           <p className="font-camptonBold text-primary
                                         dark:text-secondary_01
-                                        
+
                                         xs:text-[11px]
                                         md:text-[18px]
                                         lg:text-[20px]
@@ -348,7 +348,7 @@ const Navbar_02: React.FC<NavbarProps> = ({
                             {t(product.offerPrice)}
                           </p>
                         )}
-                        
+
                         {/* Normal Price (with strikethrough) */}
                         <div className="flex w-fit relative items-center">
                           <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>

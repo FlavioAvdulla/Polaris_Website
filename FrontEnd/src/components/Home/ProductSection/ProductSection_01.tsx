@@ -171,7 +171,7 @@ const ProductSection_01 = () => {
   return (
     <div
       className="w-[85%] h-auto mx-auto gap-5 items-center justify-between my-20
-    
+
                     md:grid md:grid-cols-3" // Grid layout with 3 columns on medium screens and up
       >
       {/* Map through products and render each product card */}
@@ -180,7 +180,7 @@ const ProductSection_01 = () => {
           className="rounded-lg overflow-hidden h-auto bg-gray-100 border-[1px] border-primary cursor-pointer
                      hover:shadow-lg transition-shadow duration-300
                      dark:bg-transparent dark:border-gray-600
-                     
+
                      xs:mb-5
                      md:w-[100%]"
           key={product._id}
@@ -205,8 +205,8 @@ const ProductSection_01 = () => {
           {/* Product information section */}
           <div
             className="flex flex-col w-[100%] gap-4 p-4 justify-between
-                      dark:bg-slate-800 
-                     
+                      dark:bg-slate-800
+
 
                        xs:h-auto
                        md:h-[290px]">
