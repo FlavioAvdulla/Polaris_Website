@@ -111,7 +111,7 @@ const BenefitsPackage = () => {
           <div className="flex flex-col items-center text-center
 
                           xs:mb-5
-                          md:mb-0" 
+                          md:mb-0"
                key={product._id}>
             {/* Icon container with responsive sizing */}
             <div className="flex items-center justify-center border-[1px] border-primary
@@ -133,7 +133,7 @@ const BenefitsPackage = () => {
             {/* Benefit title with translation and responsive text sizing */}
             <h1 className="font-camptonMedium
                           dark:text-white
-                          
+
                           xs:text-[11px]
                           md:text-[14px]
                           lg:text-[17px]">
@@ -142,7 +142,7 @@ const BenefitsPackage = () => {
             {/* Benefit description with translation and responsive text sizing */}
             <p className="text-gray-500 font-camptonBook w-[80%]
                           dark:text-gray-400
-                          
+
                           xs:text-[10px]
                           md:text-[12px]
                           lg:text-[14px]">
