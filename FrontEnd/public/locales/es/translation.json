@@ -168,11 +168,25 @@
     "paragraph_01": "Experimente un rendimiento incomparable y domine la competencia con nuestras plataformas de juego diseñadas a medida, diseñadas con los últimos gráficos de alta frecuencia de actualización y procesadores de vanguardia para una victoria fluida e inmersiva."
   },
   "carousel_09": {
-    "exclusiveOffer": "Exclusive Offer",
+    "exclusiveOffer": "Oferta Exclusiva",
     "discount_01": "-55% OFF",
     "addToCart": "ORDENAR AHORA",
     "title_01": "GAMING DESKTOPS",
     "paragraph_01": "Un centro de mando personal donde los mundos digitales cobran vida. Es una sinfonía de luz, potencia y comodidad, meticulosamente diseñado para ser el portal perfecto a la aventura, la competición y la evasión."
+  },
+  "carousel_10": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-25% OFF",
+    "addToCart": "ORDENAR AHORA",
+    "title_01": "ALTAVOCES",
+    "paragraph_01": "Encuentra el altavoz perfecto para darle vida a tu música. Desde agudos nítidos hasta graves profundos que llenan la habitación, tenemos el equipo que te mueve."
+  },
+  "carousel_11": {
+    "exclusiveOffer": "Oferta Exclusiva",
+    "discount_01": "-35% OFF",
+    "addToCart": "ORDENAR AHORA",
+    "title_01": "ALTAVOCES",
+    "paragraph_01": "Encuentra el altavoz perfecto para darle vida a tu música. Desde agudos nítidos hasta graves profundos que llenan la habitación, tenemos el equipo que te mueve."
   },
   "productSection_06": {
     "title_01": "Computadoras",
@@ -433,6 +447,18 @@
     "detail_04": "Interruptores ópticos para mouse Razer Gen-2 para una velocidad y confiabilidad inigualables.",
     "normalPrice": "€75",
     "offerPrice": "€65",
+    "addToCart": "ORDENAR AHORA"
+  },
+  "product_43": {
+    "title": "AMAZON ECHO POP",
+    "description": "El nuevo Echo Pop ofrece un sonido vibrante y completo en un diseño compacto y elegante que se adapta perfectamente a cualquier espacio pequeño.",
+    "review": "18 Opiniones de clientes",
+    "detail_01": "Funciones premium de Alexa.",
+    "detail_02": "Controla la música con tu voz.",
+    "detail_03": "Convierte cualquier espacio en un espacio inteligente.",
+    "detail_04": "Diseñado para proteger su privacidad.",
+    "normalPrice": "€35.99",
+    "offerPrice": "€24.99",
     "addToCart": "ORDENAR AHORA"
   },
   "contacts": {

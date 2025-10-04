@@ -192,6 +192,20 @@
     "title_01": "GAMING DESKTOPS",
     "paragraph_01": "A personal command center where digital worlds come to life. It's a symphony of light, power, and comfort, meticulously crafted to be the perfect portal to adventure, competition, and escape."
   },
+  "carousel_10": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-25% OFF",
+    "addToCart": "ORDER NOW",
+    "title_01": "SPEAKERS",
+    "paragraph_01": "Find the perfect speaker to bring your music to life. From crisp highs to deep, room-filling bass, we have the gear that moves you."
+  },
+  "carousel_11": {
+    "exclusiveOffer": "Exclusive Offer",
+    "discount_01": "-35% OFF",
+    "addToCart": "ORDER NOW",
+    "title_01": "SPEAKERS",
+    "paragraph_01": "Find the perfect speaker to bring your music to life. From crisp highs to deep, room-filling bass, we have the gear that moves you."
+  },
   "footer": {
     "usefulLinks": "USEFUL LINKS",
     "aboutUs": "ABOUT US",
@@ -433,6 +447,18 @@
     "detail_04": "Razer Optical Mouse Switches Gen-2 For Unrivalled Speed and Reliability.",
     "normalPrice": "€75",
     "offerPrice": "€65",
+    "addToCart": "ORDER NOW"
+  },
+  "product_43": {
+    "title": "AMAZON ECHO POP",
+    "description": "The all-new Echo Pop delivers vibrant, full sound in a compact, stylish design that fits perfectly in any small space.",
+    "review": "18 Customer Reviews",
+    "detail_01": "Premium Alexa Features.",
+    "detail_02": "Control music with your voice.",
+    "detail_03": "Make any space a smart space.",
+    "detail_04": "Designed to protect your privacy.",
+    "normalPrice": "€35.99",
+    "offerPrice": "€24.99",
     "addToCart": "ORDER NOW"
   },
   "contacts": {

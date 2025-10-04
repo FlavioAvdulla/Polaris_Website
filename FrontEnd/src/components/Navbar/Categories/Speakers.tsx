@@ -4,15 +4,15 @@ import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
-import { Carousel_09 } from "../../../../Shadcn-components/Carousel_09";
-import { Carousel_08 } from "../../../../Shadcn-components/Carousel_08";
+import { Carousel_10 } from "../../Shadcn-components/Carousel_10";
+import { Carousel_11 } from "../../Shadcn-components/Carousel_11";
 
 interface Product {
   description: never | string | string[];
-  detail_01: never | string | string[];
-  detail_04: never | string | string[];
+  detail_04: never;
   detail_03: never | string | string[];
   detail_02: never | string | string[];
+  detail_01: never | string | string[];
   _id: string;
   image: string;
   rating: number;
@@ -28,12 +28,9 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['104', '105', '107', '109', '3', '2'];
+const featuredProductIds = ['123', '77', '79', '81', '89', '91'];
 
-// Export the length of featured product IDs for potential external use
-export const featuredComputersProductIdsLength = featuredProductIds.length
-
-const Computers = () => {
+const Speakers = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -43,10 +40,10 @@ const Computers = () => {
   const handleProductClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
     const routeMap: Record<string, string> = {
-      "104": "/Product_01",
-      "105": "/Product_40",
-      "107": "/Product_41",
-      "109": "/Product_42",
+      "123": "/Product_43",
+      "77": "/Product_35",
+      "79": "/Product_36",
+      "81": "/Product_32",
       "89": "/Product_37",
       "91": "/Product_34",
     }
@@ -55,6 +52,42 @@ const Computers = () => {
     if (route) {
       navigate(route)
     }
+  }
+
+  // Handler for Whatsapp message - sends product info to Whatsapp
+  const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
+    event.stopPropagation() // Prevent triggering the parent click event
+
+    const imageUrl = `http://localhost:4004/images/${product.image}`;
+
+  // Construct the Whatsapp message with product details
+  const message = `Hello! I want to buy this product:
+  
+  *Product Details:*
+  *Title:* ${t(product.title)}
+  *Description:* ${t(product.description)}
+  *Original Price:* ${t(product.description)}
+  *Original Price:* ${t(product.normalPrice)}
+  *Offer Price:* ${t(product.offerPrice)}
+
+  ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+  ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+  ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+  ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+
+  *Product Image:* ${imageUrl}
+
+  Please contact me to proceed with the purchase. Thank you!`;
+
+  // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp API URL (Replace with your actual WhatsApp number)
+    const whatsappNumber = "355676311918"
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open Whatsapp in a new tab
+    window.open(whatsappUrl, '_blank')
   }
 
   useEffect(() => {
@@ -76,42 +109,6 @@ const Computers = () => {
 
     fetchProducts();
   }, []);
-
-  // Handler for Whatsapp message - sends product info to Whatsapp
-    const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
-      event.stopPropagation() // Prevent triggering the parent click event
-  
-      const imageUrl = `http://localhost:4004/images/${product.image}`;
-  
-    // Construct the Whatsapp message with product details
-    const message = `Hello! I want to buy this product:
-    
-    *Product Details:*
-    *Title:* ${t(product.title)}
-    *Description:* ${t(product.description)}
-    *Original Price:* ${t(product.description)}
-    *Original Price:* ${t(product.normalPrice)}
-    *Offer Price:* ${t(product.offerPrice)}
-  
-    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
-    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
-    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
-    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
-  
-    *Product Image:* ${imageUrl}
-  
-    Please contact me to proceed with the purchase. Thank you!`;
-  
-    // Encode the message for URL
-      const encodedMessage = encodeURIComponent(message);
-  
-      // WhatsApp API URL (Replace with your actual WhatsApp number)
-      const whatsappNumber = "355676311918"
-      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-  
-      // Open Whatsapp in a new tab
-      window.open(whatsappUrl, '_blank')
-    }
 
   // const handleProductClick = (id: string) => {
   //   navigate(`/products/${id}`);
@@ -164,8 +161,8 @@ const Computers = () => {
       
                       xs:flex-col
                       xl:flex-row">
-        <Carousel_08 />
-        <Carousel_09 />
+        <Carousel_10 />
+        <Carousel_11 />
       </div>
     <div className="h-auto mx-auto gap-5 items-center justify-between my-20
     
@@ -226,13 +223,12 @@ const Computers = () => {
             {/* Price and cart */}
             <div className="flex justify-between items-center">
               <div className="flex items-center xs:gap-2 md:gap-4">
-                <p
-                  className="font-camptonBold text-primary
-                             dark:text-secondary_01
-                              
-                             xs:text-[22px]
-                             md:text-[30px]
-                             lg:text-[40px]">
+                <p className="font-camptonBold text-primary
+                              dark:text-secondary_01
+                                
+                              xs:text-[22px]
+                              md:text-[30px]
+                              lg:text-[40px]">
                   {t(product.offerPrice)}
                 </p>
                 <div className="flex w-auto relative items-center">
@@ -311,4 +307,4 @@ const Computers = () => {
   );
 };
 
-export default Computers;
+export default Speakers;
