@@ -36,6 +36,8 @@ import Product_40 from "./components/Home/otherProducts/Product_40";
 import Product_41 from "./components/Home/otherProducts/Product_41";
 import Product_42 from "./components/Home/otherProducts/Product_42";
 import Product_43 from "./components/Home/otherProducts/Product_43";
+import Product_44 from "./components/Home/otherProducts/Product_44";
+import Product_45 from "./components/Home/otherProducts/Product_45";
 import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import Speakers from "./components/Navbar/Categories/Speakers";
@@ -147,6 +149,8 @@ const App = () => {
               <Route path="/Product_41" element={<Product_41 />} />
               <Route path="/Product_42" element={<Product_42 />} />
               <Route path="/Product_43" element={<Product_43 />} />
+              <Route path="/Product_44" element={<Product_44 />} />
+              <Route path="/Product_45" element={<Product_45 />} />
 
               {/* Main section pages */}
               <Route path="/Shop" element={<Shop />} />

@@ -461,6 +461,30 @@
     "offerPrice": "€24.99",
     "addToCart": "ORDENAR AHORA"
   },
+  "product_44": {
+    "title": "JBL GO 4",
+    "description": "Con JBL Pro Sound en un diseño elegante y ultraportátil, el JBL Go 4 es tu compañero a prueba de agua y polvo para disfrutar de un gran sonido en cualquier lugar.",
+    "review": "12 Opiniones de clientes",
+    "detail_01": "JBL Pro Sound ultraportátil.",
+    "detail_02": "Up to 7 hours of playtime.",
+    "detail_03": "Resistente al agua y al polvo.",
+    "detail_04": "Conexión multialtavoz mediante Auracast.",
+    "normalPrice": "€39.95",
+    "offerPrice": "€34.95",
+    "addToCart": "ORDENAR AHORA"
+  },
+  "product_45": {
+    "title": "ALTAVOCES AUTOAMPLIFICADOS EDIFIER R1280T",
+    "description": "Altavoces de estantería clásicos de madera que llenan tu habitación con un sonido cálido y natural, aportando una riqueza de audio atemporal a tu vida moderna.",
+    "review": "10 Opiniones de clientes",
+    "detail_01": "2 x AUX Input.",
+    "detail_02": "Mando a distancia.",
+    "detail_03": "Acabado clásico de madera.",
+    "detail_04": "Control de paneles laterales.",
+    "normalPrice": "€109.99",
+    "offerPrice": "€100.99",
+    "addToCart": "ORDENAR AHORA"
+  },
   "contacts": {
     "address": "Dirección",
     "talkToUs": "Habla con nosotros",

@@ -461,6 +461,30 @@
     "offerPrice": "€24.99",
     "addToCart": "ORDER NOW"
   },
+  "product_44": {
+    "title": "JBL GO 4",
+    "description": "Featuring JBL Pro Sound in a sleek, ultra-portable design, the JBL Go 4 is your waterproof and dustproof companion for big sound anywhere.",
+    "review": "12 Customer Reviews",
+    "detail_01": "Ultra-portable JBL Pro Sound.",
+    "detail_02": "Up to 7 hours of playtime.",
+    "detail_03": "Waterproof and dustproof.",
+    "detail_04": "Multi-speaker connection by Auracast.",
+    "normalPrice": "€39.95",
+    "offerPrice": "€34.95",
+    "addToCart": "ORDER NOW"
+  },
+  "product_45": {
+    "title": "EDIFIER R1280T POWERED SPEAKERS",
+    "description": "Classic wooden bookshelf speakers that fill your room with warm, natural sound, bringing timeless audio richness to your modern life.",
+    "review": "10 Customer Reviews",
+    "detail_01": "2 x AUX Input.",
+    "detail_02": "Remote control.",
+    "detail_03": "Classic wood finish.",
+    "detail_04": "Side panels control.",
+    "normalPrice": "€109.99",
+    "offerPrice": "€100.99",
+    "addToCart": "ORDER NOW"
+  },
   "contacts": {
     "address": "Address",
     "talkToUs": "Talk to us",
