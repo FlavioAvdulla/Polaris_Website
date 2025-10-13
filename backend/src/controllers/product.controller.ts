@@ -55,6 +55,66 @@ const PRODUCT_MAP: Record<string, {
   "product_06.title": {
     id: "52",
     name: "REDRAGON K535 KEYBOARD",
+  },
+  // Id - 80
+  "product_32.title": {
+    id: "80",
+    name: "SAMSUNG GALAXY S25 ULTRA",
+  },
+  // Id - 74
+  "product_33.title": {
+    id: "74",
+    name: "SAMSUNG GALAXY S24",
+  },
+  // Id - 90
+  "product_34.title": {
+    id: "90",
+    name: "IPHONE 16 PRO MAX",
+  },
+  // Id - 76
+  "product_35.title": {
+    id: "76",
+    name: "XIAOMI 12 PRO",
+  },
+  // Id - 76
+  "product_36.title": {
+    id: "78",
+    name: "XIAOMI 15 PRO",
+  },
+  // Id - 88
+  "product_37.title": {
+    id: "88",
+    name: "SAMSUNG GALAXY Z FLIP 7",
+  },
+  // Id - 105
+  "product_40.title": {
+    id: "105",
+    name: "APPLE 2025 MACBOOK AIR",
+  },
+  // Id - 107
+  "product_41.title": {
+    id: "107",
+    name: "HP OMEN 16 ULTRA SLIM",
+  },
+  // Id - 110
+  "product_42.title": {
+    id: "110",
+    name: "RAZER BASILISK V3",
+  },
+  // Id - 123
+  "product_43.title": {
+    id: "123",
+    name: "AMAZON ECHO POP",
+  },
+  // Id - 125
+  "product_44.title": {
+    id: "125",
+    name: "JBL GO 4",
+  },
+  // Id - 127
+  "product_45.title": {
+    id: "127",
+    name: "EDIFIER R1280T POWERED SPEAKERS",
   }
 };
 
