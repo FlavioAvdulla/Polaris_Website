@@ -58,6 +58,7 @@ import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import React, { useState } from "react";
 import "./i18n";
+import Product_46 from "./components/Home/otherProducts/Product_46";
 
 // Main App component
 const App = () => {
@@ -151,6 +152,7 @@ const App = () => {
               <Route path="/Product_43" element={<Product_43 />} />
               <Route path="/Product_44" element={<Product_44 />} />
               <Route path="/Product_45" element={<Product_45 />} />
+              <Route path="/Product_46" element={<Product_46 />} />
 
               {/* Main section pages */}
               <Route path="/Shop" element={<Shop />} />

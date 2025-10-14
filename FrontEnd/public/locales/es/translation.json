@@ -485,6 +485,18 @@
     "offerPrice": "€100.99",
     "addToCart": "ORDENAR AHORA"
   },
+  "product_46": {
+    "title": "AMAZON ECHO DOT",
+    "description": "Disfrute de una experiencia de audio mejorada en comparación con cualquier Echo Dot anterior con Alexa para obtener voces más claras, graves más profundos y un sonido vibrante en cualquier habitación.",
+    "review": "12 Opiniones de clientes",
+    "detail_01": "Experiencia de audio mejorada.",
+    "detail_02": "Control de casa inteligente compatible.",
+    "detail_03": "Diseñado para proteger su privacidad.",
+    "detail_04": "Haga más con el emparejamiento de dispositivos.",
+    "normalPrice": "€34.99",
+    "offerPrice": "€29.99",
+    "addToCart": "ORDENAR AHORA"
+  },
   "contacts": {
     "address": "Dirección",
     "talkToUs": "Habla con nosotros",
