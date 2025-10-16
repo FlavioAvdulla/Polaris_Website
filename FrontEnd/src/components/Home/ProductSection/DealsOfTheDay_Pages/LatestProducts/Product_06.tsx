@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
-import { GoDot } from "react-icons/go";
-import { IoIosArrowForward } from "react-icons/io";
-import axios from 'axios';
-import { useTranslation } from 'react-i18next';
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import ScrollToTop from "@/ScrollToTop/ScrollToTop";
+import { IoIosArrowForward } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
+import { GoDot } from "react-icons/go";
+import axios from 'axios';
 
+// Define TypeScript interface for Product structure
 interface Product {
   _id: string;
   image: string;
@@ -21,31 +22,43 @@ interface Product {
   rating: number;
   reviews: string;
   addToCart: string;
-  additionalImages: string[];
+  additionalImages: string[]; // Array of additional image filenames
 }
 
+// Array containing the ID of the featured product to display
 const featuredProductIds = ['52'];
 
 const Product_06 = () => {
+  // State for product data, loading status, and errors
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Translation hook for internationalization
   const { t } = useTranslation();
+
+  // State for the currently displayed main photo and product quantity
   const [mainPhoto, setMainPhoto] = useState("");
   const [quantity, setQuantity] = useState("01");
 
+  // useEffect hook to fetch product data on component mount
   useEffect(() => {
     const fetchProducts = async () => {
       try {
+        // API call to get all products
         const response = await axios.get('http://localhost:4004/api/products');
+        // Filter products to only include the featured one
         const filteredProducts = response.data.filter((product: Product) => 
           featuredProductIds.includes(product._id)
         );
         setProducts(filteredProducts);
+
+        // Set the main photo to the product's primary image
         if (filteredProducts.length > 0) {
           setMainPhoto(`http://localhost:4004/images/${filteredProducts[0].image}`);
         }
       } catch (err: unknown) {
+        // Handle errors with proper type checking
         setError(err instanceof Error ? err.message : "Unknown error occurred");
         console.error("Failed to fetch products:", err);
       } finally {
@@ -54,7 +67,7 @@ const Product_06 = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   // Handler for Whatsapp message - sends product info to Whatsapp
   const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
@@ -100,18 +113,21 @@ const Product_06 = () => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
+        // Full star for integer ratings
         stars.push(<FaStar key={i} className="text-[#fcc419]
           
                                               xs:text-[10px]
                                               md:text-[17px]
                                               lg:text-[20px]" />);
       } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+        // Half star for fractional ratings
         stars.push(<FaStarHalfAlt key={i} className="text-[#fcc419]
           
                                                      xs:text-[10px]
                                                      md:text-[17px]
                                                      lg:text-[20px]" />);
       } else {
+        // Empty star for ratings below current level
         stars.push(<FaStar key={i} className="text-gray-300
             
                                               xs:text-[10px]
@@ -123,30 +139,33 @@ const Product_06 = () => {
   }, []);
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value.replace(/[^0-9]/g, "");
+    const value = e.target.value.replace(/[^0-9]/g, ""); // Remove non-numeric characters
     const numericValue = parseInt(value, 10);
     
+    // Validate and update quantity
     if (!isNaN(numericValue) && numericValue >= 1 && numericValue <= 99) {
-      setQuantity(numericValue.toString().padStart(2, '0'));
+      setQuantity(numericValue.toString().padStart(2, '0')); // Format as two digits
     } else if (value === "") {
-      setQuantity("01");
+      setQuantity("01"); // Reset to default if empty
     }
   };
 
+  // Increases the product quantity by 1 (max 99)
   const increaseQuantity = () => {
     setQuantity((prevQuantity) => {
       const newQuantity = Math.min(99, parseInt(prevQuantity) + 1).toString();
-      return newQuantity.padStart(2, '0');
+      return newQuantity.padStart(2, '0'); // Format as two digits
     });
   };
-
+  // Decreases the product quantity by 1 (min 1)
   const decreaseQuantity = () => {
     setQuantity((prevQuantity) => {
       const newQuantity = Math.max(1, parseInt(prevQuantity) - 1).toString();
-      return newQuantity.padStart(2, '0');
+      return newQuantity.padStart(2, '0'); // Format as two digits
     });
   };
 
+  // Loading state UI
   if (loading) {
     return (
       <div className="flex mb-20 justify-center">
@@ -157,6 +176,7 @@ const Product_06 = () => {
     );
   }
 
+  // Error state UI
   if (error) {
     return (
       <div className="flex mb-20 justify-center">
@@ -167,6 +187,7 @@ const Product_06 = () => {
     );
   }
 
+  // No products found state UI
   if (products.length === 0) {
     return (
       <div className="flex mb-20 justify-center">
@@ -177,29 +198,32 @@ const Product_06 = () => {
     );
   }
 
+  // Get the first (and only) product from the filtered array
   const product = products[0];
 
-  // Generate thumbnails - using main image and additional images
+  // Generate thumbnail URLs - using main image and additional images
   const thumbnails = [
     `http://localhost:4004/images/${product.image}`,
     ...(product.additionalImages?.map(img => `http://localhost:4004/images/${img}`) || [])
-  ].slice(0, 4);
+  ].slice(0, 4); // Limit to 4 thumbnails total
 
   return (
     <div className="flex w-[85%] h-auto mx-auto my-20
                     xs:flex-col xs:gap-2
                     md:flex-row md:gap-3
                     lg:gap-5">
+      {/* Scroll to top component for better UX */}
       <ScrollToTop/>
       
-      {/* Left - Product Photos */}
+      {/* Left Column - Product Images */}
       <div className="flex flex-col mx-auto
                       xs:gap-1 xs:w-[100%]
                       md:gap-3 lg:h-[500px]
                       lg:gap-5 lg:w-[50%]
                       xl:h-[600px]">
-        {/* Main Photo */}
-        <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg border-[1px] overflow-hidden border-primary bg-white
+        {/* Main Product Photo */}
+        <div className="flex w-[100%] h-[75%] items-center justify-center rounded-lg
+                        border-[1px] overflow-hidden border-primary bg-white
                         dark:bg-transparent dark:border-gray-600">
           <img
             className="w-[85%] object-cover"
@@ -208,31 +232,29 @@ const Product_06 = () => {
           />
         </div>
         
-        {/* Thumbnails */}
+        {/* Thumbnail Gallery */}
         <div className="flex w-[100%] h-[25%]
                         
                         xs:gap-1
                         md:gap-3
                         lg:gap-5">
           {thumbnails.map((thumbnail, index) => (
-            <div
-              key={index}
-              className="w-[25%] items-center justify-center rounded-lg cursor-pointer
-                         hover:scale-105 hover:shadow-shadow-dark ease-in-out duration-300 border-[1px] overflow-hidden border-primary
-                         dark:bg-transparent dark:border-gray-600"
-              onClick={() => handleClick(thumbnail)}
-            >
-              <img
-                className="w-[100%] h-[100%] object-cover"
-                src={thumbnail}
-                alt={`Thumbnail ${index + 1}`}
-              />
+            <div key={index}
+                 className="w-[25%] items-center justify-center rounded-lg cursor-pointer
+                            hover:scale-105 hover:shadow-shadow-dark ease-in-out duration-300
+                            border-[1px] overflow-hidden border-primary
+                            dark:bg-transparent dark:border-gray-600"
+                 onClick={() => handleClick(thumbnail)}>
+
+              <img className="w-[100%] h-[100%] object-cover"
+                   src={thumbnail}
+                   alt={`Thumbnail ${index + 1}`}/>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Right - Product Info */}
+      {/* Right Column - Product Information */}
       <div className="flex flex-col bg-gray-100 gap-2 rounded-lg mx-auto justify-between
                       dark:bg-gray-800
                       
@@ -240,6 +262,7 @@ const Product_06 = () => {
                       md:p-4
                       lg:w-[50%] lg:h-[500px] lg:p-5
                       xl:h-[600px] xl:p-10">
+        {/* Product Title */}
         <h1 className="font-camptonBold leading-tight text-primary
                        dark:text-secondary_01
                        
@@ -250,6 +273,7 @@ const Product_06 = () => {
           {t(product.title)}
         </h1>
         
+        {/* Product Description */}
         <p className="w-[100%] font-camptonBook leading-tight text-justify
                       dark:text-white
                       
@@ -259,8 +283,10 @@ const Product_06 = () => {
           {t(product.description)}
         </p>
         
+        {/* Star Rating */}
         <div className="flex gap-2">{getStars(product.rating)}</div>
         
+        {/* Reviews Count */}
         <p className="font-camptonBook
                       dark:text-white
                       
@@ -271,8 +297,12 @@ const Product_06 = () => {
           {t(product.reviews)}
         </p>
         
-        {/* Price */}
-        <div className="flex items-center xs:gap-2 md:gap-4">
+        {/* Price Display */}
+        <div className="flex items-center
+        
+                        xs:gap-2
+                        md:gap-4">
+          {/* Current Offer Price */}
           <p className="font-camptonBold text-primary
                         dark:text-secondary_01
                         
@@ -281,6 +311,7 @@ const Product_06 = () => {
                         lg:text-[40px]">
             {t(product.offerPrice)}
           </p>
+          {/* Original Price with Strikethrough */}
           <div className="flex w-auto relative items-center">
 
             <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
@@ -296,7 +327,7 @@ const Product_06 = () => {
           </div>
         </div>
         
-        {/* Product Details */}
+        {/* Product Details List */}
         <div className="gap-1 flex flex-col mb-2">
           {[product.detail_01, product.detail_02, product.detail_03, product.detail_04].map(
             (detail, index) => detail && (
@@ -318,12 +349,12 @@ const Product_06 = () => {
         
         {/* Quantity Selector */}
         <div className="flex w-fit h-auto items-center mb-2">
-          <button
-            className="flex items-center justify-center border-[1px] border-primary cursor-pointer
-                       dark:border-secondary_01
-                       
-                       xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
-                       lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
+          {/* Decrease Quantity Button */}
+          <button className="flex items-center justify-center border-[1px] border-primary cursor-pointer
+                             dark:border-secondary_01
+                            
+                             xs:w-[26px] xs:h-[26px] xs:p-2 xs:rounded-tl-md xs:rounded-bl-md
+                             lg:w-[20px] lg:h-[20px] lg:p-5 lg:rounded-tl-lg lg:rounded-bl-lg"
             onClick={decreaseQuantity}
             aria-label="Decrease quantity">
             <i><FaCircleMinus className="text-primary
@@ -333,6 +364,7 @@ const Product_06 = () => {
                                          lg:text-[22px]" /></i>
           </button>
           
+          {/* Quantity Input */}
           <div className="flex items-center text-center justify-center w-[100%] h-[100%] bg-primary
                           dark:bg-secondary_01">
             <input className="text-center text-white font-camptonMedium bg-transparent outline-none
@@ -347,6 +379,7 @@ const Product_06 = () => {
                    onChange={handleQuantityChange}/>
           </div>
           
+          {/* Increase Quantity Button */}
           <button className="flex items-center justify-center border-[1px] border-primary cursor-pointer
                        dark:border-secondary_01
                        
@@ -356,6 +389,7 @@ const Product_06 = () => {
                   aria-label="Increase quantity">
             <i><FaCirclePlus className="text-primary
                                         dark:text-secondary_01
+
                                         xs:text-[13px]
                                         lg:text-[22px]" /></i>
           </button>
