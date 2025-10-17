@@ -115,6 +115,21 @@ const PRODUCT_MAP: Record<string, {
   "product_45.title": {
     id: "127",
     name: "EDIFIER R1280T POWERED SPEAKERS",
+  },
+  // Id - 130
+  "product_46.title": {
+    id: "130",
+    name: "AMAZON ECHO DOT",
+  },
+  // Id - 131
+  "product_47.title": {
+    id: "131",
+    name: "JBL CLIP 5",
+  },
+  // Id - 134
+  "product_48.title": {
+    id: "134",
+    name: "GTO 2-WAY 360 WATTS",
   }
 };
 

@@ -269,7 +269,7 @@ const Speakers = () => {
                             lg:text-[15px]
                             2xl:text-[20px]">
                 {t(product.available)}:
-                <span className="font-camptonMedium
+                <span className="font-camptonMedium text-primary
                                  dark:text-secondary_01 
                                   
                                  xs:text-[12px]

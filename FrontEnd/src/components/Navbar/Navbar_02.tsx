@@ -54,6 +54,9 @@ const PRODUCT_ROUTE_MAP: Record<string, string> = {
   "123": "/Product_43",
   "125": "/Product_44",
   "127": "/Product_45",
+  "130": "/Product_46",
+  "131": "/Product_47",
+  "134": "/Product_48",
 };
 
 const Navbar_02: React.FC<NavbarProps> = ({ 

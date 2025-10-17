@@ -29,15 +29,15 @@ export function AllCategories({ onCategorySelect }) {
     { value: "smartphones", label: t('navbar_03.smartphones'), path: "/SmartPhones" },
     { value: "computers", label: t('navbar_03.computers'), path: "/Computers" },
     { value: "speakers", label: t('navbar_03.speakers'), path: "/Speakers" },
-    { value: "fitnessTrackers", label: t('navbar_03.fitnessTrackers'), path: "/FitnessTrackers" },
-    { value: "headphones", label: t('navbar_03.headphones'), path: "/Headphones" },
-    { value: "gamingConsoles", label: t('navbar_03.gamingConsoles'), path: "/GamingConsoles" },
-    { value: "portableChargers", label: t('navbar_03.portableChargers'), path: "/PortableChargers" },
-    { value: "bluetoothEarphones", label: t('navbar_03.bluetoothEarphones'), path: "/BluetoothEarphones" },
+    // { value: "fitnessTrackers", label: t('navbar_03.fitnessTrackers'), path: "/FitnessTrackers" },
+    // { value: "headphones", label: t('navbar_03.headphones'), path: "/Headphones" },
+    // { value: "gamingConsoles", label: t('navbar_03.gamingConsoles'), path: "/GamingConsoles" },
+    // { value: "portableChargers", label: t('navbar_03.portableChargers'), path: "/PortableChargers" },
+    // { value: "bluetoothEarphones", label: t('navbar_03.bluetoothEarphones'), path: "/BluetoothEarphones" },
   ];
 
   // Handle category selection
-  const handleCategoryChange = (value) => {
+  const handleCategoryChange = (value: React.SetStateAction<string>) => {
     setSelectedValue(value);
     const selectedCategory = categories.find(cat => cat.value === value);
     if (selectedCategory) {
