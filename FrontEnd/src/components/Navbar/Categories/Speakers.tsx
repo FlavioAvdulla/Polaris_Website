@@ -28,7 +28,7 @@ interface Product {
 }
 
 // Array of specific product IDs you want to display
-const featuredProductIds = ['123', '125', '127', '130', '89', '91'];
+const featuredProductIds = ['123', '125', '127', '130', '131', '133'];
 
 const Speakers = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -44,8 +44,8 @@ const Speakers = () => {
       "125": "/Product_44",
       "127": "/Product_45",
       "130": "/Product_46",
-      "89": "/Product_37",
-      "91": "/Product_34",
+      "131": "/Product_47",
+      "133": "/Product_48",
     }
 
     const route = routeMap[id];

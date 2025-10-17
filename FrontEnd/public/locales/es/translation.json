@@ -497,6 +497,30 @@
     "offerPrice": "€29.99",
     "addToCart": "ORDENAR AHORA"
   },
+  "product_47": {
+    "title": "JBL CLIP 5",
+    "description": "Este altavoz ultraportátil rebosa de potente sonido JBL, listo para la aventura en cualquier lugar con su diseño resistente e impermeable y su mosquetón integrado.",
+    "review": "4 Opiniones de clientes",
+    "detail_01": "JBL Pro Sound ultraportátil.",
+    "detail_02": "Mosquetón rediseñado.",
+    "detail_03": "Hasta 12 horas de reproducción.",
+    "detail_04": "Resistente al agua y al polvo.",
+    "normalPrice": "€79.99",
+    "offerPrice": "€69.99",
+    "addToCart": "ORDENAR AHORA"
+  },
+  "product_48": {
+    "title": "GTO 2-WAY 360 WATTS",
+    "description": "Experimente un sonido potente y nítido que da vida a su música con estos altavoces para automóvil JBL de primera calidad.",
+    "review": "6 Opiniones de clientes",
+    "detail_01": "Material de cono inyectado con carbono.",
+    "detail_02": "Tweeters de cúpula blanda con accionamiento por el borde.",
+    "detail_03": "Conjuntos de imanes ventilados para enfriar la bobina móvil.",
+    "detail_04": "Sensibilidad Hz - 93 dB.",
+    "normalPrice": "€119.99",
+    "offerPrice": "€109.99",
+    "addToCart": "ORDENAR AHORA"
+  },
   "contacts": {
     "address": "Dirección",
     "talkToUs": "Habla con nosotros",

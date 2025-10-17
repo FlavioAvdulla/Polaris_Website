@@ -38,6 +38,9 @@ import Product_42 from "./components/Home/otherProducts/Product_42";
 import Product_43 from "./components/Home/otherProducts/Product_43";
 import Product_44 from "./components/Home/otherProducts/Product_44";
 import Product_45 from "./components/Home/otherProducts/Product_45";
+import Product_46 from "./components/Home/otherProducts/Product_46";
+import Product_47 from "./components/Home/otherProducts/Product_47";
+import Product_48 from "./components/Home/otherProducts/Product_48";
 import TrackOrder from "./components/Pages/TrackOrder/TrackOrder";
 import Favourites from "./components/Pages/Favourites/Favourites";
 import Speakers from "./components/Navbar/Categories/Speakers";
@@ -58,7 +61,6 @@ import Shop from "./components/Pages/Shop/Shop";
 import Blog from "./components/Pages/Blog/Blog";
 import React, { useState } from "react";
 import "./i18n";
-import Product_46 from "./components/Home/otherProducts/Product_46";
 
 // Main App component
 const App = () => {
@@ -153,6 +155,8 @@ const App = () => {
               <Route path="/Product_44" element={<Product_44 />} />
               <Route path="/Product_45" element={<Product_45 />} />
               <Route path="/Product_46" element={<Product_46 />} />
+              <Route path="/Product_47" element={<Product_47 />} />
+              <Route path="/Product_48" element={<Product_48 />} />
 
               {/* Main section pages */}
               <Route path="/Shop" element={<Shop />} />

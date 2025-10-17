@@ -497,6 +497,30 @@
     "offerPrice": "€29.99",
     "addToCart": "ORDER NOW"
   },
+  "product_47": {
+    "title": "JBL CLIP 5",
+    "description": "This ultra-portable speaker bursts with powerful JBL sound, ready for adventure anywhere with its rugged, waterproof design and integrated carabiner.",
+    "review": "4 Customer Reviews",
+    "detail_01": "Ultra-portable JBL Pro Sound.",
+    "detail_02": "Redesigned carabiner.",
+    "detail_03": "Up to 12 hours of playtime.",
+    "detail_04": "Waterproof and dustproof.",
+    "normalPrice": "€79.99",
+    "offerPrice": "€69.99",
+    "addToCart": "ORDER NOW"
+  },
+  "product_48": {
+    "title": "GTO 2-WAY 360 WATTS",
+    "description": "Experience powerful, crystal-clear sound that brings your music to life with these premium JBL car speakers.",
+    "review": "6 Customer Reviews",
+    "detail_01": "Carbon-injected cone material.",
+    "detail_02": "Edge-Driven Soft Dome tweeters.",
+    "detail_03": "Vented magnet assemblies for cooling the voice coil.",
+    "detail_04": "Hz Sensitivity - 93 dB.",
+    "normalPrice": "€119.99",
+    "offerPrice": "€109.99",
+    "addToCart": "ORDER NOW"
+  },
   "contacts": {
     "address": "Address",
     "talkToUs": "Talk to us",
