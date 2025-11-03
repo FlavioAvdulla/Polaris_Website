@@ -294,6 +294,7 @@
   "product_03": {
     "title": "PLAYSTATION®5 PRO",
     "description": "Juega juegos de PS5® con las imágenes más impresionantes jamás vistas en una consola PlayStation.",
+    "productType": "Consola de juegos",
     "review": "6 Opiniones de clientes",
     "rating": "1",
     "detail_01": "Juego de ultra alta definición con detalles asombrosos.",
@@ -380,6 +381,7 @@
    "product_35": {
     "title": "XIAOMI 12 PRO",
     "description": "A Symphony of Sight and Speed. Immerse yourself in the flawless, world-class display and feel the power of seamless performance with the Xiaomi 12 Pro.",
+    "productType": "Smartphone",
     "review": "12 Opiniones de clientes",
     "detail_01": "DISPLAY: LTPO AMOLED, 6.73 inches, 1440 x 3200 pixels.",
     "detail_02": "256GB 12GB RAM; Triple 50MP Camera; Li-Po 4600 mAh, non-removable Battery.",
@@ -392,6 +394,7 @@
   "product_36": {
     "title": "XIAOMI 15 PRO",
     "description": "Experimente un rendimiento revolucionario con el Xiaomi 15 Pro, con un procesador Snapdragon 8 Gen 4 de última generación y un impresionante sistema de cámara diseñado por Leica.",
+    "productType": "Smartphone",
     "review": "22 Opiniones de clientes",
     "detail_01": "Pantalla 6,73 pulgadas (1440 x 3200 píxeles) Frecuencia de actualización de 120 Hz",
     "detail_02": "Cámara 50+50+50 MP (Triple Cámara) 32 MP Selfie Video 8K.",
@@ -416,6 +419,7 @@
   "product_40": {
     "title": "APPLE 2025 MACBOOK AIR",
     "description": "Experimente un rendimiento incomparable y una batería que dura todo el día en el diseño increíblemente delgado y liviano del futuro.",
+    "productType": "Computadora",
     "review": "18 Opiniones de clientes",
     "detail_01": "La MacBook Air con chip M4 te permite trabajar y jugar a toda velocidad.",
     "detail_02": "Creado para la inteligencia de Apple.",
@@ -500,6 +504,7 @@
   "product_47": {
     "title": "JBL CLIP 5",
     "description": "Este altavoz ultraportátil rebosa de potente sonido JBL, listo para la aventura en cualquier lugar con su diseño resistente e impermeable y su mosquetón integrado.",
+    "productType": "Música de altavoz",
     "review": "4 Opiniones de clientes",
     "detail_01": "JBL Pro Sound ultraportátil.",
     "detail_02": "Mosquetón rediseñado.",
@@ -512,6 +517,7 @@
   "product_48": {
     "title": "GTO 2-WAY 360 WATTS",
     "description": "Experimente un sonido potente y nítido que da vida a su música con estos altavoces para automóvil JBL de primera calidad.",
+    "productType": "Música de altavoz",
     "review": "6 Opiniones de clientes",
     "detail_01": "Material de cono inyectado con carbono.",
     "detail_02": "Tweeters de cúpula blanda con accionamiento por el borde.",

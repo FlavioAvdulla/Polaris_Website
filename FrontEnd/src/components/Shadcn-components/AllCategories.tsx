@@ -57,6 +57,7 @@ export function AllCategories({ onCategorySelect }) {
                                 rounded-md rounded-bl-none rounded-br-none bg-gray-100 font-camptonBook
                                 dark:bg-gray-800 dark:text-white
                                 
+                                
                                 sm:w-[150px]
                                 lg:w-[200px]">
         <SelectValue placeholder={t('navbar_03.allCategories')} />

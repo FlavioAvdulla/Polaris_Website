@@ -294,6 +294,7 @@
   "product_03": {
     "title": "PLAYSTATION®5 PRO DIGITAL 2TB",
     "description": "Play PS5® games with the most impressive visuals ever possible on a PlayStation console.",
+    "productType": "Gaming Console",
     "review": "6 Customer Reviews",
     "rating": "1",
     "detail_01": "Ultra-high definition play with astonishing detail.",
@@ -380,6 +381,7 @@
   "product_35": {
     "title": "XIAOMI 12 PRO",
     "description": "A Symphony of Sight and Speed. Immerse yourself in the flawless, world-class display and feel the power of seamless performance with the Xiaomi 12 Pro.",
+    "productType": "Smartphone",
     "review": "12 Customer Reviews",
     "detail_01": "DISPLAY: LTPO AMOLED, 6.73 inches, 1440 x 3200 pixels.",
     "detail_02": "256GB 12GB RAM; Triple 50MP Camera; Li-Po 4600 mAh, non-removable Battery.",
@@ -392,6 +394,7 @@
   "product_36": {
     "title": "XIAOMI 15 PRO",
     "description": "Experience revolutionary performance with the Xiaomi 15 Pro, featuring a cutting-edge Snapdragon 8 Gen 4 processor and a stunning Leica-engineered camera system.",
+    "productType": "Smartphone",
     "review": "22 Customer Reviews",
     "detail_01": "Display 6.73 inches (1440x 3200 pixels) 120Hz Refresh rate.",
     "detail_02": "Camera 50+50+50 MP (Triple Camera) 32 MP Selfie 8K Video.",
@@ -416,6 +419,7 @@
   "product_40": {
     "title": "APPLE 2025 MACBOOK AIR",
     "description": "Experience unparalleled performance and all-day battery life in the impossibly thin, lightweight design of the future.",
+    "productType": "Computer",
     "review": "18 Customer Reviews",
     "detail_01": "MacBook Air with the M4 chip lets you blaze through work and play.",
     "detail_02": "Built for apple intelligence.",
@@ -500,6 +504,7 @@
   "product_47": {
     "title": "JBL CLIP 5",
     "description": "This ultra-portable speaker bursts with powerful JBL sound, ready for adventure anywhere with its rugged, waterproof design and integrated carabiner.",
+    "productType": "Speaker Music",
     "review": "4 Customer Reviews",
     "detail_01": "Ultra-portable JBL Pro Sound.",
     "detail_02": "Redesigned carabiner.",
@@ -512,6 +517,7 @@
   "product_48": {
     "title": "GTO 2-WAY 360 WATTS",
     "description": "Experience powerful, crystal-clear sound that brings your music to life with these premium JBL car speakers.",
+    "productType": "Speaker Music",
     "review": "6 Customer Reviews",
     "detail_01": "Carbon-injected cone material.",
     "detail_02": "Edge-Driven Soft Dome tweeters.",

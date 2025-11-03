@@ -35,12 +35,12 @@ const ProductSection_05 = () => {
   const handleProductClick = (id) => {
     console.log(`Image with ${id} clicked.`);
     const routeMap = {
-      "1": "/Product_01",
-      "2": "/Product_02",
-      "3": "/Product_04",
-      "4": "/Product_06",
-      "5": "/Product_04",
-      "6": "/Product_03",
+      "27": "/Product_48",
+      "28": "/Product_40",
+      "29": "/Product_47",
+      "30": "/Product_36",
+      "31": "/Product_35",
+      "32": "/Product_03",
       "7": "/Product_05",
       "8": "/Product_04"
     };
@@ -185,7 +185,7 @@ const ProductSection_05 = () => {
               <div className="flex items-center gap-4">
                 <p className="font-camptonBold text-primary
                               dark:text-secondary_01
-                              
+
                               xs:text-[23px]
                               lg:text-[15px]
                               xl:text-[23px]">{t(product.offerPrice)}</p>
