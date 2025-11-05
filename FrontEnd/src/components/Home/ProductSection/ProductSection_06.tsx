@@ -41,8 +41,8 @@ const ProductSection_05 = () => {
       "30": "/Product_36",
       "31": "/Product_35",
       "32": "/Product_03",
-      "7": "/Product_05",
-      "8": "/Product_04"
+      "33": "/Product_05",
+      "34": "/Product_06"
     };
     
     const route = routeMap[id];
@@ -145,7 +145,7 @@ const ProductSection_05 = () => {
                       xl:h-[700px]">
         {/* Map through products and render each one */}
         {products.map((product, index) => (
-          <div className="flex w-[100%] h-auto overflow-hidden bg-gray-100
+          <div className="flex w-[100%] h-auto overflow-hidden
                           items-center rounded-lg border-[1px] border-primary cursor-pointer
                           dark:bg-transparent dark:border-gray-600"
                key={index}
@@ -157,7 +157,7 @@ const ProductSection_05 = () => {
                    className="w-full h-auto rounded-tl-lg rounded-bl-lg"/>
             </div>
             {/* Product information */}
-            <div className="flex flex-col w-[60%] h-[100%] p-3 justify-center gap-1
+            <div className="flex flex-col w-[60%] h-[100%] p-3 justify-center gap-1 bg-gray-100
                             dark:bg-gray-800">
               {/* Star rating */}
               <div className="flex gap-2 items-center">
