@@ -1,3 +1,7 @@
 node_modules
 .env
+<<<<<<< HEAD
 .vercel
+=======
+backend/public/images/
+>>>>>>> 38a6ddbfff81e5554c065d29e490683d6196ff31

@@ -321,6 +321,7 @@
   "product_05": {
     "title": "AURICULARES SONY WH-1000XM5",
     "description": "Cancelación de ruido líder en la industria optimizada para usted. Sonido magnífico, diseñado a la perfección. Nitidez cristalina.",
+    "productType": "Auriculares",
     "review": "5 Opiniones de clientes",
     "detail_01": "Cancelación de ruido líder en la industria.",
     "detail_02": "Calidad de sonido extraordinaria.",
@@ -333,6 +334,7 @@
   "product_06": {
     "title": "TECLADO REDRAGON K535",
     "description": "Cancelación de ruido líder en la industria optimizada para usted. Sonido magnífico, diseñado a la perfección. Nitidez cristalina.",
+    "productType": "Teclado",
     "review": "7 Opiniones de clientes",
     "detail_01": "Teclado mecánico con cable.",
     "detail_02": "Cable desmontable tipo C a USB.",

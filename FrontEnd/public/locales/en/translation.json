@@ -321,6 +321,7 @@
   "product_05": {
     "title": "SONY HEADSET WH-1000XM5",
     "description": "Industry-leading noise cancellation optimized to you Magnificent Sound, engineered to perfectio Crystal clear.",
+    "productType": "Headphones",
     "review": "7 Customer Reviews",
     "detail_01": "Industry-Leading Noise Cancellation.",
     "detail_02": "Extraordinary Sound Quality.",
@@ -333,6 +334,7 @@
   "product_06": {
     "title": "REDRAGON K535 KEYBOARD",
     "description": "Industry-leading noise cancellation optimized to you Magnificent Sound, engineered to perfectio Crystal clear.",
+    "productType": "Keyboard",
     "review": "7 Customer Reviews",
     "detail_01": "Wired mechanical keyboard",
     "detail_02": "Type C to USB detachable cable",
