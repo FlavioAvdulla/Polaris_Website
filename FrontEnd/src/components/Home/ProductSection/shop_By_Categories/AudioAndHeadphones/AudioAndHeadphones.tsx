@@ -9,10 +9,15 @@ import { useTranslation } from 'react-i18next';
 
 // Product interface defining the structure of product data
 interface Product {
+  detail_01: never | string | string[];
+  detail_02: never | string | string[];
+  detail_03: never | string | string[];
+  detail_04: never | string | string[];
   _id: string;
   image: string;
   rating: number;
   normalPrice: string;
+  offerPrice: string;
   title: string;
   description: string;
   quantity: number;
@@ -23,7 +28,7 @@ interface Product {
 }
 
 // Array of specific product IDs to be displayed as featured products
-const featuredProductIds = ['1', '2', '3'];
+const featuredProductIds = ['123', '125', '127', '130', '131', '133'];
 // Exporting the length of the featured product IDs array
 export const featuredAudioAndHeadphonesProductIdsLength = featuredProductIds.length
 
@@ -56,6 +61,42 @@ const AudioAndHeadphones = () => {
     }
   }
 
+  // Handler for Whatsapp message - sends product info to Whatsapp
+    const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
+      event.stopPropagation() // Prevent triggering the parent click event
+  
+      const imageUrl = `http://localhost:4004/images/${product.image}`;
+  
+    // Construct the Whatsapp message with product details
+    const message = `Hello! I want to buy this product:
+    
+    *Product Details:*
+    *Title:* ${t(product.title)}
+    *Description:* ${t(product.description)}
+    *Original Price:* ${t(product.description)}
+    *Original Price:* ${t(product.normalPrice)}
+    *Offer Price:* ${t(product.offerPrice)}
+  
+    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+  
+    *Product Image:* ${imageUrl}
+  
+    Please contact me to proceed with the purchase. Thank you!`;
+  
+    // Encode the message for URL
+      const encodedMessage = encodeURIComponent(message);
+  
+      // WhatsApp API URL (Replace with your actual WhatsApp number)
+      const whatsappNumber = "355676311918"
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+      // Open Whatsapp in a new tab
+      window.open(whatsappUrl, '_blank')
+    }
+
   // Effect hook to fetch products data on component mount
   useEffect(() => {
     const fetchProducts = async () => {
@@ -79,7 +120,7 @@ const AudioAndHeadphones = () => {
   }, []);
   
   // Function to generate star rating display
-  const getStars = (rating) => {
+  const getStars = (rating: number) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= rating) {
@@ -140,7 +181,7 @@ const AudioAndHeadphones = () => {
                        xs:text-[10px]
                        sm:text-[11px]
                        md:text-[15px]
-                       lg:text-[22px]">{t("audioAndHeadphonesTitle.electronicsTitle")}</h1>
+                       lg:text-[22px]">{t("audioAndHeadphones.audioAndHeadphonesTitle")}</h1>
 
         <div className="flex items-center
                         
@@ -153,7 +194,7 @@ const AudioAndHeadphones = () => {
                         sm:text-[11px]
                         md:text-[15px]
                         xl:text-[18px]">
-            {t("audioAndHeadphonesTitle.info")}
+            {t("audioAndHeadphones.info")}
           </p>
         </div>
       </div>
@@ -204,29 +245,45 @@ const AudioAndHeadphones = () => {
                                  lg:text-[18px]
                                  xl:text-[22px] xl:w-[70%]">{t(product.title)}</h1>
 
-                  {/* ============= Price and Add to Cart ============= */}
-                  <div className="flex justify-between items-center">
-                    <h1 className="font-camptonBold text-primary
-                                   dark:text-secondary_01
-
-                                   xs:text-[40px]
-                                   md:text-[30px]
-                                   lg:text-[36px]
-                                   xl:text-[40px]">{product.normalPrice}
-                    </h1>
-                    {/* ============= Add to Cart Button ============= */}
-                    <i className="bg-primary border-[1px] border-primary cursor-pointer
-                                  hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
-                                  dark:bg-gray-800 dark:border-gray-800 dark:hover:border-gray-800 dark:hover:bg-transparent
-
-                                  xs:rounded-md
-                                  md:rounded-sm
-                                  lg:rounded-md">
-                      <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
-                                                      dark:hover:text-white
-
-                                                      xs:text-[40px] xs:p-1"/></i>
-                  </div>
+                  {/* Price and cart */}
+                              <div className="flex justify-between items-center">
+                                <div className="flex items-center xs:gap-2 md:gap-4">
+                                  <p className="font-camptonBold text-primary
+                                                dark:text-secondary_01
+                                                  
+                                                xs:text-[22px]
+                                                md:text-[30px]
+                                                lg:text-[40px]">
+                                    {t(product.offerPrice)}
+                                  </p>
+                                  <div className="flex w-auto relative items-center">
+                                    <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
+                  
+                                    <p className="font-camptonBook text-gray-700
+                                                  dark:text-white
+                                                    
+                                                  xs:text-[16px]
+                                                  md:text-[17px]
+                                                  lg:text-[25px]">
+                                      {t(product.normalPrice)}
+                                    </p>
+                                  </div>
+                                </div>
+                                <button
+                                  onClick={(e) => handleWhatsappMessage(product, e)}
+                                  className="bg-primary border-[1px] border-primary cursor-pointer
+                                             hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
+                                             dark:bg-secondary_01 dark:border-gray-800 dark:hover:bg-transparent dark:hover:border-secondary_01
+                                             
+                                             xs:rounded-md
+                                             md:rounded-sm
+                                             lg:rounded-md">
+                                  <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
+                                                                  dark:hover:text-secondary_01
+                  
+                                                                  xs:text-[40px] xs:p-1"/>
+                                </button>
+                              </div>
                   {/* ============= Stock Information ============= */}
                   <div className="flex justify-between items-center">
                     <p className="font-camptonBook flex

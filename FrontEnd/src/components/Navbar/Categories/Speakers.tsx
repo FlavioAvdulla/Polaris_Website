@@ -9,10 +9,10 @@ import { Carousel_11 } from "../../Shadcn-components/Carousel_11";
 
 interface Product {
   description: never | string | string[];
-  detail_04: never;
-  detail_03: never | string | string[];
-  detail_02: never | string | string[];
   detail_01: never | string | string[];
+  detail_02: never | string | string[];
+  detail_03: never | string | string[];
+  detail_04: never | string | string[];
   _id: string;
   image: string;
   rating: number;
