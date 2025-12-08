@@ -268,6 +268,7 @@
   "product_01": {
     "title": "LENOVO LEGION 5",
     "description": "SSD ultrarrápido, impresionantes gráficos 4K y una experiencia háptica inmersiva en el DualSense. El futuro de los videojuegos ya está aquí.",
+    "productType": "Laptop",
     "review": "4 Opiniones de clientes",
     "rating": "1",
     "detail_01": "Ryzen 7 5800H hasta 4,40 GHz",
@@ -281,6 +282,7 @@
   "product_02": {
     "title": "PS VR AURICULARES",
     "description": "Experience new realities with a custom OLED screen and smooth 120fps visuals to create complete immersion in your games.",
+    "productType": "VR Auriculares",
     "review": "6 Opiniones de clientes",
     "rating": "1",
     "detail_01": "Pantalla: OLED",
@@ -308,6 +310,7 @@
   "product_04": {
     "title": "GEFORCE RTX 3090 24GB",
     "description": "La GeForce RTX 3090 ofrece un rendimiento increíble con trazado de rayos mejorado, capacidades de IA y 24 GB de memoria.",
+    "productType": "Tarjeta gráfica",
     "review": "6 Opiniones de clientes",
     "rating": "2.5",
     "detail_01": "24GB GDDR6X (384-bit).",

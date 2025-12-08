@@ -30,10 +30,10 @@ const ProductSection_05 = () => {
   const navigate = useNavigate();
   
     // Handler for when a product is clicked - navigates to specific routes based on product ID
-    const handleProductClick = (id) => {
+    const handleProductClick = (id: string) => {
       console.log(`Image with id ${id} clicked.`);
       const routeMap = {
-        "18": "/Computers",
+        "18": "/Product_01",
         "19": "/Product_02",
         "20": "/Product_04",
         "21": "/Product_06"
