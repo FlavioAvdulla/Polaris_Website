@@ -11,7 +11,11 @@ import {
 } from "@/components/ui/select";
 import { useTranslation } from 'react-i18next';
 
-export function AllCategories({ onCategorySelect }) {
+interface AllCategoriesProps {
+  onCategorySelect?: (path: string) => void;
+}
+
+export function AllCategories({ onCategorySelect }: AllCategoriesProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
