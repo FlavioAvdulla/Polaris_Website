@@ -97,17 +97,14 @@ export function SearchBarSelect({ onCategorySelect }: AllCategoriesProps) {
                    border-[1px] border-primary border-r-0 rounded-none
                    rounded-tl-md rounded-bl-md bg-white
                    dark:bg-transparent dark:border-gray-600 dark:text-white
-                   xs:gap-1"
-      >
+                   xs:gap-1">
         <SelectValue placeholder={t("navbar_02.all")} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>
-            <p
-              className="font-camptonBook text-primary
-                         dark:text-secondary_01"
-            >
+            <p className="font-camptonBook text-primary
+                          dark:text-secondary_01">
               Categories
             </p>
           </SelectLabel>
@@ -115,8 +112,7 @@ export function SearchBarSelect({ onCategorySelect }: AllCategoriesProps) {
             <SelectItem
               className="cursor-pointer"
               key={category.value}
-              value={category.value}
-            >
+              value={category.value}>
               <p className="font-camptonBook">{category.label}</p>
             </SelectItem>
           ))}

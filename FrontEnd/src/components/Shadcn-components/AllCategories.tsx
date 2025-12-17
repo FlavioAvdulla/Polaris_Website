@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import {
   Select,
   SelectContent,
@@ -9,17 +10,20 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useTranslation } from 'react-i18next';
 
 interface AllCategoriesProps {
   onCategorySelect?: (path: string) => void;
 }
+
+// Storage key for persisting the selection
+const STORAGE_KEY = "searchbar_category_selection";
 
 export function AllCategories({ onCategorySelect }: AllCategoriesProps) {
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
   const [selectedValue, setSelectedValue] = React.useState("");
+  const [isInitialized, setIsInitialized] = React.useState(false);
 
   // Reset selection when on homepage
   React.useEffect(() => {
@@ -33,27 +37,65 @@ export function AllCategories({ onCategorySelect }: AllCategoriesProps) {
     { value: "smartphones", label: t('navbar_03.smartphones'), path: "/SmartPhones" },
     { value: "computers", label: t('navbar_03.computers'), path: "/Computers" },
     { value: "speakers", label: t('navbar_03.speakers'), path: "/Speakers" },
-    // { value: "fitnessTrackers", label: t('navbar_03.fitnessTrackers'), path: "/FitnessTrackers" },
-    // { value: "headphones", label: t('navbar_03.headphones'), path: "/Headphones" },
-    // { value: "gamingConsoles", label: t('navbar_03.gamingConsoles'), path: "/GamingConsoles" },
-    // { value: "portableChargers", label: t('navbar_03.portableChargers'), path: "/PortableChargers" },
-    // { value: "bluetoothEarphones", label: t('navbar_03.bluetoothEarphones'), path: "/BluetoothEarphones" },
   ];
 
-  // Handle category selection
-  const handleCategoryChange = (value: React.SetStateAction<string>) => {
-    setSelectedValue(value);
-    const selectedCategory = categories.find(cat => cat.value === value);
-    if (selectedCategory) {
-      if (onCategorySelect) {
-        // Use the callback if provided (for the integrated component)
-        onCategorySelect(selectedCategory.path);
-      } else {
-        // Direct navigation (for standalone use)
-        navigate(selectedCategory.path);
+  // Initialize selected value on component mount
+    React.useEffect(() => {
+      // Clear storage and state if on homepage
+      if (location.pathname === "/") {
+        setSelectedValue("");
+        localStorage.removeItem(STORAGE_KEY);
+        setIsInitialized(true);
+        return;
       }
-    }
-  };
+  
+      // Try to get stored value
+      const storedValue = localStorage.getItem(STORAGE_KEY);
+  
+      // Find category that matches current path
+      const currentCategory = categories.find(
+        (cat) => cat.path === location.pathname
+      );
+  
+      // Priority: Current path > Stored value > Empty string
+      if (currentCategory) {
+        setSelectedValue(currentCategory.value);
+      } else if (storedValue && categories.some(cat => cat.value === storedValue)) {
+        // Only use stored value if it's valid
+        setSelectedValue(storedValue);
+      } else {
+        setSelectedValue("");
+      }
+      
+      setIsInitialized(true);
+    }, [location.pathname]); // Add dependency array
+  
+    // Save to localStorage whenever selection changes (only after initialization)
+    React.useEffect(() => {
+      if (!isInitialized) return;
+      
+      if (selectedValue) {
+        localStorage.setItem(STORAGE_KEY, selectedValue);
+      } else if (location.pathname === "/") {
+        // Clear storage on homepage
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }, [selectedValue, isInitialized, location.pathname]);
+  
+    // Handle category selection
+    const handleCategoryChange = (value: React.SetStateAction<string>) => {
+      setSelectedValue(value);
+      const selectedCategory = categories.find((cat) => cat.value === value);
+      if (selectedCategory) {
+        if (onCategorySelect) {
+          // Use the callback if provided (for the integrated component)
+          onCategorySelect(selectedCategory.path);
+        } else {
+          // Direct navigation (for standalone use)
+          navigate(selectedCategory.path);
+        }
+      }
+    };
 
   return (
     <Select value={selectedValue} onValueChange={handleCategoryChange}>

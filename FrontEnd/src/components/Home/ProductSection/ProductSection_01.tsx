@@ -56,7 +56,7 @@ const ProductSection_01 = () => {
     }
   }
 
-  // Handler for Whatsapp message - sends product info to Whatsapp
+      // Handler for Whatsapp message - sends product info to Whatsapp
       const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
         event.stopPropagation() // Prevent triggering the parent click event
     
