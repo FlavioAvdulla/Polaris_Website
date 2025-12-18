@@ -34,10 +34,10 @@ const ProductSection_05 = () => {
     const handleProductClick = (id: string) => {
       console.log(`Image with id ${id} clicked.`);
       const routeMap = {
-        "18": "/Product_01",
-        "19": "/Product_02",
-        "20": "/Product_04",
-        "21": "/Product_06"
+        "50": "/Product_04",
+        "78": "/Product_36",
+        "4": "/Product_01",
+        "75": "/Product_33"
       };
 
       const route = routeMap[id];
