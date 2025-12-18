@@ -15,10 +15,11 @@ interface Product {
   description: string;
   normalPrice: string;
   offerPrice: string;
+  productType: string;
 }
 
 // Array of specific product IDs to display as featured products
-const featuredProductIds = ['18', '19', '20', '21'];
+const featuredProductIds = ['50', '78', '4', '75'];
 
 const ProductSection_05 = () => {
   // State management for products, errors, and loading status
@@ -205,7 +206,7 @@ const ProductSection_05 = () => {
                               xs:text-[10px]
                               sm:text-[12px]
                               md:text-[20px]
-                              lg:text-[15px]">{t(product.description)}
+                              lg:text-[15px]">{t(product.productType)}
                 </p>
                 <div className="flex gap-4 items-center">
                   <p className="font-camptonBold text-primary

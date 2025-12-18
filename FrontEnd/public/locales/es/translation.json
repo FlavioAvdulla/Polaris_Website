@@ -335,7 +335,7 @@
     "addToCart": "ORDENAR AHORA"
   },
   "product_06": {
-    "title": "TECLADO REDRAGON K535",
+    "title": "REDRAGON K535",
     "description": "Cancelación de ruido líder en la industria optimizada para usted. Sonido magnífico, diseñado a la perfección. Nitidez cristalina.",
     "productType": "Teclado",
     "review": "7 Opiniones de clientes",
@@ -350,6 +350,7 @@
   "product_32": {
     "title": "SAMSUNG GALAXY S25 ULTRA",
     "description": "Experimente lo último en innovación móvil con la impresionante pantalla y la revolucionaria cámara del Samsung Galaxy S25 Ultra.",
+    "productType": "Smartphone",
     "review": "16 Opiniones de clientes",
     "detail_01": "Pantalla: Dynamic AMOLED 2X de 6,9 ​​pulgadas, 1440 x 3120 píxeles.",
     "detail_02": "Procesador: Chipset Qualcomm Snapdragon 8 Elite.",
@@ -362,6 +363,7 @@
   "product_33": {
     "title": "SAMSUNG GALAXY S24",
     "description": "La experiencia Galaxy definitiva. Descubre el Samsung Galaxy S24: una combinación perfecta de IA de vanguardia, una impresionante pantalla adaptable y una cámara de calidad profesional para transformar tu conexión con el mundo.",
+    "productType": "Smartphone",
     "review": "4 Opiniones de clientes",
     "detail_01": "Pantalla AMOLED dinámica de 6,2 pulgadas con una resolución de 1080x2400.",
     "detail_02": "Sistema de triple cámara trasera con un sensor principal de 50 MP.",
@@ -374,6 +376,7 @@
   "product_34": {
     "title": "IPHONE 16 PRO MAX",
     "description": "Experimente el futuro en su mano con el revolucionario iPhone 16 Pro Max, donde una pantalla increíblemente brillante, un sistema de cámara inteligente y una integración perfecta de IA redefinen lo que puede ser un teléfono inteligente.",
+    "productType": "Smartphone",
     "review": "18 Opiniones de clientes",
     "detail_01": "Pantalla AMOLED dinámica de 6,2 pulgadas con una resolución de 1080x2400.",
     "detail_02": "Sistema de triple cámara trasera con un sensor principal de 50 MP.",
@@ -412,6 +415,7 @@
   "product_37": {
     "title": "SAMSUNG GALAXY Z FLIP 7",
     "description": "El Sony Z Flip 7 despliega un mundo de brillantez cinematográfica, fusionando una sorprendente pantalla plegable con la incomparable tecnología de cámara de la serie Alpha en tu bolsillo.",
+    "productType": "Smartphone",
     "review": "14 Opiniones de clientes",
     "detail_01": "Pantalla de 6,9 ​​pulgadas (1080 x 2520 píxeles), frecuencia de actualización de 120 Hz.",
     "detail_02": "Cámara 50+12 MP (Cámara dual) 10 MP Selfie Video 4K.",
@@ -424,7 +428,7 @@
   "product_40": {
     "title": "APPLE 2025 MACBOOK AIR",
     "description": "Experimente un rendimiento incomparable y una batería que dura todo el día en el diseño increíblemente delgado y liviano del futuro.",
-    "productType": "Computadora",
+    "productType": "Laptop",
     "review": "18 Opiniones de clientes",
     "detail_01": "La MacBook Air con chip M4 te permite trabajar y jugar a toda velocidad.",
     "detail_02": "Creado para la inteligencia de Apple.",
@@ -437,6 +441,7 @@
   "product_41": {
     "title": "HP OMEN 16 ULTRA SLIM",
     "description": "Domine la competencia con una potencia implacable y una pantalla ultrarrápida en un chasis sorprendentemente delgado.",
+    "productType": "Laptop",
     "review": "8 Opiniones de clientes",
     "detail_01": "Pantalla IPS 2K con frecuencia de actualización de 144 Hz.",
     "detail_02": "GPU NVIDIA GeForce RTX 5060 para computadora portátil.",
@@ -449,6 +454,7 @@
   "product_42": {
     "title": "RAZER BASILISK V3",
     "description": "El Razer Basilisk V3 ofrece una combinación perfecta de controles personalizables, sorprendente iluminación RGB y precisión para lograr la máxima ventaja en los juegos.",
+    "productType": "Accesorios de Computadora",
     "review": "25 Opiniones de clientes",
     "detail_01": "11 zonas de iluminación Razer Chroma RGB.",
     "detail_02": "Rueda inclinable Razer HyperScroll para una experiencia suave.",
@@ -461,6 +467,7 @@
   "product_43": {
     "title": "AMAZON ECHO POP",
     "description": "El nuevo Echo Pop ofrece un sonido vibrante y completo en un diseño compacto y elegante que se adapta perfectamente a cualquier espacio pequeño.",
+    "productType": "Música de altavoz",
     "review": "18 Opiniones de clientes",
     "detail_01": "Funciones premium de Alexa.",
     "detail_02": "Controla la música con tu voz.",
@@ -473,6 +480,7 @@
   "product_44": {
     "title": "JBL GO 4",
     "description": "Con JBL Pro Sound en un diseño elegante y ultraportátil, el JBL Go 4 es tu compañero a prueba de agua y polvo para disfrutar de un gran sonido en cualquier lugar.",
+    "productType": "Música de altavoz",
     "review": "12 Opiniones de clientes",
     "detail_01": "JBL Pro Sound ultraportátil.",
     "detail_02": "Up to 7 hours of playtime.",
@@ -485,6 +493,7 @@
   "product_45": {
     "title": "ALTAVOCES AUTOAMPLIFICADOS EDIFIER R1280T",
     "description": "Altavoces de estantería clásicos de madera que llenan tu habitación con un sonido cálido y natural, aportando una riqueza de audio atemporal a tu vida moderna.",
+    "productType": "Música de altavoz",
     "review": "10 Opiniones de clientes",
     "detail_01": "2 x AUX Input.",
     "detail_02": "Mando a distancia.",
@@ -497,6 +506,7 @@
   "product_46": {
     "title": "AMAZON ECHO DOT",
     "description": "Disfrute de una experiencia de audio mejorada en comparación con cualquier Echo Dot anterior con Alexa para obtener voces más claras, graves más profundos y un sonido vibrante en cualquier habitación.",
+    "productType": "Música de altavoz",
     "review": "12 Opiniones de clientes",
     "detail_01": "Experiencia de audio mejorada.",
     "detail_02": "Control de casa inteligente compatible.",

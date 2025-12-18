@@ -14,10 +14,11 @@ interface Product {
   description: string;
   normalPrice: string;
   offerPrice: string;
+  productType: string;
 }
 
 // Array of specific product IDs to display as featured products
-const featuredProductIds = ['27', '28', '29', '30', '31', '32', '33', '34'];
+const featuredProductIds = ['90', '126', '129', '106', '49', '52', '124', '134'];
 
 
 const ProductSection_05 = () => {
@@ -179,7 +180,7 @@ const ProductSection_05 = () => {
                             
                             xs:text-[12px] xs:w-[70%]
                             lg:w-[80%]
-                            xl:text-[14px] xl:w-[70%]">{t(product.description)}</p>
+                            xl:text-[14px] xl:w-[70%]">{t(product.productType)}</p>
 
               {/* Pricing information */}
               <div className="flex items-center gap-4">

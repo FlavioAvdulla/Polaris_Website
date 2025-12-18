@@ -335,7 +335,7 @@
     "addToCart": "ORDER NOW"
   },
   "product_06": {
-    "title": "REDRAGON K535 KEYBOARD",
+    "title": "REDRAGON K535",
     "description": "Industry-leading noise cancellation optimized to you Magnificent Sound, engineered to perfectio Crystal clear.",
     "productType": "Keyboard",
     "review": "7 Customer Reviews",
@@ -350,6 +350,7 @@
   "product_32": {
     "title": "SAMSUNG GALAXY S25 ULTRA",
     "description": "Experience the pinnacle of mobile innovation with the Samsung Galaxy S25 Ultra's stunning display and revolutionary camera.",
+    "productType": "Smartphone",
     "review": "16 Customer Reviews",
     "detail_01": "Display: 6.9-inch Dynamic AMOLED 2X, 1440 x 3120 pixels.",
     "detail_02": "Processor: Qualcomm Snapdragon 8 Elite chipset.",
@@ -362,6 +363,7 @@
   "product_33": {
     "title": "SAMSUNG GALAXY S24",
     "description": "The Ultimate Galaxy Experience. Meet the Samsung Galaxy S24—seamlessly blending cutting-edge AI, a stunning adaptive display, and a pro-grade camera to transform how you connect with your world.",
+    "productType": "Smartphone",
     "review": "4 Customer Reviews",
     "detail_01": "6.2-inch Dynamic AMOLED display with a resolution of 1080x2400.",
     "detail_02": "Triple rear camera system featuring a 50 MP main sensor.",
@@ -374,6 +376,7 @@
   "product_34": {
     "title": "IPHONE 16 PRO MAX",
     "description": "Experience the future in your hand with the revolutionary iPhone 16 Pro Max, where an impossibly brilliant display, an intelligent camera system, and seamless AI integration redefine what a smartphone can be.",
+    "productType": "Smartphone",
     "review": "18 Customer Reviews",
     "detail_01": "6.2-inch Dynamic AMOLED display with a resolution of 1080x2400.",
     "detail_02": "Triple rear camera system with a 50 MP main sensor.",
@@ -412,6 +415,7 @@
   "product_37": {
     "title": "SAMSUNG GALAXY Z FLIP 7",
     "description": "The Sony Z Flip 7 unfolds a world of cinematic brilliance, merging a stunning foldable display with unparalleled Alpha-series camera technology in your pocket.",
+    "productType": "Smartphone",
     "review": "14 Customer Reviews",
     "detail_01": "Display 6.9 inches (1080x 2520 pixels) 120Hz Refresh rate.",
     "detail_02": "Camera 50+12 MP (Dual Camera) 10 MP Selfie 4K Video.",
@@ -424,7 +428,7 @@
   "product_40": {
     "title": "APPLE 2025 MACBOOK AIR",
     "description": "Experience unparalleled performance and all-day battery life in the impossibly thin, lightweight design of the future.",
-    "productType": "Computer",
+    "productType": "Laptop",
     "review": "18 Customer Reviews",
     "detail_01": "MacBook Air with the M4 chip lets you blaze through work and play.",
     "detail_02": "Built for apple intelligence.",
@@ -437,6 +441,7 @@
   "product_41": {
     "title": "HP OMEN 16 ULTRA SLIM",
     "description": "Dominate the competition with relentless power and a blazing-fast display packed into a surprisingly slim chassis.",
+    "productType": "Laptop",
     "review": "8 Customer Reviews",
     "detail_01": "2K IPS Display with 144 Hz refresh rate.",
     "detail_02": "NVIDIA GeForce RTX 5060 Laptop GPU.",
@@ -449,6 +454,7 @@
   "product_42": {
     "title": "RAZER BASILISK V3",
     "description": "The Razer Basilisk V3 delivers a perfect blend of customizable controls, stunning RGB lighting, and precision for the ultimate gaming advantage.",
+    "productType": "Computer Accesories",
     "review": "25 Customer Reviews",
     "detail_01": "11 Razer Chroma RGB Lighting Zones.",
     "detail_02": "Razer HyperScroll Tilt Wheel For Smooth.",
@@ -461,6 +467,7 @@
   "product_43": {
     "title": "AMAZON ECHO POP",
     "description": "The all-new Echo Pop delivers vibrant, full sound in a compact, stylish design that fits perfectly in any small space.",
+    "productType": "Speaker Music",
     "review": "18 Customer Reviews",
     "detail_01": "Premium Alexa Features.",
     "detail_02": "Control music with your voice.",
@@ -473,6 +480,7 @@
   "product_44": {
     "title": "JBL GO 4",
     "description": "Featuring JBL Pro Sound in a sleek, ultra-portable design, the JBL Go 4 is your waterproof and dustproof companion for big sound anywhere.",
+    "productType": "Speaker Music",
     "review": "12 Customer Reviews",
     "detail_01": "Ultra-portable JBL Pro Sound.",
     "detail_02": "Up to 7 hours of playtime.",
@@ -485,6 +493,7 @@
   "product_45": {
     "title": "EDIFIER R1280T POWERED SPEAKERS",
     "description": "Classic wooden bookshelf speakers that fill your room with warm, natural sound, bringing timeless audio richness to your modern life.",
+    "productType": "Speaker Music",
     "review": "10 Customer Reviews",
     "detail_01": "2 x AUX Input.",
     "detail_02": "Remote control.",
@@ -497,6 +506,7 @@
   "product_46": {
     "title": "AMAZON ECHO DOT",
     "description": "Enjoy an improved audio experience compared to any previous Echo Dot with Alexa for clearer vocals, deeper bass and vibrant sound in any room.",
+    "productType": "Speaker Music",
     "review": "12 Customer Reviews",
     "detail_01": "Improved audio experience.",
     "detail_02": "Control compatible smart home.",
