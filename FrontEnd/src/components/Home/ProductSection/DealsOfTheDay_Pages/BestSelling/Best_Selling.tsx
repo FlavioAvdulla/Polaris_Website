@@ -28,7 +28,7 @@ interface Product {
 }
 
 // Array of specific product IDs to be displayed as featured products
-const featuredProductIds = ['48', '51', '52', '49', '50', '4'];
+const featuredProductIds = ['105', '78', '52', '131', '50', '4'];
 
 const Best_Selling = () => {
   
@@ -49,10 +49,10 @@ const Best_Selling = () => {
     // Mapping of product IDs to their respective routes
     const routeMap: Record<string, string> = {
       "4": "/Product_01",
-      "48": "/Product_02",
-      "49": "/Product_03",
+      "78": "/Product_36",
+      "105": "/Product_40",
       "50": "/Product_04",
-      "51": "/Product_05",
+      "131": "/Product_47",
       "52": "/Product_06"
     }
 

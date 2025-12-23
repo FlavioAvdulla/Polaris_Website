@@ -1,6 +1,6 @@
 // Importing React hooks and routing dependencies
 import React, { useState, useEffect } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import ScrollManager from "@/ScrollManager/ScrollManager";
 
 // Translation functionality
@@ -9,27 +9,51 @@ import { useTranslation } from 'react-i18next';
 const ProductSection_02 = () => {
   // Initialize translation hook
   const { t } = useTranslation();
+  
+  // Get current location to determine active section from URL
+  const location = useLocation();
 
   // State to track the active navigation section
-  // Initialize from localStorage if available, otherwise empty string
-  const [activeSection, setActiveSection] = useState(() => {
-    return localStorage.getItem("activeSection") || "";
-  });
-
+  const [activeSection, setActiveSection] = useState("");
+  
   // Hook for programmatic navigation
   const navigate = useNavigate();
 
-  // Effect to set default section and navigate on component mount
+  // Define navigation items
+  const navItems = [
+    { label: t("productSection_02.latestProducts"), path: "/deals/latest-products" },
+    { label: t("productSection_02.topRating"), path: "/deals/top-rating" },
+    { label: t("productSection_02.bestSelling"), path: "/deals/best-selling" },
+  ];
+
+  // Effect to set active section based on current URL path
   useEffect(() => {
-    const defaultLabel = t("productSection_02.latestProducts");
-    const defaultPath = "/deals/latest-products";
+    // Find which nav item matches the current path
+    const currentItem = navItems.find(item => 
+      location.pathname === item.path || location.pathname.startsWith(item.path)
+    );
     
-    // If no active section is set, set the default one
-    if (!activeSection) {
+    if (currentItem) {
+      // If we found a matching route, set it as active
+      setActiveSection(currentItem.label);
+      localStorage.setItem("activeSection", currentItem.label);
+    } else if (!activeSection && navItems.length > 0) {
+      // If no active section and route doesn't match, default to first item
+      const defaultLabel = navItems[0].label;
+      const defaultPath = navItems[0].path;
+      
       setActiveSection(defaultLabel);
+      localStorage.setItem("activeSection", defaultLabel);
       navigate(defaultPath);
     }
-  }, [activeSection, navigate, t]);
+  }, [location.pathname, activeSection, navigate, t]);
+
+  // Save active section to localStorage whenever it changes
+  useEffect(() => {
+    if (activeSection) {
+      localStorage.setItem("activeSection", activeSection);
+    }
+  }, [activeSection]);
 
   return (
     <div className="flex flex-col w-[85%] mx-auto">
@@ -60,11 +84,7 @@ const ProductSection_02 = () => {
                         sm:gap-4
                         md:gap-7
                         lg:gap-10">
-          {[
-            { label: t("productSection_02.latestProducts"), path: "/deals/latest-products" },
-            { label: t("productSection_02.topRating"), path: "/deals/top-rating" },
-            { label: t("productSection_02.bestSelling"), path: "/deals/best-selling" },
-          ].map(({ label, path }) => (
+          {navItems.map(({ label, path }) => (
             <button
               key={label}
 
