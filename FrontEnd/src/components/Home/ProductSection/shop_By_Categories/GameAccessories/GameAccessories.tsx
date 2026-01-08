@@ -91,40 +91,40 @@ const GameAccessories = () => {
   }, []); // Empty dependency array means this runs once on component mount
 
   // Handler for Whatsapp message - sends product info to Whatsapp
-      const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
-        event.stopPropagation() // Prevent triggering the parent click event
-    
-        const imageUrl = `http://localhost:4004/images/${product.image}`;
-    
-      // Construct the Whatsapp message with product details
-      const message = `Hello! I want to buy this product:
-      
-      *Product Details:*
-      *Title:* ${t(product.title)}
-      *Description:* ${t(product.description)}
-      *Original Price:* ${t(product.description)}
-      *Original Price:* ${t(product.normalPrice)}
-      *Offer Price:* ${t(product.offerPrice)}
-    
-      ${product.detail_01 ? `${t(product.detail_01)}` : ''}
-      ${product.detail_02 ? `${t(product.detail_02)}` : ''}
-      ${product.detail_03 ? `${t(product.detail_03)}` : ''}
-      ${product.detail_04 ? `${t(product.detail_04)}` : ''}
-    
-      *Product Image:* ${imageUrl}
-    
-      Please contact me to proceed with the purchase. Thank you!`;
-    
-      // Encode the message for URL
-        const encodedMessage = encodeURIComponent(message);
-    
-        // WhatsApp API URL (Replace with your actual WhatsApp number)
-        const whatsappNumber = "355676311918"
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
-        // Open Whatsapp in a new tab
-        window.open(whatsappUrl, '_blank')
-      }
+  const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
+    event.stopPropagation() // Prevent triggering the parent click event
+
+    const imageUrl = `http://localhost:4004/images/${product.image}`;
+
+  // Construct the Whatsapp message with product details
+  const message = `Hello! I want to buy this product:
+  
+  *Product Details:*
+  *Title:* ${t(product.title)}
+  *Description:* ${t(product.description)}
+  *Original Price:* ${t(product.description)}
+  *Original Price:* ${t(product.normalPrice)}
+  *Offer Price:* ${t(product.offerPrice)}
+
+  ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+  ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+  ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+  ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+
+  *Product Image:* ${imageUrl}
+
+  Please contact me to proceed with the purchase. Thank you!`;
+
+  // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+
+    // WhatsApp API URL (Replace with your actual WhatsApp number)
+    const whatsappNumber = "355676311918"
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Open Whatsapp in a new tab
+    window.open(whatsappUrl, '_blank')
+  }
   
   // Generates star rating components based on a numeric rating value
   const getStars = (rating) => {
@@ -254,45 +254,45 @@ const GameAccessories = () => {
                                  xl:text-[22px] xl:w-[70%]">{t(product.title)}</h1>
       
                   {/* Price and cart */}
-                              <div className="flex justify-between items-center">
-                                <div className="flex items-center xs:gap-2 md:gap-4">
-                                  <p
-                                    className="font-camptonBold text-primary
-                                               dark:text-secondary_01
-                                                
-                                               xs:text-[22px]
-                                               md:text-[30px]
-                                               lg:text-[40px]">
-                                    {t(product.offerPrice)}
-                                  </p>
-                                  <div className="flex w-auto relative items-center">
-                                    <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
-                  
-                                    <p className="font-camptonBook text-gray-700
-                                                  dark:text-white
-                                                    
-                                                  xs:text-[16px]
-                                                  md:text-[17px]
-                                                  lg:text-[25px]">
-                                      {t(product.normalPrice)}
-                                    </p>
-                                  </div>
-                                </div>
-                                <button
-                                  onClick={(e) => handleWhatsappMessage(product, e)}
-                                  className="bg-primary border-[1px] border-primary cursor-pointer
-                                             hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
-                                             dark:bg-secondary_01 dark:border-gray-800 dark:hover:bg-transparent dark:hover:border-secondary_01
-                                             
-                                             xs:rounded-md
-                                             md:rounded-sm
-                                             lg:rounded-md">
-                                  <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
-                                                                  dark:hover:text-secondary_01
-                  
-                                                                  xs:text-[40px] xs:p-1"/>
-                                </button>
-                              </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center xs:gap-2 md:gap-4">
+                      <p
+                        className="font-camptonBold text-primary
+                                    dark:text-secondary_01
+                                    
+                                    xs:text-[22px]
+                                    md:text-[30px]
+                                    lg:text-[40px]">
+                        {t(product.offerPrice)}
+                      </p>
+                      <div className="flex w-auto relative items-center">
+                        <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
+      
+                        <p className="font-camptonBook text-gray-700
+                                      dark:text-white
+                                        
+                                      xs:text-[16px]
+                                      md:text-[17px]
+                                      lg:text-[25px]">
+                          {t(product.normalPrice)}
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={(e) => handleWhatsappMessage(product, e)}
+                      className="bg-primary border-[1px] border-primary cursor-pointer
+                                  hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
+                                  dark:bg-secondary_01 dark:border-gray-800 dark:hover:bg-transparent dark:hover:border-secondary_01
+                                  
+                                  xs:rounded-md
+                                  md:rounded-sm
+                                  lg:rounded-md">
+                      <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
+                                                      dark:hover:text-secondary_01
+      
+                                                      xs:text-[40px] xs:p-1"/>
+                    </button>
+                  </div>
                   {/* Stock and Sales Information */}
                   <div className="flex justify-between items-center">
                     <p className="font-camptonBook flex
