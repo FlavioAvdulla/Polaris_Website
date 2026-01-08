@@ -207,28 +207,46 @@ const Electronics = () => {
                                  md:text-[13px] md:w-[90%]
                                  lg:text-[18px]
                                  xl:text-[22px] xl:w-[70%]">{t(product.title)}</h1>
-                  {/* Price and Add to Cart Button */}
-                  <div className="flex justify-between items-center">
-                    <h1 className="font-camptonBold text-primary
-                                   dark:text-secondary_01
-
-                                   xs:text-[40px]
-                                   md:text-[30px]
-                                   lg:text-[36px]
-                                   xl:text-[40px]">{product.normalPrice}
-                    </h1>
-                    <i className="bg-primary border-[1px] border-primary cursor-pointer
-                                  hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
-                                  dark:bg-gray-800 dark:border-gray-800 dark:hover:border-gray-800 dark:hover:bg-transparent
-
-                                  xs:rounded-md
-                                  md:rounded-sm
-                                  lg:rounded-md">
-                      <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
-                                                      dark:hover:text-white
-
-                                                      xs:text-[40px] xs:p-1"/></i>
-                  </div>
+                  {/* Price and cart */}
+                              <div className="flex justify-between items-center">
+                                <div className="flex items-center xs:gap-2 md:gap-4">
+                                  <p
+                                    className="font-camptonBold text-primary
+                                               dark:text-secondary_01
+                                                
+                                               xs:text-[22px]
+                                               md:text-[30px]
+                                               lg:text-[40px]">
+                                    {t(product.offerPrice)}
+                                  </p>
+                                  <div className="flex w-auto relative items-center">
+                                    <div className="absolute mt-[2px] h-[1.5px] w-[100%] bg-red-500" />
+                  
+                                    <p className="font-camptonBook text-gray-700
+                                                  dark:text-white
+                                                    
+                                                  xs:text-[16px]
+                                                  md:text-[17px]
+                                                  lg:text-[25px]">
+                                      {t(product.normalPrice)}
+                                    </p>
+                                  </div>
+                                </div>
+                                <button
+                                  onClick={(e) => handleWhatsappMessage(product, e)}
+                                  className="bg-primary border-[1px] border-primary cursor-pointer
+                                             hover:scale-[105%] hover:bg-transparent hover:border-[1px] group hover:border-primary duration-300
+                                             dark:bg-secondary_01 dark:border-gray-800 dark:hover:bg-transparent dark:hover:border-secondary_01
+                                             
+                                             xs:rounded-md
+                                             md:rounded-sm
+                                             lg:rounded-md">
+                                  <PiShoppingCartLight className="text-white group-hover:text-primary duration-300
+                                                                  dark:hover:text-secondary_01
+                  
+                                                                  xs:text-[40px] xs:p-1"/>
+                                </button>
+                              </div>
                   {/* Stock and Sales Information */}
                   <div className="flex justify-between items-center">
                     <p className="font-camptonBook flex
