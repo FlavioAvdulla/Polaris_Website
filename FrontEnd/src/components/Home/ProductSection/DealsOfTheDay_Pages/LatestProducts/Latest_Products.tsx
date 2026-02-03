@@ -47,11 +47,11 @@ const Latest_Products = () => {
     // Mapping of product IDs to their respective routes
     const routeMap: Record<string, string> = {
       "4": "/Product_01",
-      "48": "/Product_02",
-      "49": "/Product_03",
-      "50": "/Product_04",
       "51": "/Product_05",
-      "52": "/Product_06"
+      "88": "/Product_37",
+      "106": "/Product_40",
+      "80": "/Product_32",
+      "110": "/Product_42"
     }
 
     const route = routeMap[id];
