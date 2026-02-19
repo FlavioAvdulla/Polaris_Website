@@ -149,22 +149,23 @@ const Latest_Products = () => {
       <ScrollManager/>
       <div
         className="w-[100%] h-auto mx-auto gap-5 items-center justify-between mb-20 mt-10
-                  xs:grid-cols-1 xs:grid xs:gap-y-[60px]
-                  md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
-                  xl:flex">
+
+                   xs:grid-cols-1 xs:grid xs:gap-y-[60px]
+                   md:grid-cols-3 md:gap-x-5 md:gap-y-[60px]
+                   xl:flex">
         {/* ============= Product List ============= */}
         {products.map((product, index) => (
           <div 
             className="flex flex-col w-auto h-auto group relative border-[1px] border-primary cursor-pointer rounded-lg
-                      dark:border-gray-600" 
+                       dark:border-gray-600" 
             key={index} 
             onClick={() => handleImageClick(product._id)}>
             {/* ============= Product Image ============= */}
             <div className="flex rounded-tl-lg items-center justify-center rounded-tr-lg overflow-hidden">
               <img 
                 className="xs:h-auto
-                          lg:w-[100%] w-[100%]
-                          xl:w-[100%]" 
+                           lg:w-[100%] w-[100%]
+                           xl:w-[100%]" 
                 src={`http://localhost:4004/images/${product.image}`}
                 alt={product.title} 
               />
@@ -174,6 +175,7 @@ const Latest_Products = () => {
                           justify-center rounded-br-lg rounded-bl-lg bg-gray-100
                           group-hover:shadow-shadow-dark transition-all duration-300
                           dark:bg-gray-800
+
                           xs:text-[20px]
                           md:text-[18px]
                           lg:text-[20px]
@@ -183,9 +185,10 @@ const Latest_Products = () => {
               {/* ============= Price Display ============= */}
               <div className="flex gap-4 items-center justify-center">
                 <p className="font-camptonBold text-primary
-                            dark:text-secondary_01
-                            xs:text-[25px]
-                            2xl:text-[25px]">{t(product.offerPrice)}</p>
+                              dark:text-secondary_01
+
+                              xs:text-[25px]
+                              2xl:text-[25px]">{t(product.offerPrice)}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
                   <p className="font-camptonBook text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
