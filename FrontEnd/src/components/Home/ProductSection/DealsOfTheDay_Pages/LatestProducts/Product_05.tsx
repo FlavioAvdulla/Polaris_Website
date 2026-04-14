@@ -100,7 +100,6 @@ const Product_05 = () => {
     *Product Details:*
     *Title:* ${t(product.title)}
     *Description:* ${t(product.description)}
-    *Original Price:* ${t(product.description)}
     *Original Price:* ${convertedNormalPrice}
     *Offer Price:* ${convertedOfferPrice}
 
@@ -328,7 +327,7 @@ const Product_05 = () => {
                         xs:text-[22px]
                         md:text-[30px]
                         lg:text-[40px]">
-            {t(product.offerPrice)}
+            {getConvertedPrice(product.offerPrice)}
           </p>
           {/* Original Price with Strikethrough */}
           <div className="flex w-auto relative items-center">
@@ -341,7 +340,7 @@ const Product_05 = () => {
                           xs:text-[16px]
                           md:text-[17px]
                           lg:text-[25px]">
-              {t(product.normalPrice)}
+              {getConvertedPrice(product.normalPrice)}
             </p>
           </div>
         </div>
