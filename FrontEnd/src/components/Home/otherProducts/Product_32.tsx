@@ -82,8 +82,8 @@ const Product_32 = () => {
   *Title:* ${t(product.title)}
   *Description:* ${t(product.description)}
   *Original Price:* ${t(product.description)}
-  *Original Price:* ${t(product.normalPrice)}
-  *Offer Price:* ${t(product.offerPrice)}
+  *Original Price:* ${convertedNormalPrice}
+  *Offer Price:* ${convertedOfferPrice}
 
   ${product.detail_01 ? `${t(product.detail_01)}` : ''}
   ${product.detail_02 ? `${t(product.detail_02)}` : ''}

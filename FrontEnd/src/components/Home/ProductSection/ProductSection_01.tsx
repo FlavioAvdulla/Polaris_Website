@@ -1,8 +1,8 @@
-// Importing React hooks and other dependencies
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCurrency } from "../../context/CurrencyContext";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import axios from 'axios';
 
@@ -40,6 +40,15 @@ const ProductSection_01 = () => {
   // Hooks for navigation and translation
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { currency, convertPrice } = useCurrency();
+
+  // Helper function to get converted price from translation key
+  const getConvertedPrice = (priceKey: string) => {
+    // First translate the price key to get the actual price string (e.g., "€100")
+    const priceString = t(priceKey);
+    // Then convert to selected currency
+    return convertPrice(priceString, currency);
+  };
 
   // Handler for when a product is clicked - navigates to specific product pages
   const handleProductClick = (id: string) => {
@@ -56,41 +65,48 @@ const ProductSection_01 = () => {
     }
   }
 
-      // Handler for Whatsapp message - sends product info to Whatsapp
-      const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
-        event.stopPropagation() // Prevent triggering the parent click event
+  // Handler for Whatsapp message - sends product info to Whatsapp
+  const handleWhatsappMessage = (product: Product, event: React.MouseEvent) => {
+    event.stopPropagation() // Prevent triggering the parent click event
+
+    const imageUrl = `http://localhost:4004/images/${product.image}`;
+
+    // First translate the price keys to get actual price strings, then convert
+    const normalPriceString = t(product.normalPrice);
+    const offerPriceString = t(product.offerPrice);
     
-        const imageUrl = `http://localhost:4004/images/${product.image}`;
+    // Convert the prices to selected currency
+    const convertedNormalPrice = convertPrice(normalPriceString, currency);
+    const convertedOfferPrice = convertPrice(offerPriceString, currency);
+
+    // Construct the Whatsapp message with product details
+    const message = `Hello! I want to buy this product:
     
-      // Construct the Whatsapp message with product details
-      const message = `Hello! I want to buy this product:
-      
-      *Product Details:*
-      *Title:* ${t(product.title)}
-      *Description:* ${t(product.description)}
-      *Original Price:* ${t(product.description)}
-      *Original Price:* ${t(product.normalPrice)}
-      *Offer Price:* ${t(product.offerPrice)}
-    
-      ${product.detail_01 ? `${t(product.detail_01)}` : ''}
-      ${product.detail_02 ? `${t(product.detail_02)}` : ''}
-      ${product.detail_03 ? `${t(product.detail_03)}` : ''}
-      ${product.detail_04 ? `${t(product.detail_04)}` : ''}
-    
-      *Product Image:* ${imageUrl}
-    
-      Please contact me to proceed with the purchase. Thank you!`;
-    
-      // Encode the message for URL
-        const encodedMessage = encodeURIComponent(message);
-    
-        // WhatsApp API URL (Replace with your actual WhatsApp number)
-        const whatsappNumber = "355676311918"
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-    
-        // Open Whatsapp in a new tab
-        window.open(whatsappUrl, '_blank')
-      }
+    *Product Details:*
+    *Title:* ${t(product.title)}
+    *Description:* ${t(product.description)}
+    *Original Price:* ${convertedNormalPrice}
+    *Offer Price:* ${convertedOfferPrice}
+  
+    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+  
+    *Product Image:* ${imageUrl}
+  
+    Please contact me to proceed with the purchase. Thank you!`;
+  
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+  
+    // WhatsApp API URL (Replace with your actual WhatsApp number)
+    const whatsappNumber = "355676311918"
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+  
+    // Open Whatsapp in a new tab
+    window.open(whatsappUrl, '_blank')
+  }
 
   // useEffect hook to fetch products from the API when component mounts
   useEffect(() => {
@@ -103,7 +119,7 @@ const ProductSection_01 = () => {
           featuredProductIds.includes(product._id)
         );
         setProducts(filteredProducts);
-      } catch (err) {
+      } catch (err: any) {
         console.error("Failed to fetch products:", err);
         setError(err.message || "Failed to load products");
       } finally {
@@ -113,17 +129,6 @@ const ProductSection_01 = () => {
 
     fetchProducts();
   }, []); // Empty dependency array means this runs once on component mount
-
-  // const handleProductClick = (id: string) => {
-  //   navigate(`/products/${id}`);
-  // };
-
-  // Handler for adding products to cart (prevents event propagation to parent)
-  // const handleAddToCart = (e: React.MouseEvent, productId: string) => {
-  //   e.stopPropagation();
-  //   console.log("Add to cart:", productId);
-  //   // Add your cart logic here
-  // };
 
   // Helper function to generate star rating UI based on numeric rating
   const getStars = (rating: number) => {
@@ -207,7 +212,6 @@ const ProductSection_01 = () => {
             className="flex flex-col w-[100%] gap-4 p-4 justify-between
                       dark:bg-slate-800
 
-
                        xs:h-auto
                        md:h-[290px]">
             {/* Rating display with stars */}
@@ -244,7 +248,7 @@ const ProductSection_01 = () => {
                               xs:text-[22px]
                               md:text-[30px]
                               lg:text-[40px]">
-                  {t(product.offerPrice)}
+                  {getConvertedPrice(product.offerPrice)}
                 </p>
                 {/* Original price with strikethrough */}
                 <div className="flex w-auto relative items-center">
@@ -256,7 +260,7 @@ const ProductSection_01 = () => {
                                 xs:text-[16px]
                                 md:text-[17px]
                                 lg:text-[25px]">
-                    {t(product.normalPrice)}
+                    {getConvertedPrice(product.normalPrice)}
                   </p>
                 </div>
               </div>

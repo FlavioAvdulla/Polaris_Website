@@ -1,4 +1,5 @@
 import { Carousel_05 } from "../../Shadcn-components/Carousel_05";
+import { useCurrency } from "../../context/CurrencyContext";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -28,9 +29,20 @@ const ProductSection_05 = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  const { currency, convertPrice } = useCurrency();
+  
   // Hooks for translation and navigation
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+
+  // Helper function to get converted price from translation key
+  const getConvertedPrice = (priceKey: string) => {
+    // First translate the price key to get the actual price string (e.g., "€100")
+    const priceString = t(priceKey);
+    // Then convert to selected currency
+    return convertPrice(priceString, currency);
+  };
 
   // Handler for when a product is clicked - navigates to specific routes based on product ID
   const handleProductClick = (id) => {
@@ -189,7 +201,7 @@ const ProductSection_05 = () => {
 
                               xs:text-[23px]
                               lg:text-[15px]
-                              xl:text-[23px]">{t(product.offerPrice)}</p>
+                              xl:text-[23px]">{getConvertedPrice(product.offerPrice)}</p>
 
                 <div className="flex w-auto relative items-center">
                   <div className="absolute mt-[1px] h-[1.5px] w-[100%] bg-red-500"/>
@@ -197,7 +209,7 @@ const ProductSection_05 = () => {
                                 dark:text-white
 
                                 lg:text-[12px]
-                                xl:text-[17px]">{t(product.normalPrice)}</p>
+                                xl:text-[17px]">{getConvertedPrice(product.normalPrice)}</p>
                 </div>
               </div>
             </div>

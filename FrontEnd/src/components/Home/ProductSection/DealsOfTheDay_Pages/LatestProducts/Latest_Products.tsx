@@ -1,3 +1,4 @@
+import { useCurrency } from "../../../../context/CurrencyContext";
 import ScrollManager from "@/ScrollManager/ScrollManager";
 import { PiShoppingCartLight } from "react-icons/pi";
 import React, { useEffect, useState } from "react";
@@ -41,6 +42,16 @@ const Latest_Products = () => {
   // Navigation hook for programmatic routing
   const navigate = useNavigate();
 
+  const { currency, convertPrice } = useCurrency();
+
+  // Helper function to get converted price from translation key
+  const getConvertedPrice = (priceKey: string) => {
+    // First translate the price key to get the actual price string (e.g., "€100")
+    const priceString = t(priceKey);
+    // Then convert to selected currency
+    return convertPrice(priceString, currency);
+  };
+
   // Handler for product image click - navigates to product detail page
   const handleImageClick = (id: string) => {
     console.log(`Image with id ${id} clicked.`)
@@ -66,26 +77,30 @@ const Latest_Products = () => {
 
     const imageUrl = `http://localhost:4004/images/${product.image}`;
 
-  // Construct the Whatsapp message with product details
-  const message = `Hello! I want to buy this product:
-  
-  *Product Details:*
-  *Title:* ${t(product.title)}
-  *Description:* ${t(product.description)}
-  *Original Price:* ${t(product.description)}
-  *Original Price:* ${t(product.normalPrice)}
-  *Offer Price:* ${t(product.offerPrice)}
+    // First translate the price keys to get actual price strings, then convert
+    const normalPriceString = t(product.normalPrice);
+    const offerPriceString = t(product.offerPrice);
 
-  ${product.detail_01 ? `${t(product.detail_01)}` : ''}
-  ${product.detail_02 ? `${t(product.detail_02)}` : ''}
-  ${product.detail_03 ? `${t(product.detail_03)}` : ''}
-  ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+    // Construct the Whatsapp message with product details
+    const message = `Hello! I want to buy this product:
+    
+    *Product Details:*
+    *Title:* ${t(product.title)}
+    *Description:* ${t(product.description)}
+    *Original Price:* ${t(product.description)}
+    *Original Price:* ${t(product.normalPrice)}
+    *Offer Price:* ${t(product.offerPrice)}
 
-  *Product Image:* ${imageUrl}
+    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
 
-  Please contact me to proceed with the purchase. Thank you!`;
+    *Product Image:* ${imageUrl}
 
-  // Encode the message for URL
+    Please contact me to proceed with the purchase. Thank you!`;
+
+    // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp API URL (Replace with your actual WhatsApp number)
@@ -185,12 +200,12 @@ const Latest_Products = () => {
                 <p className="font-camptonBold text-primary
                             dark:text-secondary_01
                             xs:text-[25px]
-                            2xl:text-[25px]">{t(product.offerPrice)}</p>
+                            2xl:text-[25px]">{getConvertedPrice(product.offerPrice)}</p>
                 <div className="flex w-auto relative items-center">
                   <div className="absolute h-[1px] w-[100%] bg-primary"/>
                   <p className="font-camptonBook text-gray-800 rounded-br-lg rounded-bl-lg text-[17px]
                               dark:text-white
-                              ">{t(product.normalPrice)}</p>
+                              ">{getConvertedPrice(product.normalPrice)}</p>
                 </div>
               </div>
             </div>

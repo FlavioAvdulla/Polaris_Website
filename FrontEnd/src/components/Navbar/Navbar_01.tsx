@@ -13,7 +13,7 @@ interface Navbar01Props {
 const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme() as { theme: string; toggleTheme: () => void };
 
   const handleFaqOpen = () => {
     setShowFaq(true);
@@ -22,6 +22,7 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
   const handleContactsOpen = () => {
     navigate("/Contacts");
   };
+
   const handleTrackOrderOpen = () => {
     navigate("/TrackOrder");
   };
@@ -33,7 +34,7 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
                     
                     xs:flex-col xs:items-center xs:gap-3 xs:w-[100%]
                     lg:flex-row lg:w-[85%]
-                    xl:flex-row  ">
+                    xl:flex-row">
       <div className="flex gap-7 w-fit">
         <button type="button" 
                 className="font-camptonBook"
@@ -43,8 +44,9 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
                         dark:hover:text-secondary_02
 
                         xs:text-[12px]
-                        md:text-[14px] ">{t('navbar_01.trackOrder')}</p>
+                        md:text-[14px]">{t('navbar_01.trackOrder')}</p>
         </button>
+
         <button type="button" 
                 className="font-camptonBook"
                 aria-label={t('navbar_01.aboutUs')}>
@@ -52,7 +54,9 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
                         dark:hover:text-secondary_02
           
                         xs:text-[12px]
-                        md:text-[14px] ">{t('navbar_01.aboutUs')}</p></button>
+                        md:text-[14px]">{t('navbar_01.aboutUs')}</p>
+        </button>
+
         <button type="button" 
                 className="font-camptonBook"
                 onClick={handleContactsOpen}
@@ -61,7 +65,9 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
                         dark:hover:text-secondary_02
                         
                         xs:text-[12px]
-                        md:text-[14px]">{t('navbar_01.contact')}</p></button>
+                        md:text-[14px]">{t('navbar_01.contact')}</p>
+        </button>
+
         <button type="button" 
                 className="font-camptonBook"
                 onClick={handleFaqOpen}
@@ -70,8 +76,10 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
                         dark:hover:text-secondary_02
 
                         xs:text-[12px]
-                        md:text-[14px]">{t('navbar_01.faq')}</p></button>
+                        md:text-[14px]">{t('navbar_01.faq')}</p>
+        </button>
       </div>
+
       <div className="flex items-center justify-between
 
                       xs:gap-0 xs:w-[85%]
@@ -84,7 +92,7 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
             <i className="dark:bg-gray-800
 
                           xs:bg-primary xs:p-2 xs:text-white xs:rounded-full
-                          sm:hidden "><BsPhone className="text-[15px]" /></i>
+                          sm:hidden"><BsPhone className="text-[15px]" /></i>
 
             <div className="flex items-center
 
@@ -100,9 +108,13 @@ const Navbar_01: React.FC<Navbar01Props> = ({ setShowFaq }) => {
                             md:text-[14px]">+355 (0) 67 63 11 918</p>
             </div>
           </button>
+
           <SelectLanguage />
+
           <div className="h-auto w-[1px] bg-gray-300 dark:bg-gray-600" />
+
           <SelectCurrency />
+
           <button type="button"
                   className="font-camptonBook group flex items-center gap-2"
                   onClick={toggleTheme}

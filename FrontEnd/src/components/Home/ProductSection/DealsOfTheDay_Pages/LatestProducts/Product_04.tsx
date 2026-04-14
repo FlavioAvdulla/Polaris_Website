@@ -1,3 +1,4 @@
+import { useCurrency } from "../../../../context/CurrencyContext";
 import React, { useEffect, useState, useCallback } from "react";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
@@ -37,6 +38,15 @@ const Product_04 = () => {
   // Translation hook for internationalization
   const { t } = useTranslation();
 
+  const { currency, convertPrice } = useCurrency();// Helper function to get converted price from translation key
+    
+  const getConvertedPrice = (priceKey: string) => {
+    // First translate the price key to get the actual price string (e.g., "€100")
+    const priceString = t(priceKey);
+    // Then convert to selected currency
+    return convertPrice(priceString, currency);
+  };
+
   // State for the currently displayed main photo and product quantity
   const [mainPhoto, setMainPhoto] = useState("");
   const [quantity, setQuantity] = useState("01");
@@ -75,26 +85,33 @@ const Product_04 = () => {
 
     const imageUrl = `http://localhost:4004/images/${product.image}`;
 
-  // Construct the Whatsapp message with product details
-  const message = `Hello! I want to buy this product:
-  
-  *Product Details:*
-  *Title:* ${t(product.title)}
-  *Description:* ${t(product.description)}
-  *Original Price:* ${t(product.description)}
-  *Original Price:* ${t(product.normalPrice)}
-  *Offer Price:* ${t(product.offerPrice)}
+    // First translate the price keys to get actual price strings, then convert
+    const normalPriceString = t(product.normalPrice);
+    const offerPriceString = t(product.offerPrice);
+    
+    // Convert the prices to selected currency
+    const convertedNormalPrice = convertPrice(normalPriceString, currency);
+    const convertedOfferPrice = convertPrice(offerPriceString, currency);
 
-  ${product.detail_01 ? `${t(product.detail_01)}` : ''}
-  ${product.detail_02 ? `${t(product.detail_02)}` : ''}
-  ${product.detail_03 ? `${t(product.detail_03)}` : ''}
-  ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+    // Construct the Whatsapp message with product details
+    const message = `Hello! I want to buy this product:
 
-  *Product Image:* ${imageUrl}
+    *Product Details:*
+    *Title:* ${t(product.title)}
+    *Description:* ${t(product.description)}
+    *Original Price:* ${convertedNormalPrice}
+    *Offer Price:* ${convertedOfferPrice}
 
-  Please contact me to proceed with the purchase. Thank you!`;
+    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
 
-  // Encode the message for URL
+    *Product Image:* ${imageUrl}
+
+    Please contact me to proceed with the purchase. Thank you!`;
+
+    // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp API URL (Replace with your actual WhatsApp number)
@@ -309,7 +326,7 @@ const Product_04 = () => {
                         xs:text-[22px]
                         md:text-[30px]
                         lg:text-[40px]">
-            {t(product.offerPrice)}
+            {getConvertedPrice(product.offerPrice)}
           </p>
           {/* Original Price with Strikethrough */}
           <div className="flex w-auto relative items-center">
@@ -322,7 +339,7 @@ const Product_04 = () => {
                           xs:text-[16px]
                           md:text-[17px]
                           lg:text-[25px]">
-              {t(product.normalPrice)}
+              {getConvertedPrice(product.normalPrice)}
             </p>
           </div>
         </div>

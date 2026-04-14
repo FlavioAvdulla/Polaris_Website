@@ -1,5 +1,6 @@
 import { Carousel_03 } from "../../Shadcn-components/Carousel_03";
 import { Carousel_04 } from "../../Shadcn-components/Carousel_04";
+import { useCurrency } from "../../context/CurrencyContext";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -26,28 +27,39 @@ const ProductSection_05 = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  
+  const { currency, convertPrice } = useCurrency();
+
   // Hooks for translation and navigation
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  // Helper function to get converted price from translation key
+  const getConvertedPrice = (priceKey: string) => {
+    // First translate the price key to get the actual price string (e.g., "€100")
+    const priceString = t(priceKey);
+    // Then convert to selected currency
+    return convertPrice(priceString, currency);
+  };
   
-    // Handler for when a product is clicked - navigates to specific routes based on product ID
-    const handleProductClick = (id: string) => {
-      console.log(`Image with id ${id} clicked.`);
-      const routeMap = {
-        "50": "/Product_04",
-        "78": "/Product_36",
-        "4": "/Product_01",
-        "75": "/Product_33"
-      };
+  // Handler for when a product is clicked - navigates to specific routes based on product ID
+  const handleProductClick = (id: string) => {
+    console.log(`Image with id ${id} clicked.`);
+    const routeMap: Record<string, string> = {
+      "50": "/Product_04",
+      "78": "/Product_36",
+      "4": "/Product_01",
+      "75": "/Product_33"
+    };
 
-      const route = routeMap[id];
-      if (route) {
-        navigate(route);
-      }
+    const route = routeMap[id];
+    if (route) {
+      navigate(route);
     }
+  }
 
-    // useEffect hook to fetch products from the API when component mounts
-    useEffect(() => {
+  // useEffect hook to fetch products from the API when component mounts
+  useEffect(() => {
     const fetchProducts = async () => {
       try {
         // API call to get all products
@@ -57,7 +69,7 @@ const ProductSection_05 = () => {
           featuredProductIds.includes(product._id)
         );
         setProducts(filteredProducts);
-      } catch (err) {
+      } catch (err: any) {
         console.error("Failed to fetch products:", err);
         setError(err.message || "Failed to load products");
       } finally {
@@ -93,23 +105,22 @@ const ProductSection_05 = () => {
   }
 
   // Helper function to generate star rating UI based on numeric rating
-  const getStars = (rating) => {
+  const getStars = (rating: string) => {
     const stars = [];
+    const numericRating = parseFloat(rating);
     // Convert rating string to number
     for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
+      if (i <= numericRating) {
         // Full star
         stars.push(<FaStar key={i} className="text-[#fcc419]
-          
                                               xs:text-[10px]
                                               md:text-[18px]
                                               lg:text-[15px]
                                               xl:text-[17px]" />);
-      } else if (i === Math.ceil(rating) && rating % 1 !== 0) {
+      } else if (i === Math.ceil(numericRating) && numericRating % 1 !== 0) {
         // Half star
         stars.push(
           <FaStarHalfAlt key={i} className="text-[#fcc419]
-          
                                             xs:text-[10px]
                                             md:text-[18px]
                                             lg:text-[15px]
@@ -118,7 +129,6 @@ const ProductSection_05 = () => {
       } else {
         // Empty star
         stars.push(<FaStar key={i} className="text-gray-300
-          
                                               xs:text-[10px]
                                               md:text-[18px]
                                               lg:text-[15px]
@@ -214,7 +224,7 @@ const ProductSection_05 = () => {
                                 
                                 xs:text-[25px]
                                 md:text-[35px]
-                                lg:text-[25px]">{t(product.offerPrice)}
+                                lg:text-[25px]">{getConvertedPrice(product.offerPrice)}
                   </p>
                   {/* Pricing information */}
                   <div className="flex w-auto relative items-center">
@@ -224,7 +234,7 @@ const ProductSection_05 = () => {
                     
                                   xs:text-[17px]
                                   md:text-[22px]
-                                  lg:text-[20px]">{t(product.normalPrice)}
+                                  lg:text-[20px]">{getConvertedPrice(product.normalPrice)}
                     </p>
                   </div>
                 </div>
