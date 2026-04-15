@@ -1,8 +1,9 @@
+import { WHATSAPP_NUMBER } from "../../../../../../src/config/constants";
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { PiShoppingCartLight } from "react-icons/pi";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
-import { PiShoppingCartLight } from "react-icons/pi";
 
 // Translation
 import { useTranslation } from 'react-i18next';
@@ -113,7 +114,7 @@ const CameraAndPhoto = () => {
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp API URL (Replace with your actual WhatsApp number)
-    const whatsappNumber = "355696045917"
+    const whatsappNumber = WHATSAPP_NUMBER;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
     // Open Whatsapp in a new tab

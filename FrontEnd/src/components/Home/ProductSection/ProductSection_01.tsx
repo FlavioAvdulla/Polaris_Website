@@ -1,3 +1,4 @@
+import { WHATSAPP_NUMBER } from "../../../../src/config/constants";
 import { useCurrency } from "../../context/CurrencyContext";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
@@ -101,7 +102,7 @@ const ProductSection_01 = () => {
     const encodedMessage = encodeURIComponent(message);
   
     // WhatsApp API URL (Replace with your actual WhatsApp number)
-    const whatsappNumber = "355696045917"
+    const whatsappNumber = WHATSAPP_NUMBER;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   
     // Open Whatsapp in a new tab

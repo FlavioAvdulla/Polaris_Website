@@ -1,11 +1,12 @@
+import { WHATSAPP_NUMBER } from "../../../../src/config/constants";
 import React, { useEffect, useState, useCallback } from "react";
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
-import { GoDot } from "react-icons/go";
-import { IoIosArrowForward } from "react-icons/io";
-import axios from 'axios';
-import { useTranslation } from 'react-i18next';
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import ScrollToTop from "@/ScrollToTop/ScrollToTop";
+import { IoIosArrowForward } from "react-icons/io";
+import { useTranslation } from 'react-i18next';
+import { GoDot } from "react-icons/go";
+import axios from 'axios';
 
 interface Product {
   _id: string;
@@ -85,7 +86,7 @@ const Product_34 = () => {
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp API URL (Replace with your actual WhatsApp number)
-    const whatsappNumber = "355696045917"
+    const whatsappNumber = WHATSAPP_NUMBER;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
     // Open Whatsapp in a new tab

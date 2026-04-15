@@ -1,3 +1,4 @@
+import { WHATSAPP_NUMBER } from "../../../../../../src/config/constants";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -118,7 +119,7 @@ const MobilesAndTablets = () => {
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp API URL (Replace with your actual WhatsApp number)
-    const whatsappNumber = "355696045917"
+    const whatsappNumber = WHATSAPP_NUMBER;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
     // Open Whatsapp in a new tab
