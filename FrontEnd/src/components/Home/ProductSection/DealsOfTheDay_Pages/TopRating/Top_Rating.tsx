@@ -89,7 +89,7 @@ const Top_Rating = () => {
       const encodedMessage = encodeURIComponent(message);
   
       // WhatsApp API URL (Replace with your actual WhatsApp number)
-      const whatsappNumber = "355676311918"
+      const whatsappNumber = "355696045917"
       const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
   
       // Open Whatsapp in a new tab

@@ -1,3 +1,4 @@
+import { WHATSAPP_NUMBER } from "../../../../../../src/config/constants";
 import { useCurrency } from "../../../../context/CurrencyContext";
 import React, { useEffect, useState, useCallback } from "react";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
@@ -94,29 +95,29 @@ const Product_01 = () => {
     const convertedNormalPrice = convertPrice(normalPriceString, currency);
     const convertedOfferPrice = convertPrice(offerPriceString, currency);
 
-  // Construct the Whatsapp message with product details
-  const message = `Hello! I want to buy this product:
-  
-  *Product Details:*
-  *Title:* ${t(product.title)}
-  *Description:* ${t(product.description)}
-  *Original Price:* ${convertedNormalPrice}
-  *Offer Price:* ${convertedOfferPrice}
+    // Construct the Whatsapp message with product details
+    const message = `Hello! I want to buy this product:
+    
+    *Product Details:*
+    *Title:* ${t(product.title)}
+    *Description:* ${t(product.description)}
+    *Original Price:* ${convertedNormalPrice}
+    *Offer Price:* ${convertedOfferPrice}
 
-  ${product.detail_01 ? `${t(product.detail_01)}` : ''}
-  ${product.detail_02 ? `${t(product.detail_02)}` : ''}
-  ${product.detail_03 ? `${t(product.detail_03)}` : ''}
-  ${product.detail_04 ? `${t(product.detail_04)}` : ''}
+    ${product.detail_01 ? `${t(product.detail_01)}` : ''}
+    ${product.detail_02 ? `${t(product.detail_02)}` : ''}
+    ${product.detail_03 ? `${t(product.detail_03)}` : ''}
+    ${product.detail_04 ? `${t(product.detail_04)}` : ''}
 
-  *Product Image:* ${imageUrl}
+    *Product Image:* ${imageUrl}
 
-  Please contact me to proceed with the purchase. Thank you!`;
+    Please contact me to proceed with the purchase. Thank you!`;
 
-  // Encode the message for URL
+    // Encode the message for URL
     const encodedMessage = encodeURIComponent(message);
 
     // WhatsApp API URL (Replace with your actual WhatsApp number)
-    const whatsappNumber = "355676311918"
+    const whatsappNumber = WHATSAPP_NUMBER;
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
     // Open Whatsapp in a new tab
