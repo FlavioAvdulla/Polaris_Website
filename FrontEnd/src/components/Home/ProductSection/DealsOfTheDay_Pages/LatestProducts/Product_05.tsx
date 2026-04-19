@@ -1,4 +1,4 @@
-import { WHATSAPP_NUMBER } from "../../../../src/config/constants";
+import { WHATSAPP_NUMBER } from "../../../../../config/constants";
 import { useCurrency } from "../../../../context/CurrencyContext";
 import React, { useEffect, useState, useCallback } from "react";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";

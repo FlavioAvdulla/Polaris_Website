@@ -1,4 +1,5 @@
 import { WHATSAPP_NUMBER } from "../../../../src/config/constants";
+import { useCurrency } from "../../context/CurrencyContext";
 import React, { useEffect, useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
@@ -34,6 +35,9 @@ const ProductSection_03 = () => {
 
   // Hooks for translation and navigation
   const { t } = useTranslation();
+
+  const { currency, convertPrice } = useCurrency();
+
   const navigate = useNavigate();
   
   // Handler for when a promotional banner is clicked - navigates to specific product pages
@@ -55,6 +59,14 @@ const ProductSection_03 = () => {
           event.stopPropagation() // Prevent triggering the parent click event
       
           const imageUrl = `http://localhost:4004/images/${product.image}`;
+
+        // First translate the price keys to get actual price strings, then convert
+        const normalPriceString = t(product.normalPrice);
+        const offerPriceString = t(product.offerPrice);
+        
+        // Convert the prices to selected currency
+        const convertedNormalPrice = convertPrice(normalPriceString, currency);
+        const convertedOfferPrice = convertPrice(offerPriceString, currency);
       
         // Construct the Whatsapp message with product details
         const message = `Hello! I want to buy this product:
@@ -62,9 +74,8 @@ const ProductSection_03 = () => {
         *Product Details:*
         *Title:* ${t(product.title)}
         *Description:* ${t(product.description)}
-        *Original Price:* ${t(product.description)}
-        *Original Price:* ${t(product.normalPrice)}
-        *Offer Price:* ${t(product.offerPrice)}
+        *Original Price:* ${convertedNormalPrice}
+        *Offer Price:* ${convertedOfferPrice}
       
         ${product.detail_01 ? `${t(product.detail_01)}` : ''}
         ${product.detail_02 ? `${t(product.detail_02)}` : ''}

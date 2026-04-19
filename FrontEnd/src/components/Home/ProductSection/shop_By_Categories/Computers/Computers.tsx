@@ -1,6 +1,6 @@
 import { Carousel_09 } from "../../../../Shadcn-components/Carousel_09";
 import { Carousel_08 } from "../../../../Shadcn-components/Carousel_08";
-import { WHATSAPP_NUMBER } from "../../../../src/config/constants";
+import { WHATSAPP_NUMBER } from "../../../../../config/constants";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { PiShoppingCartLight } from "react-icons/pi";
 import React, { useEffect, useState } from "react";
